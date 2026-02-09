@@ -89,3 +89,126 @@ Target: World of Warcraft 3.3.5a (build 12340).
 - Confirm access to ..\Github\Goals\gui.lua.
 - Review .toc vs files.xml mismatches and decide how to resolve.
 - Decide base .toc to drive the remaster.
+
+
+# Errors / Issues:
+```
+1x ZygorGuidesViewer-2.0.1327\ZygorGuidesViewer.lua:2409: attempt to index global 'ZygorGuidesViewerFrameScrollScrollBarTrackerTexture' (a nil value)
+ZygorGuidesViewer-2.0.1327\ZygorGuidesViewer.lua:294: in function <...rface\AddOns\ZygorGuidesViewer\ZygorGuidesViewer.lua:286>
+(tail call): ?:
+<in C code>: ?
+<string>:"safecall Dispatcher[1]":9: in function <[string "safecall Dispatcher[1]"]:5>
+(tail call): ?:
+AceAddon-3.0-12 (DBM-Core):558: in function `EnableAddon'
+AceAddon-3.0-12 (DBM-Core):651: in function <...Ons\DBM-Core\Libs\Ace3\AceAddon-3.0\AceAddon-3.0.lua:636>
+<in C code>: in function `LoadAddOn'
+Interface\FrameXML\UIParent.lua:235: in function `UIParentLoadAddOn':
+Interface\FrameXML\UIParent.lua:258: in function `CombatLog_LoadUI':
+Interface\FrameXML\UIParent.lua:482: in function <Interface\FrameXML\UIParent.lua:454>:
+
+  ---
+```
+
+```
+1x ZygorGuidesViewer-2.0.1327\ZygorGuidesViewer.lua:2356: attempt to index field 'db' (a nil value)
+ZygorGuidesViewer-2.0.1327\ZygorGuidesViewerFrame.lua:436: in function <...\AddOns\ZygorGuidesViewer\ZygorGuidesViewerFrame.lua:426>
+
+Locals:
+self = ZygorGuidesViewerFrame {
+ ResizerBottomRight = ZygorGuidesViewerFrame_ResizerBottomRight {}
+ ThinFlash = ZygorGuidesViewerFrame_ThinFlash {}
+ ResizerBottomLeft = ZygorGuidesViewerFrame_ResizerBottomLeft {}
+ ResizerRight = ZygorGuidesViewerFrame_ResizerRight {}
+ ResizerLeft = ZygorGuidesViewerFrame_ResizerLeft {}
+ ResizerBottom = ZygorGuidesViewerFrame_ResizerBottom {}
+ Border = ZygorGuidesViewerFrame_Border {}
+ 0 = <userdata>
+}
+ZGVF = ZygorGuidesViewerFrame {
+ ResizerBottomRight = ZygorGuidesViewerFrame_ResizerBottomRight {}
+ ThinFlash = ZygorGuidesViewerFrame_ThinFlash {}
+ ResizerBottomLeft = ZygorGuidesViewerFrame_ResizerBottomLeft {}
+ ResizerRight = ZygorGuidesViewerFrame_ResizerRight {}
+ ResizerLeft = ZygorGuidesViewerFrame_ResizerLeft {}
+ ResizerBottom = ZygorGuidesViewerFrame_ResizerBottom {}
+ Border = ZygorGuidesViewerFrame_Border {}
+ 0 = <userdata>
+}
+Border = ZygorGuidesViewerFrame_Border {
+ Gear3 = ZygorGuidesViewerFrame_Border_Gear3 {}
+ TitleBar = ZygorGuidesViewerFrame_Border_TitleBar {}
+ Gears = <unnamed> {}
+ 0 = <userdata>
+ Gear1 = ZygorGuidesViewerFrame_Border_Gear1 {}
+ Gear2 = ZygorGuidesViewerFrame_Border_Gear2 {}
+}
+Skipper = ZygorGuidesViewerFrame_Skipper {
+ 0 = <userdata>
+ NextButton = ZygorGuidesViewerFrame_Skipper_NextButton {}
+ Step = ZygorGuidesViewerFrame_Skipper_Step {}
+ PrevButton = ZygorGuidesViewerFrame_Skipper_PrevButton {}
+}
+GuideButton = ZygorGuidesViewerFrame_Border_GuideButton {
+ c = <table> {}
+ ntx = <unnamed> {}
+ ptx = <unnamed> {}
+ in = ZygorGuidesViewerFrame_Border_GuideButton_in {}
+ blink = ZygorGuidesViewerFrame_Border_GuideButton_blink {}
+ dorot = <function> defined *:OnLoad:17
+ out = ZygorGuidesViewerFrame_Border_GuideButton_out {}
+ 0 = <userdata>
+ htx = <unnamed> {}
+ delay = 0
+ pos = 0
+}
+TitleBar = ZygorGuidesViewerFrame_Border_TitleBar {
+ 0 = <userdata>
+}
+ZGV = <table> {
+ STEPMARGIN_Y = 4
+ STEPMARGIN_X = 3
+ UPDATE_FACTION_Faction = <function> @ ZygorGuidesViewer\Faction.lua:119:
+ RaceClassMatch = <function> @ ZygorGuidesViewer\ZygorGuidesViewer.lua:2727:
+ modules = <table> {}
+ CancelTimer = <function> @ DBM-Core\Libs\Ace3\AceTimer-3.0\AceTimer-3.0.lua:166:
+ completedQuests = <table> {}
+ OnGuidesLoaded = <function> @ ZygorGuidesViewer\ZygorGuidesViewer.lua:3445:
+ GoalOnLeave = <function> @ ZygorGuidesViewer\ZygorGuidesViewer.lua:3178:
+ CacheReputations = <function> @ ZygorGuidesViewer\Faction.lua:39:
+ stepframes = <table> {}
+ SetIconAlpha = <function> @ ZygorGuidesViewer\Options.lua:1182:
+ CreateCartographerWaypoints = <function> @ ZygorGuidesViewer\Waypoints.lua:463:
+ SetDefaultModulePrototype = <function> @ DBM-Core\Libs\Ace3\AceAddon-3.0\AceAddon-3.0.lua:440:
+ QUEST_PROGRESS = <function> @ ZygorGuidesViewer\QuestAutoAccept.lua:161:
+ Options_SetupBlizConfig = <function> @ ZygorGuidesViewer\Options.lua:1133:
+ QUEST_COMPLETE = <function> @ ZygorGuidesViewer\QuestAutoAccept.lua:180:
+ framesLoaded = true
+ IsEnabled = <function> @ DBM-Core\Libs\Ace3\AceAddon-3.0\AceAddon-3.0.lua:482:
+ QuestTracking_ResetDailies = <function> @ ZygorGuidesViewer\QuestTracking.lua:203:
+ ScheduleTimer = <function> @ DBM-Core\Libs\Ace3\AceTimer-3.0\AceTimer-3.0.lua:113:
+ ApplyFrameLayout = <function> @ ZygorGuidesViewer\ZygorGuidesViewerFrame.lua:72:
+ registered_groups = <table> {}
+ AutodetectWaypointAddon = <function> @ ZygorGuidesViewer\Waypoints.lua:25:
+ LostQuestEvent = <function> @ ZygorGuidesViewer\ZygorGuidesViewer.lua:2984:
+ CacheRecipes = <function> @ ZygorGuidesViewer\Profession.lua:86:
+ RegisterMessage = <function> defined @AckisRecipeList\libs\CallbackHandler-1.0\CallbackHand
+  ---
+```
+
+```
+1x ZygorGuidesViewer-2.0.1327\MapCoords.lua:8: Cannot find a library with name 'Astrolabe-ZGV'
+HandyNotes-1.1.5\Libs\Astrolabe\DongleStub.lua:17: in function `DongleStub'
+ZygorGuidesViewer-2.0.1327\MapCoords.lua:8: in main chunk
+
+Locals:
+t = <table> {
+ GetVersion = <function> @ HandyNotes\Libs\Astrolabe\DongleStub.lua:108:
+ IsNewerVersion = <function> @ HandyNotes\Libs\Astrolabe\DongleStub.lua:22:
+ versions = <table> {}
+ log = <table> {}
+ Register = <function> @ HandyNotes\Libs\Astrolabe\DongleStub.lua:50:
+}
+k = "Astrolabe-ZGV"
+
+  ---
+```
