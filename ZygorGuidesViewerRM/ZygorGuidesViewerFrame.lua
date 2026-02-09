@@ -702,6 +702,11 @@ function ZygorGuidesViewerFrame_OnUpdate(self,elapsed)
 
 	local locked = ZGV.db.profile.windowlocked
 
+	local isRemaster = ZGV.db and ZGV.db.profile and ZGV.db.profile.skin == "remaster"
+	if isRemaster and ZygorGuidesViewerFrame_Border_GuideButton then
+		ZygorGuidesViewerFrame_Border_GuideButton:Hide()
+	end
+
 	-- auto-hide border
 	if ZGV.db.profile.hideborder then
 		-- never hide while the window is being moved
@@ -801,44 +806,46 @@ function ZygorGuidesViewerFrame_OnUpdate(self,elapsed)
 	end
 
 
-	-- title button slide in
-	local but = ZygorGuidesViewerFrame_Border_GuideButton
-	if Border:IsShown() and (MouseIsOver(TitleBar,0,0,50,-50) or not ZGV.CurrentGuide) and not ZGV.loading then
-		if locked then
-			xPos,yPos = GetCursorPosition()
-			if (not but.oldxPos or not but.oldyPos or xPos~=but.oldxPos or yPos~=but.oldyPos) and but.delay>0 then but.delay=0 end
-			but.oldxPos,but.oldyPos = xPos,yPos
+	if not isRemaster then
+		-- title button slide in
+		local but = ZygorGuidesViewerFrame_Border_GuideButton
+		if Border:IsShown() and (MouseIsOver(TitleBar,0,0,50,-50) or not ZGV.CurrentGuide) and not ZGV.loading then
+			if locked then
+				xPos,yPos = GetCursorPosition()
+				if (not but.oldxPos or not but.oldyPos or xPos~=but.oldxPos or yPos~=but.oldyPos) and but.delay>0 then but.delay=0 end
+				but.oldxPos,but.oldyPos = xPos,yPos
+			end
+
+			but.delay=but.delay+elapsed * (locked and 2 or 4)
+			if but.delay>1.5 or but.pos>0.01 then
+				but.pos = but.pos + elapsed*4
+				if but.pos>1 then but.pos=1 end
+				local a = 3.14159+0.34159+(math.sin(but.pos*1.5708))*2.8
+				but:Show()
+				but:dorot(a)
+			end
+		end
+		if but:IsShown() and not MouseIsOver(ZygorGuidesViewerFrame_Border_TitleBar,0,0,50,-50) and ZGV.CurrentGuide and not DropDownList1:IsShown() and not DropDownList2:IsShown() then
+			if but.pos<0.01 then
+				but:Hide()
+				if but.delay>0 then but.delay=0 end
+			else
+				but.pos = but.pos - elapsed*4
+				if but.pos<0 then but.pos=0 end
+				local a = 3.14159+0.34159+(math.sin(but.pos*1.5708))*2.8
+				but:dorot(a)
+			end
 		end
 
-		but.delay=but.delay+elapsed * (locked and 2 or 4)
-		if but.delay>1.5 or but.pos>0.01 then
-			but.pos = but.pos + elapsed*4
-			if but.pos>1 then but.pos=1 end
-			local a = 3.14159+0.34159+(math.sin(but.pos*1.5708))*2.8
-			but:Show()
-			but:dorot(a)
-		end
-	end
-	if but:IsShown() and not MouseIsOver(ZygorGuidesViewerFrame_Border_TitleBar,0,0,50,-50) and ZGV.CurrentGuide and not DropDownList1:IsShown() and not DropDownList2:IsShown() then
-		if but.pos<0.01 then
-			but:Hide()
-			if but.delay>0 then but.delay=0 end
-		else
-			but.pos = but.pos - elapsed*4
-			if but.pos<0 then but.pos=0 end
-			local a = 3.14159+0.34159+(math.sin(but.pos*1.5708))*2.8
-			but:dorot(a)
-		end
-	end
-
-	-- title button flash
-	if not ZGV.CurrentGuide and not ZGV.loading then
-		local t=GetTime()
-		t=t-floor(t)
-		if t>0.5 then
-			GuideButton:LockHighlight()
-		else
-			GuideButton:UnlockHighlight()
+		-- title button flash
+		if not ZGV.CurrentGuide and not ZGV.loading then
+			local t=GetTime()
+			t=t-floor(t)
+			if t>0.5 then
+				GuideButton:LockHighlight()
+			else
+				GuideButton:UnlockHighlight()
+			end
 		end
 	end
 

@@ -2856,13 +2856,7 @@ function me:ApplyRemasterSkin()
 	end
 
 	if ZygorGuidesViewerFrame_Skipper then
-		ZygorGuidesViewerFrame_Skipper:ClearAllPoints()
-		if remasterFrames and remasterFrames.footer then
-			ZygorGuidesViewerFrame_Skipper:SetParent(remasterFrames.footer)
-			ZygorGuidesViewerFrame_Skipper:SetPoint("RIGHT", remasterFrames.footer, "RIGHT", -6, 0)
-		else
-			ZygorGuidesViewerFrame_Skipper:SetPoint("TOPRIGHT", ZygorGuidesViewerFrame, "TOPRIGHT", -12, -40)
-		end
+		ZygorGuidesViewerFrame_Skipper:Hide()
 	end
 
 	local function placeButton(button, anchor, x, y, size)
@@ -2890,38 +2884,35 @@ function me:ApplyRemasterSkin()
 		ZygorGuidesViewerFrame_Border_LockButton:Hide()
 	end
 
-	if remasterFrames and remasterFrames.header then
-		remasterFrames.header:Show()
-	end
-	if remasterFrames and remasterFrames.separator then
-		remasterFrames.separator:Show()
-	end
-	if remasterFrames and remasterFrames.header then
-		remasterFrames.header:Show()
-	end
-	if remasterFrames and remasterFrames.headerTitle then
-		remasterFrames.headerTitle:Show()
-	end
-	if remasterFrames and remasterFrames.headerMeta then
-		remasterFrames.headerMeta:Show()
-	end
-	if remasterFrames and remasterFrames.guideButton then
-		remasterFrames.guideButton:Show()
-	end
 	if remasterFrames and remasterFrames.root then
 		remasterFrames.root:Show()
 	end
+	if remasterFrames and remasterFrames.header then
+		remasterFrames.header:Hide()
+	end
+	if remasterFrames and remasterFrames.separator then
+		remasterFrames.separator:Hide()
+	end
+	if remasterFrames and remasterFrames.headerTitle then
+		remasterFrames.headerTitle:Hide()
+	end
+	if remasterFrames and remasterFrames.headerMeta then
+		remasterFrames.headerMeta:Hide()
+	end
+	if remasterFrames and remasterFrames.guideButton then
+		remasterFrames.guideButton:Hide()
+	end
 	if remasterFrames and remasterFrames.closeButton then
-		remasterFrames.closeButton:Show()
+		remasterFrames.closeButton:Hide()
 	end
 	if remasterFrames and remasterFrames.settingsButton then
-		remasterFrames.settingsButton:Show()
+		remasterFrames.settingsButton:Hide()
 	end
 	if remasterFrames and remasterFrames.miniButton then
-		remasterFrames.miniButton:Show()
+		remasterFrames.miniButton:Hide()
 	end
 	if remasterFrames and remasterFrames.lockButton then
-		remasterFrames.lockButton:Show()
+		remasterFrames.lockButton:Hide()
 	end
 
 	if ZygorGuidesViewerFrame_Border_GuideButton then
@@ -2990,6 +2981,10 @@ function me:RestoreLegacySkin()
 			applyFrameLayout(ZygorGuidesViewerFrame_Border_LockButton, self.RemasterDefaults.layout.buttons.lock)
 			applyFrameLayout(ZygorGuidesViewerFrame_Border_MiniButton, self.RemasterDefaults.layout.buttons.mini)
 		end
+	end
+
+	if ZygorGuidesViewerFrame_Skipper then
+		ZygorGuidesViewerFrame_Skipper:Show()
 	end
 
 	if self.RemasterFrames then
