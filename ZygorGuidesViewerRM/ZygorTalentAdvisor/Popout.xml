@@ -1,0 +1,207 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ D:\UI.xsd">
+	<Frame name="ZygorTalentAdvisorPopout" parent="UIParent" movable="true" clampedToScreen="true" hidden="true" frameStrata="MEDIUM" toplevel="true" enableMouse="true">
+		<Size x="250" y="150"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentTitleBG" parentKey="TitleBG" file="Interface\PaperDollInfoFrame\UI-GearManager-Title-Background">
+					<Anchors>
+						<Anchor point="TOPLEFT"><Offset x="9" y="-6"/></Anchor>
+						<Anchor point="BOTTOMRIGHT" relativePoint="TOPRIGHT"><Offset x="-4" y="-24"/></Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentDialogBG" file="Interface\Tooltips\UI-Tooltip-Background">
+					<Anchors>
+						<Anchor point="TOPLEFT"><Offset x="8" y="-24"/></Anchor>
+						<Anchor point="BOTTOMRIGHT"><Offset x="-6" y="8"/></Anchor>
+					</Anchors>
+					<Color r="0" g="0" b="0" a=".85"/>
+				</Texture>
+			</Layer>
+			<Layer level="BORDER">
+				<Texture name="$parentTopLeft" file="Interface\PaperDollInfoFrame\UI-GearManager-Border">
+					<Size x="64" y="64"/>
+					<Anchors>
+						<Anchor point="TOPLEFT"/>
+					</Anchors>
+					<TexCoords left="0.501953125" right="0.625" top="0" bottom="1"/>
+				</Texture>			
+				<Texture name="$parentTopRight" parentKey="TopRight" file="">
+					<Size x="64" y="64"/>
+					<Anchors>
+						<Anchor point="TOPRIGHT"/>
+					</Anchors>
+					<TexCoords left="0.0" right="1.0" top="0.0" bottom="1.0"/>
+				</Texture>
+				<Texture name="$parentTop" file="Interface\PaperDollInfoFrame\UI-GearManager-Border">
+					<Size x="0" y="64"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentTopLeft" relativePoint="TOPRIGHT"/>
+						<Anchor point="TOPRIGHT" relativeTo="$parentTopRight" relativePoint="TOPLEFT"/>
+					</Anchors>
+					<TexCoords left="0.25" right="0.369140625" top="0" bottom="1"/>
+				</Texture>
+				<Texture name="$parentBottomLeft" file="Interface\PaperDollInfoFrame\UI-GearManager-Border">
+					<Size x="64" y="64"/>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT"/>
+					</Anchors>
+					<TexCoords left="0.751953125" right="0.875" top="0" bottom="1"/>
+				</Texture>			
+				<Texture name="$parentBottomRight" file="Interface\PaperDollInfoFrame\UI-GearManager-Border">
+					<Size x="64" y="64"/>
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT"/>
+					</Anchors>
+					<TexCoords left="0.875" right="1" top="0" bottom="1"/>
+				</Texture>
+				<Texture name="$parentBottom" file="Interface\PaperDollInfoFrame\UI-GearManager-Border">
+					<Size x="0" y="64"/>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" relativeTo="$parentBottomLeft" relativePoint="BOTTOMRIGHT"/>
+						<Anchor point="BOTTOMRIGHT" relativeTo="$parentBottomRight" relativePoint="BOTTOMLEFT"/>
+					</Anchors>
+					<TexCoords left="0.376953125" right="0.498046875" top="0" bottom="1"/>
+				</Texture>
+				<Texture name="$parentLeft" file="Interface\PaperDollInfoFrame\UI-GearManager-Border">
+					<Size x="64" y="0"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentTopLeft" relativePoint="BOTTOMLEFT"/>
+						<Anchor point="BOTTOMLEFT" relativeTo="$parentBottomLeft" relativePoint="TOPLEFT"/>
+					</Anchors>
+					<TexCoords left="0.001953125" right="0.125" top="0" bottom="1"/>
+				</Texture>
+				<Texture name="$parentRight" file="Interface\PaperDollInfoFrame\UI-GearManager-Border">
+					<Size x="64" y="0"/>
+					<Anchors>
+						<Anchor point="TOPRIGHT" relativeTo="$parentTopRight" relativePoint="BOTTOMRIGHT"/>
+						<Anchor point="BOTTOMRIGHT" relativeTo="$parentBottomRight" relativePoint="TOPRIGHT"/>
+					</Anchors>
+					<TexCoords left="0.1171875" right="0.2421875" top="0" bottom="1"/>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<FontString name="$parentTitle" parentKey="Title" inherits="GameFontNormal" text="">
+					<Anchors>
+						<Anchor point="TOPLEFT"><Offset x="12" y="-8"/></Anchor>
+						<Anchor point="TOPRIGHT"><Offset x="-12" y="-8"/></Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentSuggestionLabel" parentKey="suggestionLabel" inherits="GameFontNormalSmall" text="Suggestion:" justifyV="TOP" justifyH="LEFT">
+					<Size y="250"/>
+					<Anchors>
+						<Anchor point="TOPLEFT"><Offset x="10" y="-65"/></Anchor>
+						<Anchor point="TOPRIGHT"><Offset x="-10" y="-65"/></Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentPreviewButton" parentKey="preview" inherits="UIPanelButtonTemplate" text="">
+				<Size x="80" y="22"/>
+				<Anchors><Anchor point="BOTTOMLEFT"><Offset x="10" y="40"/></Anchor></Anchors>
+				<Scripts>
+					<OnClick>
+						if PlayerTalentFrameSpecialization:IsVisible() then
+							ZTA:PreviewSpecialization(ZTA.currentBuild.specindex)
+						elseif PlayerTalentFrameTalents:IsVisible() then
+							ZTA:PreviewSuggestedTalents(ZTA.needToLearn)
+						elseif PlayerTalentFramePetSpecialization:IsVisible() then
+							ZTA:PreviewSpecialization(ZTA.currentBuild.petspec,true)
+						end
+						
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(self,"ANCHOR_TOPLEFT")
+						GameTooltip:SetText(ZGV.L['talentpopup_preview_button_tooltip'])
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide()
+					</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="$parentAcceptButton" parentKey="accept" inherits="UIPanelButtonTemplate" text="">
+				<Size x="80" y="22"/>
+				<Anchors><Anchor point="BOTTOMRIGHT"><Offset x="-10" y="40"/></Anchor></Anchors>
+				<Scripts>
+					<OnClick>
+						if PlayerTalentFrameSpecialization:IsVisible() then
+							SetSpecialization(ZTA.currentBuild.specindex)
+						elseif PlayerTalentFrameTalents:IsVisible() then
+							ZTA:LearnSuggestedTalents(ZTA.needToLearn)
+						elseif PlayerTalentFramePetSpecialization:IsVisible() then
+							SetSpecialization(ZTA.currentBuild.petspec,true)
+						end
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(self,"ANCHOR_TOPLEFT")
+						GameTooltip:SetText(ZGV.L['talentpopup_learn_button_tooltip'])
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide()
+					</OnLeave>
+				</Scripts>
+				<Layers>
+					<Layer level="OVERLAY">
+						<Texture name="$parentBorder" file="Interface\Buttons\UI-MicroButton-Hilight" alphaMode="ADD">
+							<Anchors>
+								<Anchor point="TOPLEFT"><Offset x="-8" y="11"/></Anchor>
+								<Anchor point="BOTTOMRIGHT"><Offset x="8" y="0"/></Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+			</Button>
+			<Button name="$parentConfigureButton" parentKey="configure" inherits="UIPanelButtonTemplate" text="">
+				<Size x="120" y="22"/>
+				<Anchors>
+					<Anchor point="BOTTOM">
+						<Offset x="0" y="12"/>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						ZTA:OpenOptions()	
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(self,"ANCHOR_TOPLEFT")
+						GameTooltip:SetText(ZGV.L['talentpopup_configure_button_tooltip'])
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide()
+					</OnLeave>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				ZygorTalentAdvisorPopoutTopRight:SetTexture(ZGV.DIR.."\\ZygorTalentAdvisor\\Skin\\popout-noclose")
+			</OnLoad>
+		</Scripts>
+	</Frame>
+
+	<Button name="ZygorTalentAdvisorPopoutButton" hidden="true" parent="PlayerTalentFrame">
+		<Size x="24" y="44"/>
+		<Scripts>
+			<OnLoad>
+				ZygorTalentAdvisorPopoutButton:SetNormalTexture(ZGV.DIR.."\\ZygorTalentAdvisor\\Skin\\popout-button-2")
+				ZygorTalentAdvisorPopoutButton:SetPushedTexture(ZGV.DIR.."\\ZygorTalentAdvisor\\Skin\\popout-button-2-down")
+				ZygorTalentAdvisorPopoutButton:SetHighlightTexture(ZGV.DIR.."\\ZygorTalentAdvisor\\Skin\\popout-button-2-hi","ADD")
+			</OnLoad>
+			<OnEnter>
+				GameTooltip_AddNewbieTip(self, ZGV.L['talentpopup_name'], 1,1,1, ZGV.L['talentpopup_popout_button_tip'])
+			</OnEnter>
+			<OnLeave function="GameTooltip_Hide"/>
+			<OnClick>
+				if ZygorTalentAdvisorPopout:IsShown() then
+					ZygorTalentAdvisorPopout_Hide()
+				else
+					ZygorTalentAdvisorPopout_Show()
+				end
+			</OnClick>
+		</Scripts>
+		<NormalTexture file="" />
+		<PushedTexture file="" />
+		<HighlightTexture file="" alphaMode="" />
+	</Button>				
+
+</Ui>

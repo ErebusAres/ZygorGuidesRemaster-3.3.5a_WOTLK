@@ -1,0 +1,13 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<Script file="LibBabble-3.0.lua" />
+	<Script file="LibBabble-SubZone-3.0.lua" />
+<!--	<Script file="LibBabble-SubZone-3.0_de-DE.lua" />
+	<Script file="LibBabble-SubZone-3.0_fr-FR.lua" />
+	<Script file="LibBabble-SubZone-3.0_es-ES.lua" />
+	<Script file="LibBabble-SubZone-3.0_ko-KR.lua" />
+	<Script file="LibBabble-SubZone-3.0_pt-BR.lua" />
+	<Script file="LibBabble-SubZone-3.0_ru-RU.lua" />
+	<Script file="LibBabble-SubZone-3.0_zh-CN.lua" />
+	<Script file="LibBabble-SubZone-3.0_zh-TW.lua" />-->
+</Ui>
