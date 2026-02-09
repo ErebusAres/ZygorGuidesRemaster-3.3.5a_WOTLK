@@ -2,8 +2,8 @@
 ## Notes: Free multi-purpose leveling guide viewer.|n|nDesigned for use with Zygor Guides, but supporting user-supplied guides as well.
 ## Note-frFR: 
 ## Notes-esES: 
-## Title: |cffffff88Z|cffffee66y|cffffdd44g|cffffcc22o|cffffbb00r|r Guides Viewer
-## qqqTitle: |cffffff88Z|cffffee66y|cffffdd44g|cffffcc22o|cffffbb00r|r Guides Viewer |TInterface\AddOns\ZygorGuidesViewer\Skin\gnome:48:48:0:0|t
+## Title: |cffffff88Z|cffffee66y|cffffdd44g|cffffcc22o|cffffbb00r|r Guides Viewer Remastered
+## qqqTitle: |cffffff88Z|cffffee66y|cffffdd44g|cffffcc22o|cffffbb00r|r Guides Viewer Remastered |TInterface\AddOns\ZygorGuidesViewerRM\Skin\gnome:48:48:0:0|t
 ## Author: Sinus Pi
 ## DefaultState: enabled
 ## LoadOnDemand: 0

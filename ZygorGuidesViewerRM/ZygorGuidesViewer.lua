@@ -172,6 +172,33 @@ local function applyFrameLayout(frame, data)
 	end
 end
 
+local function safeSetFont(fontString, fontPath, size, flags)
+	if not fontString or not fontString.SetFont then
+		return false
+	end
+	local ok = pcall(fontString.SetFont, fontString, fontPath, size, flags)
+	return ok
+end
+
+function me:EnsureSectionTitleFont()
+	local title = ZygorGuidesViewerFrame_Border_SectionTitle
+	if not title or not title.GetFont then
+		return
+	end
+	local font = title:GetFont()
+	if font then
+		return
+	end
+	local size = 11
+	if self.db and self.db.profile and self.db.profile.skin == "remaster" then
+		size = 13
+		if safeSetFont(title, ZGV.DIR.."\\Skins\\segoeuib.ttf", size) then
+			return
+		end
+	end
+	safeSetFont(title, STANDARD_TEXT_FONT, size)
+end
+
 
 local math_modf=math.modf
 math.round=function(n) local x,y=math_modf(n) return n>0 and (y>=0.5 and x+1 or x) or (y<=-0.5 and x-1 or x) end
@@ -894,6 +921,8 @@ function me:UpdateFrame(full,onupdate)
 	if full then self.stepchanged=true end
 
 	if not self.Frame or not self.Frame:IsVisible() then return end
+
+	self:EnsureSectionTitleFont()
 
 	--if InCombatLockdown() then return end
 	--[[

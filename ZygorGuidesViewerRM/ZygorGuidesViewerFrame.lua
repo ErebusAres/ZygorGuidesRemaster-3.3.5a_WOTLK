@@ -29,6 +29,26 @@ local REMASTER_LAYOUT = {
 	LINE_FONT_SIZE = 11,
 }
 
+local function SafeSetFont(fontString, fontPath, size, flags)
+	if not fontString or not fontString.SetFont then
+		return
+	end
+	local ok = pcall(fontString.SetFont, fontString, fontPath, size, flags)
+	if not ok then
+		pcall(fontString.SetFont, fontString, STANDARD_TEXT_FONT, size or 11, flags)
+	end
+end
+
+local function EnsureFont(fontString, fallbackSize)
+	if not fontString or not fontString.GetFont then
+		return
+	end
+	local font = fontString:GetFont()
+	if not font then
+		SafeSetFont(fontString, STANDARD_TEXT_FONT, fallbackSize or 11)
+	end
+end
+
 local function CaptureDefaultLayout()
 	if ZGV.FrameLayoutDefaults then
 		return
@@ -62,9 +82,10 @@ local function ApplyLineLayout(line, layout, useRemaster)
 		line.label:SetPoint("TOPLEFT", layout.ICON_INDENT, 0)
 		line.label:SetPoint("TOPRIGHT", 0, 0)
 		if useRemaster then
-			line.label:SetFont(layout.LINE_FONT, layout.LINE_FONT_SIZE)
+			SafeSetFont(line.label, layout.LINE_FONT, layout.LINE_FONT_SIZE)
 		else
 			line.label:SetFontObject("GameFontHighlightSmall")
+			EnsureFont(line.label, 10)
 		end
 	end
 end
@@ -86,7 +107,12 @@ function ZGV:ApplyFrameLayout()
 	self.MIN_STEP_HEIGHT = layout.MIN_STEP_HEIGHT
 
 	if ZygorGuidesViewerFrame_Border_SectionTitle then
-		ZygorGuidesViewerFrame_Border_SectionTitle:SetFont(layout.SECTION_FONT, layout.SECTION_FONT_SIZE)
+		if useRemaster then
+			SafeSetFont(ZygorGuidesViewerFrame_Border_SectionTitle, layout.SECTION_FONT, layout.SECTION_FONT_SIZE)
+		else
+			ZygorGuidesViewerFrame_Border_SectionTitle:SetFontObject("GameFontSmall")
+			EnsureFont(ZygorGuidesViewerFrame_Border_SectionTitle, 11)
+		end
 	end
 
 	if self.stepframes then
