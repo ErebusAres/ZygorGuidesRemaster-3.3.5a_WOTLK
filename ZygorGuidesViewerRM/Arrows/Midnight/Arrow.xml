@@ -1,0 +1,158 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/FrameXML/UI.xsd">
+
+	<Script file="Arrow.lua"/>
+
+	<Button name="ZygorGuidesViewerFrame_Arrow_template_midnight" virtual="true" hidden="false" movable="true" enableMouse="false" frameStrata="MEDIUM" clampedToScreen="true">
+		<Size x="50" y="50"/>
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER" />
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="back" file="__\Arrows\Midnight\arrow-back">
+					<Size x="30" y="30"/>
+					<Anchors>
+						<Anchor point="CENTER" relativePoint="CENTER" ><Offset x="0" y="0"/></Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK" textureSubLevel="1">
+				<Texture parentKey="precise" name="$parentPrecise" file="__\Arrows\Midnight\arrow-precise" subLevel="2">
+					<Size x="30" y="30"/>
+					<Anchors>
+						<Anchor point="CENTER" relativePoint="CENTER" ><Offset x="0" y="0"/></Anchor>
+					</Anchors>
+					<Animations>
+						<AnimationGroup parentKey="turn" looping="NONE">
+							<Rotation parentKey="anim" degrees="360" duration="0" smoothing="NONE" order="1" />
+							<Translation duration="10.0" smoothing="NONE" order="2"><Scripts><OnPlay>self:GetParent():Pause()</OnPlay></Scripts></Translation>
+						</AnimationGroup>
+					</Animations>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK" textureSubLevel="2">
+				<Texture parentKey="arrow" name="$parentArrow" file="__\Arrows\Midnight\arrow" subLevel="1">
+					<Size x="45" y="45"/>
+					<Anchors>
+						<Anchor point="CENTER" relativePoint="CENTER" />
+					</Anchors>
+					<Animations>
+						<AnimationGroup parentKey="turn" looping="NONE">
+							<Rotation parentKey="anim" degrees="360" duration="0" smoothing="NONE" order="1" />
+							<Translation duration="10.0" smoothing="NONE" order="2"><Scripts><OnPlay>self:GetParent():Pause()</OnPlay></Scripts></Translation>
+						</AnimationGroup>
+						<AnimationGroup parentKey="redflash" looping="ONCE">
+							<Animation parentKey="redf" duration="0.5" maxFramerate="15" smoothing="OUT" order="2">
+								<Scripts>
+									<OnUpdate>
+										local pro=self:GetSmoothProgress()
+										self:GetRegionParent():SetVertexColor(1.0,1.0-pro,1.0-pro)
+									</OnUpdate>
+								</Scripts>
+							</Animation>
+						</AnimationGroup>
+						<AnimationGroup parentKey="upstairs" looping="REPEAT">
+							<Animation parentKey="ups" duration="1.0" smoothing="NONE" order="1">
+								<Scripts>
+									<OnPlay>
+										local t = self:GetRegionParent()
+										t.turn.anim:SetRadians(0)
+									</OnPlay>
+									<OnUpdate>
+										local pro=self:GetSmoothProgress()
+										local t = self:GetRegionParent()
+										if pro&lt;0.5 then
+											t:SetAlpha(pro*2)
+											t:SetPoint("CENTER",t:GetParent(),"CENTER",0,-10+pro*20)
+										else
+											t:SetAlpha((1-pro)*2)
+											t:SetPoint("CENTER",t:GetParent(),"CENTER",0,-10+pro*20)
+										end
+									</OnUpdate>
+									<OnStop>
+											local t = self:GetRegionParent()
+											t:SetPoint("CENTER",t:GetParent(),"CENTER")
+											t:SetAlpha(1)
+									</OnStop>
+								</Scripts>
+							</Animation>
+						</AnimationGroup>
+						<AnimationGroup parentKey="downstairs" looping="REPEAT">
+							<Animation parentKey="ups" duration="1.0" smoothing="NONE" order="1">
+								<Scripts>
+									<OnPlay>
+										local t = self:GetRegionParent()
+										t.turn.anim:SetRadians(3.1415)
+										t.turn:Play()
+									</OnPlay>
+									<OnUpdate>
+										local pro=self:GetSmoothProgress()
+										local t = self:GetRegionParent()
+										if pro&lt;0.5 then
+											t:SetAlpha(pro*2)
+											t:SetPoint("CENTER",t:GetParent(),"CENTER",0,10-pro*20)
+										else
+											t:SetAlpha((1-pro)*2)
+											t:SetPoint("CENTER",t:GetParent(),"CENTER",0,10-pro*20)
+										end
+									</OnUpdate>
+									<OnStop>
+											local t = self:GetRegionParent()
+											t:SetPoint("CENTER",t:GetParent(),"CENTER")
+											t:SetAlpha(1)
+									</OnStop>
+								</Scripts>
+							</Animation>
+						</AnimationGroup>
+					</Animations>
+				</Texture>
+				<Texture parentKey="here" name="$parentHere" file="__\Arrows\Midnight\arrow-here" subLevel="1">
+					<Size x="37" y="37"/>
+					<Anchors>
+						<Anchor point="CENTER" relativePoint="CENTER" />
+					</Anchors>
+					<Animations>
+						<AnimationGroup parentKey="zoomy" looping="BOUNCE">
+							<Animation duration="0.5" maxFramerate="15" smoothing="IN_OUT" order="1">
+								<Scripts>
+									<OnPlay>
+										-- ONLY for step 1
+										self.f = self:GetRegionParent()
+									</OnPlay>
+									<OnUpdate>
+										self.f:SetWidth(37 - self:GetSmoothProgress()*15)
+										self.f:SetHeight(37 - self:GetSmoothProgress()*15)
+									</OnUpdate>
+									<OnFinished>
+										self.f:SetWidth(37)
+										self.f:SetHeight(37)
+									</OnFinished>
+								</Scripts>
+							</Animation>
+						</AnimationGroup>
+					</Animations>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK" textureSubLevel="3">
+				<FontString parentKey="title" name="$parentTitle" justifyH="CENTER" justifyV="TOP" inherits="GameFontHighlightSmall" subLevel="2">
+					<Anchors>
+						<Anchor relativeTo="$parent" relativePoint="BOTTOM" point="TOP"><Offset x="0" y="3"/></Anchor>
+					</Anchors>
+					<Size x="200" y="0"/>
+					<FontHeight val="10"/>
+				</FontString>
+			</Layer>
+		</Layers>
+
+		<Scripts>
+			<OnLoad>
+			self:ClearAllPoints()
+			self:SetPoint("CENTER",ZygorGuidesViewerPointer_ArrowCtrl,"CENTER")
+			</OnLoad>
+			<OnDragStart> ZygorGuidesViewerPointer_ArrowCtrl:StartMoving() self.dragging=true </OnDragStart>
+			<OnDragStop> ZygorGuidesViewerPointer_ArrowCtrl:StopMovingOrSizing()  self.dragging=nil</OnDragStop>
+			<OnShow> ZygorGuidesViewer.Pointer.ArrowFrame_OnShow(self) </OnShow>
+			<OnMouseWheel> self:OnMouseWheel(delta) </OnMouseWheel>
+		</Scripts>
+	</Button>
+</Ui>
