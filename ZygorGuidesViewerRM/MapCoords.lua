@@ -5,7 +5,27 @@ local ZGV=ZygorGuidesViewer
 local MapCoords = {}
 ZGV.MapCoords = MapCoords
 
-local Astrolabe = DongleStub("Astrolabe-ZGV")
+local Astrolabe = nil
+if DongleStub then
+	local ok, lib = pcall(DongleStub, "Astrolabe-ZGV")
+	if ok and lib then
+		Astrolabe = lib
+	else
+		ok, lib = pcall(DongleStub, "Astrolabe-0.4")
+		if ok and lib then
+			Astrolabe = lib
+		end
+	end
+end
+if not Astrolabe and LibStub then
+	local ok, lib = pcall(LibStub, "Astrolabe-0.4")
+	if ok and lib then
+		Astrolabe = lib
+	end
+end
+if not Astrolabe then
+	error("Astrolabe library not found (Astrolabe-ZGV or Astrolabe-0.4).")
+end
 
 MapCoords.Debug = ZGV.Debug
 

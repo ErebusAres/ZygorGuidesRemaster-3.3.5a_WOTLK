@@ -432,7 +432,7 @@ function ZygorGuidesViewerFrame_OnLoad(self)
 
 	if ZGV then
 		ZGV.framesLoaded = true
-		if ZGV.UpdateSkin then
+		if ZGV.UpdateSkin and ZGV.db and ZGV.db.profile then
 			ZGV:UpdateSkin()
 		end
 	end

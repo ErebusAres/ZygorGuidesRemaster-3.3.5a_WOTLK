@@ -29,7 +29,8 @@ local Gratuity = LibStub("LibGratuity-3.0")
 me.registeredguides = {}
 me.registeredmapspotsets = {}
 
-local DIR = "Interface\\AddOns\\ZygorGuidesViewer"
+local addonName = ...
+local DIR = "Interface\\AddOns\\"..(addonName or "ZygorGuidesViewer")
 ZGV.DIR = DIR
 local SKINDIR = ""
 
@@ -2405,8 +2406,12 @@ function me:UpdateSkin()
 	ZygorGuidesViewerFrameScrollScrollBarScrollDownButton:SetPushedTexture		(CreateTextureWithCoords(ZygorGuidesViewerFrameScrollScrollBarScrollDownButton,	SKINDIR.."\\titlebuttons",0.875,1.000,0.25,0.50))
 	ZygorGuidesViewerFrameScrollScrollBarScrollDownButton:SetDisabledTexture	(CreateTextureWithCoords(ZygorGuidesViewerFrameScrollScrollBarScrollDownButton,	SKINDIR.."\\titlebuttons",0.875,1.000,0.75,1.00))
 	ZygorGuidesViewerFrameScrollScrollBarScrollDownButton:SetHighlightTexture	(CreateTextureWithCoords(ZygorGuidesViewerFrameScrollScrollBarScrollDownButton,	SKINDIR.."\\titlebuttons",0.875,1.000,0.50,0.75))
-	ZygorGuidesViewerFrameScrollScrollBarThumbTexture:SetTexture(SKINDIR.."\\leavesofsteel")
-	ZygorGuidesViewerFrameScrollScrollBarTrackerTexture:SetTexture(SKINDIR.."\\leavesofsteel")
+	if ZygorGuidesViewerFrameScrollScrollBarThumbTexture then
+		ZygorGuidesViewerFrameScrollScrollBarThumbTexture:SetTexture(SKINDIR.."\\leavesofsteel")
+	end
+	if ZygorGuidesViewerFrameScrollScrollBarTrackerTexture then
+		ZygorGuidesViewerFrameScrollScrollBarTrackerTexture:SetTexture(SKINDIR.."\\leavesofsteel")
+	end
 
 	if self.db.profile.skin == "remaster" then
 		self:ApplyRemasterSkin()
