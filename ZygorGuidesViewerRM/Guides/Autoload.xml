@@ -1,0 +1,65 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<!-- Autoloading of included guides. Add your Guide##.lua files here as you please. -->
+	
+	<Script file="ZygorGuidesAlliance.lua"/>
+	<Script file="ZygorGuidesHorde.lua"/>
+	<Script file="ZygorGuidesAllianceCata.lua"/>
+	<Script file="ZygorDailiesAlliance.lua"/>
+	<Script file="ZygorDailiesHorde.lua"/>
+	<Script file="ZygorGoldAlliance.lua"/>
+	<Script file="ZygorGoldHorde.lua"/>
+	<Script file="ZygorDungeonAlliance.lua"/>
+	<Script file="ZygorDungeonHorde.lua"/>
+	<Script file="ZygorUAlliance.lua"/>
+	<Script file="ZygorUHorde.lua"/>
+
+	<Script file="ZygorGuidesAllianceTrial.lua"/>
+	<Script file="ZygorGuidesHordeTrial.lua"/>
+	<Script file="ZygorDailiesAllianceTrial.lua"/>
+	<Script file="ZygorDailiesHordeTrial.lua"/>
+	<Script file="ZygorGoldAllianceTrial.lua"/>
+	<Script file="ZygorGoldHordeTrial.lua"/>
+
+	<Script file="Guide01.lua"/>
+	<Script file="Guide02.lua"/>
+	<Script file="Guide03.lua"/>
+	<Script file="Guide04.lua"/>
+	<Script file="Guide05.lua"/>
+	<Script file="Guide06.lua"/>
+	<Script file="Guide07.lua"/>
+	<Script file="Guide08.lua"/>
+	<Script file="Guide09.lua"/>
+	<Script file="Guide10.lua"/>
+	<Script file="Guide11.lua"/>
+	<Script file="Guide12.lua"/>
+	<Script file="Guide13.lua"/>
+	<Script file="Guide14.lua"/>
+	<Script file="Guide15.lua"/>
+	<Script file="Guide16.lua"/>
+	<Script file="Guide17.lua"/>
+	<Script file="Guide18.lua"/>
+	<Script file="Guide19.lua"/>
+	<Script file="Guide20.lua"/>
+	<Script file="Guide21.lua"/>
+	<Script file="Guide22.lua"/>
+	<Script file="Guide23.lua"/>
+	<Script file="Guide24.lua"/>
+	<Script file="Guide25.lua"/>
+	<Script file="Guide26.lua"/>
+	<Script file="Guide27.lua"/>
+	<Script file="Guide28.lua"/>
+	<Script file="Guide29.lua"/>
+	<Script file="Guide30.lua"/>
+	<Script file="Guide31.lua"/>
+	<Script file="Guide32.lua"/>
+	<Script file="Guide33.lua"/>
+	<Script file="Guide34.lua"/>
+	<Script file="Guide35.lua"/>
+	<Script file="Guide36.lua"/>
+	<Script file="Guide37.lua"/>
+	<Script file="Guide38.lua"/>
+	<Script file="Guide39.lua"/>
+	<Script file="Guide40.lua"/>
+
+</Ui>
