@@ -2806,6 +2806,16 @@ function me:ApplyRemasterSkin()
 		remasterFrames.guideButton:Show()
 	end
 
+	if ZygorGuidesViewerFrame_Border_GuideButton then
+		ZygorGuidesViewerFrame_Border_GuideButton:Hide()
+	end
+	if ZygorGuidesViewerFrame_Border_Flash then
+		ZygorGuidesViewerFrame_Border_Flash:Hide()
+	end
+	if ZygorGuidesViewerFrame_ThinFlash then
+		ZygorGuidesViewerFrame_ThinFlash:Hide()
+	end
+
 	if self.db and self.db.profile then
 		self.db.profile.goalbackincomplete = { r = 0.18, g = 0.20, b = 0.25, a = 0.65 }
 		self.db.profile.goalbackprogressing = { r = 0.18, g = 0.28, b = 0.35, a = 0.75 }
@@ -2872,6 +2882,16 @@ function me:RestoreLegacySkin()
 		if self.RemasterFrames.guideButton then
 			self.RemasterFrames.guideButton:Hide()
 		end
+	end
+
+	if ZygorGuidesViewerFrame_Border_GuideButton then
+		ZygorGuidesViewerFrame_Border_GuideButton:Show()
+	end
+	if ZygorGuidesViewerFrame_Border_Flash then
+		ZygorGuidesViewerFrame_Border_Flash:Show()
+	end
+	if ZygorGuidesViewerFrame_ThinFlash then
+		ZygorGuidesViewerFrame_ThinFlash:Show()
 	end
 
 	if ZygorGuidesViewerFrame_Border_SectionTitle then
