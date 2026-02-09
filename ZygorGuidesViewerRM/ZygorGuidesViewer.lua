@@ -208,10 +208,11 @@ function me:EnsureRemasterFrames()
 	end
 	local frames = {}
 
-	local root = CreateFrame("Frame", nil, ZygorGuidesViewerFrame)
-	root:SetPoint("TOPLEFT", ZygorGuidesViewerFrame, "TOPLEFT", 6, -6)
-	root:SetPoint("BOTTOMRIGHT", ZygorGuidesViewerFrame, "BOTTOMRIGHT", -6, 6)
-	root:SetFrameLevel(ZygorGuidesViewerFrame:GetFrameLevel() + 1)
+	local root = CreateFrame("Frame", "ZGVRemasterFrame", UIParent)
+	root:SetPoint("TOPLEFT", ZygorGuidesViewerFrame, "TOPLEFT", 0, 0)
+	root:SetPoint("BOTTOMRIGHT", ZygorGuidesViewerFrame, "BOTTOMRIGHT", 0, 0)
+	root:SetFrameStrata("MEDIUM")
+	root:SetFrameLevel(ZygorGuidesViewerFrame:GetFrameLevel() + 2)
 	root:SetBackdrop({
 		bgFile = "Interface\\Buttons\\white8x8",
 		edgeFile = "Interface\\Buttons\\white8x8",
@@ -2786,17 +2787,8 @@ function me:ApplyRemasterSkin()
 		end
 	end
 
-	if ZygorGuidesViewerFrame_Border then
-		ZygorGuidesViewerFrame_Border:SetBackdrop({
-			bgFile = "Interface\\Buttons\\white8x8",
-			edgeFile = "Interface\\Buttons\\white8x8",
-			tile = true,
-			tileSize = 16,
-			edgeSize = 1,
-			insets = { left = 1, right = 1, top = 1, bottom = 1 },
-		})
-		ZygorGuidesViewerFrame_Border:SetBackdropColor(0.08, 0.09, 0.12, 0.9)
-		ZygorGuidesViewerFrame_Border:SetBackdropBorderColor(0.2, 0.22, 0.26, 0.8)
+	if remasterFrames and remasterFrames.root then
+		remasterFrames.root:Show()
 	end
 
 	local function hideTexture(name)
@@ -2831,11 +2823,6 @@ function me:ApplyRemasterSkin()
 	hideTexture("ZygorGuidesViewerFrame_Border_Gear3")
 
 	if ZygorGuidesViewerFrame_Border_SectionTitle then
-		ZygorGuidesViewerFrame_Border_SectionTitle:ClearAllPoints()
-		ZygorGuidesViewerFrame_Border_SectionTitle:SetPoint("TOPLEFT", ZygorGuidesViewerFrame, "TOPLEFT", 14, -10)
-		ZygorGuidesViewerFrame_Border_SectionTitle:SetPoint("TOPRIGHT", ZygorGuidesViewerFrame, "TOPRIGHT", -120, -10)
-		ZygorGuidesViewerFrame_Border_SectionTitle:SetJustifyH("LEFT")
-		ZygorGuidesViewerFrame_Border_SectionTitle:SetTextColor(0.92, 0.94, 0.98, 1)
 		ZygorGuidesViewerFrame_Border_SectionTitle:SetAlpha(0)
 	end
 
@@ -2843,16 +2830,11 @@ function me:ApplyRemasterSkin()
 		ZygorGuidesViewerFrame_Border_TitleBar:SetHeight(26)
 	end
 
-	if ZygorGuidesViewerFrameScroll then
+	if ZygorGuidesViewerFrameScroll and remasterFrames and remasterFrames.content then
 		ZygorGuidesViewerFrameScroll:ClearAllPoints()
-		if remasterFrames and remasterFrames.content then
-			ZygorGuidesViewerFrameScroll:SetParent(remasterFrames.content)
-			ZygorGuidesViewerFrameScroll:SetPoint("TOPLEFT", remasterFrames.content, "TOPLEFT", 8, -8)
-			ZygorGuidesViewerFrameScroll:SetPoint("BOTTOMRIGHT", remasterFrames.content, "BOTTOMRIGHT", -8, 8)
-		else
-			ZygorGuidesViewerFrameScroll:SetPoint("TOPLEFT", ZygorGuidesViewerFrame, "TOPLEFT", 16, -42)
-			ZygorGuidesViewerFrameScroll:SetPoint("BOTTOMRIGHT", ZygorGuidesViewerFrame, "BOTTOMRIGHT", -16, 16)
-		end
+		ZygorGuidesViewerFrameScroll:SetParent(remasterFrames.content)
+		ZygorGuidesViewerFrameScroll:SetPoint("TOPLEFT", remasterFrames.content, "TOPLEFT", 8, -8)
+		ZygorGuidesViewerFrameScroll:SetPoint("BOTTOMRIGHT", remasterFrames.content, "BOTTOMRIGHT", -8, 8)
 	end
 
 	if ZygorGuidesViewerFrame_Skipper then
@@ -2884,36 +2866,15 @@ function me:ApplyRemasterSkin()
 		ZygorGuidesViewerFrame_Border_LockButton:Hide()
 	end
 
-	if remasterFrames and remasterFrames.root then
-		remasterFrames.root:Show()
-	end
-	if remasterFrames and remasterFrames.header then
-		remasterFrames.header:Hide()
-	end
-	if remasterFrames and remasterFrames.separator then
-		remasterFrames.separator:Hide()
-	end
-	if remasterFrames and remasterFrames.headerTitle then
-		remasterFrames.headerTitle:Hide()
-	end
-	if remasterFrames and remasterFrames.headerMeta then
-		remasterFrames.headerMeta:Hide()
-	end
-	if remasterFrames and remasterFrames.guideButton then
-		remasterFrames.guideButton:Hide()
-	end
-	if remasterFrames and remasterFrames.closeButton then
-		remasterFrames.closeButton:Hide()
-	end
-	if remasterFrames and remasterFrames.settingsButton then
-		remasterFrames.settingsButton:Hide()
-	end
-	if remasterFrames and remasterFrames.miniButton then
-		remasterFrames.miniButton:Hide()
-	end
-	if remasterFrames and remasterFrames.lockButton then
-		remasterFrames.lockButton:Hide()
-	end
+	if remasterFrames and remasterFrames.header then remasterFrames.header:Hide() end
+	if remasterFrames and remasterFrames.separator then remasterFrames.separator:Hide() end
+	if remasterFrames and remasterFrames.headerTitle then remasterFrames.headerTitle:Hide() end
+	if remasterFrames and remasterFrames.headerMeta then remasterFrames.headerMeta:Hide() end
+	if remasterFrames and remasterFrames.guideButton then remasterFrames.guideButton:Hide() end
+	if remasterFrames and remasterFrames.closeButton then remasterFrames.closeButton:Hide() end
+	if remasterFrames and remasterFrames.settingsButton then remasterFrames.settingsButton:Hide() end
+	if remasterFrames and remasterFrames.miniButton then remasterFrames.miniButton:Hide() end
+	if remasterFrames and remasterFrames.lockButton then remasterFrames.lockButton:Hide() end
 
 	if ZygorGuidesViewerFrame_Border_GuideButton then
 		ZygorGuidesViewerFrame_Border_GuideButton:Hide()
@@ -2926,6 +2887,10 @@ function me:ApplyRemasterSkin()
 	end
 	if ZygorGuidesViewerFrame_Border then
 		ZygorGuidesViewerFrame_Border:Hide()
+	end
+	if ZygorGuidesViewerFrame then
+		ZygorGuidesViewerFrame:SetAlpha(0.01)
+		ZygorGuidesViewerFrame:EnableMouse(false)
 	end
 
 	if self.db and self.db.profile then
@@ -3031,6 +2996,10 @@ function me:RestoreLegacySkin()
 	end
 	if ZygorGuidesViewerFrame_Border then
 		ZygorGuidesViewerFrame_Border:Show()
+	end
+	if ZygorGuidesViewerFrame then
+		ZygorGuidesViewerFrame:SetAlpha(1)
+		ZygorGuidesViewerFrame:EnableMouse(true)
 	end
 
 	if ZygorGuidesViewerFrame_Border_SectionTitle then
