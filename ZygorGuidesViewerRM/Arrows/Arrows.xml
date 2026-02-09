@@ -1,0 +1,10 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/FrameXML/UI.xsd">
+
+	<!-- arrows -->
+	<Include file="Cloqwerk\Arrow.xml"/>
+	<Include file="Midnight\Arrow.xml"/>
+	<Include file="3D-Gem\Arrow.xml"/>
+	<Include file="SilverSprite\Arrow.xml"/>
+	<Include file="Stealth\Arrow.xml"/>
+
+</Ui>

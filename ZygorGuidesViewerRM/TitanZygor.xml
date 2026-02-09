@@ -1,0 +1,26 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<Script file="TitanZygor.lua"/>
+	<Frame parent="UIParent">
+		<Frames>
+			<Button name="TitanPanelZygorButton" inherits="TitanPanelComboTemplate" frameStrata="FULLSCREEN" toplevel="true">
+				<Scripts>
+					<OnLoad>
+						if not TITAN_VERSION then return end
+						TitanPanelZygorButton_OnLoad(self)
+						TitanPanelButton_OnLoad(self)
+					</OnLoad>
+					<OnEvent>
+						if not TITAN_VERSION then return end
+						TitanPanelZygorButton_OnEvent(self, event, ...)
+					</OnEvent>
+					<OnClick>
+						if not TITAN_VERSION then return end
+						TitanPanelZygorButton_OnClick(self, button)
+						TitanPanelButton_OnClick(self, button)
+					</OnClick>					
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>		
+</Ui>

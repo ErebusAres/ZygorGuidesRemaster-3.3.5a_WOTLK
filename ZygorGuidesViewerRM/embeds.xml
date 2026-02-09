@@ -1,0 +1,47 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<Script file="libs\LibStub\LibStub.lua"/>
+<!--
+	<Include file="Libs\LibSimpleOptions-1.0\lib.xml" />
+	<Script file="Libs\AceLibrary\AceLibrary.lua"/>
+	<Script file="Libs\AceOO-2.0\AceOO-2.0.lua"/>
+	<Script file="Libs\AceEvent-2.0\AceEvent-2.0.lua"/>
+	<Script file="Libs\AceAddon-2.0\AceAddon-2.0.lua"/>
+	<Script file="Libs\AceDB-2.0\AceDB-2.0.lua"/>
+	<Script file="Libs\AceHook-2.1\AceHook-2.1.lua"/>
+	<Script file="Libs\AceLocale-2.2\AceLocale-2.2.lua"/>
+	<Script file="Libs\AceConsole-2.0\AceConsole-2.0.lua"/>
+	<Script file="Libs\AceModuleCore-2.0\AceModuleCore-2.0.lua"/>
+-->
+	<Include file="Libs\CallbackHandler-1.0\CallbackHandler-1.0.xml"/>
+	<Include file="Libs\AceAddon-3.0\AceAddon-3.0.xml"/>
+	<Include file="Libs\AceGUI-3.0\AceGUI-3.0.xml"/>
+	<Include file="Libs\AceConfig-3.0\AceConfig-3.0.xml"/>
+	<Include file="Libs\AceEvent-3.0\AceEvent-3.0.xml"/>
+	<Include file="Libs\AceDB-3.0\AceDB-3.0.xml"/>
+	<Include file="Libs\AceDBOptions-3.0\AceDBOptions-3.0.xml"/>
+	<Include file="Libs\AceHook-3.0\AceHook-3.0.xml"/>
+	<Include file="Libs\AceLocale-3.0\AceLocale-3.0.xml"/>
+	<Include file="Libs\AceConsole-3.0\AceConsole-3.0.xml"/>
+	<Include file="Libs\AceTimer-3.0\AceTimer-3.0.xml"/>
+	<Include file="Libs\LibBabble-Zone-3.0\lib.xml"/>
+	<Include file="Libs\LibBabble-Faction-3.0\lib.xml"/>
+	<Include file="Libs\LibBetterBlizzOptions-1.0\lib.xml"/>
+	<Include file="Libs\LibGratuity-3.0\lib.xml"/>
+	<Include file="Libs\LibCamera-1.0\lib.xml"/>
+	<Include file="Libs\LibTaxi-1.0\lib.xml"/>
+	<!-- <Include file="Libs\LibRover-1.0\lib.xml"/> -->
+
+	<!--
+	<Include file="Libs\LibQuestWatch-1.0\lib.xml"/>
+	-->
+	
+	<Include file="Libs\Astrolabe\load.xml"/>
+
+	<!--
+	<Script file="Libs\old\AceConsole-2.0\AceConsole-2.0.lua"/>
+	#Libs\AceComm-2.0\AceComm-2.0.lua
+	#Libs\Dewdrop-2.0\Dewdrop-2.0.lua
+	#Libs\Tablet-2.0\Tablet-2.0.lua
+	-->
+</Ui>

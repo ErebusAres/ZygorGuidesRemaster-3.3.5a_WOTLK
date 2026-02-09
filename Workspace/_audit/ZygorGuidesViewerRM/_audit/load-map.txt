@@ -1,0 +1,775 @@
+Load map audit (source: Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer)
+Generated: 2026-02-09 10:01:44
+
+MISSING_REFERENCES
+Daily.lua
+Dev.lua
+Guide03.lua
+Guide04.lua
+Guide05.lua
+Guide06.lua
+Guide07.lua
+Guide08.lua
+Guide09.lua
+Guide10.lua
+Guide11.lua
+Guide12.lua
+Guide13.lua
+Guide14.lua
+Guide15.lua
+Guide16.lua
+Guide17.lua
+Guide18.lua
+Guide19.lua
+Guide20.lua
+Guide21.lua
+Guide22.lua
+Guide23.lua
+Guide24.lua
+Guide25.lua
+Guide26.lua
+Guide27.lua
+Guide28.lua
+Guide29.lua
+Guide30.lua
+Guide31.lua
+Guide32.lua
+Guide33.lua
+Guide34.lua
+Guide35.lua
+Guide36.lua
+Guide37.lua
+Guide38.lua
+Guide39.lua
+Guide40.lua
+MapCoords.lua
+MapSpotsDetector.lua
+skinned
+ZygorDailiesAllianceTrial.lua
+ZygorDailiesHordeTrial.lua
+ZygorDungeonAlliance.lua
+ZygorDungeonHorde.lua
+ZygorGoldAlliance.lua
+ZygorGoldAllianceTrial.lua
+ZygorGoldHorde.lua
+ZygorGoldHordeTrial.lua
+ZygorGuidesAllianceCata.lua
+ZygorGuidesAllianceTrial.lua
+ZygorGuidesHordeTrial.lua
+ZygorUAlliance.lua
+ZygorUHorde.lua
+
+PRESENT_REFERENCES
+Data\Chains.lua
+Data\data.xml
+embeds.xml
+Faction.lua
+files.xml
+Foglight.lua
+Functions.lua
+Goal.lua
+Guides\Autoload.xml
+Guides\Guide01.lua
+Guides\Guide02.lua
+Guides\ZygorDailiesAlliance.lua
+Guides\ZygorDailiesHorde.lua
+Guides\ZygorGuidesAlliance.lua
+Guides\ZygorGuidesHorde.lua
+Libs\AceAddon-3.0\AceAddon-3.0.lua
+Libs\AceAddon-3.0\AceAddon-3.0.xml
+Libs\AceConfig-3.0\AceConfig-3.0.lua
+Libs\AceConfig-3.0\AceConfig-3.0.xml
+Libs\AceConfig-3.0\AceConfigCmd-3.0\AceConfigCmd-3.0.lua
+Libs\AceConfig-3.0\AceConfigCmd-3.0\AceConfigCmd-3.0.xml
+Libs\AceConfig-3.0\AceConfigDialog-3.0\AceConfigDialog-3.0.lua
+Libs\AceConfig-3.0\AceConfigDialog-3.0\AceConfigDialog-3.0.xml
+Libs\AceConfig-3.0\AceConfigRegistry-3.0\AceConfigRegistry-3.0.lua
+Libs\AceConfig-3.0\AceConfigRegistry-3.0\AceConfigRegistry-3.0.xml
+Libs\AceConsole-3.0\AceConsole-3.0.lua
+Libs\AceConsole-3.0\AceConsole-3.0.xml
+Libs\AceDB-3.0\AceDB-3.0.lua
+Libs\AceDB-3.0\AceDB-3.0.xml
+Libs\AceDBOptions-3.0\AceDBOptions-3.0.lua
+Libs\AceDBOptions-3.0\AceDBOptions-3.0.xml
+Libs\AceEvent-3.0\AceEvent-3.0.lua
+Libs\AceEvent-3.0\AceEvent-3.0.xml
+Libs\AceGUI-3.0\AceGUI-3.0.lua
+Libs\AceGUI-3.0\AceGUI-3.0.xml
+Libs\AceGUI-3.0\widgets\AceGUIContainer-BlizOptionsGroup.lua
+Libs\AceGUI-3.0\widgets\AceGUIContainer-DropDownGroup.lua
+Libs\AceGUI-3.0\widgets\AceGUIContainer-Frame.lua
+Libs\AceGUI-3.0\widgets\AceGUIContainer-InlineGroup.lua
+Libs\AceGUI-3.0\widgets\AceGUIContainer-ScrollFrame.lua
+Libs\AceGUI-3.0\widgets\AceGUIContainer-SimpleGroup.lua
+Libs\AceGUI-3.0\widgets\AceGUIContainer-TabGroup.lua
+Libs\AceGUI-3.0\widgets\AceGUIContainer-TreeGroup.lua
+Libs\AceGUI-3.0\widgets\AceGUIContainer-Window.lua
+Libs\AceGUI-3.0\widgets\AceGUIWidget-Button.lua
+Libs\AceGUI-3.0\widgets\AceGUIWidget-CheckBox.lua
+Libs\AceGUI-3.0\widgets\AceGUIWidget-ColorPicker.lua
+Libs\AceGUI-3.0\widgets\AceGUIWidget-DropDown-Items.lua
+Libs\AceGUI-3.0\widgets\AceGUIWidget-DropDown.lua
+Libs\AceGUI-3.0\widgets\AceGUIWidget-EditBox.lua
+Libs\AceGUI-3.0\widgets\AceGUIWidget-Heading.lua
+Libs\AceGUI-3.0\widgets\AceGUIWidget-Icon.lua
+Libs\AceGUI-3.0\widgets\AceGUIWidget-InteractiveLabel.lua
+Libs\AceGUI-3.0\widgets\AceGUIWidget-Keybinding.lua
+Libs\AceGUI-3.0\widgets\AceGUIWidget-Label.lua
+Libs\AceGUI-3.0\widgets\AceGUIWidget-MultiLineEditBox.lua
+Libs\AceGUI-3.0\widgets\AceGUIWidget-Slider.lua
+Libs\AceHook-3.0\AceHook-3.0.lua
+Libs\AceHook-3.0\AceHook-3.0.xml
+Libs\AceLocale-3.0\AceLocale-3.0.lua
+Libs\AceLocale-3.0\AceLocale-3.0.xml
+Libs\AceTimer-3.0\AceTimer-3.0.lua
+Libs\AceTimer-3.0\AceTimer-3.0.xml
+Libs\Astrolabe\Astrolabe.lua
+Libs\Astrolabe\AstrolabeMapMonitor.lua
+Libs\Astrolabe\DongleStub.lua
+Libs\Astrolabe\load.xml
+Libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+Libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
+Libs\LibBabble-Faction-3.0\lib.xml
+Libs\LibBabble-Faction-3.0\LibBabble-3.0.lua
+Libs\LibBabble-Faction-3.0\LibBabble-Faction-3.0.lua
+Libs\LibBabble-Zone-3.0\lib.xml
+Libs\LibBabble-Zone-3.0\LibBabble-Zone-3.0.lua
+Libs\LibBetterBlizzOptions-1.0\lib.xml
+Libs\LibBetterBlizzOptions-1.0\LibBetterBlizzOptions-1.0.lua
+Libs\LibCamera-1.0\lib.xml
+Libs\LibCamera-1.0\LibCamera-1.0.lua
+Libs\LibGratuity-3.0\lib.xml
+Libs\LibGratuity-3.0\LibGratuity-3.0.lua
+libs\LibStub\LibStub.lua
+Libs\LibTaxi-1.0\deDE.lua
+Libs\LibTaxi-1.0\esES.lua
+Libs\LibTaxi-1.0\frFR.lua
+Libs\LibTaxi-1.0\lib.xml
+Libs\LibTaxi-1.0\LibTaxi-1.0.lua
+Libs\LibTaxi-1.0\ruRU.lua
+Localization\Base.lua
+Localization\deDE.lua
+Localization\enUS.lua
+Localization\esES.lua
+Localization\frFR.lua
+Localization\koKR.lua
+Localization\load.xml
+Localization\names.xml
+Localization\NPCs_deDE.lua
+Localization\NPCs_enUS.lua
+Localization\NPCs_esES.lua
+Localization\NPCs_frFR.lua
+Localization\NPCs_koKR.lua
+Localization\NPCs_ruRU.lua
+Localization\NPCs_zhCN.lua
+Localization\NPCs_zhTW.lua
+Localization\ruRU.lua
+Localization\zhCN.lua
+Localization\zhTW.lua
+Log.lua
+MapSpot.lua
+MapSpotMarkerTemplates.xml
+MapSpotSet.lua
+Options.lua
+Parser.lua
+Pointer.lua
+PointerMarkerTemplates.xml
+Profession.lua
+QuestAutoAccept.lua
+QuestTracking.lua
+Step.lua
+Ver.lua
+Waypoints.lua
+ZygorGuidesViewer.lua
+ZygorGuidesViewerFrame.lua
+ZygorGuidesViewerFrame.xml
+ZygorMapIcon.xml
+
+UNUSED_FILES (not referenced by toc/xml include graph; may be loaded dynamically)
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Achievement.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\3D-Gem\arrow-back.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\3D-Gem\arrow-here.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\3D-Gem\Arrow.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\3D-Gem\arrow.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\3D-Gem\Arrow.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\Arrows.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\Cloqwerk\arrow-back.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\Cloqwerk\arrow-gem.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\Cloqwerk\arrow-gemhl.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\Cloqwerk\arrow-here.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\Cloqwerk\Arrow.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\Cloqwerk\arrow.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\Cloqwerk\Arrow.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\Midnight\arrow-back.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\Midnight\arrow-error.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\Midnight\arrow-here.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\Midnight\arrow-precise.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\Midnight\Arrow.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\Midnight\arrow.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\Midnight\Arrow.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\Stealth\arrow-back.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\Stealth\arrow-error.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\Stealth\arrow-specular.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\Stealth\Arrow.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\Stealth\arrow.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\Stealth\Arrow.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Arrows\Stealth\specials.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Bindings.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\BugReport.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ChainsParser.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Class.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Config.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\CreatureDetector.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\CreatureDetectorIcon.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\CreatureViewer.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Data\Chains.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Data\data.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Data\DisplayModelsExtra.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Data\NPCData_parse.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Data\NPCData.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Data\NPCModels_parse.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Data\NPCModels.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Data\NPCModelsExtra.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Data\ObjectModels.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Data\ObjectModelsExtra.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Dungeons.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\embeds.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ErrorLogger.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Faction.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\files.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Foglight.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Functions.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Goal.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\guide_format.html
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guide.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\GuideMenu.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Achievements\ZygorAchievementsAllianceCATA.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Achievements\ZygorAchievementsAllianceMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Achievements\ZygorAchievementsCommon.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Achievements\ZygorAchievementsHordeCATA.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Achievements\ZygorAchievementsHordeMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Autoload.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Dailies\ZygorDailiesAllianceCATA.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Dailies\ZygorDailiesAllianceMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Dailies\ZygorDailiesHordeCATA.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Dailies\ZygorDailiesHordeMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Dungeons\ZygorDungeonAllianceMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Dungeons\ZygorDungeonHordeMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Dungeons\ZygorDungeonScenariosAlliance_MoP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Dungeons\ZygorDungeonScenariosHorde_MoP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Dungeons\ZygorGearAlliance.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Dungeons\ZygorGearCommon.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Dungeons\ZygorGearHorde.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Guide01.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Guide02.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\1k 39-44.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Arathi 26-29.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Arathi 29-30.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Arathi_2.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Arathi_3.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Arathi.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Ashenvale 20-23.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Ashenvale 23-26.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Ashenvale.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Azshara 10-12.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Azshara 12-21.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Azshara 21-22.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Azuremyst.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Badlands.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\BilgeWater.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\BladesEdge.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Blasted Lands.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Bloodmyst.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Borean.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Burning Steppes.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Cape STV 31-36.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Darkshore.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Death Knight 55-58.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Deepholm.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Desolace 31-33.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Desolace 33-36.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\DragonBlight.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\DreadWastes.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Dun Morogh.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Durotar 5-8.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Durotar 8-11.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Durotar Orc 1-5.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Durotar Troll 1-5.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Duskwood.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Dustwallow 35-39.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Eastern Plaguelands.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Ebon.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Elwynn Forest 2.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Elwynn Forest 3.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Elwynn Forest.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Elwynn_2.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Elwynn_3.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Elwynn.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\EPL 39-44.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Eversong 1-5.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Eversong 5-12.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Felwood 47-48.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Felwood 48-51.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Feralas 36-40.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Ghostlands 12-20.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Gilneas.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\GrizzlyHills.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Hellfire.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Hillsbrad 20-26.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Hinterlands 30-32.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Hinterlands 32-34.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Hinterlands_2.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Hinterlands_3.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Hinterlands.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Howling.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Hyjal.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Icecrown.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Images.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\JadeForest.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\KrasarangWilds.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\KunLai.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Loch Modan_2.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Loch Modan_3.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Loch Modan_4.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Loch Modan.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Mount Hyjal.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Mulgore 1-4.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Mulgore 4-10.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\N STV 26-31.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Nagrand.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Netherstorm.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\NightElf.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Northern Barrens 10-13.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Northern Barrens 13-17.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Northern Barrens 17-20.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Northern_Stranglethorn.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Redridge_Mountains_2.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Redridge_Mountains.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Searing Gorge.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Shadowmoon.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Shadowprey.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Sholazar.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Silithus 55-57.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Silverpine 11-20.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Southern Barrens 31-34.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Southern Barrens 34-35.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Stonetalon 26-31.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\StormPeaks.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Swamp of Sorrows.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Tanaris 44-47.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Terokkar.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\The Cape of Stranglethorn.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Tirisfal 1-11.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\TownlongSteppes.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Twilight Highlands.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\TwilightHighlands.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Uldum.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Ungoro 55-57.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\ValleyOfTheFourWinds.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Vashj'ir.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Vashjir.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\WanderingIsle.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Western Plaguelands.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Westfall_2.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\westfall.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Wetlands_2.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Wetlands_3.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Wetlands.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Winterspring 51-52.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Winterspring 52-55.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Winterspring 54-58.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Winterspring.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\WPL 34-39.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\Zangarmarsh.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Images\ZulDrak.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Leveling\ZygorLevelingAllianceCATA.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Leveling\ZygorLevelingAllianceMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Leveling\ZygorLevelingHordeCATA.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Leveling\ZygorLevelingHordeMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Leveling\ZygorLevelingPandaStarterMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\PetsMounts\ZygorBattlePetQuestsAllianceMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\PetsMounts\ZygorBattlePetQuestsHordeMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\PetsMounts\ZygorHunterPetAllianceCATA.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\PetsMounts\ZygorHunterPetAllianceMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\PetsMounts\ZygorHunterPetHordeCATA.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\PetsMounts\ZygorHunterPetHordeMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\PetsMounts\ZygorMountsAllianceCATA.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\PetsMounts\ZygorMountsAllianceMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\PetsMounts\ZygorMountsHordeCATA.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\PetsMounts\ZygorMountsHordeMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\PetsMounts\ZygorPetsAllianceCATA.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\PetsMounts\ZygorPetsAllianceMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\PetsMounts\ZygorPetsCommonCATA.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\PetsMounts\ZygorPetsCommonMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\PetsMounts\ZygorPetsHordeCATA.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\PetsMounts\ZygorPetsHordeMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Professions\ZygorProfessionsAllianceCATA.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Professions\ZygorProfessionsAllianceMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Professions\ZygorProfessionsCommon.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Professions\ZygorProfessionsCommonMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Professions\ZygorProfessionsHordeCATA.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Professions\ZygorProfessionsHordeMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\readme.txt
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Reputations\ZygorReputationsAllianceCATA.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Reputations\ZygorReputationsAllianceMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Reputations\ZygorReputationsHordeCATA.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Reputations\ZygorReputationsHordeMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Titles\ZygorTitlesAllianceCATA.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Titles\ZygorTitlesAllianceMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Titles\ZygorTitlesHordeCATA.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\Titles\ZygorTitlesHordeMOP.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\ZygorAchievementAlliance.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\ZygorCommon.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\ZygorDailiesAlliance.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\ZygorDailiesHorde.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\ZygorGuidesAlliance.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\ZygorGuidesHorde.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\ZygorIncludesAlliance.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\ZygorIncludesHorde.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Guides\ZygorMacros.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Item-AutoEquip.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Item-Events.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Item-GearFinder.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Item-ItemScore.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Item-Quest.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceAddon-3.0\AceAddon-3.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceAddon-3.0\AceAddon-3.0.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceConfig-3.0\AceConfig-3.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceConfig-3.0\AceConfig-3.0.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceConfig-3.0\AceConfigCmd-3.0\AceConfigCmd-3.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceConfig-3.0\AceConfigCmd-3.0\AceConfigCmd-3.0.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceConfig-3.0\AceConfigDialog-3.0\AceConfigDialog-3.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceConfig-3.0\AceConfigDialog-3.0\AceConfigDialog-3.0.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceConfig-3.0\AceConfigRegistry-3.0\AceConfigRegistry-3.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceConfig-3.0\AceConfigRegistry-3.0\AceConfigRegistry-3.0.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceConsole-3.0\AceConsole-3.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceConsole-3.0\AceConsole-3.0.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceDB-3.0\AceDB-3.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceDB-3.0\AceDB-3.0.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceDBOptions-3.0\AceDBOptions-3.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceDBOptions-3.0\AceDBOptions-3.0.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceEvent-3.0\AceEvent-3.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceEvent-3.0\AceEvent-3.0.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\AceGUI-3.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\AceGUI-3.0.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIContainer-BlizOptionsGroup.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIContainer-DropDownGroup.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIContainer-Frame.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIContainer-InlineGroup.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIContainer-ScrollFrame.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIContainer-SimpleGroup.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIContainer-TabGroup.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIContainer-TreeGroup.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIContainer-Window.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIWidget-BlizOptionsGroup.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIWidget-Button.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIWidget-CheckBox.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIWidget-ColorPicker.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIWidget-DropDown-Items.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIWidget-DropDown.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIWidget-DropDownGroup.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIWidget-EditBox.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIWidget-Frame.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIWidget-Heading.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIWidget-Icon.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIWidget-InlineGroup.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIWidget-InteractiveLabel.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIWidget-Keybinding.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIWidget-Label.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIWidget-MultiLineEditBox.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIWidget-ScrollFrame.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIWidget-SimpleGroup.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIWidget-Slider.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIWidget-TabGroup.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceGUI-3.0\widgets\AceGUIWidget-TreeGroup.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceHook-3.0\AceHook-3.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceHook-3.0\AceHook-3.0.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceLocale-3.0\AceLocale-3.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceLocale-3.0\AceLocale-3.0.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceTimer-3.0\AceTimer-3.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\AceTimer-3.0\AceTimer-3.0.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\Astrolabe\Astrolabe.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\Astrolabe\AstrolabeMapMonitor.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\Astrolabe\DongleStub.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\Astrolabe\lgpl.txt
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\Astrolabe\Load.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibBabble-Faction-3.0\lib.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibBabble-Faction-3.0\LibBabble-3.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibBabble-Faction-3.0\LibBabble-Faction-3.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibBabble-Faction-3.0\LibBabble-Faction-3.0.toc
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibBabble-Faction-3.0\LibStub\LibStub.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibBabble-SubZone-3.0\dict.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibBabble-SubZone-3.0\lib.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibBabble-SubZone-3.0\LibBabble-3.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibBabble-SubZone-3.0\LibBabble-SubZone-3.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibBabble-Zone-3.0\lib.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibBabble-Zone-3.0\LibBabble-3.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibBabble-Zone-3.0\LibBabble-Zone-3.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibBabble-Zone-3.0\LibBabble-Zone-3.0.toc
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibBetterBlizzOptions-1.0\lib.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibBetterBlizzOptions-1.0\LibBetterBlizzOptions-1.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibCamera-1.0\Lib.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibCamera-1.0\LibCamera-1.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibGratuity-3.0\lib.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibGratuity-3.0\LibGratuity-3.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibGratuity-3.0\LibGratuity-3.0.toc
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibGratuity-3.0\LibStub\LibStub.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibRover-1.0\data.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibRover-1.0\lib.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibRover-1.0\LibRover-1.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibRover-1.0\LibRover-1.0.toc
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibRover-1.0\Node.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibRover-1.0\NodeSet.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibRover-1.0\NodeSetHeap.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibRover-1.0\Region.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\Libs.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibStub\LibStub.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibTaxi-1.0\data.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibTaxi-1.0\deDE.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibTaxi-1.0\esES.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibTaxi-1.0\frFR.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibTaxi-1.0\lib.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibTaxi-1.0\LibTaxi-1.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibTaxi-1.0\LibTaxi-1.0.toc
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibTaxi-1.0\ruRU.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibTutorial-1.0\lib.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibTutorial-1.0\LibTutorial-1.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\LibTutorial-1.0\LibTutorial-1.0.toc
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\SlideBar\lib.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Libs\SlideBar\SlideBar.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\Base.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\Core_deDE.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\Core_enUS.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\Core_koKR.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\Core_ruRU.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\Core_zhCN.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\Core_zhTW.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\deDE.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\enUS.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\esES.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\Fallback.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\frFR.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\koKR.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\load.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\Localization.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\names.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\NPCs_deDE.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\NPCs_enUS.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\NPCs_esES.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\NPCs_frFR.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\NPCs_koKR.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\NPCs_ruRU.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\NPCs_zhCN.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\NPCs_zhTW.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\ruRU.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\zhCN.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localization\zhTW.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Localizers.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Log.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Loot.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Loot.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\MacroGuide.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\MagicKey.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\MaintenanceFrame.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\MapCoords_.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\MapSpot.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\MapSpotMarkerTemplates.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\MapSpotSet.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\MasterFrame.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\MasterFrame.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Options.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Parser.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\PetBattle.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Pointer.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\PointerMarkerTemplates.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Profession.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\QuestAutoAccept.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\QuestTracking.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\ANTIQUEN.TTF
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\arrow_atlantis\arrow-back.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\arrow_atlantis\arrow-here.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\arrow_atlantis\arrow.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\arrow-back.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\arrow-gem.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\arrow-gemhl.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\arrow-here.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\arrow-mini-multi.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\arrow.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\backglass.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\blue\leavesofsteel_dropdown_down.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\blue\leavesofsteel_dropdown_hi.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\blue\leavesofsteel_dropdown_up.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\blue\leavesofsteel_top.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\blue\leavesofsteel.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\blue\titlebuttons.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\blue\zglogo.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\glowborder.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\gnome_back.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\gnome.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\green\leavesofsteel_dropdown_down.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\green\leavesofsteel_dropdown_hi.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\green\leavesofsteel_dropdown_up.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\green\leavesofsteel_top.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\green\leavesofsteel.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\green\titlebuttons.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\green\zglogo.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\highlightmap_square.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\highlightmap_white.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\highlightmap.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\icons.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\leavesofsteel_bgr.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\leavesofsteel_border_flash.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\leavesofsteel_border.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\leavesofsteel_flash.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\leavesofsteel_gear1.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\leavesofsteel_gear2.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\leavesofsteel_gear3.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\leavesofsteel_top_flash.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\minimaparrow-gold-dot.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\minimaparrow-gold-edge.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\minimaparrow-green-dot.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\minimaparrow-green-edge.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\orange\leavesofsteel_dropdown_down.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\orange\leavesofsteel_dropdown_hi.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\orange\leavesofsteel_dropdown_up.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\orange\leavesofsteel_top.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\orange\leavesofsteel.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\orange\titlebuttons.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\orange\zglogo.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\popup_border_active.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\popup_border.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\violet\leavesofsteel_dropdown_down.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\violet\leavesofsteel_dropdown_hi.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\violet\leavesofsteel_dropdown_up.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\violet\leavesofsteel_top.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\violet\leavesofsteel.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\violet\titlebuttons.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\violet\zglogo.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\white.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\zg-logo-hi.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\zg-logo-off.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skin\zg-logo-on.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\ANTIQUEN.TTF
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\backglass.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\config-images.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Midnight\border_.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Midnight\border-08.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Midnight\border-glow.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Midnight\border.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Midnight\button.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Midnight\corner.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Midnight\mv-arrow.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Midnight\roundcorners.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Midnight\scrollbutton.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Midnight\selection.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Midnight\Style.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Midnight\titlebuttons.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Midnight\zglogo_circ.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Skin.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Skin.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Stealth\border_.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Stealth\border-08.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Stealth\border-glow.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Stealth\border.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Stealth\button.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Stealth\corner.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Stealth\guideicons-small.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Stealth\mv-arrow.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Stealth\scrollbutton.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Stealth\selection.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Stealth\stepicons.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Stealth\Style.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Stealth\titlebuttons.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\Stealth\zglogo_circ.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\ViewerFrame.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Default\ViewerFrame.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\glowborder.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\gnome_back.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\gnome.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\guideicons-big.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\guideicons-small.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\icons-gold.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\icons-notificationcenter.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\icons.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\leavesofsteel_border_flash.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\leavesofsteel_top_flash.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\levelbar.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\loading.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\minimaparrow-ant.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\minimaparrow-gold-dot.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\minimaparrow-gold-edge.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\minimaparrow-green-dot.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\minimaparrow-green-edge.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\minimaparrow-path.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\minimaparrow-player.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\objecticons_off.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\objecticons_on.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\segoeui.ttf
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\segoeuib.ttf
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\Skins.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\SpeedIcon.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\tutorialline-dia.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\violet\titlebuttons.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\violet\zglogo.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\white.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\white07.TGA
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\zglogo-back.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\zglogo.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\zygor_mascot_gray.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\zygor_mascot.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\zygor_wand.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\zygorlogo.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Skins\zygorlogo2.blp
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\StaticPopups.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Step.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Templates.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\TitanZygor.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\TitanZygor.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Tutorial.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\UiWidgets\Button.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\UiWidgets\DropDown.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\UiWidgets\EditBox.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\UiWidgets\files.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\UiWidgets\Frame.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\UiWidgets\HyperEditBox.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\UiWidgets\Main.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\UiWidgets\ScrollBar.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\UiWidgets\ScrollChild.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\UiWidgets\ScrollItems.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\UiWidgets\ToggleButton.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Ver.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Ver.lua.tmpl
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\Waypoints.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorGuidesViewer-BETA.toc
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorGuidesViewer.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorGuidesViewer.toc
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorGuidesViewer.toc.tmpl_
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorGuidesViewerFrame.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorGuidesViewerFrame.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorGuidesViewerMenuFrame.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorGuidesViewerMenuFrame.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorGuidesViewerOptions.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorMapIcon.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorTalentAdvisor\Build_Data.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorTalentAdvisor\Build.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorTalentAdvisor\Builds\Autoload.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorTalentAdvisor\Builds\ZygorGuidesBuilds.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorTalentAdvisor\Events.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorTalentAdvisor\files.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorTalentAdvisor\Popout.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorTalentAdvisor\Popout.xml
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorTalentAdvisor\Skin\glowborder.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorTalentAdvisor\Skin\mmbutton_off.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorTalentAdvisor\Skin\mmbutton_on.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorTalentAdvisor\Skin\mrripley_hints.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorTalentAdvisor\Skin\popout-button-2-down.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorTalentAdvisor\Skin\popout-button-2-hi.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorTalentAdvisor\Skin\popout-button-2.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorTalentAdvisor\Skin\popout-button-pushed.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorTalentAdvisor\Skin\popout-button.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorTalentAdvisor\Skin\popout-noclose.tga
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorTalentAdvisor\ZygorTalentAdvisor2.0.lua
+C:\Users\corey.brownlee\OneDrive - Cardinal Health\Documents\GitHub\ZygorGuidesRemaster-3.3.5a_WOTLK\Workspace\ZygorGuidesPlus_3.3.5a-WOTLK\ZygorGuidesViewer\ZygorTalentAdvisor\ZygorTalentAdvisorFiles.xml

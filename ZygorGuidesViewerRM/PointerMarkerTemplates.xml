@@ -1,0 +1,194 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ D:\UI.xsd">
+
+	<Button name="ZygorGuidesViewerPointerMinimapMarker" virtual="true" hidden="false" movable="false" enableMouse="true">
+		<Size x="20" y="20"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="icon" file="Interface\AddOns\ZygorGuidesViewer\Skin\minimaparrow-green-dot">
+					<Size x="12" y="12"/>
+					<Anchors><Anchor point="CENTER" relativePoint="CENTER" /></Anchors>
+				</Texture>
+				<Texture parentKey="arrow" hidden="true" file="Interface\AddOns\ZygorGuidesViewer\Skin\minimaparrow-green-edge">
+					<Size x="40" y="40"/>
+					<Anchors><Anchor point="CENTER" relativePoint="CENTER" /></Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+
+		<Scripts>
+			<OnLoad> self:RegisterForClicks("LeftButtonUp")</OnLoad>
+			<OnEnter> ZGV.Pointer.MinimapButton_OnEnter(self) </OnEnter>
+			<OnLeave> ZGV.Pointer.MinimapButton_OnLeave(self) </OnLeave>
+			<OnUpdate>ZGV.Pointer.MinimapButton_OnUpdate(self,elapsed) </OnUpdate>
+			<OnClick> ZGV.Pointer.MinimapButton_OnClick(self,button) </OnClick>
+			<OnEvent> ZGV.Pointer.MinimapButton_OnEvent(self,event,...) </OnEvent>
+		</Scripts>
+	</Button>
+
+	<Button name="ZygorGuidesViewerPointerWorldMapMarker" virtual="true" hidden="false" movable="false" enableMouse="true">
+		<Size x="25" y="25"/>
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture parentKey="icon" file="Interface\AddOns\ZygorGuidesViewer\Skin\minimaparrow-green-dot" >
+					<Anchors><Anchor point="CENTER" relativePoint="CENTER" /></Anchors>
+					<Size x="25" y="25"/>
+				</Texture>
+			</Layer>
+		</Layers>
+
+		<Scripts>
+			<OnLoad> self:RegisterForClicks("RightButtonUp","LeftButtonUp")
+			self:RegisterEvent("PLAYER_ENTERING_WORLD")
+			self:RegisterEvent("WORLD_MAP_UPDATE")
+			self:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+			</OnLoad>
+			<OnEnter> ZGV.Pointer.WorldmapButton_OnEnter(self) </OnEnter>
+			<OnLeave> ZGV.Pointer.WorldmapButton_OnLeave(self) </OnLeave>
+			<OnClick> ZGV.Pointer.MinimapButton_OnClick(self,button) </OnClick>
+			<OnEvent> ZGV.Pointer.WorldMapButton_OnEvent(self,event,...) </OnEvent>
+		</Scripts>
+
+		<Animations>
+			<AnimationGroup parentKey="zoomy" looping="BOUNCE">
+				<Animation duration="1.0" maxFramerate="30" smoothing="IN" order="1">
+					<Scripts>
+						<OnPlay>
+							-- ONLY for step 1
+							self.f = self:GetRegionParent().icon
+						</OnPlay>
+						<OnUpdate>
+							self.f:SetWidth(25 + self:GetSmoothProgress()*3)
+							self.f:SetHeight(25 + self:GetSmoothProgress()*3)
+						</OnUpdate>
+						<OnFinished>
+							self.f:SetWidth(25)
+							self.f:SetHeight(25)
+						</OnFinished>
+					</Scripts>
+				</Animation>
+			</AnimationGroup>
+			<AnimationGroup parentKey="zoom" looping="NONE">
+				<Scale scaleX="1.2" scaleY="1.2" duration="0.5" smoothing="OUT" order="1">
+					<Origin point="CENTER"/>
+				</Scale>
+				<Scale scaleX="1.0" scaleY="1.0" duration="5.0" smoothing="NONE" order="2">
+					<Origin point="CENTER"/>
+				</Scale>
+			</AnimationGroup>
+			<AnimationGroup parentKey="unzoom" looping="NONE">
+				<Scale scaleX="1.2" scaleY="1.2" duration="0.0" smoothing="NONE" order="1">
+					<Origin point="CENTER"/>
+				</Scale>
+				<Scale scaleX="0.8" scaleY="0.8" duration="0.5" smoothing="IN" order="2">
+					<Origin point="CENTER"/>
+				</Scale>
+				<Scale scaleX="1.0" scaleY="1.0" duration="5.0" smoothing="NONE" order="3">
+					<Origin point="CENTER"/>
+				</Scale>
+			</AnimationGroup>
+		</Animations>
+	</Button>
+
+	<Frame name="ZygorGuidesViewerFloatingArrow" virtual="true" hidden="false" movable="true" enableMouse="true" frameStrata="MEDIUM" clampedToScreen="true">
+		<Size x="50" y="50"/>
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER" />
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="back" file="Interface\AddOns\ZygorGuidesViewer\Skin\arrow-back">
+					<Size x="37" y="37"/>
+					<Anchors>
+						<Anchor point="CENTER" relativePoint="CENTER" ><Offset x="0" y="0"/></Anchor>
+					</Anchors>
+					<Animations>
+						<AnimationGroup parentKey="turny" looping="REPEAT">
+							<Rotation degrees="360" duration="2.0" maxFramerate="30" smoothing="NONE" order="1" />
+						</AnimationGroup>
+					</Animations>
+				</Texture>
+			</Layer>
+			<Layer level="BORDER">
+				<Texture parentKey="arrow" name="$parentArrow" file="Interface\AddOns\ZygorGuidesViewer\Skin\arrow">
+					<Size x="60" y="60"/>
+					<Anchors>
+						<Anchor point="CENTER" relativePoint="CENTER" />
+					</Anchors>
+				</Texture>
+				<Texture parentKey="here" name="$parentHere" file="Interface\AddOns\ZygorGuidesViewer\Skin\arrow-here">
+					<Size x="50" y="50"/>
+					<Anchors>
+						<Anchor point="CENTER" relativePoint="CENTER" />
+					</Anchors>
+					<Animations>
+						<AnimationGroup parentKey="zoomy" looping="BOUNCE">
+							<Animation duration="0.5" maxFramerate="15" smoothing="IN_OUT" order="1">
+								<Scripts>
+									<OnPlay>
+										-- ONLY for step 1
+										self.f = self:GetRegionParent()
+									</OnPlay>
+									<OnUpdate>
+										self.f:SetWidth(50 - self:GetSmoothProgress()*15)
+										self.f:SetHeight(50 - self:GetSmoothProgress()*15)
+									</OnUpdate>
+									<OnFinished>
+										self.f:SetWidth(50)
+										self.f:SetHeight(50)
+									</OnFinished>
+								</Scripts>
+							</Animation>
+						</AnimationGroup>
+					</Animations>
+				</Texture>
+				<FontString parentKey="title" name="$parentTitle" justifyH="CENTER" justifyV="TOP" inherits="GameFontHighlightSmall">
+					<Anchors>
+						<Anchor relativeTo="$parentArrow" relativePoint="BOTTOM" point="TOP"><Offset x="0" y="3"/></Anchor>
+					</Anchors>
+					<Size x="200" y="0"/>
+					<FontHeight val="10"/>
+				</FontString>
+				<!--
+				<FontString parentKey="dist" name="$parentDist" justifyH="CENTER" inherits="GameFontNormalSmall">
+					<Anchors>
+						<Anchor relativeTo="$parentTitle" relativePoint="BOTTOM" point="TOP"/>
+					</Anchors>
+					<Size x="200" y="10"/>
+					<FontHeight val="10"/>
+				</FontString>
+				<FontString parentKey="eta" name="$parentETA" justifyH="CENTER" inherits="GameFontNormalSmall">
+					<Anchors>
+						<Anchor relativeTo="$parentDist" relativePoint="BOTTOM" point="TOP"/>
+					</Anchors>
+					<Size x="200" y="10"/>
+					<FontHeight val="10"/>
+				</FontString>
+				-->
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture parentKey="gem" name="$parentGem" file="Interface\AddOns\ZygorGuidesViewer\Skin\arrow-gem">
+					<Size x="60" y="60"/>
+					<Anchors>
+						<Anchor point="CENTER" relativePoint="CENTER" />
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<Texture parentKey="gemhl" name="$parentGemhl" file="Interface\AddOns\ZygorGuidesViewer\Skin\arrow-gemhl">
+					<Size x="60" y="60"/>
+					<Anchors>
+						<Anchor point="CENTER" relativePoint="CENTER" />
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+
+		<Scripts>
+			<OnLoad> self:RegisterForDrag("LeftButton") self:EnableMouse(not ZGV.db.profile.arrowfreeze)  self:ClearAllPoints()  self:SetPoint("BOTTOMLEFT",UIParent,"BOTTOMLEFT",ZGV.db.profile.arrowposx,ZGV.db.profile.arrowposy) </OnLoad>
+			<OnDragStart> self:StartMoving() self.dragging=true </OnDragStart>
+			<OnDragStop> self:StopMovingOrSizing() self.dragging=nil  ZGV.db.profile.arrowposx=self:GetLeft()+self:GetWidth()/2  ZGV.db.profile.arrowposy=self:GetBottom()+self:GetHeight()/2 </OnDragStop>
+			<OnShow> ZygorGuidesViewer.Pointer.ArrowFrame_OnShow(self) </OnShow>
+		</Scripts>
+	</Frame>
+
+</Ui>

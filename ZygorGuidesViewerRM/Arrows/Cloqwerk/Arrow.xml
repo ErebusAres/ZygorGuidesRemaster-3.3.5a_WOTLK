@@ -1,0 +1,107 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/FrameXML/UI.xsd">
+
+	<Script file="Arrow.lua"/>
+
+	<Button name="ZygorGuidesViewerFrame_Arrow_template_cloqwerk" virtual="true" hidden="false" movable="true" enableMouse="true" frameStrata="MEDIUM" clampedToScreen="true">
+		<Size x="50" y="50"/>
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER" />
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="back" file="__\Arrows\Cloqwerk\arrow-back">
+					<Size x="37" y="37"/>
+					<Anchors>
+						<Anchor point="CENTER" relativePoint="CENTER" ><Offset x="0" y="0"/></Anchor>
+					</Anchors>
+					<Animations>
+						<AnimationGroup parentKey="turny" looping="REPEAT">
+							<Rotation degrees="360" duration="2.0" maxFramerate="30" smoothing="NONE" order="1" />
+						</AnimationGroup>
+					</Animations>
+				</Texture>
+			</Layer>
+			<Layer level="BORDER">
+				<Texture parentKey="arrow" name="$parentArrow" file="__\Arrows\Cloqwerk\arrow">
+					<Size x="60" y="60"/>
+					<Anchors>
+						<Anchor point="CENTER" relativePoint="CENTER" />
+					</Anchors>
+				</Texture>
+				<Texture parentKey="here" name="$parentHere" file="__\Arrows\Cloqwerk\arrow-here">
+					<Size x="50" y="50"/>
+					<Anchors>
+						<Anchor point="CENTER" relativePoint="CENTER" />
+					</Anchors>
+					<Animations>
+						<AnimationGroup parentKey="zoomy" looping="BOUNCE">
+							<Animation duration="0.5" maxFramerate="15" smoothing="IN_OUT" order="1">
+								<Scripts>
+									<OnPlay>
+										-- ONLY for step 1
+										self.f = self:GetRegionParent()
+									</OnPlay>
+									<OnUpdate>
+										self.f:SetWidth(50 - self:GetSmoothProgress()*15)
+										self.f:SetHeight(50 - self:GetSmoothProgress()*15)
+									</OnUpdate>
+									<OnFinished>
+										self.f:SetWidth(50)
+										self.f:SetHeight(50)
+									</OnFinished>
+								</Scripts>
+							</Animation>
+						</AnimationGroup>
+					</Animations>
+				</Texture>
+				<FontString parentKey="title" name="$parentTitle" justifyH="CENTER" justifyV="TOP" inherits="GameFontHighlightSmall">
+					<Anchors>
+						<Anchor relativeTo="$parentArrow" relativePoint="BOTTOM" point="TOP"><Offset x="0" y="3"/></Anchor>
+					</Anchors>
+					<Size x="200" y="0"/>
+					<FontHeight val="10"/>
+				</FontString>
+				<!--
+				<FontString parentKey="dist" name="$parentDist" justifyH="CENTER" inherits="GameFontNormalSmall">
+					<Anchors>
+						<Anchor relativeTo="$parentTitle" relativePoint="BOTTOM" point="TOP"/>
+					</Anchors>
+					<Size x="200" y="10"/>
+					<FontHeight val="10"/>
+				</FontString>
+				<FontString parentKey="eta" name="$parentETA" justifyH="CENTER" inherits="GameFontNormalSmall">
+					<Anchors>
+						<Anchor relativeTo="$parentDist" relativePoint="BOTTOM" point="TOP"/>
+					</Anchors>
+					<Size x="200" y="10"/>
+					<FontHeight val="10"/>
+				</FontString>
+				-->
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture parentKey="gem" name="$parentGem" file="__\Arrows\Cloqwerk\arrow-gem">
+					<Size x="60" y="60"/>
+					<Anchors>
+						<Anchor point="CENTER" relativePoint="CENTER" />
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<Texture parentKey="gemhl" name="$parentGemhl" file="__\Arrows\Cloqwerk\arrow-gemhl">
+					<Size x="60" y="60"/>
+					<Anchors>
+						<Anchor point="CENTER" relativePoint="CENTER" />
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+
+		<Scripts>
+			<OnLoad> self:RegisterForDrag("LeftButton") self:EnableMouse(not ZGV.db.profile.arrowfreeze)  self:EnableMouseWheel(1)  self:ClearAllPoints()  self:SetPoint("CENTER",ZygorGuidesViewerPointer_ArrowCtrl,"CENTER") </OnLoad>
+			<OnDragStart> ZGV.Pointer.ArrowFrameCtrl:StartMoving() self.dragging=true </OnDragStart>
+			<OnDragStop> ZygorGuidesViewerPointer_ArrowCtrl:StopMovingOrSizing()  self.dragging=nil</OnDragStop>
+			<OnShow> ZygorGuidesViewer.Pointer.ArrowFrame_OnShow(self) </OnShow>
+			<OnMouseWheel> self:OnMouseWheel(delta) </OnMouseWheel>
+		</Scripts>
+	</Button>
+</Ui>

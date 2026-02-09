@@ -1,0 +1,275 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/">
+	<Script file="ZygorGuidesViewerFrame.lua" />
+  <!-- Here the Scripts that have to be Executed -->
+
+	<!--
+	<Model name="ZygorGuidesViewerMapArrow" file="Interface\Minimap\Rotating-MinimapArrow.mdx" parent="Minimap" hidden="false">
+		<Size>
+			<AbsDimension	x="220" y="220"/>
+		</Size>
+		<Anchors>
+			<Anchor	point="CENTER" relativePoint="CENTER"/>
+		</Anchors>
+	</Model>
+
+	<Frame name="ZygorGuidesViewerMapArrowFrame" parent="Minimap">
+		<Size><AbsDimension	x="16" y="16"/></Size>
+		<Anchors><Anchor	point="CENTER" relativePoint="CENTER"/></Anchors>
+		<Scripts>
+			<OnEnter>
+				GameTooltip:SetOwner(this, "CENTER")
+				GameTooltip:SetText(ZygorGuidesViewer.MapNotes[ZygorGuidesViewer.CurrentStep.mapzone][ZygorGuidesViewer.CurrentStep.mapnote].title)
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide()
+			</OnLeave>
+		</Scripts>
+	</Frame>
+	-->
+
+<!--
+	<Button name="ZGVFStep" virtual="true" frameStrata="DIALOG" hidden="true" movable="true" enableMouse="true">
+		<Size> 
+			<AbsDimension x="300" y="10"/> 
+		</Size>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString name="$parent_Text" inherits="GameFontHighlight" text="blabla" justifyH="left">
+					<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" /></Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Button>
+
+	<Button name="ZGVF_MiniButton" virtual="true" inherits="UIPanelButtonTemplate" text="Mini" frameStrata="MEDIUM">
+		<Size><AbsDimension x="35" y="20"/></Size>
+		<Anchors>
+			<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
+				<Offset><AbsDimension x="-40" y="0"/></Offset>
+			</Anchor>
+		</Anchors>
+		<Scripts>
+			<OnClick>
+				if ZygorGuidesViewer then ZygorGuidesViewer:ToggleMini() end
+			</OnClick>
+		</Scripts>
+	</Button>
+-->
+	
+	<Frame name="ZygorGuidesViewerFrame" toplevel="true" hidden="true" frameStrata="LOW" parent="UIParent" movable="true" clampedToScreen="true">
+		<Scripts>
+			<OnEvent>
+				ZygorGuidesViewerFrame_OnEvent(event);
+			</OnEvent>
+			<OnLoad>
+				ZygorGuidesViewerFrame_OnLoad();
+			</OnLoad>
+			<OnShow>
+				ZygorGuidesViewerFrame_OnShow()
+			</OnShow>
+			<OnHide>
+				ZygorGuidesViewerFrame_OnHide()
+			</OnHide>
+			<OnMouseWheel>
+				return;
+			</OnMouseWheel>
+					<OnMouseDown> ZygorGuidesViewerFrame:StartMoving();  </OnMouseDown>
+					<OnMouseUp>  ZygorGuidesViewerFrame:StopMovingOrSizing(); </OnMouseUp>
+					<OnDragStop> ZygorGuidesViewerFrame:StopMovingOrSizing(); </OnDragStop>
+		</Scripts>
+		<Anchors><Anchor point="CENTER" relativePoint="CENTER" /></Anchors>
+		<Size><AbsDimension x="351" y="452"/></Size>
+
+		<Layers>
+
+			<Layer level="BACKGROUND">
+				<Texture name="$parentIconBack" file="Interface\AddOns\ZygorGuidesViewer\Skin\gnome_back">
+					<Size><AbsDimension x="128" y="128" /></Size>
+					<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="-26" y="49" /></Offset></Anchor></Anchors>
+				</Texture>
+			</Layer>
+
+			<Layer level="ARTWORK">
+				<Texture file="Interface\ClassTrainerFrame\UI-ClassTrainer-TopLeft">
+					<Size><AbsDimension x="256" y="256"/></Size>
+					<Anchors><Anchor point="TOPLEFT"/></Anchors>
+				</Texture>
+				<Texture name="qqqq" file="Interface\ClassTrainerFrame\UI-ClassTrainer-TopRight" level="11">
+					<Anchors><Anchor point="TOPRIGHT"><Offset><AbsDimension x="-25" y="-13"/></Offset></Anchor></Anchors>
+					<Size><AbsDimension x="24" y="24"/></Size>
+					<TexCoords left="0.53" right="0.7" top="0.05" bottom="0.145"/>
+				</Texture>
+				<Texture file="Interface\ClassTrainerFrame\UI-ClassTrainer-TopRight">
+					<Size><AbsDimension x="128" y="256"/></Size>
+					<Anchors><Anchor point="TOPRIGHT"><Offset><AbsDimension x="33" y="0"/></Offset></Anchor></Anchors>
+				</Texture>
+				<Texture file="Interface\FriendsFrame\IgnoreFrame-BotLeft">
+					<Size><AbsDimension x="256" y="256"/></Size>
+					<Anchors><Anchor point="BOTTOMLEFT"><Offset><AbsDimension x="0" y="-60"/></Offset></Anchor></Anchors>
+				</Texture>
+				<Texture file="Interface\FriendsFrame\IgnoreFrame-BotRight">
+					<Size><AbsDimension x="128" y="256"/></Size>
+					<Anchors><Anchor point="BOTTOMRIGHT"><Offset><AbsDimension x="33" y="-60"/></Offset></Anchor></Anchors>
+				</Texture>
+
+				<FontString name="$parent_TitleText" inherits="GameFontHighlight" text="[Zygor's Guides]">
+					<Size><AbsDimension x="300" y="14"/></Size>
+					<Anchors><Anchor point="TOP" relativeTo="ZygorGuidesViewerFrame" relativePoint="TOP"><Offset><AbsDimension x="15" y="-15"/></Offset></Anchor></Anchors>
+				</FontString>
+
+				<FontString name="$parent_LocationLabel" inherits="GameFontNormal" text="Location: ">
+					<Size><AbsDimension x="0" y="14"/></Size>
+					<Anchors><Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT"><Offset><AbsDimension x="25" y="67"/></Offset></Anchor></Anchors>
+				</FontString>
+				<FontString name="$parent_LocationText" inherits="GameFontHighlight" text="">
+					<Size><AbsDimension x="0" y="14"/></Size>
+					<Anchors><Anchor point="BOTTOMLEFT" relativeTo="$parent_LocationLabel" relativePoint="BOTTOMRIGHT"><Offset><AbsDimension x="4" y="0"/></Offset></Anchor></Anchors>
+				</FontString>
+
+				<FontString name="$parent_LevelLabel" inherits="GameFontNormal" text="Current level: ">
+					<Size><AbsDimension x="0" y="14"/></Size>
+					<Anchors><Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT"><Offset><AbsDimension x="25" y="50"/></Offset></Anchor></Anchors>
+				</FontString>
+				<FontString name="$parent_LevelText" inherits="GameFontHighlight" text="">
+					<Size><AbsDimension x="0" y="14"/></Size>
+					<Anchors><Anchor point="BOTTOMLEFT" relativeTo="$parent_LevelLabel" relativePoint="BOTTOMRIGHT"><Offset><AbsDimension x="4" y="0"/></Offset></Anchor></Anchors>
+				</FontString>
+
+				<FontString name="$parent_StepLabel" inherits="GameFontNormal" text="Current step: ">
+					<Size><AbsDimension x="0" y="14"/></Size>
+					<Anchors><Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT"><Offset><AbsDimension x="175" y="50"/></Offset></Anchor></Anchors>
+				</FontString>
+				<FontString name="$parent_StepText" inherits="GameFontHighlight" text="">
+					<Size><AbsDimension x="0" y="14"/></Size>
+					<Anchors><Anchor point="BOTTOMLEFT" relativeTo="$parent_StepLabel" relativePoint="BOTTOMRIGHT"><Offset><AbsDimension x="4" y="0"/></Offset></Anchor></Anchors>
+				</FontString>
+			</Layer>
+
+			<Layer level="OVERLAY">
+				<Texture name="$parentIcon" file="Interface\AddOns\ZygorGuidesViewer\Skin\gnome">
+					<Size><AbsDimension x="128" y="128" /></Size>
+					<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="-26" y="50" /></Offset></Anchor></Anchors>
+				</Texture>
+
+				<!--
+				<Texture name="$parentTitleAlliance" file="Interface\AddOns\ZygorGuidesViewer\Skin\title_alliance">
+					<Size><AbsDimension x="384" y="24"/></Size>
+					<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT"><Offset><AbsDimension x="12" y="-40"/></Offset></Anchor></Anchors>
+				</Texture>
+				<Texture name="$parentTitleHorde" file="Interface\AddOns\ZygorGuidesViewer\Skin\title_horde">
+					<Size><AbsDimension x="384" y="24"/></Size>
+					<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT"><Offset><AbsDimension x="12" y="-40"/></Offset></Anchor></Anchors>
+				</Texture>
+				-->
+
+				<Texture name="$parentHorizontalBarLeft" file="Interface\ClassTrainerFrame\UI-ClassTrainer-HorizontalBar">
+					<Size><AbsDimension x="256" y="16"/></Size>
+					<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="15" y="-356"/></Offset></Anchor></Anchors>
+					<TexCoords left="0" right="1.0" top="0" bottom="0.25"/>
+				</Texture>
+
+				<Texture file="Interface\ClassTrainerFrame\UI-ClassTrainer-HorizontalBar">
+					<Size><AbsDimension x="70" y="16"/></Size>
+					<Anchors><Anchor point="LEFT" relativeTo="$parentHorizontalBarLeft" relativePoint="RIGHT"><Offset><AbsDimension x="-2" y="0"/></Offset></Anchor></Anchors>
+					<TexCoords left="0" right="0.29296875" top="0.25" bottom="0.5"/>
+				</Texture>
+
+				<FontString name="$parent_SectionLabel" inherits="GameFontNormal" text="[Section:]">
+					<Size><AbsDimension x="0" y="13"/></Size>
+					<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="80" y="-50"/></Offset></Anchor></Anchors>
+				</FontString>
+
+				<FontString name="$parent_EmptyText" inherits="GameFontNormal" text="" justifyH="center">
+					<Size><AbsDimension x="290" y="0"/></Size>
+					<Anchors><Anchor point="TOP" relativePoint="TOP"><Offset><AbsDimension x="5" y="-98"/></Offset></Anchor></Anchors>
+				</FontString>
+
+				<FontString name="$parent_Copyright" inherits="GameFontNormal" text="(C) 2008 John Cook">
+					<Size><AbsDimension x="0" y="0"/></Size>
+					<Anchors><Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT"><Offset><AbsDimension x="22" y="26"/></Offset></Anchor></Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+
+		<Frames>
+			<Button name="$parent_MiniButton">
+				<Anchors><Anchor point="TOPRIGHT" relativePoint="TOPRIGHT"><Offset><AbsDimension x="-24" y="-14"/></Offset></Anchor></Anchors>
+				<Size><AbsDimension x="20" y="20"/></Size>
+				<Scripts>
+					<OnClick>
+						if ZygorGuidesViewer then ZygorGuidesViewer:ToggleAllSteps() end
+					</OnClick>
+				</Scripts>
+				<NormalTexture file="Interface\AddOns\ZygorGuidesViewer\Skin\minimize-down-up"><TexCoords left="0.2" right="0.8" top="0.2" bottom="0.8"/></NormalTexture>
+				<PushedTexture file="Interface\AddOns\ZygorGuidesViewer\Skin\minimize-down-down"><TexCoords left="0.2" right="0.8" top="0.2" bottom="0.8"/></PushedTexture>
+				<HighlightTexture file="Interface\AddOns\ZygorGuidesViewer\Skin\minimize-hi" alphaMode="ADD"><TexCoords left="0.2" right="0.8" top="0.2" bottom="0.8"/></HighlightTexture>
+			</Button>
+
+			<Button name="$parent_CloseButton" inherits="UIPanelCloseButton">
+				<Anchors><Anchor point="TOPRIGHT" relativeTo="ZygorGuidesViewerFrame" relativePoint="TOPRIGHT"><Offset><AbsDimension x="3" y="-8"/></Offset></Anchor></Anchors>
+			</Button>
+
+			<!--
+			<CheckButton name="$parent_HideCompleted" inherits="OptionsCheckButtonTemplate" checked="false">
+				<Anchors><Anchor point="LEFT" relativeTo="$parent_SectionLabel" relativePoint="RIGHT"><Offset><AbsDimension x="160" y="0"></AbsDimension></Offset></Anchor></Anchors>
+				<Scripts>
+					<OnClick>
+						if ZygorGuidesViewer then ZygorGuidesViewer:ToggleFilterNotes() end
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "BOTTOM")
+						if this:GetChecked() then
+							GameTooltip:SetText("Showing map dots for all steps")
+						else
+							GameTooltip:SetText("Showing only the current map dot")
+						end
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide()
+					</OnLeave>
+				</Scripts>
+			</CheckButton>
+			-->
+
+			<Button name="$parent_OptionsButton" inherits="UIPanelButtonTemplate" text="Options">
+				<Size><AbsDimension x="125" y="21"/></Size>
+				<Anchors>
+					<Anchor point="BOTTOMRIGHT" relativeTo="ZygorGuidesViewerFrame" relativePoint="BOTTOMRIGHT"><Offset><AbsDimension x="-10" y="22"/></Offset></Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						if ZygorGuidesViewer then ZygorGuidesViewer:OpenOptions() end
+					</OnClick>
+				</Scripts>
+			</Button>
+
+			<Frame name="$parent_SectionDropDown" inherits="UIDropDownMenuTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="3" y="-67"/>
+						</Offset>
+					</Anchor>
+					<Anchor point="RIGHT">
+						<Offset>
+							<AbsDimension x="-5" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						UIDropDownMenu_SetWidth(self, 305);
+						UIDropDownMenu_Initialize(self, ZGVFSectionDropDown_Initialize);
+						UIDropDownMenu_JustifyText(self, "LEFT");
+					</OnLoad>
+					<OnShow>
+						UIDropDownMenu_Initialize(self, ZGVFSectionDropDown_Initialize);
+					</OnShow>
+				</Scripts>
+			</Frame>
+
+		</Frames>
+
+	</Frame>  
+
+</Ui>

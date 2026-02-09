@@ -1,0 +1,5 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ D:\UI.xsd">
+	<Frame name="ZygorGreyFrame" movable="1">
+		<Anchors><Anchor point="CENTER" relativeTo="UIParent" relativePoint="CENTER"></Anchor></Anchors>
+	</Frame>
+</Ui>

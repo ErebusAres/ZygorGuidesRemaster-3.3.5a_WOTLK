@@ -1,0 +1,22 @@
+## Interface: 50300
+## Title: |cffffff88Z|cffffee66y|cffffdd44g|cffffcc22o|cffffbb00r|r Guides Viewer 4
+## Notes: Free multi-purpose leveling guide viewer.|n|nDesigned for use with Zygor Guides, but supporting user-supplied guides as well.|n|nVersion: 4.0.$WCREV$|nUpdated on: $WCDATE$
+## Author: Sinus Pi for Zygor Guides
+## DefaultState: enabled
+## LoadOnDemand: 0
+## SavedVariables: ZygorGuidesViewerSettings
+## - SavedVariablesPerCharacter: ZygorGuidesViewerSettingsChar
+## OptionalDeps: Cartographer, Cartographer3, TomTom
+## X-Category: 
+## X-Credits: 
+## X-eMail: zygor@zygorguides.com
+## X-Website: http://zygorguides.com/
+## X-License: GPL
+## Version: 4.0.$WCREV$
+## X-Date: $WCDATE$
+
+Libs\Libs.xml
+
+Localization\Localization.xml
+
+files.xml

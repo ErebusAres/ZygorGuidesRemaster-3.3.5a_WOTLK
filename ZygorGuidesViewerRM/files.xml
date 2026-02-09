@@ -1,0 +1,37 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/FrameXML/UI.xsd">
+
+	<Script file="ZygorGuidesViewer.lua"/>
+	<Script file="Ver.lua"/>
+	<Script file="Parser.lua"/>
+	<Script file="Options.lua"/>
+	<Script file="Waypoints.lua"/>
+	<Script file="Log.lua"/>
+	<Script file="Functions.lua"/>
+	<Script file="QuestTracking.lua"/>
+	<Script file="Faction.lua"/>
+	<Script file="Profession.lua"/>
+
+	<Script file="QuestAutoAccept.lua"/>
+
+	<Script file="Step.lua"/>
+	<Script file="Goal.lua"/>
+	<Include file="Data\data.xml"/>
+
+	<Script file="Pointer.lua"/>
+	<Include file="PointerMarkerTemplates.xml" />
+
+	<Script file="Foglight.lua"/>
+	<Script file="MapCoords.lua"/>
+
+	<Script file="Dev.lua"/>
+
+	<Include file="MapSpotMarkerTemplates.xml" />
+	<Script file="MapSpot.lua" />
+	<Script file="MapSpotSet.lua" />
+	<Script file="MapSpotsDetector.lua" />
+
+		<!-- <Script file="ZygorGuidesViewerOptions.lua"/> -->
+	<Include file="ZygorMapIcon.xml" />
+	<Include file="ZygorGuidesViewerFrame.xml" />
+	<!-- <Include file="ZygorGuidesViewerMiniFrame.xml"/> -->
+</Ui>
