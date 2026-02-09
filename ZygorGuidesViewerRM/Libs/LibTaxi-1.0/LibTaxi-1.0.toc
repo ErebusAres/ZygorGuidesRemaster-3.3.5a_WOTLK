@@ -1,9 +1,0 @@
-## Interface: 30300
-## Title: Lib: Taxi-1.0
-## Notes: A library recording all the flight paths currently known to the character.
-## Author: Sinus
-## X-eMail: sinus@sinpi.net
-## X-Category: Library
-## X-License: MIT
-
-lib.xml
