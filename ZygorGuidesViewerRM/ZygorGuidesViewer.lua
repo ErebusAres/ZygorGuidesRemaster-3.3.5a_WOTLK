@@ -225,6 +225,126 @@ function me:EnsureRemasterFrames()
 	inset:Hide()
 	frames.inset = inset
 
+	local header = CreateFrame("Frame", nil, ZygorGuidesViewerFrame)
+	header:SetHeight(26)
+	header:SetPoint("TOPLEFT", ZygorGuidesViewerFrame, "TOPLEFT", 10, -6)
+	header:SetPoint("TOPRIGHT", ZygorGuidesViewerFrame, "TOPRIGHT", -10, -6)
+	header:SetFrameLevel(ZygorGuidesViewerFrame:GetFrameLevel() + 2)
+	header:Hide()
+	frames.header = header
+
+	local headerBg = header:CreateTexture(nil, "BORDER")
+	headerBg:SetAllPoints(header)
+	headerBg:SetTexture(1, 1, 1, 0.06)
+	frames.headerBg = headerBg
+
+	local separator = header:CreateTexture(nil, "BORDER")
+	separator:SetHeight(1)
+	separator:SetPoint("TOPLEFT", header, "BOTTOMLEFT", 0, -2)
+	separator:SetPoint("TOPRIGHT", header, "BOTTOMRIGHT", 0, -2)
+	separator:SetTexture(1, 1, 1, 0.12)
+	separator:Hide()
+	frames.separator = separator
+
+	local title = header:CreateFontString(nil, "ARTWORK")
+	title:SetPoint("LEFT", header, "LEFT", 8, 0)
+	title:SetJustifyH("LEFT")
+	title:SetTextColor(0.92, 0.94, 0.98, 1)
+	safeSetFont(title, ZGV.DIR.."\\Skins\\segoeuib.ttf", 13)
+	frames.headerTitle = title
+
+	local meta = header:CreateFontString(nil, "ARTWORK")
+	meta:SetPoint("RIGHT", header, "RIGHT", -96, 0)
+	meta:SetJustifyH("RIGHT")
+	meta:SetTextColor(0.70, 0.75, 0.85, 1)
+	safeSetFont(meta, ZGV.DIR.."\\Skins\\segoeui.ttf", 11)
+	frames.headerMeta = meta
+
+	local guideButton = CreateFrame("Button", "ZGVRemasterGuideButton", header)
+	guideButton:SetSize(72, 18)
+	guideButton:SetPoint("RIGHT", header, "RIGHT", -8, 0)
+	guideButton:SetText("Guides")
+	guideButton:SetNormalFontObject("GameFontHighlightSmall")
+	guideButton:SetHighlightFontObject("GameFontHighlightSmall")
+	guideButton:SetBackdrop({
+		bgFile = "Interface\\Buttons\\white8x8",
+		edgeFile = "Interface\\Buttons\\white8x8",
+		tile = true,
+		tileSize = 16,
+		edgeSize = 1,
+		insets = { left = 1, right = 1, top = 1, bottom = 1 },
+	})
+	guideButton:SetBackdropColor(0.14, 0.16, 0.22, 0.9)
+	guideButton:SetBackdropBorderColor(0.24, 0.28, 0.36, 0.9)
+	guideButton:SetScript("OnEnter", function(selfBtn)
+		selfBtn:SetBackdropColor(0.20, 0.22, 0.30, 0.95)
+	end)
+	guideButton:SetScript("OnLeave", function(selfBtn)
+		selfBtn:SetBackdropColor(0.14, 0.16, 0.22, 0.9)
+	end)
+	guideButton:SetScript("OnClick", function()
+		if ZGV and ZGV.OpenGuideMenu then
+			ZGV:OpenGuideMenu()
+		elseif ZGV and ZGV.OpenQuickMenu then
+			ZGV:OpenQuickMenu()
+		end
+	end)
+	frames.guideButton = guideButton
+
+	self.RemasterFrames = frames
+	return frames
+end
+
+function me:UpdateRemasterHeader()
+	if not self.RemasterFrames then
+		return
+	end
+	local frames = self.RemasterFrames
+	if not frames.headerTitle or not frames.headerMeta then
+		return
+	end
+	local title = ""
+	if self.CurrentGuide and self.CurrentGuide.title_short then
+		title = self.CurrentGuide.title_short
+	elseif self.CurrentGuide and self.CurrentGuide.title then
+		title = self.CurrentGuide.title
+	end
+	frames.headerTitle:SetText(title or "")
+	if self.CurrentGuide and self.CurrentGuide.steps then
+		local total = #self.CurrentGuide.steps
+		local current = self.CurrentStepNum or 1
+		frames.headerMeta:SetText(string.format("Step %d / %d", current, total))
+	else
+		frames.headerMeta:SetText("")
+	end
+end
+
+function me:EnsureRemasterFrames()
+	if self.RemasterFrames then
+		return self.RemasterFrames
+	end
+	if not ZygorGuidesViewerFrame then
+		return nil
+	end
+	local frames = {}
+
+	local inset = CreateFrame("Frame", nil, ZygorGuidesViewerFrame)
+	inset:SetPoint("TOPLEFT", ZygorGuidesViewerFrame, "TOPLEFT", 10, -34)
+	inset:SetPoint("BOTTOMRIGHT", ZygorGuidesViewerFrame, "BOTTOMRIGHT", -10, 10)
+	inset:SetFrameLevel(ZygorGuidesViewerFrame:GetFrameLevel() + 1)
+	inset:SetBackdrop({
+		bgFile = "Interface\\Buttons\\white8x8",
+		edgeFile = "Interface\\Buttons\\white8x8",
+		tile = true,
+		tileSize = 16,
+		edgeSize = 1,
+		insets = { left = 1, right = 1, top = 1, bottom = 1 },
+	})
+	inset:SetBackdropColor(0.10, 0.11, 0.15, 0.92)
+	inset:SetBackdropBorderColor(0.18, 0.20, 0.26, 0.8)
+	inset:Hide()
+	frames.inset = inset
+
 	if ZygorGuidesViewerFrame_Border then
 		local header = ZygorGuidesViewerFrame_Border:CreateTexture(nil, "BORDER")
 		header:SetHeight(24)
@@ -971,6 +1091,9 @@ function me:UpdateFrame(full,onupdate)
 	if not self.Frame or not self.Frame:IsVisible() then return end
 
 	self:EnsureSectionTitleFont()
+	if self.db and self.db.profile and self.db.profile.skin == "remaster" then
+		self:UpdateRemasterHeader()
+	end
 
 	--if InCombatLockdown() then return end
 	--[[
@@ -2555,6 +2678,17 @@ function me:ApplyRemasterSkin()
 				mini = captureFrameLayout(ZygorGuidesViewerFrame_Border_MiniButton),
 			},
 		}
+		if self.db and self.db.profile then
+			self.RemasterDefaults.goalcolors = {
+				goalbackincomplete = self.db.profile.goalbackincomplete,
+				goalbackprogressing = self.db.profile.goalbackprogressing,
+				goalbackcomplete = self.db.profile.goalbackcomplete,
+				goalbackimpossible = self.db.profile.goalbackimpossible,
+				goalbackaux = self.db.profile.goalbackaux,
+				goalbackobsolete = self.db.profile.goalbackobsolete,
+				stepbackalpha = self.db.profile.stepbackalpha,
+			}
+		end
 	end
 
 	if ZygorGuidesViewerFrame_Border then
@@ -2607,6 +2741,7 @@ function me:ApplyRemasterSkin()
 		ZygorGuidesViewerFrame_Border_SectionTitle:SetPoint("TOPRIGHT", ZygorGuidesViewerFrame, "TOPRIGHT", -120, -10)
 		ZygorGuidesViewerFrame_Border_SectionTitle:SetJustifyH("LEFT")
 		ZygorGuidesViewerFrame_Border_SectionTitle:SetTextColor(0.92, 0.94, 0.98, 1)
+		ZygorGuidesViewerFrame_Border_SectionTitle:SetAlpha(0)
 	end
 
 	if ZygorGuidesViewerFrame_Border_TitleBar then
@@ -2658,6 +2793,28 @@ function me:ApplyRemasterSkin()
 	if remasterFrames and remasterFrames.separator then
 		remasterFrames.separator:Show()
 	end
+	if remasterFrames and remasterFrames.header then
+		remasterFrames.header:Show()
+	end
+	if remasterFrames and remasterFrames.headerTitle then
+		remasterFrames.headerTitle:Show()
+	end
+	if remasterFrames and remasterFrames.headerMeta then
+		remasterFrames.headerMeta:Show()
+	end
+	if remasterFrames and remasterFrames.guideButton then
+		remasterFrames.guideButton:Show()
+	end
+
+	if self.db and self.db.profile then
+		self.db.profile.goalbackincomplete = { r = 0.18, g = 0.20, b = 0.25, a = 0.65 }
+		self.db.profile.goalbackprogressing = { r = 0.18, g = 0.28, b = 0.35, a = 0.75 }
+		self.db.profile.goalbackcomplete = { r = 0.12, g = 0.24, b = 0.20, a = 0.75 }
+		self.db.profile.goalbackimpossible = { r = 0.18, g = 0.18, b = 0.18, a = 0.6 }
+		self.db.profile.goalbackaux = { r = 0.15, g = 0.22, b = 0.32, a = 0.6 }
+		self.db.profile.goalbackobsolete = { r = 0.15, g = 0.22, b = 0.32, a = 0.6 }
+		self.db.profile.stepbackalpha = 0.2
+	end
 end
 
 function me:RestoreLegacySkin()
@@ -2705,6 +2862,25 @@ function me:RestoreLegacySkin()
 		end
 		if self.RemasterFrames.separator then
 			self.RemasterFrames.separator:Hide()
+		end
+		if self.RemasterFrames.headerTitle then
+			self.RemasterFrames.headerTitle:Hide()
+		end
+		if self.RemasterFrames.headerMeta then
+			self.RemasterFrames.headerMeta:Hide()
+		end
+		if self.RemasterFrames.guideButton then
+			self.RemasterFrames.guideButton:Hide()
+		end
+	end
+
+	if ZygorGuidesViewerFrame_Border_SectionTitle then
+		ZygorGuidesViewerFrame_Border_SectionTitle:SetAlpha(1)
+	end
+
+	if self.RemasterDefaults and self.RemasterDefaults.goalcolors and self.db and self.db.profile then
+		for k, v in pairs(self.RemasterDefaults.goalcolors) do
+			self.db.profile[k] = v
 		end
 	end
 end

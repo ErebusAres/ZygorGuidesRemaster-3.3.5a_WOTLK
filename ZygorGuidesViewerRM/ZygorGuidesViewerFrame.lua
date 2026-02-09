@@ -75,6 +75,11 @@ local function ApplyLineLayout(line, layout, useRemaster)
 
 	if line.icon then
 		line.icon:SetSize(layout.ICON_SIZE, layout.ICON_SIZE)
+		if useRemaster then
+			line.icon:SetTexture(ZGV.DIR.."\\Skins\\icons")
+			line.icon:SetDesaturated(true)
+			line.icon:SetVertexColor(0.8, 0.85, 0.95, 0.9)
+		end
 	end
 
 	if line.label then
@@ -87,6 +92,11 @@ local function ApplyLineLayout(line, layout, useRemaster)
 			line.label:SetFontObject("GameFontHighlightSmall")
 			EnsureFont(line.label, 10)
 		end
+	end
+
+	if line.back and useRemaster then
+		line.back:SetTexture("Interface\\Buttons\\white8x8")
+		line.back:SetVertexColor(0.12, 0.14, 0.18, 0.55)
 	end
 end
 
@@ -120,6 +130,22 @@ function ZGV:ApplyFrameLayout()
 			if step and step.lines then
 				for _, line in ipairs(step.lines) do
 					ApplyLineLayout(line, layout, useRemaster)
+				end
+			end
+			if useRemaster and step then
+				step:SetBackdrop({
+					bgFile = "Interface\\Buttons\\white8x8",
+					tile = true,
+					tileSize = 16,
+					insets = { left = 2, right = 2, top = 2, bottom = 2 },
+				})
+				step:SetBackdropColor(0.08, 0.09, 0.12, 0.6)
+				if step.border then
+					step.border:SetBackdrop({
+						edgeFile = "Interface\\Buttons\\white8x8",
+						edgeSize = 1,
+					})
+					step.border:SetBackdropBorderColor(0.2, 0.22, 0.26, 0.8)
 				end
 			end
 		end
