@@ -120,7 +120,10 @@ function ZGV:ApplyFrameLayout()
 		if useRemaster then
 			SafeSetFont(ZygorGuidesViewerFrame_Border_SectionTitle, layout.SECTION_FONT, layout.SECTION_FONT_SIZE)
 		else
-			ZygorGuidesViewerFrame_Border_SectionTitle:SetFontObject("GameFontSmall")
+			local ok = pcall(ZygorGuidesViewerFrame_Border_SectionTitle.SetFontObject, ZygorGuidesViewerFrame_Border_SectionTitle, "GameFontNormalSmall")
+			if not ok then
+				SafeSetFont(ZygorGuidesViewerFrame_Border_SectionTitle, STANDARD_TEXT_FONT, 11)
+			end
 			EnsureFont(ZygorGuidesViewerFrame_Border_SectionTitle, 11)
 		end
 	end

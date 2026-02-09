@@ -1092,6 +1092,9 @@ function me:UpdateFrame(full,onupdate)
 
 	self:EnsureSectionTitleFont()
 	if self.db and self.db.profile and self.db.profile.skin == "remaster" then
+		if not self.remasterApplied then
+			self:ApplyRemasterSkin()
+		end
 		self:UpdateRemasterHeader()
 	end
 
@@ -2825,6 +2828,7 @@ function me:ApplyRemasterSkin()
 		self.db.profile.goalbackobsolete = { r = 0.15, g = 0.22, b = 0.32, a = 0.6 }
 		self.db.profile.stepbackalpha = 0.2
 	end
+	self.remasterApplied = true
 end
 
 function me:RestoreLegacySkin()
@@ -2903,6 +2907,7 @@ function me:RestoreLegacySkin()
 			self.db.profile[k] = v
 		end
 	end
+	self.remasterApplied = false
 end
 
 function me:ResizeFrame()
