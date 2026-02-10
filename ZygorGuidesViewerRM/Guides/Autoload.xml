@@ -2,11 +2,32 @@
 ..\FrameXML\UI.xsd">
 	<!-- Autoloading of included guides. Add your Guide##.lua files here as you please. -->
 	
-	<Script file="ZygorGuidesAlliance.lua"/>
-	<Script file="ZygorGuidesHorde.lua"/>
-	<Script file="ZygorDailiesAlliance.lua"/>
-	<Script file="ZygorDailiesHorde.lua"/>
-
+	<Script file="Leveling\ZygorGuidesAlliance.lua"/>
+	<Script file="Leveling\ZygorGuidesHorde.lua"/>
+	<Script file="Dailies\ZygorDailiesAlliance.lua"/>
+	<Script file="Dailies\ZygorDailiesHorde.lua"/>
+	<Script file="Dailies\AresDailiesAlliance.lua"/>
+	<Script file="Reputations\AresReputationsAlliance.lua"/>
+	<Script file="Achievements\AresAchievementExploration.lua"/>
+	<Script file="Achievements\ZygorAchievementsAlliance.lua"/>
+	<Script file="Achievements\ZygorAchievementsHorde.lua"/>
+	<Script file="Achievements\ZygorAchievementsCommon.lua"/>
+	<Script file="Achievements\A-GeneralAchievement.lua"/>
+	<Script file="Achievements\A-Holidays.lua"/>
+	<Script file="Achievements\A-Loremaster-BurningCrusade.lua"/>
+	<Script file="Achievements\A-Loremaster-EasternKingdoms.lua"/>
+	<Script file="Achievements\A-Loremaster-Kalimdor.lua"/>
+	<Script file="Achievements\A-Loremaster-Northrend.lua"/>
+	<Script file="Leveling\BloodmystIsleTBC.lua"/>
+	<Script file="Dungeons\DanatonQuestInstancesA.lua"/>
+	<Script file="Dungeons\DanatonQuestInstancesH.lua"/>
+	<Script file="Leveling\Ding80GuidesAlliance.lua"/>
+	<Script file="Leveling\Ding80GuidesAllianceTBCduo.lua"/>
+	<Script file="Leveling\Ding80GuidesAllianceTBCsolo.lua"/>
+	<Script file="Dungeons\ZygorGearAlliance.lua"/>
+	<Script file="Dungeons\ZygorGearCommon.lua"/>
+	<Script file="Dungeons\ZygorGearHorde.lua"/>
+	<Script file="Professions\ZygorProfessionsCommon.lua"/>
 	<Script file="Guide01.lua"/>
 	<Script file="Guide02.lua"/>
 	<Script file="Guide03.lua"/>

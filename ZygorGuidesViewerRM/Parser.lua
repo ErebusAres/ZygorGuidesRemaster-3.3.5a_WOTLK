@@ -279,6 +279,7 @@ function me:ParseEntry(text)
 				goal.action = goal.action or cmd
 				if not params then return nil,"no quest parameter",linecount,chunk end
 				goal.quest,goal.questid = self:ParseID(params)
+				if not goal.quest and goal.questid then goal.quest=tostring(goal.questid) end
 				local q,qp = goal.quest:match("^(.-)%s-%((%d+)%)$")
 				if q then goal.quest,goal.questpart=q,qp end
 				if not goal.quest and not goal.questid then return nil,"no quest parameter",linecount,chunk end
@@ -292,6 +293,7 @@ function me:ParseEntry(text)
 				goal.action = goal.action or cmd
 				if not params then return nil,"no npc",linecount,chunk end
 				goal.npc,goal.npcid = self:ParseID(params)
+				if not goal.npc and goal.npcid then goal.npc=tostring(goal.npcid) end
 				if not goal.npc then return nil,"no npc",linecount,chunk end
 			elseif cmd=="goto" or cmd=="at" then
 				goal.action = goal.action or cmd
