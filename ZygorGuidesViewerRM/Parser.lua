@@ -134,6 +134,12 @@ ZGV.ConditionEnv = {
 		local _, _, _, completed = GetAchievementInfo(id)
 		return completed
 	end,
+	completedq = function(id)
+		if ZGV.completedQuests then
+			return ZGV.completedQuests[id] or ZGV.completedQuests[tostring(id)]
+		end
+		return false
+	end,
 
 	_Update = function()
 		ZGV.ConditionEnv.level = UnitLevel("player")

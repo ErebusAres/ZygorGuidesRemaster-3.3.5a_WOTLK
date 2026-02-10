@@ -28,6 +28,7 @@
 	<Script file="Dungeons\ZygorGearCommon.lua"/>
 	<Script file="Dungeons\ZygorGearHorde.lua"/>
 	<Script file="Professions\ZygorProfessionsCommon.lua"/>
+	<Script file="Fun\AresNoggenfoggerQuest.lua"/>
 	<Script file="Guide01.lua"/>
 	<Script file="Guide02.lua"/>
 	<Script file="Guide03.lua"/>

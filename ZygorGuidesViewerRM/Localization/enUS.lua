@@ -304,8 +304,8 @@ ZygorGuidesViewer_L("Main", "enUS", function() return {
 	['step_num'] = "|cffaaaaaa%s|cff888888.|r ",
 	['step_level'] = "|cffaaccaaLevel: |cffcceecc%s|cffaaccaa|r ",
 
-	["questtitle"] = "`%s'",
-	["questtitle_part"] = "`%s' (part %s)",
+	["questtitle"] = "'%s'",
+	["questtitle_part"] = "'%s' (part %s)",
 	["coords"] = "%d,%d",
 	["map_coords"] = "%s %d,%d",
 
