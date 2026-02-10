@@ -328,6 +328,7 @@ function me:Options_DefineOptions()
 						type = "select",
 						sorting = {
 							"remaster_dark",
+							"remaster_goals",
 							"remaster_blue",
 							"remaster_green",
 							"remaster_orange",
@@ -339,6 +340,7 @@ function me:Options_DefineOptions()
 						},
 						values = {
 							remaster_dark="|cffcfd6e8Dark|r",
+							remaster_goals="|cffebd199Goals|r",
 							remaster_blue="|cff88b3ffBlue|r",
 							remaster_green="|cff88ff88Green|r",
 							remaster_orange="|cffffcc66Orange|r",
@@ -357,6 +359,7 @@ function me:Options_DefineOptions()
 						set = function(_,n)
 							local colors = {
 										remaster_dark={text={0.90,0.92,0.98},back={0.08,0.09,0.12}},
+										remaster_goals={text={0.92,0.80,0.50},back={0.10,0.11,0.15}},
 										remaster_blue={text={0.70,0.80,1.00},back={0.08,0.11,0.24}},
 										remaster_green={text={0.50,1.00,0.50},back={0.09,0.20,0.07}},
 										remaster_orange={text={1.00,0.80,0.00},back={0.23,0.11,0.07}},

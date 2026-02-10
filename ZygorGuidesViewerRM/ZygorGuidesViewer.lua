@@ -273,6 +273,8 @@ function me:EnsureRemasterFrames()
 		end
 		ZGV.framemoving = nil
 	end
+	frames.startDrag = remasterStartDrag
+	frames.stopDrag = remasterStopDrag
 	root:SetScript("OnDragStart", remasterStartDrag)
 	root:SetScript("OnDragStop", remasterStopDrag)
 	root:SetScript("OnMouseDown", function(self, button)
@@ -402,13 +404,18 @@ function me:EnsureRemasterFrames()
 			edgeSize = 1,
 			insets = { left = 1, right = 1, top = 1, bottom = 1 },
 		})
-		button:SetBackdropColor(0.14, 0.15, 0.18, 0.9)
-		button:SetBackdropBorderColor(0.22, 0.24, 0.28, 0.9)
+		button.remasterBackColor = { 0.14, 0.15, 0.18, 0.9 }
+		button.remasterHoverColor = { 0.20, 0.21, 0.26, 0.95 }
+		button.remasterBorderColor = { 0.22, 0.24, 0.28, 0.9 }
+		button:SetBackdropColor(unpack(button.remasterBackColor))
+		button:SetBackdropBorderColor(unpack(button.remasterBorderColor))
 		button:SetScript("OnEnter", function(selfBtn)
-			selfBtn:SetBackdropColor(0.20, 0.21, 0.26, 0.95)
+			local c = selfBtn.remasterHoverColor or { 0.20, 0.21, 0.26, 0.95 }
+			selfBtn:SetBackdropColor(c[1], c[2], c[3], c[4] or 1)
 		end)
 		button:SetScript("OnLeave", function(selfBtn)
-			selfBtn:SetBackdropColor(0.14, 0.15, 0.18, 0.9)
+			local c = selfBtn.remasterBackColor or { 0.14, 0.15, 0.18, 0.9 }
+			selfBtn:SetBackdropColor(c[1], c[2], c[3], c[4] or 1)
 		end)
 	end
 	local function tipColor()
@@ -3138,19 +3145,101 @@ function me:ApplyRemasterSkin()
 		local backc = self.db.profile.skincolors and self.db.profile.skincolors.back or {0.08, 0.09, 0.12}
 		local backalpha = self.db.profile.backopacity or 0.3
 		local opacitymain = self.db.profile.opacitymain or 1.0
+		local remastercolor = self.db.profile.remastercolor or "dark"
+
+		local theme = {
+			frameBorder = { 0.12, 0.12, 0.14, 0.9 },
+			frameLight = { 1, 1, 1, 0.08 },
+			insetBg = backc,
+			insetBorder = { 0.12, 0.12, 0.14, 0.8 },
+			buttonBack = { 0.14, 0.15, 0.18, 0.9 },
+			buttonHover = { 0.20, 0.21, 0.26, 0.95 },
+			buttonBorder = { 0.22, 0.24, 0.28, 0.9 },
+		}
+
+		if remastercolor == "goals" then
+			theme.frameBorder = { 0.20, 0.22, 0.26, 0.75 }
+			theme.frameLight = { 0.14, 0.15, 0.19, 0.40 }
+			theme.insetBg = { 0.10, 0.11, 0.15, 0.95 }
+			theme.insetBorder = { 0.17, 0.19, 0.24, 0.85 }
+			theme.buttonBack = { 0.12, 0.13, 0.17, 0.95 }
+			theme.buttonHover = { 0.20, 0.18, 0.12, 0.98 }
+			theme.buttonBorder = { 0.45, 0.38, 0.22, 0.9 }
+			theme.separator = { 0.92, 0.80, 0.50, 0.55 }
+		end
 		if remasterFrames.root then
 			remasterFrames.root:SetAlpha(opacitymain)
-			remasterFrames.root:SetBackdropColor(backc[1], backc[2], backc[3], backalpha)
+			local rootc = backc
+			if remastercolor == "goals" then
+				rootc = { 0.08, 0.09, 0.12 }
+			end
+			remasterFrames.root:SetBackdropColor(rootc[1], rootc[2], rootc[3], backalpha)
+			remasterFrames.root:SetBackdropBorderColor(theme.frameBorder[1], theme.frameBorder[2], theme.frameBorder[3], theme.frameBorder[4] or 1)
 		end
 		if remasterFrames.content then
-			remasterFrames.content:SetBackdropColor(backc[1], backc[2], backc[3], math.min(1, backalpha + 0.2))
+			local ib = theme.insetBg or backc
+			local ia = math.min(1, (theme.insetBg[4] or 0.95) * (backalpha / 0.3))
+			remasterFrames.content:SetBackdropColor(ib[1], ib[2], ib[3], ia)
+			remasterFrames.content:SetBackdropBorderColor(theme.insetBorder[1], theme.insetBorder[2], theme.insetBorder[3], theme.insetBorder[4] or 1)
+		end
+		if remasterFrames.headerBg then
+			if remastercolor == "goals" then
+				remasterFrames.headerBg:SetColorTexture(0, 0, 0, 0.45)
+			else
+				local c = theme.frameLight
+				remasterFrames.headerBg:SetColorTexture(c[1], c[2], c[3], c[4] or 1)
+			end
+		end
+		if remasterFrames.toolbarBg then
+			if remastercolor == "goals" then
+				remasterFrames.toolbarBg:SetColorTexture(0, 0, 0, 0.30)
+			else
+				local c = theme.frameLight
+				remasterFrames.toolbarBg:SetColorTexture(c[1], c[2], c[3], (c[4] or 1) * 0.8)
+			end
+		end
+		if remasterFrames.separator then
+			local c = theme.separator or theme.frameBorder
+			remasterFrames.separator:SetColorTexture(c[1], c[2], c[3], c[4] or 1)
 		end
 		if remasterFrames.headerTitle then
-			remasterFrames.headerTitle:SetTextColor(textc[1], textc[2], textc[3], 1)
+			if remastercolor == "goals" then
+				remasterFrames.headerTitle:SetTextColor(0.92, 0.80, 0.50, 1)
+			else
+				remasterFrames.headerTitle:SetTextColor(textc[1], textc[2], textc[3], 1)
+			end
 		end
 		if remasterFrames.headerMeta then
-			remasterFrames.headerMeta:SetTextColor(textc[1], textc[2], textc[3], 0.85)
+			if remastercolor == "goals" then
+				remasterFrames.headerMeta:SetTextColor(0.70, 0.78, 0.90, 0.9)
+			else
+				remasterFrames.headerMeta:SetTextColor(textc[1], textc[2], textc[3], 0.85)
+			end
 		end
+		if remasterFrames.stepLabel then
+			if remastercolor == "goals" then
+				remasterFrames.stepLabel:SetTextColor(0.92, 0.80, 0.50, 1)
+			else
+				remasterFrames.stepLabel:SetTextColor(textc[1], textc[2], textc[3], 1)
+			end
+		end
+
+		local function applyButtonTheme(button)
+			if not button then return end
+			button.remasterBackColor = theme.buttonBack
+			button.remasterHoverColor = theme.buttonHover
+			button.remasterBorderColor = theme.buttonBorder
+			button:SetBackdropColor(theme.buttonBack[1], theme.buttonBack[2], theme.buttonBack[3], theme.buttonBack[4] or 1)
+			button:SetBackdropBorderColor(theme.buttonBorder[1], theme.buttonBorder[2], theme.buttonBorder[3], theme.buttonBorder[4] or 1)
+		end
+
+		applyButtonTheme(remasterFrames.guideButton)
+		applyButtonTheme(remasterFrames.prevButton)
+		applyButtonTheme(remasterFrames.nextButton)
+		applyButtonTheme(remasterFrames.closeButton)
+		applyButtonTheme(remasterFrames.settingsButton)
+		applyButtonTheme(remasterFrames.miniButton)
+		applyButtonTheme(remasterFrames.lockButton)
 	end
 
 	local function hideTexture(name)
@@ -3210,13 +3299,15 @@ function me:ApplyRemasterSkin()
 		ZygorGuidesViewerFrameScroll:Show()
 		ZygorGuidesViewerFrameScroll:EnableMouse(true)
 		ZygorGuidesViewerFrameScroll:RegisterForDrag("LeftButton")
-		ZygorGuidesViewerFrameScroll:SetScript("OnDragStart", remasterStartDrag)
-		ZygorGuidesViewerFrameScroll:SetScript("OnDragStop", remasterStopDrag)
+		local startDrag = remasterFrames.startDrag
+		local stopDrag = remasterFrames.stopDrag
+		ZygorGuidesViewerFrameScroll:SetScript("OnDragStart", startDrag)
+		ZygorGuidesViewerFrameScroll:SetScript("OnDragStop", stopDrag)
 		ZygorGuidesViewerFrameScroll:SetScript("OnMouseDown", function(self, button)
-			if button == "LeftButton" then remasterStartDrag() end
+			if button == "LeftButton" and startDrag then startDrag() end
 		end)
 		ZygorGuidesViewerFrameScroll:SetScript("OnMouseUp", function(self, button)
-			if button == "LeftButton" then remasterStopDrag() end
+			if button == "LeftButton" and stopDrag then stopDrag() end
 		end)
 		if ZygorGuidesViewerFrameScrollScrollBar then
 			ZygorGuidesViewerFrameScrollScrollBar:ClearAllPoints()
