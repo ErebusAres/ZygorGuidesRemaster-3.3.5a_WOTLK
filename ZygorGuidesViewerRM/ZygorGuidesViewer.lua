@@ -3353,8 +3353,11 @@ function me:ApplyRemasterSkin()
 					ZygorGuidesViewerFrameScrollScrollBar:Hide()
 				end
 			end
-			ZygorGuidesViewerFrameScroll:HookScript("OnUpdate", updateScrollBarVisibility)
 			ZygorGuidesViewerFrameScroll:HookScript("OnShow", updateScrollBarVisibility)
+			ZygorGuidesViewerFrameScroll:HookScript("OnSizeChanged", updateScrollBarVisibility)
+			if ZygorGuidesViewerFrameScrollChild then
+				ZygorGuidesViewerFrameScrollChild:HookScript("OnSizeChanged", updateScrollBarVisibility)
+			end
 			self.remasterScrollHooked = true
 			updateScrollBarVisibility()
 		end
