@@ -66,14 +66,15 @@ Target: World of Warcraft 3.3.5a (build 12340).
 
 - [ ] Confirm access to ..\Github\Goals\gui.lua for GUI reference.
 - [ ] Build definitive load map from ZygorGuidesViewer.toc + files.xml.
-- [ ] Resolve missing file refs: MapCoords.lua / Dev.lua / MapSpotsDetector.lua.
+- [x] Resolve missing file refs: MapCoords.lua / Dev.lua / MapSpotsDetector.lua.
+- [x] Trim Guides\Autoload.xml to existing guides and remove missing Data\Daily.lua reference.
 - [ ] Identify unused folders or files not in load map (candidate cleanup).
-- [ ] Create remaster folder layout in .\ZygorGuidesViewerRM.
-- [ ] Copy guide data (Guides\) without modification.
-- [ ] Copy necessary core Lua/XML files to remaster folder.
-- [ ] Remaster GUI: frames, options, menu, skins.
-- [ ] Preserve legacy GUI option and default to remastered GUI.
-- [ ] Preserve functional hooks and public APIs.
+- [x] Create remaster folder layout in .\ZygorGuidesViewerRM.
+- [x] Copy guide data (Guides\) without modification.
+- [x] Copy necessary core Lua/XML files to remaster folder.
+- [~] Remaster GUI: frames, options, menu, skins.
+- [~] Preserve legacy GUI option and default to remastered GUI.
+- [~] Preserve functional hooks and public APIs.
 - [ ] Add/verify attribution.
 - [ ] Validate no guide text changes.
 - [ ] Final pass: ensure .toc consistency and zero missing references.
@@ -95,7 +96,8 @@ Target: World of Warcraft 3.3.5a (build 12340).
 - Partial guide copy could break guide autoload or indexing.
 
 ## Next Actions
-
-- Confirm access to ..\Github\Goals\gui.lua.
+- Finalize remaster toolbar behavior (settings menu, tooltips, lock/resizeup).
+- Verify remaster default/legacy toggle behavior and polish layout in both modes.
 - Review .toc vs files.xml mismatches and decide how to resolve.
-- Decide base .toc to drive the remaster.
+- Confirm access to ..\Github\Goals\gui.lua.
+- Begin cleanup/hardening pass once UI is stable.

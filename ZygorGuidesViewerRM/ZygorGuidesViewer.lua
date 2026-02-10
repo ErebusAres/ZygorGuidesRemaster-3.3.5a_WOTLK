@@ -199,188 +199,6 @@ function me:EnsureSectionTitleFont()
 	safeSetFont(title, STANDARD_TEXT_FONT, size)
 end
 
-function me:EnsureRemasterFrames()
-	if self.RemasterFrames then
-		return self.RemasterFrames
-	end
-	if not ZygorGuidesViewerFrame then
-		return nil
-	end
-	local frames = {}
-
-	local root = CreateFrame("Frame", "ZGVRemasterFrame", UIParent)
-	root:SetPoint("TOPLEFT", ZygorGuidesViewerFrame, "TOPLEFT", 0, 0)
-	root:SetPoint("BOTTOMRIGHT", ZygorGuidesViewerFrame, "BOTTOMRIGHT", 0, 0)
-	root:SetFrameStrata("MEDIUM")
-	root:SetFrameLevel(ZygorGuidesViewerFrame:GetFrameLevel() + 2)
-	root:SetBackdrop({
-		bgFile = "Interface\\Buttons\\white8x8",
-		edgeFile = "Interface\\Buttons\\white8x8",
-		tile = true,
-		tileSize = 16,
-		edgeSize = 1,
-		insets = { left = 1, right = 1, top = 1, bottom = 1 },
-	})
-	root:SetBackdropColor(0.08, 0.09, 0.12, 0.95)
-	root:SetBackdropBorderColor(0.18, 0.20, 0.26, 0.9)
-	root:Hide()
-	frames.root = root
-
-	local header = CreateFrame("Frame", nil, root)
-	header:SetHeight(28)
-	header:SetPoint("TOPLEFT", root, "TOPLEFT", 6, -6)
-	header:SetPoint("TOPRIGHT", root, "TOPRIGHT", -6, -6)
-	header:SetFrameLevel(root:GetFrameLevel() + 1)
-	frames.header = header
-
-	local headerBg = header:CreateTexture(nil, "BORDER")
-	headerBg:SetAllPoints(header)
-	headerBg:SetTexture(1, 1, 1, 0.06)
-	frames.headerBg = headerBg
-
-	local separator = header:CreateTexture(nil, "BORDER")
-	separator:SetHeight(1)
-	separator:SetPoint("TOPLEFT", header, "BOTTOMLEFT", 0, -2)
-	separator:SetPoint("TOPRIGHT", header, "BOTTOMRIGHT", 0, -2)
-	separator:SetTexture(1, 1, 1, 0.12)
-	frames.separator = separator
-
-	local content = CreateFrame("Frame", nil, root)
-	content:SetPoint("TOPLEFT", header, "BOTTOMLEFT", 0, -6)
-	content:SetPoint("BOTTOMRIGHT", root, "BOTTOMRIGHT", -6, 30)
-	content:SetFrameLevel(root:GetFrameLevel() + 1)
-	content:SetBackdrop({
-		bgFile = "Interface\\Buttons\\white8x8",
-		edgeFile = "Interface\\Buttons\\white8x8",
-		tile = true,
-		tileSize = 16,
-		edgeSize = 1,
-		insets = { left = 1, right = 1, top = 1, bottom = 1 },
-	})
-	content:SetBackdropColor(0.10, 0.11, 0.15, 0.95)
-	content:SetBackdropBorderColor(0.20, 0.22, 0.28, 0.9)
-	frames.content = content
-
-	local footer = CreateFrame("Frame", nil, root)
-	footer:SetHeight(20)
-	footer:SetPoint("BOTTOMLEFT", root, "BOTTOMLEFT", 6, 6)
-	footer:SetPoint("BOTTOMRIGHT", root, "BOTTOMRIGHT", -6, 6)
-	footer:SetFrameLevel(root:GetFrameLevel() + 1)
-	frames.footer = footer
-
-	local title = header:CreateFontString(nil, "ARTWORK")
-	title:SetPoint("LEFT", header, "LEFT", 8, 0)
-	title:SetJustifyH("LEFT")
-	title:SetTextColor(0.92, 0.94, 0.98, 1)
-	safeSetFont(title, ZGV.DIR.."\\Skins\\segoeuib.ttf", 13)
-	frames.headerTitle = title
-
-	local meta = header:CreateFontString(nil, "ARTWORK")
-	meta:SetPoint("RIGHT", header, "RIGHT", -110, 0)
-	meta:SetJustifyH("RIGHT")
-	meta:SetTextColor(0.70, 0.75, 0.85, 1)
-	safeSetFont(meta, ZGV.DIR.."\\Skins\\segoeui.ttf", 11)
-	frames.headerMeta = meta
-
-	local guideButton = CreateFrame("Button", "ZGVRemasterGuideButton", header)
-	guideButton:SetSize(72, 18)
-	guideButton:SetPoint("RIGHT", header, "RIGHT", -8, 0)
-	guideButton:SetText("Guides")
-	guideButton:SetNormalFontObject("GameFontHighlightSmall")
-	guideButton:SetHighlightFontObject("GameFontHighlightSmall")
-	guideButton:SetBackdrop({
-		bgFile = "Interface\\Buttons\\white8x8",
-		edgeFile = "Interface\\Buttons\\white8x8",
-		tile = true,
-		tileSize = 16,
-		edgeSize = 1,
-		insets = { left = 1, right = 1, top = 1, bottom = 1 },
-	})
-	guideButton:SetBackdropColor(0.14, 0.16, 0.22, 0.9)
-	guideButton:SetBackdropBorderColor(0.24, 0.28, 0.36, 0.9)
-	guideButton:SetScript("OnEnter", function(selfBtn)
-		selfBtn:SetBackdropColor(0.20, 0.22, 0.30, 0.95)
-	end)
-	guideButton:SetScript("OnLeave", function(selfBtn)
-		selfBtn:SetBackdropColor(0.14, 0.16, 0.22, 0.9)
-	end)
-	guideButton:SetScript("OnClick", function()
-		if ZGV and ZGV.OpenGuideMenu then
-			ZGV:OpenGuideMenu()
-		elseif ZGV and ZGV.OpenQuickMenu then
-			ZGV:OpenQuickMenu()
-		end
-	end)
-	frames.guideButton = guideButton
-
-	local function styleHeaderButton(button, label)
-		button:SetSize(18, 18)
-		button:SetText(label or "")
-		button:SetNormalFontObject("GameFontHighlightSmall")
-		button:SetHighlightFontObject("GameFontHighlightSmall")
-		button:SetBackdrop({
-			bgFile = "Interface\\Buttons\\white8x8",
-			edgeFile = "Interface\\Buttons\\white8x8",
-			tile = true,
-			tileSize = 16,
-			edgeSize = 1,
-			insets = { left = 1, right = 1, top = 1, bottom = 1 },
-		})
-		button:SetBackdropColor(0.12, 0.14, 0.20, 0.9)
-		button:SetBackdropBorderColor(0.24, 0.28, 0.36, 0.9)
-		button:SetScript("OnEnter", function(selfBtn)
-			selfBtn:SetBackdropColor(0.18, 0.20, 0.28, 0.95)
-		end)
-		button:SetScript("OnLeave", function(selfBtn)
-			selfBtn:SetBackdropColor(0.12, 0.14, 0.20, 0.9)
-		end)
-	end
-
-	local closeButton = CreateFrame("Button", "ZGVRemasterCloseButton", header)
-	styleHeaderButton(closeButton, "X")
-	closeButton:SetPoint("RIGHT", header, "RIGHT", -8, 0)
-	closeButton:SetScript("OnClick", function()
-		HideUIPanel(ZygorGuidesViewerFrame)
-	end)
-	frames.closeButton = closeButton
-
-	local settingsButton = CreateFrame("Button", "ZGVRemasterSettingsButton", header)
-	styleHeaderButton(settingsButton, "S")
-	settingsButton:SetPoint("RIGHT", closeButton, "LEFT", -6, 0)
-	settingsButton:SetScript("OnClick", function(selfBtn, button)
-		if button == "RightButton" then
-			ZygorGuidesViewer:OpenOptions()
-		else
-			ZygorGuidesViewer:OpenQuickMenu()
-		end
-	end)
-	settingsButton:RegisterForClicks("LeftButtonUp", "RightButtonUp")
-	frames.settingsButton = settingsButton
-
-	local miniButton = CreateFrame("Button", "ZGVRemasterMiniButton", header)
-	styleHeaderButton(miniButton, "M")
-	miniButton:SetPoint("RIGHT", settingsButton, "LEFT", -6, 0)
-	miniButton:SetScript("OnClick", function(selfBtn, button)
-		if button == "LeftButton" then
-			ZygorGuidesViewer:SetOption("Display","showcountsteps "..(ZGV.db.profile.showallsteps and ZGV.db.profile.showcountsteps or 0))
-		else
-			ZygorGuidesViewer:OpenQuickSteps()
-		end
-	end)
-	miniButton:RegisterForClicks("LeftButtonUp", "RightButtonUp")
-	frames.miniButton = miniButton
-
-	local lockButton = CreateFrame("Button", "ZGVRemasterLockButton", header)
-	styleHeaderButton(lockButton, "L")
-	lockButton:SetPoint("RIGHT", miniButton, "LEFT", -6, 0)
-	lockButton:SetScript("OnClick", function()
-		ZygorGuidesViewer:SetOption("Display","windowlocked")
-	end)
-	frames.lockButton = lockButton
-
-	self.RemasterFrames = frames
-	return frames
-end
 
 function me:UpdateRemasterHeader()
 	if not self.RemasterFrames then
@@ -396,13 +214,29 @@ function me:UpdateRemasterHeader()
 	elseif self.CurrentGuide and self.CurrentGuide.title then
 		title = self.CurrentGuide.title
 	end
+	if not title or title == "" then
+		if self.CurrentGuide then
+			title = "Zygor Guides"
+		else
+			title = "No Guide Selected"
+		end
+	end
 	frames.headerTitle:SetText(title or "")
+	local stepText = ""
 	if self.CurrentGuide and self.CurrentGuide.steps then
 		local total = #self.CurrentGuide.steps
 		local current = self.CurrentStepNum or 1
-		frames.headerMeta:SetText(string.format("Step %d / %d", current, total))
+		stepText = string.format("Step %d / %d", current, total)
+	elseif self.CurrentGuide then
+		stepText = "Step ?"
 	else
+		stepText = ""
+	end
+	if frames.headerMeta then
 		frames.headerMeta:SetText("")
+	end
+	if frames.stepLabel then
+		frames.stepLabel:SetText(stepText)
 	end
 end
 
@@ -415,11 +249,39 @@ function me:EnsureRemasterFrames()
 	end
 	local frames = {}
 
-	local inset = CreateFrame("Frame", nil, ZygorGuidesViewerFrame)
-	inset:SetPoint("TOPLEFT", ZygorGuidesViewerFrame, "TOPLEFT", 10, -34)
-	inset:SetPoint("BOTTOMRIGHT", ZygorGuidesViewerFrame, "BOTTOMRIGHT", -10, 10)
-	inset:SetFrameLevel(ZygorGuidesViewerFrame:GetFrameLevel() + 1)
-	inset:SetBackdrop({
+	local root = CreateFrame("Frame", "ZGVRemasterFrame", ZygorGuidesViewerFrame)
+	root:SetAllPoints(ZygorGuidesViewerFrame)
+	root:SetFrameStrata(ZygorGuidesViewerFrame:GetFrameStrata() or "MEDIUM")
+	root:SetFrameLevel(ZygorGuidesViewerFrame:GetFrameLevel() + 5)
+	root:EnableMouse(true)
+	root:SetMovable(true)
+	root:RegisterForDrag("LeftButton")
+	if ZygorGuidesViewerFrameMaster then
+		ZygorGuidesViewerFrameMaster:SetMovable(true)
+		ZygorGuidesViewerFrameMaster:EnableMouse(true)
+	end
+	local function remasterStartDrag()
+		if not ZygorGuidesViewer.db.profile["windowlocked"] and ZygorGuidesViewerFrameMaster then
+			ZygorGuidesViewerFrameMaster:SetMovable(true)
+			ZygorGuidesViewerFrameMaster:StartMoving()
+			ZygorGuidesViewer.framemoving = true
+		end
+	end
+	local function remasterStopDrag()
+		if ZygorGuidesViewerFrameMaster then
+			ZygorGuidesViewerFrameMaster:StopMovingOrSizing()
+		end
+		ZGV.framemoving = nil
+	end
+	root:SetScript("OnDragStart", remasterStartDrag)
+	root:SetScript("OnDragStop", remasterStopDrag)
+	root:SetScript("OnMouseDown", function(self, button)
+		if button == "LeftButton" then remasterStartDrag() end
+	end)
+	root:SetScript("OnMouseUp", function(self, button)
+		if button == "LeftButton" then remasterStopDrag() end
+	end)
+	root:SetBackdrop({
 		bgFile = "Interface\\Buttons\\white8x8",
 		edgeFile = "Interface\\Buttons\\white8x8",
 		tile = true,
@@ -427,31 +289,335 @@ function me:EnsureRemasterFrames()
 		edgeSize = 1,
 		insets = { left = 1, right = 1, top = 1, bottom = 1 },
 	})
-	inset:SetBackdropColor(0.10, 0.11, 0.15, 0.92)
-	inset:SetBackdropBorderColor(0.18, 0.20, 0.26, 0.8)
-	inset:Hide()
-	frames.inset = inset
+	root:SetBackdropColor(0.07, 0.07, 0.08, 0.95)
+	root:SetBackdropBorderColor(0.12, 0.12, 0.14, 0.9)
+	root:Hide()
+	frames.root = root
 
-	if ZygorGuidesViewerFrame_Border then
-		local header = ZygorGuidesViewerFrame_Border:CreateTexture(nil, "BORDER")
-		header:SetHeight(24)
-		header:SetPoint("TOPLEFT", ZygorGuidesViewerFrame, "TOPLEFT", 10, -6)
-		header:SetPoint("TOPRIGHT", ZygorGuidesViewerFrame, "TOPRIGHT", -10, -6)
-		header:SetTexture(1, 1, 1, 0.06)
-		header:Hide()
-		frames.header = header
+	local header = CreateFrame("Frame", nil, root)
+	header:SetHeight(34)
+	header:SetPoint("TOPLEFT", root, "TOPLEFT", 6, -6)
+	header:SetPoint("TOPRIGHT", root, "TOPRIGHT", -6, -6)
+	header:SetFrameLevel(root:GetFrameLevel() + 3)
+	header:EnableMouse(true)
+	header:RegisterForDrag("LeftButton")
+	header:SetScript("OnDragStart", remasterStartDrag)
+	header:SetScript("OnDragStop", remasterStopDrag)
+	header:SetScript("OnMouseDown", function(self, button)
+		if button == "LeftButton" then remasterStartDrag() end
+	end)
+	header:SetScript("OnMouseUp", function(self, button)
+		if button == "LeftButton" then remasterStopDrag() end
+	end)
+	frames.header = header
 
-		local separator = ZygorGuidesViewerFrame_Border:CreateTexture(nil, "BORDER")
-		separator:SetHeight(1)
-		separator:SetPoint("TOPLEFT", header, "BOTTOMLEFT", 0, -2)
-		separator:SetPoint("TOPRIGHT", header, "BOTTOMRIGHT", 0, -2)
-		separator:SetTexture(1, 1, 1, 0.12)
-		separator:Hide()
-		frames.separator = separator
+	local headerBg = header:CreateTexture(nil, "BORDER")
+	headerBg:SetAllPoints(header)
+	headerBg:SetTexture(1, 1, 1, 0.08)
+	frames.headerBg = headerBg
+
+	local separator = header:CreateTexture(nil, "BORDER")
+	separator:SetHeight(1)
+	separator:SetPoint("TOPLEFT", header, "BOTTOMLEFT", 0, -2)
+	separator:SetPoint("TOPRIGHT", header, "BOTTOMRIGHT", 0, -2)
+	separator:SetTexture(1, 1, 1, 0.12)
+	frames.separator = separator
+
+	local toolbar = CreateFrame("Frame", nil, root)
+	toolbar:SetHeight(28)
+	toolbar:SetPoint("TOPLEFT", header, "BOTTOMLEFT", 0, -6)
+	toolbar:SetPoint("TOPRIGHT", header, "BOTTOMRIGHT", 0, -6)
+	toolbar:SetFrameLevel(root:GetFrameLevel() + 3)
+	toolbar:EnableMouse(true)
+	toolbar:RegisterForDrag("LeftButton")
+	toolbar:SetScript("OnDragStart", remasterStartDrag)
+	toolbar:SetScript("OnDragStop", remasterStopDrag)
+	toolbar:SetScript("OnMouseDown", function(self, button)
+		if button == "LeftButton" then remasterStartDrag() end
+	end)
+	toolbar:SetScript("OnMouseUp", function(self, button)
+		if button == "LeftButton" then remasterStopDrag() end
+	end)
+	frames.toolbar = toolbar
+
+	local toolbarBg = toolbar:CreateTexture(nil, "BORDER")
+	toolbarBg:SetAllPoints(toolbar)
+	toolbarBg:SetTexture(1, 1, 1, 0.06)
+	frames.toolbarBg = toolbarBg
+
+	local content = CreateFrame("Frame", nil, root)
+	content:SetPoint("TOPLEFT", toolbar, "BOTTOMLEFT", 0, -10)
+	content:SetPoint("BOTTOMRIGHT", root, "BOTTOMRIGHT", -6, 8)
+	content:SetFrameLevel(root:GetFrameLevel() + 1)
+	content:EnableMouse(true)
+	content:RegisterForDrag("LeftButton")
+	content:SetScript("OnDragStart", remasterStartDrag)
+	content:SetScript("OnDragStop", remasterStopDrag)
+	content:SetScript("OnMouseDown", function(self, button)
+		if button == "LeftButton" then remasterStartDrag() end
+	end)
+	content:SetScript("OnMouseUp", function(self, button)
+		if button == "LeftButton" then remasterStopDrag() end
+	end)
+	content:SetBackdrop({
+		bgFile = "Interface\\Buttons\\white8x8",
+		edgeFile = "Interface\\Buttons\\white8x8",
+		tile = true,
+		tileSize = 16,
+		edgeSize = 1,
+		insets = { left = 1, right = 1, top = 1, bottom = 1 },
+	})
+	content:SetBackdropColor(0.10, 0.10, 0.11, 0.9)
+	content:SetBackdropBorderColor(0.12, 0.12, 0.14, 0.8)
+	frames.content = content
+
+	local title = header:CreateFontString(nil, "ARTWORK")
+	title:SetPoint("LEFT", header, "LEFT", 8, 0)
+	title:SetJustifyH("LEFT")
+	title:SetTextColor(0.92, 0.94, 0.98, 1)
+	if not safeSetFont(title, ZGV.DIR.."\\Skins\\segoeuib.ttf", 13) then
+		safeSetFont(title, STANDARD_TEXT_FONT, 13)
 	end
+	frames.headerTitle = title
+
+	local meta = header:CreateFontString(nil, "ARTWORK")
+	meta:SetPoint("RIGHT", header, "RIGHT", -10, 0)
+	meta:SetJustifyH("RIGHT")
+	meta:SetTextColor(0.70, 0.75, 0.85, 1)
+	if not safeSetFont(meta, ZGV.DIR.."\\Skins\\segoeui.ttf", 11) then
+		safeSetFont(meta, STANDARD_TEXT_FONT, 11)
+	end
+	frames.headerMeta = meta
+
+	local function styleButton(button, text, w, h)
+		button:SetSize(w or 22, h or 20)
+		button:SetText(text or "")
+		button:SetNormalFontObject("GameFontHighlightSmall")
+		button:SetHighlightFontObject("GameFontHighlightSmall")
+		button:SetBackdrop({
+			bgFile = "Interface\\Buttons\\white8x8",
+			edgeFile = "Interface\\Buttons\\white8x8",
+			tile = true,
+			tileSize = 16,
+			edgeSize = 1,
+			insets = { left = 1, right = 1, top = 1, bottom = 1 },
+		})
+		button:SetBackdropColor(0.14, 0.15, 0.18, 0.9)
+		button:SetBackdropBorderColor(0.22, 0.24, 0.28, 0.9)
+		button:SetScript("OnEnter", function(selfBtn)
+			selfBtn:SetBackdropColor(0.20, 0.21, 0.26, 0.95)
+		end)
+		button:SetScript("OnLeave", function(selfBtn)
+			selfBtn:SetBackdropColor(0.14, 0.15, 0.18, 0.9)
+		end)
+	end
+	local function tipColor()
+		local probe = L and (L['frame_stepnav_prev_click'] or L['frame_stepnav_next_click'])
+		if type(probe) == "string" then
+			local code = probe:match("^(|cff%x%x%x%x%x%x)")
+			if code then return code end
+		end
+		return "|cffddff00"
+	end
+	local function tipClick(text)
+		return tipColor().."Click|r "..text
+	end
+	local function tipRight(text)
+		return tipColor().."Right-click|r "..text
+	end
+
+	local guideButton = CreateFrame("Button", "ZGVRemasterGuideButton", toolbar)
+	styleButton(guideButton, "Guides", 70, 20)
+	guideButton:SetPoint("LEFT", toolbar, "LEFT", 8, 0)
+	guideButton:SetScript("OnClick", function()
+		if ZGV and ZGV.OpenGuideMenu then
+			ZGV:OpenGuideMenu()
+		elseif ZGV and ZGV.OpenQuickMenu then
+			ZGV:OpenQuickMenu()
+		end
+	end)
+	frames.guideButton = guideButton
+
+	local prevButton = CreateFrame("Button", "ZGVRemasterPrevButton", toolbar)
+	styleButton(prevButton, "<", 20, 20)
+	prevButton:SetPoint("LEFT", guideButton, "RIGHT", 8, 0)
+	prevButton:SetScript("OnClick", function(selfBtn, button)
+		if ZygorGuidesViewer then
+			ZygorGuidesViewer:SkipStep(-1, button == "RightButton")
+			if ZygorGuidesViewer.db.profile.flipsounds then
+				PlaySound("igMiniMapZoomIn")
+			end
+		end
+	end)
+	prevButton:SetScript("OnEnter", function(selfBtn)
+		GameTooltip:SetOwner(selfBtn, "ANCHOR_TOPRIGHT")
+		GameTooltip:SetText(ZygorGuidesViewer.L['frame_stepnav_prev'])
+		GameTooltip:AddLine(ZygorGuidesViewer.L['frame_stepnav_prev_click'],0,1,0)
+		GameTooltip:AddLine(ZygorGuidesViewer.L['frame_stepnav_prev_right'],0,1,0,1)
+		GameTooltip:Show()
+	end)
+	prevButton:SetScript("OnLeave", function() GameTooltip:Hide() end)
+	prevButton:RegisterForClicks("LeftButtonUp","RightButtonUp")
+	frames.prevButton = prevButton
+
+	local nextButton = CreateFrame("Button", "ZGVRemasterNextButton", toolbar)
+	styleButton(nextButton, ">", 20, 20)
+	nextButton:SetPoint("LEFT", prevButton, "RIGHT", 4, 0)
+	nextButton:SetScript("OnClick", function(selfBtn, button)
+		if ZygorGuidesViewer then
+			ZygorGuidesViewer:SkipStep(1, button == "RightButton")
+			if ZygorGuidesViewer.db.profile.flipsounds then
+				PlaySound("igMiniMapZoomIn")
+			end
+		end
+	end)
+	nextButton:SetScript("OnEnter", function(selfBtn)
+		GameTooltip:SetOwner(selfBtn, "ANCHOR_TOPRIGHT")
+		GameTooltip:SetText(ZygorGuidesViewer.L['frame_stepnav_next'])
+		GameTooltip:AddLine(ZygorGuidesViewer.L['frame_stepnav_next_click'],0,1,0,1)
+		GameTooltip:AddLine(ZygorGuidesViewer.L['frame_stepnav_next_right'],0,1,0,1)
+		GameTooltip:Show()
+	end)
+	nextButton:SetScript("OnLeave", function() GameTooltip:Hide() end)
+	nextButton:RegisterForClicks("LeftButtonUp","RightButtonUp")
+	frames.nextButton = nextButton
+
+	local stepLabel = toolbar:CreateFontString(nil, "ARTWORK")
+	stepLabel:SetPoint("LEFT", nextButton, "RIGHT", 8, 0)
+	stepLabel:SetJustifyH("LEFT")
+	stepLabel:SetTextColor(0.78, 0.82, 0.9, 1)
+	if not safeSetFont(stepLabel, ZGV.DIR.."\\Skins\\segoeui.ttf", 11) then
+		safeSetFont(stepLabel, STANDARD_TEXT_FONT, 11)
+	end
+	frames.stepLabel = stepLabel
+
+	local closeButton = CreateFrame("Button", "ZGVRemasterCloseButton", header)
+	styleButton(closeButton, "X", 20, 20)
+	closeButton:SetPoint("RIGHT", header, "RIGHT", -8, 0)
+	closeButton:SetScript("OnClick", function()
+		HideUIPanel(ZygorGuidesViewerFrame)
+	end)
+	closeButton:SetScript("OnEnter", function(selfBtn)
+		GameTooltip:SetOwner(selfBtn, "ANCHOR_TOPRIGHT")
+		GameTooltip:SetText("Close")
+		GameTooltip:AddLine(tipClick("to close"))
+		GameTooltip:Show()
+	end)
+	closeButton:SetScript("OnLeave", function()
+		GameTooltip:Hide()
+	end)
+	frames.closeButton = closeButton
+
+	local settingsButton = CreateFrame("Button", "ZGVRemasterSettingsButton", toolbar)
+	styleButton(settingsButton, "S", 20, 20)
+	settingsButton:SetPoint("RIGHT", toolbar, "RIGHT", -8, 0)
+	settingsButton:SetScript("OnClick", function(selfBtn, button)
+		if button == "RightButton" then
+			ZygorGuidesViewer:OpenOptions()
+		else
+			ZygorGuidesViewer:OpenQuickMenu(selfBtn)
+		end
+	end)
+	settingsButton:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+	settingsButton:SetScript("OnEnter", function(selfBtn)
+		GameTooltip:SetOwner(selfBtn, "ANCHOR_TOPRIGHT")
+		GameTooltip:SetText("Settings")
+		GameTooltip:AddLine(tipClick("for quick menu"))
+		GameTooltip:AddLine(tipRight("to open options"))
+		GameTooltip:Show()
+	end)
+	settingsButton:SetScript("OnLeave", function()
+		GameTooltip:Hide()
+	end)
+	frames.settingsButton = settingsButton
+
+	local miniButton = CreateFrame("Button", "ZGVRemasterMiniButton", toolbar)
+	styleButton(miniButton, "M", 20, 20)
+	miniButton:SetPoint("RIGHT", settingsButton, "LEFT", -6, 0)
+	miniButton:SetScript("OnClick", function(selfBtn, button)
+		if button == "LeftButton" then
+			ZygorGuidesViewer:SetOption("Display","showcountsteps "..(ZGV.db.profile.showallsteps and ZGV.db.profile.showcountsteps or 0))
+		else
+			ZygorGuidesViewer:OpenQuickSteps()
+		end
+	end)
+	miniButton:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+	miniButton:SetScript("OnEnter", function(selfBtn)
+		GameTooltip:SetOwner(selfBtn, "ANCHOR_TOPRIGHT")
+		GameTooltip:SetText("Step View")
+		if ZGV and ZGV.db and ZGV.db.profile then
+			if ZGV.db.profile.showallsteps then
+				GameTooltip:AddLine(tipClick("to show only |cffffffff"..tostring(ZGV.db.profile.showcountsteps or 1).."|r"))
+			else
+				GameTooltip:AddLine(tipClick("to show all"))
+			end
+			GameTooltip:AddLine(tipRight("to set number of steps"))
+		end
+		GameTooltip:Show()
+	end)
+	miniButton:SetScript("OnLeave", function()
+		GameTooltip:Hide()
+	end)
+	frames.miniButton = miniButton
+
+	local lockButton = CreateFrame("Button", "ZGVRemasterLockButton", toolbar)
+	styleButton(lockButton, "L", 20, 20)
+	lockButton:SetPoint("RIGHT", miniButton, "LEFT", -6, 0)
+	lockButton:SetScript("OnClick", function()
+		ZygorGuidesViewer:SetOption("Display","windowlocked")
+	end)
+	lockButton:SetScript("OnEnter", function(selfBtn)
+		GameTooltip:SetOwner(selfBtn, "ANCHOR_TOPRIGHT")
+		if ZygorGuidesViewer.db.profile["windowlocked"] then
+			GameTooltip:SetText("Unlock Window")
+			GameTooltip:AddLine(tipClick("to unlock"))
+		else
+			GameTooltip:SetText("Lock Window")
+			GameTooltip:AddLine(tipClick("to lock"))
+		end
+		GameTooltip:Show()
+	end)
+	lockButton:SetScript("OnLeave", function()
+		GameTooltip:Hide()
+	end)
+	frames.lockButton = lockButton
 
 	self.RemasterFrames = frames
 	return frames
+end
+
+local function LayoutRemasterFrames(frames, resizeup)
+	if not frames or not frames.root or not frames.header or not frames.toolbar or not frames.content then return end
+	frames.header:ClearAllPoints()
+	frames.toolbar:ClearAllPoints()
+	frames.content:ClearAllPoints()
+	if resizeup then
+		frames.header:SetPoint("BOTTOMLEFT", frames.root, "BOTTOMLEFT", 6, 6)
+		frames.header:SetPoint("BOTTOMRIGHT", frames.root, "BOTTOMRIGHT", -6, 6)
+		frames.toolbar:SetPoint("BOTTOMLEFT", frames.header, "TOPLEFT", 0, 6)
+		frames.toolbar:SetPoint("BOTTOMRIGHT", frames.header, "TOPRIGHT", 0, 6)
+		frames.content:SetPoint("TOPLEFT", frames.root, "TOPLEFT", 6, -6)
+		frames.content:SetPoint("BOTTOMRIGHT", frames.toolbar, "TOPRIGHT", 0, 10)
+		if frames.separator then
+			frames.separator:ClearAllPoints()
+			frames.separator:SetHeight(1)
+			frames.separator:SetPoint("BOTTOMLEFT", frames.header, "TOPLEFT", 0, 2)
+			frames.separator:SetPoint("BOTTOMRIGHT", frames.header, "TOPRIGHT", 0, 2)
+		end
+	else
+		frames.header:SetPoint("TOPLEFT", frames.root, "TOPLEFT", 6, -6)
+		frames.header:SetPoint("TOPRIGHT", frames.root, "TOPRIGHT", -6, -6)
+		frames.toolbar:SetPoint("TOPLEFT", frames.header, "BOTTOMLEFT", 0, -6)
+		frames.toolbar:SetPoint("TOPRIGHT", frames.header, "BOTTOMRIGHT", 0, -6)
+		frames.content:SetPoint("TOPLEFT", frames.toolbar, "BOTTOMLEFT", 0, -10)
+		frames.content:SetPoint("BOTTOMRIGHT", frames.root, "BOTTOMRIGHT", -6, 8)
+		if frames.separator then
+			frames.separator:ClearAllPoints()
+			frames.separator:SetHeight(1)
+			frames.separator:SetPoint("TOPLEFT", frames.header, "BOTTOMLEFT", 0, -2)
+			frames.separator:SetPoint("TOPRIGHT", frames.header, "BOTTOMRIGHT", 0, -2)
+		end
+	end
 end
 
 
@@ -1054,6 +1220,14 @@ function me:UpdateLocking()
 		ZygorGuidesViewerFrame_Border_LockButton.htx:SetTexCoord(0.250,0.375,0.50,0.75)
 	end
 
+	if self.db.profile.skin == "remaster" and self.RemasterFrames and self.RemasterFrames.lockButton then
+		local btn = self.RemasterFrames.lockButton
+		btn:SetNormalTexture(nil)
+		btn:SetPushedTexture(nil)
+		btn:SetHighlightTexture(nil)
+		btn:SetText(locked and "U" or "L")
+	end
+
 	if self.db.profile["showallsteps"] then
 		ZygorGuidesViewerFrame_Border_MiniButton.ntx:SetTexCoord(0.000,0.125,0.0,0.25)
 		ZygorGuidesViewerFrame_Border_MiniButton.ptx:SetTexCoord(0.000,0.125,0.25,0.5)
@@ -1183,6 +1357,65 @@ function me:UpdateFrame(full,onupdate)
 			self:ApplyRemasterSkin()
 		end
 		self:UpdateRemasterHeader()
+		local remasterFrames = self:EnsureRemasterFrames()
+		LayoutRemasterFrames(remasterFrames, self.db and self.db.profile and self.db.profile.resizeup)
+		if ZygorGuidesViewerFrameScroll and remasterFrames and remasterFrames.content then
+			ZygorGuidesViewerFrameScroll:SetParent(remasterFrames.content)
+			ZygorGuidesViewerFrameScroll:SetFrameLevel(remasterFrames.content:GetFrameLevel() + 2)
+			ZygorGuidesViewerFrameScroll:Show()
+		end
+		if ZygorGuidesViewerFrame_Skipper then
+			ZygorGuidesViewerFrame_Skipper:Hide()
+			ZygorGuidesViewerFrame_Skipper.mustbevisible = nil
+		end
+		if ZygorGuidesViewerFrameScrollChild and ZygorGuidesViewerFrameScroll then
+			ZygorGuidesViewerFrameScrollChild:SetParent(ZygorGuidesViewerFrameScroll)
+			ZygorGuidesViewerFrameScrollChild:ClearAllPoints()
+			ZygorGuidesViewerFrameScrollChild:SetPoint("TOPLEFT", ZygorGuidesViewerFrameScroll, "TOPLEFT", 0, 0)
+			ZygorGuidesViewerFrameScrollChild:SetPoint("TOPRIGHT", ZygorGuidesViewerFrameScroll, "TOPRIGHT", 0, 0)
+			ZygorGuidesViewerFrameScrollChild:SetFrameLevel(ZygorGuidesViewerFrameScroll:GetFrameLevel() + 1)
+		end
+		if self.stepframes and ZygorGuidesViewerFrameScrollChild then
+			for _, step in ipairs(self.stepframes) do
+				if step and step.SetParent then
+					step:SetParent(ZygorGuidesViewerFrameScrollChild)
+					step:SetFrameLevel(ZygorGuidesViewerFrameScrollChild:GetFrameLevel() + 1)
+				end
+			end
+		end
+		if self.spotframes and ZygorGuidesViewerFrameScrollChild then
+			for _, spot in ipairs(self.spotframes) do
+				if spot and spot.SetParent then
+					spot:SetParent(ZygorGuidesViewerFrameScrollChild)
+					spot:SetFrameLevel(ZygorGuidesViewerFrameScrollChild:GetFrameLevel() + 1)
+				end
+			end
+		end
+		if ZygorGuidesViewerFrameScroll and ZygorGuidesViewerFrameScrollScrollBar then
+			local range = ZygorGuidesViewerFrameScroll:GetVerticalScrollRange() or 0
+			if range > 0 and self.db.profile.showallsteps then
+				ZygorGuidesViewerFrameScrollScrollBar:Show()
+			else
+				ZygorGuidesViewerFrameScrollScrollBar:Hide()
+			end
+		end
+		if self.CurrentGuide and self.db.profile.displaymode ~= "guide" then
+			self.db.profile.displaymode = "guide"
+		end
+		if self.db.profile.showcountsteps and self.db.profile.showcountsteps < 1 then
+			self.db.profile.showcountsteps = 1
+		end
+		if ZygorGuidesViewerFrameScrollChild then
+			ZygorGuidesViewerFrameScrollChild:Show()
+		end
+		if ZygorGuidesViewerFrameScroll and ZygorGuidesViewerFrameScrollScrollBar then
+			local range = ZygorGuidesViewerFrameScroll:GetVerticalScrollRange() or 0
+			if range > 0 and self.db.profile.showallsteps then
+				ZygorGuidesViewerFrameScrollScrollBar:Show()
+			else
+				ZygorGuidesViewerFrameScrollScrollBar:Hide()
+			end
+		end
 	end
 
 	--if InCombatLockdown() then return end
@@ -1238,6 +1471,13 @@ function me:UpdateFrame(full,onupdate)
 
 			local frame
 			local stepnum,stepdata
+
+			if self.db.profile.skin == "remaster" and ZygorGuidesViewerFrameScrollChild and ZygorGuidesViewerFrameScroll then
+				local sw = ZygorGuidesViewerFrameScroll:GetWidth() or 0
+				if sw > 60 and (ZygorGuidesViewerFrameScrollChild:GetWidth() or 0) < 50 then
+					ZygorGuidesViewerFrameScrollChild:SetWidth(sw - 24)
+				end
+			end
 
 			local firststep = self.db.profile.showallsteps and math.floor(ZygorGuidesViewerFrameScrollScrollBar:GetValue()) or self.CurrentStepNum
 			if firststep<1 then firststep=1 end
@@ -1573,13 +1813,31 @@ function me:UpdateFrame(full,onupdate)
 
 			self.stepchanged=false
 
+			if self.db.profile.skin == "remaster" and ZygorGuidesViewerFrameScrollChild and ZygorGuidesViewerFrameScroll then
+				local scrollHeight = ZygorGuidesViewerFrameScroll:GetHeight() or 0
+				local childHeight = math.max(totalheight + 4, scrollHeight)
+				ZygorGuidesViewerFrameScrollChild:SetHeight(childHeight)
+				if ZygorGuidesViewerFrameScrollScrollBar then
+					if childHeight > scrollHeight + 2 then
+						ZygorGuidesViewerFrameScrollScrollBar:Show()
+					else
+						ZygorGuidesViewerFrameScrollScrollBar:Hide()
+					end
+				end
+			end
+
 			-- set minimum frame size to one step
 			minh = self.stepframes[1]:GetHeight() + 40
 
 			self:UpdateFrameCurrent()
 
-			ZygorGuidesViewerFrame_Skipper:Show()
-			ZygorGuidesViewerFrame_Skipper.mustbevisible=true
+			if self.db.profile.skin ~= "remaster" then
+				ZygorGuidesViewerFrame_Skipper:Show()
+				ZygorGuidesViewerFrame_Skipper.mustbevisible=true
+			else
+				ZygorGuidesViewerFrame_Skipper:Hide()
+				ZygorGuidesViewerFrame_Skipper.mustbevisible=nil
+			end
 
 			--self:HighlightCurrentStep()
 
@@ -2389,6 +2647,12 @@ function me:ReanchorFrame()
 end
 
 function me:AlignFrame()
+	if self.db and self.db.profile and self.db.profile.skin == "remaster" then
+		if self.ApplyRemasterSkin then
+			self:ApplyRemasterSkin()
+		end
+		return
+	end
 	--self:Debug("aligning frame")
 	--print("align")
 	local frame = self.Frame
@@ -2654,8 +2918,26 @@ function me:UpdateSkin()
 	ZygorGuidesViewerFrame_Border_TopRight:SetTexture(SKINDIR.."\\leavesofsteel")
 	ZygorGuidesViewerFrame_Border_BottomLeft:SetTexture(SKINDIR.."\\leavesofsteel")
 	ZygorGuidesViewerFrame_Border_BottomRight:SetTexture(SKINDIR.."\\leavesofsteel")
+	if ZygorGuidesViewerFrame_Border_Left then
+		ZygorGuidesViewerFrame_Border_Left:SetTexture(DIR.."\\Skin\\leavesofsteel_border")
+	end
+	if ZygorGuidesViewerFrame_Border_Right then
+		ZygorGuidesViewerFrame_Border_Right:SetTexture(DIR.."\\Skin\\leavesofsteel_border")
+	end
+	if ZygorGuidesViewerFrame_Border_Bottom then
+		ZygorGuidesViewerFrame_Border_Bottom:SetTexture(DIR.."\\Skin\\leavesofsteel_border")
+	end
 
 	ZygorGuidesViewerFrame_Border_Logo:SetTexture(SKINDIR.."\\zglogo")
+	if ZygorGuidesViewerFrame_Border_Gear1 then
+		ZygorGuidesViewerFrame_Border_Gear1:SetTexture(DIR.."\\Skin\\leavesofsteel_gear1")
+	end
+	if ZygorGuidesViewerFrame_Border_Gear2 then
+		ZygorGuidesViewerFrame_Border_Gear2:SetTexture(DIR.."\\Skin\\leavesofsteel_gear2")
+	end
+	if ZygorGuidesViewerFrame_Border_Gear3 then
+		ZygorGuidesViewerFrame_Border_Gear3:SetTexture(DIR.."\\Skin\\leavesofsteel_gear3")
+	end
 
 	ZygorGuidesViewerFrame_Skipper_PrevButton.ntx:SetTexture(SKINDIR.."\\titlebuttons")
 	ZygorGuidesViewerFrame_Skipper_PrevButton.ptx:SetTexture(SKINDIR.."\\titlebuttons")
@@ -2685,6 +2967,33 @@ function me:UpdateSkin()
 	ZygorGuidesViewerMapIcon.htx:SetTexture(SKINDIR.."\\zglogo")
 
 	ZygorGuidesViewerFrame_Border_Top:SetTexture(SKINDIR.."\\leavesofsteel_top")
+	if ZygorGuidesViewerFrame_Border_Flash_Top then
+		ZygorGuidesViewerFrame_Border_Flash_Top:SetTexture(DIR.."\\Skin\\leavesofsteel_top_flash")
+	end
+	if ZygorGuidesViewerFrame_Border_Flash_Left then
+		ZygorGuidesViewerFrame_Border_Flash_Left:SetTexture(DIR.."\\Skin\\leavesofsteel_border_flash")
+	end
+	if ZygorGuidesViewerFrame_Border_Flash_Right then
+		ZygorGuidesViewerFrame_Border_Flash_Right:SetTexture(DIR.."\\Skin\\leavesofsteel_border_flash")
+	end
+	if ZygorGuidesViewerFrame_Border_Flash_Bottom then
+		ZygorGuidesViewerFrame_Border_Flash_Bottom:SetTexture(DIR.."\\Skin\\leavesofsteel_border_flash")
+	end
+	if ZygorGuidesViewerFrame_Border_Flash_TopLeft then
+		ZygorGuidesViewerFrame_Border_Flash_TopLeft:SetTexture(DIR.."\\Skin\\leavesofsteel_flash")
+	end
+	if ZygorGuidesViewerFrame_Border_Flash_TopRight then
+		ZygorGuidesViewerFrame_Border_Flash_TopRight:SetTexture(DIR.."\\Skin\\leavesofsteel_flash")
+	end
+	if ZygorGuidesViewerFrame_Border_Flash_BottomLeft then
+		ZygorGuidesViewerFrame_Border_Flash_BottomLeft:SetTexture(DIR.."\\Skin\\leavesofsteel_flash")
+	end
+	if ZygorGuidesViewerFrame_Border_Flash_BottomRight then
+		ZygorGuidesViewerFrame_Border_Flash_BottomRight:SetTexture(DIR.."\\Skin\\leavesofsteel_flash")
+	end
+	if ZygorGuidesViewerFrame_Border_Flash_Logo then
+		ZygorGuidesViewerFrame_Border_Flash_Logo:SetTexture(DIR.."\\Skin\\leavesofsteel_flash")
+	end
 
 	ZygorGuidesViewerFrame_Border_SectionTitle:SetTextColor(unpack(self.db.profile.skincolors.text))
 
@@ -2722,6 +3031,15 @@ function me:ApplyRemasterSkin()
 		return
 	end
 	local remasterFrames = self:EnsureRemasterFrames()
+	LayoutRemasterFrames(remasterFrames, self.db and self.db.profile and self.db.profile.resizeup)
+	if ZygorGuidesViewerFrameMaster and ZygorGuidesViewerFrame then
+		ZygorGuidesViewerFrame:ClearAllPoints()
+		if self.db and self.db.profile and self.db.profile.resizeup then
+			ZygorGuidesViewerFrame:SetPoint("BOTTOMLEFT", ZygorGuidesViewerFrameMaster, "BOTTOMLEFT", 0, 0)
+		else
+			ZygorGuidesViewerFrame:SetPoint("TOPLEFT", ZygorGuidesViewerFrameMaster, "TOPLEFT", 0, 0)
+		end
+	end
 	if self.remasterDefaultsCaptured then
 		-- already captured
 	else
@@ -2733,6 +3051,9 @@ function me:ApplyRemasterSkin()
 		local texNames = {
 			"ZygorGuidesViewerFrame_Border_TopLeft",
 			"ZygorGuidesViewerFrame_Border_TopRight",
+			"ZygorGuidesViewerFrame_Border_Left",
+			"ZygorGuidesViewerFrame_Border_Right",
+			"ZygorGuidesViewerFrame_Border_Bottom",
 			"ZygorGuidesViewerFrame_Border_BottomLeft",
 			"ZygorGuidesViewerFrame_Border_BottomRight",
 			"ZygorGuidesViewerFrame_Border_Top",
@@ -2790,19 +3111,69 @@ function me:ApplyRemasterSkin()
 	if remasterFrames and remasterFrames.root then
 		remasterFrames.root:Show()
 	end
+	if ZygorGuidesViewerFrame then
+		local minHeight = 260
+		if ZygorGuidesViewerFrame:GetHeight() < minHeight then
+			ZygorGuidesViewerFrame:SetHeight(minHeight)
+		end
+	end
+	if remasterFrames and remasterFrames.header then remasterFrames.header:Show() end
+	if remasterFrames and remasterFrames.separator then remasterFrames.separator:Show() end
+	if remasterFrames and remasterFrames.toolbar then remasterFrames.toolbar:Show() end
+	if remasterFrames and remasterFrames.content then remasterFrames.content:Show() end
+	if remasterFrames and remasterFrames.headerTitle then remasterFrames.headerTitle:Show() end
+	if remasterFrames and remasterFrames.headerMeta then remasterFrames.headerMeta:Show() end
+	if remasterFrames and remasterFrames.guideButton then remasterFrames.guideButton:Show() end
+	if remasterFrames and remasterFrames.prevButton then remasterFrames.prevButton:Show() end
+	if remasterFrames and remasterFrames.nextButton then remasterFrames.nextButton:Show() end
+	if remasterFrames and remasterFrames.stepLabel then remasterFrames.stepLabel:Show() end
+	if remasterFrames and remasterFrames.closeButton then remasterFrames.closeButton:Show() end
+	if remasterFrames and remasterFrames.settingsButton then remasterFrames.settingsButton:Show() end
+	if remasterFrames and remasterFrames.miniButton then remasterFrames.miniButton:Show() end
+	if remasterFrames and remasterFrames.lockButton then remasterFrames.lockButton:Show() end
+
+	-- apply user settings to remaster visuals
+	if self.db and self.db.profile and remasterFrames then
+		local textc = self.db.profile.skincolors and self.db.profile.skincolors.text or {0.9, 0.92, 0.98}
+		local backc = self.db.profile.skincolors and self.db.profile.skincolors.back or {0.08, 0.09, 0.12}
+		local backalpha = self.db.profile.backopacity or 0.3
+		local opacitymain = self.db.profile.opacitymain or 1.0
+		if remasterFrames.root then
+			remasterFrames.root:SetAlpha(opacitymain)
+			remasterFrames.root:SetBackdropColor(backc[1], backc[2], backc[3], backalpha)
+		end
+		if remasterFrames.content then
+			remasterFrames.content:SetBackdropColor(backc[1], backc[2], backc[3], math.min(1, backalpha + 0.2))
+		end
+		if remasterFrames.headerTitle then
+			remasterFrames.headerTitle:SetTextColor(textc[1], textc[2], textc[3], 1)
+		end
+		if remasterFrames.headerMeta then
+			remasterFrames.headerMeta:SetTextColor(textc[1], textc[2], textc[3], 0.85)
+		end
+	end
 
 	local function hideTexture(name)
 		local tex = _G[name]
-		if tex and tex.SetAlpha then
-			tex:SetAlpha(0)
+		if tex then
+			if tex.SetAlpha then
+				tex:SetAlpha(0)
+			end
+			if tex.Hide then
+				tex:Hide()
+			end
 		end
 	end
 
 	hideTexture("ZygorGuidesViewerFrame_Border_TopLeft")
 	hideTexture("ZygorGuidesViewerFrame_Border_TopRight")
+	hideTexture("ZygorGuidesViewerFrame_Border_Logo")
+	hideTexture("ZygorGuidesViewerFrame_Border_Left")
+	hideTexture("ZygorGuidesViewerFrame_Border_Right")
 	hideTexture("ZygorGuidesViewerFrame_Border_BottomLeft")
 	hideTexture("ZygorGuidesViewerFrame_Border_BottomRight")
 	hideTexture("ZygorGuidesViewerFrame_Border_Top")
+	hideTexture("ZygorGuidesViewerFrame_Border_Bottom")
 	hideTexture("ZygorGuidesViewerFrame_Border_Flash_Top")
 	hideTexture("ZygorGuidesViewerFrame_Border_Flash_Left")
 	hideTexture("ZygorGuidesViewerFrame_Border_Flash_Right")
@@ -2833,26 +3204,75 @@ function me:ApplyRemasterSkin()
 	if ZygorGuidesViewerFrameScroll and remasterFrames and remasterFrames.content then
 		ZygorGuidesViewerFrameScroll:ClearAllPoints()
 		ZygorGuidesViewerFrameScroll:SetParent(remasterFrames.content)
-		ZygorGuidesViewerFrameScroll:SetPoint("TOPLEFT", remasterFrames.content, "TOPLEFT", 8, -8)
-		ZygorGuidesViewerFrameScroll:SetPoint("BOTTOMRIGHT", remasterFrames.content, "BOTTOMRIGHT", -8, 8)
+		ZygorGuidesViewerFrameScroll:SetPoint("TOPLEFT", remasterFrames.content, "TOPLEFT", 10, -10)
+		ZygorGuidesViewerFrameScroll:SetPoint("BOTTOMRIGHT", remasterFrames.content, "BOTTOMRIGHT", -10, 10)
+		ZygorGuidesViewerFrameScroll:SetFrameLevel(remasterFrames.content:GetFrameLevel() + 2)
+		ZygorGuidesViewerFrameScroll:Show()
+		ZygorGuidesViewerFrameScroll:EnableMouse(true)
+		ZygorGuidesViewerFrameScroll:RegisterForDrag("LeftButton")
+		ZygorGuidesViewerFrameScroll:SetScript("OnDragStart", remasterStartDrag)
+		ZygorGuidesViewerFrameScroll:SetScript("OnDragStop", remasterStopDrag)
+		ZygorGuidesViewerFrameScroll:SetScript("OnMouseDown", function(self, button)
+			if button == "LeftButton" then remasterStartDrag() end
+		end)
+		ZygorGuidesViewerFrameScroll:SetScript("OnMouseUp", function(self, button)
+			if button == "LeftButton" then remasterStopDrag() end
+		end)
+		if ZygorGuidesViewerFrameScrollScrollBar then
+			ZygorGuidesViewerFrameScrollScrollBar:ClearAllPoints()
+			ZygorGuidesViewerFrameScrollScrollBar:SetPoint("TOPRIGHT", remasterFrames.content, "TOPRIGHT", -4, -12)
+			ZygorGuidesViewerFrameScrollScrollBar:SetPoint("BOTTOMRIGHT", remasterFrames.content, "BOTTOMRIGHT", -4, 12)
+			ZygorGuidesViewerFrameScrollScrollBar:SetFrameLevel(remasterFrames.content:GetFrameLevel() + 2)
+			ZygorGuidesViewerFrameScrollScrollBar:Hide()
+		end
+		if ZygorGuidesViewerFrameScrollChild and remasterFrames.content.GetWidth then
+			local cw = remasterFrames.content:GetWidth() or 0
+			if cw > 40 then
+				ZygorGuidesViewerFrameScrollChild:SetWidth(cw - 24)
+			end
+		end
+		if ZygorGuidesViewerFrameScrollChild then
+			ZygorGuidesViewerFrameScrollChild:ClearAllPoints()
+			ZygorGuidesViewerFrameScrollChild:SetPoint("TOPLEFT", ZygorGuidesViewerFrameScroll, "TOPLEFT", 0, 0)
+			ZygorGuidesViewerFrameScrollChild:SetPoint("TOPRIGHT", ZygorGuidesViewerFrameScroll, "TOPRIGHT", 0, 0)
+			ZygorGuidesViewerFrameScrollChild:SetFrameLevel(ZygorGuidesViewerFrameScroll:GetFrameLevel() + 1)
+		end
+		if self.stepframes and ZygorGuidesViewerFrameScrollChild then
+			for _, step in ipairs(self.stepframes) do
+				if step and step.SetParent then
+					step:SetParent(ZygorGuidesViewerFrameScrollChild)
+					step:SetFrameLevel(ZygorGuidesViewerFrameScrollChild:GetFrameLevel() + 1)
+				end
+			end
+		end
+		if self.spotframes and ZygorGuidesViewerFrameScrollChild then
+			for _, spot in ipairs(self.spotframes) do
+				if spot and spot.SetParent then
+					spot:SetParent(ZygorGuidesViewerFrameScrollChild)
+					spot:SetFrameLevel(ZygorGuidesViewerFrameScrollChild:GetFrameLevel() + 1)
+				end
+			end
+		end
+		if ZygorGuidesViewerFrameScrollScrollBar and not self.remasterScrollHooked then
+			local function updateScrollBarVisibility()
+				local range = ZygorGuidesViewerFrameScroll:GetVerticalScrollRange() or 0
+				if ZGV.db and ZGV.db.profile and ZGV.db.profile.showallsteps and range > 0 then
+					ZygorGuidesViewerFrameScrollScrollBar:Show()
+				else
+					ZygorGuidesViewerFrameScrollScrollBar:Hide()
+				end
+			end
+			ZygorGuidesViewerFrameScroll:HookScript("OnUpdate", updateScrollBarVisibility)
+			ZygorGuidesViewerFrameScroll:HookScript("OnShow", updateScrollBarVisibility)
+			self.remasterScrollHooked = true
+			updateScrollBarVisibility()
+		end
 	end
 
 	if ZygorGuidesViewerFrame_Skipper then
 		ZygorGuidesViewerFrame_Skipper:Hide()
+		ZygorGuidesViewerFrame_Skipper.mustbevisible = nil
 	end
-
-	local function placeButton(button, anchor, x, y, size)
-		if not button then
-			return
-		end
-		if size then
-			button:SetSize(size, size)
-		end
-		button:ClearAllPoints()
-		button:SetPoint("TOPRIGHT", anchor, "TOPRIGHT", x, y)
-	end
-
-	local size = 18
 	if ZygorGuidesViewerFrame_Border_CloseButton then
 		ZygorGuidesViewerFrame_Border_CloseButton:Hide()
 	end
@@ -2866,16 +3286,6 @@ function me:ApplyRemasterSkin()
 		ZygorGuidesViewerFrame_Border_LockButton:Hide()
 	end
 
-	if remasterFrames and remasterFrames.header then remasterFrames.header:Hide() end
-	if remasterFrames and remasterFrames.separator then remasterFrames.separator:Hide() end
-	if remasterFrames and remasterFrames.headerTitle then remasterFrames.headerTitle:Hide() end
-	if remasterFrames and remasterFrames.headerMeta then remasterFrames.headerMeta:Hide() end
-	if remasterFrames and remasterFrames.guideButton then remasterFrames.guideButton:Hide() end
-	if remasterFrames and remasterFrames.closeButton then remasterFrames.closeButton:Hide() end
-	if remasterFrames and remasterFrames.settingsButton then remasterFrames.settingsButton:Hide() end
-	if remasterFrames and remasterFrames.miniButton then remasterFrames.miniButton:Hide() end
-	if remasterFrames and remasterFrames.lockButton then remasterFrames.lockButton:Hide() end
-
 	if ZygorGuidesViewerFrame_Border_GuideButton then
 		ZygorGuidesViewerFrame_Border_GuideButton:Hide()
 	end
@@ -2886,11 +3296,12 @@ function me:ApplyRemasterSkin()
 		ZygorGuidesViewerFrame_ThinFlash:Hide()
 	end
 	if ZygorGuidesViewerFrame_Border then
+		ZygorGuidesViewerFrame_Border:SetAlpha(0)
 		ZygorGuidesViewerFrame_Border:Hide()
 	end
 	if ZygorGuidesViewerFrame then
-		ZygorGuidesViewerFrame:SetAlpha(0.01)
-		ZygorGuidesViewerFrame:EnableMouse(false)
+		ZygorGuidesViewerFrame:SetAlpha(1)
+		ZygorGuidesViewerFrame:EnableMouse(true)
 	end
 
 	if self.db and self.db.profile then
@@ -2924,6 +3335,9 @@ function me:RestoreLegacySkin()
 				end
 				if data.alpha and tex.SetAlpha then
 					tex:SetAlpha(data.alpha)
+				end
+				if tex.Show then
+					tex:Show()
 				end
 			end
 		end
@@ -2962,6 +3376,12 @@ function me:RestoreLegacySkin()
 		if self.RemasterFrames.separator then
 			self.RemasterFrames.separator:Hide()
 		end
+		if self.RemasterFrames.toolbar then
+			self.RemasterFrames.toolbar:Hide()
+		end
+		if self.RemasterFrames.content then
+			self.RemasterFrames.content:Hide()
+		end
 		if self.RemasterFrames.headerTitle then
 			self.RemasterFrames.headerTitle:Hide()
 		end
@@ -2970,6 +3390,15 @@ function me:RestoreLegacySkin()
 		end
 		if self.RemasterFrames.guideButton then
 			self.RemasterFrames.guideButton:Hide()
+		end
+		if self.RemasterFrames.prevButton then
+			self.RemasterFrames.prevButton:Hide()
+		end
+		if self.RemasterFrames.nextButton then
+			self.RemasterFrames.nextButton:Hide()
+		end
+		if self.RemasterFrames.stepLabel then
+			self.RemasterFrames.stepLabel:Hide()
 		end
 		if self.RemasterFrames.closeButton then
 			self.RemasterFrames.closeButton:Hide()
@@ -2988,6 +3417,30 @@ function me:RestoreLegacySkin()
 	if ZygorGuidesViewerFrame_Border_GuideButton then
 		ZygorGuidesViewerFrame_Border_GuideButton:Show()
 	end
+	if ZygorGuidesViewerFrame_Border_CloseButton then
+		ZygorGuidesViewerFrame_Border_CloseButton:Show()
+	end
+	if ZygorGuidesViewerFrame_Border_SettingsButton then
+		ZygorGuidesViewerFrame_Border_SettingsButton:Show()
+	end
+	if ZygorGuidesViewerFrame_Border_LockButton then
+		ZygorGuidesViewerFrame_Border_LockButton:Show()
+	end
+	if ZygorGuidesViewerFrame_Border_MiniButton then
+		ZygorGuidesViewerFrame_Border_MiniButton:Show()
+	end
+	if ZygorGuidesViewerFrame_Border_TitleBar then
+		ZygorGuidesViewerFrame_Border_TitleBar:Show()
+	end
+	if ZygorGuidesViewerFrame_Border_Gear1 then
+		ZygorGuidesViewerFrame_Border_Gear1:Show()
+	end
+	if ZygorGuidesViewerFrame_Border_Gear2 then
+		ZygorGuidesViewerFrame_Border_Gear2:Show()
+	end
+	if ZygorGuidesViewerFrame_Border_Gear3 then
+		ZygorGuidesViewerFrame_Border_Gear3:Show()
+	end
 	if ZygorGuidesViewerFrame_Border_Flash then
 		ZygorGuidesViewerFrame_Border_Flash:Show()
 	end
@@ -2995,11 +3448,30 @@ function me:RestoreLegacySkin()
 		ZygorGuidesViewerFrame_ThinFlash:Show()
 	end
 	if ZygorGuidesViewerFrame_Border then
+		if self.RemasterDefaults and self.RemasterDefaults.borderAlpha then
+			ZygorGuidesViewerFrame_Border:SetAlpha(self.RemasterDefaults.borderAlpha)
+		else
+			ZygorGuidesViewerFrame_Border:SetAlpha(1)
+		end
 		ZygorGuidesViewerFrame_Border:Show()
 	end
 	if ZygorGuidesViewerFrame then
 		ZygorGuidesViewerFrame:SetAlpha(1)
 		ZygorGuidesViewerFrame:EnableMouse(true)
+	end
+	if self.stepframes then
+		for _, step in ipairs(self.stepframes) do
+			if step and step.SetParent then
+				step:SetParent(ZygorGuidesViewerFrame)
+			end
+		end
+	end
+	if self.spotframes then
+		for _, spot in ipairs(self.spotframes) do
+			if spot and spot.SetParent then
+				spot:SetParent(ZygorGuidesViewerFrame)
+			end
+		end
 	end
 
 	if ZygorGuidesViewerFrame_Border_SectionTitle then
@@ -3015,6 +3487,57 @@ function me:RestoreLegacySkin()
 end
 
 function me:ResizeFrame()
+	if self.db and self.db.profile and self.db.profile.skin == "remaster" then
+		if ZGV and ZGV.framemoving then
+			return
+		end
+		if ZygorGuidesViewerFrame and not ZygorGuidesViewerFrame:IsShown() then
+			return
+		end
+		local minHeight = 160
+		if self.db.profile.displaymode == "guide" and not self.db.profile.showallsteps then
+			local height = 0
+			local count = self.db.profile.showcountsteps or 1
+			if count < 1 then count = 1 end
+			for i = 1, count do
+				local step = self.stepframes and self.stepframes[i]
+				if step and step.GetHeight then
+					if i > 1 then height = height + STEP_SPACING end
+					height = height + step:GetHeight()
+				end
+			end
+			local extra = 40
+			if self.RemasterFrames and self.RemasterFrames.header and self.RemasterFrames.toolbar then
+				local headerh = self.RemasterFrames.header:GetHeight() or 34
+				local toolbarh = self.RemasterFrames.toolbar:GetHeight() or 28
+				local topPad = 6
+				local headerToToolbar = 6
+				local toolbarToContent = 10
+				local contentBottom = 8
+				local scrollPad = 20
+				extra = headerh + toolbarh + topPad + headerToToolbar + toolbarToContent + contentBottom + scrollPad
+			end
+			height = height + extra
+			if height < MIN_HEIGHT then height = MIN_HEIGHT end
+			if height < minHeight then height = minHeight end
+			if ZygorGuidesViewerFrame then
+				ZygorGuidesViewerFrame:SetHeight(height)
+			end
+		else
+			if ZygorGuidesViewerFrame and ZygorGuidesViewerFrame:GetHeight() < minHeight then
+				ZygorGuidesViewerFrame:SetHeight(minHeight)
+			end
+		end
+		if ZygorGuidesViewerFrameScroll and ZygorGuidesViewerFrameScrollScrollBar then
+			local range = ZygorGuidesViewerFrameScroll:GetVerticalScrollRange() or 0
+			if range > 0 and self.db.profile.showallsteps then
+				ZygorGuidesViewerFrameScrollScrollBar:Show()
+			else
+				ZygorGuidesViewerFrameScrollScrollBar:Hide()
+			end
+		end
+		return
+	end
 	--autosize
 	--if (self.db.profile.autosize) then
 	--print("resize")
@@ -3655,7 +4178,7 @@ function me:OpenGuideMenu()
 	UIDropDownMenu_SetWidth(ZGVFMenu, 300)
 end
 
-function me:OpenQuickMenu()
+function me:OpenQuickMenu(anchor)
 	local menu = {
 		--[[
 		{
@@ -3707,7 +4230,12 @@ function me:OpenQuickMenu()
 		--]]
 	}
 
-	EasyMenu(menu,ZGVFMenu,"ZygorGuidesViewerFrame_Border_SettingsButton",0,0,"MENU",3)
+	if anchor then
+		UIDropDownMenu_SetAnchor(ZGVFMenu, 0, 0, "TOPRIGHT", anchor, "BOTTOMRIGHT")
+		EasyMenu(menu,ZGVFMenu,nil,0,0,"MENU",3)
+	else
+		EasyMenu(menu,ZGVFMenu,"ZygorGuidesViewerFrame_Border_SettingsButton",0,0,"MENU",3)
+	end
 end
 
 function me:OpenQuickSteps()

@@ -37,9 +37,9 @@ local cuedinged=nil
 local profile={}
 
 function Pointer:Startup()
-	self:CreateArrowFrame()
-
 	profile = ZGV.db.profile
+
+	self:CreateArrowFrame()
 
 	profile.arrowsmooth = true
 
@@ -94,6 +94,10 @@ function Pointer:Startup()
 	Pointer.ready = true
 
 	self:HandleCamRegistration()
+
+	-- Ensure saved scale/font settings apply on startup (after profile is ready).
+	self:SetScale(profile.arrowscale)
+	self:SetFontSize(profile.arrowfontsize)
 end
 
 local is_moving=false

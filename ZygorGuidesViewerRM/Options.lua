@@ -50,6 +50,7 @@ function me:Options_RegisterDefaults()
 
 
 			skin = "remaster",
+			remastercolor = "dark",
 			skincolors={text={0.90,0.92,0.98},back={0.08,0.09,0.12}},
 			showallsteps = false,
 			hideborder = false,
@@ -311,6 +312,12 @@ function me:Options_DefineOptions()
 							self:AlignFrame()
 							self:UpdateLocking()
 							self:ScrollToCurrentStep()
+							if not self.db.profile.showallsteps then
+								if ZygorGuidesViewerFrameScrollScrollBar then
+									ZygorGuidesViewerFrameScrollScrollBar:SetValue(1)
+								end
+								self:ResizeFrame()
+							end
 						      end,
 						order=1,
 					},
@@ -319,21 +326,53 @@ function me:Options_DefineOptions()
 						name = L["opt_skin"],
 						desc = L["opt_skin_desc"],
 						type = "select",
-						values = {
-							remaster=L["opt_skin_remaster"],
-							violet=L["opt_skin_violet"],
-							green=L["opt_skin_green"],
-							blue=L["opt_skin_blue"],
-							orange=L["opt_skin_orange"],
+						sorting = {
+							"remaster_dark",
+							"remaster_blue",
+							"remaster_green",
+							"remaster_orange",
+							"remaster_violet",
+							"blue",
+							"green",
+							"orange",
+							"violet",
 						},
+						values = {
+							remaster_dark="|cffcfd6e8Dark|r",
+							remaster_blue="|cff88b3ffBlue|r",
+							remaster_green="|cff88ff88Green|r",
+							remaster_orange="|cffffcc66Orange|r",
+							remaster_violet="|cffff99ffViolet|r",
+							blue=L["opt_skin_blue"].." (legacy)",
+							green=L["opt_skin_green"].." (legacy)",
+							orange=L["opt_skin_orange"].." (legacy)",
+							violet=L["opt_skin_violet"].." (legacy)",
+						},
+						get = function()
+							if self.db.profile.skin == "remaster" then
+								return "remaster_"..(self.db.profile.remastercolor or "dark")
+							end
+							return self.db.profile.skin
+						end,
 						set = function(_,n)
-							self.db.profile.skin=n  
-							local colors = {	remaster={text={0.90,0.92,0.98},back={0.08,0.09,0.12}},
+							local colors = {
+										remaster_dark={text={0.90,0.92,0.98},back={0.08,0.09,0.12}},
+										remaster_blue={text={0.70,0.80,1.00},back={0.08,0.11,0.24}},
+										remaster_green={text={0.50,1.00,0.50},back={0.09,0.20,0.07}},
+										remaster_orange={text={1.00,0.80,0.00},back={0.23,0.11,0.07}},
+										remaster_violet={text={0.95,0.65,1.00},back={0.17,0.07,0.20}},
 										violet={text={0.95,0.65,1.0},back={0.17,0.07,0.20}},
 										blue={text={0.7,0.8,1.0},back={0.08,0.11,0.24}},
 										green={text={0.5,1.0,0.5},back={0.09,0.20,0.07}},
 										orange={text={1.0,0.8,0.0},back={0.23,0.11,0.07}}}
-							self.db.profile.skincolors = colors[self.db.profile.skin]
+							if n:match("^remaster_") then
+								self.db.profile.skin = "remaster"
+								self.db.profile.remastercolor = n:gsub("^remaster_", "")
+								self.db.profile.skincolors = colors[n]
+							else
+								self.db.profile.skin = n
+								self.db.profile.skincolors = colors[self.db.profile.skin]
+							end
 							self:UpdateSkin()
 							self:AlignFrame()
 							self:UpdateLocking()

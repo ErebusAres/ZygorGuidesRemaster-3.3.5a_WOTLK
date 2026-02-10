@@ -4,11 +4,11 @@
 		<Size x="20" y="20"/>
 		<Layers>
 			<Layer level="BACKGROUND">
-				<Texture parentKey="icon" file="Interface\AddOns\ZygorGuidesViewer\Skin\minimaparrow-green-dot">
+				<Texture parentKey="icon" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\minimaparrow-green-dot">
 					<Size x="12" y="12"/>
 					<Anchors><Anchor point="CENTER" relativePoint="CENTER" /></Anchors>
 				</Texture>
-				<Texture parentKey="arrow" hidden="true" file="Interface\AddOns\ZygorGuidesViewer\Skin\minimaparrow-green-edge">
+				<Texture parentKey="arrow" hidden="true" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\minimaparrow-green-edge">
 					<Size x="40" y="40"/>
 					<Anchors><Anchor point="CENTER" relativePoint="CENTER" /></Anchors>
 				</Texture>
@@ -29,7 +29,7 @@
 		<Size x="25" y="25"/>
 		<Layers>
 			<Layer level="ARTWORK">
-				<Texture parentKey="icon" file="Interface\AddOns\ZygorGuidesViewer\Skin\minimaparrow-green-dot" >
+				<Texture parentKey="icon" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\minimaparrow-green-dot" >
 					<Anchors><Anchor point="CENTER" relativePoint="CENTER" /></Anchors>
 					<Size x="25" y="25"/>
 				</Texture>
@@ -96,7 +96,7 @@
 		</Anchors>
 		<Layers>
 			<Layer level="BACKGROUND">
-				<Texture parentKey="back" file="Interface\AddOns\ZygorGuidesViewer\Skin\arrow-back">
+				<Texture parentKey="back" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\arrow-back">
 					<Size x="37" y="37"/>
 					<Anchors>
 						<Anchor point="CENTER" relativePoint="CENTER" ><Offset x="0" y="0"/></Anchor>
@@ -109,13 +109,13 @@
 				</Texture>
 			</Layer>
 			<Layer level="BORDER">
-				<Texture parentKey="arrow" name="$parentArrow" file="Interface\AddOns\ZygorGuidesViewer\Skin\arrow">
+				<Texture parentKey="arrow" name="$parentArrow" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\arrow">
 					<Size x="60" y="60"/>
 					<Anchors>
 						<Anchor point="CENTER" relativePoint="CENTER" />
 					</Anchors>
 				</Texture>
-				<Texture parentKey="here" name="$parentHere" file="Interface\AddOns\ZygorGuidesViewer\Skin\arrow-here">
+				<Texture parentKey="here" name="$parentHere" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\arrow-here">
 					<Size x="50" y="50"/>
 					<Anchors>
 						<Anchor point="CENTER" relativePoint="CENTER" />
@@ -166,7 +166,7 @@
 				-->
 			</Layer>
 			<Layer level="ARTWORK">
-				<Texture parentKey="gem" name="$parentGem" file="Interface\AddOns\ZygorGuidesViewer\Skin\arrow-gem">
+				<Texture parentKey="gem" name="$parentGem" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\arrow-gem">
 					<Size x="60" y="60"/>
 					<Anchors>
 						<Anchor point="CENTER" relativePoint="CENTER" />
@@ -174,7 +174,7 @@
 				</Texture>
 			</Layer>
 			<Layer level="OVERLAY">
-				<Texture parentKey="gemhl" name="$parentGemhl" file="Interface\AddOns\ZygorGuidesViewer\Skin\arrow-gemhl">
+				<Texture parentKey="gemhl" name="$parentGemhl" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\arrow-gemhl">
 					<Size x="60" y="60"/>
 					<Anchors>
 						<Anchor point="CENTER" relativePoint="CENTER" />
