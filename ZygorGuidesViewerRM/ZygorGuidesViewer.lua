@@ -3146,6 +3146,14 @@ function me:ApplyRemasterSkin()
 		local backalpha = self.db.profile.backopacity or 0.3
 		local opacitymain = self.db.profile.opacitymain or 1.0
 		local remastercolor = self.db.profile.remastercolor or "dark"
+		local function setTexColor(tex, r, g, b, a)
+			if not tex then return end
+			if tex.SetColorTexture then
+				tex:SetColorTexture(r, g, b, a or 1)
+			else
+				tex:SetTexture(r, g, b, a or 1)
+			end
+		end
 
 		local theme = {
 			frameBorder = { 0.12, 0.12, 0.14, 0.9 },
@@ -3184,23 +3192,23 @@ function me:ApplyRemasterSkin()
 		end
 		if remasterFrames.headerBg then
 			if remastercolor == "goals" then
-				remasterFrames.headerBg:SetColorTexture(0, 0, 0, 0.45)
+				setTexColor(remasterFrames.headerBg, 0, 0, 0, 0.45)
 			else
 				local c = theme.frameLight
-				remasterFrames.headerBg:SetColorTexture(c[1], c[2], c[3], c[4] or 1)
+				setTexColor(remasterFrames.headerBg, c[1], c[2], c[3], c[4] or 1)
 			end
 		end
 		if remasterFrames.toolbarBg then
 			if remastercolor == "goals" then
-				remasterFrames.toolbarBg:SetColorTexture(0, 0, 0, 0.30)
+				setTexColor(remasterFrames.toolbarBg, 0, 0, 0, 0.30)
 			else
 				local c = theme.frameLight
-				remasterFrames.toolbarBg:SetColorTexture(c[1], c[2], c[3], (c[4] or 1) * 0.8)
+				setTexColor(remasterFrames.toolbarBg, c[1], c[2], c[3], (c[4] or 1) * 0.8)
 			end
 		end
 		if remasterFrames.separator then
 			local c = theme.separator or theme.frameBorder
-			remasterFrames.separator:SetColorTexture(c[1], c[2], c[3], c[4] or 1)
+			setTexColor(remasterFrames.separator, c[1], c[2], c[3], c[4] or 1)
 		end
 		if remasterFrames.headerTitle then
 			if remastercolor == "goals" then

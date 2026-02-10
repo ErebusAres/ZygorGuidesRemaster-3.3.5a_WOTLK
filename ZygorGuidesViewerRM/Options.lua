@@ -326,18 +326,6 @@ function me:Options_DefineOptions()
 						name = L["opt_skin"],
 						desc = L["opt_skin_desc"],
 						type = "select",
-						sorting = {
-							"remaster_dark",
-							"remaster_goals",
-							"remaster_blue",
-							"remaster_green",
-							"remaster_orange",
-							"remaster_violet",
-							"blue",
-							"green",
-							"orange",
-							"violet",
-						},
 						values = {
 							remaster_dark="|cffcfd6e8Dark|r",
 							remaster_goals="|cffebd199Goals|r",

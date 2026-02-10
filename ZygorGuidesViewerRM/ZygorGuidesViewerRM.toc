@@ -25,3 +25,4 @@ Localization\names.xml
 files.xml
 
 Guides\Autoload.xml
+-

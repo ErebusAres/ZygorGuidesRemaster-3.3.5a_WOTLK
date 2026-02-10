@@ -7,20 +7,30 @@ ZGV.MapCoords = MapCoords
 
 local Astrolabe = nil
 if DongleStub then
-	local ok, lib = pcall(DongleStub, "Astrolabe-ZGV")
+	local ok, lib = pcall(DongleStub, "Astrolabe-0.4-Zygor")
 	if ok and lib then
 		Astrolabe = lib
 	else
-		ok, lib = pcall(DongleStub, "Astrolabe-0.4")
+		ok, lib = pcall(DongleStub, "Astrolabe-ZGV")
 		if ok and lib then
 			Astrolabe = lib
+		else
+			ok, lib = pcall(DongleStub, "Astrolabe-0.4")
+			if ok and lib then
+				Astrolabe = lib
+			end
 		end
 	end
 end
 if not Astrolabe and LibStub then
-	local ok, lib = pcall(LibStub, "Astrolabe-0.4")
+	local ok, lib = pcall(LibStub, "Astrolabe-0.4-Zygor")
 	if ok and lib then
 		Astrolabe = lib
+	else
+		ok, lib = pcall(LibStub, "Astrolabe-0.4")
+		if ok and lib then
+			Astrolabe = lib
+		end
 	end
 end
 if not Astrolabe then
