@@ -2,7 +2,7 @@
 
 This is a remastered UI/UX fork of Zygor Guides Viewer for **World of Warcraft 3.3.5a (build 12340)**, intended for private servers (e.g., TrinityCore). It is intended to **replace the original Zygor Guides Viewer addon** for 3.3.5a.
 
-## What�s New
+## What's New
 - **Remastered UI** (default) with modernized layout and styling.
 - **Legacy UI still available** for those who want the original look.
 - Guide content is preserved and expanded where applicable (e.g., additional imported guides).
@@ -28,3 +28,6 @@ This is a remastered UI/UX fork of Zygor Guides Viewer for **World of Warcraft 3
 
 ## Credits
 All credit for the original Zygor Guides concept and content belongs to the original creators. This remaster focuses on UI/UX modernization and packaging for 3.3.5a private server use.
+
+## Example Image(s)
+<img width="444" height="294" alt="image" src="https://github.com/user-attachments/assets/21b70f37-30ea-400c-9ef8-b8fca0ef6f0c" />
