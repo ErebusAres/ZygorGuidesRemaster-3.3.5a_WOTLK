@@ -26,7 +26,7 @@ ZygorGuidesViewer:RegisterInclude("home_DwarvenDistrict",[[
 ]])
 
 ZygorGuidesViewer:RegisterInclude("Spirt_Harmony",[[
-		goto Vale of Eternal Blossoms/0 84.6,60.4
+		goto Vale of Eternal Blossoms/0,84.6,60.4
 		.talk Krystel##66678
 ]])
 --------------------------------------------------------------------------------------------------------------------------------------
@@ -38,7 +38,7 @@ ZygorGuidesViewer:RegisterInclude("a_begin_pandaria",[[
 		.' In order to get to Pandaria for the first time, you must complete the opening questline to The Jade Forest.
 		|confirm
 	step
-		goto Stormwind City 81.3,37.1
+		goto Stormwind City,81.3,37.1
 		..accept The King's Command##29547
 		.' Visit Stormwind Keep |q 29547/1
 	step
@@ -47,13 +47,13 @@ ZygorGuidesViewer:RegisterInclude("a_begin_pandaria",[[
 		..turnin The King's Command##29547
 		..accept The Mission##29548
 	step
-		goto Eastern Kingdoms 41.46,70.19
+		goto Eastern Kingdoms,41.46,70.19
 		' Look for a ship in the air. You have to use a flying mount to get to Sky Admiral Rogers.
 		.' Talk to Sky Admiral Rogers //##756
 		.' Tell her:
 		.' <I am ready to depart> |goto The Jade Forest 42.0,92.8 |noway |c |q 29548
 	step
-		goto The Jade Forest 42.0,92.8
+		goto The Jade Forest,42.0,92.8
 		.' Talk to Sky Admiral Rogers //##756
 		..turnin The Mission##29548
 		..accept Unleash Hell##31732
@@ -442,7 +442,7 @@ ZygorGuidesViewer:RegisterInclude("A_Cenarion_Circle_Faction",[[
 		.talk Ithis Moonwarden##38263
 		..turnin Aberrant Flora##24855
 	step
-		goto Western Plaguelands 48.9,54.8
+		goto Western Plaguelands,48.9,54.8
 		.talk Adrine Towhide##44456
 		..accept Zen'Kiki, the Druid##26953
 	step
@@ -925,11 +925,11 @@ ZygorGuidesViewer:RegisterInclude("A_Cenarion_Expedition_Faction",[[
 		..accept Checking Up##29566
 		..accept Storming the Steamvault##29616
 	step
-		goto The Slave Pens 18.9,11.3
+		goto The Slave Pens,18.9,11.3
 		.talk Watcher Jhang##54667
 		..turnin Checking Up##29566
 	step
-		goto The Slave Pens 18.9,11.3
+		goto The Slave Pens,18.9,11.3
 		.talk Watcher Jhang##54667
 		..accept Lost in Action##29563
 		..accept The Heart of the Matter##29565
@@ -970,11 +970,11 @@ ZygorGuidesViewer:RegisterInclude("A_Cenarion_Expedition_Faction",[[
 		.' Tell him
 		.' <Naturalist, please grant me your boon |havebuff Interface\Icons\Ability_Druid_FerociousBite |q 29565
 	step
-		goto The Slave Pens 86.2,67.9
+		goto The Slave Pens,86.2,67.9
 		.from Quagmirran##17942+
 		.get The Slave Master's Eye |q 29565/2
 	step
-		goto The Slave Pens 17.9,12.2
+		goto The Slave Pens,17.9,12.2
 		.talk Nahuud##54668
 		..turnin A Brother Betrayed##29564
 	step
@@ -982,7 +982,7 @@ ZygorGuidesViewer:RegisterInclude("A_Cenarion_Expedition_Faction",[[
 		.talk Watcher Jhang##54667
 		..turnin Lost in Action##29563
 	step
-		goto The Underbog 29.5,64.7
+		goto The Underbog,29.5,64.7
 		.talk Naturalist Bite##54678
 		..accept A Necessary Evil##29568
 	step
@@ -1034,7 +1034,7 @@ ZygorGuidesViewer:RegisterInclude("A_Cenarion_Expedition_Faction",[[
 		.' Talk to Windcaller Claw
 		.' Discover Windcaller Claw |q 29570/2
 	step
-		goto The Underbog 25.9,45.5
+		goto The Underbog,25.9,45.5
 		.from The Black Stalker##17882
 		.get Black Stalker's Brain |q 29567/1
 	step
@@ -1042,7 +1042,7 @@ ZygorGuidesViewer:RegisterInclude("A_Cenarion_Expedition_Faction",[[
 		.click Sanguine Hibiscus##5031
 		.get 5 Sanguine Hibiscus##24246 |q 29691/1
 	step
-		goto The Underbog 29.5,64.5
+		goto The Underbog,29.5,64.5
 		.talk Naturalist Bite##54678
 		..turnin A Necessary Evil##29568
 	step
@@ -1055,7 +1055,7 @@ ZygorGuidesViewer:RegisterInclude("A_Cenarion_Expedition_Faction",[[
 		..turnin Stalk the Stalker##29567
 		..turnin Bring Me A Shrubbery!##29691
 	step
-		goto The Steamvault 17.9,27.3
+		goto The Steamvault,17.9,27.3
 		.talk Watcher Jhang##54848
 		..turnin Storming the Steamvault##29616
 		..accept A Proper Fate##29613
@@ -1071,7 +1071,7 @@ ZygorGuidesViewer:RegisterInclude("A_Cenarion_Expedition_Faction",[[
 		goto 33.7,22.7
 		.kill 3 Bog Overlord##21694+|q 29614/1
 	step
-		goto The Steamvault 54.3,12.4
+		goto The Steamvault,54.3,12.4
 		.kill Hydromancer Thespia##17797 |q 29615/1
 	step
 		goto 54.2,10.6
@@ -1091,7 +1091,7 @@ ZygorGuidesViewer:RegisterInclude("A_Cenarion_Expedition_Faction",[[
 		goto 39.7,69.0 |n
 		.' Cross the bridge and go through the hallway |goto 39.7,69.0,0.5 |noway |c |q 29613
 	step
-		goto The Steamvault 33.6,81.2
+		goto The Steamvault,33.6,81.2
 		.from Mekgineer Steamrigger##17796
 		.get Irradiated Gear |q 29614/3
 		.kill 6 Coilfang Leper##21338+ |q 29614/2
@@ -1128,15 +1128,15 @@ ZygorGuidesViewer:RegisterInclude("A_Cenarion_Expedition_Faction",[[
 		.talk Naturalist Bite##54849
 		..turnin Containment is Key##29614
 	step
-		goto Zangarmarsh 79.1,64.8
+		goto Zangarmarsh,79.1,64.8
 		.click Wanted Poster##15
 		..accept Leader of the Darkcrest##9730
 		..accept Leader of the Bloodscale##9817
 	step
-		goto Zangarmarsh 65.1,68.7
+		goto Zangarmarsh,65.1,68.7
 		.kill Rajah Haghazed##18046 |q 9730/1
 	step
-		goto Zangarmarsh 65.1,40.9
+		goto Zangarmarsh,65.1,40.9
 		.kill Rajis Fyashe##18044 |q 9817/1
 	step
 		goto 79.1,65.2
@@ -1193,17 +1193,17 @@ ZygorGuidesViewer:RegisterInclude("A_Cenarion_Expedition_Faction",[[
 		..turnin Wind Trader Lathrai##9979
 		..accept A Personal Favor##10112
 	step
-		goto Terokkar Forest 30.9,42.0
+		goto Terokkar Forest,30.9,42.0
 		.from Skithian Windripper##18453+
 		.from Skithian Dreadhawk##18452+
 		.get 5 Lathrai's Stolen Goods |q 10112/1
 	step
-		goto Shattrath City 72.3,30.9
+		goto Shattrath City,72.3,30.9
 		.talk Wind Trader Lathrai##18484
 		..turnin A Personal Favor##10112
 		..accept Investigate Tuurem##9990
 	step
-		goto Terokkar Forest 54.0,30.0
+		goto Terokkar Forest,54.0,30.0
 		.click Sealed Box##6881
 		.get Sealed Box |q 9990/1
 	step
@@ -1212,12 +1212,12 @@ ZygorGuidesViewer:RegisterInclude("A_Cenarion_Expedition_Faction",[[
 		..turnin Investigate Tuurem##9990
 		..accept What Are These Things?##9994
 	step
-		goto Terokkar Forest 57.0,53.5
+		goto Terokkar Forest,57.0,53.5
 		.talk Jenai Starwhisper##18459
 		..turnin What Are These Things?##9994
 		..accept Report to the Allerian Post##10444
 	step
-		goto Terokkar Forest 69.7,44.2
+		goto Terokkar Forest,69.7,44.2
 		.talk Lieutenant Meridian##21006
 		..turnin Report to the Allerian Post##10444
 		..accept Attack on Firewing Point##9996
@@ -1227,7 +1227,7 @@ ZygorGuidesViewer:RegisterInclude("A_Cenarion_Expedition_Faction",[[
 		.kill 10 Firewing Bloodwarder##1410+ |q 9996/2
 		.kill 10 Firewing Warlock##16769+ |q 9996/3
 	step
-		goto Terokkar Forest 69.7,44.2
+		goto Terokkar Forest,69.7,44.2
 		.talk Lieutenant Meridian##21006
 		..turnin Attack on Firewing Point##9996
 		..accept The Final Code##10446
@@ -1249,7 +1249,7 @@ ZygorGuidesViewer:RegisterInclude("A_Cenarion_Expedition_Faction",[[
 		.click Mana Bomb##7213
 		.' Activate Mana Bomb |q 10446/1
 	step
-		goto Terokkar Forest 57.0,53.5
+		goto Terokkar Forest,57.0,53.5
 		.talk Jenai Starwhisper##18459
 		..turnin The Final Code##10446
 		..accept Letting Earthbinder Tavgren Know##10005
@@ -1272,7 +1272,7 @@ ZygorGuidesViewer:RegisterInclude("A_Cenarion_Expedition_Faction",[[
 		.talk Lakotae##22420
 		..turnin The Infested Protectors##10896
 	step
-		goto Blade's Edge Mountains 62.2,39.1
+		goto Blade's Edge Mountains,62.2,39.1
 		.talk Timeon##21782
 		..accept Creating the Pendant##10567
 	step
@@ -1800,7 +1800,7 @@ ZygorGuidesViewer:RegisterInclude("A_Cenarion_Expedition_Faction",[[
 		.' Click here to be taken to the Steamvault |confirm |next "Zygor's Alliance Dungeon Guides\\Outland Dungeons\\Coilfang Reservoir: The Steamvault (SV) 68-70" |only if ZGV.guidesets['DungeonAMOP']
 	step
 	label ears
-		goto Borean Tundra 60.9,63.4
+		goto Borean Tundra,60.9,63.4
 		.from Northsea Mercenary##25839+, Northsea Thug##25843+
 		.collect Nesingwary Lackey Ear##35188 |n
 		.' Collect Lackey Ears in stacks of 15.
@@ -1819,7 +1819,7 @@ ZygorGuidesViewer:RegisterInclude("A_Cenarion_Expedition_Faction",[[
 
 ZygorGuidesViewer:RegisterInclude("AKaluak_rep",[[
 	step
-		goto Borean Tundra 54.3,36.1
+		goto Borean Tundra,54.3,36.1
 		.talk Etaruk##25292
 		..accept Reclaiming the Quarry##11612
 	step
@@ -2302,7 +2302,7 @@ ZygorGuidesViewer:RegisterInclude("AKaluak_rep",[[
 		.talk Elder Atuik##24755
 		..turnin Return to Atuik##11572
 	step
-		goto Dragonblight 48,74.9
+		goto Dragonblight,48,74.9
 		.talk Elder Ko'nani##26194
 		..accept Let Nothing Go To Waste##11958
 	step
@@ -2349,7 +2349,7 @@ ZygorGuidesViewer:RegisterInclude("AKaluak_rep",[[
 		..turnin Spiritual Insight##12028
 		..accept Elder Mana'loa##12030
 	step
-		goto Dragonblight/0 48.0,76.1
+		goto Dragonblight/0,48.0,76.1
 		.talk Tua'kea##26245
 		..accept Tua'kea's Crab Traps##12009
 	step
@@ -2361,7 +2361,7 @@ ZygorGuidesViewer:RegisterInclude("AKaluak_rep",[[
 		.' Click the Wrecked Crab Trap|tip It looks like a broken version of Tue'kea's Crab Traps, on the ground underwater.
 		..accept Signs of Big Watery Trouble##12011
 	step
-		goto Dragonblight/0 48.0,76.1
+		goto Dragonblight/0,48.0,76.1
 		.talk Tua'kea##26245
 		..turnin Tua'kea's Crab Traps##12009
 		..turnin Signs of Big Watery Trouble##12011
@@ -2371,7 +2371,7 @@ ZygorGuidesViewer:RegisterInclude("AKaluak_rep",[[
 		.from Kili'ua##26521
 		.get The Flesh of "Two Huge Pincers"|q 12016/1
 	step
-		goto Dragonblight/0 48.0,76.1
+		goto Dragonblight/0,48.0,76.1
 		.talk Tua'kea##26245
 		..turnin The Bait##12016
 		..accept Meat on the Hook##12017
@@ -2380,7 +2380,7 @@ ZygorGuidesViewer:RegisterInclude("AKaluak_rep",[[
 		.' Use Tu'u'gwar's Bait next to Tua'kea's Fishing Hook|use Tu'u'gwar's Bait##35838|tip It looks like a rope leading into the water, with a big hook on the end.
 		.' Kill Tu'u'gwar when he comes|kill 1 Tu'u'gwar|q 12017/1
 	step
-		goto Dragonblight/0 48.0,76.1
+		goto Dragonblight/0,48.0,76.1
 		.talk Tua'kea##26245
 		..turnin Meat on the Hook##12017
 	step
@@ -2442,7 +2442,7 @@ ZygorGuidesViewer:RegisterInclude("AKaluak_rep",[[
 		..turnin Planning for the Future##11960
 //howling//
 	step
-		goto Howling Fjord 24.6,58.9
+		goto Howling Fjord,24.6,58.9
 		.talk Anuniaq##24810
 		..accept The Way to His Heart...##11472
 	step
@@ -3494,7 +3494,7 @@ ZygorGuidesViewer:RegisterInclude("A_Sporeggar_Faction",[[
 		.' Click here if you want to grind Naga mobs.|confirm always |next "grind_1"
 	step
 	label	"hibiscus_1"
-		goto The Underbog 31.6,65.4
+		goto The Underbog,31.6,65.4
 		.talk T'shu##54674
 		..accept Bring Me A Shrubbery!##29691
 		..accept Stalk the Stalker##29567
@@ -3508,17 +3508,17 @@ ZygorGuidesViewer:RegisterInclude("A_Sporeggar_Faction",[[
 		.' 80 Sanguine Hibiscus = 12,000 Reputation.
 		.' Click when you are ready to turn in |confirm always
 	step
-		goto The Underbog 25.7,44.1
+		goto The Underbog,25.7,44.1
 		.from The Black Stalker##17882+
 		.get Brain of the Black Stalker |q 29567/1
 	step
-		goto The Underbog 31.6,65.4
+		goto The Underbog,31.6,65.4
 		.talk T'shu##54674
 		..turnin Bring Me A Shrubbery!##29691
 		..turnin Stalk the Stalker##29567
 	step
 	label	"hibiscus_r"
-		goto The Underbog 31.6,65.4
+		goto The Underbog,31.6,65.4
 		.talk T'shu##54674
 		.accept Bring Me Another Shrubbery!##9714 |instant |repeatable |or
 		.' or
@@ -3541,7 +3541,7 @@ ZygorGuidesViewer:RegisterInclude("A_Sporeggar_Faction",[[
 		|only if havequest(9714)
 	step
 	label	"grind_1"
-		goto Zangarmarsh 19.5,50.0
+		goto Zangarmarsh,19.5,50.0
 		.talk Gzhun'tt##17856
 		.accept Now That We're Friends...##9726
 		|only if rep('Sporeggar')>=Friendly
@@ -3673,7 +3673,7 @@ ZygorGuidesViewer:RegisterInclude("A_Kurenai_Faction",[[
 		.talk Maktu##18010
 		..turnin Maktu's Revenge##9905
 	step
-		goto Nagrand 54.2,70.0
+		goto Nagrand,54.2,70.0
 		.talk Huntress Kima##18416
 		..accept The Ravaged Caravan##9956
 	step
@@ -3968,7 +3968,7 @@ ZygorGuidesViewer:RegisterInclude("A_Kurenai_Faction",[[
 		.' Tell him you are here to collect a dept, pay up or you're going to have to hurt him. |tip He will immediately start attacking you!
 		.' Collect Floon's Debt |q 10009/3
 	step
-		goto Shattrath City 77.3,34.9
+		goto Shattrath City,77.3,34.9
 		.talk Sal'salabim##18584
 		..turnin Crackin' Some Skulls##10009
 		..accept It's Just That Easy?##10010
@@ -4024,7 +4024,7 @@ ZygorGuidesViewer:RegisterInclude("A_Icecrown_Argent_Crusade_Rep",[[
 		'Routing to proper section. |next |only if not completedq(13082)
 		'Routing to proper section. |next "Tabard" |only if completedq(13082)
 	step
-		goto Icecrown 87.5,75.8
+		goto Icecrown,87.5,75.8
 		.talk Highlord Tirion Fordring##28179
 		..accept Honor Above All Else##13036
 	step
@@ -4292,7 +4292,7 @@ ZygorGuidesViewer:RegisterInclude("A_Icecrown_Argent_Crusade_Rep",[[
 		.talk Torastrasza##26949
 		..'Tell him you want to go to the ground level of the temple|goto Dragonblight,58.0,55.2,0.1|noway|c
 	step
-		goto Icecrown 79.8,30.8
+		goto Icecrown,79.8,30.8
 		.talk Crusader Bridenbrad##30562
 		..turnin The Boon of Alexstrasza##13079
 		..accept Hope Yet Remains##13080
@@ -4338,7 +4338,7 @@ ZygorGuidesViewer:RegisterInclude("A_Icecrown_Argent_Crusade_Rep",[[
 
 ZygorGuidesViewer:RegisterInclude("A_Deepholm_Leveling",[[
 	step
-		goto Stormwind City 62.9,71.6
+		goto Stormwind City,62.9,71.6
 		.click Hero's Call Board##10016
 		..accept Hero's Call: Deepholm!##27727
 	step
@@ -5992,7 +5992,7 @@ ZygorGuidesViewer:RegisterInclude("A_Vashj'ir_Leveling",[[
 		..turnin A Pearl of Wisdom##25442
 		..accept Nespirah##25890
 	step
-		goto Shimmering Expanse/0 49.5,41.3
+		goto Shimmering Expanse/0,49.5,41.3
 		.talk Swift Seahorse##40873
 		.' Tell him you need to go to Nespirah.
 		|confirm |q 25890
@@ -6610,7 +6610,7 @@ ZygorGuidesViewer:RegisterInclude("A_Vashj'ir_Leveling",[[
 		'Ride the boat
 		.' Secure Darkbreak Cove |q 26219/2
 	step
-		goto  Abyssal Depths 54.4,72.9
+		goto Abyssal Depths,54.4,72.9
 		.talk Captain Glovaal##41662
 		..turnin Full Circle##26219
 	step
@@ -9739,7 +9739,7 @@ ZygorGuidesViewer:RegisterInclude("A_Darkmoon_Faire_Dailies",[[
 
 ZygorGuidesViewer:RegisterInclude("A_Darkmoon_Faire_Quests",[[
 	step
-		goto Stormwind City 49.6,74.9
+		goto Stormwind City,49.6,74.9
 		.talk Stanly McCormick##30730
 		.buy 5 Light Parchment##39354
 		|only if skill("Inscription")>74
@@ -9749,26 +9749,26 @@ ZygorGuidesViewer:RegisterInclude("A_Darkmoon_Faire_Quests",[[
 		.buy 5 Moonberry Juice##1645 |q 29506
 		|only if skill("Alchemy")>74
 	step
-		goto Elwynn Forest 42.0,67.0
+		goto Elwynn Forest,42.0,67.0
 		.talk Tharynn Bouden##66
 		.buy 1 Coarse Thread##2320
 		.buy 1 Blue Dye##6260
 		.buy 1 Red Dye##2604
 		|only if skill("Tailoring")>74
 	step
-		goto Elwynn Forest 42.0,67.0
+		goto Elwynn Forest,42.0,67.0
 		.talk Tharynn Bouden##66
 		.buy 5 Coarse Thread##2320
 		.buy 5 Blue Dye##6260
 		.buy 10 Shiny Bauble##6529
 		|only if skill("Leatherworking")>74
 	step
-		goto Elwynn Forest 42.0,67.0
+		goto Elwynn Forest,42.0,67.0
 		.talk Tharynn Bouden##66
 		.buy 5 Simple Flour##30817 |q 29509
 		|only if skill("Cooking")>74
 	step
-		goto Darkmoon Island 55.4,54.8
+		goto Darkmoon Island,55.4,54.8
 		.talk Selina Dourman##10445
 		..accept Banners, Banners Everywhere!##29520
 		|only if skill("Tailoring")>74
@@ -9803,7 +9803,7 @@ ZygorGuidesViewer:RegisterInclude("A_Darkmoon_Faire_Quests",[[
 		..accept Spoilin' for Salty Sea Dogs##29513
 		|only if skill("Fishing")>74
 	step
-		goto Darkmoon Island 53.2,75.8
+		goto Darkmoon Island,53.2,75.8
 		.talk Sayge##14822
 		..accept Writing the Future##29515
 		|only if skill("Inscription")>74
@@ -9927,7 +9927,7 @@ ZygorGuidesViewer:RegisterInclude("A_Darkmoon_Faire_Quests",[[
 		.' Create 5 Sevings of Moonberry Fizz |q 29506/1
 		|only if skill("Alchemy")>74
 	step
-		goto Darkmoon Island 50.0,66.2
+		goto Darkmoon Island,50.0,66.2
 		.' Use the Darkmoon Banner Kit in your bags to plant a banner here. |use Darkmoon Banner Kit##72048
 		.' Plant a Darkmoon Banner |q 29520/1
 		|only if skill("Tailoring")>74
@@ -9969,7 +9969,7 @@ ZygorGuidesViewer:RegisterInclude("A_Darkmoon_Faire_Quests",[[
 		..turnin Spoilin' for Salty Sea Dogs##29513
 		|only if skill("Fishing")>74
 	step
-		goto Darkmoon Island 53.2,75.8
+		goto Darkmoon Island,53.2,75.8
 		.talk Sayge##14822
 		..turnin Writing the Future##29515
 		|only if skill("Inscription")>74
@@ -10082,11 +10082,11 @@ ZygorGuidesViewer:RegisterInclude("A_Darkmoon_Faire_Quests",[[
 		..turnin A Curious Crystal##29443
 		..turnin Tools of Divination##29464
 	step
-		goto Darkmoon Island 51.0,81.2
+		goto Darkmoon Island,51.0,81.2
 		.talk Yebb Neblegear##14829
 		..turnin An Exotic Egg##29444
 	step
-		goto Darkmoon Island 53.6,76.0
+		goto Darkmoon Island,53.6,76.0
 		.talk Sayge##14822
 		..turnin An Intriguing Grimoire##29445
 ]])
@@ -10174,11 +10174,11 @@ ZygorGuidesViewer:RegisterInclude("A_Darkmoon_Faire_Achievements",[[
 		..turnin A Curious Crystal##29443
 		..turnin Tools of Divination##29464
 	step
-		goto Darkmoon Island 51.0,81.2
+		goto Darkmoon Island,51.0,81.2
 		.talk Yebb Neblegear##14829
 		..turnin An Exotic Egg##29444
 	step
-		goto Darkmoon Island 53.6,76.0
+		goto Darkmoon Island,53.6,76.0
 		.talk Sayge##14822
 		..turnin An Intriguing Grimoire##29445
 		|next "main"
@@ -10262,7 +10262,7 @@ ZygorGuidesViewer:RegisterInclude("A_Darkmoon_Faire_Achievements",[[
 		'Goto The Exodar |goto The Exodar 53,38 |c
 		.' Use your Darkmoon Firework |achieve 6030/3 |use Darkmoon Firework##74142
 	step
-		goto Shattrath City 62,42
+		goto Shattrath City,62,42
 		.' Use your Darkmoon Firework |achieve 6030/5 |use Darkmoon Firework##74142
 	step
 		'Goto Dalaran |goto Dalaran 71,45 |c
@@ -10352,7 +10352,7 @@ ZygorGuidesViewer:RegisterInclude("Hallows_End_Quests_Alliance",[[
 		..turnin Stop the Fires!##11131 |or
 		..turnin "Let the Fires Come!"##12135 |or
 	step
-		goto Stormwind City 60.4,75.3
+		goto Stormwind City,60.4,75.3
 		.talk Innkeeper Allison##6740
 		..accept Flexing for Nougat##8356
 	step
@@ -10393,10 +10393,10 @@ ZygorGuidesViewer:RegisterInclude("Hallows_End_Quests_Alliance",[[
 		.talk Talvash del Kissel##6826
 		..turnin Incoming Gumdrop##8355
 	step
-		goto Stormwind City 24.0,44.8
+		goto Stormwind City,24.0,44.8
 		.' Search the courier's cabin. |q 29392/1
 	step
-		goto Stormwind City 24.0,44.8
+		goto Stormwind City,24.0,44.8
 		.talk Hired Courier##53950
 		..turnin Missing Heirlooms##29392
 		..accept Fencing the Goods##29398
@@ -10418,7 +10418,7 @@ ZygorGuidesViewer:RegisterInclude("Hallows_End_Quests_Alliance",[[
 		..turnin Shopping Around##29399 |tip You will have to wait until he finishes talking and the white question mark turns yellow to turn this in.
 		..accept Taking Precautions##29402
 	step
-		goto Stormwind City 62.9,75.0
+		goto Stormwind City,62.9,75.0
 		.talk Keldric Boucher##1257
 		.buy 5 Crystal Vial##3371 |q 29402/2
 	step
@@ -10426,7 +10426,7 @@ ZygorGuidesViewer:RegisterInclude("Hallows_End_Quests_Alliance",[[
 		.click Blood Nettle##10249
 		..get 5 Blood Nettle |q 29402/3
 	step
-		goto Stormwind City 52.8,74.2
+		goto Stormwind City,52.8,74.2
 		.talk Jessara Cordell##1318
 		.' If she doesn't have any for sale, you will have to use the _Auction House_ or disenchant low level gear.
 		.buy 2 Crystal Vial##10940 |q 29402/1
@@ -10587,7 +10587,7 @@ ZygorGuidesViewer:RegisterInclude("Hallows_End_Achievements_Alliance",[[
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Redridge Mountains, Lakeshire |achieve 966/17
 	step
-		goto Searing Gorge 39.5,66.1
+		goto Searing Gorge,39.5,66.1
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Searing Gorge, Iron Summit |achieve 966/18
@@ -10597,7 +10597,7 @@ ZygorGuidesViewer:RegisterInclude("Hallows_End_Achievements_Alliance",[[
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Loch Modan, Thelsamar |achieve 966/15
 	step
-		goto Loch Modan 83.0,63.5
+		goto Loch Modan,83.0,63.5
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Loch Modan, Farstrider Lodge |achieve 966/14
@@ -10617,17 +10617,17 @@ ZygorGuidesViewer:RegisterInclude("Hallows_End_Achievements_Alliance",[[
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Wetlands, Menethil Harbor |achieve 966/23
 	step
-		goto Wetlands 26.1,26.0
+		goto Wetlands,26.1,26.0
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Wetlands, Swiftgear Station |achieve 966/24
 	step
-		goto Wetlands 58.2,39.2
+		goto Wetlands,58.2,39.2
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Wetlands, Greenwarden's Grove |achieve 966/26
 	step
-		goto Arathi Highlands 39.8,48.9
+		goto Arathi Highlands,39.8,48.9
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Arathi Highlands, Refuge Pointe |achieve 966/1
@@ -10638,7 +10638,7 @@ ZygorGuidesViewer:RegisterInclude("Hallows_End_Achievements_Alliance",[[
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Hinterlands, Aerie Peak |achieve 966/11
 	step
-		goto The Hinterlands 66.2,44.4
+		goto The Hinterlands,66.2,44.4
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Hinterlands, Stormfeather Outpost |achieve 966/12
@@ -10648,27 +10648,27 @@ ZygorGuidesViewer:RegisterInclude("Hallows_End_Achievements_Alliance",[[
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Eastern Plaguelands, Light's Hope Chapel |achieve 966/9
 	step
-		goto Western Plaguelands 43.4,84.4
+		goto Western Plaguelands,43.4,84.4
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Western Plaguelands, Chillwind Camp |achieve 966/22
 	step
-		goto Badlands 65.9,35.8
+		goto Badlands,65.9,35.8
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Badlands, Fuselight |achieve 966/3
 	step
-		goto Badlands 20.9,56.2
+		goto Badlands,20.9,56.2
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Badlands, Dragon's Mouth |achieve 966/2
 	step
-		goto Swamp of Sorrows 71.7,14.1
+		goto Swamp of Sorrows,71.7,14.1
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Swamp of Sorrows, Bogpaddle |achieve 966/20
 	step
-		goto Swamp of Sorrows 28.9,32.5
+		goto Swamp of Sorrows,28.9,32.5
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Swamp of Sorrows, The Harborage |achieve 966/21
@@ -10684,17 +10684,17 @@ ZygorGuidesViewer:RegisterInclude("Hallows_End_Achievements_Alliance",[[
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Duskwood, Darkshire |achieve 966/8
 	step
-		goto Blasted Lands 60.7,14.1
+		goto Blasted Lands,60.7,14.1
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Blasted Lands, Nethergarde Keep |achieve 966/4
 	step
-		goto Blasted Lands 44.4,87.6
+		goto Blasted Lands,44.4,87.6
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Blasted Lands, Surwich |achieve 966/5
 	step
-		goto Northern Stranglethorn 53.1,67.0
+		goto Northern Stranglethorn,53.1,67.0
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Northern Stranglethorn, Fort Livingston |achieve 966/16
@@ -10710,22 +10710,22 @@ ZygorGuidesViewer:RegisterInclude("Hallows_End_Achievements_Alliance",[[
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Barrens, Ratchet |achieve 963/15
 	step
-		goto Southern Barrens 39.0,11.0
+		goto Southern Barrens,39.0,11.0
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Southern Barrens, Honor's Stand |achieve 963/18
 	step
-		goto Southern Barrens 65.6,46.6
+		goto Southern Barrens,65.6,46.6
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Southern Barrens, Northwatch Hold |achieve 963/19
 	step
-		goto Southern Barrens 49.0,68.5
+		goto Southern Barrens,49.0,68.5
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Southern Barrens, Fort Triumph |achieve 963/17
 	step
-		goto Dustwallow Marsh 55.9,49.6
+		goto Dustwallow Marsh,55.9,49.6
 		.talk Zidormi##63546
 		.' Ask her to show you Theramore before it's destruction.
 		|confirm
@@ -10745,12 +10745,12 @@ ZygorGuidesViewer:RegisterInclude("Hallows_End_Achievements_Alliance",[[
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Tanaris, Gadgetzan |achieve 963/25
 	step
-		goto Tanaris 55.7,61.0
+		goto Tanaris,55.7,61.0
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Tanaris, Bootleggers Outpost |achieve 963/24
 	step
-		goto Un'Goro Crater 55.2,62.2
+		goto Un'Goro Crater,55.2,62.2
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Un'goro Crater, Marshal's Stand |achieve 963/27
@@ -10765,12 +10765,12 @@ ZygorGuidesViewer:RegisterInclude("Hallows_End_Achievements_Alliance",[[
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Feralas, Feathermoon |achieve 963/14
 	step
-		goto Feralas 51.0,17.8
+		goto Feralas,51.0,17.8
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Feralas, Dreamer's Rest |achieve 963/13
 	step
-		goto Desolace 56.7,50.1
+		goto Desolace,56.7,50.1
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Desolace,Karnum's Glade |achieve 963/6
@@ -10780,22 +10780,22 @@ ZygorGuidesViewer:RegisterInclude("Hallows_End_Achievements_Alliance",[[
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Desolace, Nijel's Point |achieve 963/7
 	step
-		goto Stonetalon Mountains 71.02,79.08
+		goto Stonetalon Mountains,71.02,79.08
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Stonetalon Mountains, Northwatch Expedition Base |achieve 963/21
 	step
-		goto Stonetalon Mountains 59.1,56.3
+		goto Stonetalon Mountains,59.1,56.3
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Stonetalon Mountains, Windshear Hold |achieve 963/23
 	step
-		goto Stonetalon Mountains 31.5,60.7
+		goto Stonetalon Mountains,31.5,60.7
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Stonetalon Mountains, Farwatcher's Glen |achieve 963/20
 	step
-		goto Stonetalon Mountains 39.5,32.9
+		goto Stonetalon Mountains,39.5,32.9
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Stonetalon Mountains, Thal'darah Overlook |achieve 963/22
@@ -10805,12 +10805,12 @@ ZygorGuidesViewer:RegisterInclude("Hallows_End_Achievements_Alliance",[[
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Ashenvale, Astranaar |achieve 963/1
 	step
-		goto Felwood 44.6,29.0
+		goto Felwood,44.6,29.0
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Felwood, Whisperwind Grove |achieve 963/12
 	step
-		goto Felwood 61.8,26.7
+		goto Felwood,61.8,26.7
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Felwood, Talonbranch Glade |achieve 963/11
@@ -10939,182 +10939,182 @@ ZygorGuidesViewer:RegisterInclude("Hallows_End_Achievements_Alliance",[[
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Netherstorm, The Stormspire |achieve 969/8
 	step
-		goto Borean Tundra/0 58.5,67.9
+		goto Borean Tundra/0,58.5,67.9
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Borean Tundra, Valiance Keep |achieve 5836/3
 	step
-		 goto Borean Tundra/0 78.5,49.1
+		 goto Borean Tundra/0,78.5,49.1
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Borean Tundra, Unu'pe |achieve 5836/2
 	step
-		goto Borean Tundra/0 57.1,18.8
+		goto Borean Tundra/0,57.1,18.8
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Borean Tundra, Fizzcrank Airstrip |achieve 5836/1
 	step
-		goto Sholazar Basin/0 26.6,59.2
+		goto Sholazar Basin/0,26.6,59.2
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Sholazar Basin, Nesingwary Base Camp |achieve 5836/17
 	step
-		goto Dragonblight/0 28.9,56.2
+		goto Dragonblight/0,28.9,56.2
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Dragonblight, Stars' Rest |achieve 5836/8
 	step
-		 goto Dragonblight/0 48.1,74.7
+		 goto Dragonblight/0,48.1,74.7
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Dragonblight, Moa'ki Harbor |achieve 5836/7
 	step
-		goto Dragonblight/0 60.2,53.5
+		goto Dragonblight/0,60.2,53.5
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Dragonblight, Wyrmrest Temple |achieve 5836/10
 	step
-		goto Dragonblight/0 77.5,51.3
+		goto Dragonblight/0,77.5,51.3
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Dragonblight, Wintergarde Keep |achieve 5836/9
 	step
-		goto Grizzly Hills/0 31.9,60.2
+		goto Grizzly Hills/0,31.9,60.2
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Grizzly Hills, Amberpine Lodge |achieve 5836/11
 	step
-		goto Grizzly Hills/0 59.6,26.4
+		goto Grizzly Hills/0,59.6,26.4
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Grizzly Hills, Amberpine Lodge |achieve 5836/12
 	step
-		goto Howling Fjord/0 60.5,15.9
+		goto Howling Fjord/0,60.5,15.9
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Howling Fjord, Fort Wildervar |achieve 5836/13
 	step
-		goto Howling Fjord/0 58.3,62.8
+		goto Howling Fjord/0,58.3,62.8
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Howling Fjord, Valgarde |achieve 5836/15
 	step
-		goto Howling Fjord/0 30.8,41.4
+		goto Howling Fjord/0,30.8,41.4
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Howling Fjord, Valgarde |achieve 5836/16
 	step
-		goto Howling Fjord/0 25.4,59.8
+		goto Howling Fjord/0,25.4,59.8
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Howling Fjord, Valgarde |achieve 5836/14
 	step
-		goto Zul'Drak/0 40.9,66.0
+		goto Zul'Drak/0,40.9,66.0
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Zul'Drak, The Argent Stand |achieve 5836/21
 	step
-		goto Zul'Drak/0 59.3,57.2
+		goto Zul'Drak/0,59.3,57.2
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Zul'Drak, Zim'Torga |achieve 5836/22
 	step
-		goto The Storm Peaks/0 41.1,85.8
+		goto The Storm Peaks/0,41.1,85.8
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Storm Peaks, K3 |achieve 5836/20
 	step
-		goto The Storm Peaks/0 28.7,74.3
+		goto The Storm Peaks/0,28.7,74.3
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Storm Peaks, Frosthold |achieve 5836/19
 	step
-		goto The Storm Peaks/0 30.9,37.2
+		goto The Storm Peaks/0,30.9,37.2
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Storm Peaks, Bouldercrag's Refuge |achieve 5836/18
 	step
-		goto Dalaran/1 48.2,41.3
+		goto Dalaran/1,48.2,41.3
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Dalaran, The Legerdemain Lounge |achieve 5836/4
 	step
-		goto Dalaran/1 42.4,63.2
+		goto Dalaran/1,42.4,63.2
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Dalaran, Silver Enclave |achieve 5836/5
 	step
-		goto Dalaran/2 38.2,59.5
+		goto Dalaran/2,38.2,59.5
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Dalaran, The Underbelly |achieve 5836/6
 	step
-		goto Mount Hyjal/0 63.1,24.1
+		goto Mount Hyjal/0,63.1,24.1
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Mount Hyjal, Nordrassil |achieve 5837/3
 	step
-		goto Mount Hyjal/0 42.7,45.7
+		goto Mount Hyjal/0,42.7,45.7
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Mount Hyjal, Shrine of Aviana |achieve 5837/4
 	step
-		goto Mount Hyjal/0 18.6,37.3
+		goto Mount Hyjal/0,18.6,37.3
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Mount Hyjal, Grove of Aessina |achieve 5837/2
 	step
-		 goto Deepholm/0 47.4,51.7
+		 goto Deepholm/0,47.4,51.7
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Deepholm, Temple of Earth |achieve 5837/1
 	step
-		goto Abyssal Depths/0 54.7,72.1
+		goto Abyssal Depths/0,54.7,72.1
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Vashj'ir, Darkbreak Cove |achieve 5837/11
 	step
-		goto Shimmering Expanse/0 49.7,57.4
+		goto Shimmering Expanse/0,49.7,57.4
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Vashj'ir, Tranquil Wash |achieve 5837/14
 	step
-		 goto Shimmering Expanse/0 49.2,41.9
+		 goto Shimmering Expanse/0,49.2,41.9
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Vashj'ir, Silver Tide Hollow |achieve 5837/13
 	step
-		goto Kelp'thar Forest/0 63.5,60.2
+		goto Kelp'thar Forest/0,63.5,60.2
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Vashj'ir, Deepmist Grotto |achieve 5837/12
 	step
-		goto Twilight Highlands/0 79.5,78.5
+		goto Twilight Highlands/0,79.5,78.5
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Twilight Highlands, Highbank |achieve 5837/6
 	step
-		goto Twilight Highlands/0 60.4,58.3
+		goto Twilight Highlands/0,60.4,58.3
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Twilight Highlands, Firebeard's Patrol |achieve 5837/5
 	step
-		goto Twilight Highlands/0 43.5,57.3
+		goto Twilight Highlands/0,43.5,57.3
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Twilight Highlands, Victor's Point |achieve 5837/8
 	step
-		goto Twilight Highlands/0 49.6,30.4
+		goto Twilight Highlands/0,49.6,30.4
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Twilight Highlands, Thundermar |achieve 5837/7
 	step
-		goto Uldum/0 54.7,33.0
+		goto Uldum/0,54.7,33.0
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Uldum, Ramkahen |achieve 5837/10
 	step
-		goto Uldum/0 26.6,7.2
+		goto Uldum/0,26.6,7.2
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Uldum, Oasis of Vir'sar |achieve 5837/9
@@ -11173,112 +11173,112 @@ ZygorGuidesViewer:RegisterInclude("Hallows_End_Achievements_Alliance",[[
 
 ZygorGuidesViewer:RegisterInclude("Hallows_End_Achievements_Alliance_Pandaria",[[
 	step
-		goto The Jade Forest/0 44.8,84.4
+		goto The Jade Forest/0,44.8,84.4
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Jade Forest, Paw'don Village |achieve 7601/6
 	step
-		goto The Jade Forest/0 59.6,83.3
+		goto The Jade Forest/0,59.6,83.3
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Jade Forest, Pearlfin Village |achieve 7601/7
 	step
-		goto The Jade Forest/0 54.6,63.3
+		goto The Jade Forest/0,54.6,63.3
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Jade Forest, Jade Temple Grounds |achieve 7601/5
 	step
-		goto The Jade Forest/0 45.8,43.6
+		goto The Jade Forest/0,45.8,43.6
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Jade Forest, Dawn's Blossom |achieve 7601/3
 	step
-		goto The Jade Forest/0 41.7,23.1
+		goto The Jade Forest/0,41.7,23.1
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Jade Forest, Tian Monastery |achieve 7601/9
 	step
-		goto The Jade Forest/0 55.7,24.4
+		goto The Jade Forest/0,55.7,24.4
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Jade Forest, Sri-La Village |achieve 7601/8
 	step
-		goto The Jade Forest/0 48.1,34.6
+		goto The Jade Forest/0,48.1,34.6
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Jade Forest, Greenstone Village |achieve 7601/4
 	step
-		goto Kun-Lai Summit/0 72.7,92.3
+		goto Kun-Lai Summit/0,72.7,92.3
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Kun-Lai Summit, Binan Village |achieve 7601/12
 	step
-		goto Kun-Lai Summit/0 54.1,82.8
+		goto Kun-Lai Summit/0,54.1,82.8
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Kun-Lai Summit, Westwind Rest |achieve 7601/15
 	step
-		goto Kun-Lai Summit/0 57.5,60.0
+		goto Kun-Lai Summit/0,57.5,60.0
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Kun-Lai Summit, One Keg |achieve 7601/14
 	step
-		goto Kun-Lai Summit/0 64.2,61.3
+		goto Kun-Lai Summit/0,64.2,61.3
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Kun-Lai Summit, The Grummle Bazaar |achieve 7601/13
 	step
-		goto Kun-Lai Summit/0 62.5,28.9
+		goto Kun-Lai Summit/0,62.5,28.9
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Kun-Lai Summit, Zouchin Village |achieve 7601/16
 	step
-		goto Townlong Steppes/0 71.1,57.8
+		goto Townlong Steppes/0,71.1,57.8
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Townlong Steppes, Longying Outpost |achieve 7601/18
 	step
-		goto Vale of Eternal Blossoms 35.1,77.7
+		goto Vale of Eternal Blossoms,35.1,77.7
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Vale of Eternal Blossoms, Mistfall Village |achieve 7601/19
 	step
-		goto Vale of Eternal Blossoms/3 37.8,66.0
+		goto Vale of Eternal Blossoms/3,37.8,66.0
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Vale of Eternal Blossoms, Shrine of Seven Stars |achieve 7601/20
 	step
-		goto The Veiled Stair/0 55.1,72.2
+		goto The Veiled Stair/0,55.1,72.2
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in The Veiled Stair, Tavern in the Mists |achieve 7601/17
 	step
-		goto Valley of the Four Winds/0 83.7,20.1
+		goto Valley of the Four Winds/0,83.7,20.1
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Valley of the Four Winds, Pang's Stead |achieve 7601/21
 	step
-		goto Valley of the Four Winds/0 19.9,55.8
+		goto Valley of the Four Winds/0,19.9,55.8
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Valley of the Four Winds, Stoneplow |achieve 7601/22
 	step
-		goto Dread Wastes 55.9,32.3
+		goto Dread Wastes,55.9,32.3
 		.click Candy Bucket##6404
 		.' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Candy item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Dread Wastes, Klaxxi'vess |achieve 7601/1
 	step
-		goto Dread Wastes 55.2,71.2
+		goto Dread Wastes,55.2,71.2
 		.click Candy Bucket##6404
 		.' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Candy item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Dread Wastes, Soggy's Gamble |achieve 7601/2
 	step
-		goto Krasarang Wilds/0 75.9,6.9
+		goto Krasarang Wilds/0,75.9,6.9
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Krasarang Wilds, Zhu's Watch |achieve 7601/11
 	step
-		goto Krasarang Wilds/0 51.4,77.3
+		goto Krasarang Wilds/0,51.4,77.3
 		.click Candy Bucket##6404
 		..' Complete the Candy Bucket quest |tip If you cannot complete this quest because of a "Duplicate item found" message, open the Handful of Treats item in your bags and take out the contents. |use Handful of Treats##37586
 		.' Visit the Candy Bucket in Krasarang Wilds, Marista |achieve 7601/10
@@ -11672,7 +11672,7 @@ ZygorGuidesViewer:RegisterInclude("Pilgrims_Bounty_Dailies_Alliance",[[
 		goto Sethekk Halls,36.4,88.7 |n
 		.' Keep following this path around |goto Sethekk Halls,36.4,88.7,1 |noway |c
 	step
-		goto Sethekk Halls/2 32.5,39.5
+		goto Sethekk Halls/2,32.5,39.5
 		.' Equip your Pilgrim's Attire |equipped Pilgrim's Attire##46800 |use Pilgrim's Attire##46800
 		.' Equip your Pilgrim's Hat |equipped Pilgrim's Hat##46723 |use Pilgrim's Hat##46723
 		.from Talon King Ikiss##18473
@@ -11729,12 +11729,12 @@ ZygorGuidesViewer:RegisterInclude("Feast of Winter Veil Quests",[[
 		.collect 5 Small Egg##6889 |q 7025 |next "cook" |only if default
 		.' Click here to farm these yourself. |confirm |next
 	step
-		goto Westfall 50.8,24.4
+		goto Westfall,50.8,24.4
 		.from Young Fleshripper##199+, Greater Fleshripper##154+
 		.collect 5 Small Egg##6889 |q 7025
 	step
 	label "cook"
-		goto Ironforge 32.1,62.8
+		goto Ironforge,32.1,62.8
 		.create 5 Gingerbread Cookie##21143,Cooking,5 total |q 7025/1
 	step
 		goto 18.1,51.4
@@ -12105,16 +12105,16 @@ ZygorGuidesViewer:RegisterInclude("Lunar Festival Elder Path",[[
 		.talk Elder Ironband##15567
 		..accept Ironband the Elder##8651 |instant
 	step
-		  goto Burning Steppes/14 65.9,41.9 |n
+		  goto Burning Steppes/14,65.9,41.9 |n
 		  .' Enter the swirling portal to Blackrock Spire. |goto Blackrock Spire |noway|c
 	step
-		goto Blackrock Spire/3 61.8,40.0
+		goto Blackrock Spire/3,61.8,40.0
 		.talk Elder Stonefort##15560
 		..accept Stonefort the Elder##8644
 	step
 		.' Enter the Blackrock Depths here. |goto Searing Gorge/16 39.0,18.2 |c
 	step
-		goto Blackrock Depths 50.5,62.9
+		goto Blackrock Depths,50.5,62.9
 		.' Follow the path to _Elder Morndeep_.
 		.talk Elder Morndeep##15549
 		..accept Morndeep the Elder##8619
@@ -12122,7 +12122,7 @@ ZygorGuidesViewer:RegisterInclude("Lunar Festival Elder Path",[[
 		goto Blackrock Depths,34.5,77.8 |n
 		.' Leave Blackrock Depths. |goto Searing Gorge|noway|c
 	step
-		goto Burning Steppes/0 52.4,23.9
+		goto Burning Steppes/0,52.4,23.9
 		.talk Elder Dawnstrider##15585
 		..accept Dawnstrider the Elder##8683 |instant
 	step
@@ -12197,13 +12197,13 @@ ZygorGuidesViewer:RegisterInclude("Lunar Festival Elder Path",[[
 		goto Desolace,29.1,62.5 |n
 		.' Enter the doorway to Maraudon. |goto Desolace,29.1,62.5 |noway|c
 	step
-		goto Maraudon/2 51.5,93.8
+		goto Maraudon/2,51.5,93.8
 		.talk Elder Splitrock##15556
 		..accept Splitrock the Elder##8635
 	step
 		.' Leave Maruadon. |goto Desolace|noway|c
 	step
-		goto Feralas/0 62.6,31.1
+		goto Feralas/0,62.6,31.1
 		.talk Elder Mistwalker##15587
 		..accept Mistwalker the Elder##8685 |instant
 	step
@@ -12277,11 +12277,11 @@ ZygorGuidesViewer:RegisterInclude("Lunar Festival Elder Path",[[
 		.talk Elder Brightspear##15606
 		..accept Brightspear the Elder##8726 |instant
 	step
-		goto Mount Hyjal 62.5,22.8
+		goto Mount Hyjal,62.5,22.8
 		.talk Elder Evershade##55227
 		..accept Evershade the Elder##29740
 	step
-		goto Mount Hyjal 26.7,62.0
+		goto Mount Hyjal,26.7,62.0
 		.talk Elder Windsong##55224
 		..accept Windsong the Elder##29739
 	step
@@ -12309,7 +12309,7 @@ ZygorGuidesViewer:RegisterInclude("Lunar Festival Elder Path",[[
 		.talk Elder Stonebrand##55217
 		..accept Stonebrand the Elder##29735
 	step
-		goto Deepholm 27.7,69.2
+		goto Deepholm,27.7,69.2
 		.talk Elder Deepforge##55216
 		..accept Deepforge the Elder##29734
 // NORTHREND
@@ -12326,11 +12326,11 @@ ZygorGuidesViewer:RegisterInclude("Lunar Festival Elder Path",[[
 		.talk Elder Pamuya##30371
 		..accept Pamuya the Elder##13029 |instant
 	step
-		goto Borean Tundra 33.8,34.4
+		goto Borean Tundra,33.8,34.4
 		.talk Elder Northal##30360
 		..accept Northal the Elder##13016 |instant
 	step
-		goto The Nexus/1 55.5,64.9
+		goto The Nexus/1,55.5,64.9
 		.talk Elder Igasho##30536
 		..accept Igasho the Elder##13021
 	step
@@ -12350,13 +12350,13 @@ ZygorGuidesViewer:RegisterInclude("Lunar Festival Elder Path",[[
 		.talk Elder Bluewolf##30368
 		..accept Bluewolf the Elder##13026 |instant
 	step
-		goto Dragonblight 26.0,50.9 |n
+		goto Dragonblight,26.0,50.9 |n
 		.' Enter Azjol-Nerub here |goto Azjol-Nerub/3 |noway |c
 	step
-		goto Azjol-Nerub/3 72.6,30.9
+		goto Azjol-Nerub/3,72.6,30.9
 		.' Follow this path down |goto Azjol-Nerub/2 |noway |c
 	step
-		goto Azjol-Nerub/2 51.1,61.8
+		goto Azjol-Nerub/2,51.1,61.8
 		.' Jump down this hole into the water below |goto Azjol-Nerub |noway |c
 	step
 		goto 21.8,43.6
@@ -12415,7 +12415,7 @@ ZygorGuidesViewer:RegisterInclude("Lunar Festival Elder Path",[[
 		goto Zul'Drak,28.5,86.9 |n
 		.' Enter the swirling portal to Drak'Tharon Keep. |goto Drak'Tharon Keep |noway|c
 	step
-		goto Drak'Tharon Keep 68.9,79.1
+		goto Drak'Tharon Keep,68.9,79.1
 		.talk Elder Kilias##30534
 		..accept Kilias the Elder##13023 |instant
 	step
@@ -12431,10 +12431,10 @@ ZygorGuidesViewer:RegisterInclude("Lunar Festival Elder Path",[[
 		.talk Elder Whurain##30372
 		..accept Whurain the Elder##13030 |instant
 	step
-		goto Howling Fjord 58.0,50.0 |n
+		goto Howling Fjord,58.0,50.0 |n
 		.' Enter the Utgarde Keep building here |goto Howling Fjord,58.0,50.0,0.5 |noway |c
 	step
-		goto Utgarde Keep/1 47.5,70.0
+		goto Utgarde Keep/1,47.5,70.0
 		.talk Elder Jarten##30531
 		..accept Jarten the Elder##13017 |instant
 	step
@@ -12467,7 +12467,7 @@ ZygorGuidesViewer:RegisterInclude("Lunar Festival Elder Path",[[
 ]])
 ZygorGuidesViewer:RegisterInclude("Lunar Festival Achievement",[[
 	step
-		goto Ironforge 29.9,14.2
+		goto Ironforge,29.9,14.2
 		.talk Lunar Festival Vendor##15898
 		.buy 10 Festival Firecracker##21747
 		.buy 10 Red Rocket Cluster##21576
@@ -12508,7 +12508,7 @@ ZygorGuidesViewer:RegisterInclude("Lunar Festival Achievement",[[
 		.from Omen##15467 |tip You will need a group of 4 or 5 to beat him.
 		.' Receive Elune's Blessing|q 8868/1
 	step
-		goto Moonglade 53.6,35.3
+		goto Moonglade,53.6,35.3
 		.talk Valadar Starsong##15864
 		..turnin Elune's Blessing##8868
 ]])
@@ -12645,7 +12645,7 @@ ZygorGuidesViewer:RegisterInclude("Love is in the Air Dailies",[[
 		.talk Kwee Q. Peddlefeet##16075
 		..accept A Gift for the High Priestess of Elune##24610
 	step
-		goto Darnassus 43.0,78.0
+		goto Darnassus,43.0,78.0
 		.talk Tyrande Whisperwind##7999
 		..turnin A Gift for the High Priestess of Elune##24610
 	step
@@ -12670,54 +12670,54 @@ ZygorGuidesViewer:RegisterInclude("Love is in the Air Dailies",[[
 		..turnin Crushing the Crown##24659
 		only if level >= 14 and level < 23
 	step
-		goto Hillsbrad Foothills 34.5,58.4
+		goto Hillsbrad Foothills,34.5,58.4
 		.kill 5 Crown Duster |q 24660/2
 		.' Use Snagglebolt's Khorium Bomb next to the big shaking Chemical Wagon |use Snagglebolt's Khorium Bomb##50130
 		.' Destroy the Chemical Wagon |q 24660/1
 		only if level >= 23 and level < 32
 		|only if havequest(24660)
 	step
-		goto Dustwallow Marsh 60.8,38.2
+		goto Dustwallow Marsh,60.8,38.2
 		.kill 5 Crown Hoodlum |q 24662/2
 		.' Use Snagglebolt's Khorium Bomb next to the big shaking Chemical Wagon |use Snagglebolt's Khorium Bomb##50130
 		.' Destroy the Chemical Wagon |q 24662/1
 		only if level >= 32 and level < 41
 		|only if havequest(24662)
 	step
-		goto The Hinterlands 23.6,53.7
+		goto The Hinterlands,23.6,53.7
 		.kill 5 Crown Agent |q 24663/2
 		.' Use Snagglebolt's Khorium Bomb next to the big shaking Chemical Wagon |use Snagglebolt's Khorium Bomb##50130
 		.' Destroy the Chemical Wagon |q 24663/1
 		only if level >= 41 and level < 51
 		|only if havequest(24663)
 	step
-		goto Stormwind City 61.6,75.3
+		goto Stormwind City,61.6,75.3
 		.talk Inspector Snip Snagglebolt##38066
 		..turnin Crushing the Crown##24660 |only if level >= 23 and level < 32
 		..turnin Crushing the Crown##24662 |only if level >= 32 and level < 41
 		..turnin Crushing the Crown##24663 |only if level >= 41 and level < 51
 		only if level >= 23 and level < 51
 	step
-		goto Winterspring 63.6,49.4
+		goto Winterspring,63.6,49.4
 		.kill 5 Crown Sprinkler |q 24664/2
 		.' Use Snagglebolt's Khorium Bomb next to the big shaking Chemical Wagon |use Snagglebolt's Khorium Bomb##50130
 		.' Destroy the Chemical Wagon |q 24664/1
 		only if level >= 51 and level < 61
 		|only if havequest(24664)
 	step
-		goto Stormwind City 61.6,75.3
+		goto Stormwind City,61.6,75.3
 		.talk Inspector Snip Snagglebolt##38066
 		..turnin Crushing the Crown##24664
 		only if level >= 51 and level < 61
 	step
-		goto Terokkar Forest 41.4,22.5
+		goto Terokkar Forest,41.4,22.5
 		.kill 5 Crown Underling |q 24665/2
 		.' Use Snagglebolt's Khorium Bomb next to the big shaking Chemical Wagon |use Snagglebolt's Khorium Bomb##50130
 		.' Destroy the Chemical Wagon |q 24665/1
 		only if level >= 61 and level < 71
 		|only if havequest(24665)
 	step
-		goto Stormwind City 61.6,75.3
+		goto Stormwind City,61.6,75.3
 		.talk Inspector Snip Snagglebolt##38066
 		..turnin Crushing the Crown##24665
 		only if level >= 61 and level < 71
@@ -12729,19 +12729,19 @@ ZygorGuidesViewer:RegisterInclude("Love is in the Air Dailies",[[
 		only if level >= 71 and level <=81
 		|only if havequest(24666)
 	step
-		goto Stormwind City 61.6,75.3
+		goto Stormwind City,61.6,75.3
 		.talk Inspector Snip Snagglebolt##38066
 		..turnin Crushing the Crown##24666
 		only if level >= 71 and level <=81
 	step
-		goto Uldum 67.9,19.8
+		goto Uldum,67.9,19.8
 		.kill 5 Crown Technician##51613+ |q 28934/2
 		.' Use Snagglebolt's Khorium Bomb near the Chemical Wagon. |use Snagglebolt's Khorium Bomb##50130
 		.' Chemical Wagon Destroyed |q 28934/1
 		only if level >=81
 		|only if havequest(28934)
 	step
-		goto Stormwind City 61.5,75.3
+		goto Stormwind City,61.5,75.3
 		.talk Inspector Snip Snagglebolt##38066
 		..turnin Crushing the Crown##28934
 		only if level >= 81
@@ -12838,7 +12838,7 @@ ZygorGuidesViewer:RegisterInclude("Love is in the Air Achievement",[[
 		.' Use your Love Fool anywhere inside Wintergrasp |use Love Fool##22261
 		.' Target the Love Fool and Pity it |script DoEmote("PITY") |achieve 1704/1
 	step
-		goto Ironforge 42.4,35.7
+		goto Ironforge,42.4,35.7
 		.' Find Sraaz |tip He's a gnome that walks around the circle around The Great Forge.
 		.' Do the following exactly in order from top to bottom in the step:
 		.' Use all 6 of your Flagons of Mead to get Completely Smashed |use Flagon of Mead##2594
@@ -12919,7 +12919,7 @@ ZygorGuidesViewer:RegisterInclude("Noblegarden Achievements",[[
 		'You may be unable to complete some of the achievements if you are lower level.  So, if you find you cannot do something in this guide, simply skip it and do what you can
 		|confirm
 	step
-		goto Teldrassil 55.5,51.0
+		goto Teldrassil,55.5,51.0
 		.click Brightly Colored Egg##1407+
 		|tip There is at least one available at all times. If Dolanaar is too crowded with other players looking for eggs, you can also find them at Azure Watch, Goldshire, and Kharanos.
 		.collect 100 Noblegarden Chocolate##44791+ |n
@@ -12935,62 +12935,62 @@ ZygorGuidesViewer:RegisterInclude("Noblegarden Achievements",[[
 		.collect Spring Robes##44800 |achieve 2436 |tip It costs 50 Noblegarden Chocolates.
 		.collect Spring Rabbit's Foot##44794 |achieve 2419 |tip It costs 100 Noblegarden Chocolates.
 	step
-		goto Teldrassil 55.5,51.0
+		goto Teldrassil,55.5,51.0
 		.' Use your Spring Rabbit's Foot in your bags to get a Spring Rabbit companion |use Spring Rabbit's Foot##44794
 		.' Bring out your Spring Rabbit companion |tip Press P to bring up your Spellbook and click the Companion's ribbon, then click the Spring Rabbit icon.
 		.' Find a player with a Spring Rabbit next to them around Dolanaar |tip Spring Rabbits look like small brown and white rabbits.
 		.' Find your Spring Rabbit another one to love in Dolanaar |achieve 2419/2
 	step
-		goto Azuremyst Isle 49.1,52.0
+		goto Azuremyst Isle,49.1,52.0
 		.' Bring out your Spring Rabbit companion |tip Press P to bring up your Spellbook and click the Companion's ribbon, then click the Spring Rabbit icon.
 		.' Find a player with a Spring Rabbit next to them around Azure Watch |tip Spring Rabbits look like small brown and white rabbits.
 		.' Find your Spring Rabbit another one to love in Azure Watch |achieve 2419/1
 	step
-		goto Desolace 66.0,10.0
+		goto Desolace,66.0,10.0
 		'Equip your Spring Robes in your bags |equipped Spring Robes##44800 |use Spring Robes##44800
 		.' Use your Spring Robes' ability to plant a flower |use Spring Robes##44800
 		.' Plant a flower in Desolace |achieve 2436/2
 	step
-		goto Thousand Needles 90.3,72.8
+		goto Thousand Needles,90.3,72.8
 		'Equip your Spring Robes in your bags |equipped Spring Robes##44800 |use Spring Robes##44800
 		.' Use your Spring Robes' ability to plant a flower |use Spring Robes##44800
 		.' Plant a flower in Thousand Needles |achieve 2436/5
 	step
-		goto Silithus 55.0,34.0
+		goto Silithus,55.0,34.0
 		'Equip your Spring Robes in your bags |equipped Spring Robes##44800 |use Spring Robes##44800
 		.' Use your Spring Robes' ability to plant a flower |use Spring Robes##44800
 		.' Plant a flower in Silithus |achieve 2436/3
 	step
-		goto Un'Goro Crater 35.8,50.7
+		goto Un'Goro Crater,35.8,50.7
 		.' Change into a bunny |tip You will need a friend to do this, or at least another player.  There should be plenty of players trying to do this achievement at the same time, so it should be easy to find help.  Have your friend, or other player, use their Blossoming Branch on you to turn you into a rabbit.
 		.' Stand in this spot until you lay an egg
 		.' Lay a Noblegarden Egg in the Golakka Hot Springs |achieve 2416
 	step
-		goto Tanaris 49.0,31.0
+		goto Tanaris,49.0,31.0
 		'Equip your Spring Robes in your bags |equipped Spring Robes##44800 |use Spring Robes##44800
 		.' Use your Spring Robes' ability to plant a flower |use Spring Robes##44800\
 		.' Plant a flower in Tanaris |achieve 2436/4
 	step
-		goto Badlands 23.0,60.0
+		goto Badlands,23.0,60.0
 		'Equip your Spring Robes in your bags |equipped Spring Robes##44800 |use Spring Robes##44800
 		.' Use your Spring Robes' ability to plant a flower |use Spring Robes##44800
 		.' Plant a flower in The Badlands |achieve 2436/1
 	step
-		goto Dun Morogh 53.5,51.2
+		goto Dun Morogh,53.5,51.2
 		.' Bring out your Spring Rabbit companion |tip Press P to bring up your Spellbook and click the Companion's ribbon, then click the Spring Rabbit icon.
 		.' Find a player with a Spring Rabbit next to them around Kharanos |tip Spring Rabbits look like small brown and white rabbits.
 		.' Find your Spring Rabbit another one to love in Kharanos |achieve 2419/4
 	step
-		goto Stormwind City 71.0,72.0
+		goto Stormwind City,71.0,72.0
 		'Use your Noblegarden Egg anywhere in Stormwind City |use Noblegarden Egg##44818
 		.' Hide a Brightly Colored Egg in Stormwind City |achieve 2421
 	step
-		goto Elwynn Forest 43.1,67.6
+		goto Elwynn Forest,43.1,67.6
 		.' Bring out your Spring Rabbit companion |tip Press P to bring up your Spellbook and click the Companion's ribbon, then click the Spring Rabbit icon.
 		.' Find a player with a Spring Rabbit next to them around Goldshire |tip Spring Rabbits look like small brown and white rabbits.
 		.' Find your Spring Rabbit another one to love in Goldshire |achieve 2419/3
 	step
-		goto Teldrassil 55.5,51.0
+		goto Teldrassil,55.5,51.0
 		'Equip your Black Tuxedo Pants and White Tuxedo Shirt
 		.' Find another player who is wearing the Elegant Dress and perform the Kiss emote on them |script DoEmote("KISS") |tip The Elegant Dress looks like a long pink dress when worn.
 		.' Kiss someone wearing an Elegant Dress while wearing a White Tuxedo Shirt and Black Tuxedo Pants |achieve 2576
@@ -13034,13 +13034,13 @@ ZygorGuidesViewer:RegisterInclude("Children's Week Stormwind",[[
 		.talk Human Orphan##14305
 		..turnin Cruisin' the Chasm##29093
 	step
-		goto Ironforge 44.1,51.9 |n
+		goto Ironforge,44.1,51.9 |n
 		.' Enter the path to Old Ironforge here. |goto Ironforge 44.1,51.9 |noway |c
 	step
-		goto Ironforge 39.4,51.6 |n
+		goto Ironforge,39.4,51.6 |n
 		.' Follow the stairs leading up here. |goto Ironforge 39.4,51.6 |noway |c
 	step
-		goto Ironforge 33.2,47.8
+		goto Ironforge,33.2,47.8
 		.' Use your Human Orphan Whistle to summon your Human Orphan |use Human Orphan Whistle##18598
 		.' Take Your Orphan to Visit King Magni in Old Ironforge |q 29106/1
 	step
@@ -13159,11 +13159,11 @@ ZygorGuidesViewer:RegisterInclude("Children's Week Shattrath",[[
 		..turnin The Seat of the Naaru##10956
 		..accept Call on the Farseer##10968
 	step
-		goto The Exodar 31.3,27.8
+		goto The Exodar,31.3,27.8
 		.' Use your Draenei Orphan Whistle to summon your Draenei Orphan |use Draenei Orphan Whistle##31881
 		.' Take Dornaa to to Farseer Nobundo |q 10968/1
 	step
-		goto The Exodar 31.3,27.8
+		goto The Exodar,31.3,27.8
 		.talk Farseer Nobundo##17204
 		..turnin Call on the Farseer##10968
 	step
@@ -13446,7 +13446,7 @@ ZygorGuidesViewer:RegisterInclude("Midsummer Fire Festival Quests",[[
 		.talk Master Fire Eater##25975
 		..turnin Playing with Fire##11882
 	step
-		goto Teldrassil 54.9,52.8
+		goto Teldrassil,54.9,52.8
 		.talk Teldrassil Flame Warden##25906
 		..accept Honor the Flame##11824 |instant
 	step
@@ -13458,7 +13458,7 @@ ZygorGuidesViewer:RegisterInclude("Midsummer Fire Festival Quests",[[
 		.talk Bloodmyst Isle Flame Warden##25891
 		..accept Honor the Flame##11809 |instant
 	step
-		goto Darkshore 48.7,22.6
+		goto Darkshore,48.7,22.6
 		.talk Darkshore Flame Warden##25893
 		..accept Honor the Flame##11811 |instant
 	step
@@ -13511,7 +13511,7 @@ ZygorGuidesViewer:RegisterInclude("Midsummer Fire Festival Quests",[[
 		.talk Earthen Ring Elder##26221
 		..turnin Inform the Elder##29092
 	step
-		goto Ashenvale 51.6,66.6
+		goto Ashenvale,51.6,66.6
  		.click Horde Bonfire##7734
 		..accept Desecrate this Fire!##11765 |instant
 	step
@@ -13527,7 +13527,7 @@ ZygorGuidesViewer:RegisterInclude("Midsummer Fire Festival Quests",[[
  		.click Horde Bonfire##7734
 		..accept Desecrate this Fire!##28914 |instant
 	step
-		goto Durotar 52.1,47.1
+		goto Durotar,52.1,47.1
  		.click Horde Bonfire##7734
 		..accept Desecrate this Fire!##11770 |instant
 	step
@@ -13541,7 +13541,7 @@ ZygorGuidesViewer:RegisterInclude("Midsummer Fire Festival Quests",[[
  		.click Horde Bonfire##7734
 		..accept Desecrate this Fire!##11783 |instant
 	step
-		goto Stonetalon Mountains 49.3,51.3
+		goto Stonetalon Mountains,49.3,51.3
 		.talk Stonetalon Mountains Flame Warden##51588
 		..accept Honor the Flame##28928 |instant
 	step
@@ -13549,7 +13549,7 @@ ZygorGuidesViewer:RegisterInclude("Midsummer Fire Festival Quests",[[
  		.click Horde Bonfire##7734
 		..accept Desecrate this Fire!##11780 |instant
 	step
-		goto Desolace 66.1,17.1
+		goto Desolace,66.1,17.1
 		.talk Desolace Flame Warden##25894
 		..accept Honor the Flame##11812 |instant
 	step
@@ -13569,15 +13569,15 @@ ZygorGuidesViewer:RegisterInclude("Midsummer Fire Festival Quests",[[
 		.talk Silithus Flame Warden##25914
 		..accept Honor the Flame##11831 |instant
 	step
-		goto Silithus 50.9,41.7
+		goto Silithus,50.9,41.7
  		.click Horde Bonfire##7734
 		..accept Desecrate this Fire!##11800 |instant
 	step
-		goto Un'Goro Crater 60.0,63.0
+		goto Un'Goro Crater,60.0,63.0
 		.talk Un'Goro Crater Flame Warden##51606
 		.accept Honor the Flame##28932 |instant
 	step
-		goto Un'Goro Crater 56.3,65.8
+		goto Un'Goro Crater,56.3,65.8
 		.click Horde Bonfire##7734
 		..accept Desecrate this Fire!##28920 |instant
 	step
@@ -13627,11 +13627,11 @@ ZygorGuidesViewer:RegisterInclude("Midsummer Fire Festival Quests",[[
 		.talk Blasted Lands Flame Warden##25890
 		..accept Honor the Flame##11808 |instant
 	step
-		goto Blasted Lands 46.4,14.4
+		goto Blasted Lands,46.4,14.4
 		.click Horde Bonfire##7734
 		..accept Desecrate this Fire!##28917 |instant
 	step
-		goto Swamp of Sorrows 70.3,15.7
+		goto Swamp of Sorrows,70.3,15.7
 		.talk Swamp of Sorrows Flame Warden##51602
 		..accept Honor the Flame##28929
 	step
@@ -13639,7 +13639,7 @@ ZygorGuidesViewer:RegisterInclude("Midsummer Fire Festival Quests",[[
  		.click Horde Bonfire##7734
 		..accept Desecrate this Fire!##11781 |instant
 	step
-		goto Duskwood 73.7,54.6
+		goto Duskwood,73.7,54.6
 		.talk Duskwood Flame Warden##25896
 		..accept Honor the Flame##11814 |instant
 	step
@@ -13680,7 +13680,7 @@ ZygorGuidesViewer:RegisterInclude("Midsummer Fire Festival Quests",[[
 		.talk Dun Morogh Flame Warden##25895
 		..accept Honor the Flame##11813 |instant
 	step
-		goto Wetlands 13.5,47.1
+		goto Wetlands,13.5,47.1
 		.talk Wetlands Flame Warden##25911
 		..accept Honor the Flame##11828 |instant
 	step
@@ -13700,7 +13700,7 @@ ZygorGuidesViewer:RegisterInclude("Midsummer Fire Festival Quests",[[
 		.talk Western Plaguelands Flame Warden##25909
 		..accept Honor the Flame##11827 |instant
 	step
-		goto Western Plaguelands 29.2,57.4
+		goto Western Plaguelands,29.2,57.4
 		.click Horde Bonfire##7734
 		..accept Desecrate this Fire!##28918 |instant
 	step
@@ -13866,7 +13866,7 @@ ZygorGuidesViewer:RegisterInclude("Midsummer Fire Festival Quests",[[
 		.talk Howling Fjord Flame Warden##32804
 		..accept Honor the Flame##13488 |instant
 	step
-		goto Mount Hyjal 62.8,22.7
+		goto Mount Hyjal,62.8,22.7
 		.talk Hyjal Flame Guardian##51682
 		..accept Honor the Flame##29030
 	step
@@ -13874,7 +13874,7 @@ ZygorGuidesViewer:RegisterInclude("Midsummer Fire Festival Quests",[[
 		.click Earthen Ring Bonfire##7734
 		..turnin Honor the Flame##29030
 	step
-		goto Deepholm 49.4,51.3
+		goto Deepholm,49.4,51.3
 		.talk Deepholm Flame Guardian##51698
 		..accept Honor the Flame##29036
 	step
@@ -13882,7 +13882,7 @@ ZygorGuidesViewer:RegisterInclude("Midsummer Fire Festival Quests",[[
 		.click Earthen Ring Bonfire##7734
 		..turnin Honor the Flame##29036
 	step
-		goto Twilight Highlands 47.2,28.9
+		goto Twilight Highlands,47.2,28.9
 		.talk Twilight Highlands Flame Warden##51650
 		..accept Honor the Flame##28945 |instant
 	step
@@ -13890,7 +13890,7 @@ ZygorGuidesViewer:RegisterInclude("Midsummer Fire Festival Quests",[[
 		.click Horde Bonfire##7734
 		..accept Desecrate this Fire!##28944 |instant
 	step
-		goto Shimmering Expanse 49.4,42.0
+		goto Shimmering Expanse,49.4,42.0
 		.talk Vashj'ir Flame Guardian##51697
 		..accept Honor the Flame##29031
 	step
@@ -13898,7 +13898,7 @@ ZygorGuidesViewer:RegisterInclude("Midsummer Fire Festival Quests",[[
 		.click Earthen Ring Bonfire##7734
 		..turnin Honor the Flame##29031
 	step
-		goto Uldum 53.6,31.9
+		goto Uldum,53.6,31.9
 		.talk Uldum Flame Warden##51653
 		..accept Honor the Flame##28950 |instant
 	step
@@ -13914,7 +13914,7 @@ ZygorGuidesViewer:RegisterInclude("Midsummer Fire Festival Achievements",[[
 		.from Lord Ahune##25740
 		..' Complete the Ice the Frost Lord Achievement |achieve 263
 	step
-		goto Stormwind City 49.0,72.0
+		goto Stormwind City,49.0,72.0
 		.talk Midsummer Supplier##26123
 		.buy 15 Juggling Torch##34599
 		.buy 1 Mantle of the Fire Festival##23324
@@ -14066,7 +14066,7 @@ ZygorGuidesViewer:RegisterInclude("Brewfest Quests",[[
 		.' Use your Elekk Dispersion Ray on Elwynn Pink Elekks |use Elekk Dispersion Ray##32960
 		.kill 3 Elwynn Pink Elekk |q 11118/2
 	step
-		goto Darnassus 67.3,46.1
+		goto Darnassus,67.3,46.1
 		'Use your Synthebrew Goggles |use Synthebrew Goggles##46735
 		.' Equip the Synthebrew Goggles |havebuff Interface\Icons\Spell_Holy_SpiritualGuidence |q 11118
 		.' Use your Elekk Dispersion Ray on Azuremyst Pink Elekks |use Elekk Dispersion Ray##32960
@@ -14078,7 +14078,7 @@ ZygorGuidesViewer:RegisterInclude("Brewfest Quests",[[
 		.' Use your Elekk Dispersion Ray on Teldrassil Pink Elekks |use Elekk Dispersion Ray##32960
 		.kill 3 Teldrassil Pink Elekk |q 11118/1
 	step
-		goto Dun Morogh 55.1,37.7
+		goto Dun Morogh,55.1,37.7
 		.talk Goldark Snipehunter##23486
 		..turnin Pink Elekks On Parade##11118
 	step
@@ -14112,12 +14112,12 @@ ZygorGuidesViewer:RegisterInclude("Brewfest Dailies",[[
 		..accept Bark for the Thunderbrews!##11294 |or
 	step
 		'Ride your ram into Ironforge |goto Ironforge |noway |c |q 11293
-		goto Ironforge/0 15.8,84.6 |n
+		goto Ironforge/0,15.8,84.6 |n
 		.' Use your Ram Racing Reins as you run |use Ram Racing Reins##33306 |tip Just keep a Trot pace most of the time and only sometimes keep a Canter pace.  If you go too much faster than that, your ram will get tired and you will run out of time.
 		|only if havequest (11293)
 	step
 		'Ride your ram into Ironforge |goto Ironforge |noway |c |q 11294
-		goto Ironforge/0 15.8,84.6 |n
+		goto Ironforge/0,15.8,84.6 |n
 		.' Use your Ram Racing Reins as you run |use Ram Racing Reins##33306 |tip Just keep a Trot pace most of the time and only sometimes keep a Canter pace.  If you go too much faster than that, your ram will get tired and you will run out of time.
 		|only if havequest (11294)
 	step
@@ -14333,13 +14333,13 @@ ZygorGuidesViewer:RegisterInclude("A_Ironforge_Cooking_Dailies",[[
 		..accept I Need to Cask a Favor##29356 |or
 		..accept Keepin' the Haggis Flowin'##29353 |or
 	step
-		goto Dun Morogh 53.9,50.7
+		goto Dun Morogh,53.9,50.7
 		.click Cask of Drugan's IPA##7414
 		|tip This is a timed quest. You will be forced to run automatically and have 3 mins to run the IPA back to the quest giver.
 		'Pick up the Cask of Drugan's IPA |havebuff Interface\Icons\INV_Cask_01
 		|only if havequest(29356)
 	step
-		goto Ironforge 60.1,36.5
+		goto Ironforge,60.1,36.5
 		.' Deliver the Cask of Drugan's IPA |q 29356/2
 	step
 		goto Ironforge,58.9,41.2
@@ -14372,11 +14372,11 @@ ZygorGuidesViewer:RegisterInclude("A_Ironforge_Cooking_Dailies",[[
 		.get 10 Spice Bread |q 29355/1
 		|only if havequest(29355)
 	step
-		goto Dun Morogh 59.8,35.2
+		goto Dun Morogh,59.8,35.2
 		.clicknpc Dun Morogh Chicken##53568
 		.get 6 Dun Morogh Chicken |q 29352/1
 	step
-		goto Ironforge 60.1,36.5
+		goto Ironforge,60.1,36.5
 		.talk Daryl Riknussun##29351
 		..turnin A Fowl Shortage##29352 |or
 		..turnin A Round for the Guards##29351 |or
@@ -14730,7 +14730,7 @@ ZygorGuidesViewer:RegisterInclude("A_The_Outland_Gourmet",[[
 		.buy 5 Goldenbark Apple##4539
 		.buy 4 Ice Cold Milk##1179
 	step
-		goto Stormwind City 77.6,53.1
+		goto Stormwind City,77.6,53.1
 		.talk Erika Tate##5483
 		.buy 8 Simple Flour##30817
 		.buy 4 Mild Spices##2678
@@ -14845,7 +14845,7 @@ ZygorGuidesViewer:RegisterInclude("A_The_Northrend_Gourmet",[[
 		.learn Blackened Surprise##88006
 	step
 		alliance
-		goto Borean Tundra 57.8,71.4
+		goto Borean Tundra,57.8,71.4
 		.talk Rollick MacKreel##26989
 		..accept Northern Cooking##13088
 	step
@@ -14874,7 +14874,7 @@ ZygorGuidesViewer:RegisterInclude("A_The_Northrend_Gourmet",[[
 	step
 		fly Nesingwary Base Camp
 	step
-		goto Sholazar Basin 26.8,60.1
+		goto Sholazar Basin,26.8,60.1
 		.talk Grimbooze Thunderbrew##29157
 		..accept Some Make Lemonade, Some Make Liquor##12634
 	step
@@ -14914,7 +14914,7 @@ ZygorGuidesViewer:RegisterInclude("A_The_Northrend_Gourmet",[[
 		.talk Grimbooze Thunderbrew##29157
 		..turnin The Taste Test##12645
 	step
-		goto Dalaran/2 44.2,25.6
+		goto Dalaran/2,44.2,25.6
 		.talk Washed-Up Mage##32516
 		..accept Fletcher's Lost and Found##13571 |instant
 	step
@@ -15004,11 +15004,11 @@ ZygorGuidesViewer:RegisterInclude("A_The_Northrend_Gourmet",[[
 		.collect 5 Worg Haunch##43011
 		.collect 5 Worm Meat##43010
 	step
-		goto Stormwind City 77.6,53.1
+		goto Stormwind City,77.6,53.1
 		.talk Erika Tate##5483
 		.buy 2 Simple Flour##30817
 	step
-		goto Stormwind City 60.8,74.8
+		goto Stormwind City,60.8,74.8
 		.talk Innkeeper Allison##6740
 		.buy 2 Tundra Berries##35949
 		.buy 1 Savory Snowplum##35948
@@ -15198,7 +15198,7 @@ ZygorGuidesViewer:RegisterInclude("A_Our_Daily_Bread",[[
 	step
 		'The entrance to the Dalaran sewers starts here|goto Dalaran,60.2,47.7,0.3|c|q 13100
 	step
-		goto Dalaran/2 59.5,43.6
+		goto Dalaran/2,59.5,43.6
 		.from Underbelly Rat##32428+
 		.collect 4 Infused Mushroom##43100 |q 13100
 	step
@@ -15356,7 +15356,7 @@ ZygorGuidesViewer:RegisterInclude("A_Dinner_Impossible",[[
 		.from Tundra Crawler##25454+
 		.collect 5 Worm Meat##43010
 	step
-		goto Howling Fjord 73.6,40.0
+		goto Howling Fjord,73.6,40.0
 		.from Shoveltusk##23690+
 		.collect 5 Shoveltusk Flank##43009
 	step
@@ -15439,7 +15439,7 @@ ZygorGuidesViewer:RegisterInclude("A_MOP_Cooking_Dailies",[[
 		..accept Lesson 1: Sliced Peaches##31332
 		'|modelnpc Nam Ironpaw##64395
 	step
-		goto Valley of the Four Winds 53.6,51.2
+		goto Valley of the Four Winds,53.6,51.2
 		.talk Sungshin Ironpaw##64231
 		.buy 5 Pandaren Peach##74660 |q 31332/1
 	step
@@ -15448,7 +15448,7 @@ ZygorGuidesViewer:RegisterInclude("A_MOP_Cooking_Dailies",[[
 		..turnin Lesson 1: Sliced Peaches##31332
 	step
 	label	dailies
-		goto Valley of the Four Winds 53.4,51.6
+		goto Valley of the Four Winds,53.4,51.6
 		.talk Jian Ironpaw##58716
 		..accept The Truffle Shuffle##30330
 		.'_
@@ -15504,16 +15504,16 @@ ZygorGuidesViewer:RegisterInclude("A_MOP_Cooking_Dailies",[[
 		.' Plant 8 Shadelight Spores |q 30330/1
 		|only if havequest(30330)
 	step
-		goto Valley of the Four Winds 29.7,41.4
+		goto Valley of the Four Winds,29.7,41.4
 		.from Stout Shaghorn##59139+
 		.get 4 Fatty Goatsteak |q 30332/1
 		|only if havequest(30332)
 	step
-		goto Valley of the Four Winds 52.8,51.8
+		goto Valley of the Four Winds,52.8,51.8
 		.talk Anthea Ironpaw##58713
 		..turnin Cindergut Peppers##30329
 	step
-		goto Valley of the Four Winds 53.4,51.6
+		goto Valley of the Four Winds,53.4,51.6
 		.talk Jian Ironpaw##58716
 		..turnin The Truffle Shuffle##30330
 	step
@@ -15544,23 +15544,23 @@ ZygorGuidesViewer:RegisterInclude("Nomi_Dailies",[[
 		..accept Lesson 4: Dried Needle Mushrooms |or
 		..accept Lesson 5: Pounded Rice Cake |or
 	step
-		goto Valley of the Four Winds 53.6,51.2
+		goto Valley of the Four Winds,53.6,51.2
 		.talk Sungshin Ironpaw##64231
 		.buy 5 Pandaren Peach##31332 |q 31332/1
 	step
-		goto Valley of the Four Winds 53.6,51.2
+		goto Valley of the Four Winds,53.6,51.2
 		.talk Sungshin Ironpaw##64231
 		.buy 5 Instant Noodles##74854 |q 31333/1
 	step
-		goto Valley of the Four Winds 53.6,51.2
+		goto Valley of the Four Winds,53.6,51.2
 		.talk Sungshin Ironpaw##64231
 		.buy 5 Golden Carp##74866 |q 31334/1
 	step
-		goto Valley of the Four Winds 53.6,51.2
+		goto Valley of the Four Winds,53.6,51.2
 		.talk Sungshin Ironpaw##64231
 		.buy 5 Needle Mushrooms##85583 |q 31335/1
 	step
-		goto Valley of the Four Winds 53.6,51.2
+		goto Valley of the Four Winds,53.6,51.2
 		.talk Sungshin Ironpaw##64231
 		.buy 5 Rice##74851 |q 31336/1
 	step
@@ -15791,15 +15791,15 @@ ZygorGuidesViewer:RegisterInclude("the_cake_is_not_a_lie",[[
 		.' Click here to go back to the beginning of the dailies for today if you haven't received the cake pattern. |confirm |next "dailies"
 	step
 	label "create"
-		goto Stormwind City 75.7,54.1
+		goto Stormwind City,75.7,54.1
 		.talk Maegan Tillman##44237
 		.buy 4 Ice Cold Milk##1179
 	step
-		goto Stormwind City 76.3,53.0
+		goto Stormwind City,76.3,53.0
 		.talk Reese Langston##1327
 		.buy 1 Flask of Port##2593
 	step
-		goto Stormwind City 77.6,53.0
+		goto Stormwind City,77.6,53.0
 		.talk Erika Tate##5483
 		.buy 8 Simple Flour##30817
 		.buy 4 Mild Spices##2678
@@ -15837,11 +15837,11 @@ ZygorGuidesViewer:RegisterInclude("A_Old_Gnome_and_the_Sea",[[
 ]])
 ZygorGuidesViewer:RegisterInclude("A_The_Scavenger",[[
 	step
-		goto Zangarmarsh 57.0,56.0
+		goto Zangarmarsh,57.0,56.0
 		.' Look for Steam Pump Flotsam in the water around this area and fish from it |cast Fishing##7620
 		.' Fish from Steam Pump Flotsam |achieve 1257/1
 	step
-		goto Northern Stranglethorn 55.0,64.0
+		goto Northern Stranglethorn,55.0,64.0
 		.' Look for Schooner Wreckage around this area |tip You may need to fish from other pools to get this to show up |cast Fishing##7620
 		.' Fish from Schooner Wreckage |achieve 1257/3
 	step
@@ -15851,7 +15851,7 @@ ZygorGuidesViewer:RegisterInclude("A_The_Scavenger",[[
 		.' Look for Bloodsail Wreckage around this area |tip You may need to fish from other pools to get this to show up |cast Fishing##7620
 		.' Fish from Bloodsail Wreckage |achieve 1257/2
 	step
-		goto Tanaris 67.4,38.2
+		goto Tanaris,67.4,38.2
 		.' Look for Floating Wreckage around this area |tip You may have to fish from other pools to get this to show up |cast Fishing##7620
 		.' Fish from Floating Wreckage |achieve 1257/5
 	step
@@ -15865,7 +15865,7 @@ ZygorGuidesViewer:RegisterInclude("A_The_Scavenger",[[
 ]])
 ZygorGuidesViewer:RegisterInclude("A_The_Fishing_Diplomat",[[
 	step
-		goto Stormwind City 69.0,92.2
+		goto Stormwind City,69.0,92.2
 		.' Use your fishing skill in the moat in front of Stormwind City |cast Fishing##7620
 		.' Fish in Stormwind City |achieve 150/2
 	step
@@ -15886,7 +15886,7 @@ ZygorGuidesViewer:RegisterInclude("A_Mr._Pinchy's_Magical_Crawdad_Box",[[
 		.learn Find Fish##43308  |next "HaveFishTracking"
 		.' Click here if you _do not_ have Find Fish. |confirm
 	step
-		goto Zangarmarsh/0 60.4,44.7
+		goto Zangarmarsh/0,60.4,44.7
 		.' Search _Serpent Lake_ for _Steam pump Floatsam_.
 		.' Use your fishing skill. |use Fishing Pole##6256
 		.collect Heavy Supply Crate###27481+ |n
@@ -16222,7 +16222,7 @@ ZygorGuidesViewer:RegisterInclude("A_Darnassus_Fishing_Dailies",[[
 		.accept The Sister's Pendant##29324 |or
 		.accept An Old Favorite##29359 |or
 	step
-		goto Teldrassil 55.6,92.5
+		goto Teldrassil,55.6,92.5
 		.' Go underwater and click the giant clams.
 		.get 10 Teldrassil Clam##69910 |q 29321/1
 		only if havequest(29321)
@@ -16390,7 +16390,7 @@ ZygorGuidesViewer:RegisterInclude("A_Sons_Hodir_Pre-Quests",[[
 		..turnin Luxurious Getaway!##12853
 		..accept Clean Up##12818
 	step
-		goto The Storm Peaks 41.1,85.9
+		goto The Storm Peaks,41.1,85.9
 		.talk Smilin' Slirk Brassknob##29904
 		.home K3
 	step
@@ -16776,7 +16776,7 @@ ZygorGuidesViewer:RegisterInclude("A_Sons_Hodir_Pre-Quests",[[
 	step
 		'Click the red arrow to get off the gun|script VehicleExit()|outvehicle|c
 	step
-		goto The Storm Peaks 40.9,85.3
+		goto The Storm Peaks,40.9,85.3
 		.talk Ricket##29428
 		..turnin Demolitionist Extraordinaire##12824
 		..turnin Know No Fear##12822
@@ -17063,7 +17063,7 @@ ZygorGuidesViewer:RegisterInclude("A_Sons_Hodir_Pre-Quests",[[
 		..turnin When All Else Fails##12862
 		..accept Ancient Relics##12870
 	step
-		goto The Storm Peaks 28.7,74.4
+		goto The Storm Peaks,28.7,74.4
 		.talk Gunda Boldhammer##29926
 		.home Frosthold
 	step
@@ -17182,7 +17182,7 @@ ZygorGuidesViewer:RegisterInclude("A_Sons_Hodir_Pre-Quests",[[
 		..turnin The Exiles of Ulduar##12885
 		..accept Rare Earth##12930
 	step
-		goto The Storm Peaks 29.4,73.8
+		goto The Storm Peaks,29.4,73.8
 		.talk Lagnus##29743
 		..turnin Aid from the Explorers' League##12871
 		..accept The Frostborn King##12873
@@ -17316,7 +17316,7 @@ ZygorGuidesViewer:RegisterInclude("A_Sons_Hodir_Pre-Quests",[[
 		..accept Fighting Back##12931
 		..accept Relief for the Fallen##12937
 	step
-		goto The Storm Peaks 30.9,37.3
+		goto The Storm Peaks,30.9,37.3
 		.talk Magorn##29963
 		.home Bouldercrag's Refuge
 	step
@@ -17564,7 +17564,7 @@ ZygorGuidesViewer:RegisterInclude("A_Argent_Tourney_PreQ",[[
 ]])
 ZygorGuidesViewer:RegisterInclude("A_SSO_PreQuest_Dailies",[[
 	step
-		goto Shattrath City 49.1,42.5
+		goto Shattrath City,49.1,42.5
 		.talk Exarch Nasuun##24932
 		..accept Maintaining the Sunwell Portal##11514
 	step
@@ -19664,7 +19664,7 @@ ZygorGuidesViewer:RegisterInclude("A_Firelands_PreQuests", [[
 		..turnin Sweeping the Shelf##25352
 		..turnin Return from the Firelands##25611
 	step
-		goto Mount Hyjal 28.2,29.8
+		goto Mount Hyjal,28.2,29.8
 		.talk Vision of Ysera##46987
 		..accept Aviana's Legacy##27874
 	step
@@ -20823,7 +20823,7 @@ ZygorGuidesViewer:RegisterInclude("A_Oracles_Dailies", [[
 		..turnin Appeasing the Great Rain Stone##12704
 ]])
 ZygorGuidesViewer:RegisterInclude("A_Wyrmrest_Pre-Quests", [[
-		goto Dragonblight 29.0,55.4
+		goto Dragonblight,29.0,55.4
 		.talk Image of Archmage Aethas Sunreaver##26471
 		..accept Rifle the Bodies##12000
 	step
@@ -20918,23 +20918,23 @@ ZygorGuidesViewer:RegisterInclude("A_Wyrmrest_Pre-Quests", [[
 		..turnin Gaining an Audience##12119
 		..accept Speak with your Ambassador##12766
 	step
-		goto Dragonblight/0 60.0,55.1
+		goto Dragonblight/0,60.0,55.1
 		.talk Lauriel Trueblade##27803
 		..turnin Speak with your Ambassador##12766
 		..accept Report to the Ruby Dragonshrine##12461
 	step
-		goto Dragonblight/0 52.2,50.0
+		goto Dragonblight/0,52.2,50.0
 		.talk Ceristrasz##27506
 		..turnin Report to the Ruby Dragonshrine##12461
 		..accept Heated Battle##12448
 	step
-		goto Dragonblight/0 50.4,52.2
+		goto Dragonblight/0,50.4,52.2
 		.' Help kill the following:
 		.' 12 Frigid Ghoul Attackers|kill 12 Frigid Ghoul Attacker|q 12448/1
 		.' 8 Frigid Geist Attackers|kill 8 Frigid Geist Attacker|q 12448/2
 		.' 1 Frigid Abomination Attacker|kill 1 Frigid Abomination Attacker|q 12448/3
 	step
-		goto Dragonblight/0 52.2,50.0
+		goto Dragonblight/0,52.2,50.0
 		.talk Ceristrasz##27506
 		..turnin Heated Battle##12448
 		..accept Return to the Earth##12449
@@ -20945,7 +20945,7 @@ ZygorGuidesViewer:RegisterInclude("A_Wyrmrest_Pre-Quests", [[
 		.' Use the Ruby Acorns on the Ruby Keeper corpses|use Ruby Acorn##37727|tip The Ruby Keepers look like huge red dragons on fire.
 		.' Return 6 Ruby Keepers to the Earth|goal 6 Ruby Keeper Returned to the Earth|q 12449/1
 	step
-		goto Dragonblight/0 52.2,50.0
+		goto Dragonblight/0,52.2,50.0
 		.talk Ceristrasz##27506
 		..turnin Return to the Earth##12449
 		..accept Through Fields of Flame##12450
@@ -20957,7 +20957,7 @@ ZygorGuidesViewer:RegisterInclude("A_Wyrmrest_Pre-Quests", [[
 		.from Dahlia Suntouch##27680
 		.' Cleanse the Ruby Corruption|goal Ruby Corruption Cleansed|q 12450/2
 	step
-		goto Dragonblight/0 52.2,50.0
+		goto Dragonblight/0,52.2,50.0
 		.talk Ceristrasz##27506
 		..turnin Through Fields of Flame##12450
 		..accept The Steward of Wyrmrest Temple##12768
@@ -20981,7 +20981,7 @@ ZygorGuidesViewer:RegisterInclude("A_Wyrmrest_Pre-Quests", [[
 		..'Tell him you want to go to Lord Afrasastrasz|goto 59.2,54.3,0.5|noway|c
 ]])
 ZygorGuidesViewer:RegisterInclude("A_Wyrmrest_Dailies", [[
-		goto Dragonblight 59.2,54.3
+		goto Dragonblight,59.2,54.3
 		.talk Lord Afrasastrasz##27575
 		..turnin Report to Lord Afrasastrasz##12435
 		..accept Defending Wyrmrest Temple##12372
@@ -21019,7 +21019,7 @@ ZygorGuidesViewer:RegisterInclude("A_Anglers", [[
 		'There will only be three dailies available from the following questgivers. It is possible for one questgiver to give you two quests in the same day, but it is unlikely.
 		|confirm
 	step
-		goto Krasarang Wilds 67.9,45.2
+		goto Krasarang Wilds,67.9,45.2
 		.talk Fisherman Haito##59584
 		..accept Shocking!##30584 |or
 		..accept Jagged Abalone##30586 |or
@@ -21221,12 +21221,12 @@ ZygorGuidesViewer:RegisterInclude("A_Klaxxi", [[
 		|confirm
 	step
 	label	klaxxi start
-		goto Dread Wastes 55.0,35.4
+		goto Dread Wastes,55.0,35.4
 		.talk Malik the Unscathed##62774
 		..accept The Empress' Gambit##31959
 		|only if rep("The Klaxxi")>=Exalted
 	step
-		goto Dread Wastes 55.0,35.9
+		goto Dread Wastes,55.0,35.9
 		.talk Kil'ruk the Wind-Reaver##62538
 		..accept Dreadspinner Extermination##31231 |or 2
 		..accept Nope Nope Nope##31235 |or 2
@@ -21727,7 +21727,7 @@ ZygorGuidesViewer:RegisterInclude("A_Klaxxi", [[
 		.' Follow Kil'ruk the Wind-Rever into the chamber
 		.' Walk with Kil'ruk |q 31612/1
 	step
-		goto Dread Wastes 55.1,35.9
+		goto Dread Wastes,55.1,35.9
 		.talk Kil'ruk the Wind-Reaver##66800
 		..turnin Shadow of the Empire##31612
 		|next end
@@ -21738,7 +21738,7 @@ ZygorGuidesViewer:RegisterInclude("A_Klaxxi", [[
 ]])
 
 ZygorGuidesViewer:RegisterInclude("A_Tillers_PreQuest", [[
-		goto Valley of the Four Winds 52.0,48.0
+		goto Valley of the Four Winds,52.0,48.0
 		.talk Farmer Yoon##58721
 		..accept A Helping Hand##30252
 	step
@@ -21916,11 +21916,11 @@ ZygorGuidesViewer:RegisterInclude("A_Tillers_DailyQuest", [[
 		'Proceeding to the Tiller's Dailies  |next "dailies" |condition completedq(31945) |only if completedq(31945)
 		'Proceeding to the Tiller's Prequests |next |condition not completedq(31945) |only if not completedq(31945)
 	step
-		goto Vale of Eternal Blossoms 87.1,60.9
+		goto Vale of Eternal Blossoms,87.1,60.9
 		.talk Tang Ironhoe##64036
 		..accept The Tillers##31372
 	step
-		goto Valley of the Four Winds 52.0,48.0
+		goto Valley of the Four Winds,52.0,48.0
 		.talk Farmer Yoon##58721
 		..turnin The Tillers##31372
 		..accept A Helping Hand##30252
@@ -22095,7 +22095,7 @@ ZygorGuidesViewer:RegisterInclude("A_Tillers_DailyQuest", [[
 		..turnin Learn and Grow VI: Gina's Vote##31945
 	step
 	label dailies
-		goto Valley of the Four Winds 51.9,48.3
+		goto Valley of the Four Winds,51.9,48.3
 		'Start each day out by harvesting the crops from the previous day.
 		|confirm
 	step
@@ -22936,17 +22936,17 @@ ZygorGuidesViewer:RegisterInclude("A_Tillers_DailyQuest", [[
 		.talk Farmer Yoon##58646
 		..turnin The "Earth-Slasher" Master Plow##31938
 	step
-		goto Valley of the Four Winds 54.7,47.0
+		goto Valley of the Four Winds,54.7,47.0
 		.talk Nana Mudclaw##64597
 		..accept Inherit the Earth##32682
 		|only if rep('The Tillers')==Exalted and not completedq(32682)
 	step
-		goto Valley of the Four Winds 52.2,48.8
+		goto Valley of the Four Winds,52.2,48.8
 		.talk Farmer Yoon##58646
 		.' Ask him if he will join the council of the Tillers Union. |q 32682/1
 		|only if rep('The Tillers')==Exalted and not completedq(32682)
 	step
-		goto Valley of the Four Winds 54.7,47.0
+		goto Valley of the Four Winds,54.7,47.0
 		.talk Nana Mudclaw##64597
 		..turnin Inherit the Earth##32682 |tip This quest opens up the farm to you, granting you a place to rest and set your hearthstone, as well as opening up new quests known as work orders that allow you to gain reputation with other factions through farming.
 		|only if rep('The Tillers')==Exalted and not completedq(32682)
@@ -22971,11 +22971,11 @@ ZygorGuidesViewer:RegisterInclude("A_Tillers_DailyQuest", [[
 ]])
 
 ZygorGuidesViewer:RegisterInclude("A_Cloud_Serpent_Pre", [[
-		goto Vale of Eternal Blossoms 85.8,62.3
+		goto Vale of Eternal Blossoms,85.8,62.3
 		.talk Instructor Windspear##64484
 		..accept The Order of the Cloud Serpent##31373
 	step
-		goto The Jade Forest 57.8,45.0
+		goto The Jade Forest,57.8,45.0
 		.talk Instructor Skythorn##58228
 		..turnin The Order of the Cloud Serpent##31373
 	step
@@ -23241,21 +23241,21 @@ ZygorGuidesViewer:RegisterInclude("A_Cloud_Serpent", [[
 		'Enter the cave here. |goto 58.0,31.7 <5 |c
 		|only if havequest(31708) or havequest(31710) or havequest(31706) or havequest(31711) or havequest(31709) or havequest(31707)
 	step
-		goto The Jade Forest/15 62.7,25.7
+		goto The Jade Forest/15,62.7,25.7
 		.' Use the Sha Attunement Device next to this Disturbance |use Sha Attunement Device##88966
 		.' Measure the Northeastern Sha Disturbance |q 31709/2
 		|only if havequest(31709)
 	step
-		goto The Jade Forest/15 37.0,31.9
+		goto The Jade Forest/15,37.0,31.9
 		.' Use the Sha Attunement Device next to this Disturbance |use Sha Attunement Device##88966
 		.' Measure the Northwestern Sha Disturbance |q 31709/1
 		|only if havequest(31709)
 	step
-		goto The Jade Forest/15 35.7,40.2
+		goto The Jade Forest/15,35.7,40.2
 		.kill Seed of Doubt |q 31711/1
 		|only if havequest(31711)
 	step
-		 goto The Jade Forest/15 61.0,74.1
+		 goto The Jade Forest/15,61.0,74.1
 		.' Use the Sha Attunement Device next to this Disturbance |use Sha Attunement Device##88966
 		.' Measure the Southern Sha Disturbance |q 31709/3
 		|only if havequest(31709)
@@ -23271,11 +23271,11 @@ ZygorGuidesViewer:RegisterInclude("A_Cloud_Serpent", [[
 		'Leave the cave. |goto The Jade Forest/15 75.8,19.0 |c
 		|only if havequest(31708) or havequest(31710) or havequest(31706) or havequest(31711) or havequest(31709) or havequest(31707)
 	step
-		goto The Jade Forest/16 45.8,77.8
+		goto The Jade Forest/16,45.8,77.8
 		.kill 1 Lord Oona##65628 |q 31715/1
 		|only if havequest(31715)
 	step
-		goto The Jade Forest/0 55.2,28.4
+		goto The Jade Forest/0,55.2,28.4
 		.click Serpent
 		.collect 10 Rescued Serpent##88894 |q 31714/1
 		|only if havequest(31714)
@@ -23292,7 +23292,7 @@ ZygorGuidesViewer:RegisterInclude("A_Cloud_Serpent", [[
 		.' Kill 13 Oona hozen |q 31712/1
 		|only if havequest(31712)
 	step
-		goto The Jade Forest 64.5,31.1
+		goto The Jade Forest,64.5,31.1
 		.' Use your Silken Rope on _Windward Hatchlings_. |use Silken Rope##78947
 		.' Bring the Windward Hatchlings to the nest at [63.4,31.4].
 		.' Return 6 Windward Hatchlings |q 30157/1
@@ -23330,7 +23330,7 @@ ZygorGuidesViewer:RegisterInclude("A_Cloud_Serpent", [[
 		'You can ask other players to sell you some, if they happen to have leftovers.
 		|only if havequest(30149)
 	step
-		goto The Jade Forest 55.1,47.2
+		goto The Jade Forest,55.1,47.2
 		.from Honeykeeper##58363+
 		.get 30 Honeycomb##79030 |q 30150/1
 		|only if havequest(30150)
@@ -23430,7 +23430,7 @@ ZygorGuidesViewer:RegisterInclude("A_Cloud_Serpent", [[
 		|next "end" |only if rep("Order of the Cloud Serpent")<=Revered
 	step
 	label revered
-		goto The Jade Forest 56.6,44.4
+		goto The Jade Forest,56.6,44.4
 		.talk San Redscale##58414
 		..buy 1 Grand Commendation of the Order of the Cloud Serpent##93229 |n
 		.' Use the Commendation of the Order of the Cloud Serpent you just purchased. |condition ZGV:GetReputation("Order of the Cloud Serpent").hasBonus |use Grand Commendation of the Order of the Cloud Serpent##93229
@@ -23535,7 +23535,7 @@ ZygorGuidesViewer:RegisterInclude("A_Cloud_Serpent", [[
 ZygorGuidesViewer:RegisterInclude("August_Celestials",[[
 	step
 	label startaug
-		goto Vale of Eternal Blossoms 84.6,63.7
+		goto Vale of Eternal Blossoms,84.6,63.7
 		.talk Sage Whiteheart##64032
 		.' The following quests will only be available the first time you are sent to a new area. They are random and Sage Lotusbloom will only have one at a time.
 		..accept Challenge At The Temple of the Red Crane##31378 |or |next "crane" |only if not completedq(31378)
@@ -23550,7 +23550,7 @@ ZygorGuidesViewer:RegisterInclude("August_Celestials",[[
 // Crane
 	step
 	label crane
-		goto Krasarang Wilds 31.3,63.4
+		goto Krasarang Wilds,31.3,63.4
 		.talk Thelonius##60506
 		..turnin Challenge At The Temple of the Red Crane##31378
 		|only if not completedq(31378)
@@ -23716,7 +23716,7 @@ ZygorGuidesViewer:RegisterInclude("August_Celestials",[[
 ////Not always here,
 	step
 	label serpent
-		goto The Jade Forest 53.9,61.9
+		goto The Jade Forest,53.9,61.9
 		.talk Elder Sage Tai-Feng##57324
 		..turnin Attack At The Temple of the Jade Serpent##31376 |only if havequest(31376)
 		..accept Arrows of Fortune##30065
@@ -23758,7 +23758,7 @@ ZygorGuidesViewer:RegisterInclude("August_Celestials",[[
 		..turnin Behind the Masks##30063
 		..turnin Saving the Sutras##30064
 	step
-		goto The Jade Forest 53.9,61.9
+		goto The Jade Forest,53.9,61.9
 		.talk Elder Sage Tai-Feng##57324
 		..turnin Arrows of Fortune##30065
 		..turnin Hidden Power##30066
@@ -23793,7 +23793,7 @@ ZygorGuidesViewer:RegisterInclude("August_Celestials",[[
 /// Temple of the White Tiger. Not giving rep for August Celstials.
 	step
 	label tiger
-		goto Kun-Lai Summit 67.2,55.9
+		goto Kun-Lai Summit,67.2,55.9
 		.talk Xuen##60968
 		..turnin Trial At The Temple of the White Tiger##31380
 		|only if havequest(31380)
@@ -23890,7 +23890,7 @@ ZygorGuidesViewer:RegisterInclude("August_Celestials",[[
 		..turnin Round 4: The P.U.G.##30907
 		..turnin Round 4: Master Windfur##30902
 	step
-		goto Kun-Lai Summit 68.5,56.5
+		goto Kun-Lai Summit,68.5,56.5
 		.talk Lin Tenderpaw##60981
 		..accept The Torch of Strength##31492
 		.' Click here if the quest isn't available. |confirm
@@ -23912,7 +23912,7 @@ ZygorGuidesViewer:RegisterInclude("August_Celestials",[[
 		.' Light the Strong Brazier |q 31492/1
 		|only if havequest(31492)
 	step
-		goto Kun-Lai Summit 68.5,56.5
+		goto Kun-Lai Summit,68.5,56.5
 		.talk Lin Tenderpaw##60981
 		..turnin The Torch of Strength##31492
 		|next "end"
@@ -23922,7 +23922,7 @@ ZygorGuidesViewer:RegisterInclude("August_Celestials",[[
 /// Niuzao Temple. Possible unlock hub at revered.
 	step
 	label "ox"
-		goto Townlong Steppes 39.3,62.3
+		goto Townlong Steppes,39.3,62.3
 		.talk Ogo the Elder##61580
 		..turnin Defense At Niuzao Temple##31382 |only if havequest(31382)
 		..accept The Siege Swells##30956 |or
@@ -23989,7 +23989,7 @@ ZygorGuidesViewer:RegisterInclude("August_Celestials",[[
 		..turnin Paying Tribute##30955
 	step
 	label "end"
-		goto Vale of Eternal Blossoms 84.6,63.7
+		goto Vale of Eternal Blossoms,84.6,63.7
 		.talk Sage Whiteheart##64032
 		..buy 1 Grand Commendation of the August Celestials##93224 |n
 		.' Use the Commendation of the August Celestials you just purchased. |condition ZGV:GetReputation("August Celestials").hasBonus |use Grand Commendation of the August Celestials##93224
@@ -24002,7 +24002,7 @@ ZygorGuidesViewer:RegisterInclude("August_Celestials",[[
 ZygorGuidesViewer:RegisterInclude("Shado_Pan_Daily_A",[[
 	step
 	label shado_dailies
-		goto Townlong Steppes 49.3,71.0
+		goto Townlong Steppes,49.3,71.0
 		'Click here if Master Snowdrift is the questgiver today |next |confirm |modelnpc 63009
 		.' He can be found here: [49.5,70.6]
 		'Click here if Ban Bearheart is the questgiver today |next "bearheart" |confirm |modelnpc 62304
@@ -24486,7 +24486,7 @@ ZygorGuidesViewer:RegisterInclude("Shado_Pan_Daily_A",[[
 		.' Nutriment Cell bombed |q 31200/2
 		|only if havequest(31200)
 	step
-		goto Townlong Steppes/0 23.3,52.1
+		goto Townlong Steppes/0,23.3,52.1
 		'Make sure you have done the following around Sra'vess:
 		.from Sra'thik Mutilator##63678+, Sra'thik Cacophyte##63680+, Sra'thik Drone##63677+, Sra'thik Regenerator##63681+, Sra'thik Swiftwing##63683+ |only if havequest(31196)
 		.' Kill 15 Lesser Sra'thik mantid. |q 31196/1 |only if havequest(31196)
@@ -24524,7 +24524,7 @@ ZygorGuidesViewer:RegisterInclude("Shado_Pan_Daily_A",[[
 		.kill Sra'thik Swarmlord##63693 |q 31203/1
 		|only if havequest(31203)
 	step
-		goto Townlong Steppes 27.1,44.1
+		goto Townlong Steppes,27.1,44.1
 		'Enter the cave here |goto Townlong Steppes 27.1,44.1 |noway |c
 		|only if havequest(31204)
 	step
@@ -24589,7 +24589,7 @@ ZygorGuidesViewer:RegisterInclude("Shado_Pan_Daily_A",[[
 ]])
 
 ZygorGuidesViewer:RegisterInclude("Golden_Lotus_PreQuests",[[
-		goto Kun-Lai Summit 72,94.2
+		goto Kun-Lai Summit,72,94.2
 		.talk Wanderer Chu##64521
 		..accept Temple of the White Tiger##31392
 		|only if not completedq(31394)
@@ -24619,7 +24619,7 @@ ZygorGuidesViewer:RegisterInclude("Golden_Lotus_PreQuests",[[
 		.' Tell him "Let's find out!" |q 31512/1 |only if havequest(31512)
 		.' Tell him "Let's find out!" |q 31511/1 |only if havequest(31511)
 	step
-		goto Vale of Eternal Blossoms/3 35.4,65.9
+		goto Vale of Eternal Blossoms/3,35.4,65.9
 		.talk Matron Vi Vinh##64149
 		..turnin A Witness to History##31511
 		.' or
@@ -24629,33 +24629,33 @@ ZygorGuidesViewer:RegisterInclude("Golden_Lotus_PreQuests",[[
 ZygorGuidesViewer:RegisterInclude("Golden_Lotus",[[
 	step
 	label "dailies"
-		goto Vale of Eternal Blossoms/0 21.4,71.6
+		goto Vale of Eternal Blossoms/0,21.4,71.6
 		.talk Kun Autumnlight##58920
 		..accept Mantid Under Fire##30243
 		..accept Bloodied Skies##30266
 		|noquest
 	step
-		goto Vale of Eternal Blossoms/0 21.4,71.6
+		goto Vale of Eternal Blossoms/0,21.4,71.6
 		.talk Anji Autumnlight##58919
 		..accept The Thunder Below##30280
 		..accept The Crumbling Hall##30277
 		|noquest
 	step
-		goto Vale of Eternal Blossoms/0 20.1,75.6
+		goto Vale of Eternal Blossoms/0,20.1,75.6
 		.talk Hai-Me Heavyhands##58962 |tip He walks around the Trainees in this area.
 		..accept The Battle Ring##30306
 	step
-		goto Vale of Eternal Blossoms/0 18.5,71.6
+		goto Vale of Eternal Blossoms/0,18.5,71.6
 		.talk Yumi Goldenpaw##58743
 		..accept Survival Ring: Blades##30242
 		..accept Survival Ring: Flame##30240
 		|noquest
 	step
-		goto Vale of Eternal Blossoms/0 18.1,63.5
+		goto Vale of Eternal Blossoms/0,18.1,63.5
 		.talk Kelari Featherfoot##58704
 		..accept Roll Club: Serpent's Spine##30261
 	step
-		goto Vale of Eternal Blossoms/0 18.1,63.5
+		goto Vale of Eternal Blossoms/0,18.1,63.5
 		.talk Kelari Featherfoot##58704
 		.' Tell him: <Let's roll>. |q 30261/1
 		|only if havequest(30261)
@@ -24664,17 +24664,17 @@ ZygorGuidesViewer:RegisterInclude("Golden_Lotus",[[
 		.' Complete the Serpent's Spine Roll Course. |q 30261/2
 		|only if havequest(30261)
 	step
-		goto Vale of Eternal Blossoms/0 18.1,63.5
+		goto Vale of Eternal Blossoms/0,18.1,63.5
 		.talk Kelari Featherfoot##58704
 		..turnin Roll Club: Serpent's Spine##30261
 		|only if havequest(30261)
 	step
-		goto Vale of Eternal Blossoms 19.7,74.2
+		goto Vale of Eternal Blossoms,19.7,74.2
 		.from Shado-Pan Trainee##58992+
 		.' Defeat 20 Shado-Pan Trainees. |q 30306/1
 		|only if havequest(30306)
 	step
-		goto Vale of Eternal Blossoms 19.2,67.5
+		goto Vale of Eternal Blossoms,19.2,67.5
 		.' Stay within the circle and avoid the posts with blades surrounding them and the running pandas.
 		.' Live through the Survival Ring for 90 seconds |q 30242/1
 		|only if havequest(30242)
@@ -24684,7 +24684,7 @@ ZygorGuidesViewer:RegisterInclude("Golden_Lotus",[[
 		.' Live through the Survival Ring for 90 seconds |q 30240/1
 		|only if havequest(30240)
 	step
-		goto Vale of Eternal Blossoms 5.4,72.3
+		goto Vale of Eternal Blossoms,5.4,72.3
 		.click Setting Sun Turret
 		.' Mount a turret. |invehicle |c |tip It's on the upper level of the tower here.
 		|only if havequest(30266)
@@ -24695,20 +24695,20 @@ ZygorGuidesViewer:RegisterInclude("Golden_Lotus",[[
 		'Click the Leave Vehicle button. |outvehicle
 		|only if havequest(30266)
 	step
-		goto Vale of Eternal Blossoms 3.9,51.7
+		goto Vale of Eternal Blossoms,3.9,51.7
 		.clicknpc Hot Oil Cauldron##64369
 		.' Use the abilities on your hotbar to kill 80 Krik'thik Hivelings |q 30243/1 |tip Use the Ignitable Oil Bucket first, followed by the Shado-Pan Torch.
 	step
-		goto Vale of Eternal Blossoms 22.4,26.9
+		goto Vale of Eternal Blossoms,22.4,26.9
 		'Traverse the following rooms by only stepping on the _green tiles_, other tiles will harm you.
 		|confirm
 		|only if havequest(30280) or havequest(30277)
 	step
-		goto Vale of Eternal Blossoms/19 53.9,68.3
+		goto Vale of Eternal Blossoms/19,53.9,68.3
 		.kill Milau##64965 |q 30280/1 |tip Milau has several deadly abilities. He will cast a Lightning Breath in any direction, do not be in front of him when he does this. He also starts casting Lightning Pools, constantly move until he is done. Periodically he will pull you to the middle of the room and cast Lightning Sweep. While he is casting get as much distance on him as you can.
 		|only if havequest(30280)
 	step
-		goto Vale of Eternal Blossoms/18 42.1,27.2
+		goto Vale of Eternal Blossoms/18,42.1,27.2
 		.click Deactivate Final Spirit Wall
 		.' Deactivate the Final Spirit Wall |q 30277/1
 		|only if havequest(30277)
@@ -24718,20 +24718,20 @@ ZygorGuidesViewer:RegisterInclude("Golden_Lotus",[[
 		.get Ancient Guo-Lai Artifact |q 30277/2
 		|only if havequest(30277)
 	step
-		goto Vale of Eternal Blossoms/0 18.5,71.5
+		goto Vale of Eternal Blossoms/0,18.5,71.5
 		.talk Yumi Goldenpaw##58743
 		..turnin Survival Ring: Blades##30242
 	step
-		goto Vale of Eternal Blossoms/0 20.1,75.6
+		goto Vale of Eternal Blossoms/0,20.1,75.6
 		.talk Hai-Me Heavyhands##58962 |tip He walks around the Trainees in this area.
 		..turnin The Battle Ring##30306
 	step
-		goto Vale of Eternal Blossoms/0 21.4,71.6
+		goto Vale of Eternal Blossoms/0,21.4,71.6
 		.talk Anji Autumnlight##58919
 		..turnin The Thunder Below##30280
 		..turnin The Crumbling Hall
 	step
-		goto Vale of Eternal Blossoms/0 21.4,71.6
+		goto Vale of Eternal Blossoms/0,21.4,71.6
 		.talk Kun Autumnlight##58920
 		..turnin Mantid Under Fire##30243
 		..turnin Bloodied Skies##30266
@@ -24742,27 +24742,27 @@ ZygorGuidesViewer:RegisterInclude("Golden_Lotus",[[
 ]])
 
 ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
-		goto Vale of Eternal Blossoms 83.9,58.6
+		goto Vale of Eternal Blossoms,83.9,58.6
 		.talk Lyalia##64610
 		..accept Meet the Scout##32246 |tip This will be available upon entering Vale of Eternal Blossoms.
 	step
-		goto Krasarang Wilds 85.3,29.1
+		goto Krasarang Wilds,85.3,29.1
 		.talk Scout Lynna##68311
 		..turnin Meet the Scout##32246
 	step
-		goto Krasarang Wilds 85.3,29.1
+		goto Krasarang Wilds,85.3,29.1
 		.talk King Varian Wrynn##61796
 		..accept A King Among Men##32247
 	step
-		goto Krasarang Wilds 79.6,25.0
+		goto Krasarang Wilds,79.6,25.0
 		.talk Marshal Troteman##68331
 		.' Marshal Troteman found |q 32247/2
 	step
-		goto Krasarang Wilds 80.4,17.5
+		goto Krasarang Wilds,80.4,17.5
 		.talk Hilda Hornswaggle##68312
 		.' Hilda Hornswaggle found |q 32247/3
 	step
-		goto Krasarang Wilds 84.6,22.0
+		goto Krasarang Wilds,84.6,22.0
 		.from Horde Raider##68332+, Horde Hunter##68334+, Horde Priest##67904+
 		..kill 25 Horde |q 32247/1
 	step
@@ -24770,69 +24770,69 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		..turnin A King Among Men##32247
 		..accept Lion's Landing##32109
 	step
-		goto Krasarang Wilds 85.6,29.1
+		goto Krasarang Wilds,85.6,29.1
 		.click Flare Launcher##6544
 		..turnin Lion's Landing##32109
 //Lions landing Achievement ^
 	step
-		goto Krasarang Wilds 88.3,34.7
+		goto Krasarang Wilds,88.3,34.7
 		.fpath Lion's Landing
 	step
 	label dailies
-		goto Krasarang Wilds 89.7,33.1
+		goto Krasarang Wilds,89.7,33.1
 		.talk Marshal Troteman##68331
 		..accept Priorities, People!##32116 |next Ruins of Ogudei
 		|noquest
 	step
-		goto Krasarang Wilds 89.8,32.4
+		goto Krasarang Wilds,89.8,32.4
 		.talk Amber Kearnen##68908
 		..accept Send A Message##32451 |or |next Skyfire
 		..accept And Then There Were Goblins##32452 |or |next Skyfire
 		|noquest
 //Lions Landing
 	step
-		goto Krasarang Wilds 89.7,32.8
+		goto Krasarang Wilds,89.7,32.8
 		.talk Mishka##67630
 		..accept Resource Gathering##32149
 		..accept Supply Block##32150
 	step
-		goto Krasarang Wilds 89.7,33.1
+		goto Krasarang Wilds,89.7,33.1
 		.talk Marshal Troteman##68331
 		..accept Attack! Move!##32148 |or 3
 		..accept Tower Defense##32151 |or 3
 		..accept Hero Killer##32153 |or 3
 		..accept Siege Damage##32152 |or 3
 	step
-		goto Krasarang Wilds 76.8,19.2
+		goto Krasarang Wilds,76.8,19.2
 		.from Bilgewater Sapper##67929+
 		..get Bilgewater Blasting Cap |q 32152/1 |only if havequest(32152)
 		..get 20 Animatable Stone |q 32151/1 |only if havequest(32151)
 		|only if havequest(32152) or havequest(32151)
 	step
-		goto Krasarang Wilds 79.1,27.2
+		goto Krasarang Wilds,79.1,27.2
 		'|modelnpc Mazuru##67646
 		.' Kill a Horde Hero |q 32153/1
 		|only if havequest(32153)
 	step
-		goto Krasarang Wilds 78.2,28.9
+		goto Krasarang Wilds,78.2,28.9
 		.kill 8 Domination Point Supply Cart##67756+ |q 32150/1 |only if havequest(32150)
 		.clicknpc Domination Point Demolisher##67671 |only if havequest(32152)
 		.' Destroy a Domination Point Demolisher |q 32152/2 |only if havequest(32152)
 		|only if havequest(32150) or havequest(32152)
 	step
-		goto Krasarang Wilds 77.0,24.3
+		goto Krasarang Wilds,77.0,24.3
 		.from Dominance Shaman##67520+, Domination Point Raider##67826+
 		.' Kill 12 Domination Point Shaman or Raider |q 32148/1
 		.click Hastily Abandoned Lumber##1248
 		.' Get 12 Lion's Landing Lumber |q 32149/1
 		|only if havequest(32149) or havequest(32148)
 	step
-		goto Krasarang Wilds 89.7,32.8
+		goto Krasarang Wilds,89.7,32.8
 		.talk Mishka##67630
 		..turnin Resource Gathering##32149
 		..turnin Supply Block##32150
 	step
-		goto Krasarang Wilds 89.7,33.1
+		goto Krasarang Wilds,89.7,33.1
 		.talk Marshal Troteman##68331
 		..turnin Attack! Move!##32148
 		..turnin Tower Defense##32151
@@ -24853,11 +24853,11 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 // The Skyfire
 	step
 	label Skyfire
-		goto Krasarang Wilds 89.1,33.9 |n
+		goto Krasarang Wilds,89.1,33.9 |n
 		.' Click the portal to the _Skyfire_. |goto Krasarang Wilds 18.1,79.6 <5 |noway|c
 		.' If the portal isn't available, click here. |confirm
 	step
-		goto Krasarang Wilds 16.5,79.2
+		goto Krasarang Wilds,16.5,79.2
 		.talk Sky Admiral Rogers##67386
 		..turnin Send A Message##32451
 		..turnin And Then There Were Goblins##32452
@@ -24870,35 +24870,35 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		..accept A Kind of Magic##32143
 		|confirm
 	step
-		goto Krasarang Wilds/0 16.7,78.6
+		goto Krasarang Wilds/0,16.7,78.6
 		.talk Mishka##54614
 		..accept Under Pressure##32144 |or
 		..accept It's Only Right##32156 |or
 	step
-		goto Krasarang Wilds 16.7,78.6
+		goto Krasarang Wilds,16.7,78.6
 		.talk Seraphine of the Winter##68182
 		..accept Two Step Program##32158 |or
 		..accept Undermining the Under Miner##32433 |or
 		|confirm
 	step
-		goto Krasarang Wilds 16.9,78.6
+		goto Krasarang Wilds,16.9,78.6
 		.talk Sully "The Pickle" McLeary##54616
 		..accept Burn Out!##32154 |or 2
 		..accept Dis-Assembly Required##32446 |or 2
 		..accept Circle of Life##32159 |or 2
 		|confirm
 	step
-		goto Krasarang Wilds 11.6,67.9
+		goto Krasarang Wilds,11.6,67.9
 		.clicknpc Scout-o-Meter Mk I##67544
 		.' Eliminate the Beachhead Demolishers |q 32143/1
 		|only if havequest(32143)
 	step
-		goto Krasarang Wilds 10.8,60.9
+		goto Krasarang Wilds,10.8,60.9
 		.' click the Scout-o-Meter Mk II
 		.' Eliminate the Horde Wolves |q 32143/2
 		|only if havequest(32143)
 	step
-		goto Krasarang Wilds/0 12.7,56.6
+		goto Krasarang Wilds/0,12.7,56.6
 		.' click the Scout-o-Meter Mk III
 		.' Destroy the Horde Bomb Stockpile |q 32143/3
 		|only if havequest(32143)
@@ -24908,60 +24908,60 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		..accept Don't Lose Your Head##32145
 		|only if havequest(32143) or completedq(32143)
 	step
-		goto Krasarang Wilds 10.8,58.1
+		goto Krasarang Wilds,10.8,58.1
 		..kill 1 Or'Dac##67435 |q 32145/1
 		|only if havequest(32145)
 	step
-		goto Krasarang Wilds 13.4,56.3
+		goto Krasarang Wilds,13.4,56.3
 		..kill 1 Chief Bombgineer Snicklefritz##67427 |q 32145/3
 		|only if havequest(32145)
 	step
-		goto Krasarang Wilds/0 13.4,57.9
+		goto Krasarang Wilds/0,13.4,57.9
 		..kill 1 Stone Guard Ruk'Ra##67429 |q 32145/2
 		|only if havequest(32145)
 	step
-		goto Krasarang Wilds 11.9,60.4
+		goto Krasarang Wilds,11.9,60.4
 		.click Horde Supply Crate##335
 		..get 8 Horde Supply Crates Destroyed |q 32144/1
 		..kill 5 Heavy Mook##67399+ |q 32146/1
 		..kill 10 Domination Orc##67357+ |q 32142/1
 		|only if havequest(32146) or havequest(32142)
 	step
-		goto Krasarang Wilds/0 15.3,59.1
+		goto Krasarang Wilds/0,15.3,59.1
 		.' Use your _Unstable Explosives_. |use Unstable Explosive##93187
 		.' Northwestern Fuel Tank destroyed |q 32154/3
 		|only if havequest(32154)
 	step
-		goto Krasarang Wilds 19.6,62.1
+		goto Krasarang Wilds,19.6,62.1
 		..kill 1 Shredmaster Packle##67371 |q 32158/1
 		|only if havequest(32158)
 	step
-		goto Krasarang Wilds/0 19.0,61.4
+		goto Krasarang Wilds/0,19.0,61.4
 		.from Jungle Shredder##67285+
 		.' Use your _Re-Configured Remote_ on Jungle Shredders. |use Re-Configured Remote##93180
 		..get 6 Scrap Metal |q 32446/1
 		|only if havequest(32446)
 	step
-		goto Krasarang Wilds 22.2,61.3
+		goto Krasarang Wilds,22.2,61.3
 		.kill Grezik Oregrind##67373 |q 32433/1
 		|only if havequest(32433)
 	step
-		goto Krasarang Wilds 19.9,60.4
+		goto Krasarang Wilds,19.9,60.4
 		.' Click on mounds of dirt in the area.
 		.' Plant 11 Energized Seeds |q 32159/1
 		|only if havequest(32159)
 	step
-		goto Krasarang Wilds/0 25.4,59.5
+		goto Krasarang Wilds/0,25.4,59.5
 		.' Use your _Unstable Explosives_. |use Unstable Explosive##93187
 		.' Northeastern Fuel Tank destroyed |q 32154/1
 		|only if havequest(32154)
 	step
-		goto Krasarang Wilds/0 23.9,54.6
+		goto Krasarang Wilds/0,23.9,54.6
 		.' Use your _Unstable Explosives_. |use Unstable Explosive##93187
 		.' Northern Fuel Tank destroyed |q 32154/2
 		|only if havequest(32154)
 	step
-		goto Krasarang Wilds/0 24.6,56.6
+		goto Krasarang Wilds/0,24.6,56.6
 		..kill 10 Bilgewater Goblins |q 32157/1
 		.clicknpc Fallen Shieldwall Soldier##68700
 		.' Get 7 Shieldwall Soldier Dog Tags |q 32156/1
@@ -24970,22 +24970,22 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		'|modelnpc 67637
 		|only if havequest(32157) or havequest(32156)
 	step
-		goto Krasarang Wilds/0 16.7,78.6
+		goto Krasarang Wilds/0,16.7,78.6
 		.talk Mishka##54614
 		..turnin Under Pressure##32144
 		..turnin It's Only Right##32156
 	step
-		goto Krasarang Wilds 16.7,78.6
+		goto Krasarang Wilds,16.7,78.6
 		.talk Seraphine of the Winter##68182
 		..turnin Two Step Program##32158
 		..turnin Undermining the Under Miner##32433
 	step
-		goto Krasarang Wilds 16.9,78.6
+		goto Krasarang Wilds,16.9,78.6
 		.talk Sully "The Pickle" McLeary##54616
 		..turnin Burn Out!##32154
 		..turnin Dis-Assembly Required##32446
 	step
-		goto Krasarang Wilds 16.5,79.2
+		goto Krasarang Wilds,16.5,79.2
 		.talk Sky Admiral Rogers##67386
 		..turnin Hammer to Fall##32146
 		..turnin We Will Rock You##32142
@@ -25009,11 +25009,11 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 // Ruins of Ogudei
 	step
 	label Ruins of Ogudei
-		goto Krasarang Wilds 80.3,17.6 |n
+		goto Krasarang Wilds,80.3,17.6 |n
 		.' Enter the Ruins of Ogudei. |goto Krasarang Wilds/0 80.3,17.6 <5 |noway|c
 		|only if havequest(32116)
 	step
-		goto Krasarang Wilds/1 30.1,27.5
+		goto Krasarang Wilds/1,30.1,27.5
 		.talk Hilda Hornswaggle##68312
 		..turnin Priorities, People!##32116
 		..accept The Spirit Trap##32121 |or 5
@@ -25030,18 +25030,18 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		.' Disperse the anamoly |q 32119/1
 		|only if havequest(32119)
 	step
-		goto Krasarang Wilds/2 50.3,26.7
+		goto Krasarang Wilds/2,50.3,26.7
 		..kill 12 Spiritbound Arcanist##68070+ |q 32346/1 |only if havequest(32346)
 		.from Troubled Slave Spirit##68074+ |only if havequest(32115)
 		.' 14 Troubled Slave Spirits released |q 32115/1 |only if havequest(32115)
 	step
-		goto Krasarang Wilds/2 72.7,15.4
+		goto Krasarang Wilds/2,72.7,15.4
 		.from Spirit Trap##68061+
 		..goal 3 Spirit Trap destroyed |q 32121/1
 	step
 		.' Go down the steps here. |goto Krasarang Wilds/2 62.4,39.0 |c
 	step
-		goto Krasarang Wilds/3 66.3,48.3
+		goto Krasarang Wilds/3,66.3,48.3
 		.from Reliquary Scout##67861+, Reliquary Blood Knight##68126+, Reliquary Mage##68114+
 		.' Kill 10 Reliquary |q 32347/1
 	step
@@ -25049,13 +25049,13 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 	step
 		.' Go down the path here. |goto Krasarang Wilds/2 72.7,41.5 |c
 	step
-		goto Krasarang Wilds/2 67.4,81.0
+		goto Krasarang Wilds/2,67.4,81.0
 		.kill Gen-li, Twister of Words##68169 |q 32122/1
 		.kill Meng-do, Strength of Mountains##68170 |q 32122/2
 	step
 		.' Go up the steps here. |goto Krasarang Wilds/2 56.4,38.9 |c
 	step
-		goto Krasarang Wilds/1 30.1,27.5
+		goto Krasarang Wilds/1,30.1,27.5
 		.talk Hilda Hornswaggle##68312
 		..turnin The Spirit Trap##32121
 		..turnin Shackles of the Past##32115
@@ -25078,7 +25078,7 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 //First Quest Chain
 	step
 	label "friend1"
-		goto Krasarang Wilds 89.5,32.6
+		goto Krasarang Wilds,89.5,32.6
 		.talk Admiral Taylor##67940
 		..accept The Best Around##32380
 		|only if repval('Operation: Shieldwall','Friendly')>=950 and not completedq(32426)
@@ -25087,7 +25087,7 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		.' Go down the ramp here. |goto Deeprun Tram/1 52.2,42.4 |c
 		|only if havequest(32380)
 	step
-		goto Deeprun Tram/2 70.3,46.5
+		goto Deeprun Tram/2,70.3,46.5
 		.talk Barkeep Townsley##68526
 		.' Ask her if she is the agent following Connelly.
 		.' Agent Townsley located |q 32380/2
@@ -25095,7 +25095,7 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		..accept To Catch A Spy##32381
 		|only if not completedq(32426)
 	step
-		goto Deeprun Tram/2 70.7,46.5
+		goto Deeprun Tram/2,70.7,46.5
 		.talk Barkeep Townsley##68526
 		.' Tell her you're ready for the first clue.
 		.'  Find Keith and talk to him here. [Deeprun Tram/2 64.8,22.7].
@@ -25103,7 +25103,7 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		.' Pink Marmot delivered |q 32381/1
 		|only if havequest(32381)
 	step
-		goto Deeprun Tram/2 70.1,47.2
+		goto Deeprun Tram/2,70.1,47.2
 		.talk Barkeep Townsley##68526
 		.' Tell her you're ready for the second clue.
 		.'  [Deeprun Tram/2 49.7,33.6]
@@ -25111,7 +25111,7 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		.' Rusty Dagger delivered |q 32381/2
 		|only if havequest(32381)
 	step
-		goto Deeprun Tram/2 70.1,47.2
+		goto Deeprun Tram/2,70.1,47.2
 		.talk Barkeep Townsley##68526
 		.' Tell her you're ready for the thrid clue.
 		.' [Deeprun Tram/2 66.9,59.7]
@@ -25119,7 +25119,7 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		.' Pink Marmot delivered |q 32381/3
 		|only if havequest(32381)
 	step
-		goto Deeprun Tram/2 70.1,47.2
+		goto Deeprun Tram/2,70.1,47.2
 		.talk Barkeep Townsley##68526
 		..turnin To Catch A Spy##32381
 		..accept Stirred, Not Shaken##32426
@@ -25128,11 +25128,11 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		.' Go up the ramp here. |goto Deeprun Tram/2 31.7,19.7 |c
 		|only if havequest(32426)
 	step
-		goto Deeprun Tram/2 26.3,79.3
+		goto Deeprun Tram/2,26.3,79.3
 		.' Professor Kilt located |q 32426/1
 		|only if havequest(32426)
 	step
-		goto Deeprun Tram/2 24.5,81.4
+		goto Deeprun Tram/2,24.5,81.4
 		.talk Professor Kilt##68531
 		..turnin Stirred, Not Shaken##32426
 		|only if havequest(32426)
@@ -25140,18 +25140,18 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 // 4500 Rep
 	step
 	label "friend2"
-		goto Krasarang Wilds/0 89.6,32.6
+		goto Krasarang Wilds/0,89.6,32.6
 		.talk Admiral Taylor##67940
 		..accept He's In Deep##32382
 		|only if repval('Operation: Shieldwall','Friendly')>=4500 and not completedq(32383)
 	step
-		goto Krasarang Wilds 88.3,34.2
+		goto Krasarang Wilds,88.3,34.2
 		.talk Fennie Hornswaggle##68741
 		.' Ask her to take you to Fire Camp Bataar.
 		.' Find Connelly in Kun-Lai Summit |q 32382/1
 		|only if havequest(32382)
 	step
-		goto Kun-Lai Summit 59.2,84.3
+		goto Kun-Lai Summit,59.2,84.3
 		.talk Cousin Goottooth##68417
 		..turnin He's In Deep##32382
 		..accept Bugging Out##32383
@@ -25160,32 +25160,32 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 	step
 		.' Use your Grummle Disguise Kit. |use Grummle Disguise Kit##92950
 		.' Pay attention for _Nero_ the wolf. It will see through your costume.
-		goto Kun-Lai Summit 58.6,83.8
+		goto Kun-Lai Summit,58.6,83.8
 		.clicknpc Shaggy Longhorn##2877
 		.' Garrosh distracted |q 32397/1
 		|only if havequest(32397)
 	step
-		goto Kun-Lai Summit 58.4,84.0
+		goto Kun-Lai Summit,58.4,84.0
 		.clicknpc Mogu Statue##68913
 		.' Large Tent bugged. |q 32383/1
 		|only if havequest(32383)
 	step
-		goto Kun-Lai Summit 58.3,84.2
+		goto Kun-Lai Summit,58.3,84.2
 		.' Click the Weathered Jounral on the edge of the table.
 		..get Weathered Journal |q 32397/2
 		|only if havequest(32397)
 	step
-		goto Kun-Lai Summit 58.0,84.6
+		goto Kun-Lai Summit,58.0,84.6
 		.clicknpc Mogu Statue##68913
 		.' Small Tent bugged. |q 32383/2
 		|only if havequest(32383)
 	step
-		goto Kun-Lai Summit 58.2,85.0
+		goto Kun-Lai Summit,58.2,85.0
 		.clicknpc Mogu Statue##68913
 		.' Supplies bugged. |q 32383/3
 		|only if havequest(32383)
 	step
-		goto Kun-Lai Summit 59.3,84.3
+		goto Kun-Lai Summit,59.3,84.3
 		.talk Cousin Goottooth##68417
 		..turnin Bugging Out##32383
 		..turnin He Won't Even Miss It##32397
@@ -25194,79 +25194,79 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 // 2850 Honoroed
 	step
 	label "honored1"
-		goto Krasarang Wilds 89.6,32.6
+		goto Krasarang Wilds,89.6,32.6
 		.talk Admiral Taylor##67940
 		..accept The Kirin Tor##32331
 		|only if repval('Operation: Shieldwall','Honored')>=2850 and not completedq(32362)
 	step
-		goto Krasarang Wilds 89.2,33.6 |n
+		goto Krasarang Wilds,89.2,33.6 |n
 		.' Use the Portal to The Purple Parlor |q 32331/1 |tip Make sure you use this portal rather than going to the dungeon yourself, this is a phased version of Dalaran, so you must use the portal to go through.
 		|only if havequest(32331)
 	step
-		goto 924/1 26.7,39.0
+		goto 924/1,26.7,39.0
 		.talk Anduin Wrynn##68106
 		..turnin The Kirin Tor##32331
 		..accept The Fate of Dalaran##32362
 		|only if not completedq(32362)
 	step
-		goto 924/1 26.7,39.3
+		goto 924/1,26.7,39.3
 		'|modelnpc Lady Jaina Proudmoore##68651
 		.' Speak with Jaina Proudmoore. |q 32362/1
 		|only if havequest(32362)
 	step
-		goto 924/1 26.8,39.0
+		goto 924/1,26.8,39.0
 		.talk Anduin Wrynn##68106
 		..turnin The Fate of Dalaran##32362
 		|only if havequest(32362)
 	step
-		goto 924/1 22.7,39.6
+		goto 924/1,22.7,39.6
 		.' Click the portal to send you back to Lion's Landing. |goto Krasarang Wilds /0 89.0,33.6 |noway |c
 		|next endg
 // 6800 Honored
 	step
 	label "honored2"
-		goto Krasarang Wilds 89.6,32.6
+		goto Krasarang Wilds,89.6,32.6
 		.talk Admiral Taylor##67940
 		..accept To Mogujia##32193
 		|only if repval('Operation: Shieldwall','Honored')>=6800 and not completedq(32243)
 	step
-		goto Krasarang Wilds 88.3,34.3
+		goto Krasarang Wilds,88.3,34.3
 		.talk Fennie Hornswaggle##68741
 		.' Ask her to take you Mogujia.
 		.' Find Brann Bronzebeard |q 32193/1
 		|only if havequest(32193)
 	step
-		goto Kun-Lai Summit 59.8,76.0
+		goto Kun-Lai Summit,59.8,76.0
 		.talk Brann Bronzebeard##67682
 		..turnin To Mogujia##32193
 		|only if havequest(32193)
 	step
-		goto Kun-Lai Summit 59.8,76.0
+		goto Kun-Lai Summit,59.8,76.0
 		.talk Hilda Hornswaggle##67716
 		..accept The Source of Korune Power##32243
 		|only if not completedq(32243)
 	step
-		goto Kun-Lai Summit 60.0,75.3
+		goto Kun-Lai Summit,60.0,75.3
 		.talk Sarannha Skyglaive##67734
 		..accept Bad Blood##32194
 		|only if not completedq(32243)
 	step
-		goto Kun-Lai Summit 58.1,71.0
+		goto Kun-Lai Summit,58.1,71.0
 		.from Korune Spellweaver##68815
 		..get Sha-Touched Claw |q 32243/1
 		|only if havequest(32243)
 	step
-		goto Kun-Lai Summit 58.5,74.5
+		goto Kun-Lai Summit,58.5,74.5
 		.from Silvermoon Runeseeker##67806+, Dominance Mage##67804+, Dominance Knight##67805+
 		..get 5 Korune Artifact |q 32194/1
 		|only if havequest(32194)
 	step
-		goto Kun-Lai Summit 60.0,75.3
+		goto Kun-Lai Summit,60.0,75.3
 		.talk Sarannha Skyglaive##67734
 		..turnin Bad Blood##32194
 		|only if havequest(32194)
 	step
-		goto Kun-Lai Summit 59.8,76.0
+		goto Kun-Lai Summit,59.8,76.0
 		.talk Hilda Hornswaggle##67716
 		..turnin The Source of Korune Power##32243
 		|only if havequest(32243)
@@ -25274,17 +25274,17 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 // 10,750 Honoroed
 	step
 	label "honored3"
-		goto Krasarang Wilds 89.6,32.6
+		goto Krasarang Wilds,89.6,32.6
 		.talk Admiral Taylor##67940
 		..accept Anduin's Plea##32315
 		|only if repval('Operation: Shieldwall','Honored')>=10750 and not completedq(32316)
 	step
-		goto Krasarang Wilds 88.3,34.3
+		goto Krasarang Wilds,88.3,34.3
 		.talk Fennie Hornswaggle##68741
 		.' Ask her to take you to Shrine of Seven Stars. |goto Vale of Eternal Blossoms |noway|c
 		|only if havequest(32315)
 	step
-		goto Vale of Eternal Blossoms/4 65.8,32.9
+		goto Vale of Eternal Blossoms/4,65.8,32.9
 		.talk Anduin Wrynn##67948
 		.' Find Anduin |q 32315/1
 		..turnin Anduin's Plea##32315
@@ -25296,7 +25296,7 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		. 6 Sha-Touched Footmen saved |q 32316/1
 		|only if havequest(32316)
 	step
-		goto Vale of Eternal Blossoms/4 67.4,43.5
+		goto Vale of Eternal Blossoms/4,67.4,43.5
 		.talk King Varian Wrynn##68242
 		..turnin Heart Of The Alliance##32316
 		|only if havequest(32316)
@@ -25304,24 +25304,24 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 // 2700 Revered
 	step
 	label "revered1"
-		goto Krasarang Wilds 89.6,32.6
+		goto Krasarang Wilds,89.6,32.6
 		.talk Admiral Taylor##67940
 		..accept The Kun-Lai Expedition##32370
 		|only if repval('Operation: Shieldwall','Revered')>=2700 and not completedq(32371)
 	step
-		goto Krasarang Wilds 88.3,34.3
+		goto Krasarang Wilds,88.3,34.3
 		.talk Fennie Hornswaggle##68741
 		.' Ask her to fly you to Garrash'ar Advance.
 		.' Find Connelly at the Grummle Bazaar |q 32370/1
 		|only if havequest(32370)
 	step
-		goto Kun-Lai Summit 65.0,60.8
+		goto Kun-Lai Summit,65.0,60.8
 		.talk Agent Connelly##68375
 		..turnin The Kun-Lai Expedition##32370
 		..accept A Kor'kron In Our Midst##32377
 		|only if not completedq(32371)
 	step
-		goto Kun-Lai Summit 60.9,57.7
+		goto Kun-Lai Summit,60.9,57.7
 		.from Kor'kron Reaver##68367, Kor'Kron Honor Guard##68369, Kor'Kron Scout##68368
 		.collect Kor'kron Helmet##92763 |n
 		.collect Kor'kron Armor##92764 |n
@@ -25338,13 +25338,13 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		.' Use your Kor'kron Disguise. |q 32371/1 |use Kor'kron Disguise##92766
 		|only if havequest(32371)
 	step
-		goto Kun-Lai Summit 60.4,55.2
+		goto Kun-Lai Summit,60.4,55.2
 		.click Memory Wine##13445
 		.' Drink Memory Wine |q 32371/2
 		.' Witness Shan Kien's Past |q 32371/3
 		|only if havequest(32371)
 	step
-		goto Kun-Lai Summit 65.0,60.8
+		goto Kun-Lai Summit,65.0,60.8
 		.talk Agent Connelly##68375
 		..turnin Memory Wine##32371
 		|only if havequest(32371)
@@ -25352,28 +25352,28 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 // 6650 Revered
 	step
 	label "revered2"
-		goto Krasarang Wilds/0 89.6,32.6
+		goto Krasarang Wilds/0,89.6,32.6
 		.talk Admiral Taylor##67940
 		..accept The Ruins of Korune##32393
 		|only if repval('Operation: Shieldwall','Revered')>=6650 and not completedq(32393)
 	step
-		goto Krasarang Wilds 88.3,34.3
+		goto Krasarang Wilds,88.3,34.3
 		.talk Fennie Hornswaggle##68741
 		.' Ask her to take you to the Ruins of Korune.
 		.' Find Sarannha Skyglaive at the Ruins of Korune |q 32393/1
 		|only if havequest(32393)
 	step
-		goto Kun-Lai Summit 32.8,26.3
+		goto Kun-Lai Summit,32.8,26.3
 		.talk Sarannha Skyglaive##67734
 		..turnin The Ruins of Korune##32393
 		..accept The Divine Bell##32394
 		|only if havequest(32393) or not completedq(32394)
 	step
-		goto Kun-Lai Summit 33.1,26.7  |n
+		goto Kun-Lai Summit,33.1,26.7  |n
 		.' Enter the Ruins of Korune |goto Kun-Lai Summit/20 |noway|c
 		|only if havequest(32394)
 	step
-		goto Kun-Lai Summit/20 48.2,41.3
+		goto Kun-Lai Summit/20,48.2,41.3
 		.' Watch the dialog, then follow _Dreadweaver Avartu_, killing Kor'kron Tomb Guardians afterwards.
 		|confirm
 		|only if havequest(32394)
@@ -25387,15 +25387,15 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		.' Fight your way up the steps here. |goto Kun-Lai Summit/21 65.1,44.8 |c
 		|only if havequest(32394)
 	step
-		goto Kun-Lai Summit/21 56.2,31.3
+		goto Kun-Lai Summit/21,56.2,31.3
 		.from Dreadweaver Avartu##68504 |q 32394/1
 		|only if havequest(32394)
 	step
-		goto Kun-Lai Summit/21 60.8,22.4
+		goto Kun-Lai Summit/21,60.8,22.4
 		.' Recover the Divine Bell |q 32394/2
 		|only if havequest(32394)
 	step
-		goto Kun-Lai Summit/21 62.5,25.8
+		goto Kun-Lai Summit/21,62.5,25.8
 		.talk Sarannha Skyglaive##67734
 		..turnin The Divine Bell##32394
 		|only if havequest(32394)
@@ -25404,16 +25404,16 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 // 8665 Revered
 	step
 	label "revered3"
-		goto Krasarang Wilds/0 89.6,32.6
+		goto Krasarang Wilds/0,89.6,32.6
 		.talk Admiral Taylor##67940
 		..accept Darnassus Attacked?##32414
 		|only if repval('Operation: Shieldwall','Revered')>=8665 and not completedq(32423)
 	step
-		goto Krasarang Wilds/0 89.0,33.6
+		goto Krasarang Wilds/0,89.0,33.6
 		.talk Seamus Goldenkicks##67848 |q 32414/1
 		.' Ask him to snd you to Darnassus. |goto Darnassus
 	step
-		goto Darnassus/0 39.0,32.7
+		goto Darnassus/0,39.0,32.7
 		.talk Lady Jaina Proudmoore##68651
 		..turnin Darnassus Attacked?##32414
 		..accept Tracking the Thieves##32460
@@ -25424,7 +25424,7 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		.' Track the Thieves |q 32460/1
 		|only if havequest(32460)
 	step
-		goto Teldrassil/0 40.0,50.5
+		goto Teldrassil/0,40.0,50.5
 		.talk Lady Jaina Proudmoore##68651
 		..turnin Tracking the Thieves##32460
 		..accept Jaina's Resolution##32416
@@ -25435,7 +25435,7 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		|only if havequest(32416)
 	step
 		.' There will be a short cutscene. Afterwards, speak with _Vereesa_.
-		goto 924/1 34.2,48.8
+		goto 924/1,34.2,48.8
 		.talk Vereesa Windrunner##68687
 		..turnin Jaina's Resolution##32416
 		..accept Nowhere to Run##32421
@@ -25445,7 +25445,7 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		..accept Cashing Out##32420
 		|only if not completedq(32423)
 	step
-		goto 924/1 70.0,43.5
+		goto 924/1,70.0,43.5
 		.from Sunreaver Dragonhawk##68762
 		.' Render 5 Sunreaver Dragonhawks incapable of flying. |q 32421/1
 		|only if havequest(32421)
@@ -25481,14 +25481,14 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		.' Jump down the well here. |goto 924/2 |noway|c
 		|only if havequest(32417)
 	step
-		goto 924/2 50.2,47.0
+		goto 924/2,50.2,47.0
 		.' Slay 12 Sunreavers in the Dalaran Sewers |q 32417/1
 		'|modelnpc 68756
 		'|modelnpc 68758
 		'|modelnpc 68757
 		|only if havequest(32417)
 	step
-		goto 924/1 34.3,48.6
+		goto 924/1,34.3,48.6
 		.talk Vereesa Windrunner##68687
 		..turnin Nowhere to Run##32421
 		..turnin Nowhere to Hide##32419
@@ -25498,7 +25498,7 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		..accept What Had To Be Done##32423
 		|only if not completedq(32423)
 	step
-		goto Krasarang Wilds 87.8,33.0
+		goto Krasarang Wilds,87.8,33.0
 		.talk King Varian Wrynn##68690
 		..turnin What Had To Be Done##32423
 		|only if havequest(32423)
@@ -25506,24 +25506,24 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 // 15,500 Revered
 	step
 	label "revered4"
-		goto Krasarang Wilds/0 89.6,32.6
+		goto Krasarang Wilds/0,89.6,32.6
 		.talk Admiral Taylor##67940
 		..accept The Harmonic Mallet##32355
 		|only if repval('Operation: Shieldwall','Revered')>=15500 and not completedq(32335)
 	step
-		goto Krasarang Wilds 88.3,34.3
+		goto Krasarang Wilds,88.3,34.3
 		.talk Fennie Hornswaggle##68741
 		.' Ask her to take you to the Valley of Emperors.
 		.' Find Anduin at the Tomb of Conquerors |q 32355/1
 		|only if havequest(32355) or not completedq(32335)
 	step
-		goto Kun-Lai Summit 53.0,46.4
+		goto Kun-Lai Summit,53.0,46.4
 		.talk Anduin Wrynn##68004
 		..turnin The Harmonic Mallet##32355
 		..accept The Monkey King##32321
 		|only if not completedq(32335)
 	step
-		goto Kun-Lai Summit 53.0,46.4
+		goto Kun-Lai Summit,53.0,46.4
 		.' Talk with Anduin Wrynn |q 32321/1
 		.' Ask him why he is here.
 		'|modelnpc 68004
@@ -25552,26 +25552,26 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		.' Go down the ramp here. |goto Kun-Lai Summit/0 68.9,45.5 <5 |c
 		|only if havequest(32334) or not completedq(32335)
 	step
-		goto Kun-Lai Summit/0 70.1,45.6
+		goto Kun-Lai Summit/0,70.1,45.6
 		.talk The Monkey King##68538
 		.' Tell him that you challange him.
 		.' Challenger defeated |q 32334/1
 		|only if havequest(32334) or not completedq(32335)
 	step
-		goto The Jade Forest 33.4,34.2
+		goto The Jade Forest,33.4,34.2
 		.' Ring the Gong of Fellowship. |q 32333/1
 		.from Sam the Wise##64694 |q 32333/2
 		.' Click the keg that appears after you defeat him.
 		.get The Metal Brew##92557 |q 32333/3
 		|only if havequest(32333) or not completedq(32335)
 	step
-		goto Dread Wastes 65.7,71.7
+		goto Dread Wastes,65.7,71.7
 		.click Untamed Amber##11644
 		.from Untamed Ambertail##68117
 		.get Untamed Amber##92539 |q 32332/1
 		|only if havequest(32332) or not completedq(32335)
 	step
-		goto Krasarang Wilds 88.8,31.8
+		goto Krasarang Wilds,88.8,31.8
 		.talk The Monkey King##68538
 		..turnin The First Riddle: Mercy##32332
 		..turnin The Second Riddle: Fellowship##32333
@@ -25582,7 +25582,7 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		.' Listen to The Monkey King's story. |q 32335/1
 		|only if havequest(32335) or not completedq(32335)
 	step
-		goto Krasarang Wilds/0 89.0,31.7
+		goto Krasarang Wilds/0,89.0,31.7
 		.talk Anduin Wrynn##68004
 		..turnin The Greatest Prank##32335
 		|only if havequest(32335)
@@ -25591,14 +25591,14 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 // 18,500 Revered
 	step
 	label "revered5"
-		goto Krasarang Wilds 88.8,31.8
+		goto Krasarang Wilds,88.8,31.8
 		.talk The Monkey King##68538
 		..accept The Handle##32336
 		..accept The Head##32337
 		..accept The Harmonic Ointment##32338
 		|only if repval('Operation: Shieldwall','Revered')>=18500 and not completedq(32338)
 	step
-		goto Krasarang Wilds 43.6,86.0
+		goto Krasarang Wilds,43.6,86.0
 		.talk Chief Ingoo Ingoo XVII##68545
 		.' Tell him that's the real monkey king.
 		.from Chief Ingoo Ingoo XVII##68545
@@ -25610,7 +25610,7 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		.turnin The Handle##32336
 		|only if not completedq(32337) and not completedq(32338) and not completedq(32336)
 	step
-		goto Valley of the Four Winds 23.0,30.6
+		goto Valley of the Four Winds,23.0,30.6
 		.talk Royal Finder##68554
 		.' Find the Royal Finder |q 32337/1
 		|only if havequest(32337)
@@ -25621,12 +25621,12 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		.get Mallet Head##92560 |q 32337/2
 		|only if havequest(32337)
 	step
-		goto Townlong Steppes 62.6,34.0
+		goto Townlong Steppes,62.6,34.0
 		.from The Blade##61010
 		.get Harmonic Ointment##92562 |q 32338/1
 		|only if havequest(32338)
 	step
-		goto Krasarang Wilds 88.8,31.8
+		goto Krasarang Wilds,88.8,31.8
 		.talk The Monkey King##68538
 		..turnin The Head##32337
 		..turnin The Harmonic Ointment##32338
@@ -25636,24 +25636,24 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 // Exalted
 	step
 	label "exalted"
-		goto Krasarang Wilds/0 89.6,32.6
+		goto Krasarang Wilds/0,89.6,32.6
 		.talk Admiral Taylor##67940
 		..accept The Bell Speaks##32400
 		|only if repval('Operation: Shieldwall','Exalted')>=1 and not completedq(32455)
 	step
-		goto Krasarang Wilds 88.3,34.3
+		goto Krasarang Wilds,88.3,34.3
 		.talk Fennie Hornswaggle##68741
 		.' Ask her to take you to Emperor's Reach.
 		.' Find Anduin at Emperor's Reach |q 32400/1
 		|only if havequest(32400)
 	step
-		goto Kun-Lai Summit 56.4,34.4
+		goto Kun-Lai Summit,56.4,34.4
 		.talk Anduin Wrynn##68939
 		..turnin The Bell Speaks##32400
 		..accept Breath of Darkest Shadow##32401
 		|only if havequest(32400) and not completedq(32401) and not completedq(32455)
 	step
-		goto Kun-Lai Summit 55.9,32.5
+		goto Kun-Lai Summit,55.9,32.5
 		.' Wait until the Horde become afflicted by the Sha.
 		.from Kor'kron Juggernaut##68940
 		.' Once the Juggernauts are defeated, Ishi will get possessed.
@@ -25661,7 +25661,7 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		.' Destroy the Divine Bell |q 32401/2
 		|only if havequest(32401)
 	step
-		goto Kun-Lai Summit 55.9,32.5
+		goto Kun-Lai Summit,55.9,32.5
 		.talk Anduin Wrynn##68987
 		..turnin Breath of Darkest Shadow##32401
 		..accept The Silence##32455
@@ -25670,13 +25670,13 @@ ZygorGuidesViewer:RegisterInclude("Operation_Shieldwall_Daily",[[
 		.' Use your _Alliance Flare Gun_ |use Alliance Flare Gun##93362 |q 32455/1
 		|only if havequest(32455)
 	step
-		goto Krasarang Wilds 87.7,33.1
+		goto Krasarang Wilds,87.7,33.1
 		.talk Admiral Taylor##69090
 		..turnin The Silence##32455
 		|only if havequest(32455)
 	step
 	label "endg"
-		goto Krasarang Wilds 89.6,33.4
+		goto Krasarang Wilds,89.6,33.4
 		.talk Agent Malley##69059
 		..buy 1 Grand Commendation of Operation: Shieldwall##93231 |n
 		.' Use the Commendation of Operation: Shieldwall you just purchased. |condition ZGV:GetReputation("Operation: Shieldwall").hasBonus |use Grand Commendation of Operation: Shieldwall##93231
@@ -25691,23 +25691,23 @@ ZygorGuidesViewer:RegisterInclude("Beastmaster_Dailies",[[
 		'Routing to proper section |next |only if not completedq(32109)
 		'Routing to proper section |next "token" |only if completedq(32109)
 	step
-		goto Krasarang Wilds 85.3,29.1
+		goto Krasarang Wilds,85.3,29.1
 		.talk Scout Lynna##68311
 		..turnin Meet the Scout##32246
 	step
-		goto Krasarang Wilds 85.3,29.1
+		goto Krasarang Wilds,85.3,29.1
 		.talk King Varian Wrynn##61796
 		..accept A King Among Men##32247
 	step
-		goto Krasarang Wilds 79.6,25.0
+		goto Krasarang Wilds,79.6,25.0
 		.talk Marshal Troteman##68331
 		.' Marshal Troteman found |q 32247/2
 	step
-		goto Krasarang Wilds 80.4,17.5
+		goto Krasarang Wilds,80.4,17.5
 		.talk Hilda Hornswaggle##68312
 		.' Hilda Hornswaggle found |q 32247/3
 	step
-		goto Krasarang Wilds 84.6,22.0
+		goto Krasarang Wilds,84.6,22.0
 		.from Horde Raider##68332+, Horde Hunter##68334+, Horde Priest##67904+
 		..kill 25 Horde |q 32247/1
 	step
@@ -25715,7 +25715,7 @@ ZygorGuidesViewer:RegisterInclude("Beastmaster_Dailies",[[
 		..turnin A King Among Men##32247
 		..accept Lion's Landing##32109
 	step
-		goto Krasarang Wilds 85.6,29.1
+		goto Krasarang Wilds,85.6,29.1
 		.click Flare Launcher##6544
 		..turnin Lion's Landing##32109
 //Lions landing Achievement
@@ -25729,7 +25729,7 @@ ZygorGuidesViewer:RegisterInclude("Beastmaster_Dailies",[[
 		'Routing to proper section |next "menu" |only if itemcount(91877)>=30
 	step
 	label "token"
-		goto Krasarang Wilds 11.9,60.4
+		goto Krasarang Wilds,11.9,60.4
 		.from Heavy Mook##67399+, Dominance Grunt##67357+, Bloodhilt Honor Guard##67334, Dominance Raider##67346+
 		.collect 30 Domination Point Commission##91877
 	step
@@ -25741,85 +25741,85 @@ ZygorGuidesViewer:RegisterInclude("Beastmaster_Dailies",[[
 		'Click here to go purchase and accept the Sturdy Crab Crate questline. |confirm |next "crab"
 	step
 	label "crane"
-		goto Krasarang Wilds/0 89.5,33.5
+		goto Krasarang Wilds/0,89.5,33.5
 		.talk Proveditor Grantley##67881
 		.buy Sturdy Crane Snare##91854
 	step
 		'Click the _Sturdy Crane Snare_ in your bags. |use Sturdy Crane Snare##91854
 		..accept Beastmaster's Hunt: The Crane##32164
 	step
-		goto Krasarang Wilds/0 73.2,44.6
+		goto Krasarang Wilds/0,73.2,44.6
 		.from Great Crane##59763+
 		..get Pristine Jet Crownfeather##91815 |q 32164/2
 	step
-		goto Krasarang Wilds/0 34.5,71.2
+		goto Krasarang Wilds/0,34.5,71.2
 		.from Child of Chi-Ji##60616+
 		..get 5 Pristine Golden Crownfeather |q 32164/1
 	step
-		goto Krasarang Wilds 39.2,61.9
+		goto Krasarang Wilds,39.2,61.9
 		.click Mound of Dirt##12093
 		..turnin Beastmaster's Hunt: The Crane##32164
 	step
-		goto Krasarang Wilds 39.3,61.8
+		goto Krasarang Wilds,39.3,61.8
 		.talk Ancient Bloodcrown Crane##67555
 		..accept Beastmaster's Quarry: The Crane##32184
 	step
-		goto Krasarang Wilds 84.3,18.9
+		goto Krasarang Wilds,84.3,18.9
 		.talk Huntsman Blake##67558
 		..turnin Beastmaster's Quarry: The Crane##32184
 		|next group
 	step
 	label tiger
-		goto Krasarang Wilds/0 89.5,33.5
+		goto Krasarang Wilds/0,89.5,33.5
 		.talk Proveditor Grantley##67881
 		.buy Sturdy Tiger Trap##91855
 	step
 		'Click the _Sturdy Tiger Trap_ in your bags. |use Sturdy Tiger Trap##91855
 		..accept Beastmaster's Hunt: The Tiger##32165
 	step
-		goto Dread Wastes 51.5,67.2
+		goto Dread Wastes,51.5,67.2
 		.from Wasteland Yak##66549+, Wasteland Calf##66595+
 		..get 25 Unbruised Yak Haunch##91816 |q 32165/1
 	step
-		goto Krasarang Wilds/0 13.9,41.3
+		goto Krasarang Wilds/0,13.9,41.3
 		.click Mound of Dirt##12093
 		..turnin Beastmaster's Hunt: The Tiger##32165
 	step
-		goto Krasarang Wilds/0 13.9,41.2
+		goto Krasarang Wilds/0,13.9,41.2
 		.talk Krasari Elder##67556
 		..accept Beastmaster's Quarry: The Tiger##32185
 	step
-		goto Krasarang Wilds 84.3,18.9
+		goto Krasarang Wilds,84.3,18.9
 		.talk Huntsman Blake##67558
 		..turnin Beastmaster's Quarry: The Tiger##32185
 		|next group
 	step
 	label crab
-		goto Krasarang Wilds/0 89.5,33.5
+		goto Krasarang Wilds/0,89.5,33.5
 		.talk Proveditor Grantley##67881
 		.buy Sturdy Crab Crate##91856
 	step
 		'Click the _Sturdy Crab Crate_ in your bags. |use Sturdy Crab Crate##91856
 		..accept Beastmaster's Hunt: The Crab##32166
 	step
-		goto Krasarang Wilds 47.4,91.7
+		goto Krasarang Wilds,47.4,91.7
 		.from Unga Villager##60358+
 		..get 30 Funky Rotten Fish |q 32166/1
 	step
-		goto Krasarang Wilds 56.3,42.1
+		goto Krasarang Wilds,56.3,42.1
 		.click Mound of Dirt##12093
 		..turnin Beastmaster's Hunt: The Crab##32166
 	step
-		goto Krasarang Wilds 56.4,42.2
+		goto Krasarang Wilds,56.4,42.2
 		.' Talk to the Captured Colossal Viseclaw
 		..accept Beastmaster's Quarry: The Crab##32186
 	step
-		goto Krasarang Wilds 84.3,18.9
+		goto Krasarang Wilds,84.3,18.9
 		.talk Huntsman Blake##67558
 		..turnin Beastmaster's Quarry: The Crab##32186
 	step
 	label group
-		goto Krasarang Wilds 84.3,18.9
+		goto Krasarang Wilds,84.3,18.9
 		.talk Huntsman Blake##67558
 		.' The dailies you have completed will determine which enemies are available to you to fight.
 		.' Click here to fight the _Ancient Bloodcrown Crane_. |confirm |next bc
@@ -25833,7 +25833,7 @@ ZygorGuidesViewer:RegisterInclude("Beastmaster_Dailies",[[
 		.from Ancient Bloodcrown Crane##67555
 		..accept Ancient's Fall##32170
 	step
-		goto Krasarang Wilds 84.3,18.9
+		goto Krasarang Wilds,84.3,18.9
 		.talk Huntsman Blake##67558
 		.turnin Ancient's Fall##32170
 		|next EOG
@@ -25845,7 +25845,7 @@ ZygorGuidesViewer:RegisterInclude("Beastmaster_Dailies",[[
 		.from Krasari Elder##67556
 		..accept End of an Elder##32171
 	step
-		goto Krasarang Wilds 84.3,18.9
+		goto Krasarang Wilds,84.3,18.9
 		.talk Huntsman Blake##67558
 		.turnin End of an Elder##32171
 		|next EOG
@@ -25858,7 +25858,7 @@ ZygorGuidesViewer:RegisterInclude("Beastmaster_Dailies",[[
 		.from Colossal Viseclaw##67508
 		..accept A Colossal Victory##32172
 	step
-		goto Krasarang Wilds 84.3,18.9
+		goto Krasarang Wilds,84.3,18.9
 		.talk Huntsman Blake##67558
 		..turnin A Colossal Victory##32172
 		|next EOG
@@ -25869,13 +25869,13 @@ ZygorGuidesViewer:RegisterInclude("Beastmaster_Dailies",[[
 ]])
 
 ZygorGuidesViewer:RegisterInclude("A_Beasts_of_Fable_D",[[
-		goto Vale of Eternal Blossoms 86.6,60.0
+		goto Vale of Eternal Blossoms,86.6,60.0
 		.talk Sara Finkleswitch##64572
 		..accept Beasts of Fable Book I##32604
 		..accept Beasts of Fable Book II##32868
 		..accept Beasts of Fable Book III##32869
 	step
-		goto Vale of Eternal Blossoms 11.0,70.9
+		goto Vale of Eternal Blossoms,11.0,70.9
 		.' _No-No_
 		.' This enemy is aquatic.
 		.' It is strong against undead and weak to flying attacks.
@@ -25883,7 +25883,7 @@ ZygorGuidesViewer:RegisterInclude("A_Beasts_of_Fable_D",[[
 		.' No-No defeated |q 32869/2
 		'|modelnpc 68559
 	step
-		goto Valley of the Four Winds 40.5,43.7
+		goto Valley of the Four Winds,40.5,43.7
 		.' _Lucky Yi_
 		.' This enemy is a critter.
 		.' Is is strong against Elementals and weak to beast attacks.
@@ -25891,7 +25891,7 @@ ZygorGuidesViewer:RegisterInclude("A_Beasts_of_Fable_D",[[
 		.' Lucky Yi defeated |q 32868/2
 		'|modelnpc 68561
 	step
-		goto Valley of the Four Winds 25.3,78.5
+		goto Valley of the Four Winds,25.3,78.5
 		.' _Greyhoof_
 		.' This enemy is a beast.
 		.' It is strong against humanoids and weak against mechanical pets.
@@ -25899,7 +25899,7 @@ ZygorGuidesViewer:RegisterInclude("A_Beasts_of_Fable_D",[[
 		.' Greyhoof defeated |q 32868/1
 		'|modelnpc 68560
 	step
-		goto Krasarang Wilds 36.3,37.3
+		goto Krasarang Wilds,36.3,37.3
 		.' _Skitterer Xi'a_
 		.' This enemy is aquatic.
 		.' It is strong against undead and weak to flying pets.
@@ -25907,7 +25907,7 @@ ZygorGuidesViewer:RegisterInclude("A_Beasts_of_Fable_D",[[
 		.' Xi'a defeated |q 32868/3
 		'|modelnpc 68566
 	step
-		goto Dread Wastes 26.1,50.2
+		goto Dread Wastes,26.1,50.2
 		.' _Gorespine_
 		.' This enemy is a beast.
 		.' It is strong against humanoids and weak against mechanical pets.
@@ -25915,7 +25915,7 @@ ZygorGuidesViewer:RegisterInclude("A_Beasts_of_Fable_D",[[
 		.' Gorespine defeated |q 32869/1
 		'|modelnpc 68558
 	step
-		goto Townlong Steppes 72.3,79.8
+		goto Townlong Steppes,72.3,79.8
 		.' _Ti'un the Wanderer_
 		.' This enemy is aquatic.
 		.' It is strong against undead and weak to flying pets.
@@ -25923,14 +25923,14 @@ ZygorGuidesViewer:RegisterInclude("A_Beasts_of_Fable_D",[[
 		.' Ti'un the Wanderer defeated |q 32869/3
 		'|modelnpc 68562
 	step
-		goto Kun-Lai Summit 35.2,56.2
+		goto Kun-Lai Summit,35.2,56.2
 		.' This enemy is a beast.
 		.' It is strong against humanoids and weak against mechanical pets.
 		.' I would suggest using a team of mechanical pets against this enemy.
 		.' Kafi defeated |q 32604/2
 		'|modelnpc 68563
 	step
-		goto Kun-Lai Summit 67.9,84.7
+		goto Kun-Lai Summit,67.9,84.7
 		.' _Dos-Ryga_
 		.' This enemy is aquatic.
 		.' It is strong against undead and weak to flying pets.
@@ -25938,7 +25938,7 @@ ZygorGuidesViewer:RegisterInclude("A_Beasts_of_Fable_D",[[
 		.' Dos-Ryga defeated |q 32604/3
 		'|modelnpc 68564
 	step
-		goto The Jade Forest 48.4,71.0
+		goto The Jade Forest,48.4,71.0
 		.' _Ka'wi the Gorger_
 		.' This enemy is a beast.
 		.' It is strong against humanoids and weak against mechanical pets.
@@ -25946,7 +25946,7 @@ ZygorGuidesViewer:RegisterInclude("A_Beasts_of_Fable_D",[[
 		.' Ka'wi the Gorger defeated |q 32604/1
 		'|modelnpc 68555
 	step
-		goto The Jade Forest 57.0,29.1
+		goto The Jade Forest,57.0,29.1
 		.' _Nitun_
 		.' This enemy is a critter.
 		.' Is is strong against Elementals and weak to beast attacks.
@@ -25954,7 +25954,7 @@ ZygorGuidesViewer:RegisterInclude("A_Beasts_of_Fable_D",[[
 		.' Nitun defeated |q 32604/4
 		'|modelnpc 68565
 	step
-		goto Vale of Eternal Blossoms 86.6,60.0
+		goto Vale of Eternal Blossoms,86.6,60.0
 		.talk Sara Finkleswitch##64572
 		..turnin Beasts of Fable Book I##32604
 		..turnin Beasts of Fable Book II##32868
@@ -25973,11 +25973,11 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 ///prequests
 	step
 	label prequests
-		goto Vale of Eternal Blossoms 83.9,58.6
+		goto Vale of Eternal Blossoms,83.9,58.6
 		.talk Lyalia##64610
 		..accept Thunder Calls##32679
 	step
-		goto Townlong Steppes 49.9,69.0
+		goto Townlong Steppes,49.9,69.0
 		.talk Vereesa Windrunner##70360
 		..turnin Thunder Calls##32679
 		..accept The Storm Gathers##32681
@@ -25988,14 +25988,14 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		.' Speak with Vereesa |q 32681/1
 		.' Isle of Thunder discovered |q 32681/2
 	step
-		goto Isle of Thunder 34.6,89.5
+		goto Isle of Thunder,34.6,89.5
 		.talk Lady Jaina Proudmoore##67992
 		..turnin The Storm Gathers##32681
 		|next "start"
 //stage2
 	step
 	label scenario1
-		goto Isle of Thunder/0 34.6,89.4
+		goto Isle of Thunder/0,34.6,89.4
 		.talk Lady Jaina Proudmoore##67992
 		..accept The Assault on Shaol'mara##32644
 	step
@@ -26006,7 +26006,7 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 	step
 		.' Enter the Assault on Shaol'mara Scenario. |goto 933 |noway|c
 	step
-		goto 933 35.0,89.8
+		goto 933,35.0,89.8
 		.clicknpc Silver Covenant Hippogryph##70234
 		scenariogoal 22869
 	step
@@ -26041,23 +26041,23 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 	step
 		scenariostage 5
 	step
-		goto Isle of Thunder/0 63.2,72.2
+		goto Isle of Thunder/0,63.2,72.2
 		.talk Lady Jaina Proudmoore##67992
 		..turnin The Assault on Shaol'mara##32644
 		|next "start"
 //stage3
 	step
 	label scenario2
-		goto Isle of Thunder/0 63.2,72.2
+		goto Isle of Thunder/0,63.2,72.2
 		.talk Lady Jaina Proudmoore##67992
 		..accept Tear Down This Wall!##32654
 	step
-		goto Isle of Thunder/0 63.2,72.2
+		goto Isle of Thunder/0,63.2,72.2
 		.talk Lady Jaina Proudmoore##67992
 		.' Tell her you're ready to tear down the wall! |q 32654/1
 		.' Enter the _Tear Down This Wall!_ Scenario |goto 933 |noway|c
 	step
-		goto 933 48.4,50.9
+		goto 933,48.4,50.9
 		.' Click the _Heavy Explosive_
 		.' Acquire the Heavy Explosives.
 		scenariogoal 22696
@@ -26087,23 +26087,23 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		goto 54.1,46.2 |n
 		.' Click the Portal to the Isle of Thunder |goto Isle of Thunder/0 64.1,72.5 |noway |c
 	step
-		goto Isle of Thunder/0 63.2,72.2
+		goto Isle of Thunder/0,63.2,72.2
 		.talk Lady Jaina Proudmoore##67992
 		..turnin Tear Down This Wall!##32654
 		|next "start"
 //stage4
 	step
 	label scenario3
-		goto Isle of Thunder/0 63.2,72.2
+		goto Isle of Thunder/0,63.2,72.2
 		.talk Lady Jaina Proudmoore##67992
 		..accept To the Skies!##32652
 	step
-		goto Isle of Thunder/0 63.2,72.2
+		goto Isle of Thunder/0,63.2,72.2
 		.talk Lady Jaina Proudmoore##67992
 		.' Tell her you're ready! |q 32652/1
 		.' Enter the _To the Skies!_ Scenario |goto 933 |noway|c
 	step
-		goto 933 63.3,74.3
+		goto 933,63.3,74.3
 		.clicknpc Thunderwing##70208
 		.' Mount the Thunderwing.
 		scenariogoal 22666
@@ -26126,7 +26126,7 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 	step
 		scenariostage 3
 	 step
-		goto 933 49.3,26.0
+		goto 933,49.3,26.0
 		.talk Taoshi##69810
 		.' Tell her lets go.
 		scenariogoal 22738
@@ -26136,7 +26136,7 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		.' Watch _Taoshi_ get rid of the Cave-in.
 		scenariogoal 22740
 	step
-		goto 933/1 34.8,55.1
+		goto 933/1,34.8,55.1
 		.' Make your way to the Mine Entrance.
 		scenariogoal 22741
 	step
@@ -26154,18 +26154,18 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		goto 31.4,77.7 |n
 		.' Click the _Portal to the Isle of Thunder_. |goto Isle of Thunder/0 64.1,72.5 |noway |c
 	step
-		goto Isle of Thunder 63.2,72.2
+		goto Isle of Thunder,63.2,72.2
 		.talk Lady Jaina Proudmoore##67992
 		..turnin To the Skies!##32652
 		|next "start"
 //stage5
 	step
 	label scenario4
-		goto Isle of Thunder/0 63.2,73.9
+		goto Isle of Thunder/0,63.2,73.9
 		.talk Taoshi##70297
 		..accept A Bold Idea##32655
 	step
-		goto Isle of Thunder/0 63.2,73.9
+		goto Isle of Thunder/0,63.2,73.9
 		.talk Taoshi##70297
 		.' Tell her let's break into the shipyard. |goto 933 62.5,54.6 |noway|c
 	step
@@ -26219,54 +26219,54 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		goto 57.8,41.9 |n
 		.' Click the portal to the Violet Rise. |goto Isle of Thunder |noway|c
 	step
-		goto Isle of Thunder/0 63.2,72.2
+		goto Isle of Thunder/0,63.2,72.2
 		.talk Lady Jaina Proudmoore##67992
 		..turnin A Bold Idea##32655
 		|next "start"
 //stage5end
 	step
 	label post5
-		goto Isle of Thunder/0 63.2,72.2
+		goto Isle of Thunder/0,63.2,72.2
 		.talk Lady Jaina Proudmoore##67992
 		..accept The Fall of Shan Bu##32656
 		.' Talk to her to queue up for the solo scenario.
 		.' Enter The Fall of Shan Bu Scenario |goto 933 |noway |c
 	step
-		goto 933 59.0,43.8
+		goto 933,59.0,43.8
 		.talk Vereesa Windrunner##69615
 		.' Tell her that you're ready. |scenariogoal 22742
 	step
-		goto 933 58.1,41.3
+		goto 933,58.1,41.3
 		scenariogoal 22799
 		.kill 14 Zandalari Stoneshield##69527+ |scenariogoal 22675
 		scenariostage 1 |override
 	step
-		goto 933 57.9,41.0
+		goto 933,57.9,41.0
 		.kill 2 Palace Gatekeeper##69510+ |scenariogoal 22685
 		scenariostage 2 |override
 	step
-		goto 933 59.3,38.9
+		goto 933,59.3,38.9
 		scenariogoal 22807
 	step
-		goto 933 59.9,38.2
+		goto 933,59.9,38.2
 		.from Quilen Guardian##69506+, Zandalari Stoneshield##69865+, Shan'ze Electrocutioner##69525+ |scenariogoal 22734
 		scenariostage 3 |override
 	step
-		goto 933 60.0,37.8
+		goto 933,60.0,37.8
 		.from Shan Bu##69534+, Onyx Stormclaw##69580+ |scenariogoal 22683
 		scenariostage 4 |override
 	step
-		goto 933 58.2,42.5 |n
+		goto 933,58.2,42.5 |n
 		.' Click the Portal to the Isle of Thunder |goto Isle of Thunder/0 64.1,72.5|noway|c
 	step
-		goto Isle of Thunder/0 63.2,72.2
+		goto Isle of Thunder/0,63.2,72.2
 		.talk Lady Jaina Proudmoore##67992
 		..turnin The Fall of Shan Bu##32656
 		|next "start"
 //dailies
 	step
 	label dailies
-		goto Isle of Thunder 34.6,89.5
+		goto Isle of Thunder,34.6,89.5
 		.talk Lady Jaina Proudmoore##67992
 		..accept Za'Tual##32733 |or
 		..accept Competing Magic##32576 |or
@@ -26316,7 +26316,7 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		..'Click PvE at the assignment screen. |questchoice 26 64 -- PvE
 		|only if thunderstage()>=2 and completedq(32644)
 	step
-		goto Isle of Thunder/0 63.2,72.2
+		goto Isle of Thunder/0,63.2,72.2
 		.talk Lady Jaina Proudmoore##67992
 		..accept Za'Tual##32733
 		|noquest
@@ -26345,7 +26345,7 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		|only if thunderstage()>=2 and completedq(32644)
 // Ihgaluk Crag
 	step
-		goto Isle of Thunder 42.4,75.0
+		goto Isle of Thunder,42.4,75.0
 		.talk Archmage Modera##67996
 		..turnin Ihgaluk Crag##32732
 		..accept Subtle Encouragement##32606
@@ -26356,13 +26356,13 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		|only if havequest(32732) or completedq(32732)
 		|only if thunderstage()==1
 	step
-		goto Isle of Thunder 42.3,75.2
+		goto Isle of Thunder,42.3,75.2
 		.talk Lyalia##69675
 		..accept The Residents of Ihgaluk##32545
 		|noquest
 		|only if completedq(32732) and thunderstage()==1
 	step
-		goto Isle of Thunder 42.4,74.9
+		goto Isle of Thunder,42.4,74.9
 		.talk Sanitation Sorcerer Stephen Litmatch##69677
 		..accept The Creeping Carpet of Ihgaluk##32547
 		..accept Just Some Light Clean-Up Work##32546
@@ -26370,7 +26370,7 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		|noquest
 		|only if completedq(32732) and thunderstage()==1
 	step
-		goto Isle of Thunder 55.7,74.4
+		goto Isle of Thunder,55.7,74.4
 		.talk Archmage Modera##67996
 		..turnin Ihgaluk Crag##32732
 		..accept Subtle Encouragement##32606
@@ -26394,12 +26394,12 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		|noquest
 		|only if completedq(32732) and thunderstage()>=2 and completedq(32644)
 	step
-		goto Isle of Thunder 42.3,75.0
+		goto Isle of Thunder,42.3,75.0
 		.talk Image of Archmage Vargoth##69678
 		..accept Skin of the Saurok##32549 |tip NOTE: This quest will give you the ability to disguise yourself as a saurok. This spell will happen automatically whenever you are outside of combat and inside Ihgaluk Crag. If you try to attack another saurok, the disguise will vanish and all saurok will be hostile to you until you are out of combat again.
 		|only if not completedq(32549) and thunderstage()==1
 	step
-		goto Isle of Thunder 47.2,79.6
+		goto Isle of Thunder,47.2,79.6
 		.from Skumblade Filthmonger##69228+, Skumblade Brute##69338+, Skumblade Scavenger##69227+ |q 32549/1
 		|only if havequest(32549)
 	step
@@ -26412,7 +26412,7 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		|confirm
 		|only if havequest(32606)
 	step
-		goto Isle of Thunder 52.7,80.2
+		goto Isle of Thunder,52.7,80.2
 		.from Quivering Filth##69251+
 		.' Disperse 75 Filth |q 32546/1
 		|only if havequest(32546)
@@ -26443,7 +26443,7 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		.' Recover Distressed Construct |q 32537/3
 		|only if havequest(32537)
 	step
-		goto Isle of Thunder 49.8,76.2
+		goto Isle of Thunder,49.8,76.2
 		.kill 1 Skumblade Saur-Priest##69229+ |q 32545/2 |tip He's on top of the mountain on a cliffside.
 		|only if havequest(32545)
 	step
@@ -26451,31 +26451,31 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		..kill 1 Skumblade Seadragon##69226+ |q 32545/3
 		|only if havequest(32545)
 	step
-		goto Isle of Thunder/0 53.6,91.2
+		goto Isle of Thunder/0,53.6,91.2
 		.clicknpc Buried Sunreaver Construct##69288
 		.' Recover Buried Construct |q 32537/2
 		|only if havequest(32537)
 	step
-		goto Isle of Thunder/0 46.6,71.9
+		goto Isle of Thunder/0,46.6,71.9
 		.clicknpc Malfunctioning Sunreaver##69289
 		.' Recover Malfunctioning Construct |q 32537/4
 		|only if havequest(32537)
 	step
-		goto Isle of Thunder/0 44.2,81.8
+		goto Isle of Thunder/0,44.2,81.8
 		.clicknpc Disabled Sunreaver Construct##69439
 		.' Recover Disabled Construct |q 32537/1
 		|only if havequest(32537)
 	step
-		goto Isle of Thunder/0 45.1,84.0
+		goto Isle of Thunder/0,45.1,84.0
 		.talk Magister Yalis##69682 |tip He's in a magic bubble, you will need to approach him in order to see him. If you have trouble finding him, look for the moving streaks of light.
 		.' Speak with Magister Yalis |q 32536/1
 		|only if havequest(32536)
 	step
-		goto Isle of Thunder 53.2,90.0
+		goto Isle of Thunder,53.2,90.0
 		..kill Skumblade Seadragon##69226 |q 32545/3
 		|only if havequest(32545)
 	step
-		goto Isle of Thunder/0 53.6,91.2
+		goto Isle of Thunder/0,53.6,91.2
 		.talk Buried Silver Covenant Construct##69688
 		.' Recover Buried Construct |q 32537/2
 		|only if havequest(32537)
@@ -26487,11 +26487,11 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		|modelnpc 69234
 		|only if havequest(32547)
 	step
-		goto Isle of Thunder 50.1,78.0
+		goto Isle of Thunder,50.1,78.0
 		.kill 3 Fetid Meat Pile##69247 |q 32548/1 |only if havequest(32548)
 		|only if havequest(32548)
 	step
-		goto Isle of Thunder 52.3,82.6
+		goto Isle of Thunder,52.3,82.6
 		.from Skumblade Fleshripper##69210+, Skumblade Scavenger##69227+, Skumblade Filthmonger##69228+
 		..kill 10 Skumblade saurok |q 32535/1 |only if havequest(32535)
 		.' Click the _Plant Mogu Weapon_ icon that appears at the center of your screen. |only if havequest(32606)
@@ -26499,7 +26499,7 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		|only if havequest(32606) or havequest(32535) or havequest(32548)
 //VH Daily
 	step
-		goto Isle of Thunder/0 54.6,57.4
+		goto Isle of Thunder/0,54.6,57.4
 		.' Follow the Coordinates on the Map here. |tip The Pterrorwing will be flying and landing around these 6 different locations.
 		.clicknpc Wild Pterrorwing Hatchling##69428
 		.' Recover a Wild Thunder Ptrerrorwing Hatchling |q 32571/1
@@ -26511,23 +26511,23 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		'|goto 54.6,57.4
 		|only if havequest(32571)
 	step
-		goto Isle of Thunder 49.5,65.4
+		goto Isle of Thunder,49.5,65.4
 		.from Shan'ze Animator##70069+, Shan'ze Animator##70069+, Shan'ze Bloodseeker##69431+ |only if havequest(32573)
 		..kill 7 Diremoor Shan'ze mogu |q 32573/1 |only if havequest(32573)
 		..kill 6 Animated Warrior##67473+ |q 32572/1 |only if havequest(32572)
 		|tip If you lure the enemies into the squad of soldiers here, they will do the killing for you.
 		|only if havequest(32572) or havequest(32573)
 	step
-		goto Isle of Thunder/0 42.3,64.0
+		goto Isle of Thunder/0,42.3,64.0
 		..kill Zandalari Colossus##69405 |q 32575/1 |tip It patrols around this half of the Diremoor path. Some searching may be necessary.
 		|only if havequest(32575)
 	step
-		goto Isle of Thunder/0 50.5,51.4
+		goto Isle of Thunder/0,50.5,51.4
 		..kill 1 Mighty Devilsaur##69406 |q 32574/1 |tip It patrols around this half of the Diremoor path. Some searching may be necessary.
 		|only if havequest(32574)
 // Za'Tual
 	step
-		goto Isle of Thunder/0 42.2,66.3
+		goto Isle of Thunder/0,42.2,66.3
 		.talk Archmage Lan'dalock##70517
 		..turnin Za'Tual##32733
 		..accept Harbingers of the Loa##32540
@@ -26550,17 +26550,17 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		|noquest
 		|only if completedq(32733) and thunderstage()>=2
 	step
-		goto Isle of Thunder 39.8,65.3
+		goto Isle of Thunder,39.8,65.3
 		.click Tec'uat's Sacrificial Altar##13502
 		.' Tec'uat's Altar destroyed |q 32538/2
 		|only if havequest(32538)
 	step
-		goto Isle of Thunder/0 41.1,69.4
+		goto Isle of Thunder/0,41.1,69.4
 		.from Zandalari Arcweaver##69224+
 		.' Tormented Skyscreamer freed |q 32544/1
 		|only if havequest(32544)
 	step
-		goto Isle of Thunder 38.7,78.6
+		goto Isle of Thunder,38.7,78.6
 		.click Pa'chek's Sacrificial Altar##13502
 		.' Pa'chek's Altar destroyed |q 32538/3
 		|only if havequest(32538)
@@ -26576,19 +26576,19 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		.' You can wait for this one to respawn, or find another at [38.9,76.5]
 		|only if havequest(32540)
 	step
-		goto Isle of Thunder 30.9,77.5
+		goto Isle of Thunder,30.9,77.5
 		.' Run over _Hatchling Skyscreamers_ to frighten them.
 		.' 12 Hatchling Skyscreamers frightened |q 32541/1
 		'|modelnpc Hatchling Skyscreamer##69128+
 		|only if havequest(32541)
 	step
-		goto Isle of Thunder/0 40.1,72.4
+		goto Isle of Thunder/0,40.1,72.4
 		.click Zandalari Offering##13585
 		..' 6 Zandalari Offerings destroyed |q 32539/1
 		.' More offerings can be found around [40.6,74.1]
 		|only if havequest(32539)
 	step
-		goto Isle of Thunder 35.3,75.8
+		goto Isle of Thunder,35.3,75.8
 		.kill 3 Zandalari Beastcaller##69065+ |q 32542/1
 		.kill 3 Zandalari Jaguar Warrior##69171+ |q 32542/2
 		.kill 3 Zandalari Spiritbinder##69225+ |q 32542/3
@@ -26599,7 +26599,7 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		|only if havequest(32543)
 // The Court of Bones
 	step
-		goto Isle of Thunder/0 40.2,59.6
+		goto Isle of Thunder/0,40.2,59.6
 		.talk Narasi Snowdawn##67997
 		..turnin The Court of Bones##32731
 		..accept Soul Surrender##32526
@@ -26629,27 +26629,27 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		..' Rescue 6 Scouts  |q 32526/1
 		|only if havequest(32526)
 	step
-		goto Isle of Thunder/0 35.0,47.9
+		goto Isle of Thunder/0,35.0,47.9
 		..kill Kaida the Bloodletter##69250 |q 32530/1
 		|only if havequest(32530)
 	step
-		goto Isle of Thunder/0 33.0,56.7
+		goto Isle of Thunder/0,33.0,56.7
 		.from Shan'ze Thundercaller##69264+
 		|tip You will need to just down in the water here.
 		.' Shan'ze Thundercallers' ritual stopped |q 32529/1
 		|only if havequest(32529)
 	step
-		goto Isle of Thunder/0 35.1,63.8
+		goto Isle of Thunder/0,35.1,63.8
 		.from Shan'ze Soulripper##69903+
 		..' Disrupt the Ancient Stone Conqueror ritual |q 32531/1
 		|only if havequest(32531)
 	step
-		goto Isle of Thunder 36.8,56.5 |subzone Hall of the Exalted
+		goto Isle of Thunder,36.8,56.5 |subzone Hall of the Exalted
 		.' Use your Incantation of Gura here. |use Incantation of Gura##93803
 		..kill 1 Gura the Reclaimed##69241 |q 32528/1
 		|only if havequest(32528)
 	step
-		goto Isle of Thunder 35.5,52.3
+		goto Isle of Thunder,35.5,52.3
 		.from Shan'ze Gravekeeper##69235+, Shan'ze Thundercaller##69264+ |q 32527/1 |only if havequest(32527) |tip The Thundercallers will cast Chain Lightning which places a circular spell under your character that you will need to move out of to avoid heavy damage.
 		.from Risen Ancestor##69237+ |q 32532/1 |only if havequest(32532)
 		.from Grave Guardian##69240+ |q 32533/1 |only if havequest(32533) |tip They sit as stone statues, you need to activate them first.
@@ -26672,12 +26672,12 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		..turnin Ashes of the Enemy##32525
 		..turnin Stone Cold##32533
 	step
-		goto Isle of Thunder/0 40.2,59.6
+		goto Isle of Thunder/0,40.2,59.6
 		.talk Narasi Snowdawn##67997
 		..turnin Soul Surrender##32526
 		..turnin Grave Circumstances##32527
 	step
-		goto Isle of Thunder/0 40.2,59.6
+		goto Isle of Thunder/0,40.2,59.6
 		.talk Narasi Snowdawn##67997
 		..accept The Beast Pens##32567
 		..accept Imposing Threat##32581
@@ -26698,7 +26698,7 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		..turnin Heinous Sacrifice##32538
 		|only if thunderstage()>=2
 	step
-		goto Isle of Thunder/0 42.2,66.3
+		goto Isle of Thunder/0,42.2,66.3
 		.talk Archmage Lan'dalock##70517
 		..turnin Harbingers of the Loa##32540
 		..turnin Dangers of Za'Tual##32543
@@ -26710,19 +26710,19 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		|noquest
 		|only if thunderstage()>=2 and (havequest(32733) or completedq(32733))
 	step
-		goto Isle of Thunder 55.5,74.4
+		goto Isle of Thunder,55.5,74.4
 		.talk Sanitation Sorcerer Stephen Litmatch##69677
 		..turnin The Creeping Carpet of Ihgaluk##32547
 		..turnin Just Some Light Clean-Up Work##32546
 		..turnin Left To Rot##32548
 		|only if thunderstage()>=2 and completedq(32732)
 	step
-		goto Isle of Thunder 55.9,74.4
+		goto Isle of Thunder,55.9,74.4
 		.talk Lyalia##69675
 		..turnin The Residents of Ihgaluk##32545
 		|only if thunderstage()>=2 and completedq(32732)
 	step
-		goto Isle of Thunder 55.8,74.4
+		goto Isle of Thunder,55.8,74.4
 		.talk Archmage Modera##67996
 		..turnin Subtle Encouragement##32606
 		..turnin The Skumblade Threat##32535
@@ -26730,7 +26730,7 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		..turnin Manipulating the Saurok##32536
 		|only if thunderstage()>=2 and (havequest(32732) or completedq(32732))
 	step
-		goto Isle of Thunder 55.8,74.4
+		goto Isle of Thunder,55.8,74.4
 		.talk Archmage Modera##67996
 		..accept Among the Bones##32578
 		..accept No Time To Rest##32568
@@ -26742,7 +26742,7 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		|only if thunderstage()>=2 and (havequest(32732) or completedq(32732))
 // Za'Tual
 	step
-		goto Isle of Thunder 42.4,75.0
+		goto Isle of Thunder,42.4,75.0
 		.talk Archmage Modera##67996
 		..turnin Subtle Encouragement##32606
 		..turnin De-Constructed##32537
@@ -26750,19 +26750,19 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		..turnin The Skumblade Threat##32535
 		|only if thunderstage()==1 and (havequest(32606) or havequest(32537) or havequest(32536) or havequest(32535))
 	step
-		goto Isle of Thunder 42.3,75.2
+		goto Isle of Thunder,42.3,75.2
 		.talk Lyalia##69675
 		..turnin The Residents of Ihgaluk##32545
 		|only if havequest(32545) and thunderstage()==1
 	step
-		goto Isle of Thunder 42.4,74.9
+		goto Isle of Thunder,42.4,74.9
 		.talk Sanitation Sorcerer Stephen Litmatch##69677
 		..turnin The Creeping Carpet of Ihgaluk##32547
 		..turnin Just Some Light Clean-Up Work##32546
 		..turnin Left To Rot##32548
 		|only if completedq(32732) and thunderstage()==1
 	step
-		goto Isle of Thunder/0 31.6,83.1
+		goto Isle of Thunder/0,31.6,83.1
 		.talk Archmage Lan'dalock##70517
 		..turnin Harbingers of the Loa##32540
 		..turnin Dangers of Za'Tual##32543
@@ -26770,20 +26770,20 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		|only if havequest(32540) or havequest(32543) or havequest(32542)
 		|only if thunderstage()==1
 	step
-		goto Isle of Thunder/0 31.5,83.2
+		goto Isle of Thunder/0,31.5,83.2
 		.talk Ako##69673
 		..turnin Pterrible Ptorment##32544
 		..turnin Preventing a Future Threat##32541
 		|only if thunderstage()==1
 	step
-		goto Isle of Thunder/0 31.7,83.2
+		goto Isle of Thunder/0,31.7,83.2
 		.talk Dalvin Jaacor##69674
 		..turnin Dark Offerings##32539
 		..turnin Heinous Sacrifice##32538
 		|only if thunderstage()==1
 // Violet Rise Turnin
 	step
-		goto Isle of Thunder/0 62.7,73.6
+		goto Isle of Thunder/0,62.7,73.6
 		.talk Captain Elleane Wavecrest##67995
 		..turnin The Sleepless Legion##32572
 		..turnin Enemies Beneath the Tower##32573
@@ -26796,11 +26796,11 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		.talk Vereesa Windrunner##67993
 		..turnin The Shuddering Moor##32574
 	step
-		goto Isle of Thunder/0 63.2,72.1
+		goto Isle of Thunder/0,63.2,72.1
 		.talk Vereesa Windrunner##69600
 		..turnin The Zandalari Colossus##32575
 	step
-		goto Isle of Thunder 63.2,72.2
+		goto Isle of Thunder,63.2,72.2
 		.talk Lady Jaina Proudmoore##67992
 		..accept The Beast Pens##32567 |or 2
 		..accept Imposing Threat##32581 |or 2
@@ -26812,7 +26812,7 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		|noquest
 		|only if thunderstage()>=2 and (completedq(32572) or completedq(32573) or completedq(32571) or completedq(32574) or completedq(32575))
 	step
-		goto Isle of Thunder 34.6,89.5
+		goto Isle of Thunder,34.6,89.5
 		.talk Lady Jaina Proudmoore##67992
 		..accept The Beast Pens##32567 |or
 		..accept Imposing Threat##32581 |or
@@ -26826,24 +26826,24 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		|only if thunderstage()==1
 // Conqueror's Terrace
 	step
-		goto Isle of Thunder 61.8,61.4
+		goto Isle of Thunder,61.8,61.4
 		.kill Nurkala##69663 |q 32580/1 |only if havequest(32580)
 		.kill Nurkala##69663 |q 32584/1 |only if havequest(32584)
 		|only if havequest(32580) or havequest(32584)
 	step
-		goto Isle of Thunder/0 45.7,59.5
+		goto Isle of Thunder/0,45.7,59.5
 		..kill 1 Horgak the Enslaver##70176 |q 32581/1 |only if havequest(32581)
 		..kill 1 Horgak the Enslaver##70176 |q 32577/1 |only if havequest(32577)
 		|only if havequest(32581) or havequest(32577)
 	step
-		goto Isle of Thunder/0 43.9,69.0
+		goto Isle of Thunder/0,43.9,69.0
 		..kill 1 Arcweaver Jor'guva##69665 |q 32579/1 |only if havequest(32579)
 		..kill 1 Arcweaver Jor'guva##69665 |q 32576/1 |only if havequest(32576)
 		|only if havequest(32579) or havequest(32576)
 //The Beast Pens
 	step
 	label beast_pens
-		goto Isle of Thunder 51.9,47.0
+		goto Isle of Thunder,51.9,47.0
 		.' Find Scout Captain Daelin at the Beast Pens |q 32567/1
 		|only if havequest(32567)
 	step
@@ -26863,22 +26863,22 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		|noquest
 		|only if completedq(32567) or completedq(32567)
 	step
-		goto Isle of Thunder 58.5,51.9
+		goto Isle of Thunder,58.5,51.9
 		.from Zandalari Soultwister##69296+, Zandalari Haruspex##69297+, Zandalari Bloodguard##69294+,Zandalari Acolyte##69295+ |q 32560
 		..kill 8 Conqueror's Terrace Zandalari |q 32560/1
 		|only if havequest(32560)
 	 step
-		goto Isle of Thunder 53.3,44.3
+		goto Isle of Thunder,53.3,44.3
 		.from Loa-Infused Bladetalon##69306+
 		..kill Loa Speaker##69302 |q 32552/1
 		|only if havequest(32552)
 	step
-		goto Isle of Thunder/0 53.4,42.2
+		goto Isle of Thunder/0,53.4,42.2
 		.from 6 Master Caller##69286+, Zandalari Fetish-Binder##69155
 		..'Binding ritual disrupted |q 32553/1
 		|only if havequest(32553)
 	 step
-		goto Isle of Thunder 49.2,40.9
+		goto Isle of Thunder,49.2,40.9
 		.from Zandalari Fetish-Binder##69155+, Zandalari Beastlord##69144+, Zandalari Fetish-Binder##69155+, Zandalari Saurcaller##69154+ |only if havequest(32550)
 		.kill 10 Beast Pens Trolls |q 32550/1 |only if havequest(32550)
 		.click Saur Fetish |only if havequest(32554)
@@ -26891,7 +26891,7 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		.kill 10 Trained Compy |q 32551/2 |only if havequest(32551)
 		|only if havequest(32550) or havequest(32551) or havequest(32554)
 	step
-		goto Isle of Thunder 51.8,47.1
+		goto Isle of Thunder,51.8,47.1
 		.talk Scout Captain Daelin##67998
 		..turnin Compy Stomp##32551
 		..turnin Saur Loser##32550
@@ -26907,7 +26907,7 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		|noquest
 		|only if havequest(32552) or havequest(32553) or completedq(32552) or completedq(32553)
 	step
-		goto Isle of Thunder 51.8,47.1
+		goto Isle of Thunder,51.8,47.1
 		.talk Scout Captain Daelin##67998
 		..accept Among the Bones##32578 |or
 		..accept No Time To Rest##32568 |or
@@ -26916,48 +26916,48 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		|only if completedq(32567)
 //Post Beast Pen Hubs
 	step
-		goto Isle of Thunder/0 49.3,33.0 |n
+		goto Isle of Thunder/0,49.3,33.0 |n
 		.' Enter the cave here. |goto Isle of Thunder/1|noway|c
 		|only if havequest(32586) or havequest(32588)
 	step
-		goto Isle of Thunder/1 34.6,70.8
+		goto Isle of Thunder/1,34.6,70.8
 		.' Use your Arcane Emancipator on _Agent Reginald_. |use Arcane Emancipator##93761
 		.' Agent Reginald rescued |q 32588/1
 		'|modelnpc 69751
 		|only if havequest(32588)
 	step
-		goto Isle of Thunder/1 40.8,53.8
+		goto Isle of Thunder/1,40.8,53.8
 		.' Use your Arcane Emancipator on _Agent Grisel_. |use Arcane Emancipator##93761
 		.' Agent Grisel rescued |q 32588/2
 		'|modelnpc 69752
 		|only if havequest(32588)
 	step
-		goto Isle of Thunder/1 49.4,44.0
+		goto Isle of Thunder/1,49.4,44.0
 		.' Use your Arcane Emancipator on _Agent Grisel_. |use Arcane Emancipator##93761
 		.' Agent Crowley rescued |q 32588/3
 		'|modelnpc 69754
 		|only if havequest(32588)
 	step
-		goto Isle of Thunder/0 54.9,31.3
+		goto Isle of Thunder/0,54.9,31.3
 		.from Metal Lord Mono-Han##69326 |q 32588/4
 		|only if havequest(32588)
 	step
-		goto Isle of Thunder/1 21.0,69.9
+		goto Isle of Thunder/1,21.0,69.9
 		.click Lightning Drill
 		.' Destroy the Western Lightning Drill |q 32586/1
 		|only if havequest(32586)
 	step
-		goto Isle of Thunder/1 32.6,37.5
+		goto Isle of Thunder/1,32.6,37.5
 		.click Lightning Drill
 		.' Destroy the Central Lightning Drill |q 32586/2
 		|only if havequest(32586)
 	step
-		goto Isle of Thunder/1 62.2,15.4
+		goto Isle of Thunder/1,62.2,15.4
 		.click Lightning Drill
 		.' Destroy the Eastern Lightning Drill |q 32586/3
 		|only if havequest(32586)
 	step
-		goto Isle of Thunder/0 54.9,31.3
+		goto Isle of Thunder/0,54.9,31.3
 		.from Metal Lord Mono-Han##69326 |q 32586/4
 		|only if havequest(32586)
 	step
@@ -26967,11 +26967,11 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		..accept Forge Ahead!##32587
 		|only if havequest(32586) or completedq(32586) or havequest(32588) or completedq(32588)
 	step
-		goto Isle of Thunder/0 57.7,34.0
+		goto Isle of Thunder/0,57.7,34.0
 		.from Itoka##69461 |q 32587/1
 		|only if havequest(32587)
 	step
-		goto Isle of Thunder 55.7,38.6
+		goto Isle of Thunder,55.7,38.6
 		.from Fleshcrafter Hoku##69435
 		..get Mogu Codex Fragment |q 32587/2
 		|only if havequest(32587)
@@ -26985,7 +26985,7 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		|noquest
 		|only if havequest(32568) or completedq(32568)
 	step
-		goto Isle of Thunder 61.9,52.1
+		goto Isle of Thunder,61.9,52.1
 		.talk Miura Brightweaver##67999
 		..accept The More You Know##32556
 		..accept Centuries in Sentries##32555
@@ -26993,27 +26993,27 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		|noquest
 		|only if completedq(32568)
 	step
-		goto Isle of Thunder/0 60.2,54.2
+		goto Isle of Thunder/0,60.2,54.2
 		.from Priest of the Serpent##69567
 		..kill Guardian Tak'u##69336 |q 32559/1
 		|only if havequest(32559)
 	step
-		goto Isle of Thunder/0 59.4,56.7
+		goto Isle of Thunder/0,59.4,56.7
 		 .from Spiritbinder Tu'chek##69301
 		.get Mask of the Dark Mystic |q 32558/1
 		|only if havequest(32560)
 	step
-		goto Isle of Thunder/0 56.7,46.3
+		goto Isle of Thunder/0,56.7,46.3
 		.from Arcanital Ra'kul##69300
 		.get Mask of the Dark Mystic |q 32558/2
 		|only if havequest(32560)
 	step
-		goto Isle of Thunder 56.5,47.7
+		goto Isle of Thunder,56.5,47.7
 		.click Ritual Artifict
 		..get 6 Ritual Artifact |q 32556/1
 		|only if havequest(32556)
 	step
-		goto Isle of Thunder 55.7,50.7
+		goto Isle of Thunder,55.7,50.7
 		.from Zandalari Acolyte##69295+, Zandalari Bloodguard##69294+, Zandalari Haruspex##69297+, Zandalari Soultwister##69296+ |q 32206/1 |only if havequest(32206)
 		.from Spirit-Bound Sentry##69335+ |only if havequest(32555)
 		.' Use your _Resonance Siphon_ _Spirit-Bound Sentry_ corpses. |use Resonance Siphon##93806 |only if havequest(32555)
@@ -27035,14 +27035,14 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		..turnin Even Giants Fall##32559
 		|only if completedq(32568)
 	step
-		goto Isle of Thunder/0 61.9,52.1
+		goto Isle of Thunder/0,61.9,52.1
 		.talk Miura Brightweaver##67999
 		..turnin The More You Know##32556
 		..turnin All In the Family##32558
 		..turnin Centuries in Sentries##32555
 		|only if completedq(32560) or completedq(32557) or completedq(32559)
 	step
-		goto Isle of Thunder/0 61.9,52.1
+		goto Isle of Thunder/0,61.9,52.1
 		.talk Miura Brightweaver##67999
 		..accept Maximum Capacitor##32586
 		..accept On Her Magic-ey Secret Service##32588
@@ -27062,48 +27062,48 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		..turnin Raining Bones##32582
 		|only if completedq(32568)
 	step
-		goto Isle of Thunder/0 49.3,33.0 |n
+		goto Isle of Thunder/0,49.3,33.0 |n
 		.' Enter the cave here. |goto Isle of Thunder/1|noway|c
 		|only if havequest(32586) or havequest(32588)
 	step
-		goto Isle of Thunder/1 34.6,70.8
+		goto Isle of Thunder/1,34.6,70.8
 		.' Use your Arcane Emancipator on _Agent Reginald_. |use Arcane Emancipator##93761
 		.' Agent Reginald rescued |q 32588/1
 		'|modelnpc 69751
 		|only if havequest(32588)
 	step
-		goto Isle of Thunder/1 40.8,53.8
+		goto Isle of Thunder/1,40.8,53.8
 		.' Use your Arcane Emancipator on _Agent Grisel_. |use Arcane Emancipator##93761
 		.' Agent Grisel rescued |q 32588/2
 		'|modelnpc 69752
 		|only if havequest(32588)
 	step
-		goto Isle of Thunder/1 49.4,44.0
+		goto Isle of Thunder/1,49.4,44.0
 		.' Use your Arcane Emancipator on _Agent Grisel_. |use Arcane Emancipator##93761
 		.' Agent Crowley rescued |q 32588/3
 		'|modelnpc 69754
 		|only if havequest(32588)
 	step
-		goto Isle of Thunder/0 54.9,31.3
+		goto Isle of Thunder/0,54.9,31.3
 		.from Metal Lord Mono-Han##69326 |q 32588/4
 		|only if havequest(32588)
 	step
-		goto Isle of Thunder/1 21.0,69.9
+		goto Isle of Thunder/1,21.0,69.9
 		.click Lightning Drill
 		.' Destroy the Western Lightning Drill |q 32586/1
 		|only if havequest(32586)
 	step
-		goto Isle of Thunder/1 32.6,37.5
+		goto Isle of Thunder/1,32.6,37.5
 		.click Lightning Drill
 		.' Destroy the Central Lightning Drill |q 32586/2
 		|only if havequest(32586)
 	step
-		goto Isle of Thunder/1 62.2,15.4
+		goto Isle of Thunder/1,62.2,15.4
 		.click Lightning Drill
 		.' Destroy the Eastern Lightning Drill |q 32586/3
 		|only if havequest(32586)
 	step
-		goto Isle of Thunder/0 54.9,31.3
+		goto Isle of Thunder/0,54.9,31.3
 		.from Metal Lord Mono-Han##69326+ |q 32586/4
 		|only if havequest(32586)
 	step
@@ -27113,66 +27113,66 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		..accept Forge Ahead!##32587
 		|only if havequest(32586) or completedq(32586) or havequest(32588) or completedq(32588)
 	step
-		goto Isle of Thunder/0 57.7,34.0
+		goto Isle of Thunder/0,57.7,34.0
 		.from Itoka##69461 |q 32587/1
 		|only if havequest(32587)
 	step
-		goto Isle of Thunder 55.7,38.6
+		goto Isle of Thunder,55.7,38.6
 		.from Fleshcrafter Hoku##69435
 		..get Mogu Codex Fragment |q 32587/2
 		|only if havequest(32587)
 	 step
-		goto Isle of Thunder 58.7,42.7
+		goto Isle of Thunder,58.7,42.7
 		.talk Scout Captain Daelin##70552
 		..turnin Forge Ahead!##32587
 	step
-		goto Isle of Thunder 58.7,42.8
+		goto Isle of Thunder,58.7,42.8
 		.talk Taoshi##69413
 		..accept Extended Shore Leave##32607 |or
 		..accept Raiding the Vault##32608 |or
 		|only if completedq(32587) and thunderstage()>=5
 	step
-		goto Isle of Thunder/0 62.3,40.2
+		goto Isle of Thunder/0,62.3,40.2
 		.' Click the door to The Swollen Vault.
 		.' Enter the Swollen Vault. |goto Isle of Thunder/2 |noway|c
 		|only if havequest(32608)
 	step
-		goto Isle of Thunder/2 57.6,65.6
+		goto Isle of Thunder/2,57.6,65.6
 		.from Lu-Shero##69274
 		..collect Hoard-Keeper's Key##95374
 		|only if havequest(32608)
 	step
-		goto Isle of Thunder/2 33.0,28.7
+		goto Isle of Thunder/2,33.0,28.7
 		.click Stormy Chest
 		..get Choker of Storms |q 32608/1
 		|only if havequest(32608)
 	step
-		goto Isle of Thunder 63.8,38.9
+		goto Isle of Thunder,63.8,38.9
 		.' Click Workshop Orders
 		.' Workshop Orders |q 32607/2
 		|only if havequest(32607)
 	step
-		goto Isle of Thunder/0 41.9,79.4
+		goto Isle of Thunder/0,41.9,79.4
 		..kill Zur'chaka the Bonecrafter##69666 |q 32578/1
 		..kill Zur'chaka the Bonecrafter##69666 |q 32582/1
 		|only if havequest(32578) or havequest(32582)
 	 step
-		goto Isle of Thunder/0 61.8,61.5
+		goto Isle of Thunder/0,61.8,61.5
 		.from Nurkala##69663 |q 32585/1 |only if havequest(32585)
 		.from Nurkala##69663 |q 32580/1 |only if havequest(32580)
 		.from Nurkala##69663 |q 32584/1 |only if havequest(32584)
 		|only if havequest(32580) or havequest(32584) or havequest(32585)
 	step
-		goto Isle of Thunder/0 43.9,69.0
+		goto Isle of Thunder/0,43.9,69.0
 		..kill 1 Arcweaver Jor'guva##69665 |q 32579/1 |only if havequest(32579)
 		..kill 1 Arcweaver Jor'guva##69665 |q 32576/1 |only if havequest(32576)
 		|only if havequest(32579) or havequest(32576)
 	step
-		goto Isle of Thunder/0 41.9,79.4
+		goto Isle of Thunder/0,41.9,79.4
 		..kill Zur'chaka the Bonecrafter##69666 |q 32578/1
 		|only if havequest(32578)
 	step
-		goto Isle of Thunder/0 68.3,45.3
+		goto Isle of Thunder/0,68.3,45.3
 		.from Arcweaver Uzan##69272 |q 32607/1
 		|only if havequest(32607)
 	step
@@ -27188,7 +27188,7 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive",[[
 		..turnin Competing Magic##32579 |or
 		|only if thunderstage()>=2
 	step
-		goto Isle of Thunder 34.6,89.5
+		goto Isle of Thunder,34.6,89.5
 		.talk Lady Jaina Proudmoore##67992
 		..turnin Imposing Threat##32581 |or
 		..turnin Imposing Threat##32577 |or
@@ -27220,7 +27220,7 @@ ZygorGuidesViewer:RegisterInclude("Kirin_Tor_Offensive_STAGE_1",[[
 
 ZygorGuidesViewer:RegisterInclude("A_Marista_Hub",[[
 	step
-		goto Krasarang Wilds 51.7,75.3
+		goto Krasarang Wilds,51.7,75.3
 		.talk Tony Tuna##60182
 		..accept Particular Plumage##30667
 	step
@@ -27315,7 +27315,7 @@ ZygorGuidesViewer:RegisterInclude("A_Marista_Hub",[[
 		.talk Jay Cloudfall##60173
 		..turnin Balance##30672
 	step
-		goto Krasarang Wilds 29.7,39.0
+		goto Krasarang Wilds,29.7,39.0
 		.talk Tired Shushen##58278
 		..accept Thieving Raiders##30168
 		..accept Raid Leader Slovan##30169
@@ -27325,7 +27325,7 @@ ZygorGuidesViewer:RegisterInclude("A_Marista_Hub",[[
 		.from Riverblade Flesh-hunter##58274
 		.get 5 Pillaged Jinyu Loot##78958 |q 30168/1
 	step
-		goto Krasarang Wilds 29.7,39.1
+		goto Krasarang Wilds,29.7,39.1
 		.talk Tired Shushen##58278
 		..turnin Thieving Raiders##30168
 		..turnin Raid Leader Slovan##30169
@@ -27382,7 +27382,7 @@ ZygorGuidesViewer:RegisterInclude("A_Marista_Hub",[[
 		..turnin For Family##30174
 		..accept Warn Stoneplow##30241
 	step
-		goto Valley of the Four Winds 19.5,56.8
+		goto Valley of the Four Winds,19.5,56.8
 		.talk Loon Mai##56720
 		..turnin Warn Stoneplow##30241
 	step
@@ -27390,24 +27390,24 @@ ZygorGuidesViewer:RegisterInclude("A_Marista_Hub",[[
 		.talk Mudmug##56474
 		..accept It Does You No Good In The Keg##30653
 	step
-		goto Valley of the Four Winds 18.0,56.3
+		goto Valley of the Four Winds,18.0,56.3
 		.talk Loon Mai##56720
 		..accept The Swarm Begins##30622
 	step
-		goto Valley of the Four Winds 18.0,56.5
+		goto Valley of the Four Winds,18.0,56.5
 		.talk Mei Barrelbottom##59855
 		..accept The Mantidote##30623
 	step
-		goto Valley of the Four Winds 17.5,50.2
+		goto Valley of the Four Winds,17.5,50.2
 		.' Deliver beer to Zhu's Wardens |q 30653/1
 	step
-		goto Valley of the Four Winds 15.2,55.4
+		goto Valley of the Four Winds,15.2,55.4
 		.' Deliver beer to Crane Wing Priests |q 30653/2
 	step
-		goto Valley of the Four Winds 13.0,56.0
+		goto Valley of the Four Winds,13.0,56.0
 		.' Deliver beer to Tauren Settlers |q 30653/4
 	step
-		goto Valley of the Four Winds 10.7,55.5
+		goto Valley of the Four Winds,10.7,55.5
 		.' Deliver beer to Shado-Pan |q 30653/3
 	step
 		.' Click the Complete Quest box that displays on the right side of the screen under your minimap
@@ -27478,7 +27478,7 @@ ZygorGuidesViewer:RegisterInclude("trainer_Archaeology",[[
 ]])
 
 ZygorGuidesViewer:RegisterInclude("trainer_Blacksmithing",[[
-		goto Stormwind City 63.7,37.0
+		goto Stormwind City,63.7,37.0
 		.talk Therum Deepforge##5511
 ]])
 
@@ -27503,17 +27503,17 @@ ZygorGuidesViewer:RegisterInclude("trainer_Engineering",[[
 ]])
 
 ZygorGuidesViewer:RegisterInclude("trainer_FirstAid",[[
-		goto Stormwind City 52.2,45.4
+		goto Stormwind City,52.2,45.4
 		.talk Shaina Fuller##2327
 ]])
 
 ZygorGuidesViewer:RegisterInclude("trainer_Fishing",[[
-		goto Stormwind City 54.8,69.6
+		goto Stormwind City,54.8,69.6
 		.talk Arnold Leland##5493
 ]])
 
 ZygorGuidesViewer:RegisterInclude("trainer_Herbalism",[[
-		goto Stormwind City 54.3,84.1
+		goto Stormwind City,54.3,84.1
 		.talk Tannysa##5566
 ]])
 
@@ -27523,7 +27523,7 @@ ZygorGuidesViewer:RegisterInclude("trainer_Inscription",[[
 ]])
 
 ZygorGuidesViewer:RegisterInclude("trainer_Jewelcrafting",[[
-		goto Stormwind City 63.5,61.8
+		goto Stormwind City,63.5,61.8
 		.talk Theresa Denman##44582
 ]])
 
@@ -27553,17 +27553,17 @@ ZygorGuidesViewer:RegisterInclude("trainer_Leatherworking",[[
 ]])
 
 ZygorGuidesViewer:RegisterInclude("trainer_Mining_mop",[[
-	goto The Jade Forest 45.0,85.9
+	goto The Jade Forest,45.0,85.9
 	.talk Rockseeker Guo##67024
 ]])
 
 ZygorGuidesViewer:RegisterInclude("trainer_Herbalism_mop",[[
-	goto The Jade Forest 45.5,86.0
+	goto The Jade Forest,45.5,86.0
 	.talk Orchard Keeper Li Mei##67025
 ]])
 
 ZygorGuidesViewer:RegisterInclude("home_Herb_Mine_mop",[[
-		goto The Jade Forest/0 44.9,84.4
+		goto The Jade Forest/0,44.9,84.4
 		.talk Jiayi Applebloom##65907
 		.home Paw'Don Village
 ]])
@@ -27573,7 +27573,7 @@ ZygorGuidesViewer:RegisterInclude("home_Herb_Mine_mop",[[
 --------------------------------------------------------------------------------------------------------------------------------------
 
 ZygorGuidesViewer:RegisterInclude("vendor_Alchemy",[[
-		goto Stormwind City 55.9,85.6
+		goto Stormwind City,55.9,85.6
 		.talk Maria Lumere##1313
 ]])
 
@@ -27583,51 +27583,51 @@ ZygorGuidesViewer:RegisterInclude("vendor_Blacksmithing",[[
 ]])
 
 ZygorGuidesViewer:RegisterInclude("vendor_Cooking",[[
-		goto Stormwind City 77.6,53.1
+		goto Stormwind City,77.6,53.1
 		.talk Erika Tate##5483
 ]])
 
 ZygorGuidesViewer:RegisterInclude("vendor_Enchanting",[[
-		goto Stormwind City 52.8,74.3
+		goto Stormwind City,52.8,74.3
 		.talk Jessara Cordell##1318
 ]])
 
 ZygorGuidesViewer:RegisterInclude("vendor_Engineering",[[
-		goto Stormwind City 63.1,32.0
+		goto Stormwind City,63.1,32.0
 		.talk Billibub Cogspinner##5519
 ]])
 
 ZygorGuidesViewer:RegisterInclude("vendor_Fishing",[[
-		goto Stormwind City 55.0,69.7
+		goto Stormwind City,55.0,69.7
 		.talk Catherine Leland##5494
 ]])
 
 ZygorGuidesViewer:RegisterInclude("vendor_Inscription",[[
-		goto Stormwind City 49.6,74.9
+		goto Stormwind City,49.6,74.9
 		.talk Stanly McCormick##30730
 ]])
 
 ZygorGuidesViewer:RegisterInclude("vendor_Jewelcrafting",[[
-		goto Stormwind City 63.2,61.7
+		goto Stormwind City,63.2,61.7
 		.talk Terrance Denman##44583
 ]])
 ZygorGuidesViewer:RegisterInclude("vendor_Jewelcrafting_1",[[
-		goto Stormwind City 63.8,61.6
+		goto Stormwind City,63.8,61.6
 		.talk Farrah Facet##56925
 ]])
 
 ZygorGuidesViewer:RegisterInclude("vendor_Mining",[[
-		goto Stormwind City 59.2,37.5
+		goto Stormwind City,59.2,37.5
 		.talk Brooke Stonebraid##5514
 ]])
 
 ZygorGuidesViewer:RegisterInclude("vendor_Skinning",[[
-		goto Stormwind City 71.6,62.8
+		goto Stormwind City,71.6,62.8
 		.talk Jillian Tanner##5565
 ]])
 
 ZygorGuidesViewer:RegisterInclude("vendor_Tailoring",[[
-		goto Stormwind City 53.1,81.8
+		goto Stormwind City,53.1,81.8
 		.talk Alexandra Bolero##1347
 ]])
 
@@ -27637,7 +27637,7 @@ ZygorGuidesViewer:RegisterInclude("vendor_Leatherworking",[[
 ]])
 
 ZygorGuidesViewer:RegisterInclude("vendor_Cooking_Dalaran",[[
-		goto Dalaran 41.6,64.6
+		goto Dalaran,41.6,64.6
 		.talk Katherine Lee##28705
 ]])
 
@@ -27646,7 +27646,7 @@ ZygorGuidesViewer:RegisterInclude("vendor_Cooking_Dalaran",[[
 --------------------------------------------------------------------------------------------------------------------------------------
 
 ZygorGuidesViewer:RegisterInclude("auctioneer",[[
-		goto Stormwind City 61.1,70.6
+		goto Stormwind City,61.1,70.6
 		.talk Auctioneer Fitch##8719
 ]])
 
@@ -27747,12 +27747,12 @@ ZygorGuidesViewer:RegisterInclude("basic_mounts",[[
 //APPRENTICE
 	step
 	label "apprentice"
-		goto Stormwind City 77.6,67.2
+		goto Stormwind City,77.6,67.2
 		.talk Darlene Stokx##43693
 		.learn Apprentice Riding##33388
 		|only Human
 	step
-		goto Stormwind City 77.0,67.8
+		goto Stormwind City,77.0,67.8
 		.talk Katie Stokx##43694
 		|tip You can pick which one of these mounts you would like to use for your character.
 		.buy 1 Black Stallion Bridle##2411 |or
@@ -27762,12 +27762,12 @@ ZygorGuidesViewer:RegisterInclude("basic_mounts",[[
 		|only Human
 		|next "end"
 	step
-		goto Dun Morogh 71.2,48.4
+		goto Dun Morogh,71.2,48.4
 		.talk Ultham Ironhorn##4772
 		.learn Apprentice Riding##33388
 		|only Dwarf
 	step
-		goto Dun Morogh 70.6,48.8
+		goto Dun Morogh,70.6,48.8
 		.talk Veron Amberstill##1261
 		|tip You can pick which one of these mounts you would like to use for your character.
 		.buy 1 Brown Ram##5872 |or
@@ -27776,12 +27776,12 @@ ZygorGuidesViewer:RegisterInclude("basic_mounts",[[
 		|only Dwarf
 		|next "end"
 	step
-		goto Darnassus 42.6,33.6
+		goto Darnassus,42.6,33.6
 		.talk Jartsam##4753
 		.learn Apprentice Riding##33388
 		|only Night Elf
 	step
-		goto Darnassus 42.6,32.8
+		goto Darnassus,42.6,32.8
 		.talk Lelanai##4730
 		|tip You can pick which one of these mounts you would like to use for your character.
 		.buy 1 Reins of the Spotted Frostsaber##8632 |or
@@ -27791,12 +27791,12 @@ ZygorGuidesViewer:RegisterInclude("basic_mounts",[[
 		|only Night Elf
 		|next "end"
 	step
-		goto Dun Morogh 56.2,46.4
+		goto Dun Morogh,56.2,46.4
 		.talk Binjy Featherwhistle##7954
 		.learn Apprentice Riding##33388
 		|only Gnome
 	step
-		goto Dun Morogh 56.2,46.2
+		goto Dun Morogh,56.2,46.2
 		.talk Milli Featherwhistle##7955
 		|tip You can pick which one of these mounts you would like to use for your character.
 		.buy 1 Blue Mechanostrider##8595 |or
@@ -27806,12 +27806,12 @@ ZygorGuidesViewer:RegisterInclude("basic_mounts",[[
 		|only Gnome
 		|next "end"
 	step
-		goto The Exodar 81.4,52.6
+		goto The Exodar,81.4,52.6
 		.talk Aalun##20914
 		.learn Apprentice Riding##33388
 		|only Draenei
 	step
-		goto The Exodar 81.6,52.6
+		goto The Exodar,81.6,52.6
 		.talk Torallius the Pack Handler##17584
 		|tip You can pick which one of these mounts you would like to use for your character.
 		.buy 1 Brown Elekk##28481 |or
@@ -27820,18 +27820,18 @@ ZygorGuidesViewer:RegisterInclude("basic_mounts",[[
 		|only Draenei
 		|next "end"
 	step
-		goto Darnassus 42.6,33.6
+		goto Darnassus,42.6,33.6
 		.talk Jartsam##4753
 		.learn Apprentice Riding##33388
 		|only Worgen
 	step
-		goto Darnassus 48.6,22.2
+		goto Darnassus,48.6,22.2
 		.talk Astrid Langstrump##55285
 		.buy 1 Mountain Horse##73838
 		|only Worgen
 		|next "end"
 	step
-		goto Stormwind City 77.6,67.2
+		goto Stormwind City,77.6,67.2
 		.talk Darlene Stokx##43693
 		.learn Apprentice Riding##33388
 		|only Pandaren
@@ -27850,12 +27850,12 @@ ZygorGuidesViewer:RegisterInclude("basic_mounts",[[
 //JOURNEYMAN
 	step
 	label "journeyman"
-		goto Stormwind City 77.6,67.2
+		goto Stormwind City,77.6,67.2
 		.talk Darlene Stokx##43693
 		.learn Journeyman Riding##33391
 		|only Human
 	step
-		goto Stormwind City 77.0,67.8
+		goto Stormwind City,77.0,67.8
 		.talk Katie Stokx##43694
 		|tip You can use the level 20 mount you purchased, or pick which one of these new mounts you would like to use for your character.
 		.buy 1 Swift Brown Steed##18777 |or
@@ -27864,12 +27864,12 @@ ZygorGuidesViewer:RegisterInclude("basic_mounts",[[
 		|only Human
 		|next "end"
 	step
-		goto Dun Morogh 71.2,48.4
+		goto Dun Morogh,71.2,48.4
 		.talk Ultham Ironhorn##4772
 		.learn Journeyman Riding##33391
 		|only Dwarf
 	step
-		goto Dun Morogh 70.6,48.8
+		goto Dun Morogh,70.6,48.8
 		.talk Veron Amberstill##1261
 		|tip You can use the level 20 mount you purchased, or pick which one of these new mounts you would like to use for your character.
 		.buy 1 Swift Brown Ram##18786 |or
@@ -27878,12 +27878,12 @@ ZygorGuidesViewer:RegisterInclude("basic_mounts",[[
 		|only Dwarf
 		|next "end"
 	step
-		goto Darnassus 42.6,33.6
+		goto Darnassus,42.6,33.6
 		.talk Jartsam##4753
 		.learn Journeyman Riding##33391
 		|only Night Elf
 	step
-		goto Darnassus 42.6,32.8
+		goto Darnassus,42.6,32.8
 		.talk Lelanai##4730
 		|tip You can use the level 20 mount you purchased, or pick which one of these new mounts you would like to use for your character.
 		.buy 1 Reins of the Swift Frostsaber##18766 |or
@@ -27892,12 +27892,12 @@ ZygorGuidesViewer:RegisterInclude("basic_mounts",[[
 		|only Night Elf
 		|next "end"
 	step
-		goto Dun Morogh 56.2,46.4
+		goto Dun Morogh,56.2,46.4
 		.talk Binjy Featherwhistle##7954
 		.learn Journeyman Riding##33391
 		|only Gnome
 	step
-		goto Dun Morogh 56.2,46.2
+		goto Dun Morogh,56.2,46.2
 		.talk Milli Featherwhistle##7955
 		|tip You can use the level 20 mount you purchased, or pick which one of these new mounts you would like to use for your character.
 		.buy 1 Swift Green Mechanostrider##18772 |or
@@ -27906,12 +27906,12 @@ ZygorGuidesViewer:RegisterInclude("basic_mounts",[[
 		|only Gnome
 		|next "end"
 	step
-		goto The Exodar 81.4,52.6
+		goto The Exodar,81.4,52.6
 		.talk Aalun##20914
 		.learn Journeyman Riding##33391
 		|only Draenei
 	step
-		goto The Exodar 81.6,52.6
+		goto The Exodar,81.6,52.6
 		.talk Torallius the Pack Handler##17584
 		|tip You can use the level 20 mount you purchased, or pick which one of these new mounts you would like to use for your character.
 		.buy 1 Great Blue Elekk##29745 |or
@@ -27920,19 +27920,19 @@ ZygorGuidesViewer:RegisterInclude("basic_mounts",[[
 		|only Draenei
 		|next "end"
 	step
-		goto Darnassus 42.6,33.6
+		goto Darnassus,42.6,33.6
 		.talk Jartsam##4753
 		.learn Journeyman Riding##33391
 		|only Night Elf
 	step
-		goto Darnassus 48.6,22.2
+		goto Darnassus,48.6,22.2
 		.talk Astrid Langstrump##55285
 		|tip You can use the level 20 mount you purchased, or pick this new mount.
 		.buy 1 Swift Mountain Horse##73839
 		|only Worgen
 		|next "end"
 	step
-		goto Stormwind City 77.6,67.2
+		goto Stormwind City,77.6,67.2
 		.talk Darlene Stokx##43693
 		.learn Journeyman Riding##33391
 		|only Pandaren
@@ -27951,11 +27951,11 @@ ZygorGuidesViewer:RegisterInclude("basic_mounts",[[
 //EXPERT
 	step
 	label "expert"
-		goto Stormwind City 70.6,73.0
+		goto Stormwind City,70.6,73.0
 		.talk Bralla Cloudwing##43769
 		.learn Expert Riding##34090
 	step
-		goto Stormwind City 71.4,72.2
+		goto Stormwind City,71.4,72.2
 		.talk Tannec Stonebeak##43768
 		|tip You can pick which one of these mounts you would like to use for your character.
 		.buy 1 Ebon Gryphon##25471 |or
@@ -27965,25 +27965,25 @@ ZygorGuidesViewer:RegisterInclude("basic_mounts",[[
 //FLIGHT LICENSE //TODO
 	step
 	label "flightlicense"
-		goto Stormwind City 70.6,73.0
+		goto Stormwind City,70.6,73.0
 		.talk Bralla Cloudwing##43769
 		.learn Flight Master's License##90267
 		|next "end"
 //COLD WEATHER
 	step
 	label "cold"
-		goto Stormwind City 70.6,73.0
+		goto Stormwind City,70.6,73.0
 		.talk Bralla Cloudwing##43769
 		.learn Cold Weather Flying##54197
 		|next "end"
 //ARTISAN
 	step
 	label "artisan"
-		goto Stormwind City 70.6,73.0
+		goto Stormwind City,70.6,73.0
 		.talk Bralla Cloudwing##43769
 		.learn Artisan Riding##34091
 	step
-		goto Stormwind City 71.4,72.2
+		goto Stormwind City,71.4,72.2
 		.talk Tannec Stonebeak##43768
 		|tip You can use the level 60 mount you purchased, or pick which one of these new mounts you would like to use for your character.
 		.buy 1 Swift Blue Gryphon##25473 |or
@@ -27994,11 +27994,11 @@ ZygorGuidesViewer:RegisterInclude("basic_mounts",[[
 //MASTER
 	step
 	label "master"
-		goto Stormwind City 70.6,73.0
+		goto Stormwind City,70.6,73.0
 		.talk Bralla Cloudwing##43769
 		.learn Artisan Riding##34091
 	step
-		goto Stormwind City 71.4,72.2
+		goto Stormwind City,71.4,72.2
 		.talk Tannec Stonebeak##43768
 		|tip You can use the level 60 or 70 mount you purchased, or pick which one of these new mounts you would like to use for your character.
 		.buy 1 Swift Blue Gryphon##25473 |or
@@ -29275,18 +29275,18 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Barbaric Iron Gloves##9820
 //vendors
 	step
-		goto Dun Morogh 64.6,54.6
+		goto Dun Morogh,64.6,54.6
 		.from Frostmane Warrior##41258
 		.collect 1 Plans: Copper Chain Vest##3609 |n |tip This item is extremely rare, so you may have to loot these mobs for a while.
 		.learn Copper Chain Vest##3321
 	step
-		goto Dun Morogh 17.8,74.6
+		goto Dun Morogh,17.8,74.6
 		.talk High Admiral "Shelly" Jorrik##26081
 		.buy 1 Plans: Solid Iron Maul##10858 |n
 		.learn Solid Iron Maul##3494
 		.' You can also purchase this plan from Jannos Ironwill here: [Arathi Highlands 40.8,48.0]
 	step
-		goto Ironforge 49.8,42.6
+		goto Ironforge,49.8,42.6
 		.talk Tormus Deepforge##6031
 		..accept Supplying the Front##1578
 		..turnin Supplying the Front##1578
@@ -29294,7 +29294,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.collect 1 Plans: Heavy Copper Longsword##33792 |n
 		.learn Heavy Copper Longsword##43549
 	step
-		goto Ironforge 49.8,42.6
+		goto Ironforge,49.8,42.6
 		.talk Tormus Deepforge##6031
 		..accept Gearing Redridge##1618
 		..turnin Gearing Redridge##1618
@@ -29302,12 +29302,12 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.collect 1 Plans: Ironforge Breastplate##6735 |n
 		.learn Ironforge Breastplate##8367
 	step
-		goto The Cape of Stranglethorn 43.0,70.6
+		goto The Cape of Stranglethorn,43.0,70.6
 		.talk Zarena Cromwind##2482
 		.buy 1 Plans: Moonsteel Broadsword##12163 |n
 		.learn Moonsteel Broadsword##3496
 	step
-		goto Northern Stranglethorn 43.6,23.0
+		goto Northern Stranglethorn,43.6,23.0
 		.talk Jaquilina Dramet##2483
 		.buy 1 Plans: Massive Iron Axe##12164 |n
 		.learn Massive Iron Axe##3498
@@ -29321,7 +29321,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.collect 1 Plans: Edge of Winter##17706 |n
 		.learn Edge of Winter##21913
 	step
-		goto Tanaris 51.2,30.2
+		goto Tanaris,51.2,30.2
 		.talk Krinkle Goodsteel##5411
 		.buy 1 Plans: Golden Scale Coif##6047 |n
 		.learn Golden Scale Coif##3503
@@ -29330,12 +29330,12 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.collect 1 Plans: Inlaid Mithril Cylinder##10713 |n
 		.learn Inlaid Mithril Cylinder##11454
 	step
-		goto The Hinterlands 13.6,44.8
+		goto The Hinterlands,13.6,44.8
 		.talk Harggan##8161
 		.buy 1 Plans: Mithril Scale Bracers##7995 |n
 		.learn Mithril Scale Bracers##9937
 	step
-		goto Western Plaguelands 68.0,77.6
+		goto Western Plaguelands,68.0,77.6
 		.talk Magnus Frostwake##11278
 		.buy 1 Plans: Ebon Shiv##8030 |n
 		.buy 1 Plans: Storm Gauntlets##12703 |n
@@ -29343,22 +29343,22 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Ebon Shiv##10013
 		.learn Storm Gauntlets##16661
 	step
-		goto Stratholme 59.0,44.6
+		goto Stratholme,59.0,44.6
 		.from Shrieking Banshee##10463, Wailing Banshee##10464
 		.collect 1 Plans: Phantom Blade##74274 |n
 		.learn Phantom Blade##10007
 	step
-		goto Stratholme 25.2,45.6
+		goto Stratholme,25.2,45.6
 		.from Risen Defender##10421, Risen Initiate##10420, Risen Priest##10423
 		.collect 1 Plans: Serenity##12827 |n
 		.learn Serenity##16983
 	step
-		goto Stratholme/2 68.8,26.2
+		goto Stratholme/2,68.8,26.2
 		.from Ghoul Ravener##10406
 		.collect 1 Plans: Corruption##12830 |n
 		.learn Corruption##16985
 	step
-		goto Tirisfal Glades 83.2,68.0
+		goto Tirisfal Glades,83.2,68.0
 		.talk Argent Quartermaster Hasana##10856
 		|tip You must be Honored with the Argent Dawn to purchase this Plan.
 		.buy 1 Plans: Girdle of the Dawn##19203 |n
@@ -29366,24 +29366,24 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.' You can also purchase this Plan from Argent Quartermaster Lightspark here: [Western Plaguelands 42.8,83.8]
 		'|talk Argent Quartermaster Lightspark##10857
 	step
-		goto Felwood 64.8,5.2
+		goto Felwood,64.8,5.2
 		.talk Meilosh##11557
 		|tip You must be Honored with Timbermaw Hold to purchase this Plan.
 		.collect 1 Plans: Heavy Timbermaw Belt##19202 |n
 		.learn Heavy Timbermaw Belt##23628
 	step
-		goto Burning Steppes 20.2,41.2
+		goto Burning Steppes,20.2,41.2
 		.from Volchan##10119
 		|tip He is a Rare Elite but doesn't path far, so you may not find him on your first visit.
 		.collect 1 Plans: Volcanic Hammer##12828 |n
 		.learn Volcanic Hammer##16984
 	step
-		goto Ruins of Ahn'Qiraj 31.6,37.6
+		goto Ruins of Ahn'Qiraj,31.6,37.6
 		.from Moam##15340
 		.collect 1 Plans: Black Grasp of the Destroyer##22220 |n
 		.learn Black Grasp of the Destroyer##27589
 	step
-		goto Blackrock Depths/2 50.6,59.2
+		goto Blackrock Depths/2,50.6,59.2
 		.talk Lokhtos Darkbargainer##12944
 		.buy 1 Plans: Dark Iron Bracers##17051 |n |tip You need to be Friendly with the Thorium Brotherhood to purchase this Plan.
 		.'_
@@ -29391,7 +29391,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Fiery Chain Girdle##20872
 		.learn Dark Iron Helm##23636
 	step
-		goto Blackrock Depths/2 50.6,59.2
+		goto Blackrock Depths/2,50.6,59.2
 		.talk Lokhtos Darkbargainer##12944
 		|tip You need to be Honored with the Thorium Brotherhood to purchase these Plans.
 		.buy 1 Plans: Dark Iron Destroyer##17060 |n
@@ -29404,32 +29404,32 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Dark Iron Helm##23636
 		.learn Dark Iron Reaver##20890
 	step
-		goto Blackrock Depths 50.6,62.8
+		goto Blackrock Depths,50.6,62.8
 		.talk Grizzle##9028
 		.collect 1 Plans: Dark Iron Pulverizer##11610 |n
 		.learn Dark Iron Pulverizer##15292
 	step
-		goto Blackrock Depths 37.8,70.8
+		goto Blackrock Depths,37.8,70.8
 		.from Weapon Technician##8920
 		.collect 1 Plans: Dark Iron Mail##11614 |n
 		.learn Dark Iron Mail##15293
 	step
-		goto Blackrock Depths/2 53.4,62.4
+		goto Blackrock Depths/2,53.4,62.4
 		.from Hammered Patron##9554
 		.collect 1 Plans: Dark Iron Sunderer##11611 |n
 		.learn Dark Iron Sunderer##15294
 	step
-		goto Blackrock Depths/2 36.8,66.0
+		goto Blackrock Depths/2,36.8,66.0
 		.click Plans: Dark Iron Shoulders##525
 		.collect 1 Plans: Dark Iron Shoulders##11615 |n
 		.learn Dark Iron Shoulders##15295
 	step
-		goto Blackrock Depths/2 49.0,61.8
+		goto Blackrock Depths/2,49.0,61.8
 		.from Ribbly Screwspigot##9543
 		.collect 1 Plans: Dark Iron Plate##11612 |n
 		.learn Dark Iron Plate##15296
 	step
-		goto Blackrock Depths/2 50.6,59.2
+		goto Blackrock Depths/2,50.6,59.2
 		.talk Lokhtos Darkbargainer##12944
 		|tip You need to be Revered with the Thorium Brotherhood to purchase these Plans.
 		.buy 1 Plans: Blackfury##19209 |n
@@ -29442,7 +29442,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Dark Iron Gauntlets##23637
 		.learn Fiery Chain Shoulders##20873
 	step
-		goto Blackrock Depths/2 50.6,59.2
+		goto Blackrock Depths/2,50.6,59.2
 		.talk Lokhtos Darkbargainer##12944
 		|tip You need to be Exalted with the Thorium Brotherhood to purchase these Plan.
 		.buy 1 Plans: Blackguard##19211 |n
@@ -29457,7 +29457,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Ebon Hand##23650
 		.learn Nightfall##23653
 	step
-		goto Ruins of Ahn'Qiraj 57.6,39.4
+		goto Ruins of Ahn'Qiraj,57.6,39.4
 		.talk Lieutenant General Andorov##15471
 		|tip You must keep him alive during the boss fight to purchase from him.
 		.buy 1 Plans: Jagged Obsidian Shield##22219 |n
@@ -29466,27 +29466,27 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Jagged Obsidian Shield##27586
 		.learn Obsidian Mail Tunic##27590
 	step
-		goto Ahn'Qiraj/2 44.8,46.6
+		goto Ahn'Qiraj/2,44.8,46.6
 		.from The Prophet Skeram##15263+
 		.collect 1 Plans: Thick Obsidian Breastplate##22222 |n
 		.learn Thick Obsidian Breastplate##27587
 	step
-		goto Blackrock Spire/5 53.8,84.8
+		goto Blackrock Spire/5,53.8,84.8
 		.from Quartermaster Zigris##9736+
 		.collect 1 Plans: Annihilator##12835 |n
 		.learn Annihilator##16991
 	step
-		goto Blackrock Spire/7 29.1,26.4
+		goto Blackrock Spire/7,29.1,26.4
 		.from Goraluk Anvilcrack##10899
 		.collect 1 Plans: Arcanite Champion##12834 |n
 		.learn Arcanite Champion##16990
 	step
-		goto Blackrock Spire/7 29.1,26.4
+		goto Blackrock Spire/7,29.1,26.4
 		.from Goraluk Anvilcrack##10899
 		.collect 1 Plans: Masterwork Stormhammer##12837 |n
 		.learn Masterwork Stormhammer##16993
 	step
-		goto Blackrock Spire/1 48.7,51.8
+		goto Blackrock Spire/1,48.7,51.8
 		.from Bannok Grimaxe##9596
 		|tip He is a rare spawn, you may have to reset the dungeon a few times before you will find him.
 		.collect 1 Plans: Arcanite Reaper##12838 |n
@@ -29494,7 +29494,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 	step
 		.' To obtain this bag with a chance to drop this recipe, you will need to first use our Leveling Guide of Silithus.
 		.' Do all the quests of Hermit Ortell until you can do the following quest. Once completed you can turn in Twilight Text's for the Clippings.
-		goto Silithus 68.6,63.0
+		goto Silithus,68.6,63.0
 		.talk Hermit Ortell##15194
 		..accept True Believers##8323
 		..turnin True Believers##8323
@@ -29508,40 +29508,40 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Darkrune Helm##24913
 		.learn Darkrune Breastplate##24914
 	step
-		goto Winterspring 58.0,63.8
+		goto Winterspring,58.0,63.8
 		.talk Daleohm##50129
 		.buy 1 Plans: Frostguard##12836 |n
 		.learn Frostguard##16992
 	step
-		goto Tirisfal Glades 83.2,68.0
+		goto Tirisfal Glades,83.2,68.0
 		.talk Argent Quartermaster Hasana##10856
 		.buy 1 Plans: Gloves of the Dawn##19205 |n
 		.learn Gloves of the Dawn##23633
 		.' You can also purchase this Plan from Argent Quartermaster Lightspark here: [Western Plaguelands 42.8,83.8]
 		'|talk Argent Quartermaster Lightspark##10857
 	step
-		goto Stratholme/2 67.8,20.4
+		goto Stratholme/2,67.8,20.4
 		.from Maleki the Pallid##10438
 		.collect 1 Plans: Hammer of the Titans##12833 |n
 		.learn Hammer of the Titans##16988
 	step
-		goto Stratholme/1 4.4,51.8
+		goto Stratholme/1,4.4,51.8
 		.from Willey Hopebreaker##10997
 		.collect 1 Plans: Heartseeker##12839 |n
 		.learn Heartseeker##16995
 	step
-		goto Silithus 54.8,36.6
+		goto Silithus,54.8,36.6
 		.talk Vargus##15176
 		.buy 1 Plans: Heavy Obsidian Belt##22209 |n
 		.learn Heavy Obsidian Belt##27585
 	step
-		goto Felwood 64.8,5.2
+		goto Felwood,64.8,5.2
 		.talk Meilosh##11557
 		|tip You must be Revered with Timbermaw Hold to purchase this Plan.
 		.buy 1 Plans: Heavy Timbermaw Boots##19204 |n
 		.learn Heavy Timbermaw Boots##23629
 	step
-		goto Silithus 54.8,36.6
+		goto Silithus,54.8,36.6
 		.talk Vargus##15176
 		.buy 1 Plans: Ironvine Belt##22768 |n
 		.buy 1 Plans: Ironvine Breastplate##22766 |n
@@ -29553,12 +29553,12 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Ironvine Gloves##28462
 		.learn Light Obsidian Belt##27588
 	step
-		goto Dustwallow Marsh 77.0,18.6
+		goto Dustwallow Marsh,77.0,18.6
 		.from Strashaz Myrmidon##4368+
 		.collect 1 Plans: Runic Breastplate##12718 |n
 		.learn Runic Breastplate##16731
 	step
-		goto Un'Goro Crater 43.4,41.6
+		goto Un'Goro Crater,43.4,41.6
 		.talk Dramm Riverhorn##38561
 		.buy 1 Plans: Runic Plate Boots##12707 |n
 		.buy 1 Plans: Runic Plate Helm##12714 |n
@@ -29571,14 +29571,14 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Runic Plate Shoulders##16664
 	step
 		.' You must have a Sulfuron Ingot in your inventory to pick up this quest.
-		goto Blackrock Depths/2 50.3,58.5
+		goto Blackrock Depths/2,50.3,58.5
 		.talk Lokhtos Darkbargainer##12944
 		..accept A Binding Contract##7604
 		..turnin A Binding Contract##7604
 		.collect 1 Plans: Sulfuron Hammer##18592 |n
 		.learn Sulfuron Hammer##21161
 	step
-		goto Shattrath City 64.0,71.6
+		goto Shattrath City,64.0,71.6
 		.talk Aaron Hollman##19662
 		.buy 1 Plans: Adamantite Cleaver##23591 |n
 		.buy 1 Plans: Adamantite Maul##23590 |n
@@ -29592,12 +29592,12 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.' You can also purchase these Plans from Arras here [The Exodar 61.0,89.0]
 		'|talk Arras##16713
 	step
-		goto Magisters' Terrace 8.6,50.6
+		goto Magisters' Terrace,8.6,50.6
 		.talk Kael'thas Sunstrider##24664
 		.collect 1 Plans: Adamantite Weapon Chain##35296 |n
 		.learn Adamantite Weapon Chain##42688
 	step
-		goto Zangarmarsh 68.6,50.2
+		goto Zangarmarsh,68.6,50.2
 		.talk Loolruna##19694
 		.buy 1 Plans: Adamantite Plate Bracers##23594 |n
 		.buy 1 Plans: Adamantite Plate Gloves##23595 |n
@@ -29607,17 +29607,17 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Adamantite Plate Gloves##29605
 		.learn Adamantite Breastplate##29606
 	step
-		goto Shadowmoon Valley 36.8,55.0
+		goto Shadowmoon Valley,36.8,55.0
 		.talk Mari Stonehand##19373
 		.buy 1 Plans: Lesser Ward of Shielding##23638 |n
 		.learn Lesser Ward of Shielding##29728
 	step
-		goto Zangarmarsh 68.6,50.2
+		goto Zangarmarsh,68.6,50.2
 		.talk Loolruna##19694
 		.buy 1 Plans: Adamantite Breastplate##23596 |n
 		.learn Adamantite Breastplate##29606
 	step
-		goto Zangarmarsh 79.2,63.8
+		goto Zangarmarsh,79.2,63.8
 		.talk Fedryen Swiftspear##17904
 		.buy 1 Plans: Adamantite Sharpening Stone##23618 |n
 		.buy 1 Plans: Adamantite Weightstone##28632 |n
@@ -29627,7 +29627,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Adamantite Weightstone##34608
 		.learn Greater Rune of Warding##32285
 	step
-		goto Shattrath City 48.0,26.6
+		goto Shattrath City,48.0,26.6
 		.talk Quartermaster Endarin ##19321
 		|tip You must be Friendly with The Aldor to purchase this Plan.
 		.buy 1 Plans: Flamebane Bracers##23601 |n
@@ -29636,7 +29636,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Flamebane Bracers##29614
 		.learn Enchanted Adamantite Belt##29608
 	step
-		goto Shattrath City 60.6,64.2
+		goto Shattrath City,60.6,64.2
 		.talk Quartermaster Enuril##19331
 		|tip You must be Exalted with The Scryers to purchase this Plan.
 		.buy 1 Plans: Enchanted Adamantite Boots##23598 |n
@@ -29645,92 +29645,92 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Enchanted Adamantite Boots##29611
 		.learn Flamebane Helm##29615
 	step
-		goto Shattrath City 60.6,64.2
+		goto Shattrath City,60.6,64.2
 		.talk Quartermaster Enuril##19331
 		|tip You must be Revered with The Scryers to purchase this Plan.
 		.buy 1 Plans: Enchanted Adamantite Breastplate##23599 |n
 		.learn Enchanted Adamantite Breastplate##29610
 	step
-		goto Shattrath City 48.0,26.6
+		goto Shattrath City,48.0,26.6
 		.talk Quartermaster Endarin##19321
 		|tip You must be Honored with The Aldor to purchase this Plan.
 		.buy 1 Plans: Flamebane Gloves##23603 |n
 		.learn Flamebane Gloves##29616
 	step
-		goto Auchenai Crypts/2 44.8,19.4
+		goto Auchenai Crypts/2,44.8,19.4
 		.from Auchenai Monk##18497
 		.collect 1 Plans: Felsteel Gloves##23605 |n
 		.learn Felsteel Gloves##29619
 	step
-		goto The Arcatraz/3 52.4,30.8
+		goto The Arcatraz/3,52.4,30.8
 		.from Unchained Doombringer##20900
 		.collect 1 Plans: Felsteel Leggings##23606 |n
 		.learn Felsteel Leggings##29620
 	step
-		goto Nagrand 33.2,44.4
+		goto Nagrand,33.2,44.4
 		.from Murkblood Raider##18203
 		.collect 1 Plans: Khorium Belt##23608 |n
 		.learn Khorium Belt##29628
 	step
-		goto Shadowmoon Valley 39.8,38.6
+		goto Shadowmoon Valley,39.8,38.6
 		.from Deathforge Guardian##20878
 		.collect 1 Plans: Khorium Pants##23609 |n
 		.learn Khorium Pants##29629
 	step
-		goto Hellfire Peninsula 56.6,62.6
+		goto Hellfire Peninsula,56.6,62.6
 		.talk Logistics Officer Ulrike##17657
 		.buy 1 Plans: Felsteel Shield Spike##23619 |n
 		.learn Felsteel Shield Spike##29657
 	step
-		goto Shattrath City 60.6,64.2
+		goto Shattrath City,60.6,64.2
 		.talk Quartermaster Enuril##19331
 		|tip You must be Exalted with The Scryers to purchase this Plan.
 		.buy 1 Plans: Enchanted Adamantite Leggings##23600 |n
 		.learn Enchanted Adamantite Leggings##29613
 	step
-		goto Shattrath City 48.0,26.6
+		goto Shattrath City,48.0,26.6
 		.talk Quartermaster Endarin##19321
 		|tip You must be Revered with The Aldor to purchase this Plan.
 		.buy 1 Plans: Flamebane Breastplate##23604 |n
 		.learn Flamebane Breastplate##29617
 	step
-		goto Netherstorm 34.0,52.8
+		goto Netherstorm,34.0,52.8
 		.from Disembodied Protector##18873
 		.collect 1 Plans: Khorium Boots##23610 |n
 		.learn Khorium Boots##29630
 	step
-		goto Nagrand 51.4,57.4
+		goto Nagrand,51.4,57.4
 		.from Boulderfist Warrior##17136
 		.collect 1 Plans: Ragesteel Gloves##23611 |n
 		.learn Ragesteel Gloves##29642
 		.' You can find more Ogres here [40.8,31.4]
 	step
-		goto Shadowmoon Valley 49.0,48.0
+		goto Shadowmoon Valley,49.0,48.0
 		.from Enraged Earth Spirit##21050+, Enraged Fire Spirit##21061+
 		.collect 1 Plans: Ragesteel Shoulders##33174 |n
 		.learn Ragesteel Shoulders##42662
 	step
-		goto The Botanica 25.8,24.8
+		goto The Botanica,25.8,24.8
 		.from High Botanist Freywinn##17975
 		.collect 1 Plans: Earthpeace Breastplate##23617 |n
 		.learn Earthpeace Breastplate##29649
 	step
-		goto Shadowmoon Valley 73.4,88.2
+		goto Shadowmoon Valley,73.4,88.2
 		.from Ashtongue Warrior##21454+, Crazed Murkblood Foreman##23305+, Crazed Murkblood Miner##23324+
 		.collect 1 Plans: Ragesteel Breastplate##23613 |n
 		.learn Ragesteel Breastplate##29645
 	step
-		goto Mana-Tombs 54.4,87.2
+		goto Mana-Tombs,54.4,87.2
 		.from Nexus Stalker##18314+
 		.collect 1 Plans: Swiftsteel Gloves##23615 |n
 		.learn Swiftsteel Gloves##29648
 	step
-		goto Netherstorm 26.8,68.2
+		goto Netherstorm,26.8,68.2
 		.from Sunfury Bloodwarder##18853
 		.collect 1 Plans: Greater Ward of Shielding##23639 |n
 		.learn Greater Ward of Shielding##29729
 	step
-		goto Karazhan 43.0,75.2
+		goto Karazhan,43.0,75.2
 		.talk Koren##16388
 		.buy 1 Plans: Iceguard Breastplate##31393 |n
 		.buy 1 Plans: Iceguard Helm##31395 |n
@@ -29740,7 +29740,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Iceguard Helm##38479
 		.learn Iceguard Leggings##38478
 	step
-		goto Black Temple 61.6,51.0
+		goto Black Temple,61.6,51.0
 		.talk Okuno##23159
 		|tip You must be Friendly with Ashtongue Deathsworn to purchase these Plans.
 		.buy 1 Plans: Shadesteel Bracers##32442 |n
@@ -29749,7 +29749,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Shadesteel Bracers##40034
 		.learn Shadesteel Girdle##40036
 	step
-		goto Black Temple 61.6,51.0
+		goto Black Temple,61.6,51.0
 		.talk Okuno##23159
 		|tip You must be Honored with Ashtongue Deathsworn to purchase these Plans.
 		.buy 1 Plans: Shadesteel Greaves##32443 |n
@@ -29758,13 +29758,13 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Shadesteel Greaves##40035
 		.learn Shadesteel Sabots##40033
 	step
-		goto Zangarmarsh 79.2,63.8
+		goto Zangarmarsh,79.2,63.8
 		.talk Fedryen Swiftspear##17904
 		|tip You must be Exalted with Cenarion Expedition to purchase this Plan.
 		.buy 1 Plans: Wildguard Breastplate##31390 |n
 		.learn Wildguard Breastplate##38473
 	step
-		goto Zangarmarsh 79.2,63.8
+		goto Zangarmarsh,79.2,63.8
 		.talk Fedryen Swiftspear##17904
 		|tip You must be Revered with Cenarion Expedition to purchase these Plans.
 		.buy 1 Plans: Wildguard Helm##31392 |n
@@ -29773,27 +29773,27 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Wildguard Helm##38476
 		.learn Wildguard Leggings##38475
 	step
-		goto Dragonblight 86.0,35.8
+		goto Dragonblight,86.0,35.8
 		.from Onslaught Mason##27333
 		.collect 1 Plans: Reinforced Cobalt Shoulders##41124 |n
 		.learn Reinforced Cobalt Shoulders##54978
 	step
-		goto Grizzly Hills 68.4,16.0
+		goto Grizzly Hills,68.4,16.0
 		.from Iron Rune-Shaper##26270
 		.collect 1 Plans: Reinforced Cobalt Helm##41123 |n
 		.learn Reinforced Cobalt Helm##54979
 	step
-		goto Zul'Drak 75.8,33.6
+		goto Zul'Drak,75.8,33.6
 		.from Gundrak Savage##29235
 		.collect 1 Plans: Reinforced Cobalt Legplates##41120 |n
 		.learn Reinforced Cobalt Legplates##54980
 	step
-		goto Sholazar Basin 35.6,48.6
+		goto Sholazar Basin,35.6,48.6
 		.from Venture Co. Excavator##28123
 		.collect 1 Plans: Reinforced Cobalt Chestpiece##41122 |n
 		.learn Reinforced Cobalt Chestpiece##54981
 	step
-		goto Howling Fjord 59.6,63.8
+		goto Howling Fjord,59.6,63.8
 		.talk Logistics Officer Brighton##32773
 		|tip You must be Exalted with Valiance Expedition to purchase this Plan.
 		.buy 1 Plans: Titanium Plating##44937 |n
@@ -29801,7 +29801,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.' You can also purchase this from Logistics Officer Silverstone here [Borean Tundra 57.6,66.2]
 		|tip You must be Exalted with Valiance Expedition to purchase this Plan.
 	step
-		goto Icecrown Citadel/1 36.8,20.6
+		goto Icecrown Citadel/1,36.8,20.6
 		.talk Alchemist Finklestein##37687
 		|tip You must be Revered with The Ashen Verdict to purchase these Plans.
 		.buy 1 Plans: Legplates of Painful Death##49971 |n
@@ -29810,7 +29810,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Legplates of Painful Death##70565
 		.learn Pillars of Might##70567
 	step
-		goto Icecrown Citadel/1 36.8,20.6
+		goto Icecrown Citadel/1,36.8,20.6
 		.talk Alchemist Finklestein##37687
 		|tip You must be Honored with The Ashen Verdict to purchase these Plans.
 		.buy 1 Plans: Protectors of Life##49970 |n
@@ -29819,7 +29819,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Protectors of Life##70563
 		.learn Puresteel Legplates##70562
 	step
-		goto Stormwind City 63.2,37.6
+		goto Stormwind City,63.2,37.6
 		.talk Kaita Deepforge##5512
 		.buy 1 Plans: Pyrium Weapon Chain##66103 |n
 		.buy 1 Plans: Hardened Elementium Girdle##66105 |n
@@ -29839,7 +29839,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Ebonsteel Belt Buckle##76439
 		.learn Pyrium Shield Spike##76440
 	step
-		goto Stormwind City 63.2,37.6
+		goto Stormwind City,63.2,37.6
 		.talk Kaita Deepforge##5512
 		.buy 1 Plans: Elementium Deathplate##66106 |n
 		.buy 1 Plans: Elementium Bonesplitter##66113 |n
@@ -29861,7 +29861,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Elementium Shank##76453
 		.learn Elementium Spellblade##76449
 	step
-		goto Stormwind City 63.2,37.6
+		goto Stormwind City,63.2,37.6
 		.talk Kaita Deepforge##5512
 		.buy 1 Plans: Vicious Pyrium Bracers##66117 |n
 		.buy 1 Plans: Vicious Pyrium Gauntlets##66118 |n
@@ -29881,14 +29881,14 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Vicious Pyrium Helm##76463
 		.learn Vicious Pyrium Legguards##76462
 	step
-		goto Stormwind City 63.2,37.6
+		goto Stormwind City,63.2,37.6
 		.talk Kaita Deepforge##5512
 		.buy 1 Plans: Hardened Iron Shortsword##12162 |n
 		.learn Hardened Iron Shortsword##3492
 		.' You can also buy these plans from Layna Karner in Darnassus at: [Darnassus 56.6,52.6]
 		|modelnpc Layna Karner##52641
 	step
-		goto Stormwind City 63.2,37.6
+		goto Stormwind City,63.2,37.6
 		.talk Kaita Deepforge##5512
 		.buy 1 Plans: Vicious Ornate Pyrium Bracers##66125 |n
 		.buy 1 Plans: Vicious Ornate Pyrium Gauntlets##66126 |n
@@ -29906,7 +29906,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Vicious Ornate Pyrium Breastplate##76472
 		.learn Vicious Ornate Pyrium Legguards##76470
 	step
-		goto Molten Front 47.0,90.6
+		goto Molten Front,47.0,90.6
 		.talk Damek Bloombeard##53214
 		.buy 1 Plans: Brainsplinter##70166 |n
 		.buy 1 Plans: Elementium-Edged Scalper##70169 |n
@@ -29926,7 +29926,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Unbreakable Guardian##99657
 		.learn Witch-Hunter's Harvester##99660
 	step
-		goto Shrine of Seven Stars 72.6,50.6
+		goto Shrine of Seven Stars,72.6,50.6
 		.talk Cullen Hammerbrow##64085
 		.buy 1 Plans: Masterwork Forgewire Axe##84197 |n
 		.buy 1 Plans: Masterwork Spiritblade Decimator##84218 |n
@@ -29952,7 +29952,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Masterwork Spiritguard Boots##122598
 		.learn Masterwork Spiritguard Belt##122599
 	step
-		goto Shrine of Seven Stars 72.6,50.6
+		goto Shrine of Seven Stars,72.6,50.6
 		.talk Cullen Hammerbrow##64085
 		.buy 1 Plans: Contender's Spirit Shoulders##84173 |n
 		.buy 1 Plans: Contender's Spirit Legplates##84172 |n
@@ -29972,7 +29972,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Contender's Spirit Boots##122630
 		.learn Contender's Spirit Belt##122631
 	step
-		goto Shrine of Seven Stars 72.6,50.6
+		goto Shrine of Seven Stars,72.6,50.6
 		.talk Cullen Hammerbrow##64085
 		.buy 1 Plans: Contender's Revenant Shoulders##84165 |n
 		.buy 1 Plans: Contender's Revenant Legplates##84164 |n
@@ -29992,7 +29992,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Blacksmith",[[
 		.learn Contender's Revenant Boots##122622
 		.learn Contender's Revenant Belt##122623
 	step
-		goto Dread Wastes 55.0,35.6
+		goto Dread Wastes,55.0,35.6
 		.talk Ambersmith Zikk##64599
 		.buy 1 Plans: Breastplate of Ancient Steel##83791 |n
 		.buy 1 Plans: Gauntlets of Ancient Steel##83792 |n
@@ -30819,13 +30819,13 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Enchanting",[[
 		.learn Enchant Weapon - Winter's Might##21931
 //EASTERN KINGDOMS
 	step
-		goto Stormwind 53.0,74.2
+		goto Stormwind,53.0,74.2
 		.talk Jessara Cordell##1318
 		|tip This is an Alliance only Formula and may sell well on the Neutral AH.
 		.buy 1 Formula: Magic Lamp##67312 |n
 		.learn Magic Lamp##93843
 	step
-		goto Stormwind 53.0,74.2
+		goto Stormwind,53.0,74.2
 		.talk Jessara Cordell##1318
 		.buy 1 Formula: Enchant Boots - Assassin's Step##64411 |n
 		.learn Enchant Boots - Assassin's Step##74252
@@ -30858,80 +30858,80 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Enchanting",[[
 		.buy 1 Formula: Minor Wizard Oil##20758 |n
 		.learn Minor Wizard Oil##25124
 	step
-		goto Isle of Quel'Danas 47.2,30.6
+		goto Isle of Quel'Danas,47.2,30.6
 		.talk Eldara Dawnrunner##25032
 		|tip You must be Honored with Shattered Sun Offensive.
 		.buy 1 Formula: Enchant Chest - Dodge##35500 |n
 		.learn Enchant Chest - Dodge##46594
 	step
-		goto Isle of Quel'Danas 47.2,30.6
+		goto Isle of Quel'Danas,47.2,30.6
 		.talk Eldara Dawnrunner##25032
 		|tip You must be Honored with Shattered Sun Offensive.
 		.buy 1 Formula: Void Shatter##34872 |n
 		.learn Void Shatter##45765
 	step
-		goto Magisters' Terrace 40.8,56.6
+		goto Magisters' Terrace,40.8,56.6
 		.from Priestess Delrissa##14560
 		.collect 1 Formula: Enchant Cloak - Greater Dodge##35756 |n
 		.learn Enchant Cloak - Greater Dodge##47051
 	step
-		goto Ironforge 61.6,44.8
+		goto Ironforge,61.6,44.8
 		.talk Tilli Thistlefuzz##5158
 		.buy 1 Formula: Enchant 2H Weapon - Lesser Intellect##6349
 		.learn Enchant 2H Weapon - Lesser Intellect##7793 |n
 	step
-		goto Hillsbrad Foothills 52.6,56.2
+		goto Hillsbrad Foothills,52.6,56.2
 		.talk Zixil##3537
 		|tip He walks around this area, some searching may be required.
 		.buy 1 Formula: Enchant Boots - Minor Agility##6377 |n
 		.learn Enchant Boots - Minor Agility##7867
 	step
-		goto Hillsbrad Foothills 35.6,81.8
+		goto Hillsbrad Foothills,35.6,81.8
 		.from Torn Fin Tidehunter##2377, Torn Fin Oracle##2376, Torn Fin Coastrunner##2375, Torn Fin Muckdweller##2374
 		.collect 1 Formula: Enchant Gloves - Fishing##11152 |n
 		.learn Enchant Gloves - Fishing##13620
 	step
-		goto Arathi Highlands 63.6,84.2
+		goto Arathi Highlands,63.6,84.2
 		.from Witherbark Headhunter##2556, Witherbark Berserker##2558, Witherbark Shadow Hunter##2557
 		.collect 1 Formula: Enchant Gloves - Skinning##11166 |n
 		.learn Enchant Gloves - Skinning##13698
 	step
-		goto Northern Stranglethorn 54.0,75.6
+		goto Northern Stranglethorn,54.0,75.6
 		.from Venture Co. Strip Miner##674
 		.collect 1 Formula: Enchant Gloves - Advanced Mining##11203 |n
 		.learn Enchant Gloves - Advanced Mining##13841
 	step
-		goto Blackrock Depths/2 50.6,59.2
+		goto Blackrock Depths/2,50.6,59.2
 		.talk Lokhtos Darkbargainer##12944
 		.buy 1 Formula: Enchant Weapon - Mighty Intellect##19449 |n
 		.learn Enchant Weapon - Mighty Intellect##23804
 	step
-		goto Blackrock Depths/2 50.6,59.2
+		goto Blackrock Depths/2,50.6,59.2
 		.talk Lokhtos Darkbargainer##12944
 		.buy 1 Formula: Enchant Weapon - Mighty Spirit##19448 |n
 		.learn Enchant Weapon - Mighty Spirit##23803
 	step
-		goto Blackrock Depths/1 56.6,60.6
+		goto Blackrock Depths/1,56.6,60.6
 		.talk Lord Roccor##9025
 		.collect 1 Formula: Smoking Heart of the Mountain##45050 |n
 		.learn Smoking Heart of the Mountain##15596
 	step
-		goto Blackrock Depths 54.6,95.8
+		goto Blackrock Depths,54.6,95.8
 		.talk Pyromancer Loregrain##9024
 		.collect 1 Formula: Enchant Weapon - Fiery Weapon##11207 |n
 		.learn Enchant Weapon - Fiery Weapon##13898
 	step
-		goto Blackrock Depths/2 50.6,59.2
+		goto Blackrock Depths/2,50.6,59.2
 		.talk Lokhtos Darkbargainer##12944
 		.buy 1 Formula: Enchant Weapon - Strength##19444 |n
 		.learn Enchant Weapon - Strength##23799
 	step
-		goto Blackrock Spire/6 49.7,60.5
+		goto Blackrock Spire/6,49.7,60.5
 		.from Spirestone Warlord##9216+
 		.collect 1 Formula: Enchant Weapon - Superior Striking##16250 |n
 		.learn Enchant Weapon - Superior Striking##20031
 	step
-		goto Eastern Plaguelands 75.8,54.0
+		goto Eastern Plaguelands,75.8,54.0
 		.talk Quartermaster Miranda Breechlock##11536
 		|tip You must be Honored with Argent Crusade to purchase this Formula.
 		.buy 1 Formula: Enchant Bracer - Mana Regeneration##19446 |n
@@ -30939,119 +30939,119 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Enchanting",[[
 		.' You can also purchase this Plan from Argent Quartermaster Lightspark here: [Western Plaguelands 42.8,83.8]
 		'|talk Argent Quartermaster Lightspark##10857
 	step
-		goto Eastern Plaguelands 81.6,78.2
+		goto Eastern Plaguelands,81.6,78.2
 		.talk Scarlet Archmage##9451
 		.collect 1 Formula: Enchant Weapon - Crusader##16252 |n
 		.learn Enchant Weapon - Crusader##20034
 	step
-		goto Stratholme/2 65.0,48.6
+		goto Stratholme/2,65.0,48.6
 		.from Thuzadin Shadowcaster##10398
 		.collect 1 Formula: Enchant Weapon - Unholy##16248 |n
 		.learn Enchant Weapon - Unholy Weapon##20033
 		.' You can also get this from Bonechewers in Terokkar here: [Terokkar Forest 67.6,53.6]
 		'|from Bonechewer Backbreaker##16810
 	step
-		goto Stratholme/1 21.6,57.6
+		goto Stratholme/1,21.6,57.6
 		.from Risen Sorcerer##10422
 		.collect 1 Formula: Enchant 2H Weapon - Major Intellect##16249 |n
 		.learn Enchant 2H Weapon - Major Intellect##20036
 	step
-		goto Western Plaguelands 42.8,83.8
+		goto Western Plaguelands,42.8,83.8
 		.talk Argent Quartermaster Lightspark##10857
 		.buy 1 Formula: Enchant Bracer - Healing Power##19447 |n
 		.learn Enchant Bracer - Healing Power##23802
 		.' You can also purchase this from Quartermaster Miranda Breechlock here: [Eastern Plaguelands 75.8,54.0]
 		'|talk Quartermaster Miranda Breechlock##11536
 	step
-		goto Scholomance 55.4,59.4
+		goto Scholomance,55.4,59.4
 		.from Scholomance Acolyte##58757, Scholomance Adept##10469
 		.collect 1 Formula: Enchant 2H Weapon - Major Spirit##16255 |n
 		.learn Enchant 2H Weapon - Major Spirit##20035
 	step
-		goto Deadwind Pass 63.4,74.8
+		goto Deadwind Pass,63.4,74.8
 		.from Deadwind Warlock##7372
 		.collect 1 Formula: Enchant Bracer - Superior Strength##16246 |n
 		.learn Enchant Bracer - Superior Strength##20010
 	step
-		goto Deadwind Pass 47.0,75.6
+		goto Deadwind Pass,47.0,75.6
 		.talk Apprentice Darius##18255
 		|tip You must be Exalted with The Violet Eye to purchase this Formula.
 		.buy 1 Formula: Enchant Weapon - Greater Agility##33165 |n
 		.learn Enchant Weapon - Greater Agility##42620
 	step
-		goto Karazhan/12 43.6,26.6
+		goto Karazhan/12,43.6,26.6
 		.talk Ythyar##17518
 		.buy 1 Formula: Enchant Ring - Striking##22535 |n
 		.learn Enchant Ring - Striking##27920
 	step
-		goto Karazhan/4 12.6,30.2
+		goto Karazhan/4,12.6,30.2
 		.from Phantom Stagehand##16472
 		.collect 1 Formula: Enchant Boots - Surefooted##22545 |n
 		.learn Enchant Boots - Surefooted##27954
 	step
-		goto Karazhan/10 70.8,28.8
+		goto Karazhan/10,70.8,28.8
 		.from Shade of Aran##16524
 		.collect 1 Formula: Enchant Weapon - Sunfire##22560 |n
 		.learn Enchant Weapon - Sunfire##27981
 	step
-		goto Karazhan/3 27.8,63.8
+		goto Karazhan/3,27.8,63.8
 		.from Moroes##15687
 		.collect 1 Formula: Enchant Weapon - Mongoose##22559 |n
 		.learn Enchant Weapon - Mongoose##27984
 	step
-		goto Karazhan/11 54.6,74.2
+		goto Karazhan/11,54.6,74.2
 		.from Terestian Illhoof##15688
 		.collect 1 Formula: Enchant Weapon - Soulfrost##22561 |n
 		.learn Enchant Weapon - Soulfrost##27982
 //KALIMDOR
 	step
-		goto Darnassus 58.2,35.0
+		goto Darnassus,58.2,35.0
 		.talk Mythrin'dir##4229
 		.collect 1 Formula: Enchant Bracer - Dodge##11223 |n
 		.learn Enchant Bracer - Dodge##13931
 	step
-		goto Darnassus 58.2,35.0
+		goto Darnassus,58.2,35.0
 		.talk Mythrin'dir##4229
 		.buy 1 Formula: Enchant Shield - Greater Stamina##16217 |n
 		.learn Enchant Shield - Greater Stamina##20017
 	step
-		goto Ashenvale 35.0,52.0
+		goto Ashenvale,35.0,52.0
 		.talk Dalria##3954
 		.buy 1 Formula: Enchant Cloak - Minor Agility##11039 |n
 		.learn Enchant Cloak - Minor Agility##13419
 	step
-		goto Ashenvale 35.0,52.0
+		goto Ashenvale,35.0,52.0
 		.talk Dalria##3954
 		.collect 1 Formula: Enchant Bracer - Lesser Strength##11101 |n
 		.learn Enchant Bracer - Lesser Strength##13536
 	step
-		goto Silithus 55.6,37.0
+		goto Silithus,55.6,37.0
 		.talk Kania##15419
 		.buy 1 Formula: Lesser Mana Oil##20754 |n
 		.learn Lesser Mana Oil##25127
 	step
-		goto Silithus 55.6,37.0
+		goto Silithus,55.6,37.0
 		.talk Kania##15419
 		.buy 1 Formula: Wizard Oil##20755 |n
 		.learn Wizard Oil##25128
 	step
-		goto Winterspring 50.6,53.2
+		goto Winterspring,50.6,53.2
 		.from Anguished Highborne##7524
 		.collect 1 Formula: Enchant Weapon - Icy Chill##16223 |n
 		.learn Enchant Weapon - Icy Chill##20029
 	step
-		goto Winterspring 59.6,49.2
+		goto Winterspring,59.6,49.2
 		.talk Qia##11189
 		.buy 1 Formula: Enchant Chest - Major Health##16221 |n
 		.learn Enchant Chest - Major Health##20026
 	step
-		goto Tanaris 63.0,57.2
+		goto Tanaris,63.0,57.2
 		.talk Alurmi##21643
 		|tip You must be Exalted with Keepers of Time to purchase this Formula.
 		.buy 1 Formula: Enchant Gloves - Superior Agility##33152 |n
 		.learn Enchant Gloves - Superior Agility##25080
 	step
-		goto Tanaris 63.0,57.2
+		goto Tanaris,63.0,57.2
 		.talk Alurmi##21643
 		|tip You must be Honored with Keepers of Time to purchase this Formula.
 		.buy 1 Formula: Enchant Gloves - Major Spellpower##28272 |n
@@ -31059,44 +31059,44 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Enchanting",[[
 		.buy 1 Formula: Enchant Ring - Minor Intellect##22536 |n
 		.learn Enchant Ring - Minor Intellect##27924
 	step
-		goto Old Hillsbrad Foothills 39.8,55.8
+		goto Old Hillsbrad Foothills,39.8,55.8
 		.talk Aged Dalaran Wizard##18664
 		|tip He walks along this road, some searching may be required.
 		.buy 1 Formula: Enchant Shield - Intellect##22539 |n
 		.learn Enchant Shield - Intellect##27945
 	step
-		goto Felwood 64.8,5.2
+		goto Felwood,64.8,5.2
 		.talk Meilosh##11557
 		|tip You must be Friendly with Timbermaw Hold to purchase this Formula.
 		.buy 1 Formula: Enchant 2H Weapon - Agility##22392 |n
 		.learn Enchant 2H Weapon - Agility##27837
 	step
-		goto Felwood 64.8,5.2
+		goto Felwood,64.8,5.2
 		.talk Meilosh##11557
 		|tip You must be Honored with Timbermaw Hold to purchase this Formula.
 		.buy 1 Formula: Enchant Weapon - Agility##19445 |n
 		.learn Enchant Weapon - Agility##23800
 	step
-		goto Moonglade 48.6,40.2
+		goto Moonglade,48.6,40.2
 		.talk Lorelae Wintersong##12022
 		.buy 1 Formula: Enchant Cloak - Superior Defense##16224 |n
 		.learn Enchant Cloak - Superior Defense##20015
 	step
-		goto The Exodar 40.4,39.2
+		goto The Exodar,40.4,39.2
 		.talk Egomis##16722
 		.buy 1 Formula: Superior Mana Oil##22562 |n
 		.learn Superior Mana Oil##28016
 		.' You can also purchase this Formula from Madame Ruby here: [Shattrath City 63.6,70.0]
 		'|talk Madame Ruby##19663
 	step
-		goto The Exodar 40.4,39.2
+		goto The Exodar,40.4,39.2
 		.talk Egomis##16722
 		.buy 1 Formula: Large Prismatic Shard##22565 |n
 		.learn Large Prismatic Shard##28022
 		.' You can also purchase this Formula from Madame Ruby here: [Shattrath City 63.6,70.0]
 		'|talk Madame Ruby##19663
 	step
-		goto The Exodar 40.4,39.2
+		goto The Exodar,40.4,39.2
 		.talk Egomis##16722
 		.buy 1 Formula: Superior Wizard Oil##22563 |n
 		.learn Superior Wizard Oil##28019
@@ -31104,27 +31104,27 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Enchanting",[[
 		'|talk Madame Ruby##19663
 //OUTLAND
 	step
-		goto Blade's Edge Mountains 52.8,18.8
+		goto Blade's Edge Mountains,52.8,18.8
 		.from Bash'ir Spell-Thief##22242, Bash'ir Arcanist##22243
 		.collect 1 Formula: Enchant Weapon - Major Spellpower##22555 |n
 		.learn Enchant Weapon - Major Spellpower##27975
 	step
-		goto Blade's Edge Mountains 47.2,78.0
+		goto Blade's Edge Mountains,47.2,78.0
 		.from Bloodmaul Geomancer##19952
 		.collect 1 Formula: Enchant Bracer - Spellpower##22534 |n
 		.learn Enchant Bracer - Spellpower##27917
 	step
-		goto Netherstorm 49.0,81.4
+		goto Netherstorm,49.0,81.4
 		.from Sunfury Researcher##20136
 		.collect 1 Formula: Enchant Weapon - Major Intellect##22551 |n
 		.learn Enchant Weapon - Major Intellect##27968
 	step
-		goto Netherstorm 44.0,36.6
+		goto Netherstorm,44.0,36.6
 		.talk Dealer Jadyan##19536
 		.buy 1 Formula: Enchant Weapon - Executioner##78348 |n
 		.learn Enchant Weapon - Executioner##42974
 	step
-		goto Netherstorm 43.6,34.4
+		goto Netherstorm,43.6,34.4
 		.talk Karaaz##20242
 		|tip You must be Honored with The Consortium to purchase this Formula.
 		.buy 1 Formula: Enchant Weapon - Major Striking##22552 |n
@@ -31132,112 +31132,112 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Enchanting",[[
 		.' You can also purchase this from Paulsta'ats here: [Nagrand 30.6,57.0]
 		'|talk Paulsta'ats##23007
 	step
-		goto Netherstorm 66.2,48.0
+		goto Netherstorm,66.2,48.0
 		.from Ethereum Nullifier##22822, Ethereum Jailor##23008
 		.collect 1 Formula: Enchant Bracer - Greater Dodge##22530 |n
 		.learn Enchant Bracer - Greater Dodge##27906
 	step
-		goto The Arcatraz 33.4,29.6
+		goto The Arcatraz,33.4,29.6
 		.from Eredar Deathbringer##20880
 		.collect 1 Formula: Enchant 2H Weapon - Major Agility##22556 |n
 		.learn Enchant 2H Weapon - Major Agility##27977
 	step
-		goto Nagrand 30.5,56.9
+		goto Nagrand,30.5,56.9
 		.talk Paulsta'ats##23007
 		.buy 1 Formula: Enchant Cloak - PvP Power##28274 |n
 		.learn Enchant Cloak - PvP Power##34003
 	step
-		goto Zangarmarsh 79.2,63.8
+		goto Zangarmarsh,79.2,63.8
 		.talk Fedryen Swiftspear##17904
 		|tip You must be Exalted with Cenarion Expedition to purchase this Forumla.
 		.buy 1 Formula: Enchant Cloak - Stealth##33149 |n
 		.learn Enchant Cloak - Stealth##25083
 	step
-		goto Zangarmarsh 79.2,63.8
+		goto Zangarmarsh,79.2,63.8
 		.talk Fedryen Swiftspear##17904
 		|tip You must be Revered with Cenarion Expedition to purchase this Formula.
 		.buy 1 Formula: Enchant Gloves - Precise Strikes##28271 |n
 		.learn Enchant Gloves - Precise Strikes##33994
 	step
-		goto The Slave Pens 30.5,50.5
+		goto The Slave Pens,30.5,50.5
 		.from Ahune##25740
 		.click Ice Chest##1387
 		.collect 1 Formula: Enchant Weapon - Deathfrost##35498 |n
 		.learn Enchant Weapon - Deathfrost##46578
 	step
-		goto The Steamvault 36.8,24.6
+		goto The Steamvault,36.8,24.6
 		.from Coilfang Oracle##17803
 		.collect 1 Formula: Enchant Bracer - Fortitude##22533 |n
 		.learn Enchant Bracer - Fortitude##27914
 	step
-		goto Hellfire Peninsula 56.6,62.6
+		goto Hellfire Peninsula,56.6,62.6
 		.talk Logistics Officer Ulrike##17657
 		|tip You must be Exalted with Honor Hold to purchase this Formula.
 		.buy 1 Formula: Enchant Cloak - Subtlety##33150 |n
 		.learn Enchant Cloak - Subtlety##25084
 	step
-		goto Hellfire Peninsula 56.6,62.6
+		goto Hellfire Peninsula,56.6,62.6
 		.talk Logistics Officer Ulrike##17657
 		|tip You must be Friendly with Honor Hold to purchase this Formula.
 		.buy 1 Formula: Enchant Bracer - Superior Healing##22531 |n
 		.learn Enchant Bracer - Superior Healing##27911
 	step
-		goto Hellfire Peninsula 56.6,62.6
+		goto Hellfire Peninsula,56.6,62.6
 		.talk Logistics Officer Ulrike##17657
 		|tip You must be Revered with Honor Hold to purchase this Formula.
 		.buy 1 Formula: Enchant Chest - Exceptional Stats##22547 |n
 		.learn Enchant Chest - Exceptional Stats##27960
 	step
-		goto The Shattered Halls 37.6,10.6
+		goto The Shattered Halls,37.6,10.6
 		.from Shattered Hand Centurion##17465
 		.collect 1 Formula: Enchant 2H Weapon - Savagery##22554 |n
 		.learn Enchant 2H Weapon - Savagery##27971
 	step
-		goto Shattrath City 62.6,69.0
+		goto Shattrath City,62.6,69.0
 		.talk Nakodu##21655
 		|tip You must be Honored with Lower City to purchase this Formula.
 		.buy 1 Formula: Enchant Ring - Stats##22538 |n
 		.learn Enchant Ring - Stats##27927
 	step
-		goto Shattrath City 62.6,69.0
+		goto Shattrath City,62.6,69.0
 		.talk Nakodu##21655
 		|tip You must be Exalted with Lower City to purchase this Formula.
 		.buy 1 Formula: Enchant Cloak - Dodge##33148 |n
 		.learn Enchant Cloak - Dodge##25086
 	step
-		goto Shattrath City 51.6,41.6
+		goto Shattrath City,51.6,41.6
 		.talk Almaador##21432
 		|tip You must be Honored with The Sha'tar to purchase this Formula.
 		.buy 1 Formula: Enchant Gloves - Major Healing##28273 |n
 		.learn Enchant Gloves - Major Healing##33999
 	step
-		goto Shattrath City 51.6,41.6
+		goto Shattrath City,51.6,41.6
 		.talk Almaador
 		.buy 1 Formula: Enchant Gloves - Threat##33153 |n
 		.learn Enchant Gloves - Threat##25072
 	step
-		goto Shattrath City 63.6,70.0
+		goto Shattrath City,63.6,70.0
 		.talk Madame Ruby##19663
 		.buy 1 Formula: Enchant Shield - Major Stamina##28282 |n
 		.learn Enchant Shield - Major Stamina##34009
 	step
-		goto Mana-Tombs 60.4,37.8
+		goto Mana-Tombs,60.4,37.8
 		.from Ethereal Priest##18317
 		.collect 1 Formula: Enchant Boots - Fortitude##22543 |n
 		.learn Enchant Boots - Fortitude##27950
 	step
-		goto Auchenai Crypts 58.2,88.4
+		goto Auchenai Crypts,58.2,88.4
 		.from Raging Skeleton##18521
 		.collect 1 Formula: Enchant Boots - Dexterity##22544 |n
 		.learn Enchant Boots - Dexterity##27951
 //NORTHREND
 	step
-		goto Dragonblight 39.2,65.8
+		goto Dragonblight,39.2,65.8
 		.from Indu'le Warrior##26344, Indu'le Mystic##26336, Indu'le Fisherman##26343
 		.collect 1 Formula: Enchant Gloves - Angler##50406 |n
 		.learn Enchant Gloves - Angler##71692
 	step
-		goto Dalaran 39.6,41.4
+		goto Dalaran,39.6,41.4
 		.talk Vanessa Sellers##32514
 		.buy 1 Formula: Enchant Staff - Greater Spellpower##45059 |n
 		.learn Enchant Staff - Greater Spellpower##62948
@@ -31289,7 +31289,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Enchanting",[[
 		.learn Enchant Chest - Exceptional Resilience##44588
 //PANDARIA
 	step
-		goto Shrine of Seven Stars 84.6,63.6
+		goto Shrine of Seven Stars,84.6,63.6
 		.talk Sage Whiteheart
 		|tip You must be Revered with The August Celestials to purchase this Formula.
 		.buy 1 Formula: Enchant Bracer - Exceptional Strength##84561 |n
@@ -31299,7 +31299,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Enchanting",[[
 		.buy 1 Formula: Enchant Bracer - Super Intellect##84559 |n
 		.learn Enchant Bracer - Super Intellect##104389
 	step
-		goto Townlong Steppes 48.8,70.6
+		goto Townlong Steppes,48.8,70.6
 		.talk Rushi the Fox##64595
 		|tip You must be Revered with Shado-Pan to purchase this Formula.
 		.buy 1 Formula: Enchant Weapon - Dancing Steel##84584 |n
@@ -31625,75 +31625,75 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Cooking",[[
 //UNSORTED
 	step
 		'This can only be obtained during the Day of the Dead Holiday Event. This is from October 1 - October 2
-		goto Stormwind City 47.0,25.4
+		goto Stormwind City,47.0,25.4
 		.talk Chapman##34382
 		.buy Recipe: Bread of the Dead##46710 |n
 		.learn Bread of the Dead##65454
 	step
 		'This can only be obtained during the Pilgrim's Bounty Holiday Event. This is from November 24 - November 30.
-		goto Elwynn Forest 34.0,51.6
+		goto Elwynn Forest,34.0,51.6
 		.clicknpc Bountiful Barrel##35337
 		.buy Bountiful Cookbook##46809 |n
 		.collect Recipe: Spice Bread Stuffing##44860 |n
 		.learn Spice Bread Stuffing##62050
 	step
 		'This can only be obtained during the Pilgrim's Bounty Holiday Event. This is from November 24 - November 30.
-		goto Elwynn Forest 34.0,51.6
+		goto Elwynn Forest,34.0,51.6
 		.clicknpc Bountiful Barrel##35337
 		.buy Bountiful Cookbook##46809 |n
 		.collect Recipe: Pumpkin Pie##44862 |n
 		.learn Pumpkin Pie##62044
 	step
 		'This can only be obtained during the Pilgrim's Bounty Holiday Event. This is from November 24 - November 30.
-		goto Elwynn Forest 34.0,51.6
+		goto Elwynn Forest,34.0,51.6
 		.clicknpc Bountiful Barrel##35337
 		.buy Bountiful Cookbook##46809 |n
 		.collect Recipe: Cranberry Chutney##44858 |n
 		.learn Cranberry Chutney##62049
 	step
 		'This can only be obtained during the Pilgrim's Bounty Holiday Event. This is from November 24 - November 30.
-		goto Elwynn Forest 34.0,51.6
+		goto Elwynn Forest,34.0,51.6
 		.clicknpc Bountiful Barrel##35337
 		.buy Bountiful Cookbook##46809 |n
 		.collect Recipe: Slow-Roasted Turkey##44861 |m
 		.learn Slow-Roasted Turkey##62045
 	step
 		'This can only be obtained during the Pilgrim's Bounty Holiday Event. This is from November 24 - November 30.
-		goto Elwynn Forest 34.0,51.6
+		goto Elwynn Forest,34.0,51.6
 		.clicknpc Bountiful Barrel##35337
 		.buy Bountiful Cookbook##46809 |n
 		.collect Recipe: Candied Sweet Potato##44859 |n
 		.learn Candied Sweet Potato##62051
 	step
 		'This can only be obtained during the Feast of Winter Veil Holiday Event. This is from December 15 - Janurary 2.
-		goto Stormwind City 63.0,70.6
+		goto Stormwind City,63.0,70.6
 		.talk Khole Jinglepocket##13435
 		.buy Recipe: Egg Nog##17201 |n
 		.learn Egg Nog##21144
 	step
 		'This can only be obtained during the Feast of Winter Veil Holiday Event. This is from December 15 - Janurary 2.
-		goto Stormwind City 63.0,70.6
+		goto Stormwind City,63.0,70.6
 		.talk Khole Jinglepocket##13435
 		.buy Recipe: Gingerbread Cookie##17200 |n
 		.learn Gingerbread Cookie##21143
 //OTHER/BUY
 	step
-		goto Stormwind City 63.0,70.6
+		goto Stormwind City,63.0,70.6
 		.talk Khole Jinglepocket##13435
 		.buy Recipe: Hot Apple Cider##34413 |n
 		.learn Hot Apple Cider##45022
 	step
-		goto Stormwind City 55.0,69.6
+		goto Stormwind City,55.0,69.6
 		.talk Catherine Leland##5494
 		.buy Recipe: Brilliant Smallfish##6325 |n
 		.learn Brilliant Smallfish##7751
 	step
-		goto Stormwind City 77.6,53.8
+		goto Stormwind City,77.6,53.8
 		.talk Erika Tate##5483
 		.buy Recipe: Smoked Sagefish##21099 |n
 		.learn Smoked Sagefish##25704
 	step
-		goto Stormwind City 76.6,53.6
+		goto Stormwind City,76.6,53.6
 		.talk Kendor Kabonka##340
 		|tip These are only available to Alliance and may sell well on the Neutral AH.
 		.buy Recipe: Murloc Fin Soup##3680 |n
@@ -31713,7 +31713,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Cooking",[[
 		.buy Recipe: Crocolisk Gumbo##3681 |n
 		.learn Crocolisk Gumbo##3373
 	step
-		goto Stormwind City 50.8,71.4
+		goto Stormwind City,50.8,71.4
 		.talk Bario Matalli##49701
 		.buy Recipe: Fortune Cookie##65432 |n
 		.learn Fortune Cookie##88019
@@ -31774,19 +31774,19 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Cooking",[[
 		.buy Recipe: Feathered Lure##65408 |n
 		.learn Feathered Lure##88017
 	step
-		goto Stormwind City 64.6,76.8
+		goto Stormwind City,64.6,76.8
 		.talk Shay Pressler##46602
 		.buy Recipe: Seafood Magnifique Feast##62800 |n
 		.learn Seafood Magnifique Feast##88036
 		.buy Recipe: Broiled Dragon Feast##62799 |n
 		.learn Broiled Dragon Feast##88011
 	step
-		goto Elwynn Forest 42.0,67.0
+		goto Elwynn Forest,42.0,67.0
 		.talk Tharynn Bouden##66
 		.buy Recipe: Longjaw Mud Snapper##6328 |n
 		.learn Longjaw Mud Snapper##7753
 	step
-		goto Westfall 36.2,90.0
+		goto Westfall,36.2,90.0
 		.talk Kriggon Talsone##4305
 		|tip This is only available to Alliance and may sell well on the Neutral AH.
 		.buy Recipe: Clam Chowder##5528 |n
@@ -31794,155 +31794,155 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Cooking",[[
 		.buy Recipe: Spiced Chili Crab##16111 |n
 		.learn Spiced Chili Crab##15915
 	step
-		goto Westfall 54.6,49.8
+		goto Westfall,54.6,49.8
 		.from Riverpaw Bandit##54371
 		|tip You can also obtain this through items by fishing.
 		.collect Recipe: Captain Rumsey's Lager##34834 |n
 		.learn Captain Rumsey's Lager##45695
 	step
-		goto Northern Stranglethorn 47.4,10.2
+		goto Northern Stranglethorn,47.4,10.2
 		.talk Corporal Bluth##734
 		.buy Recipe: Jungle Stew##12231 |n
 		.learn Jungle Stew##15861
 	step
-		goto Northern Stranglethorn 47.4,10.2
+		goto Northern Stranglethorn,47.4,10.2
 		.talk Corporal Bluth##734
 		.buy Recipe: Roast Raptor##12228 |n
 		.learn Roast Raptor##15855
 	step
-		goto The Cape of Stranglethorn 42.8,69.0
+		goto The Cape of Stranglethorn,42.8,69.0
 		.talk Kelsey Yance##2664
 		.buy Recipe: Rockscale Cod##6369 |n
 		.learn Rockscale Cod##7828
 	step
-		goto The Cape of Stranglethorn 42.8,69.0
+		goto The Cape of Stranglethorn,42.8,69.0
 		.talk Kelsey Yance##2664
 		.buy Recipe: Giant Clam Scorcho##6039 |n
 		.learn Giant Clam Scorcho##7213
 	step
-		goto The Cape of Stranglethorn 42.8,69.0
+		goto The Cape of Stranglethorn,42.8,69.0
 		.talk Kelsey Yance##2664
 		.buy Recipe: Mithril Head Trout##17062 |n
 		.learn Mithril Head Trout##20916
 	step
-		goto The Cape of Stranglethorn 42.6,72.8
+		goto The Cape of Stranglethorn,42.6,72.8
 		.talk Mrs. Gant##54232
 		.buy Recipe: Undermine Clam Chowder##16767 |n
 		.learn Undermine Clam Chowder##20626
 	step
-		goto The Cape of Stranglethorn 42.8,69.0
+		goto The Cape of Stranglethorn,42.8,69.0
 		.talk Kelsey Yance##2664
 		.buy Recipe: Mightfish Steak##13948 |n
 		.learn Mightfish Steak##18246
 	step
-		goto The Cape of Stranglethorn 42.8,69.0
+		goto The Cape of Stranglethorn,42.8,69.0
 		.talk Kelsey Yance##2664
 		.buy Recipe: Hot Smoked Bass##13943 |n
 		.learn Hot Smoked Bass##18242
 	step
-		goto The Cape of Stranglethorn 42.8,69.0
+		goto The Cape of Stranglethorn,42.8,69.0
 		.talk Kelsey Yance##2664
 		.buy Recipe: Cooked Glossy Mightfish##13940 |n
 		.learn Cooked Glossy Mightfish##18239
 	step
-		goto The Cape of Stranglethorn 42.8,69.0
+		goto The Cape of Stranglethorn,42.8,69.0
 		.talk Kelsey Yance##2664
 		.buy Recipe: Filet of Redgill##13941 |n
 		.learn Filet of Redgill##18241
 	step
-		goto Ironforge 48.8,5.0
+		goto Ironforge,48.8,5.0
 		.talk Tansy Puddlefizz##5162
 		.buy Recipe: Slitherskin Mackerel##6326 |n
 		.learn Slitherskin Mackerel##7752
 	step
-		goto Loch Modan 35.6,49.0
+		goto Loch Modan,35.6,49.0
 		.talk Drac Roughcut##1465
 		.buy Recipe: Smoked Bear Meat##6892 |n
 		.learn Smoked Bear Meat##8607
 	step
-		goto Loch Modan 40.4,39.4
+		goto Loch Modan,40.4,39.4
 		.talk Khara Deepwater##1684
 		|tip This is only available to Alliance and may sell well on the Neutral AH.
 		.buy Recipe: Loch Frenzy Delight##6329 |n
 		.learn Loch Frenzy Delight##7754
 	step
-		goto Hillsbrad Foothills 71.0,45.8
+		goto Hillsbrad Foothills,71.0,45.8
 		.talk Smudge Thunderwood##6779
 		.buy Recipe: Thistle Tea##18160 |n
 		.learn Thistle Tea##9513
 		|only rogue
 	step
-		goto Eversong Woods 49.0,47.0
+		goto Eversong Woods,49.0,47.0
 		.talk Landraelanis##16262
 		.buy Recipe: Lynx Steak##27685 |n
 		.learn Lynx Steak##33276
 	step
-		goto Dustwallow Marsh 66.4,51.4
+		goto Dustwallow Marsh,66.4,51.4
 		.talk Helenia Olden##4897
 		.buy Recipe: Mystery Stew##12233 |n
 		.learn Mystery Stew##15865
 	step
-		goto Dustwallow Marsh 66.4,51.4
+		goto Dustwallow Marsh,66.4,51.4
 		.talk Helenia Olden##4897
 		.buy Recipe: Dragonbreath Chili##12239 |n
 		.learn Dragonbreath Chili##15906
 	step
-		goto Razorfen Downs 80.6,17.0
+		goto Razorfen Downs,80.6,17.0
 		.talk Henry Stern##8696
 		.learn Goldthorn Tea##13028
 	step
-		goto Tanaris 52.6,29.0
+		goto Tanaris,52.6,29.0
 		.talk Dirge Quikcleave##40589
 		.buy Recipe: Tender Wolf Steak##18046 |n
 		.learn Tender Wolf Steak##22480
 	step
-		goto Silithus 55.5,36.8
+		goto Silithus,55.5,36.8
 		.talk Calandrath##15174
 		..accept Desert Recipe##8307
 	step
-		goto Silithus 43.6,42.0
+		goto Silithus,43.6,42.0
 		.click Sandy Cookbook##470
 		..turnin Desert Recipe##8307
 		..accept Sharing the Knowledge##8313
 	step
-		goto Silithus 55.5,36.8
+		goto Silithus,55.5,36.8
 		.talk Calandrath##15174
 		..turnin Sharing the Knowledge##8313
 		.learn Smoked Desert Dumplings##24801
 	step
-		goto Feralas 46.2,41.6
+		goto Feralas,46.2,41.6
 		.talk Vivianna##7947
 		.buy Recipe: Hot Wolf Ribs##12229 |n
 		.learn Hot Wolf Ribs##15856
 	step
-		goto Feralas 46.2,41.6
+		goto Feralas,46.2,41.6
 		.talk Vivianna##7947
 		.buy Recipe: Baked Salmon##13949 |n
 		.learn Baked Salmon##18247
 	step
-		goto Feralas 46.2,41.6
+		goto Feralas,46.2,41.6
 		.talk Vivianna##7947
 		.buy Recipe: Lobster Stew##13947 |n
 		.learn Lobster Stew##18245
 	step
-		goto Dire Maul/5 75.6,44.8
+		goto Dire Maul/5,75.6,44.8
 		.from Pusillin##14354
 		.collect Recipe: Runn Tum Tuber Surprise##18267 |n
 		.learn Runn Tum Tuber Surprise##22761
 	step
-		goto Desolace 66.2,6.6
+		goto Desolace,66.2,6.6
 		.talk Janet Hommers##8150
 		.buy Recipe: Heavy Kodo Stew##12240 |n
 		.learn Heavy Kodo Stew##15910
 	step
-		goto Northern Barrens 68.6,72.6
+		goto Northern Barrens,68.6,72.6
 		.talk Kilxx##3497
 		.buy Recipe: Rainbow Fin Albacore##6368 |n
 		.learn Rainbow Fin Albacore
 		.buy Recipe: Bristle Whisker Catfish##6330 |n |use Recipe: Bristle Whisker Catfish##6330
 		.learn Bristle Whisker Catfish##7755
 	step
-		goto Winterspring 59.8,51.6
+		goto Winterspring,59.8,51.6
 		.talk Himmik##11187
 		.buy Recipe: Monster Omelet##16110 |n
 		.learn Monster Omelet##15933
@@ -31989,77 +31989,77 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Cooking",[[
 
 
 	step
-		goto Hellfire Peninsula 49.2,74.8
+		goto Hellfire Peninsula,49.2,74.8
 		.talk Legassi##19344
 		..accept Smooth as Butter##9356
 		..turnin Smooth as Butter##9356
 		.collect Recipe: Buzzard Bites##27684 |n
 		.learn Buzzard Bites##33279
 	step
-		goto Hellfire Peninsula 54.2,63.6
+		goto Hellfire Peninsula,54.2,63.6
 		.talk Sid Limbardi##16826
 		.buy Recipe: Ravager Dog##27688 |n
 		.learn Ravager Dog##33284
 	step
-		goto Blade's Edge Mountains 62.4,40.2
+		goto Blade's Edge Mountains,62.4,40.2
 		.talk Xerintha Ravenoak##20916
 		.buy Recipe: Crunchy Serpent##31674 |n
 		.learn Crunchy Serpent##38868
 		.buy Recipe: Mok'Nathal Shortribs##31675 |n
 		.learn Mok'Nathal Shortribs##38867
 	step
-		goto Zangarmarsh 78.0,66.0
+		goto Zangarmarsh,78.0,66.0
 		.talk Juno Dufrain##18911
 		.buy Recipe: Blackened Sporefish##27696 |n
 		.learn Blackened Sporefish##33292
 	step
-		goto Zangarmarsh 17.8,51.2
+		goto Zangarmarsh,17.8,51.2
 		.talk Mycah##18382
 		.buy Recipe: Clam Bar##30156 |n
 		.learn Clam Bar##36210
 	step
-		goto Zangarmarsh 42.2,27.8
+		goto Zangarmarsh,42.2,27.8
 		.talk Doba##20028
 		.buy Recipe: Feltail Delight##27695 |n
 		.learn Feltail Delight##33291
 		.buy Recipe: Blackened Trout##27694 |n
 		.learn Blackened Trout##33290
 	step
-		goto Nagrand 56.2,73.2
+		goto Nagrand,56.2,73.2
 		.talk Uriku##20096
 		.buy Recipe: Grilled Mudfish##27697 |n
 		.learn Grilled Mudfish##33293
 	step
-		goto Nagrand 56.2,73.2
+		goto Nagrand,56.2,73.2
 		.talk Uriku##20096
 		.buy Recipe: Poached Bluefish##27698 |n
 		.learn Poached Bluefish##33294
 	step
-		goto Nagrand 56.2,73.2
+		goto Nagrand,56.2,73.2
 		.talk Uriku##20096
 		.buy Recipe: Roasted Clefthoof##27691 |n
 		.learn Roasted Clefthoof##33287
 	step
-		goto Nagrand 56.2,73.2
+		goto Nagrand,56.2,73.2
 		.talk Uriku##20096
 		.buy Recipe: Talbuk Steak##27693 |n
 		.learn Talbuk Steak##33289
 	step
-		goto Terokkar Forest 56.6,53.2
+		goto Terokkar Forest,56.6,53.2
 		.talk Innkeeper Biribi##19296
 		.buy Recipe: Golden Fish Sticks##27699 |n
 		.learn Golden Fish Sticks##33295
 		.buy Recipe: Spicy Crawdad##27700 |n
 		.learn Spicy Crawdad##33296
 	step
-		goto Terokkar Forest 55.8,53.0
+		goto Terokkar Forest,55.8,53.0
 		.talk Supply Officer Mills##19038##19038
 		.buy Recipe: Warp Burger##27692 |n
 		.learn Warp Burger##33288
 		.buy Recipe: Blackened Basilisk##27690 |n
 		.learn Blackened Basilisk##33286
 	step
-		goto Dalaran 41.6,64.8
+		goto Dalaran,41.6,64.8
 		.talk Derek Odds##31032
 		.buy Recipe: Blackened Dragonfin##43035 |n
 		.learn Blackened Dragonfin##57441
@@ -32108,38 +32108,38 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Cooking",[[
 		.buy Recipe: Fish Feast##43017 |n
 		.learn Fish Feast##43015
 	step
-		goto Icecrown 72.4,20.8
+		goto Icecrown,72.4,20.8
 		.talk Mera Mistrunner##33595
 		.buy Recipe: Worg Tartare##44954 |n
 		.learn Worg Tartare##62350
 	step
-		goto Valley of the Four Winds 53.2,51.6
+		goto Valley of the Four Winds,53.2,51.6
 		.talk Gina Mudclaw##58706
 		.buy Recipe: Spicy Vegetable Chips##74658 |n
 		.learn Spicy Vegetable Chips##125123
 		.buy Recipe: Spicy Salmon##74657 |n
 		.learn Spicy Salmon##125120
 	step
-		goto Krasarang Wilds 68.4,43.4
+		goto Krasarang Wilds,68.4,43.4
 		.talk Nat Pagle##637721
 		.buy Recipe: Krasarang Fritters##85505 |n
 		.learn Krasarang Fritters##124032
 		.buy Recipe: Viseclaw Soup##85502 |n
 		.learn Viseclaw Soup##124029
 	step
-		goto Krasarang Wilds 52.3,88.7
+		goto Krasarang Wilds,52.3,88.7
 		.click Barrel of Banana Infused Rum##288
 		.collect Recipe: Banana Infused Rum##87266 |n
 		.learn Banana Infused Rum##126655
 	step
-		goto Kun-Lai Summit 44.7,52.3
+		goto Kun-Lai Summit,44.7,52.3
 		.click Tablet of Ren Yun##5
 		.collect Tablet of Ren Yun##86393 |n
 		.learn Four Senses Brew##126654
 //QUESTS
 	step
 		'This is a reward from doing Fishing Dailies in Shattrath
-		goto Shattrath City 61.6,16.6
+		goto Shattrath City,61.6,16.6
 		.talk The Rokk##24393
 		.collect Barrel of Fish##33844 |n
 		.' Open the Barrel in your bags |use Barrel of Fish##33844
@@ -32147,7 +32147,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Cooking",[[
 		.learn Broiled Bloodfin##43761
 	step
 		'This is a reward from doing Cooking and Fishing Dailies in Shattrath
-		goto Shattrath City 61.6,16.6
+		goto Shattrath City,61.6,16.6
 		.talk The Rokk##24393
 		.collect Crate of Meat##33857 |n
 		.collect Barrel of Fish##33844 |n
@@ -32157,7 +32157,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Cooking",[[
 		.learn Stormchops##43758
 	step
 		'This is a reward from doing Cooking and Fishing Dailies in Shattrath
-		goto Shattrath City 61.6,16.6
+		goto Shattrath City,61.6,16.6
 		.talk The Rokk##24393
 		.collect Crate of Meat##33857 |n
 		.collect Barrel of Fish##33844 |n
@@ -32166,7 +32166,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Cooking",[[
 		.learn Kibler's Bits##43772
 	step
 		'This is a reward from doing Cooking and Fishing Dailies in Shattrath
-		goto Shattrath City 61.6,16.6
+		goto Shattrath City,61.6,16.6
 		.talk The Rokk##24393
 		.collect Barrel of Fish##33844 |n
 		.' Open the Barrel in your bags |use Barrel of Fish##33844
@@ -32174,7 +32174,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Cooking",[[
 		.learn Skullfish Soup##43707
 	step
 		'This is a reward from doing Cooking and Fishing Dailies in Shattrath
-		goto Shattrath City 61.6,16.6
+		goto Shattrath City,61.6,16.6
 		.talk The Rokk##24393
 		.collect Crate of Meat##33857 |n
 		.' Open the Crate in your bags |use Crate of Meat##33857
@@ -32182,14 +32182,14 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Cooking",[[
 		.learn Spicy Hot Talbuk##43765
 	step
 		'This Recipe is acquired by doing the quest Northern Cooking
-		goto Borean Tundra 57.8,71.6
+		goto Borean Tundra,57.8,71.6
 		.talk Rollick MacKreel##26989
 		..accept Northern Cooking##13088
 		..accept Northern Cooking##13088
 		.learn Northern Stew##57421
 	step
 		'This Recipe is acquired by completing the quest Fletcher's Lost and Found.
-		goto Dalaran/2 44.2,25.6
+		goto Dalaran/2,44.2,25.6
 		.talk Washed-Up Mage##32516
 		..accept Fletcher's Lost and Found##13571
 		..turnin Fletcher's Lost and Found##13571
@@ -32197,14 +32197,14 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Cooking",[[
 		.learn Kungaloosh##53056
 	step
 		'This Recipe is learned by completing the quest Clamlette Surprise.
-		goto Tanaris 52.6,29.0
+		goto Tanaris,52.6,29.0
 		.talk Dirge Quikcleave##40589
 		..accept Clamlette Surprise##6610
 		..turnin Clamlette Surprise##6610
 		.learn Clamlette Magnifique##64054
 	step
 		|tip This quest is only available to Alliance and may sell well on the Neutral AH.
-		goto Duskwood 73.8,43.6
+		goto Duskwood,73.8,43.6
 		.talk Chef Grual##272
 		'This is a reward from doing the quest Seasoned Wolf Kabobs.
 		..accept Seasoned Wolf Kabobs##26620
@@ -32213,7 +32213,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Cooking",[[
 		.learn Seasoned Wolf Kabob##2549
 	step
 		|tip This quest is only available to Alliance and may sell well on the Neutral AH.
-		goto Duskwood 73.8,43.6
+		goto Duskwood,73.8,43.6
 		.talk Chef Grual##272
 		'This is a reward from doing the quest Dusky Crap Cakes.
 		..accept Dusky Crab Cakes##26623
@@ -32222,7 +32222,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Cooking",[[
 		.learn Gooey Spider Cake##3377
 	step
 		'This is a reward from doing the quest Thelsamar Blood Sausages.
-		goto Azuremyst Isle 49.8,51.8
+		goto Azuremyst Isle,49.8,51.8
 		.talk Vidra Hearthstove##1963
 		|tip This quest is only available to Alliance and may sell well on the Neutral AH.
 		..accept Thelsamar Blood Sausages##26860
@@ -32231,7 +32231,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Cooking",[[
 		.learn Blood Sausage##3371
 	step
 		'This is a reward from doing the quest The Great Moongraze Hunt
-		goto Azuremyst Isle 49.8,51.8
+		goto Azuremyst Isle,49.8,51.8
 		.talk Acteon##17110
 		|tip This quest is only available to Alliance and may sell well on the Neutral AH.
 		..accept The Great Moongraze Hunt##9454
@@ -32240,7 +32240,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Cooking",[[
 		.learn Roasted Moongraze Tenderloin##33277
 	step
 		'This is a reward from doing Cooking and Fishing Dailies in Shattrath
-		goto Shattrath City 61.6,16.6
+		goto Shattrath City,61.6,16.6
 		.talk The Rokk##24393
 		.collect Crate of Meat##33857 |n
 		.collect Barrel of Fish##33844 |n
@@ -32250,13 +32250,13 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Cooking",[[
 		.learn Delicious Chocolate Cake##43779
 //HORDE ONLY
 	step
-		goto Southern Barrens 48.6,88.8
+		goto Southern Barrens,48.6,88.8
 		|tip This is only a Horde Recipe and may sell on the Neutral AH.
 		.from Excavation Raider##39153
 		.buy Recipe: Dig Rat Stew##44977 |n
 		.learn Dig Rat Stew##6417
 	step
-		goto Tirisfal Glades 61.0,51.0
+		goto Tirisfal Glades,61.0,51.0
 		|tip This is only a Horde Recipe and may sell on the Neutral AH.
 		.talk Abigail Shiel##2118
 		.buy Recipe: Crispy Bat Wing##12226 |n
@@ -33285,19 +33285,19 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Engineering",[[ //NEEDS DETAI
 		.learn Snowmaster 9000##21940
 //EASTERN KINGDOMS
 	step
-		goto Eastern Plaguelands 65.4,14.2
+		goto Eastern Plaguelands,65.4,14.2
 		.from Mossflayer Shadowhunter##8561
 		.collect Schematic: Flawless Arcanite Rifle##16056 |n
 		.learn Flawless Arcanite Rifle##19833
 	step
-		goto Stratholme 22.6,64.6
+		goto Stratholme,22.6,64.6
 		.talk Risen Inquisitor##10426
 		.collect Schematic: Voice Amplification Modulator##16052 |n
 		.learn Voice Amplification Modulator##19819
 		.collect Schematic: Ultra-Flash Shadow Reflector##18658 |n
 		.learn Ultra-Flash Shadow Reflector##23082
 	step
-		goto Ironforge 68.2,44.0
+		goto Ironforge,68.2,44.0
 		.talk Gearcutter Cogspinner##5175
 		.buy Schematic: Steam Tonk Controller##22729 |n
 		.learn Steam Tonk Controller##28327
@@ -33306,12 +33306,12 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Engineering",[[ //NEEDS DETAI
 		.collect Schematic: Lil Smoky##11827##11827 |n
 		.learn Lil Smoky##15633
 	step
-		goto Gnomeregan 31.2,31.0
+		goto Gnomeregan,31.2,31.0
 		.from Mekgineer Thermaplugg##7800
 		.collect Schematic: Pet Bombling##11828 |n
 		.learn Pet Bombling##15628
 	step
-		goto Gnomeregan 31.2,31.0
+		goto Gnomeregan,31.2,31.0
 		.from Mekgineer Thermaplugg##7800
 		.collect Schematic: Goblin Jumper Cables##7561 |n
 		.learn Goblin Jumper Cables##9273
@@ -33322,13 +33322,13 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Engineering",[[ //NEEDS DETAI
 		.collect Schematic: Gnomish Cloaking Device##7742 |n
 		.learn Gnomish Cloaking Device##3971
 	step
-		goto Gnomeregan/4 31.2,31.0
+		goto Gnomeregan/4,31.2,31.0
 		.from Mekgineer Thermaplugg##7800
 		|tip This has a very low drop rate.
 		.collect Schematic: Flame Deflector##4411 |n
 		.learn Flame Deflector##3944
 	step
-		goto Gnomeregan 31.2,31.0
+		goto Gnomeregan,31.2,31.0
 		.from Mekgineer Thermaplugg##7800
 		.collect Schematic: Gnomish Universal Remote##7560 |n
 		.learn Gnomish Universal Remote##9269
@@ -33336,74 +33336,74 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Engineering",[[ //NEEDS DETAI
 		|tip This is only available to purchase from an Alliance Vendor and may sell well on the Neutral AH.
 		'|talk Gearcutter Cogspinner##5175
 	step
-		goto Blackrock Depths/2 37.8,73.0
+		goto Blackrock Depths/2,37.8,73.0
 		.from Weapon Technician##8920
 		.collect Schematic: Dark Iron Bomb##16049 |n
 		.learn Dark Iron Bomb##19799
 	step
-		goto Blackrock Depths/2 37.8,73.0
+		goto Blackrock Depths/2,37.8,73.0
 		.from Weapon Technician##8920
 		.collect Schematic: World Enlarger##18661 |n
 		.learn World Enlarger##23129
 	step
-		goto Blackrock Depths/2 37.8,73.0
+		goto Blackrock Depths/2,37.8,73.0
 		.from Weapon Technician
 		.collect Schematic: Gnomish Alarm-o-Bot##18654 |n
 		.learn Gnomish Alarm-o-Bot##23096
 	step
-		goto Blackrock Depths 50.0,61.6
+		goto Blackrock Depths,50.0,61.6
 		.from Plugger Spazzring##9499
 		.collect Schematic: Goblin Jumper Cables XL##18653 |n
 		.learn Goblin Jumper Cables XL##23078
 	step
-		goto Blackrock Depths 56.6,35.0
+		goto Blackrock Depths,56.6,35.0
 		.from Doomforge Craftsman##8897
 		.collect Schematic: Dark Iron Rifle##16048 |n
 		.learn Dark Iron Rifle##19796
 	step
-		goto Blackrock Depths 36.6,38.1
+		goto Blackrock Depths,36.6,38.1
 		.from Solakar Flamewreath##10264
 		.collect Schematic: Hyper-Radiant Flame Reflector##18657 |n
 		.learn Hyper-Radiant Flame Reflector##23081
 	step
-		goto Blackrock Depths 36.8,66.0
+		goto Blackrock Depths,36.8,66.0
 		.click Schematic: Field Repair Bot 74A##525
 		.learn Field Repair Bot 74A##22704
 	step
-		goto Badlands 91.0,38.4
+		goto Badlands,91.0,38.4
 		.talk Buckslappy##49918
 		.buy Schematic: Blue Firework##18649 |n
 		.learn Blue Firework##23067
 		.' You can also purchase this from Darian Singh here: [Stormwind City 42.6,76.8]
 		'|talk Darian Singh##1304
 	step
-		goto Badlands 91.0,38.4
+		goto Badlands,91.0,38.4
 		.talk Buckslappy##49918
 		.buy Schematic: Red Firework##18647 |n
 		.learn Red Firework##23066
 	step
-		goto Northern Stranglethorn 67.6,61.0
+		goto Northern Stranglethorn,67.6,61.0
 		.talk Gnaz Blunderflame##2687
 		.buy Schematic: Mechanical Dragonling##13311 |n
 		.learn Mechanical Dragonling##3969
 		.' You can also purchase this from Kaye Toogie here: [Dalaran 34.0,35.6]
 		'|talk Kaye Toogie##35826
 	step
-		goto Northern Stranglethorn 67.6,61.0
+		goto Northern Stranglethorn,67.6,61.0
 		.talk Knaz Blunderflame##8679
 		.buy Schematic: Deadly Scope##10602 |n
 		.learn Deadly Scope##12597
 		.' You can also purchase this from Yuka Screwspigot here: [Blackrock Depths 37.2,79.6]
 		'|talk Yuka Screwspigot##45843
 	step
-		goto Karazhan 44.8,83.6
+		goto Karazhan,44.8,83.6
 		.from Attumen the Huntsman##16152
 		.collect Schematic: Stabilized Eternium Scope##23809 |n
 		.learn Stabilized Eternium Scope##30334
 
 //KALIMDOR
 	step
-		goto Moonglade 54.0,35.0
+		goto Moonglade,54.0,35.0
 		.talk Fariel Starsong##15909
 		.buy Large Rocket Recipes##21742 |n
 		.' Open the Large Rocket Recipes |use Large Rocket Recipes##21742
@@ -33412,7 +33412,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Engineering",[[ //NEEDS DETAI
 		.collect Schematic: Large Blue Rocket##21727 |n
 		.learn Large Red Rocket##26422
 	step
-		goto Moonglade 54.0,35.0
+		goto Moonglade,54.0,35.0
 		.talk Fariel Starsong##15909
 		.buy Cluster Rocket Recipes##21741 |n
 		.' Open the Large Rocket Recipes |use Large Rocket Recipes##21742
@@ -33423,12 +33423,12 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Engineering",[[ //NEEDS DETAI
 		.learn Blue Rocket Cluster##26423
 		.learn Green Rocket Cluster##26424
 	step
-		goto Moonglade 54.0,35.0
+		goto Moonglade,54.0,35.0
 		.talk Fariel Starsong##15909
 		.buy Schematic: Firework Launcher##44919 |n
 		.learn Firework Launcher##26442
 	step
-		goto Moonglade 54.0,35.0
+		goto Moonglade,54.0,35.0
 		.talk Fariel Starsong##15909
 		.buy Small Rocket Recipes##21740 |n
 		.' Open your Small Rocket Recipes |use Small Rocket Recipes##21740
@@ -33438,12 +33438,12 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Engineering",[[ //NEEDS DETAI
 		.collect Schematic: Small Blue Rocket##21724 |n
 		.learn Small Blue Rocket##26416
 	step
-		goto Moonglade 54.0,35.0
+		goto Moonglade,54.0,35.0
 		.talk Fariel Starsong##15909
 		.buy Schematic: Cluster Launcher##44918 |n
 		.learn Cluster Launcher##26443
 	step
-		goto Winterspring 59.2,50.8
+		goto Winterspring,59.2,50.8
 		.talk Xizzer Fizzbolt##11185
 		.buy Schematic: Powerful Seaforium Charge##18656 |n
 		.learn Powerful Seaforium Charge##23080
@@ -33455,49 +33455,49 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Engineering",[[ //NEEDS DETAI
 		.learn Delicate Arcanite Converter##19815
 	step
 		'This Schematic is obtained by doing the quest A Yeti of Your Own.
-		goto Winterspring 59.2,49.8
+		goto Winterspring,59.2,49.8
 		.talk Umi Rumplesnicker##10305
 		..accept A Yeti of Your Own##8798
 		..turnin A Yeti of Your Own##8798
 		.learn Tranquil Mechanical Yeti##26011
 	step
-		goto Molten Front 47.0,90.6
+		goto Molten Front,47.0,90.6
 		.talk Damek Bloombeard##53214
 		.buy Schematic: Flintlocke's Woodchucker##70177 |n
 		.learn Flintlocke's Woodchucker##100587
 	step
-		goto Molten Front 47.0,90.6
+		goto Molten Front,47.0,90.6
 		.talk Damek Bloombeard##53214
 		.buy Schematic: Extreme-Impact Hole Puncher##71078 |n
 		.learn Extreme-Impact Hole Puncher##100687
 	step
-		goto Northern Barrens 68.4,69.2
+		goto Northern Barrens,68.4,69.2
 		.talk Gagsprocket##3495
 		.collect Schematic: Minor Recombobulator##14639 |n
 		.learn Minor Recombobulator##3952
 		.' You can also purchase this from Fradd Swiftgear here: [Wetlands 36.8,26.0]
 	 	'|talk Fradd Swiftgear##41435
 	step
-		goto Northern Barrens 68.4,69.2
+		goto Northern Barrens,68.4,69.2
 		.talk Gagsprocket##3495
 		.buy Schematic: Green Firework##18648 |n
 		.learn Green Firework##23068
 		.' You can also purchase this from Buckslappy here: [Badlands 91.0,38.4]
 		'|talk Buckslappy##49918
 	step
-		goto Feralas 48.6,44.8
+		goto Feralas,48.6,44.8
 		.talk Zorbin Fandazzle##14637
 		|tip You may have to do 2 quest's before you can purchase this Schematic.
 		.buy Schematic: Snake Burst Firework##19027 |n
 		.learn Snake Burst Firework##23507
 	step
 		'You have to get the Gordok Tribute in Dire Maul by not killing any of the bosses except for the final boss.
-		goto Dire Maul 31.7,28.0
+		goto Dire Maul,31.7,28.0
 		.click Gordok Tribute##179564
 		.collect Schematic: Major Recombobulator##18655 |n
 		.learn Major Recombobulator##23079
 	step
-		goto Tanaris 50.6,28.6
+		goto Tanaris,50.6,28.6
 		.talk Blizrik Buckshot##8131
 		.buy Schematic: EZ-Thro Dynamite II##18650 |n
 		.learn EZ-Thro Dynamite II##23069
@@ -33505,41 +33505,41 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Engineering",[[ //NEEDS DETAI
 		'|talk Buckslappy##49918
 //OUTLAND
 	step
-		goto Hellfire Peninsula 55.6,65.6
+		goto Hellfire Peninsula,55.6,65.6
 		.talk Lebowski##18775
 		.buy Schematic: Cogspinner Goggles##23803 |n
 		.learn Cogspinner Goggles##30316
 	step
-		goto Hellfire Peninsula 55.6,65.6
+		goto Hellfire Peninsula,55.6,65.6
 		.talk Lebowski##18775
 		.buy Schematic: Ultra-Spectropic Detection Goggles##23805 |n
 		.learn Ultra-Spectropic Detection Goggles##30318
 	step
-		goto Zangarmarsh 68.6,50.2
+		goto Zangarmarsh,68.6,50.2
 		.talk K. Lee Smallfry##17634
 		..turnin The Zapthrottle Mote Extractor!##9635
 		.collect Schematic: Zapthrottle Mote Extracto##23888 |n
 		.learn Zapthrottle Mote Extractor##30548
 	step
-		goto Zangarmarsh 79.2,63.8
+		goto Zangarmarsh,79.2,63.8
 		.talk Fedryen Swiftspear##17904
 		|tip You must be Friendly with Cenarion Expedition to purchase this Schematic.
 		.buy Schematic: Green Smoke Flare##23814 |n
 		.learn Green Smoke Flare##30344
 	step
-		goto Shattrath City 72.6,31.6
+		goto Shattrath City,72.6,31.6
 		.talk Wind Trader Lathrai##18484
 		.buy Schematic: Fel Iron Toolbox##23816 |n
 		.learn Fel Iron Toolbox##30348
 		.buy Schematic: White Smoke Flare##23811 |n
 		.learn White Smoke Flare##30341
 	step
-		goto Shattrath City 64.8,69.6
+		goto Shattrath City,64.8,69.6
 		.talk Viggz Shinesparked##19661
 		.buy Schematic: Adamantite Rifle##23799 |n
 		.learn Adamantite Rifle##303013
 	step
-		goto Magisters' Terrace 8.6,50.6
+		goto Magisters' Terrace,8.6,50.6
 		.from Kael'thas Sunstrider##24664
 		.collect Schematic: Healing Potion Injector##35310 |n
 		.learn Healing Potion Injector##30551
@@ -33547,75 +33547,75 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Engineering",[[ //NEEDS DETAI
 		.learn Mana Potion Injector##30552
 
 	step
-		goto Nagrand 30.6,57.0
+		goto Nagrand,30.6,57.0
 		.talk Paulsta'ats##23007
 		|tip You must be Revered with the Consortium to purchase this Schematic.
 		.buy Schematic: Elemental Seaforium Charge##23874 |n
 		.learn Elemental Seaforium Charge##30547
 	step
-		goto The Steamvault 32.8,82.4
+		goto The Steamvault,32.8,82.4
 		.from Mekgineer Steamrigger##17796
 		.collect Schematic: Rocket Boots Xtreme##23887 |n
 		.learn Rocket Boots Xtreme##30556
 	step
-		goto The Mechanar 52.0,34.4
+		goto The Mechanar,52.0,34.4
 		.from Mechano-Lord Capacitus##19219
 		.collect Schematic: Rocket Boots Xtreme Lite##35582 |n
 		.learn Rocket Boots Xtreme Lite##46697
 	step
-		goto Blade's Edge Mountains 75.0,41.6
+		goto Blade's Edge Mountains,75.0,41.6
 		.from Doomforge Engineer##19960
 		.collect Schematic: Felsteel Boomstick##23800 |n
 		.learn Felsteel Boomstick##30314
 	step
-		goto Blade's Edge Mountains 33.6,52.6
+		goto Blade's Edge Mountains,33.6,52.6
 		.from Simon Unit##23385
 		.collect Schematic: Field Repair Bot 110G##34114 |n
 		.learn Field Repair Bot 110G##44391
 	step
-		goto Shadowmoon Valley 25.2,32.6
+		goto Shadowmoon Valley,25.2,32.6
 		.from Mo'arg Weaponsmith##19755
 		.collect Schematic: Hyper-Vision Goggles##23806 |n
 		.learn Hyper-Vision Goggles##30325
 	step
-		goto Shadowmoon Valley 36.8,54.4
+		goto Shadowmoon Valley,36.8,54.4
 		.talk Daggle Ironshaper##19351
 		.buy Schematic: Adamantite Scope##23807 |n
 		.learn Adamantite Scope##30329
 	step
-		goto Netherstorm 56.8,64.6
+		goto Netherstorm,56.8,64.6
 		.from Sunfury Bowman##20207
 		.collect Schematic: Khorium Scope##23808 |n
 		.learn Khorium Scope##30332
 //NORTHREND
 	step
-		goto Dalaran 39.0,26.0
+		goto Dalaran,39.0,26.0
 		.talk Bryan Landers##28722
 		.buy Schematic: Titanium Toolbox##23817 |n
 		.learn Titanium Toolbox##30349
 	step
-		goto Dalaran 34.0,35.6
+		goto Dalaran,34.0,35.6
 		.talk Kaye Toogie##35826
 		.buy Schematic: Mithril Mechanical Dragonling##10609 |n
 		.learn Mithril Mechanical Dragonling##12624
 		.' You can also purchase this from Ruppo Zipcoil here: [The HInterlands 34.2,37.8]
 		'|talk Ruppo Zipcoil##2688
 	step
-		goto The Storm Peaks 38.1,40.9
+		goto The Storm Peaks,38.1,40.9
 		.from Library Guardian##29724+
 		.collect SCRAP-E Access Card##41267 |n
 		.click the Access Card in your bags |use SCRAP-E Access Card##41267
 		..accept SCRAP-E##12888
-		goto The Storm Peaks 37.7,46.5
+		goto The Storm Peaks,37.7,46.5
 		.talk SCRAP-E##29806
 		..turnin SCRAP-E##12888
 		..accept The Prototype Console##12889
-		goto The Storm Peaks 37.5,46.9
+		goto The Storm Peaks,37.5,46.9
 		.click Prototype Console##8177
 		..turnin The Prototype Console##12889
 		.learn Scrapbot Construction Kit##55252
 	step
-		goto Borean Tundra 57.6,66.2
+		goto Borean Tundra,57.6,66.2
 		.talk Logistics Officer Silverstone##32564
 		.' This is an Alliance only Schematic and may sell well on the Neutral AH.
 		|tip You must be Exalted with Valiance Expedition to purchase this Schematic.
@@ -36035,68 +36035,68 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Jewelcrafting",[[ //NEEDS DET
 		.learn Ring of Flowing Life##46123
 //OTHER
 	step
-		goto Stormwind City 64.6,71.6
+		goto Stormwind City,64.6,71.6
 		.talk Edna Mullby##1286
 		|tip He walks along this path. Some searching may be required.
 		.buy Design: Heavy Golden Necklace of Battle##20856 |n
 		.learn Heavy Golden Necklace of Battle##25320
 	step
-		goto Ironforge 46.6,28.6
+		goto Ironforge,46.6,28.6
 		.talk Burbik Gearspanner##5163
 		.from Design: The Jade Eye##20975 |n
 		.learn The Jade Eye##25619
 	step
-		goto Dustwallow Marsh 66.4,51.4
+		goto Dustwallow Marsh,66.4,51.4
 		.talk Helenia Olden##4897
 		.buy Design: Black Pearl Panther##21941 |n
 		.learn Figurine - Black Pearl Panther##26875
 	step
-		goto Arathi Highlands 40.4,48.8
+		goto Arathi Highlands,40.4,48.8
 		.talk Hammon Karwn##2810
 		.buy Design: Ruby Crown of Restoration##21942 |n
 		.learn Ruby Crown of Restoration##26878
 	step
-		goto Dustwallow Marsh 66.4,51.4
+		goto Dustwallow Marsh,66.4,51.4
 		.talk Helenia Olden##4897
 		.buy Design: Truesilver Crab##21943 |n
 		.learn Figurine - Truesilver Crab##26881
 
 	step
-		goto Ironforge 46.6,28.6
+		goto Ironforge,46.6,28.6
 		.talk Burbik Gearspanner##5163
 		.buy Design: Opal Necklace of Impact##21948 |n
 		.learn Opal Necklace of Impact##26897
 
 	step
-		goto Silithus 53.8,34.4
+		goto Silithus,53.8,34.4
 		.talk Mishta##15179
 		.buy Design: Emerald Crown of Destruction##21952 |n
 		.learn Emerald Crown of Destruction##26906
 
 	step
-		goto Eastern Plaguelands 74.2,51.0
+		goto Eastern Plaguelands,74.2,51.0
 		.talk Jase Farlane##12941
 		.buy Design: Ring of Bitter Shadows##21954 |n
 		.learn Ring of Bitter Shadows##26910
 	step
-		goto Darnassus 58.2,35.0
+		goto Darnassus,58.2,35.0
 		.talk Mythrin'dir##4229
 		.buy Design: Amulet of the Moon##20854 |n
 		.learn Amulet of the Moon##25339
 	step
-		goto Northern Barrens 67.0,73.4
+		goto Northern Barrens,67.0,73.4
 		.talk Ranik##3499
 		.buy Design: Wicked Moonstone Ring##20855 |n
 		.learn Wicked Moonstone Ring##25323
 
 
 	step
-		goto Blackrock Spire/5 53.8,84.8
+		goto Blackrock Spire/5,53.8,84.8
 		.from Quartermaster Zigris##9736
 		.collect Design: Black Diamond Crab##21955 |n
 		.learn Figurine - Black Diamond Crab##26912
 	step
-		goto Blackrock Depths 36.8,66.0
+		goto Blackrock Depths,36.8,66.0
 		.talk Golem Lord Argelmach##8983
 		.collect Design: Dark Iron Scorpid##21956 |n
 		.learn Figurine - Dark Iron Scorpid##26914
@@ -36105,143 +36105,143 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Jewelcrafting",[[ //NEEDS DET
 
 
 	step
-		goto Winterspring 59.6,49.2
+		goto Winterspring,59.6,49.2
 		.talk Qia##11189
 		.buy Design: Necklace of the Diamond Tower##21957 |n
 		.learn Necklace of the Diamond Tower##26915
 	step
-		goto Isle of Quel'Danas 47.2,30.6
+		goto Isle of Quel'Danas,47.2,30.6
 		.talk Eldara Dawnrunner##25032
 		|tip You must be Revered with Shattered Sun Offensive to purchase this Design.
 		.buy Design: Figurine - Crimson Serpent##35697 |n
 		.learn Figurine - Crimson Serpent##46777
 	step
-		goto Isle of Quel'Danas 47.2,30.6
+		goto Isle of Quel'Danas,47.2,30.6
 		.talk Eldara Dawnrunner##25032
 		|tip You must be Revered with Shattered Sun Offensive to purchase this Design.
 		.buy Design: Figurine - Empyrean Tortoise##35695 |n
 		.learn Figurine - Empyrean Tortoise##46775
 	step
-		goto Isle of Quel'Danas 47.2,30.6
+		goto Isle of Quel'Danas,47.2,30.6
 		.talk Eldara Dawnrunner##25032
 		|tip You must be Revered with Shattered Sun Offensive to purchase this Design.
 		.buy Design: Figurine - Khorium Boar##35696 |n
 		.learn Figurine - Khorium Boar##46776
 	step
-		goto Isle of Quel'Danas 47.2,30.6
+		goto Isle of Quel'Danas,47.2,30.6
 		.talk Eldara Dawnrunner##25032
 		|tip You must be Revered with Shattered Sun Offensive to purchase this Design.
 		.buy Design: Figurine - Seaspray Albatross##35699 |n
 		.learn Figurine - Seaspray Albatross##46779
 	step
-		goto Isle of Quel'Danas 47.2,30.6
+		goto Isle of Quel'Danas,47.2,30.6
 		.talk Eldara Dawnrunner##25032
 		|tip You must be Revered with Shattered Sun Offensive to purchase this Design.
 		.buy Design: Figurine - Shadowsong Panther##35698 |n
 		.learn Figurine - Shadowsong Panther##46778
 	step
-		goto Isle of Quel'Danas 47.2,30.6
+		goto Isle of Quel'Danas,47.2,30.6
 		.talk Eldara Dawnrunner##25032
 		|tip You must be Revered with Shattered Sun Offensive to purchase this Design.
 		.buy Design: Ember Skyfire Diamond##35505 |n
 		.learn Ember Skyfire Diamond##46601
 	step
-		goto Isle of Quel'Danas 47.2,30.6
+		goto Isle of Quel'Danas,47.2,30.6
 		.talk Eldara Dawnrunner##25032
 		|tip You must be Revered with Shattered Sun Offensive to purchase this Design.
 		.buy Design: Eternal Earthstorm Diamond##35502 |n
 		.learn Eternal Earthstorm Diamond##46597
 	step
-		goto Magisters' Terrace 8.6,50.6
+		goto Magisters' Terrace,8.6,50.6
 		.from Kael'thas Sunstrider##24664
 		.collect Design: Brilliant Living Ruby##35305 |n
 		.learn Brilliant Living Ruby##31088
 	step
-		goto Karazhan/12 43.6,26.6
+		goto Karazhan/12,43.6,26.6
 		.talk Ythyar##17518
 		|tip You must be Revered with The Consortium to purchase this Design.
 		.buy Design: Bracing Earthstorm Diamond##25903 |n
 		.learn Bracing Earthstorm Diamond##32867
 
 	step
-		goto Tanaris 63.0,57.2
+		goto Tanaris,63.0,57.2
 		.talk Alurmi##21643
 		.buy Design: Facet of Eternity##33160 |n
 		.learn Facet of Eternity##42593
 	step
-		goto Tanaris 63.0,57.2
+		goto Tanaris,63.0,57.2
 		.talk Alurmi##21643
 		|tip You must be Revered with the Keepers of Time to purchase this Design.
 		.buy Design: Pendant of Frozen Flame##24174 |n
 		.learn Pendant of Frozen Flame##31062
 	step
-		goto Tanaris 63.0,57.2
+		goto Tanaris,63.0,57.2
 		.talk Alurmi##21643
 		|tip You must be Revered with the Keepers of Time to purchase this Design.
 		.buy Design: Stone of Blades##33158 |n
 		.learn Stone of Blades##42591
 	step
-		goto Tanaris 63.0,57.2
+		goto Tanaris,63.0,57.2
 		.talk Alurmi##21643
 		|tip You must be Honored with Keepers of time to purchase this Design.
 		.buy Design: Enigmatic Skyfire Diamond##25910 |n
 		.learn Enigmatic Skyfire Diamond##32874
 	step
-		goto Old Hillsbrad Foothills 50.6,31.8
+		goto Old Hillsbrad Foothills,50.6,31.8
 		.from Epoch Hunter##18096
 		.collect Design: Circlet of Arcane Might##24173 |n
 		.learn Circlet of Arcane Might##31078
 	step
-		goto Karazhan/12 43.6,26.6
+		goto Karazhan/12,43.6,26.6
 		.talk Ythyar##17518
 		|tip You must be Honored with The Consortium to purchase this Design.
 		.buy Design: Powerful Earthstorm Diamond##25902 |n
 		.learn Powerful Earthstorm Diamond##32866
 	step
-		goto Tanaris 63.0,57.2
+		goto Tanaris,63.0,57.2
 		.talk Alurmi##21643
 		|tip You must be Revered with Keepers of Time to purchase this Design.
 		.buy Design: Living Ruby Serpent##24181 |n
 		.learn Figurine - Living Ruby Serpent##31081
 //OUTLAND
 	step
-		goto Shattrath City 48.0,26.6
+		goto Shattrath City,48.0,26.6
 		.talk Quartermaster Endarin##19321
 		.buy Design: Purified Shadow Draenite##23145 |n
 		.learn Purified Shadow Draenite##28927
 	step
-		goto Shattrath City 60.6,64.2
+		goto Shattrath City,60.6,64.2
 		.talk Quartermaster Enuril##19331
 		|tip You must be Friendly with the The Scryers to purchase this Design.
 		.buy Design: Brilliant Blood Garnet##23133 |n
 		.learn Brilliant Blood Garnet##28903
 	step
-		goto Shattrath City 48.0,26.6
+		goto Shattrath City,48.0,26.6
 		.talk Quartermaster Endarin##19321
 		.buy Design: Smooth Golden Draenite##23149 |n
 		.learn Smooth Golden Draenite##28944
 	step
-		goto Shattrath City 62.6,69.0
+		goto Shattrath City,62.6,69.0
 		.talk Nakodu##21655
 		.buy Design: Potent Flame Spessarite##23138 |n
 		.learn Potent Flame Spessarite##28915
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		.buy Design: Forceful Talasite##35325 |n
 		.learn Forceful Talasite##46405
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		.buy Design: Quick Dawnstone##35322 |n
 		.learn Quick Dawnstone##46403
 	step
-		goto Hellfire Peninsula 56.6,62.6
+		goto Hellfire Peninsula,56.6,62.6
 		.talk Logistics Officer Ulrike##17657
 		.buy Design: Regal Deep Peridot##31359 |n
 		.learn Regal Deep Peridot##28918
 	step
-		goto Nagrand 30.6,57.0
+		goto Nagrand,30.6,57.0
 		.talk Paulsta'ats##23007
 		|tip You must be Honored with The Consortium to purchase this Design.
 		.buy Design: Subtle Golden Draenite##23150 |n
@@ -36249,7 +36249,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Jewelcrafting",[[ //NEEDS DET
 		.' You can also purchase this from Karaaz here: [Netherstorm 43.6,34.4]
 		'|talk Karaaz##20242
 	step
-		goto Nagrand 30.6,57.0
+		goto Nagrand,30.6,57.0
 		.talk Paulsta'ats##23007
 		|tip You must be Friendly with The Consortium to purchase this Design.
 		.buy Design: Reckless Flame Spessarite##23136 |n
@@ -36257,7 +36257,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Jewelcrafting",[[ //NEEDS DET
 		.' You can also purchase this from Karaaz here: [Netherstorm 43.6,34.4]
 		'|talk Karaaz##20242
 	step
-		goto Nagrand 30.6,57.0
+		goto Nagrand,30.6,57.0
 		.talk Paulsta'ats##23007
 		|tip You must be Friendly with The Consortium to purchase this Design.
 		.buy Design: Shifting Shadow Draenite##23146 |n
@@ -36265,102 +36265,102 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Jewelcrafting",[[ //NEEDS DET
 		.' You can also purchase this from Karaaz here: [Netherstorm 43.6,34.4]
 		'|talk Karaaz##20242
 	step
-		goto Nagrand 42.8,42.6
+		goto Nagrand,42.8,42.6
 		.talk Aldraan##21485
 		.buy Design: Mystic Dawnstone##24208 |n
 		.learn Mystic Dawnstone##31101
 	step
-		goto Nagrand 41.2,44.2
+		goto Nagrand,41.2,44.2
 		.talk Quartermaster Davian Vaclav##18822
 		.buy Design: Steady Talasite##33783 |n
 		.learn Steady Talasite##43493
 	step
-		goto Shadowmoon Valley 53.0,62.8
+		goto Shadowmoon Valley,53.0,62.8
 		.from Eclipsion Soldier##22016
 		.collect Design: Delicate Living Ruby##24192 |n
 		.learn Delicate Living Ruby##31085
 	step
-		goto Shadowmoon Valley 53.0,62.8
+		goto Shadowmoon Valley,53.0,62.8
 		.from Eclipsion Soldier##22016
 		.collect Design: Rigid Star of Elune##31875 |n
 		.learn Rigid Star of Elune##31098
 	step
-		goto The Steamvault 46.8,41.8
+		goto The Steamvault,46.8,41.8
 		.from Coilfang Sorceress##17722
 		.collect Design: Khorium Band of Frost##24159 |n
 		.learn Khorium Band of Frost##31054
 	step
-		goto Shattrath City 51.6,41.6
+		goto Shattrath City,51.6,41.6
 		.talk Almaador##21432
 		|tip You must be Revered with The Sha'tar to purchase this Design.
 		.buy Design: Blood of Amber##33159 |n
 		.learn Blood of Amber##42592
 	step
-		goto Nagrand 30.6,57.0
+		goto Nagrand,30.6,57.0
 		.talk Paulsta'ats##23007
 		.buy Design: Crimson Sun##33156 |n
 		.learn Crimson Sun##42589
 	step
-		goto Nagrand 30.6,57.0
+		goto Nagrand,30.6,57.0
 		.talk Paulsta'ats##23007
 		.buy Design: Don Julio's Heart##33305 |n
 		.learn Don Julio's Heart##42558
 	step
-		goto Shattrath City 62.6,69.0
+		goto Shattrath City,62.6,69.0
 		.talk Nakodu##21655
 		.collect Design: Falling Star##33157 |n
 		.learn Falling Star##42590
 	step
-		goto Shattrath City 51.6,41.6
+		goto Shattrath City,51.6,41.6
 		.talk Almaador##21432
 		.buy Design: Kailee's Rose##33155 |n
 		.learn Kailee's Rose##42588
 	step
-		goto Sethekk Halls 48.6,68.4
+		goto Sethekk Halls,48.6,68.4
 		.from Darkweaver Syth##18472
 		.collect Design: Khorium Inferno Band##24160 |n
 		.learn Khorium Inferno Band##31055
 	step
-		goto Blade's Edge Mountains 73.2,74.2
+		goto Blade's Edge Mountains,73.2,74.2
 		.from Vekh'nir Dreadhawk##19984
 		.collect Design: Khorium Band of Leaves##24161 |n
 		.learn Khorium Band of Leaves##31056
 
 	step
-		goto Shattrath City 48.0,26.6
+		goto Shattrath City,48.0,26.6
 		.talk Quartermaster Endarin##19321
 		.buy Design: Pendant of Shadow's End##24177 |n
 		.learn Pendant of Shadow's End##31065
 	step
-		goto Shattrath City 62.6,69.0
+		goto Shattrath City,62.6,69.0
 		.talk Nakodu##21655
 		|tip You must be Revered with Lower City to purchase this Design.
 		.buy Design: Pendant of Thawing##24175 |n
 		.learn Pendant of Thawing##31063
 	step
-		goto Nagrand 30.6,57.0
+		goto Nagrand,30.6,57.0
 		.talk Paulsta'ats##23007
 		.buy Design: Pendant of the Null Rune##24178 |n
 		.learn Pendant of the Null Rune##31066
 	step
-		goto Shattrath City 60.6,64.2
+		goto Shattrath City,60.6,64.2
 		.talk Quartermaster Enuril##19331
 		|tip You must be Revered with The Scryers to purchase this Design.
 		.buy Design: Pendant of Withering##24176 |n
 		.learn Pendant of Withering##31064
 	step
-		goto Shattrath City 51.6,41.6
+		goto Shattrath City,51.6,41.6
 		.talk Almaador##21432
 		.buy Design: Ring of Arcane Shielding##30826 |n
 		.learn Ring of Arcane Shielding##37855
 
 	step
-		goto Netherstorm 56.8,88.0
+		goto Netherstorm,56.8,88.0
 		.from Mageslayer##18866
 		.collect Design: Arcane Khorium Band##24162 |n
 		.learn Arcane Khorium Band##31057
 	step
-		goto Shadowmoon Valley 47.8,28.6
+		goto Shadowmoon Valley,47.8,28.6
 		.from Coilskar Siren##19768
 		.collect Design: Chaotic Skyfire Diamond##34689 |n
 		.learn Chaotic Skyfire Diamond##44794
@@ -36368,7 +36368,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Jewelcrafting",[[ //NEEDS DET
 
 
 	step
-		goto Shattrath City 51.6,41.6
+		goto Shattrath City,51.6,41.6
 		.talk Almaador##21432
 		|tip You must be Friendly with The Sha'tar to purchase this Design.
 		.buy Design: Insightful Earthstorm Diamond##25904 |n
@@ -36376,342 +36376,342 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Jewelcrafting",[[ //NEEDS DET
 
 
 	step
-		goto Nagrand 30.6,57.0
+		goto Nagrand,30.6,57.0
 		.talk Paulsta'ats##23007
 		|tip You must be Exalted with The Consortium to purchase this Design.
 		.buy Design: Relentless Earthstorm Diamond##33622 |n
 		.learn Relentless Earthstorm Diamond##39961
 	step
-		goto Nagrand 30.6,57.0
+		goto Nagrand,30.6,57.0
 		.talk Paulsta'ats##23007
 		|tip You must be Honored with The Consortium to purchase this Design.
 		.buy Design: Swift Skyfire Diamond##25908 |n
 		.learn Swift Skyfire Diamond##32873
 	step
-		goto Hellfire Peninsula 56.6,62.6
+		goto Hellfire Peninsula,56.6,62.6
 		.talk Logistics Officer Ulrike##17657
 		|tip You must be Revered with Honor Hold to purchase this Design.
 		.buy Design: Dawnstone Crab##24180 |n
 		.learn Figurine - Dawnstone Crab##31080
 	step
-		goto Shattrath City 62.6,69.0
+		goto Shattrath City,62.6,69.0
 		.talk Nakodu##21655
 		|tip You must be Revered with Lower City to purchase this Design.
 		.buy Design: Felsteel Boar##24179 |n
 		.learn Figurine - Felsteel Boar##31079
 	step
-		goto Zangarmarsh 79.2,63.8
+		goto Zangarmarsh,79.2,63.8
 		.talk Fedryen Swiftspear##17904
 		|tip You must be Revered with Cenarion Expedition to purchase this Design.
 		.buy Design: Nightseye Panther##24183 |n
 		.learn Figurine - Nightseye Panther##31083
 	step
-		goto Shattrath City 51.6,41.6
+		goto Shattrath City,51.6,41.6
 		.talk Almaador##21432
 		|tip You must be Revered with The Sha'tar to purchae this Design.
 		.buy Design: Talasite Owl##24182 |n
 		.learn Figurine - Talasite Owl##31082
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Friendly with the Shattered Sun Offensive.
 		.buy Design: Bold Crimson Spinel##35244 |n
 		.learn Bold Crimson Spinel##39705
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Friendly with the Shattered Sun Offensive.
 		.buy Design: Brilliant Crimson Spinel##35248 |n
 		.learn Brilliant Crimson Spinel##39711
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Revered with the Shattered Sun Offensive.
 		.buy Design: Deadly Pyrestone##35271 |n
 		.learn Deadly Pyrestone##39738
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Friendly with the Shattered Sun Offensive.
 		.buy Design: Delicate Crimson Spinel##35246 |n
 		.learn Delicate Crimson Spinel##39706
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Exalted with the Shattered Sun Offensive.
 		.buy Design: Flashing Crimson Spinel##35247 |n
 		.learn Flashing Crimson Spinel##39714
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Revered with the Shattered Sun Offensive.
 		.buy Design: Forceful Seaspray Emerald##35769 |n
 		.learn Forceful Seaspray Emerald##47053
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Honored with the Shattered Sun Offensive.
 		.buy Design: Glinting Shadowsong Amethyst##35266 |n
 		.learn Glinting Shadowsong Amethyst##39736
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Exalted with the Shattered Sun Offensive.
 		.buy Design: Inscribed Pyrestone##35267 |n
 		.learn Inscribed Pyrestone##39733
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Honored with the Shattered Sun Offensive.
 		.buy Design: Jagged Seaspray Emerald##35253 |n
 		.learn Jagged Seaspray Emerald##39742
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Exalted with the Shattered Sun Offensive.
 		.buy Design: Mystic Lionseye##35258 |n
 		.learn Mystic Lionseye##39724
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Honored with the Shattered Sun Offensive.
 		.buy Design: Potent Pyrestone##35269 |n
 		.learn Potent Pyrestone##39734
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Honored with the Shattered Sun Offensive.
 		.buy Design: Purified Shadowsong Amethyst##35251 |n
 		.learn Purified Shadowsong Amethyst##39741
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Revered with the Shattered Sun Offensive.
 		.buy Design: Quick Lionseye##35768 |n
 		.learn Quick Lionseye##47056
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Honored with the Shattered Sun Offensive.
 		.buy Design: Radiant Seaspray Emerald##35254 |n
 		.learn Radiant Seaspray Emerald##39740
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Revered with the Shattered Sun Offensive.
 		.buy Design: Reckless Pyrestone##35767 |n
 		.learn Reckless Pyrestone##47055
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Revered with the Shattered Sun Offensive.
 		.buy Design: Regal Seaspray Emerald##35252 |n
 		.learn Regal Seaspray Emerald##39739
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Revered with the Shattered Sun Offensive.
 		.buy Design: Rigid Empyrean Sapphire##35259 |n
 		.learn Rigid Empyrean Sapphire##39721
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Exalted with the Shattered Sun Offensive.
 		.buy Design: Shifting Shadowsong Amethyst##35242 |n
 		.learn Shifting Shadowsong Amethyst##39728
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Friendly with the Shattered Sun Offensive.
 		.buy Design: Smooth Lionseye##35260 |n
 		.learn Smooth Lionseye##39720
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Friendly with the Shattered Sun Offensive.
 		.buy Design: Solid Empyrean Sapphire##35263 |n
 		.learn Solid Empyrean Sapphire##39715
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Exalted with the Shattered Sun Offensive.
 		.buy Design: Sovereign Shadowsong Amethyst##35243 |n
 		.learn Sovereign Shadowsong Amethyst##39727
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Friendly with the Shattered Sun Offensive.
 		.buy Design: Sparkling Empyrean Sapphire##35264 |n
 		.learn Sparkling Empyrean Sapphire##39716
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Revered with the Shattered Sun Offensive.
 		.buy Design: Steady Seaspray Emerald##35766 |n
 		.learn Steady Seaspray Emerald##47054
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Exalted with the Shattered Sun Offensive.
 		.buy Design: Stormy Empyrean Sapphire##35265 |n
 		.learn Stormy Empyrean Sapphire##39718
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Friendly with the Shattered Sun Offensive.
 		.buy Design: Subtle Lionseye##35249 |n
 		.learn Subtle Lionseye##39713
 	step
-		goto The Botanica 36.0,16.4
+		goto The Botanica,36.0,16.4
 		.from Sunseeker Botanist##18422
 		.collect Design: Coronet of Verdant Flame##24172 |n
 		.learn Coronet of Verdant Flame##31077
 //NORTHREND
 
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Radiant Dark Jade##41570 |n
 		.learn Radiant Dark Jade##53932
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Mysterious Shadow Crystal##41575 |n
 		.learn Mysterious Shadow Crystal##53865
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Mystic Sun Crystal##41559 |n
 		.learn Mystic Sun Crystal##53857
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Lucent Huge Citrine##41565 |n
 		.learn Lucent Huge Citrine##53879
 
 	step
-		goto Icecrown 43.4,20.6
+		goto Icecrown,43.4,20.6
 		.talk Duchess Mynx##32538
 		.buy Design: Deadly Huge Citrine##41562 |n
 		.learn Deadly Huge Citrine##53877
 	step
-		goto Howling Fjord 25.4,58.6
+		goto Howling Fjord,25.4,58.6
 		.talk Tanaika##31916
 		.buy Design: Defender's Shadow Crystal##41574 |n
 		.learn Defender's Shadow Crystal##53869
 
 	step
-		goto Sholazar Basin 54.6,56.2
+		goto Sholazar Basin,54.6,56.2
 		.talk Geen##31910
 		|tip You must be Friendly with The Oracles to purchase this Design.
 		.buy Design: Nimble Dark Jade##41567 |n
 		.learn Nimble Dark Jade##53917
 	step
-		goto Sholazar Basin 55.0,69.0
+		goto Sholazar Basin,55.0,69.0
 		.talk Tanak##31911
 		.buy Design: Reckless Huge Citrine##41561 |n
 		.learn Reckless Huge Citrine##53885
 
 	step
-		goto Howling Fjord 25.4,58.6
+		goto Howling Fjord,25.4,58.6
 		.talk Tanaika##31916
 		.buy Design: Purified Shadow Crystal##41568 |n
 		.learn Purified Shadow Crystal##53921
 
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Resplendent Huge Citrine##41566 |n
 		.learn Resplendent Huge Citrine##53875
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Shattered Dark Jade##41569 |n
 		.learn Shattered Dark Jade##53933
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Steady Dark Jade##41572 |n
 		.learn Steady Dark Jade##53919
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Stormy Chalcedony##41560 |n
 		.learn Stormy Chalcedony##53943
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy esign: Turbid Dark Jade##41571 |n
 		.learn Turbid Dark Jade##53924
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Willful Huge Citrine##41563 |n
 		.learn Willful Huge Citrine##53884
 
 
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Bold Dragon's Eye##42298 |n
 		.learn Bold Dragon's Eye##56049
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Brilliant Dragon's Eye##42309 |n
 		.learn Brilliant Dragon's Eye##56053
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Delicate Dragon's Eye##42301 |n
 		.learn Delicate Dragon's Eye##56052
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Flashing Dragon's Eye##42302 |n
 		.learn Flashing Dragon's Eye##56056
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Mystic Dragon's Eye##42305 |n
 		.learn Mystic Dragon's Eye##56079
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Precise Dragon's Eye##42306 |n
 		.learn Precise Dragon's Eye##56081
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Quick Dragon's Eye##42307 |n
 		.learn Quick Dragon's Eye##56083
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Rigid Dragon's Eye##42308 |n
 		.learn Rigid Dragon's Eye##56084
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Smooth Dragon's Eye##42310 |n
 		.learn Smooth Dragon's Eye##56085
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Solid Dragon's Eye##42311 |n
 		.learn Solid Dragon's Eye##56086
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Sparkling Dragon's Eye##42312 |n
 		.learn Sparkling Dragon's Eye##56087
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Stormy Dragon's Eye##42313 |n
 		.learn Stormy Dragon's Eye##56088
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Subtle Dragon's Eye##42314 |n
 		.learn Subtle Dragon's Eye##56055
@@ -36719,648 +36719,648 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Jewelcrafting",[[ //NEEDS DET
 
 
 	step
-		goto Deadwind Pass 47.0,75.6
+		goto Deadwind Pass,47.0,75.6
 		.talk Apprentice Darius##18255
 		|tip You must be Honored with The Violet Eye to purchase this Design.
 		.buy Design: The Frozen Eye##31401 |n
 		.learn The Frozen Eye##38503
 	step
-		goto Zangarmarsh 79.2,63.8
+		goto Zangarmarsh,79.2,63.8
 		.talk Fedryen Swiftspear##17904
 		|tip You must be Exalted with Cenarion Expedition to purchase this Design.
 		.buy Design: The Natural Ward##31402 |n
 		.learn The Natural Ward##38504
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Honored with the Shattered Sun Offensive.
 		.buy Design: Timeless Shadowsong Amethyst##35239 |n
 		.learn Timeless Shadowsong Amethyst##39731
 	step
-		goto Shattrath City 48.8,41.8
+		goto Shattrath City,48.8,41.8
 		.talk Ontuvo##27666
 		|tip You must be Exalted with the Shattered Sun Offensive.
 		.buy Design: Veiled Shadowsong Amethyst##35270 |n
 		.learn Veiled Shadowsong Amethyst##39737
 
 	step
-		goto The Storm Peaks 59.4,59.8
+		goto The Storm Peaks,59.4,59.8
 		|tip You can find Mammoths in Storm Peaks, Sholazar and Zul'Drak.
 		.from Ironwool Mammoth##29402, Shattertusk Mammoth##28379, Enraged Mammoth##28851, Plains Mammoth##30448
 		.collect Design: Accurate Twilight Opal##41818 |n
 		.learn Accurate Twilight Opal##53994
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Bold Scarlet Ruby##41576 |n
 		.learn Bold Scarlet Ruby##53830
 
 	step
-		goto Icecrown 43.4,20.6
+		goto Icecrown,43.4,20.6
 		.talk Duchess Mynx##32538
 		.buy Design: Deadly Monarch Topaz##41721 |n
 		.learn Deadly Monarch Topaz##53988
 	step
-		goto The Storm Peaks 26.2,47.6
+		goto The Storm Peaks,26.2,47.6
 		.from Stormforged Champion##29370, Stormforged Artificer##29376, Stormforged Ambusher##30208, Stormforged Infiltrator##30222
 		.collect Design: Defender's Twilight Opal##41820 |n
 		.learn Defender's Twilight Opal##53972
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Deft Monarch Topaz##41687 |n
 		.learn Deft Monarch Topaz##53991
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Delicate Scarlet Ruby##41577 |n
 		.learn Delicate Scarlet Ruby##53945
 
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Energized Forest Emerald##41692 |n
 		.learn Energized Forest Emerald##54011
 
 	step
-		goto Utgarde Keep/3 75.6,35.6
+		goto Utgarde Keep/3,75.6,35.6
 		.from Ingvar the Plunderer##23954
 		.collect Design: Fierce Monarch Topaz##41793 |n
 		.learn Fierce Monarch Topaz##54019
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Flashing Scarlet Ruby##41578 |n
 		.learn Flashing Scarlet Ruby##53949
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Forceful Forest Emerald##41693 |n
 		.learn Forceful Forest Emerald##54001
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Glinting Twilight Opal##41582 |n
 		.learn Glinting Twilight Opal##53980
 	step
-		goto Icecrown 87.6,75.6
+		goto Icecrown,87.6,75.6
 		.talk Veteran Crusader Aliocha Segard##30431
 		.buy Design: Guardian's Twilight Opal##41726 |n
 		.learn Guardian's Twilight Opal##53974
 
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Jagged Forest Emerald##41702 |n
 		.learn Jagged Forest Emerald##53996
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Lightning Forest Emerald##41696 |n
 		.learn Lightning Forest Emerald##54009
 	step
-		goto Sholazar Basin 54.6,56.2
+		goto Sholazar Basin,54.6,56.2
 		.talk Geen##31910
 		|tip You must be Revered with The Oracles to purchase this Design.
 		.buy Design: Misty Forest Emerald##41724 |n
 		.learn Misty Forest Emerald##54003
 	step
-		goto Wintergrasp 51.6,17.6
+		goto Wintergrasp,51.6,17.6
 		.talk Knight Dameron##32294
 		.buy Design: Mysterious Twilight Opal##41740 |n
 		.learn Mysterious Twilight Opal##53968
 	step
-		goto Wintergrasp 51.6,17.6
+		goto Wintergrasp,51.6,17.6
 		.talk Knight Dameron##32294
 		.buy Design: Mystic Autumn's Glow##41727 |n
 		.learn Mystic Autumn's Glow##53960
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Nimble Forest Emerald##41698 |n
 		.learn Nimble Forest Emerald##53997
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Potent Monarch Topaz##41686 |n
 		.learn Potent Monarch Topaz##53984
 	step
-		goto Ahn'kahet: The Old Kingdom 23.6,50.6
+		goto Ahn'kahet: The Old Kingdom,23.6,50.6
 		.from Herald Volazj##29311
 		.collect Design: Precise Scarlet Ruby##41790 |n
 		.learn Precise Scarlet Ruby##53951
 
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Quick Autumn's Glow##41579 |n
 		.learn Quick Autumn's Glow##53961
 	step
-		goto The Storm Peaks 31.6,67.2
+		goto The Storm Peaks,31.6,67.2
 		.from Frostfeather Screecher##29792, Frostfeather Witch##29793
 		.collect Design: Radiant Forest Emerald##41819 |n
 		.learn Radiant Forest Emerald##54012
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Reckless Monarch Topaz##41690 |n
 		.learn Reckless Monarch Topaz##53987
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Regal Forest Emerald##41697 |n
 		.learn Regal Forest Emerald##53998
 
 	step
-		goto Wintergrasp 51.6,17.6
+		goto Wintergrasp,51.6,17.6
 		.talk Knight Dameron##32294
 		.buy Design: Resplendent Monarch Topaz##41734 |n
 		.learn Resplendent Monarch Topaz##53978
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Rigid Sky Sapphire##41580 |n
 		.learn Rigid Sky Sapphire##53958
 	step
-		goto Wintergrasp 51.6,17.6
+		goto Wintergrasp,51.6,17.6
 		.talk Knight Dameron##32294
 		.buy Design: Shattered Forest Emerald##41735 |n
 		.learn Shattered Forest Emerald##54014
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Shifting Twilight Opal##41747 |n
 		.learn Shifting Twilight Opal##53963
 	step
-		goto The Storm Peaks 66.0,61.4
+		goto The Storm Peaks,66.0,61.4
 		.talk Lillehoff##32540
 		.buy Design: Smooth Autumn's Glow##41720 |n
 		.learn Smooth Autumn's Glow##53957
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Solid Sky Sapphire##42138 |n
 		.learn Solid Sky Sapphire##53952
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Sparkling Sky Sapphire##41581 |n
 		.learn Sparkling Sky Sapphire##53954
 	step
-		goto Dragonblight 59.8,53.0
+		goto Dragonblight,59.8,53.0
 		.talk Cielstrasza##32533
 		.buy Design: Stalwart Monarch Topaz##41722 |n
 		.learn Stalwart Monarch Topaz##53993
 	step
-		goto Wintergrasp 51.6,17.6
+		goto Wintergrasp,51.6,17.6
 		.talk Knight Dameron##32294
 		.buy Design: Steady Forest Emerald##41738 |n
 		.learn Steady Forest Emerald##54000
 	step
-		goto Wintergrasp 51.6,17.6
+		goto Wintergrasp,51.6,17.6
 		.talk Knight Dameron##32294
 		.buy Design: Stormy Sky Sapphire##41728 |n
 		.learn Stormy Sky Sapphire##53955
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Subtle Autumn's Glow##41719 |n
 		.learn Subtle Autumn's Glow##53948
 	step
-		goto Icecrown 43.4,20.6
+		goto Icecrown,43.4,20.6
 		.talk Duchess Mynx##32538
 		|tip YOu must be Exalted with Knights of the Ebon Blade to purchase this Design.
 		.buy Design: Timeless Twilight Opal##41725 |n
 		.learn Timeless Twilight Opal##53965
 	step
-		goto Wintergrasp 51.6,17.6
+		goto Wintergrasp,51.6,17.6
 		.talk Knight Dameron##32294
 		.buy Design: Turbid Forest Emerald##41737 |n
 		.learn Turbid Forest Emerald##54005
 	step
-		goto Wintergrasp 51.6,17.6
+		goto Wintergrasp,51.6,17.6
 		.talk Knight Dameron##32294
 		.buy Design: Willful Monarch Topaz##41730 |n
 		.learn Willful Monarch Topaz##53986
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Veiled Twilight Opal##41688 |n
 		.learn Veiled Twilight Opal##53985
 
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Titanium Frostguard Ring##43597 |n
 		.learn Titanium Frostguard Ring##58954
 	step
-		goto Utgarde Pinnacle 40.6,53.4
+		goto Utgarde Pinnacle,40.6,53.4
 		.from King Ymiron##26861
 		.collect Design: Austere Earthsiege Diamond##41797 |n
 		.learn Austere Earthsiege Diamond##55401
 
 	step
-		goto The Oculus/4 46.0,18.4
+		goto The Oculus/4,46.0,18.4
 		.from Ley-Guardian Eregos##27656
 		.collect Design: Bracing Earthsiege Diamond##41798 |n
 		.learn Bracing Earthsiege Diamond##55397
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.collect Design: Chaotic Skyflare Diamond##41704 |n
 		.learn Chaotic Skyflare Diamond##55389
 
 
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Ember Skyflare Diamond##41706 |n
 		.learn Ember Skyflare Diamond##55392
 
 	step
-		goto Wintergrasp 51.6,17.6
+		goto Wintergrasp,51.6,17.6
 		.talk Knight Dameron##32294
 		.buy Design: Enigmatic Skyflare Diamond##41742 |n
 		.learn Enigmatic Skyflare Diamond##55393
 	step
-		goto Halls of Lightning/2 19.2,54.8
+		goto Halls of Lightning/2,19.2,54.8
 		.from Loken##28923
 		.collect Design: Eternal Earthsiege Diamond##41799 |n
 		.learn Eternal Earthsiege Diamond##55398
 	step
-		goto Wintergrasp 51.6,17.6
+		goto Wintergrasp,51.6,17.6
 		.talk Knight Dameron##32294
 		.buy Design: Forlorn Skyflare Diamond##41743 |n
 		.learn Forlorn Skyflare Diamond##55387
 	step
-		goto Wintergrasp 51.6,17.6
+		goto Wintergrasp,51.6,17.6
 		.talk Knight Dameron##32294
 		.buy Design: Impassive Skyflare Diamond##41744 |n
 		.learn Impassive Skyflare Diamond##55388
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Insightful Earthsiege Diamond##41708 |n
 		.learn Insightful Earthsiege Diamond##55396
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Invigorating Earthsiege Diamond##41709 |n
 		.learn Invigorating Earthsiege Diamond##55404
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Relentless Earthsiege Diamond##41710 |n
 		.learn Relentless Earthsiege Diamond##55400
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Revitalizing Skyflare Diamond##41707 |n
 		.learn Revitalizing Skyflare Diamond##55407
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Ring of Earthen Might##43317 |n
 		.learn Ring of Earthen Might##58147
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Ring of Northern Tears##43320 |n
 		.learn Ring of Northern Tears##58150
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Ring of Scarlet Shadows##43318 |n
 		.learn Ring of Scarlet Shadows##58148
 
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Savage Titanium Band##43497 |n
 		.learn Savage Titanium Band##58507
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Savage Titanium Ring##43485 |n
 		.learn Savage Titanium Ring##58492
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Shielded Skyflare Diamond##41705 |n
 		.learn Shielded Skyflare Diamond##55384
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Trenchant Earthsiege Diamond##41711 |n
 		.learn Trenchant Earthsiege Diamond##55403
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Windfire Band##43319 |n
 		.learn Windfire Band##58149
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Titanium Earthguard Ring##42649 |n
 		.learn Titanium Earthguard Ring##56497
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Titanium Impact Band##42648 |n
 		.learn Titanium Impact Band##56496
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Titanium Spellshock Ring##42650 |n
 		.learn Titanium Spellshock Ring##56498
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Titanium Earthguard Chain##42652 |n
 		.learn Titanium Earthguard Chain##56500
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Titanium Impact Choker##42651 |n
 		.learn Titanium Impact Choker##56499
 	step
-		goto Dalaran 40.6,34.6
+		goto Dalaran,40.6,34.6
 		.talk Tiffany Cartier##28721
 		.buy Design: Titanium Spellshock Necklace##42653 |n
 		.learn Titanium Spellshock Necklace##56501
 	step
-		goto Dalaran 25.6,49.0
+		goto Dalaran,25.6,49.0
 		.talk Archmage Alvareaux##32287
 		|tip You must be Exalted with Kirin Tor to purchase this Design.
 		.buy Design: Brilliant Scarlet Ruby##41718 |n
 		.learn Brilliant Scarlet Ruby##53946
 	step
-		goto Wintergrasp 51.6,17.6
+		goto Wintergrasp,51.6,17.6
 		.talk Knight Dameron##32294
 		.buy Design: Lucent Monarch Topaz##41733 |n
 		.learn Lucent Monarch Topaz##53981
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Accurate Dreadstone##47010 |n
 		.learn Accurate Dreadstone##66576
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Bold Cardinal Ruby##46917 |n
 		.learn Bold Cardinal Ruby##66447
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Brilliant Cardinal Ruby##46916 |n
 		.learn Brilliant Cardinal Ruby##66446
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Champion's Ametrine##47015 |n
 		.learn Champion's Ametrine##66579
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Deadly Ametrine##46949 |n
 		.learn Deadly Ametrine##66568
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Defender's Dreadstone##46941 |n
 		.learn Defender's Dreadstone##66560
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Deft Ametrine##47020 |n
 		.learn Deft Ametrine##66584
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Delicate Cardinal Ruby##46918 |n
 		.learn Delicate Cardinal Ruby##66448
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Energized Eye of Zul##46912 |n
 		.learn Energized Eye of Zul##66442
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Etched Dreadstone##46953 |n
 		.learn Etched Dreadstone##66572
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Fierce Ametrine##47019 |n
 		.learn Fierce Ametrine##66583
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Flashing Cardinal Ruby##46923 |n
 		.learn Flashing Cardinal Ruby##66453
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Forceful Eye of Zul##46904 |n
 		.learn Forceful Eye of Zul##66434
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Glinting Dreadstone##46956 |n
 		.learn Glinting Dreadstone##66573
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Guardian's Dreadstone##46942 |n
 		.learn Guardian's Dreadstone##66561
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Inscribed Ametrine##46948 |n
 		.learn Inscribed Ametrine##66567
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Jagged Eye of Zul##46901 |n
 		.learn Jagged Eye of Zul##66431
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Lightning Eye of Zul##46909 |n
 		.learn Lightning Eye of Zul##66439
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Lucent Ametrine##47021 |n
 		.learn Lucent Ametrine##66585
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Misty Eye of Zul##46905 |n
 		.learn Misty Eye of Zul##66435
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Mysterious Dreadstone##46943 |n
 		.learn Mysterious Dreadstone##66562
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Mystic King's Amber##46932 |n
 		.learn Mystic King's Amber##66505
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Nightmare Tear##49112 |n
 		.learn Nightmare Tear##68253
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Nimble Eye of Zul##46899 |n
 		.learn Nimble Eye of Zul##66429
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Potent Ametrine##46950 |n
 		.learn Potent Ametrine##66569
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Precise Cardinal Ruby##46920 |n
 		.learn Precise Cardinal Ruby##66450
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Purified Dreadstone##46937 |n
 		.learn Purified Dreadstone##66556
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Quick King's Amber##46933 |n
 		.learn Quick King's Amber##66506
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Reckless Ametrine##47007 |n
 		.learn Reckless Ametrine##66574
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Regal Eye of Zul##46897 |n
 		.learn Regal Eye of Zul##66338
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Resolute Ametrine##47022 |n
 		.learn Resolute Ametrine##66586
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Resplendent Ametrine##47018 |n
 		.learn Resplendent Ametrine##66582
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Rigid Majestic Zircon##46928 |n
 		.learn Rigid Majestic Zircon##66501
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Shattered Eye of Zul##46913 |n
 		.learn Shattered Eye of Zul##66443
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Shifting Dreadstone##46938 |n
 		.learn Shifting Dreadstone##66557
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Smooth King's Amber##46929 |n
 		.learn Smooth King's Amber##66502
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Solid Majestic Zircon##46924 |n
 		.learn Solid Majestic Zircon##66497
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Sovereign Dreadstone##46935 |n
 		.learn Sovereign Dreadstone##66554
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Sparkling Majestic Zircon##46925 |n
 		.learn Sparkling Majestic Zircon##66498
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Stalwart Ametrine##47017 |n
 		.learn Stalwart Ametrine##66581
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Steady Eye of Zul##46898 |n
 		.learn Steady Eye of Zul##66428
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Stormy Majestic Zircon##46926 |n
 		.learn Stormy Majestic Zircon##66499
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Subtle King's Amber##46922 |n
 		.learn Subtle King's Amber##66452
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Timeless Dreadstone##46902 |n
 		.learn Timeless Dreadstone##66432
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Turbid Eye of Zul##46915 |n
 		.learn Turbid Eye of Zul##66445
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Veiled Dreadstone##46951 |n
 		.learn Veiled Dreadstone##66570
 	step
-		goto Dalaran 40.6,35.2
+		goto Dalaran,40.6,35.2
 		.talk Timothy Jones##28701
 		.buy Design: Willful Ametrine##46952 |n
 		.learn Willful Ametrine##66571
 //MoP
 	step
-		goto The Jade Forest 56.6,44.4
+		goto The Jade Forest,56.6,44.4
 		.talk San Redscale##58414
 		|tip You must be Exalted with Order of the Cloud Serpent to purchase this Design.
 		.buy Design: Jeweled Onyx Panther##83877 |n
 		.learn Jeweled Onyx Panther##120045
 	step
-		goto The Jade Forest 56.6,44.4
+		goto The Jade Forest,56.6,44.4
 		.talk San Redscale##58414
 		|tip You must be Honored with Order of the Cloud Serpent to purchase this Design.
 		.buy Design: Jade Panther##83845 |n
 		.learn Jade Panther##121844
 	step
-		goto The Jade Forest 56.6,44.4
+		goto The Jade Forest,56.6,44.4
 		.talk San Redscale##58414
 		|tip You must be Revered with Order of the Cloud Serpent to purchase this Design.
 		.buy Design: Ruby Panther##83931 |n
 		.learn Ruby Panther##121841
 	step
-		goto The Jade Forest 56.6,44.4
+		goto The Jade Forest,56.6,44.4
 		.talk San Redscale##58414
 		|tip You must be Revered with Order of the Cloud Serpent to purchase this Design.
 		.buy Design: Sapphire Panther##83932 |n
 		.learn Sapphire Panther##121842
 	step
-		goto The Jade Forest 56.6,44.4
+		goto The Jade Forest,56.6,44.4
 		.talk San Redscale##58414
 		|tip You must be Honored with Order of the Cloud Serpent to purchase this Design.
 		.buy Design: Sunstone Panther##83830 |n
@@ -38400,63 +38400,63 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 
 
 	step
-		goto Silithus 81.2,18.6
+		goto Silithus,81.2,18.6
 		.talk Zannok Hidepiercer##12956
 		.buy Pattern: Heavy Scorpid Bracers##15724 |n
 		.learn Heavy Scorpid Bracers##19048
 
 
 	step
-		goto Westfall 57.6,53.8
+		goto Westfall,57.6,53.8
 		.talk Gina MacGregor##843
 		.buy Pattern: Murloc Scale Breastplate##5787 |n
 		.learn Murloc Scale Breastplate##6703
 	step
-		goto Redridge Mountains 78.6,63.6
+		goto Redridge Mountains,78.6,63.6
 		.talk Clyde Ranthal##2697
 		|tip This is only available to Alliance and may sell well on the Neutral AH.
 		.buy Pattern: Black Whelp Cloak##7289 |n
 		.learn Black Whelp Cloak##9070
 	step
-		goto Redridge Mountains 28.2,43.4
+		goto Redridge Mountains,28.2,43.4
 		.talk Amy Davenport##777
 		|tip This is only available to Alliance and may sell well on the Neutral AH.
 		.buy Pattern: Black Whelp Tunic##20576 |n
 		.learn Black Whelp Tunic##24940
 	step
-		goto Wetlands 25.6,25.8
+		goto Wetlands,25.6,25.8
 		.talk Wenna Silkbeard##2679
 		|tip This is only available to Alliance and may sell well on the Neutral AH.
 		.buy Pattern: Red Whelp Gloves##7290 |n
 		.learn Red Whelp Gloves##9072
 	step
-		goto Wetlands 25.6,25.8
+		goto Wetlands,25.6,25.8
 		.talk Wenna Silkbeard##2679
 		.buy Pattern: Green Leather Armor##7613 |n
 		.learn Green Leather Armor##3772
 	step
-		goto Hillsbrad Foothills 52.6,56.2
+		goto Hillsbrad Foothills,52.6,56.2
 		.talk Zixil##3537
 		.buy Pattern: Earthen Leather Shoulders##7362 |n
 		.learn Earthen Leather Shoulders##9147
 	step
-		goto Ashenvale 18.2,60.0
+		goto Ashenvale,18.2,60.0
 		.talk Harlown Darkweave##34601
 		.buy Pattern: Herbalist's Gloves##7361 |n
 		.learn Herbalist's Gloves##9146
 	step
-		goto Ironforge 40.2,33.4
+		goto Ironforge,40.2,33.4
 		.talk Bombus Finespindle##5128
 		.buy Pattern: Heavy Leather Ball##18731 |n
 		.learn Heavy Leather Ball##23190
 	step
-		goto Darnassus 60.0,37.2
+		goto Darnassus,60.0,37.2
 		.talk Saenorion##4225
 		.buy Pattern: Barbaric Bracers##18949 |n
 		.learn Barbaric Bracers##23399
 
 	step
-		goto Arathi Highlands 39.2,48.2
+		goto Arathi Highlands,39.2,48.2
 		.talk Androd Fadran##2816
 		.buy Pattern: Raptor Hide Belt##13288 |n
 		.learn Raptor Hide Belt##4097
@@ -38464,7 +38464,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 		.learn Raptor Hide Belt##4097
 
 	step
-		goto Arathi Highlands 40.4,48.8
+		goto Arathi Highlands,40.4,48.8
 		.talk Hammon Karwn##2810
 		.buy Pattern: Barbaric Leggings##5973 |n
 		.learn Barbaric Leggings##7149
@@ -38472,14 +38472,14 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 		.learn Barbaric Leggings##7149
 
 	step
-		goto Northern Stranglethorn 60.8,16.2
+		goto Northern Stranglethorn,60.8,16.2
 		.from Kurzen Commando##938
 		.collect Pattern: Thick Murloc Armor##5788 |n
 		.learn Thick Murloc Armor##6704
 
 
 	step
-		goto The Cape of Stranglethorn 43.2,71.6
+		goto The Cape of Stranglethorn,43.2,71.6
 		.talk Rikqiz##2699
 		.buy Pattern: Gem-Studded Leather Belt##14635 |n
 		.learn Gem-studded Leather Belt##3778
@@ -38488,13 +38488,13 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 
 
 	step
-		goto Darnassus 60.0,37.2
+		goto Darnassus,60.0,37.2
 		.talk Saenorion##4225
 		.buy Pattern: Green Whelp Bracers##7451 |n
 		.learn Green Whelp Bracers##9202
 
 	step
-		goto The Cape of Stranglethorn 42.8,74.0
+		goto The Cape of Stranglethorn,42.8,74.0
 		.talk Blixrez Goodstitch##2846
 		.buy Pattern: Murloc Scale Bracers##5789 |n
 		.learn Murloc Scale Bracers##6705
@@ -38502,26 +38502,26 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 
 
 	step
-		goto The Hinterlands 13.4,43.2
+		goto The Hinterlands,13.4,43.2
 		.talk Nioma##8160
 		.buy Pattern: Nightscape Shoulders##8409 |n
 		.learn Nightscape Shoulders##10516
 
 	step
-		goto The Deadmines/2 55.8,44.6
+		goto The Deadmines/2,55.8,44.6
 		.from Defias Squallshaper##48521
 		.collect Pattern: Murloc Scale Belt##5786 |n
 		.learn Murloc Scale Belt##6702
 
 
 	step
-		goto Western Plaguelands 43.0,84.2
+		goto Western Plaguelands,43.0,84.2
 		.talk Leonard Porter##12942
 		.buy Pattern: Wicked Leather Gauntlets##15725 |n
 		.learn Wicked Leather Gauntlets##19049
 
 	step
-		goto Blasted Lands 63.6,27.6
+		goto Blasted Lands,63.6,27.6
 		.from Shadowsworn Thug##6005
 		.collect Pattern: Heavy Scorpid Vest##15727 |n
 		.learn Heavy Scorpid Vest##19051
@@ -38529,52 +38529,52 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 
 
 	step
-		goto Western Plaguelands 43.0,84.2
+		goto Western Plaguelands,43.0,84.2
 		.talk Leonard Porter##12942
 		.buy Pattern: Wicked Leather Gauntlets##15725 |n
 		.learn Wicked Leather Gauntlets##19049
 	step
-		goto Blasted Lands 63.6,27.6
+		goto Blasted Lands,63.6,27.6
 		.form Shadowsworn Thug##6005
 		.collect Pattern: Heavy Scorpid Vest##15727 |n
 		.learn Heavy Scorpid Vest##19051
 
 
 	step
-		goto The Hinterlands 34.6,38.4
+		goto The Hinterlands,34.6,38.4
 		.talk Gigget Zipcoil##12958
 		.buy Pattern: Ironfeather Shoulders##15735 |n
 		.learn Ironfeather Shoulders##19062
 	step
-		goto Feralas 45.4,41.2
+		goto Feralas,45.4,41.2
 		.talk Pratt McGrubben##40226
 		.buy Pattern: Living Shoulders##15734 |n
 		.learn Living Shoulders##19061
 
 	step
-		goto Burning Steppes 68.0,42.6
+		goto Burning Steppes,68.0,42.6
 		.from Firegut Brute##7035
 		.collect Pattern: Volcanic Leggings##15732 |n
 		.learn Volcanic Leggings##19059
 	step
-		goto Western Plaguelands 43.0,84.2
+		goto Western Plaguelands,43.0,84.2
 		.talk Leonard Porter##12942
 		.buy Pattern: Stormshroud Pants##15741 |n
 		.learn Stormshroud Pants##19067
 	step
-		goto Felwood 64.8,5.2
+		goto Felwood,64.8,5.2
 		.talk Meilosh##11557
 		|tip You must be Friendly with Timbermaw Hold to purchase this Pattern.
 		.buy Pattern: Warbear Harness##20253
 		.learn Warbear Harness##190068
 
 	step
-		goto Winterspring 59.6,49.2
+		goto Winterspring,59.6,49.2
 		.talk Qia##11189
 		.collect Pattern: Frostsaber Boots##15740 |n
 		.learn Frostsaber Boots##19066
 	step
-		goto Burning Steppes 34.8,36.6
+		goto Burning Steppes,34.8,36.6
 		.from Blackrock Soldier##7025
 		.collect Pattern: Heavy Scorpid Gauntlets##15738 |n
 		.learn Heavy Scorpid Gauntlets##19064
@@ -38591,23 +38591,23 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 		.learn Winter Boots##44953
 
 	step
-		goto Felwood 63.2,9.0
+		goto Felwood,63.2,9.0
 		.from Deadwood Shaman##7158
 		.collect Pattern: Living Leggings##15752
 		.learn Living Leggings##19078
 	step
-		goto Felwood 64.8,5.2
+		goto Felwood,64.8,5.2
 		.talk Meilosh##11557
 		|tip You must be Friendly with Timbermaw Hold to purchase this Pattern.
 		.buy Pattern: Warbear Woolies##20254 |n
 		.learn Warbear Woolies##19080
 	step
-		goto Winterspring 24.2,50.4
+		goto Winterspring,24.2,50.4
 		.from Winterfall Den Watcher##7440
 		.collect Pattern: Frostsaber Leggings##15747 |n
 		.learn Frostsaber Leggings##19074
 	step
-		goto Burning Steppes 33.4,53.2
+		goto Burning Steppes,33.4,53.2
 		.from Blackrock Slayer##7027
 		.collect Pattern: Heavy Scorpid Leggings##15748 |n
 		.learn Heavy Scorpid Leggings##19075
@@ -38622,12 +38622,12 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 		.collect Pattern: Ironfeather Breastplate##15760 |n
 		.learn Ironfeather Breastplate##19086
 	step
-		goto Tirisfal Glades 83.2,68.0
+		goto Tirisfal Glades,83.2,68.0
 		.talk Argent Quartermaster Hasana##10856
 		.buy Pattern: Dawn Treaders##19328 |n
 		.learn Dawn Treaders##23705
 	step
-		goto Un'Goro Crater 54.8,62.6
+		goto Un'Goro Crater,54.8,62.6
 		.talk Nergal##12959
 		.buy Pattern: Devilsaur Gauntlets##15758 |n
 		.learn Devilsaur Gauntlets##19084
@@ -38637,40 +38637,40 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 		.collect Pattern: Ironfeather Breastplate##15760 |n
 		.learn Ironfeather Breastplate##19086
 	step
-		goto Felwood 64.8,5.2
+		goto Felwood,64.8,5.2
 		.talk Meilosh##11557
 		.buy Pattern: Might of the Timbermaw##19326 |n
 		.learn Might of the Timbermaw##23703
 
 	step
-		goto Blackrock Depths 50.6,59.2
+		goto Blackrock Depths,50.6,59.2
 		.talk Lokhtos Darkbargainer##12944
 		.buy Pattern: Corehound Boots##17022 |n
 		.learn Corehound Boots##20853
 
 	step
-		goto Winterspring 24.2,50.4
+		goto Winterspring,24.2,50.4
 		.from Winterfall Totemic##7441
 		.collect Pattern: Frostsaber Gloves##15761 |n
 		.learn Frostsaber Gloves##19087
 	step
-		goto Winterspring 26.4,49.6
+		goto Winterspring,26.4,49.6
 		.from Winterfall Totemic##7441
 		.collect Pattern: Frostsaber Gloves##15761 |n
 		.learn Frostsaber Gloves##19087
 	step
-		goto Silithus 81.2,18.6
+		goto Silithus,81.2,18.6
 		.talk Zannok Hidepiercer##12956
 		.buy Pattern: Heavy Scorpid Helm##15762 |n
 		.learn Heavy Scorpid Helm##19088
 	step
-		goto The Exodar 66.6,74.0
+		goto The Exodar,66.6,74.0
 		.talk Haferet##16748
 		.buy Pattern: Comfortable Insoles##25726 |n
 		.learn Comfortable Insoles##32482
 
 	step
-		goto Blackrock Depths 50.6,59.2
+		goto Blackrock Depths,50.6,59.2
 		.talk Lokhtos Darkbargainer##12944
 		.buy Pattern: Black Dragonscale Boots##17025 |n
 		.learn Black Dragonscale Boots##20855
@@ -38680,44 +38680,44 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 		.collect Pattern: Chromatic Cloak##18517 |n
 		.learn Chromatic Cloak##22926
 	step
-		goto Blackrock Depths 50.6,59.2
+		goto Blackrock Depths,50.6,59.2
 		.talk Lokhtos Darkbargainer##12944
 		.buy Pattern: Chromatic Gauntlets##19331 |n
 		.learn Chromatic Gauntlets##23708
 	step
-		goto Blackrock Depths 50.6,59.2
+		goto Blackrock Depths,50.6,59.2
 		.talk Lokhtos Darkbargainer##12944
 		.buy Pattern: Corehound Belt##19332 |n
 		.learn Corehound Belt##23709
 	step
-		goto Silithus 64.6,45.8
+		goto Silithus,64.6,45.8
 		.talk Aendel Windspear##15293
 		.buy Pattern: Dreamscale Breastplate##20382 |n
 		.learn Dreamscale Breastplate##24703
 
 	step
-		goto Blackrock Depths 50.6,59.2
+		goto Blackrock Depths,50.6,59.2
 		.talk Lokhtos Darkbargainer##12944
 		.buy Pattern: Lava Belt##19330 |n
 		.learn Lava Belt##23707
 	step
-		goto Blackrock Depths 50.6,59.2
+		goto Blackrock Depths,50.6,59.2
 		.talk Lokhtos Darkbargainer##12944
 		.buy Pattern: Molten Belt##19333 |n
 		.learn Molten Belt##23710
 	step
-		goto Blackrock Depths 50.6,59.2
+		goto Blackrock Depths,50.6,59.2
 		.talk Lokhtos Darkbargainer##12944
 		.buy Pattern: Molten Helm##17023 |n
 		.learn Molten Helm##20854
 
 	step
-		goto Blackrock Depths/2 90.6,11.8
+		goto Blackrock Depths/2,90.6,11.8
 		.talk Anvilrage Captain##8903
 		.collect Pattern: Black Dragonscale Leggings##15781 |n
 		.learn Black Dragonscale Leggings##19107
 	step
-		goto Blackrock Depths/2 41.0,74.0
+		goto Blackrock Depths/2,41.0,74.0
 		.from Anvilrage Marshal##8898
 		.collect Pattern: Black Dragonscale Shoulders##15770 |n
 		.learn Black Dragonscale Shoulders##19094
@@ -38726,19 +38726,19 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 
 	
 	step
-		goto Silithus 64.6,45.8
+		goto Silithus,64.6,45.8
 		.talk Aendel Windspear##15293
 		|tip You must be Friendly with Cenarion Circle to purchase this Pattern.
 		.buy Pattern: Bramblewood Belt##22769 |n
 		.learn Bramblewood Belt##28474
 	step
-		goto Silithus 64.6,45.8
+		goto Silithus,64.6,45.8
 		.talk Aendel Windspear##15293
 		|tip You must be Honored with Cenarion Circle to purchase this Pattern.
 		.buy Pattern: Bramblewood Boots##22770 |n
 		.learn Bramblewood Boots##28473
 	step
-		goto Silithus 64.6,45.8
+		goto Silithus,64.6,45.8
 		.talk Aendel Windspear##15293
 		|tip You must be Revered with Cenarion Circle to purchase this Pattern.
 		.buy Pattern: Bramblewood Helm##22771 |n
@@ -38748,7 +38748,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 		.collect Pattern: Core Armor Kit##18252 |n
 		.learn Core Armor Kit##22727
 	step
-		goto Un'Goro Crater 54.8,62.6
+		goto Un'Goro Crater,54.8,62.6
 		.talk Nergal##12959
 		.collect Pattern: Devilsaur Leggings##15772 |n
 		.learn Devilsaur Leggings##19097
@@ -38757,7 +38757,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 		.collect Pattern: Girdle of Insight##18514 |n
 		.learn Girdle of Insight##22921
 	step
-		goto Western Plaguelands 42.8,83.8
+		goto Western Plaguelands,42.8,83.8
 		.talk Argent Quartermaster Lightspark##10857
 		|tip You must be Honored with the Argent Dawn to purchase this Plan.
 		.buy Pattern: Golden Mantle of the Dawn##19329 |n
@@ -38766,273 +38766,273 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 		'|talk Quartermaster Miranda Breechlock##11536
 	step
 		'This Pattern is a reward for completing the quest The Journey Has Just Begun.
-		goto Stormwind City 67.6,85.0
+		goto Stormwind City,67.6,85.0
 		.talk Major Mattingly##14394
 		..accept The Journey Has Just Begun##7497
 		..turnin The Journey Has Just Begun##7497
 		.learn Onyxia Scale Cloak##19093
 	step
-		goto Blackrock Spire 33.4,45.4
+		goto Blackrock Spire,33.4,45.4
 		.from General Drakkisath##10363+
 		.collect Pattern: Red Dragonscale Breastplate##15730 |n
 		.learn Red Dragonscale Breastplate##19054
 	step
-		goto Silithus 64.6,45.8
+		goto Silithus,64.6,45.8
 		.talk Aendel Windspear##15293
 		|tip You must be Friendly with Cenarion Circle to purchase this Pattern.
 		.buy Pattern: Sandstalker Bracers##20509 |n
 		.learn Sandstalker Bracers##24849
 	step
-		goto Silithus 64.6,45.8
+		goto Silithus,64.6,45.8
 		.talk Aendel Windspear##15293
 		|tip You must be Revered with Cenarion Circle to purchase this Pattern.
 		.buy Pattern: Sandstalker Breastplate##20511 |n
 		.learn Sandstalker Breastplate##24851
 	step
-		goto Silithus 64.6,45.8
+		goto Silithus,64.6,45.8
 		.talk Aendel Windspear##15293
 		|tip You must be Honored with Cenarion Circle to purchase this Pattern.
 		.buy Pattern: Sandstalker Gauntlets##20510
 		.learn Sandstalker Gauntlets##24850
 	step
-		goto Silithus 64.6,45.8
+		goto Silithus,64.6,45.8
 		.talk Aendel Windspear##15293
 		|tip You must be Friendly with Cenarion Circle to purchase this Pattern.
 		.buy Pattern: Spitfire Bracers##20506 |n
 		.learn Spitfire Bracers##24846
 	step
-		goto Silithus 64.6,45.8
+		goto Silithus,64.6,45.8
 		.talk Aendel Windspear##15293
 		|tip You must be Revered with Cenarion Circle to purchase this Pattern.
 		.buy Pattern: Spitfire Breastplate##20508 |n
 		.learn Spitfire Breastplate##24848
 	step
-		goto Silithus 64.6,45.8
+		goto Silithus,64.6,45.8
 		.talk Aendel Windspear##15293
 		|tip You must be Honored with Cenarion Circle to purchase this Pattern.
 		.buy Pattern: Spitfire Gauntlets##20507 |n
 		.learn Spitfire Gauntlets##24847
 
 	step
-		goto Felwood 64.8,5.2
+		goto Felwood,64.8,5.2
 		.talk Meilosh##11557
 		|tip You must be Revered with Cenarion Circle to purchase this Pattern.
 		.buy Pattern: Timbermaw Brawlers##19327 |n
 		.learn Timbermaw Brawlers##23704
 	step
-		goto Winterspring 67.8,50.2
+		goto Winterspring,67.8,50.2
 		.from Winterfall Ursa##74385
 		.collect Pattern: Frostsaber Tunic##15779 |n
 		.learn Frostsaber Tunic##19104
 	step
-		goto Blackrock Spire 54.8,45.9
+		goto Blackrock Spire,54.8,45.9
 		.from Blackhand Assassin##10318+
 		.collect Pattern: Heavy Scorpid Shoulders##15774 |n
 		.learn Heavy Scorpid Shoulders##19100
 	step
-		goto Blackrock Spire 58.2,75.6
+		goto Blackrock Spire,58.2,75.6
 		.from Firebrand Legionnaire##9260+
 		.collect Pattern: Volcanic Shoulders##15775
 		.learn Volcanic Shoulders##19101
 
 	step
-		goto Nagrand 54.6,75.0
+		goto Nagrand,54.6,75.0
 		.talk Trader Narasu##20240
 		.buy Pattern: Reinforced Mining Bag##30444 |n
 		.learn Reinforced Mining Bag##35530
 	step
-		goto Shattrath City 60.6,64.2
+		goto Shattrath City,60.6,64.2
 		.talk Quartermaster Enuril##19331
 		|tip You must be Revered with The Scryers to purchase this Pattern.
 		.buy Pattern: Magister's Armor Kit##25722 |n
 		.learn Magister's Armor Kit##32458
 	step
-		goto Shattrath City 48.0,26.6
+		goto Shattrath City,48.0,26.6
 		.talk Quartermaster Endarin##19321
 		|tip You must be Revered with The Aldor to purchase this Pattern.
 		.buy Pattern: Vindicator's Armor Kit##25721 |n
 		.learn Vindicator's Armor Kit##32457
 
 	step
-		goto Zangarmarsh 79.2,63.8
+		goto Zangarmarsh,79.2,63.8
 		.talk Fedryen Swiftspear##17904
 		|tip You must be Honored with Cenarion Expedition to purchase this Pattern.
 		.buy Pattern: Clefthide Leg Armor##29720 |n
 		.learn Clefthide Leg Armor##35555
 	step
-		goto Hellfire Peninsula 56.6,62.6
+		goto Hellfire Peninsula,56.6,62.6
 		.talk Logistics Officer Ulrike##17657
 		|tip You must be Honored with Honor Hold to purchase this Pattern.
 		.buy Pattern: Cobrahide Leg Armor##29719 |n
 		.learn Cobrahide Leg Armor##35549
 
 	step
-		goto Nagrand 30.6,57.0
+		goto Nagrand,30.6,57.0
 		.talk Paulsta'ats##23007
 		|tip You must be Friendly with The Consortium to purchase this Pattern.
 		.buy Pattern: Fel Leather Gloves##25732 |n
 		.learn Fel Leather Gloves##32490
 	step
-		goto Nagrand 54.6,75.0
+		goto Nagrand,54.6,75.0
 		.talk Trader Narasu##20240
 		|tip You must be Friendly with Kurenai to purchase this Pattern.
 		.buy Pattern: Netherfury Belt##29217
 		.learn Netherfury Belt##32501
 	step
-		goto Nagrand 54.6,75.0
+		goto Nagrand,54.6,75.0
 		.talk Trader Narasu##20240
 		|tip You must be Honored with Kurenai to Purchase this Pattern.
 		.buy Pattern: Netherfury Leggings##29219 |n
 		.learn Netherfury Leggings##32502
 	step
-		goto Nagrand 54.6,75.0
+		goto Nagrand,54.6,75.0
 		.talk Trader Narasu##20240
 		|tip You must be Honored with Kurenai to purchase this Pattern.
 		.buy Pattern: Drums of Speed##34173 |n
 		.learn Drums of Speed##35544
 	step
-		goto Nagrand 54.6,75.0
+		goto Nagrand,54.6,75.0
 		.talk Trader Narasu##20240
 		|tip You must be Honored with Kurenai to purchase this Pattern.
 		.buy Pattern: Drums of Restoration##34175 |n
 		.learn Drums of Restoration##35539
 
 	step
-		goto Shattrath City 48.0,26.6
+		goto Shattrath City,48.0,26.6
 		.talk Quartermaster Endarin##19321
 		|tip You must be Honored with The Aldor to purchase this Pattern.
 		.buy Pattern: Blastguard Belt##29704 |n
 		.learn Blastguard Belt##35537
 	step
-		goto Shattrath City 48.0,26.6
+		goto Shattrath City,48.0,26.6
 		.talk Quartermaster Endarin##19321
 		|tip You must be Revered with The Aldor to purchase this Pattern.
 		.buy Pattern: Blastguard Boots##29703 |n
 		.learn Blastguard Boots##35536
 	step
-		goto Shattrath City 48.0,26.6
+		goto Shattrath City,48.0,26.6
 		.talk Quartermaster Endarin##19321
 		|tip You must be Exalted with The Aldor to purchase this Pattern.
 		.buy Pattern: Blastguard Pants##29702 |n
 		.learn Blastguard Pants##35535
 	step
-		goto Shattrath City 60.6,64..2
+		goto Shattrath City,60.6,64..2
 		.talk Quartermaster Enuril##19331
 		|tip You must be Honored with The Scryers to purchase this Pattern.
 		.buy Pattern: Enchanted Clefthoof Boots##29701 |n
 		.learn Enchanted Clefthoof Boots##35534
 	step
-		goto Shattrath City 60.6,64.2
+		goto Shattrath City,60.6,64.2
 		.talk Quartermaster Enuril##19331
 		|tip You must be Revered with The Scryers to purchase this Pattern.
 		.buy Pattern: Enchanted Clefthoof Gloves##29700 |n
 		.learn Enchanted Clefthoof Gloves##35533
 	step
-		goto Shattrath City 48.0,26.6
+		goto Shattrath City,48.0,26.6
 		.talk Quartermaster Endarin##19321
 		|tip You must be Exalted with The Aldor to purchase this Pattern.
 		.buy Pattern: Enchanted Clefthoof Leggings##29698 |n
 		.learn Enchanted Clefthoof Leggings##35532
 	step
-		goto Shattrath City 60.6,64.2
+		goto Shattrath City,60.6,64.2
 		.talk Quartermaster Enuril##19331
 		|tip You must be Revered with The Scryers to purchase this Pattern.
 		.buy Pattern: Enchanted Felscale Boots##29684 |n
 		.learn Enchanted Felscale Boots##35527
 	step
-		goto Shattrath City 60.6,64.2
+		goto Shattrath City,60.6,64.2
 		.talk Quartermaster Enuril##19331
 		|tip You must be Honored with The Scryers to purchase this Pattern.
 		.buy Pattern: Enchanted Felscale Gloves##29682 |n
 		.learn Enchanted Felscale Gloves##35526
 	step
-		goto Shattrath City 48.0,26.6
+		goto Shattrath City,48.0,26.6
 		.talk Quartermaster Endarin##19321
 		|tip You must be Exalted with The Aldor to purchase this Pattern.
 		.buy Pattern: Enchanted Felscale Leggings##29677 |n
 		.learn Enchanted Felscale Leggings##35525
 	step
-		goto Nagrand 30.6,57.0
+		goto Nagrand,30.6,57.0
 		.talk Paulsta'ats##23007
 		|tip You must be Honored with The Consortium to purchase this Pattern.
 		.buy Pattern: Fel Leather Boots##25733 |n
 		.learn Fel Leather Boots##32493
 	step
-		goto Nagrand 30.6,57.0
+		goto Nagrand,30.6,57.0
 		.talk Paulsta'ats##23007
 		|tip You must be Revered with The Consortium to purchase this Pattern.
 		.buy Pattern: Fel Leather Leggings##25734 |n
 		.learn Fel Leather Leggings##32494
 	step
-		goto Hellfire Peninsula 56.6,62.6
+		goto Hellfire Peninsula,56.6,62.6
 		.talk Logistics Officer Ulrike##17657
 		|tip You must be Friendly with Honor Hold to purchase this Pattern.
 		.buy Pattern: Felstalker Belt##29213 |n
 		.learn Felstalker Belt##32498
 	step
-		goto Shattrath City 48.0,26.6
+		goto Shattrath City,48.0,26.6
 		.talk Quartermaster Endarin##19321
 		|tip You must be Honored with The Aldor to purchase this Pattern.
 		.buy Pattern: Flamescale Belt##29693 |n
 		.learn Flamescale Belt##35531
 	step
-		goto Shattrath City 48.0,26.6
+		goto Shattrath City,48.0,26.6
 		.talk Quartermaster Endarin##19321
 		|tip You must be Revered with The Aldor to purchase this Pattern.
 		.buy Pattern: Flamescale Boots##29691 |n
 		.learn Flamescale Boots##35528
 	step
-		goto Shattrath City 48.0,26.6
+		goto Shattrath City,48.0,26.6
 		.talk Quartermaster Endarin##19321
 		|tip You must be Exalted with The Aldor to purchase this Pattern.
 		.buy Pattern: Flamescale Leggings##29689 |n
 		.learn Flamescale Leggings##35529
 	step
-		goto Nagrand 54.6,75.0
+		goto Nagrand,54.6,75.0
 		.talk Trader Narasu##20240
 		|tip You must be Revered with Kurenai to purchase this Pattern.
 		.buy Pattern: Netherfury Boots##29218 |n
 		.learn Netherfury Boots##32503
 	step
-		goto Old Hillsbrad Foothills 38.8,56.4
+		goto Old Hillsbrad Foothills,38.8,56.4
 		.talk Thomas Yance##18672
 		|tip He walks along this path, some searching may be required.
 		.buy Pattern: Riding Crop##25725 |n
 		.learn Riding Crop##32461
 	step
-		goto Old Hillsbrad Foothills 73.2,61.2
+		goto Old Hillsbrad Foothills,73.2,61.2
 		.from Durnholde Rifleman##17820
 		.collect Pattern: Stylin' Adventure Hat##25729 |n
 		.learn Stylin' Adventure Hat##32487
 	step
-		goto Sethekk Halls/2 32.8,68.0
+		goto Sethekk Halls/2,32.8,68.0
 		.from Sethekk Ravenguard##18322
 		.collect Pattern: Stylin' Crimson Hat##25731 |n
 		.learn Stylin' Crimson Hat##32488
 	step
-		goto The Black Morass 50.2,56.8
+		goto The Black Morass,50.2,56.8
 		.from Rift Lord##17839, Rift Keeper##21104
 		.collect Pattern: Stylin' Jungle Hat##25730 |n
 		.learn Stylin' Jungle Hat##32489
 	step
-		goto Shadow Labyrinth 27.6,69.0
+		goto Shadow Labyrinth,27.6,69.0
 		.from Blackheart the Inciter##18667
 		.collect Pattern: Stylin' Purple Hat##25728 |n
 		.learn Stylin' Purple Hat##32485
 	step
-		goto Terokkar Forest 22.2,11.4
+		goto Terokkar Forest,22.2,11.4
 		.form Gordunni Back-Breaker##22143, Gordunni Elementalist##22144, Gordunni Head-Splitter##22148, Gordunni Soulreaper##23022
 		.collect Pattern: Bag of Many Hides##34491 |n
 		.learn Bag of Many Hides##45117
 
 	step
-		goto Zangarmarsh 79.2,63.8
+		goto Zangarmarsh,79.2,63.8
 		.talk Fedryen Swiftspear##17904
 		|tip You must be Friendly with Cenarion Expedition to purchase this Pattern.
 		.collect Pattern: Heavy Clefthoof Boots##25737 |n
 		.learn Heavy Clefthoof Boots##32497
 	step
-		goto Zangarmarsh 79.2,63.8
+		goto Zangarmarsh,79.2,63.8
 		.talk Fedryen Swiftspear##17904
 		|tip You must be Honored with Cenarion Expedition to purchase this Pattern.
 		.buy Pattern: Heavy Clefthoof Leggings##25736 |n
@@ -39041,50 +39041,50 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 		'This Pattern is no longer in game.
 		.learn Quiver of a Thousand Feathers##44359
 	step
-		goto Deadwind Pass 47.0,75.6
+		goto Deadwind Pass,47.0,75.6
 		.talk Apprentice Darius##18255
 		|tip You must be Exalted with The Violet Eye to purchase this Pattern.
 		.buy Pattern: Cloak of Darkness##33124 |n
 		.learn Cloak of Darkness##42546
 	step
-		goto Hellfire Peninsula 56.6,62.6
+		goto Hellfire Peninsula,56.6,62.6
 		.talk Logistics Officer Ulrike##17657
 		|tip You must be Honored with Honor Hold to purchase this Pattern.
 		.buy Pattern: Felstalker Bracers##29214 |n
 		.learn Felstalker Bracers##32499
 	step
-		goto Hellfire Peninsula 56.6,62.6
+		goto Hellfire Peninsula,56.6,62.6
 		.talk Logistics Officer Ulrike##17657
 		|tip You must be Honored with Honor Hold to purchase this Pattern.
 		.buy Pattern: Felstalker Breastplate##29215 |n
 		.learn Felstalker Breastplate##32500
 	step
-		goto Zangarmarsh 79.2,63.8
+		goto Zangarmarsh,79.2,63.8
 		.talk Fedryen Swiftspear##17904
 		|tip You must be Honored with Cenarion Expedition to purchase this Pattern.
 		.buy Pattern: Heavy Clefthoof Vest##25735 |n
 		.learn Heavy Clefthoof Vest##32495
 	step
-		goto Shattrath City 51.6,41.6
+		goto Shattrath City,51.6,41.6
 		.talk Almaador##21432
 		|tip You must be Honored with The Sha'tar to purchae this Pattern.
 		.buy Pattern: Drums of Battle##29717 |n
 		.learn Drums of Battle##35543
 	step
-		goto Zangarmarsh 79.2,63.8
+		goto Zangarmarsh,79.2,63.8
 		.talk Fedryen Swiftspear##17904
 		|tip You must be Exalted with Cenarion Expedition to purchase this Pattern.
 		.buy Pattern: Nethercleft Leg Armor##29721 |n
 		.learn Nethercleft Leg Armor##35557
 	step
-		goto Hellfire Peninsula 56.6,62.6
+		goto Hellfire Peninsula,56.6,62.6
 		.talk Logistics Officer Ulrike##17657
 		|tip You must be Exalted with Honor Hold to purchase this Pattern.
 		.buy Pattern: Nethercobra Leg Armor##29722 |n
 		.learn Nethercobra Leg Armor##35554
 
 	step
-		goto Deadwind Pass 47.0,75.6
+		goto Deadwind Pass,47.0,75.6
 		.talk Apprentice Darius##18255 |n
 		|tip You must be Revered with The Violet Eye to purchase this Pattern.
 		.buy Pattern: Shadowprowler's Chestguard##33205 |n
@@ -39092,7 +39092,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 
 
 	step
-		goto Tanaris 63.0,57.2
+		goto Tanaris,63.0,57.2
 		.talk Alurmi##21643
 		|tip You must be Honored with Keepers of Time to purchase this Pattern.
 		.buy Pattern: Drums of Panic##29713 |n
@@ -39100,14 +39100,14 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 
 
 	step
-		goto Black Temple/2 61.6,51.0
+		goto Black Temple/2,61.6,51.0
 		.talk Okuno##23159
 		|tip You must be Friendly with Ashtongue Deathsworn to purchase this Pattern.
 		.buy Pattern: Boots of Shackled Souls##32429 |n
 		.learn Boots of Shackled Souls##39997
 
 	step
-		goto Black Temple/2 61.6,51.0
+		goto Black Temple/2,61.6,51.0
 		.talk Okuno##23159
 		|tip You must be Friendly with Ashtongue Deathsworn to purchase this Pattern.
 		buy Pattern: Redeemed Soul Cinch##32436 |n
@@ -39117,7 +39117,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 		.buy Pattern: Bracers of Shackled Souls##32430 |n
 		.learn Bracers of Shackled Souls##52733
 	step
-		goto Black Temple/2 61.6,51.0
+		goto Black Temple/2,61.6,51.0
 		.talk Okuno##23159
 		|tip You must be Honored with Ashtongue Deathsworn to purchase this Pattern.
 		.buy Pattern: Redeemed Soul Moccasins##32433 |n
@@ -39130,20 +39130,20 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 		.learn Greaves of Shackled Souls##4000
 
 	step
-		goto The Storm Peaks 66.0,61.4
+		goto The Storm Peaks,66.0,61.4
 		.talk Lillehoff##32540
 		.buy Pattern: Mammoth Mining Bag##44510 |n
 		.learn Mammoth Mining Bag##50971
 
 	step
-		goto Dragonblight 48.6,75.6
+		goto Dragonblight,48.6,75.6
 		.talk Sairuk##32763
 		|tip You must be Revered with The Kalu'ak to purcahse this Pattern.
 		.buy Pattern: Trapper's Traveling Pack##44509 |n
 		.learn Trapper's Traveling Pack##50970
 
 	step
-		goto Dalaran 38.2,29.6
+		goto Dalaran,38.2,29.6
 		.talk Braeg Stoutbeard##32515
 		.buy Pattern: Eviscerator's Bindings##44516 |n
 		.learn Eviscerator's Bindings##60704
@@ -39238,7 +39238,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 		.buy Pattern: Trollwoven Spaulders##44550 |n
 		.learn Trollwoven Spaulders##60758
 	step
-		goto Icecrown Citadel 36.8,20.6
+		goto Icecrown Citadel,36.8,20.6
 		.talk Alchemist Finklestein##37687
 		|tip You must be Revered with The Ashen Verdict to purchase this Pattern.
 		.buy Pattern: Bladeborn Leggings##49959 |n
@@ -39250,7 +39250,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 		.buy Pattern: Lightning-Infused Leggings##49962 |n
 		.learn Lightning-Infused Leggings##70558
 	step
-		goto Icecrown Citadel 36.8,20.6
+		goto Icecrown Citadel,36.8,20.6
 		.talk Alchemist Finklestein##37687
 		|tip You must be Honored with The Ashen Verdict to purchase this Pattern.
 		.buy Pattern: Blessed Cenarion Boots##49958 |n
@@ -39263,14 +39263,14 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 		.buy Pattern: Rock-Steady Treads##49966 |n
 		.learn Rock-Steady Treads##70561
 	step
-		goto Molten Front 44.8,86.6
+		goto Molten Front,44.8,86.6
 		.talk Ayla Shadowstorm##53881
 		.buy Pattern: Royal Scribe's Satchel##70174 |n
 		.learn Royal Scribe's Satchel##100583
 		.buy Pattern: Triple-Reinforced Mining Bag##70175 |n
 		.learn Triple-Reinforced Mining Bag##100586
 	step
-		goto Stormwind City 71.6,62.8
+		goto Stormwind City,71.6,62.8
 		.talk Jillian Tanner##5565
 		.buy Pattern: Vicious Charscale Bracers##67049 |n
 		.learn Vicious Charscale Bracers##78448
@@ -39363,7 +39363,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 		.buy Pattern: Vicious Wyrmhide Legs##67085 |n
 		.learn Vicious Wyrmhide Legs##78479
 	step
-		goto Vale of Eternal Blossoms/3 76.5,48.3
+		goto Vale of Eternal Blossoms/3,76.5,48.3
 		.talk Tanner Pang##64094
 		.buy Pattern: Contender's Dragonscale Bracers##86242 |n
 		.learn Contender's Dragonscale Bracers##124616
@@ -39428,7 +39428,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Leatherworking",[[
 		.buy Pattern: Contender's Wyrmhide Helm##86269 |n
 		.learn Contender's Wyrmhide Helm##124587
 	step
-		goto Vale of Eternal Blossoms 74.2,42.6
+		goto Vale of Eternal Blossoms,74.2,42.6
 		.talk Jaluu the Generous##59908
 		|tip You must be Honored with the Golden Lotus to purchase this Pattern.
 		.buy Pattern: Angerhide Leg Armor##86235 |n
@@ -40772,12 +40772,12 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 		.learn Green Holiday Shirt##21945
 //OTHER
 	step
-		goto Stormwind 53.0,74.2
+		goto Stormwind,53.0,74.2
 		.talk Jessara Cordell##1318
 		.buy Pattern: Enchanted Mageweave Pouch##22307 |n
 		.learn Enchanted Mageweave Pouch##27658
 	step
-		goto Stormwind City 53.2,81.6
+		goto Stormwind City,53.2,81.6
 		.talk Alexandra Bolero##1347
 		.buy Pattern: Powerful Enchanted Spellthread##54599 |n
 		.learn Powerful Enchanted Spellthread##75309
@@ -40804,22 +40804,22 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 		.buy Pattern: Blue Overalls##6274 |n
 		.learn Blue Overalls##7639
 	step
-		goto Elwynn Forest 42.0,67.0
+		goto Elwynn Forest,42.0,67.0
 		.talk Tharynn Bouden##66
 		.buy Pattern: Blue Linen Vest##6270 |n
 		.learn Blue Linen Vest##7630
 	step
-		goto Westfall 51.6,46.6
+		goto Westfall,51.6,46.6
 		.from Defias Looter##590
 		.collect Pattern: Red Linen Bag##5771 |n
 		.learn Red Linen Bag##6686
 	step
-		goto Wetlands 25.6,25.8
+		goto Wetlands,25.6,25.8
 		.talk Wenna Silkbeard##2679
 		.buy Pattern: Azure Silk Gloves##7114 |n
 		.learn Azure Silk Gloves##3854
 	step
-		goto Ironforge 43.6,29.0
+		goto Ironforge,43.6,29.0
 		.talk Outfitter Eric##8681
 		.buy Pattern: Lavender Mageweave Shirt##10314 |n
 		.learn Lavender Mageweave Shirt##12075
@@ -40840,12 +40840,12 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 
 
 	step
-		goto Duskwood 75.8,45.4
+		goto Duskwood,75.8,45.4
 		.talk Danielle Zipstitch##2668
 		.buy Pattern: Bright Yellow Shirt##14627 |n
 		.learn Bright Yellow Shirt##3869
 	step
-		goto Duskwood 75.6,45.4
+		goto Duskwood,75.6,45.4
 		.talk Sheri Zipstitch##2669
 		.buy Pattern: Dark Silk Shirt##6401 |n
 		.learn Dark Silk Shirt##3870
@@ -40857,19 +40857,19 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 
 
 	step
-		goto The Cape of Stranglethorn 40.8,82.2
+		goto The Cape of Stranglethorn,40.8,82.2
 		.talk Cowardly Crosby##2672
 		.buy Pattern: Admiral's Hat##10318 |n
 		.learn Admiral's Hat##12081
 	step
-		goto The Cape of Stranglethorn 43.6,73.0
+		goto The Cape of Stranglethorn,43.6,73.0
 		.talk Xizk Goodstitch##2670
 		.buy Pattern: Enchanter's Cowl##14630 |n
 		.learn Enchanter's Cowl##3857
 		.buy Pattern: Crimson Silk Cloak##7087 |n
 		.learn Crimson Silk Cloak##8789
 	step
-		goto The Cape of Stranglethorn 42.6,69.2
+		goto The Cape of Stranglethorn,42.6,69.2
 		.talk Narkk##2663
 		.buy Pattern: Black Swashbuckler's Shirt##10728 |n
 		.learn Black Swashbuckler's Shirt##3873
@@ -40878,7 +40878,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 
 
 	step
-		goto Arathi Highlands 68.0,37.6
+		goto Arathi Highlands,68.0,37.6
 		.talk Jun'ha ##6574
 		.buy Pattern: Azure Silk Cloak##7089 |n
 		.learn Azure Silk Cloak##8786
@@ -40888,7 +40888,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 
 
 	step
-		goto Hillsbrad Foothills 57.8,25.6
+		goto Hillsbrad Foothills,57.8,25.6
 		.from Syndicate Spy##2242
 		.collect Pattern: Black Silk Pack##5775 |n
 		.learn Black Silk Pack##6695
@@ -40898,7 +40898,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 
 
 	step
-		goto Dustwallow Marsh 35.2,30.8
+		goto Dustwallow Marsh,35.2,30.8
 		.talk Ghok'kah##6567
 		.buy Pattern: Icy Cloak##4355 |n
 		.learn Icy Cloak##3862
@@ -40907,14 +40907,14 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 
 
 	step
-		goto Tanaris 50.6,28.6
+		goto Tanaris,50.6,28.6
 		.talk Vizzklick##6568
 		.buy Pattern: Crimson Silk Robe##7088 |n
 		.learn Crimson Silk Robe##8802
 		.buy Pattern: Soul Pouch##21358 |n
 		.learn Soul Pouch##26085
 	step
-		goto Tanaris 50.6,28.6
+		goto Tanaris,50.6,28.6
 		.talk Haughty Modiste##40572
 		.buy Pattern: Haliscan Pantaloons##38328 |n
 		.learn Haliscan Pantaloons##50647
@@ -40925,24 +40925,24 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 
 
 	step
-		goto Silithus 53.8,34.4
+		goto Silithus,53.8,34.4
 		.talk Mishta##15179
 		.buy Pattern: Cenarion Herb Bag##22310 |n
 		.learn Cenarion Herb Bag##27724
 	step
-		goto Silithus 55.6,37.0
+		goto Silithus,55.6,37.0
 		.talk Kania##15419
 		.buy Pattern: Enchanted Runecloth Bag##22308 |n
 		.learn Enchanted Runecloth Bag##27659
 	step
-		goto Silithus 53.8,34.4
+		goto Silithus,53.8,34.4
 		.talk Mishta##15179
 		.buy Pattern: Gaea's Embrace###22683 |n
 		.learn Gaea's Embrace##28210
 	step
 		.' To obtain this bag with a chance to drop this recipe, you will need to first use our Leveling Guide of Silithus.
 		.' Do all the quests of Hermit Ortell until you can do the following quest. Once completed you can turn in Twilight Text's for the Clippings.
-		goto Silithus 68.6,63.0
+		goto Silithus,68.6,63.0
 		.talk Hermit Ortell##15194
 		..accept True Believers##8323
 		..turnin True Believers##8323
@@ -40953,7 +40953,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 	step
 		.' To obtain this bag with a chance to drop this recipe, you will need to first use our Leveling Guide of Silithus.
 		.' Do all the quests of Hermit Ortell until you can do the following quest. Once completed you can turn in Twilight Text's for the Clippings.
-		goto Silithus 68.6,63.0
+		goto Silithus,68.6,63.0
 		.talk Hermit Ortell##15194
 		..accept True Believers##8323
 		..turnin True Believers##8323
@@ -40964,7 +40964,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 	step
 		.' To obtain this bag with a chance to drop this recipe, you will need to first use our Leveling Guide of Silithus.
 		.' Do all the quests of Hermit Ortell until you can do the following quest. Once completed you can turn in Twilight Text's for the Clippings.
-		goto Silithus 68.6,63.0
+		goto Silithus,68.6,63.0
 		.talk Hermit Ortell##15194
 		..accept True Believers##8323
 		..turnin True Believers##8323
@@ -40973,25 +40973,25 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 		.collect Pattern: Runed Stygian Leggings##20546 |n
 		.learn Runed Stygian Leggings##24901
 	step
-		goto Silithus 53.8,34.4
+		goto Silithus,53.8,34.4
 		.talk Mishta##15179
 		|tip You msut be Honored with Cenarion Circle to purchase this Pattern.
 		.buy Pattern: Sylvan Crown##22773 |n
 		.learn Sylvan Crown##28481
 	step
-		goto Silithus 53.8,34.4
+		goto Silithus,53.8,34.4
 		.talk Mishta##15179
 		|tip You msut be Friendly with Cenarion Circle to purchase this Pattern.
 		.buy Pattern: Sylvan Shoulders##22772 |n
 		.learn Sylvan Shoulders##28482
 	step
-		goto Silithus 53.8,34.4
+		goto Silithus,53.8,34.4
 		.talk Mishta##15179
 		|tip You msut be Friendly with Cenarion Circle to purchase this Pattern.
 		.buy Pattern: Sylvan Vest##15179 |n
 		.learn Sylvan Vest##28480
 	step
-		goto Silithus 53.8,34.4
+		goto Silithus,53.8,34.4
 		.talk Mishta##15179
 		|tip You msut be Revered with Cenarion Circle to purchase this Pattern.
 		.buy Pattern: Satchel of Cenarius##22312 |n
@@ -41003,7 +41003,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 
 
 	step
-		goto Darnassus 60.4,36.8
+		goto Darnassus,60.4,36.8
 		.talk Elynna##4168
 		.buy Pattern: Orange Martial Shirt##10311 |n
 		.learn Orange Martial Shirt##12064
@@ -41015,19 +41015,19 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 
 
 	step
-		goto Burning Steppes 51.2,40.2
+		goto Burning Steppes,51.2,40.2
 		.from Thaurissan Firewalker##7037
 		.collect Pattern: Cindercloth Cloak##14482 |n
 		.learn Cindercloth Cloak##18418
 	step
-		goto Burning Steppes 51.2,40.2
+		goto Burning Steppes,51.2,40.2
 		.from Thaurissan Firewalker##7037
 		.collect Pattern: Cindercloth Pants##14490 |n
 		.learn Cindercloth Pants##18434
 
 
 	step
-		goto Northern Barrens 67.0,73.4
+		goto Northern Barrens,67.0,73.4
 		.talk Ranik##3499
 		.buy Pattern: Blue Linen Robe##6272 |n
 		.learn Blue Linen Robe##7633
@@ -41038,19 +41038,19 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 
 
 	step
-		goto Moonglade 54.0,35.0
+		goto Moonglade,54.0,35.0
 		.talk Fariel Starsong##15909
 		|tip You can only purchase this from her during the Lunar Festival. This is at the end of Janurary.
 		.buy Pattern: Festival Dress##44916 |n
 		.learn Festival Dress##26403
 	step
-		goto Moonglade 54.0,35.0
+		goto Moonglade,54.0,35.0
 		.talk Fariel Starsong##15909
 		|tip You can only purchase this from her during the Lunar Festival. This is at the end of Janurary.
 		.buy Pattern: Festival Suit##44917 |n
 		.learn Festival Suit##26407
 	step
-		goto Moonglade 48.6,40.2
+		goto Moonglade,48.6,40.2
 		.talk Lorelae Wintersong##12022
 		.buy Pattern: Felcloth Pants##14483 |n
 		.learn Felcloth Pants##18419
@@ -41058,7 +41058,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 
 
 	step
-		goto Winterspring 59.6,49.2
+		goto Winterspring,59.6,49.2
 		.talk Qia##11189
 		.buy Pattern: Mooncloth##14526 |n
 		.learn Mooncloth##18560
@@ -41067,17 +41067,17 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 
 
 	step
-		goto Searing Gorge 18.6,35.4
+		goto Searing Gorge,18.6,35.4
 		.from Twilight Fire Guard##5861
 		.collect Pattern: Cindercloth Vest##14471 |n
 		.learn Cindercloth Vest##18408
 	step
-		goto Searing Gorge 18.6,35.4
+		goto Searing Gorge,18.6,35.4
 		.from Twilight Fire Guard##5861
 		.collect Pattern: Cindercloth Gloves##14476 |n
 		.learn Cindercloth Gloves##18412
 	step
-		goto Searing Gorge 37.0,34.8
+		goto Searing Gorge,37.0,34.8
 		.from Overmaster Pyron##9026+
 		.collect Pattern: Cloak of Fire##14486 |n
 		.learn Cloak of Fire##18422
@@ -41086,20 +41086,20 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 
 
 	step
-		goto Felwood 64.8,5.2
+		goto Felwood,64.8,5.2
 		.talk Meilosh##11557
 		|tip You must be friendly with Timbermaw Hold to start this quest.
 		..accept Sacred Cloth##6032
 		..turnin Sacred Cloth##6032
 		.learn Mooncloth Boots##19435
 	step
-		goto Felwood 64.8,5.2
+		goto Felwood,64.8,5.2
 		.talk Meilosh##11557
 		|tip You must be Honored with Timbermaw Hold to purchase this Pattern.
 		.buy Pattern: Wisdom of the Timbermaw##19215 |n
 		.learn Wisdom of the Timbermaw##23662
 	step
-		goto Felwood 64.8,5.2
+		goto Felwood,64.8,5.2
 		.talk Meilosh##11557
 		|tip You must be Revered with Timbermaw Hold to purchase this Pattern.
 		.buy Pattern: Mantle of the Timbermaw##19218 |n
@@ -41109,7 +41109,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 
 
 	step
-		goto Western Plaguelands 42.8,83.8
+		goto Western Plaguelands,42.8,83.8
 		.talk Argent Quartermaster Lightspark##10857
 		|tip You must be Revered with Argent Crusade to purchase this Formula.
 		.buy Pattern: Argent Shoulders##19217 |n
@@ -41117,7 +41117,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 		.' You can also purchase this Plan from Argent Quartermaster Lightspark here: [Western Plaguelands 42.8,83.8]
 		'|talk Argent Quartermaster Lightspark##10857
 	step
-		goto Western Plaguelands 42.8,83.8
+		goto Western Plaguelands,42.8,83.8
 		.talk Argent Quartermaster Lightspark##10857
 		|tip You must be Honored with Argent Crusade to purchase this Formula.
 		.buy Pattern: Argent Boots##19216 |n
@@ -41127,28 +41127,28 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 
 
 	step
-		goto Blackrock Depths 50.6,59.2
+		goto Blackrock Depths,50.6,59.2
 		.talk Lokhtos Darkbargainer##12944
 		.buy Pattern: Flarecore Gloves##17018 |n
 		.learn Flarecore Gloves##20849
 	step
-		goto Blackrock Depths 50.6,59.2
+		goto Blackrock Depths,50.6,59.2
 		.talk Lokhtos Darkbargainer##12944
 		.buy Pattern: Flarecore Leggings##19220 |n
 		.learn Flarecore Leggings##23667
 	step
-		goto Blackrock Depths 50.6,59.2
+		goto Blackrock Depths,50.6,59.2
 		.talk Lokhtos Darkbargainer##12944
 		.buy Pattern: Flarecore Mantle##17017 |n
 		.learn Flarecore Mantle##20848
 	step
-		goto Blackrock Depths 50.6,59.2
+		goto Blackrock Depths,50.6,59.2
 		.talk Lokhtos Darkbargainer##12944
 		.buy Pattern: Flarecore Robe##19219 |n
 		.learn Flarecore Robe##23666
 
 	step
-		goto Blackrock Spire 57.9,75.7
+		goto Blackrock Spire,57.9,75.7
 		.from Firebrand Pyromancer##9264+
 		.collect Pattern: Robe of the Archmage##14513 |n
 		.learn Robe of the Archmage##18457
@@ -41163,7 +41163,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 
 
 	step
-		goto Stratholme 19.8,82.4
+		goto Stratholme,19.8,82.4
 		.from Balnazzar##10813
 		.collect Pattern: Truefaith Vestments##14512 |n
 		.learn Truefaith Vestments##18456
@@ -41171,18 +41171,18 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 
 
 	step
-		goto Dire Maul 82.8,24.8
+		goto Dire Maul,82.8,24.8
 		.talk Shen'dralar Provisioner##14371
 		.buy Pattern: Mooncloth Robe##18487 |n
 		.learn Mooncloth Robe##22902
 	step
-		goto Dire Maul 31.6,47.6
+		goto Dire Maul,31.6,47.6
 		.from Magister Kalendris#11487
 		.collect Pattern: Big Bag of Enchantment##22309 |n
 		.learn Big Bag of Enchantment##27660
 //OUTLAND
 	step
-		goto Shattrath City 66.2,68.8
+		goto Shattrath City,66.2,68.8
 		.talk Eiin##19213
 		.buy Pattern: Bolt of Imbued Netherweave##21892 |n
 		.learn Bolt of Imbued Netherweave##26747
@@ -41191,163 +41191,163 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 		.buy Pattern: Netherweave Robe##21896 |n
 		.learn Netherweave Robe##26773
 	step
-		goto Shattrath City 60.6,64.2
+		goto Shattrath City,60.6,64.2
 		.talk Quartermaster Enuril##19331
 		|tip You must be Honored with The Scryers to purchase this Pattern.
 		.buy Pattern: Mystic Spellthread##24292 |n
 		.learn Mystic Spellthread##31430
 	step
-		goto Shattrath City 48.0,26.6
+		goto Shattrath City,48.0,26.6
 		.talk Quartermaster Endarin##19321
 		|tip You must be Honored with The Aldor to purchase this Pattern.
 		.buy Pattern: Silver Spellthread##24293 |n
 		.learn Silver Spellthread##31431
 	step
-		goto Shattrath City 66.2,68.8
+		goto Shattrath City,66.2,68.8
 		.talk Eiin##19213
 		.buy Pattern: Netherweave Tunic##21897 |n
 		.learn Netherweave Tunic##26774
 	step
-		goto Shattrath City 66.6,68.4
+		goto Shattrath City,66.6,68.4
 		.talk Nasmara Moonsong##22208
 		.buy Pattern: Primal Mooncloth##21895 |n
 		.learn Primal Mooncloth##26751
 	step
-		goto Shattrath City 66.6,68.6
+		goto Shattrath City,66.6,68.6
 		.talk Andrion Darkspinner##22212
 		.buy Pattern: Shadowcloth##30483 |n
 		.learn Shadowcloth##36686
 	step
-		goto Shattrath City 66.6,68.6
+		goto Shattrath City,66.6,68.6
 		.talk Gidge Spellweaver##22213
 		.buy Pattern: Spellcloth##24316 |n
 		.learn Spellcloth##31373
 	step
-		goto Shattrath City 62.6,69.0
+		goto Shattrath City,62.6,69.0
 		.talk Nakodu##21655
 		.buy Pattern: Cloak of Arcane Evasion##30833 |n
 		.learn Cloak of Arcane Evasion##37873
 	step
-		goto Shattrath City 48.0,26.6
+		goto Shattrath City,48.0,26.6
 		.talk Quartermaster Endarin##19321
 		|tip You must be Friendly with The Aldor to purchase this Pattern.
 		.buy Pattern: Flameheart Bracers##30842 |n
 		.learn Flameheart Bracers##37882
 	step
-		goto Shattrath City 66.6,68.6
+		goto Shattrath City,66.6,68.6
 		..talk Andrion Darkspinner##22212
 		.buy Pattern: Frozen Shadoweave Shoulders##21912 |n
 		.learn Frozen Shadoweave Shoulders##26756
 	step
-		goto Shattrath City 66.6,68.6
+		goto Shattrath City,66.6,68.6
 		.talk Nasmara Moonsong##22208
 		.buy Pattern: Primal Mooncloth Belt##21916 |n
 		.learn Primal Mooncloth Belt##26760
 	step
-		goto Shattrath City 66.6,68.6
+		goto Shattrath City,66.6,68.6
 		.talk Gidge Spellweaver##22213
 		.buy Pattern: Spellfire Belt##21908 |n
 		.learn Spellfire Belt##26752
 	step
-		goto Shattrath City 48.0,26.6
+		goto Shattrath City,48.0,26.6
 		.talk Quartermaster Endarin##19321
 		|tip You must be Honored with The Aldor to purchase this Pattern.
 		.buy Pattern: Flameheart Gloves##30843 |n
 		.learn Flameheart Gloves##37883
 	step
-		goto Shattrath City 66.6,68.6
+		goto Shattrath City,66.6,68.6
 		.talk Andrion Darkspinner##2212
 		.buy Pattern: Frozen Shadoweave Boots##21914 |n
 		.learn Frozen Shadoweave Boots##26757
 	step
-		goto Shattrath City 66.6,68.6
+		goto Shattrath City,66.6,68.6
 		.talk Nasmara Moonsong##22208
 		.buy Pattern: Primal Mooncloth Shoulders##21918 |n
 		.learn Primal Mooncloth Shoulders##26761
 	step
-		goto Shattrath City 66.6,68.6
+		goto Shattrath City,66.6,68.6
 		.talk Gidge Spellweaver##22213
 		.buy Pattern: Spellfire Gloves##21909 |n
 		.learn Spellfire Gloves##26753
 	step
-		goto Shattrath City 66.6,68.6
+		goto Shattrath City,66.6,68.6
 		.talk Andrion Darkspinner##22212
 		.buy Pattern: Frozen Shadoweave Robe##21913 |n
 		.learn Frozen Shadoweave Robe##26758
 	step
-		goto Shattrath City 48.0,26.6
+		goto Shattrath City,48.0,26.6
 		.talk Quartermaster Endarin##19321
 		|tip You must be Exalted with The Aldor to purchase this Pattern.
 		.buy Pattern: Golden Spellthread##24295 |n
 		.learn Golden Spellthread##31433
 	step
-		goto Shattrath City 66.6,68.6
+		goto Shattrath City,66.6,68.6
 		.talk Nasmara Moonsong##22208
 		.buy Pattern: Primal Mooncloth Robe##21917 |n
 		.learn Primal Mooncloth Robe##26762
 	step
-		goto Shattrath City 60.6,64.2
+		goto Shattrath City,60.6,64.2
 		.talk Quartermaster Enuril##19331
 		|tip You must be Exalted with The Scryers to purcase this Pattern.
 		.buy Pattern: Runic Spellthread##24294 |n
 		.learn Runic Spellthread##31432
 	step
-		goto Shattrath City 66.6,68.6
+		goto Shattrath City,66.6,68.6
 		.talk Gidge Spellweaver##22213
 		.buy Pattern: Spellfire Robe##21910 |n
 		.learn Spellfire Robe##26754
 		.buy Pattern: Spellfire Bag##21911 |n
 		.learn Spellfire Bag##26755
 	step
-		goto Shattrath City 66.6,68.6
+		goto Shattrath City,66.6,68.6
 		.talk Nasmara Moonsong##22208
 		.collect Pattern: Primal Mooncloth Bag##21919 |n
 		.learn Primal Mooncloth Bag##26763
 	step
-		goto Shattrath City 48.0,26.6
+		goto Shattrath City,48.0,26.6
 		.talk Quartermaster Endarin##19321
 		.collect Pattern: Flameheart Vest##30844 |n
 		.learn Flameheart Vest##37884
 	step
-		goto Shattrath City 66.6,68.6
+		goto Shattrath City,66.6,68.6
 		.talk Andrion Darkspinner##22212
 		.buy Pattern: Ebon Shadowbag##21915 |n
 		.learn Ebon Shadowbag##26759
 
 
 	step
-		goto Zangarmarsh 17.8,51.2
+		goto Zangarmarsh,17.8,51.2
 		.talk Mycah##18382
 		|tip You must be Revered to purchase this Pattern.
 		.buy Pattern: Mycah's Botanical Bag##38229 |n
 		.learn Mycah's Botanical Bag##50194
 	step
-		goto Zangarmarsh 40.6,28.2
+		goto Zangarmarsh,40.6,28.2
 		.talk Muheru the Weaver##19722##19722
 		.buy Pattern: Imbued Netherweave Pants##21898 |n
 		.learn Imbued Netherweave Pants##26775
 		.buy Pattern: Imbued Netherweave Boots##21899 |n
 		.learn Imbued Netherweave Boots##26776
 	step
-		goto Nagrand 30.6,57.0
+		goto Nagrand,30.6,57.0
 		.talk Paulsta'ats##23007
 		|tip You must be Honored with The Consortium to purchase this Pattern.
 		.buy Pattern: Bag of Jewels##24314 |n
 		.learn Bag of Jewels##31459
 	step
-		goto Nagrand 53.2,71.8
+		goto Nagrand,53.2,71.8
 		.talk Borto##19017
 		.buy Pattern: Bolt of Soulcloth##21894 |n
 		.learn Bolt of Soulcloth##26750
 		.buy Pattern: Soulcloth Gloves##21902 |n
 		.learn Soulcloth Gloves##26779
 	step
-		goto Shadowmoon Valley 55.8,58.2
+		goto Shadowmoon Valley,55.8,58.2
 		.talk Arrond##19521
 		.buy Pattern: Imbued Netherweave Robe##21900 |n
 		.learn Imbued Netherweave Robe##26777
 	step
-		goto Shadowmoon Valley 55.8,58.2
+		goto Shadowmoon Valley,55.8,58.2
 		.talk Arrond##19521
 		.buy Pattern: Imbued Netherweave Tunic##21901 |n
 		.learn Imbued Netherweave Tunic##26778
@@ -41356,12 +41356,12 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 
 
 	step
-		goto The Arcatraz 30.6,57.0
+		goto The Arcatraz,30.6,57.0
 		.from Arcatraz Sentinel##20869
 		.collect Pattern: Arcanoweave Bracers##21905 |n
 		.learn Arcanoweave Bracers##26782
 	step
-		goto The Arcatraz 32.2,74.0
+		goto The Arcatraz,32.2,74.0
 		.from Dalliah the Doomsayer##20885
 		.collect Pattern: Whitemend Pants##24308 |n
 		.learn Whitemend Pants##31451
@@ -41371,122 +41371,122 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 
 
 	step
-		goto Karazhan 55.0,52.4
+		goto Karazhan,55.0,52.4
 		.from Phantom Attendant##16406
 		.collect Pattern: Soulcloth Shoulders##21903 |n
 		.learn Soulcloth Shoulders##26780
 	step
-		goto Karazhan/3 49.8,57.4
+		goto Karazhan/3,49.8,57.4
 		.from Phantom Valet##16408
 		.collect Pattern: Soulcloth Vest##21904 |n
 		.learn Soulcloth Vest##26781
 
 
 	step
-		goto The Mechanar 29.6,60.6
+		goto The Mechanar,29.6,60.6
 		.from Pathaleon the Calculator##19220
 		.collect Pattern: Arcanoweave Robe##21907 |n
 		.learn Arcanoweave Robe##26784
 	step
-		goto The Mechanar/2 52.8,34.4
+		goto The Mechanar/2,52.8,34.4
 		.from Sunseeker Astromage##19168
 		.collect Pattern: Arcanoweave Boots##21906 |n
 		.learn Arcanoweave Boots##26783
 
 	step
-		goto The Steamvault 80.6,43.6
+		goto The Steamvault,80.6,43.6
 		.from Warlord Kalithresh##17798
 		.collect Pattern: Battlecast Hood##24313 |n
 		.learn Battlecast Hood##31456
 	step
-		goto The Botanica 8.2,47.2
+		goto The Botanica,8.2,47.2
 		.from Thorngrin the Tender##17978
 		.collect Pattern: Battlecast Pants##24310 |n
 		.learn Battlecast Pants##31453
 	step
-		goto Black Temple 61.6,51.0
+		goto Black Temple,61.6,51.0
 		.talk Okuno##23159
 		|tip You must be Honored with Ashtongue Deathsworn to purchase this Pattern.
 		.buy Pattern: Night's End##32447 |n
 		.learn Night's End##40060
 	step
-		goto Black Temple 61.6,51.0
+		goto Black Temple,61.6,51.0
 		.talk Okuno##23159
 		|tip You must be Friendly with Ashtongue Deathsworn to purchase this Pattern.
 		.buy Pattern: Soulguard Bracers##32438 |n
 		.learn Soulguard Bracers##40021
 	step
-		goto Black Temple 61.6,51.0
+		goto Black Temple,61.6,51.0
 		.talk Okuno##23159
 		|tip You must be Friendly with Ashtongue Deathsworn to purchase this Pattern.
 		.buy Pattern: Soulguard Girdle##32440 |n
 		.learn Soulguard Girdle##40024
 	step
-		goto Black Temple 61.6,51.0
+		goto Black Temple,61.6,51.0
 		.talk Okuno##23159
 		|tip You must be Honored with Ashtongue Deathsworn to purchase this Pattern.
 		.buy Pattern: Soulguard Leggings##32439 |n
 		.learn Soulguard Leggings##40023
 	step
-		goto Black Temple 61.6,51.0
+		goto Black Temple,61.6,51.0
 		.talk Okuno##23159
 		|tip You must be Honored with Ashtongue Deathsworn to purchase this Pattern.
 		.buy Pattern: Soulguard Slippers##32437 |n
 		.learn Soulguard Slippers##40020
 	step
-		goto The Shattered Halls 34.8,61.4
+		goto The Shattered Halls,34.8,61.4
 		.from Grand Warlock Nethekurse##16807
 		.collect Pattern: Spellstrike Hood##24312 |n
 		.learn Spellstrike Hood##31455
 	step
-		goto Shadow Labyrinth 81.2,39.2
+		goto Shadow Labyrinth,81.2,39.2
 		.from Murmur##18708
 		.collect Pattern: Spellstrike Pants##24309 |n
 		.learn Spellstrike Pants##31452
 	step
-		goto The Botanica 34.0,38.6
+		goto The Botanica,34.0,38.6
 		.from Warp Splinter##17977
 		.collect Pattern: Whitemend Hood##24311 |n
 		.learn Whitemend Hood##31454
 //NORTHREND
 	step
-		goto Dalaran 40.0,28.3
+		goto Dalaran,40.0,28.3
 		.talk Frozo the Renowned##40160
 		.buy Pattern: Frosty Flying Carpet##54798 |n
 		.learn Frosty Flying Carpet##75597
 	step
-		goto Icecrown 87.6,75.6
+		goto Icecrown,87.6,75.6
 		.talk Veteran Crusader Aliocha Segard##30431
 		|tip You must be Exalted with Argent Crusade to purchase this Pattern.
 		.buy Pattern: Brilliant Spellthread##42187 |n
 		.learn Brilliant Spellthread##56009
 	step
-		goto Dalaran 25.6,49.0
+		goto Dalaran,25.6,49.0
 		.talk Archmage Alvareaux##32287
 		|tip You must be Exalted with Kirin Tor to purchase this Pattern.
 		.buy Pattern: Sapphire Spellthread##42188 |n
 		.learn Sapphire Spellthread##56011
 	step
-		goto Icecrown 43.4,20.6
+		goto Icecrown,43.4,20.6
 		.talk Duchess Mynx##32538
 		|tip You must be Revered with Knights of the Ebon Blade to purchase this Pattern.
 		.buy Pattern: Abyssal Bag##42183 |n
 		.learn Abyssal Bag##56004
 	step
-		goto Dragonblight 48.6,75.6
+		goto Dragonblight,48.6,75.6
 		.talk Sairuk##32763
 		|tip You must be Revered with The Kalu'ak to purchase this Pattern.
 		.buy Pattern: Emerald Bag##45774 |n
 		.learn Emerald Bag##63924
 	step
-		goto Dragonblight 59.8,53.0
+		goto Dragonblight,59.8,53.0
 		.talk Cielstrasza##32533
 		|tip You must be Revered with The Wyrmrest Accord to purchase this Pattern.
 		.buy Pattern: Mysterious Bag##42185 |n
 		.learn Mysterious Bag##56006
 
 	step
-		goto The Storm Peaks 66.0,61.4
+		goto The Storm Peaks,66.0,61.4
 		.talk Lillehoff##32540
 		|tip You must be Exalted with The Sons of Hodir to purchase this Pattern.
 		.buy Pattern: Glacial Bag##42184
@@ -41494,7 +41494,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 
 
 	step
-		goto Ulduar/2 15.6,89.2
+		goto Ulduar/2,15.6,89.2
 		.talk Prospector Loren##33957
 		..accept Heroic: Algalon##13818
 		..turnin Heroic: Algalon##13818
@@ -41505,7 +41505,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 
 
 	step
-		goto Icecrown Citadel 36.8,20.6
+		goto Icecrown Citadel,36.8,20.6
 		.talk Alchemist Finklestein##37687
 		|tip You must be Honored with The Ashen Verdict to purchase this Pattern.
 		.buy Pattern: Deathfrost Boots##49954 |n
@@ -41513,7 +41513,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 		.buy Pattern: Sandals of Consecration##49956 |n
 		.learn Sandals of Consecration##70553
 	step
-		goto Icecrown Citadel 36.8,20.6
+		goto Icecrown Citadel,36.8,20.6
 		.talk Alchemist Finklestein##37687
 		|tip You must be Revered with The Ashen Verdict to purchase this Pattern.
 		.buy Pattern: Leggings of Woven Death##49953 |n
@@ -41522,7 +41522,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 		.learn Lightweave Leggings##70552
 
 	step
-		goto Stormwind City 53.2,81.6
+		goto Stormwind City,53.2,81.6
 		.talk Alexandra Bolero##1347
 		.buy Pattern: Black Embersilk Gown##68199 |n
 		.learn Black Embersilk Gown##75288
@@ -41537,13 +41537,13 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 
 
 	step
-		goto Molten Front 44.8,86.6
+		goto Molten Front,44.8,86.6
 		.talk Ayla Shadowstorm##53881
 		.buy Pattern: Luxurious Silk Gem Bag##70176 |n
 		.learn Luxurious Silk Gem Bag##100585
 //PANDARIA
 	step
-		goto Vale of Eternal Blossoms/3 64.7,44.
+		goto Vale of Eternal Blossoms/3,64.7,44.
 		.talk Raishen the Needle##64052
 		.buy Pattern: Contender's Satin Cuffs##86365 |n
 		.learn Contender's Satin Cuffs##125544
@@ -41582,7 +41582,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 		.buy Pattern: Royal Satchel##86377 |n
 		.learn Royal Satchel##12556
 	step
-		goto Vale of Eternal Blossoms 74.2,42.6
+		goto Vale of Eternal Blossoms,74.2,42.6
 		.talk Jaluu the Generous##59908
 		|tip You must be Honored with Golden Lotus to purchase this Pattern.
 		.buy Pattern: Gloves of Creation##86371 |n
@@ -41759,7 +41759,7 @@ ZygorGuidesViewer:RegisterInclude("Profession_List_Tailoring",[[
 -- Quests
 --------------------------------------------------------------------------------------------------------------------------------------
 ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
-		goto Stormwind City 69.5,25.2
+		goto Stormwind City,69.5,25.2
 		.talk Audrey Burnhep##63596
 		..accept Learning the Ropes##31591
 	step
@@ -41816,12 +41816,12 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		|confirm
 // Elwynn
 	step
-		goto Elwynn Forest 41.7,83.7
+		goto Elwynn Forest,41.7,83.7
 		.talk Julia Stevens##64330
 		.' Let's fight!
 		.' Defeat Julia Stevens |q 31316/1
 	step
-		goto Elwynn Forest 41.7,83.7
+		goto Elwynn Forest,41.7,83.7
 		.talk Julia Stevens##64330
 		..turnin Julia, The Pet Tamer##31316
 		..accept Old MacDonald##31724
@@ -41842,37 +41842,37 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		'Before fighting Old MacDonald, you should have at all three of your pet slots open and have a balanced team.
 		|confirm
 	step
-		goto Westfall 60.9,18.5
+		goto Westfall,60.9,18.5
 		.talk Old MacDonald##65648
 		.' Let's fight!
 		|tip He has a Flying Pet, a Mechanical Pet, and a Critter Pet. Flying Pets are weak to Magic types, Mechanical Pets are weak to Elemental types, and Critter Pets are weak to Beast types. It is suggested that you train all of your pets to at least level 4 before attempting this fight.
 		.' Defeat Old MacDonald |q 31724/1
 	step
-		goto Westfall 60.9,18.5
+		goto Westfall,60.9,18.5
 		.talk Old MacDonald##65648
 		..turnin Old MacDonald##31724
 		..accept Lindsay##31725
 // Redridge Mountains
 	step
-		goto Redridge Mountains 33.3,52.6
+		goto Redridge Mountains,33.3,52.6
 		.talk Lindsay##65651
 		.' Let's fight!
 		|tip Lindsay has a team full of Rabbits. Use Beast Type attacks on his Critters. Your pets should be around level 7 for this fight.
 		.' Defeat Lindsay |q 31725/1
 	step
-		goto Redridge Mountains 33.3,52.6
+		goto Redridge Mountains,33.3,52.6
 		.talk Lindsay##65651
 		..turnin Lindsay##31725
 		..accept Eric Davidson##31726
 // Duskwood
 	step
-		goto Duskwood 19.4,44.3
+		goto Duskwood,19.4,44.3
 		.talk Eric Davidson##65655
 		.' Let's fight!
 		|tip Eric Davidson has three Beast type Pets that attack with Undead type attacks. Use either Mechanical or Aquatic types to counter him. Your pets should be level 7 for this fight.
 		.' Defeat Eric Davidson |q 31726/1
 	step
-		goto Duskwood 19.4,44.3
+		goto Duskwood,19.4,44.3
 		.talk Eric Davidson##65655
 		..turnin Eric Davidson##31726
 		..accept Steven Lisbane##31729
@@ -41891,31 +41891,31 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		|confirm
 // Northern Stranglethorn
 	step
-		goto Northern Stranglethorn 46.0,40.4
+		goto Northern Stranglethorn,46.0,40.4
 		.talk Steven Lisbane##63194
 		.' Let's fight!
 		|tip Steven Lisbane has a Magic type Pet, and two Beast type Pets. Magic types take increased damage from Dragonkin attacks. If you do not have a Dragonkin, use a Mechanical Pet for the next best match up. The Beasts are also easily killed by Mechanical Pets, if you don't have one or it is weak, use a Flying type Pet. All three of your Pets should be 9 when you fight Steven.
 		.' Defeat Steven Lisbane |q 31729/1
 	step
-		goto Northern Stranglethorn 46.0,40.4
+		goto Northern Stranglethorn,46.0,40.4
 		.talk Steven Lisbane##63194
 		..turnin Steven Lisbane##31729
 		..accept Bill Buckler##31728
 // The Cape of Stranglethorn 2
 	step
-		goto The Cape of Stranglethorn 51.5,73.4
+		goto The Cape of Stranglethorn,51.5,73.4
 		.talk Bill Buckler##120
 		.' Let's fight!
 		|tip Bill Buckler has two Flying type Pets and a Humanoid type Pet. These Flying types can be countered by Magic attacks. Flying types are also weak to Dragonkin if you have one. The Humanoid can be countered by Beast and Undead types. Have at least three Level 11 pets when you fight Bill.
 		.' Defeat Bill Buckler |q 31728/1
 	step
-		goto The Cape of Stranglethorn 51.5,73.4
+		goto The Cape of Stranglethorn,51.5,73.4
 		.talk Bill Buckler##120
 		..turnin Bill Buckler##31728
 		..accept A Tamer's Homecoming##31917
 // Stormwind City 2
 	step
-		goto Stormwind City 69.5,25.2
+		goto Stormwind City,69.5,25.2
 		.talk Audrey Burnhep##63596
 		..turnin A Tamer's Homecoming##31917
 		..accept Battle Pet Tamers: Eastern Kingdoms##31902
@@ -41961,7 +41961,7 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		|confirm
 // Swamp of Sorrow
 	step
-		goto Swamp of Sorrows 76.8,41.5
+		goto Swamp of Sorrows,76.8,41.5
 		.talk Everessa##66518
 		|tip You will not be able to challenge Everessa if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
@@ -41969,7 +41969,7 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		.' Defeat Everessa |q 31902/4
 // Burning Steppes
 	step
-		goto Burning Steppes 25.5,47.4
+		goto Burning Steppes,25.5,47.4
 		.talk Durin Darkhammer##66520
 		|tip You will not be able to challenge Durin if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
@@ -41977,7 +41977,7 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		.' Defeat Durin Darkhammer |q 31902/5
 // Searing Gorge
 	step
-		goto Searing Gorge 35.3,27.8
+		goto Searing Gorge,35.3,27.8
 		.talk Kortas Darkhammer##66515
 		|tip You will not be able to challenge Kortas if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
@@ -41985,7 +41985,7 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		.' Defeat Kortas Darkhammer |q 31902/3
 // The Hinterlands
 	step
-		goto The Hinterlands 63.0,54.6
+		goto The Hinterlands,63.0,54.6
 		.talk David Kosse##66478
 		|tip You will not be able to challenge David if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
@@ -41993,7 +41993,7 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		.' Defeat David Kosse |q 31902/1
 // Eastern Plaguelands
 	step
-		goto Eastern Plaguelands 67.0,52.4
+		goto Eastern Plaguelands,67.0,52.4
 		.talk Deiza Plaguehorn##66512
 		|tip You will not be able to challenge Deiza if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
@@ -42017,20 +42017,20 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		|confirm
 // Deadwind Pass
 	step
-		goto Deadwind Pass 40.1,76.4
+		goto Deadwind Pass,40.1,76.4
 		.talk Lydia Accoste##66522
 		|tip You will not be able to challenge Lydia if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
 		|tip Lydia has an Elemental type Pet and 2 Undead type Pets. Use Aquatic type attacks on the Elemental Pet and Critter type attacks on the Undead Pets. Your pets should be at least level 19 before fighting Lydia.
 		.' Defeat Lydia Accoste |q 31915/1
 	step
-		goto Deadwind Pass 40.1,76.4
+		goto Deadwind Pass,40.1,76.4
 		.talk Lydia Accoste##66522
 		..turnin Grand Master Lydia Accoste##31915
 		..accept The Returning Champion##31975 |or
 		..accept The Returning Champion##31976 |or
 	step
-		goto Stormwind City/0 69.3,25.0
+		goto Stormwind City/0,69.3,25.0
 		.talk Audrey Burnhep##63596
 		..turnin The Returning Champion##31975 |or
 		..turnin The Returning Champion##31976 |or
@@ -42052,7 +42052,7 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		|confirm
 // Hellfire Peninsula
 	step
-		goto Hellfire Peninsula 64.3,49.3
+		goto Hellfire Peninsula,64.3,49.3
 		.talk Nicki Tinytech##66550
 		|tip You will not be able to challenge Nicky if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
@@ -42060,7 +42060,7 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		.' Defeat Nicki Tinytech |q 31919/1
 // Shattrath
 	step
-		goto Shattrath City 58.8,70.1
+		goto Shattrath City,58.8,70.1
 		.talk Morulu The Elder##66553
 		|tip You will not be able to challenge Morulu if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
@@ -42068,7 +42068,7 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		.' Defeat Morulu The Elder |q 31919/4
 // Nagrand
 	step
-		goto Nagrand 61.0,49.4
+		goto Nagrand,61.0,49.4
 		.talk Narrok##66552
 		|tip You will not be able to challenge Narrok if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
@@ -42076,7 +42076,7 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		.' Defeat Narrok |q 31919/3
 // Zangarmarsh
 	step
-		goto Zangarmarsh 17.2,50.5
+		goto Zangarmarsh,17.2,50.5
 		.talk Ras'an##66551
 		|tip You will not be able to challenge Ras'an if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
@@ -42100,7 +42100,7 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		|confirm
 // Shadowmoon Valley
 	step
-		goto Shadowmoon Valley 30.6,42.0
+		goto Shadowmoon Valley,30.6,42.0
 		.talk Bloodknight Antari##66557
 		|tip You will not be able to challenge Bloodknight Antari if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
@@ -42113,13 +42113,13 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		..accept Exceeding Expectations##31981
 // Stormwind City
 	step
-		goto Stormwind City 69.5,25.2
+		goto Stormwind City,69.5,25.2
 		.talk Audrey Burnhep##63596
 		..turnin Exceeding Expectations##31981
 		..accept Battle Pet Tamers: Northrend##31927
 // Howling Fjord
 	step
-		goto Howling Fjord 28.6,33.9
+		goto Howling Fjord,28.6,33.9
 		.talk Beegle Blastfuse##66635
 		|tip You will not be able to challenge Beegle Blastfuse if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
@@ -42127,7 +42127,7 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		.' Defeat Beegle Blastfuse |q 31927/1
 // Dragon Blight
 	step
-		goto Dragonblight 59.0,77.0
+		goto Dragonblight,59.0,77.0
 		.talk Okrut Dragonwaste##66638
 		|tip You will not be able to challenge Okrut Dragonwaste if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
@@ -42135,7 +42135,7 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		.' Defeat Okrut Dragonwaste |q 31927/3
 // Crystalsong
 	step
-		goto Crystalsong Forest 50.1,59.0
+		goto Crystalsong Forest,50.1,59.0
 		.talk Nearly Headless Jacob##66636
 		|tip You will not be able to challenge Nearly Headless Jacob if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
@@ -42143,7 +42143,7 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		.' Defeat Nearly Headless Jacob |q 31927/2
 // Zul'Drak
 	step
-		goto Zul'Drak 13.2,66.8
+		goto Zul'Drak,13.2,66.8
 		.talk Gutretch##66639
 		|tip You will not be able to challenge Gutretch if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
@@ -42155,7 +42155,7 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		..accept Grand Master Payne##31928
 // Icecrown
 	step
-		goto Icecrown 77.4,19.6
+		goto Icecrown,77.4,19.6
 		.talk Major Payne##66675
 		|tip You will not be able to challenge Major Payne if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
@@ -42170,26 +42170,26 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		..accept A Brief Reprieve##31984
 // Stormwind City
 	step
-		goto Stormwind City 69.5,25.2
+		goto Stormwind City,69.5,25.2
 		.talk Audrey Burnhep##63596
 		..turnin A Brief Reprieve##31984
 		..accept Battle Pet Tamers: Cataclysm##31966
 	step
-		goto Mount Hyjal 61.4,32.7
+		goto Mount Hyjal,61.4,32.7
 		.talk Brok##66819
 		|tip You will not be able to challenge Brok if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
 		|tip Brok has a Beast Pet, a Critter Pet, and a Magic Pet. Use Mechanical type attacks on his Beast, Beast type attacks on his Critter, and Dragonkin type attacks on his Magic. Your pets should all be level 25.
 		.' Defeat Brok |q 31966/1
 	step
-		goto Deepholm 49.9,57.0
+		goto Deepholm,49.9,57.0
 		.talk Bordin Steadyfist##66815
 		|tip You will not be able to challenge Bordin Steadyfist if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
 		|tip Bordin Steadyfist has a Critter Pet and 2 Elemental Pets. Use Beast type attacks on his Critter and Aquatic type attacks on his Elementals. Your pets should all be level 25.
 		.' Defeat Bordin Steadyfist |q 31966/2
 	step
-		goto Twilight Highlands 56.6,56.8
+		goto Twilight Highlands,56.6,56.8
 		.talk Goz Banefury##66822
 		|tip You will not be able to challenge Goz Banefury if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
@@ -42200,7 +42200,7 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		..turnin Battle Pet Tamers: Cataclysm##31966
 		..accept Grand Master Obalis##31970
 	step
-		goto Uldum 56.5,42.0
+		goto Uldum,56.5,42.0
 		.talk Obalis##66824
 		|tip You will not be able to challenge Obalis if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
@@ -42214,34 +42214,34 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		.' Click the Quest Discovered! box on the right side of your screen.
 		..accept The Triumphant Return##31985
 	step
-		goto Stormwind City 69.5,25.2
+		goto Stormwind City,69.5,25.2
 		.talk Audrey Burnhep##63596
 		..turnin The Triumphant Return##31985
 		..accept Battle Pet Tamers: Pandaria##31930
 //MoP
 	step
-		goto The Jade Forest 48.0,54.2
+		goto The Jade Forest,48.0,54.2
 		.talk Hyuna of the Shrines##66730
 		|tip You will not be able to challenge Hyuna of the Shrines if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
 		|tip Hyuna of the Shrines has a Beast Pet, a Flying Pet, and an Aquatic Pet. Use Mechanical type attacks on her Beast, Magic type attacks on her Flyer, and Flying type attacks on her Aquatic. Your pets should all be level 25.
 		.' Defeat Hyuna of the Shrines |q 31930/1
 	step
-		goto Valley of the Four Winds 46.0,43.7
+		goto Valley of the Four Winds,46.0,43.7
 		.talk Farmer Nishi##66734
 		|tip You will not be able to challenge Farmer Nishi if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
 		|tip Farmer Nishi has a Beast Pet, and two Elemental Pets. Use Mechanical type attacks on her Beast, and Aquatic type attacks on her Elementals. Your pets should all be level 25.
 		.' Defeat Farmer Nishi |q 31930/2
 	step
-		goto Krasarang Wilds 62.2,45.9
+		goto Krasarang Wilds,62.2,45.9
 		.talk Mo'ruk##66733
 		|tip You will not be able to challenge Mo'ruk if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
 		|tip Mo'ruk has a Beast Pet, a Flying Pet, and an Aquatic Pet. Use Mechanical type attacks on his Beast, Magic type attacks on his Flyer, and Flying type attacks on his Aquatic. Your pets should all be level 25.
 		.' Defeat Mo'ruk |q 31930/3
 	step
-		goto Kun-Lai Summit 35.8,73.8
+		goto Kun-Lai Summit,35.8,73.8
 		.talk Courageous Yon##66738
 		|tip You will not be able to challenge Courageous Yon if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
@@ -42249,14 +42249,14 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		.' Defeat Courageous Yon |q 31930/4
 		.' He can also be found at [44.7,52.4]
 	step
-		goto Townlong Steppes 36.3,52.2
+		goto Townlong Steppes,36.3,52.2
 		.talk Seeker Zusshi##66918
 		|tip You will not be able to challenge Seeker Zusshi if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
 		|tip Seeker Zusshi has an Aquatic Pet, a Critter Pet, and an Elemental Pet. Use Flying type attacks on his Aquatic, Aquatic type attacks on his Elemental, and Beast type attacks on his Critter. Your pets should all be level 25.
 		.' Defeat Seeker Zusshi |q 31930/5
 	step
-		goto Dread Wastes 55.1,37.6
+		goto Dread Wastes,55.1,37.6
 		.talk Wastewalker Shu##66739
 		|tip You will not be able to challenge Wastewalker Shu if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
@@ -42267,25 +42267,25 @@ ZygorGuidesViewer:RegisterInclude("Alliance_Battlepet_Quests",[[
 		..turnin Battle Pet Tamers: Pandaria##31952
 		..accept Zen Master Aki##31951
 	step
-		goto Vale of Eternal Blossoms 31.2,74.0
+		goto Vale of Eternal Blossoms,31.2,74.0
 		.talk Aki the Chosen##66741
 		|tip You will not be able to challenge Aki the Chosen if you have the "Pet Recovery" debuff, wait for it to fall off.
 		.' Let's fight!
 		|tip Aki the Chosen has an Aquatic Pet, a Critter Pet, and a Dragonkin Pet. Use Flying type attacks on her Aquatic, Beast type attacks on her Critter, and Humanoid type attacks on her Dragonkin. Your pets should all be level 25.
 		.' Defeat Aki the Chosen |q 31951/1
 	step
-		goto Vale of Eternal Blossoms 31.2,74.0
+		goto Vale of Eternal Blossoms,31.2,74.0
 		.talk Aki the Chosen##66741
 		..turnin Zen Master Aki##31951
 ]])
 
 ZygorGuidesViewer:RegisterInclude("A_Beasts_of_Fable",[[
-		goto Vale of Eternal Blossoms 86.6,60.0
+		goto Vale of Eternal Blossoms,86.6,60.0
 		.talk Sara Finkleswitch##64572
 		..accept Beasts of Fable##32603
 	step
 	label "dailies"
-		goto Vale of Eternal Blossoms 11.0,70.9
+		goto Vale of Eternal Blossoms,11.0,70.9
 		.' _No-No_
 		.' This enemy is aquatic.
 		.' It is strong against undead and weak to flying attacks.
@@ -42293,7 +42293,7 @@ ZygorGuidesViewer:RegisterInclude("A_Beasts_of_Fable",[[
 		.' No-No defeated |q 32603/3
 		'|modelnpc 68559
 	step
-		goto Valley of the Four Winds 40.5,43.7
+		goto Valley of the Four Winds,40.5,43.7
 		.' _Lucky Yi_
 		.' This enemy is a critter.
 		.' Is is strong against Elementals and weak to beast attacks.
@@ -42301,7 +42301,7 @@ ZygorGuidesViewer:RegisterInclude("A_Beasts_of_Fable",[[
 		.' Lucky Yi defeated |q 32603/5
 		'|modelnpc 68561
 	step
-		goto Valley of the Four Winds 25.3,78.5
+		goto Valley of the Four Winds,25.3,78.5
 		.' _Greyhoof_
 		.' This enemy is a beast.
 		.' It is strong against humanoids and weak against mechanical pets.
@@ -42309,7 +42309,7 @@ ZygorGuidesViewer:RegisterInclude("A_Beasts_of_Fable",[[
 		.' Greyhoof defeated |q 32603/4
 		'|modelnpc 68560
 	step
-		goto Krasarang Wilds 36.3,37.3
+		goto Krasarang Wilds,36.3,37.3
 		.' _Xi'a_
 		.' This enemy is aquatic.
 		.' It is strong against undead and weak to flying pets.
@@ -42317,7 +42317,7 @@ ZygorGuidesViewer:RegisterInclude("A_Beasts_of_Fable",[[
 		.' Xi'a defeated |q 32603/10
 		'|modelnpc 68566
 	step
-		goto Dread Wastes 26.1,50.2
+		goto Dread Wastes,26.1,50.2
 		.' _Gorespine_
 		.' This enemy is a beast.
 		.' It is strong against humanoids and weak against mechanical pets.
@@ -42325,7 +42325,7 @@ ZygorGuidesViewer:RegisterInclude("A_Beasts_of_Fable",[[
 		.' Gorespine defeated |q 32603/2
 		'|modelnpc 68558
 	step
-		goto Townlong Steppes 72.3,79.8
+		goto Townlong Steppes,72.3,79.8
 		.' _Ti'un the Wanderer_
 		.' This enemy is aquatic.
 		.' It is strong against undead and weak to flying pets.
@@ -42333,14 +42333,14 @@ ZygorGuidesViewer:RegisterInclude("A_Beasts_of_Fable",[[
 		.' Ti'un the Wanderer defeated |q 32603/6
 		'|modelnpc 68562
 	step
-		goto Kun-Lai Summit 35.2,56.2
+		goto Kun-Lai Summit,35.2,56.2
 		.' This enemy is a beast.
 		.' It is strong against humanoids and weak against mechanical pets.
 		.' I would suggest using a team of mechanical pets against this enemy.
 		.' Kafi defeated |q 32603/7
 		'|modelnpc 68563
 	step
-		goto Kun-Lai Summit 67.9,84.7
+		goto Kun-Lai Summit,67.9,84.7
 		.' _Dos-Ryga_
 		.' This enemy is aquatic.
 		.' It is strong against undead and weak to flying pets.
@@ -42348,7 +42348,7 @@ ZygorGuidesViewer:RegisterInclude("A_Beasts_of_Fable",[[
 		.' Dos-Ryga defeated |q 32603/8
 		'|modelnpc 68564
 	step
-		goto The Jade Forest 48.4,71.0
+		goto The Jade Forest,48.4,71.0
 		.' _Ka'wi_
 		.' This enemy is a beast.
 		.' It is strong against humanoids and weak against mechanical pets.
@@ -42356,14 +42356,14 @@ ZygorGuidesViewer:RegisterInclude("A_Beasts_of_Fable",[[
 		.' Ka'wi the Gorger defeated |q 32603/1
 		'|modelnpc 68555
 	step
-		goto The Jade Forest 57.0,29.1
+		goto The Jade Forest,57.0,29.1
 		.' This enemy is a critter.
 		.' Is is strong against Elementals and weak to beast attacks.
 		.' I would suggest using beast pets against this enemy.
 		.' Nitun defeated |q 32603/9
 		'|modelnpc 68565
 	step
-		goto Vale of Eternal Blossoms 86.6,60.0
+		goto Vale of Eternal Blossoms,86.6,60.0
 		.talk Sara Finkleswitch##64572
 		..turnin Beasts of Fable##32603
 ]])
@@ -42375,180 +42375,180 @@ ZygorGuidesViewer:RegisterInclude("A_Darkspear_Revolution",[[
 		.' Routing to proper section |next |only if not completedq(32816)
 		.' Routing to proper section |next "weekly" |only if completedq(32816)
 	step
-		goto Vale of Eternal Blossoms 86.2,63.1
+		goto Vale of Eternal Blossoms,86.2,63.1
 		.' Click the Quest Accept tab underneath your minimap.
 		..accept War is Coming##32892
 	step
-		goto Vale of Eternal Blossoms 83.2,29.7
+		goto Vale of Eternal Blossoms,83.2,29.7
 		.talk Lorewalker Cho##61962
 		..turnin War is Coming##32892
 		..accept The King and the Council##32806
 	step
-		goto Vale of Eternal Blossoms 82.6,29.8
+		goto Vale of Eternal Blossoms,82.6,29.8
 		.click Lorewalker Cho's Dream Brew
 		.' Queue for the Blood in the Snow scenario.
 		|confirm
 //SCENARIO
 	step
-		goto Vale of Eternal Blossoms/0 83.2,29.7
+		goto Vale of Eternal Blossoms/0,83.2,29.7
 		.talk Lorewalker Cho##61962
 		..turnin The King and the Council##32806
 		..accept The Warchief and the Darkness##32807
 	step
-		goto Vale of Eternal Blossoms 82.6,29.8
+		goto Vale of Eternal Blossoms,82.6,29.8
 		.click Lorewalker Cho's Dream Brew
 		.' Queue for the Dark Heart of Pandaria scenario.
 		|confirm
 //SCENARIO2
 	step
-		goto Vale of Eternal Blossoms/0 83.2,29.7
+		goto Vale of Eternal Blossoms/0,83.2,29.7
 		.talk Lorewalker Cho##61962
 		..turnin The Warchief and the Darkness##32807
 		..accept A Little Field Work##32808
 	step
-		goto Vale of Eternal Blossoms 85.7,59.7
+		goto Vale of Eternal Blossoms,85.7,59.7
 		.talk Gleep Chatterswitch##71336 |q 32808/1
 		.' Tell him you'd like to travel to Ratchet. then step on the teleporter next to him. |goto Northern Barrens 70.1,73.0 |noway |c
 	step
-		goto Durotar 54.4,9.8
+		goto Durotar,54.4,9.8
 		.' Locate Amber and Sully in Durotar near Skull Rock |q 32808/2
 	step
-		goto Durotar 54.4,9.8
+		goto Durotar,54.4,9.8
 		.talk Amber Kearnen##71027
 		..turnin A Little Field Work##32808
 		..accept Gathering Intelligence##32809
 	step
-		goto Durotar 54.3,9.8
+		goto Durotar,54.3,9.8
 		.click Project C4T Controller to spawn a controllable cat.
 		|confirm
 	step
-		goto Durotar 55.4,11.4
+		goto Durotar,55.4,11.4
 		.click Operation: Darkspear Destruction
 		..get Operation: Darkspear Destruction |q 32809/2
 	step
-		goto Durotar 51.2,10.7
+		goto Durotar,51.2,10.7
 		.' Go inside the building here.
 		.click Kor'kron Command Posts
 		..get Kor'kron Command Posts |q 32809/3
 	step
-		goto Durotar 52.6,13.8
+		goto Durotar,52.6,13.8
 		.talk Zen'tabra##71355
 		.' Tell him that now's his chance to escape. |q 32809/4
 	step
-		goto Durotar 49.9,15.5
+		goto Durotar,49.9,15.5
 		.click Kor'kron Supply Lines
 		..get Kor'kron Supply Lines |q 32809/1
 	step
-		goto Durotar 54.4,9.8
+		goto Durotar,54.4,9.8
 		.talk Amber Kearnen##71027
 		..turnin Gathering Intelligence##32809
 		..accept The Darkspear Rebellion##32810
 	step
-		goto Durotar 51.8,39.2
+		goto Durotar,51.8,39.2
 		.' Find Zen'tabra in Razor Hill |q 32810/1
 	step
-		goto Durotar 51.8,39.2
+		goto Durotar,51.8,39.2
 		.talk Zen'tabra##71320
 		..turnin The Darkspear Rebellion##32810
 		..accept Vol'jin of the Darkspear##32871
 	step
-		goto Durotar 49.7,40.1
+		goto Durotar,49.7,40.1
 		.talk Vol'jin##70978
 		..turnin Vol'jin of the Darkspear##32871
 		..accept Battlefield: Barrens##32811
 	step
-		goto Northern Barrens 43.8,48.0
+		goto Northern Barrens,43.8,48.0
 		.click Kor'kron Meat Rack
 		.from Kor'kron Butcher##71012+,  Kor'kron Outrider##71010+, Kor'kron Battlewolf##71011+
 		..get 15 Kor'kron Meat##97545 |q 32811/4
 	step
-		goto Northern Barrens 33.3,22.4
+		goto Northern Barrens,33.3,22.4
 		.click Kor'kron Lumber
 		.from Mercenary Shredder##71001+, Hellscream Laborer##70997+, Kor'kron Marauder##70999+
 		..get 15 Kor'kron Lumber##97530 |q 32811/1
 	step
-		goto Northern Barrens 52.7,34.6
+		goto Northern Barrens,52.7,34.6
 		.click Kor'kron Oil Drum
 		.from Kor'kron Incinerator##71002+, Mercenary Engineer##71000+, Kor'kron Overseer##71006+, Kor'kron Demolisher##71005+
 		..get 15 Kor'kron Oil##97544 |q 32811/3
 	step
-		goto Northern Barrens 59.4,65.6
+		goto Northern Barrens,59.4,65.6
 		.click Kor'kron Stone Crate
 		.from Kor'kron Earthshaker##71188+, Kor'kron Flameworg##71009+, Wild Earth##71187+
 		..get 15 Kor'kron Stone##97543 |q 32811/2
 	step
-		goto Durotar 49.7,40.1
+		goto Durotar,49.7,40.1
 		.talk Vol'jin##70978
 		..turnin Battlefield: Barrens##32811
 	step
-		goto Durotar 49.8,40.1
+		goto Durotar,49.8,40.1
 		.talk Chen Stormstout##71150
 		..accept The Old Seer##32815
 	step
-		goto Kun-Lai Summit 45.0,47.8
+		goto Kun-Lai Summit,45.0,47.8
 		.talk Seer Hao Pham Roo##70980
 		..turnin The Old Seer##32815
 		..accept Path of the Last Emperor##32816
 	step
-		goto Kun-Lai Summit/0 44.9,49.1
+		goto Kun-Lai Summit/0,44.9,49.1
 		.click Rope Anchor
 		.' Tie down the First Anchor |q 32816/1 |tip You will have to wait here for Seer Hao Pham Roo to walk up to you and give you the rope back.
 	step
-		goto Kun-Lai Summit/0 44.0,47.9
+		goto Kun-Lai Summit/0,44.0,47.9
 		.click Rope Anchor
 		.' Tie down the Second Anchor |q 32816/2 |tip You will have to wait here for Seer Hao Pham Roo to walk up to you and give you the rope back.
 	step
-		goto Kun-Lai Summit/0 43.3,49.6
+		goto Kun-Lai Summit/0,43.3,49.6
 		.click Rope Anchor
 		.' Tie down the Third Anchor |q 32816/3 |tip You will have to wait here for Seer Hao Pham Roo to walk up to you and give you the rope back.
 	step
-		goto Kun-Lai Summit/0 42.5,50.6
+		goto Kun-Lai Summit/0,42.5,50.6
 		.click Rope Anchor
 		.' Tie down the Fourth Anchor |q 32816/4 |tip You will have to wait here for Seer Hao Pham Roo to walk up to you and give you the rope back.
 	step
-		goto Kun-Lai Summit/0 43.3,51.9
+		goto Kun-Lai Summit/0,43.3,51.9
 		.click Rope Anchor
 		.' Tie down the Fifth Anchor |q 32816/5 |tip You will have to wait here for Seer Hao Pham Roo to walk up to you and give you the rope back.
 	step
-		goto Kun-Lai Summit/0 43.8,51.1
+		goto Kun-Lai Summit/0,43.8,51.1
 		.talk Seer Hao Pham Roo##70980
 		..turnin Path of the Last Emperor##32816
 	step
 	label "weekly"
-		goto Vale of Eternal Blossoms 85.7,59.7
+		goto Vale of Eternal Blossoms,85.7,59.7
 		.talk Gleep Chatterswitch##71336
 		..accept The Road to War##32895
 	step
-		goto Vale of Eternal Blossoms 85.7,59.7
+		goto Vale of Eternal Blossoms,85.7,59.7
 		.talk Gleep Chatterswitch##71336
 		.' Tell him you'd like to travel to Ratchet. then step on the teleporter next to him. |goto Northern Barrens 70.1,73.0 |noway |c
 	step
-		goto Durotar 49.8,40.2
+		goto Durotar,49.8,40.2
 		.talk Ki'ta Arrowtusk##71333
 		..turnin The Road to War##32895
 		..accept Battlefield: Barrens##32872
 	step
-		goto Northern Barrens 43.8,48.0
+		goto Northern Barrens,43.8,48.0
 		.click Kor'kron Meat Rack
 		.from Kor'kron Butcher##71012+,  Kor'kron Outrider##71010+, Kor'kron Battlewolf##71011+
 		..get 150 Kor'kron Meat##97545 |q 32872/3
 	step
-		goto Northern Barrens 33.3,22.4
+		goto Northern Barrens,33.3,22.4
 		.click Kor'kron Lumber
 		.from Mercenary Shredder##71001+, Hellscream Laborer##70997+, Kor'kron Marauder##70999+
 		..get 150 Kor'kron Lumber##97530 |q 32872/1
 	step
-		goto Northern Barrens 52.7,34.6
+		goto Northern Barrens,52.7,34.6
 		.click Kor'kron Oil Drum
 		.from Kor'kron Incinerator##71002+, Mercenary Engineer##71000+, Kor'kron Overseer##71006+, Kor'kron Demolisher##71005+
 		..get 150 Kor'kron Oil##97544 |q 32872/2
 	step
-		goto Northern Barrens 59.4,65.6
+		goto Northern Barrens,59.4,65.6
 		.click Kor'kron Stone Crate
 		.from Kor'kron Earthshaker##71188+, Kor'kron Flameworg##71009+, Wild Earth##71187+
 		..get 150 Kor'kron Stone##97543 |q 32872/4
 	step
-		goto Durotar 49.8,40.2
+		goto Durotar,49.8,40.2
 		.talk Ki'ta Arrowtusk##71333
 		..turnin Battlefield: Barrens##32872
 	step
@@ -42559,7 +42559,7 @@ ZygorGuidesViewer:RegisterInclude("A_Darkspear_Revolution",[[
 
 ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 	step
-		goto The Veiled Stair 63.8,75.8
+		goto The Veiled Stair,63.8,75.8
 		.talk Madam Goya##62943
 		.' Bid on one of the Blood-Soaked Invitations and win in order to join the brawler's guild.
 		.collect Blood Soaked Invitation##93194 |n
@@ -42572,7 +42572,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|confirm
 //RANK 1
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42583,7 +42583,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Bruce##67262
 		'Defeat Bruce in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=250
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42596,7 +42596,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Vian the Volatile##67579
 		'Defeat Vian the Volatile in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=500
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42606,7 +42606,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Goredome##68257
 		'Defeat Goredome in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=750
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42618,7 +42618,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		'Defeat Dungeon Master Vishas in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=1000
 //RANK 2
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42630,7 +42630,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Dippy##68255
 		'Defeat Dippy in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=1250
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42644,7 +42644,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Kirrawk##67269
 		'Defeat Kirrawk in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=1500
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42661,7 +42661,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Riddoh##67524
 		'Defeat Fran and Riddoh in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=1750
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42673,7 +42673,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		'Defeat King Kulaka in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=2000
 //RANK 3
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42684,7 +42684,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Blat##67594
 		'Defeat Blat in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=2250
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42697,7 +42697,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Sanoriak##67268
 		'Defeat Sanoriak in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=2500
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42708,7 +42708,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Ixx##68253
 		'Defeat Ixx in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=2750
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42719,7 +42719,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		'Defeat Mazhareen in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=3000
 //RANK 4
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42730,7 +42730,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Crush##67540
 		'Defeat Crush in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=3250
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42743,7 +42743,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Leona Earthwind##68377
 		'Defeat Leona Earthwind in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=3500
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42755,7 +42755,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Dominika the Illusionist##67485
 		'Defeat Dominika the Illusionist in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=3750
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42767,7 +42767,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		'Defeat Deeken in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=4000
 //RANK 5
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42780,7 +42780,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Millie Watt##67591
 		'Defeat Millie Watt in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=4250
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42797,7 +42797,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		'This next fight only has a 45 second enrage timer, so you only have 45 seconds to defeat the next boss.
 		|confirm
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42809,7 +42809,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Probuskus##68252
 		'Defeat Probuskus in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=4750
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42826,7 +42826,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		'Defeat Leper Gnome Quartet in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=5000
 //RANK 6
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42838,7 +42838,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Yikkan Izu##68256
 		'Defeat Yikkan Izu in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=5250
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42852,7 +42852,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Akama##67588
 		'Defeat Akama in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=5500
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42864,7 +42864,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Smash Hoofstomp##68305
 		'Defeat Smash Hoofstomp in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=5750
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42875,7 +42875,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		'Defeat Unguloxx in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=6000
 //RANK 7
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42889,7 +42889,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Max Megablast##67488
 		'Defeat GG Engineering in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=6250
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42904,7 +42904,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Dark Summoner##67678
 		'Defeat Dark Summoner in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=6500
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42916,7 +42916,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Battletron##67424
 		'Defeat Battletron in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=6750
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42928,7 +42928,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		'Defeat Meatball in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=7000
 //RANK 8
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42940,7 +42940,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Hexos##70659
 		'Defeat Hexos in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=7250
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42953,7 +42953,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Tyson Sanders##70733
 		'Defeat Tyson Sanders in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=7500
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42967,7 +42967,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc T440 Dual-Mode Robot##70983
 		'Defeat T440 Dual-Mode Robot in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=7750
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42983,7 +42983,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		'Defeat Anthracite in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=8000
 //RANK 9
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -42995,7 +42995,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Big Badda Boom##70694
 		'Defeat Big Badda Boom in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=8250
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -43008,7 +43008,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Nibbleh##70656
 		'Defeat Nibbleh in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=8500
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -43021,7 +43021,7 @@ ZygorGuidesViewer:RegisterInclude("A_Brawl",[[
 		|modelnpc Doctor FIST##70739
 		'Defeat Doctor FIST in the Brawler's Guild |condition ZGV:GetReputation(1419).friendRep>=8750
 	step
-		goto Deeprun Tram/2 39.2,34.1 |n
+		goto Deeprun Tram/2,39.2,34.1 |n
 		.talk Bizmo's Brawlpub Bouncer##68408
 		.' Tell them you're ready to fight. |goto Deeprun Tram/2 50.8,47.4 |noway |c
 	step
@@ -43203,11 +43203,11 @@ ZygorGuidesViewer:RegisterInclude("new_mining_a",[[
 
 ZygorGuidesViewer:RegisterInclude("timeless_isle_prequests",[[
 	step
-		goto Vale of Eternal Blossoms 84.5,59.2
+		goto Vale of Eternal Blossoms,84.5,59.2
 		.' Click the Quest Accept tab underneath your minimap.
 		..accept A Flash of Bronze...##33229
 	step
-		goto Vale of Eternal Blossoms 80.7,33.1
+		goto Vale of Eternal Blossoms,80.7,33.1
 		.talk Chromie##73691
 		..turnin A Flash of Bronze...##33229
 		..accept Journey to the Timeless Isle##33231
@@ -43215,90 +43215,90 @@ ZygorGuidesViewer:RegisterInclude("timeless_isle_prequests",[[
 		'Use the Curious Bronze Timepiece in your bags. |use Curious Bronze Timepiece##104113
 		.' You will be teleported to the Timeless Isle. |goto Timeless Isle 23.3,70.8 |noway |c
 	step
-		goto Timeless Isle 23.1,70.9
+		goto Timeless Isle,23.1,70.9
 		.talk Michi Windblossom##71940
 		.fpath Tushui Landing
 	step
-		goto Timeless Isle 23.1,71.5
+		goto Timeless Isle,23.1,71.5
 		.talk Watcher Lara##73348
 		..turnin Journey to the Timeless Isle##33231
 		..accept Time Keeper Kairoz##33160
 	step
-		goto Timeless Isle 34.5,53.8
+		goto Timeless Isle,34.5,53.8
 		.talk Kairoz##72870
 		..turnin Time Keeper Kairoz##33160
 		..accept A Timeless Tour##33161
 		..accept Time In Your Hands##33228
 	step
-		goto Timeless Isle/0 24.6,31.8
+		goto Timeless Isle/0,24.6,31.8
 		.' Explore The Misty Strand |q 33161/4
 	step
-		goto Timeless Isle/0 42.9,41.9
+		goto Timeless Isle/0,42.9,41.9
 		.' Explore Cavern of Lost Spirits |q 33161/1
 	step
-		goto Timeless Isle/0 50.9,46.6
+		goto Timeless Isle/0,50.9,46.6
 		.' Explore Red Stone Run |q 33161/6
 	step
-		goto Timeless Isle/0 50.4,78.5
+		goto Timeless Isle/0,50.4,78.5
 		.' Explore Firewalkers' Path |q 33161/3
 	step
-		goto Timeless Isle/0 37.5,75.5
+		goto Timeless Isle/0,37.5,75.5
 		.' Explore Old Pi'jiu |q 33161/5
 	step
-		goto Timeless Isle/0 60.5,72.6
+		goto Timeless Isle/0,60.5,72.6
 		.' Explore Croaking Hollow |q 33161/2
 	step
-		goto Timeless Isle 34.5,53.8
+		goto Timeless Isle,34.5,53.8
 		.talk Kairoz##72870
 		..turnin A Timeless Tour##33161
 		..accept The Essence of Time##33336
 	step
-		goto Timeless Isle 32.2,51.9
+		goto Timeless Isle,32.2,51.9
 		.from Brilliant Windfeather##72762+
 		.from Windfeather Chick##71143+
 		..get Epoch Stone |q 33336/1
 	step
-		goto Timeless Isle 34.5,53.5
+		goto Timeless Isle,34.5,53.5
 		.talk Kairoz##72870
 		..turnin The Essence of Time##33336
 	step
-		goto Timeless Isle 42.8,55.7
+		goto Timeless Isle,42.8,55.7
 		.talk Mistweaver Ai##73305
 		..' Meet Mistweaver Ai |q 33228/2
 	step
-		goto Timeless Isle 42.8,54.7
+		goto Timeless Isle,42.8,54.7
 		.talk Mistweaver Ku##73306
 		..' Meet Mistweaver Ku |q 33228/3
 	step
-		goto Timeless Isle 43.9,55.4
+		goto Timeless Isle,43.9,55.4
 		.from Ironfur Herdling##72842+, Ironfur Grazer##72843+, Ironfur Great Bull##72844+
 		.from Windfeather Chick##71143+, Windfeather Nestkeeper##72761+, Brilliant Windfeather##72762+
 		.earn 1000 Timeless Coin##777 |q 33228/1
 	step
-		goto Timeless Isle/0 34.6,53.7
+		goto Timeless Isle/0,34.6,53.7
 		.talk Kairoz##72870
 		..turnin Time In Your Hands##33228
 		..accept Hints From The Past##33332
 		..accept The Last Emperor##33335
 	step
-		goto Timeless Isle 42.8,55.6
+		goto Timeless Isle,42.8,55.6
 		.talk Mistweaver Ai##73305
 		..buy Time-Worn Journal##103977
 	step
-		goto Timeless Isle 42.9,55.2
+		goto Timeless Isle,42.9,55.2
 		.talk Emperor Shaohao##73303
 		..' Speak with Emperor Shaohao |q 33335/1
 	step
-		goto Timeless Isle 42.9,55.2
+		goto Timeless Isle,42.9,55.2
 		.talk Emperor Shaohao##73303
 		..turnin The Last Emperor##33335
 		..accept Timeless Nutriment##33340
 	step
-		goto Timeless Isle/0 42.8,53.3
+		goto Timeless Isle/0,42.8,53.3
 		.click Ripe Crispfruit
 		'Consume a Timeless Nutriment |q 33340/1
 	step
-		goto Timeless Isle 42.9,55.2
+		goto Timeless Isle,42.9,55.2
 		.talk Emperor Shaohao##73303
 		..turnin Timeless Nutriment##33340
 		..accept Wayshrines Of The Celestials##33341
@@ -43311,20 +43311,20 @@ ZygorGuidesViewer:RegisterInclude("timeless_isle_prequests",[[
 		.click Celestial Shrine |tip They are on a 10-15 minute cooldown, so just keep running around until you find an active one.
 		.' Receive a blessing of the Celestials |q 33341/1
 	step
-		goto Timeless Isle 42.9,55.2
+		goto Timeless Isle,42.9,55.2
 		.talk Emperor Shaohao##73303
 		..turnin Wayshrines Of The Celestials##33341
 	step
-		goto Timeless Isle 34.5,53.8
+		goto Timeless Isle,34.5,53.8
 		.talk Kairoz##72870
 		..turnin Hints From The Past##33332
 		..accept Timeless Treasures##33333
 	step
-		goto Timeless Isle 46.8,46.8
+		goto Timeless Isle,46.8,46.8
 		.click Moss-Covered Chest
 		..' Hidden Treasure Found |q 33333/1
 	step
-		goto Timeless Isle 34.6,53.8
+		goto Timeless Isle,34.6,53.8
 		.talk Kairoz##72870
 		..turnin Timeless Treasures##33333
 ]])
@@ -43359,7 +43359,7 @@ ZygorGuidesViewer:RegisterInclude("crazy_cat",[[
 //BLACK TABBY
 	step
 	label "blacktabby"
-		goto Hillsbrad Foothills 58.8,74.6
+		goto Hillsbrad Foothills,58.8,74.6
 		'_Kill_ any and all mobs in _Hillsbrad Foothills_ |tip Every mob here has a chance to drop the Black Tabby Cat's carrier
 		.collect 1 Cat Carrier (Black Tabby)##8491
 		|modeldisplay 5448
@@ -43381,7 +43381,7 @@ ZygorGuidesViewer:RegisterInclude("crazy_cat",[[
 //CALICO CAT
 	step
 	label "calico"
-		goto Dalaran 58.6,39.6
+		goto Dalaran,58.6,39.6
 		.talk Breanni##28951
 		.buy 1 Calico Cat##46398
 		|modeldisplay 11709
@@ -43392,7 +43392,7 @@ ZygorGuidesViewer:RegisterInclude("crazy_cat",[[
 //CAT
 	step
 	label "normal"
-		goto Elwynn Forest 44.6,53.4
+		goto Elwynn Forest,44.6,53.4
 		.' The _Cat_ is level 1. Challenge one to a pet battle and capture it.
 		.learnpet Cat##62019
 		|modeldisplay 5585
@@ -43401,7 +43401,7 @@ ZygorGuidesViewer:RegisterInclude("crazy_cat",[[
 //CHEETAH CUB
 	step
 	label "cheetah"
-		goto Northern Barrens 66.5,71.3
+		goto Northern Barrens,66.5,71.3
 		.' The _Cheetah Cubs_ are level 3. Challenge one to a pet battle and capture it.
 		.learnpet Cheetah Cub##62129
 		|modeldisplay 42362
@@ -43441,7 +43441,7 @@ ZygorGuidesViewer:RegisterInclude("crazy_cat",[[
 //FLUXFIRE FELINE
 	step
 	label "fluxfire"
-		goto New Tinkertown 36.6,52.7
+		goto New Tinkertown,36.6,52.7
 		.' The _Fluxfire Felines_ in the area are around level 1.
 		.learnpet Fluxfire Feline##68838
 		|next "menu" |only if not achieved(8397)
@@ -43560,7 +43560,7 @@ ZygorGuidesViewer:RegisterInclude("crazy_cat",[[
 //SAND KITTEN
 	step
 	label "sandkitten"
-		goto Tanaris 33.1,71.0
+		goto Tanaris,33.1,71.0
 		.' The _Sand Kittens_ are level 13. Challenge one to a pet battle and capture it.
 		.learnpet Sand Kitten##62257
 		|modeldisplay 5586
@@ -43591,7 +43591,7 @@ ZygorGuidesViewer:RegisterInclude("crazy_cat",[[
 		|next "done"
 	step
 	label "buy"
-		goto Stormwind City 61.0,71.6
+		goto Stormwind City,61.0,71.6
 		.talk Auctioneer Chilton##8670
 		.buy 1 Sapphire Cub##82775
 	step
@@ -43602,7 +43602,7 @@ ZygorGuidesViewer:RegisterInclude("crazy_cat",[[
 //SIAMESE CAT
 	step
 	label "siamese"
-		goto Netherstorm 43.4,35.2
+		goto Netherstorm,43.4,35.2
 		.talk Dealer Rashaad##20980
 		.buy 1 Cat Carrier (Siamese)##8490
 		|modeldisplay 5585
@@ -43624,7 +43624,7 @@ ZygorGuidesViewer:RegisterInclude("crazy_cat",[[
 //SNOW CUB
 	step
 	label "snowcub"
-		goto Dun Morogh 51.1,44.6
+		goto Dun Morogh,51.1,44.6
 		.' The _Snow Cubs_ are level 1. Challenge one to a pet battle and capture it.
 		.learnpet Snow Cub##61689
 		|modeldisplay 42203
@@ -43652,7 +43652,7 @@ ZygorGuidesViewer:RegisterInclude("crazy_cat",[[
 //WINTERSPRING CUB
 	step
 	label "winterspring"
-		goto Winterspring 59.8,51.6
+		goto Winterspring,59.8,51.6
 		.talk Michelle De Rum##52830
 		.buy 1 Winterspring Cub##69239
 		|modeldisplay 37712
@@ -43713,7 +43713,7 @@ ZygorGuidesViewer:RegisterInclude("crazy_cat",[[
 		.collect 3 Celestial Coin##101529 |next
 		.' Click here to go back to the beginning of the guide to complete the weekly quest again. |confirm |next "startxufu"
 	step
-		goto Timeless Isle/0 34.8,59.7
+		goto Timeless Isle/0,34.8,59.7
 		.talk Master Li##73082
 		..buy 1 Xu-Fu, Cub of Xuen##101771
 	step

@@ -9,49 +9,49 @@ condition achieved(891)
 'For this achievement, you will need to reach level 20.
 |confirm
 step
-goto Stormwind City 77.6,67.2
+goto Stormwind City,77.6,67.2
 .talk 43693
 .learn Apprentice Riding##33388
 .' You can also purchase a mount from the vendor at [77.0,67.8]
 |only Human
 |next "end"
 step
-goto Dun Morogh 71.2,48.4
+goto Dun Morogh,71.2,48.4
 .talk 4772
 .learn Apprentice Riding##33388
 .' You can also purchase a mount from the vendor at [70.6,48.8]
 |only Dwarf
 |next "end"
 step
-goto Darnassus 42.6,33.6
+goto Darnassus,42.6,33.6
 .talk 4753
 .learn Apprentice Riding##33388
 .' You can also purchase a mount from the vendor at [42.6,32.8]
 |only Night Elf
 |next "end"
 step
-goto Dun Morogh 56.2,46.4
+goto Dun Morogh,56.2,46.4
 .talk 7954
 .learn Apprentice Riding##33388
 .' You can also purchase a mount from the vendor at [56.2,46.2]
 |only Gnome
 |next "end"
 step
-goto The Exodar 81.4,52.6
+goto The Exodar,81.4,52.6
 .talk 20914
 .learn Apprentice Riding##33388
 .' You can also purchase a mount from the vendor at [81.6,52.6]
 |only Draenei
 |next "end"
 step
-goto Darnassus 42.6,33.6
+goto Darnassus,42.6,33.6
 .talk 4753
 .learn Apprentice Riding##33388
 .' You can also purchase a mount from the vendor at [48.6,22.2]
 |only Worgen
 |next "end"
 step
-goto Stormwind City 77.6,67.2
+goto Stormwind City,77.6,67.2
 .talk 43693
 .learn Apprentice Riding##33388
 .' You can also purchase a mount from the vendor at [67.8,18.6]
@@ -67,49 +67,49 @@ condition achieved(889)
 'For this achievement, you will need to reach level 40.
 |confirm
 step
-goto Stormwind City 77.6,67.2
+goto Stormwind City,77.6,67.2
 .talk 43693
 .learn Journeyman Riding##33391
 .' You can also purchase a mount from the vendor at [77.0,67.8]
 |only Human
 |next "end"
 step
-goto Dun Morogh 71.2,48.4
+goto Dun Morogh,71.2,48.4
 .talk 4772
 .learn Journeyman Riding##33391
 .' You can also purchase a mount from the vendor at [70.6,48.8]
 |only Dwarf
 |next "end"
 step
-goto Darnassus 42.6,33.6
+goto Darnassus,42.6,33.6
 .talk 4753
 .learn Journeyman Riding##33391
 .' You can also purchase a mount from the vendor at [42.6,32.8]
 |only Night Elf
 |next "end"
 step
-goto Dun Morogh 56.2,46.4
+goto Dun Morogh,56.2,46.4
 .talk 7954
 .learn Journeyman Riding##33391
 .' You can also purchase a mount from the vendor at [56.2,46.2]
 |only Gnome
 |next "end"
 step
-goto The Exodar 81.4,52.6
+goto The Exodar,81.4,52.6
 .talk 20914
 .learn Journeyman Riding##33391
 .' You can also purchase a mount from the vendor at [81.6,52.6]
 |only Draenei
 |next "end"
 step
-goto Darnassus 42.6,33.6
+goto Darnassus,42.6,33.6
 .talk 4753
 .learn Journeyman Riding##33391
 .' You can also purchase a mount from the vendor at [48.6,22.2]
 |only Worgen
 |next "end"
 step
-goto Stormwind City 77.6,67.2
+goto Stormwind City,77.6,67.2
 .talk 43693
 .learn Journeyman Riding##33391
 .' You can also purchase a mount from the vendor at [67.8,18.6]
@@ -127,7 +127,7 @@ condition achieved(890)
 |confirm
 step
 label "expert"
-goto Stormwind City 70.6,73.0
+goto Stormwind City,70.6,73.0
 .talk 43769
 .learn Expert Riding##34090
 .' You can also purchase a mount from the vendor at [71.4,72.2]
@@ -144,7 +144,7 @@ condition achieved(892)
 |confirm
 step
 label "expert"
-goto Stormwind City 70.6,73.0
+goto Stormwind City,70.6,73.0
 .talk 43769
 .learn Artisan Riding##34091
 .' You can also purchase a mount from the vendor at [71.4,72.2]
@@ -159,7 +159,7 @@ description Visit a Barber Shop and get your hair cut.
 author support@zygorguides.com
 step
 condition achieved(545)
-goto Stormwind City 61.6,64.6
+goto Stormwind City,61.6,64.6
 .' Click on the Barbershop Chair |tip It looks like a mechanical chair with a foot rest.
 .' Change  your Hair Style or Hair Color, than click "Okay". |tip This will cost money to do, so be sure you have the extra gold to purchase a hair style.
 .'
@@ -215,7 +215,7 @@ goto Stormwind City,80.1,69.8
 .' Learn Dual Talent Specialization |achieve 2716
 only Warrior
 step
-goto Stormwind City 68.2,16.2
+goto Stormwind City,68.2,16.2
 .talk 62419
 .' Learn Dual Talent Specialization |achieve 2716
 step
@@ -281,7 +281,7 @@ description Slay 15 turkeys in 3 minutes.
 author support@zygorguides.com
 step
 condition achieved(1254)
-goto Howling Fjord 66.3,71.1
+goto Howling Fjord,66.3,71.1
 .from Fjord Turkey##24746+ |tip Kill them as fast as you can, then hurry to kill another one each time.
 .' Slay 15 Turkeys in 3 Minutes |achieve 1254
 step
@@ -295,7 +295,7 @@ condition achieved(964)
 'For this achievement you must fall 65 yards without dying. You can do this in several different ways, depending on yoiur class, but we listed the easiest way regardless of level and class.
 |confirm
 step
-goto Shattrath City 63.8,41.6
+goto Shattrath City,63.8,41.6
 .' Ride up to the Elevator to the Terrace of Light. Jump off either the right or the left side of the Terrace to the flat ground. MAKE SURE TO JUMP.
 .' Earn the Going Down? Achievement |achieve 964
 ]])
@@ -308,7 +308,7 @@ goto Stormwind City,60.4,75.3
 .talk 6740
 .home Trade District
 step
-goto Scholomance/2 56.1,41.2
+goto Scholomance/2,56.1,41.2
 .' Click on The Invasion of Draenor |tip It looks like a red book on the small ledge at the end of this room.
 .' Read The Invasion of Draenor |achieve 1244/28
 step
@@ -331,15 +331,15 @@ goto 41.9,73.5
 .' Click The Scourge of Lordaeron
 .' Read The Scourge of Lordaeron |achieve 1244/34
 step
-goto Duskwood 74,45 |tip The book is upstairs.
+goto Duskwood,74,45 |tip The book is upstairs.
 .' Click on Kil'Jaeden and the Shadow Pact |tip It looks like a black book on this small table.
 .' Read Kil'Jaeden and the Shadow Pact |achieve 1244/13
 step
-goto Duskwood 73.7,45.1 |tip The book is upstairs in the tavern.
+goto Duskwood,73.7,45.1 |tip The book is upstairs in the tavern.
 .' Click on The Founding of Quel'Thalas |tip It looks like a red book in the Viewing Room next to Gunder Thornbush.
 .' Read The Founding of Quel'Thalas |achieve 1244/26
 step
-goto Elwynn Forest 84,69 |tip Located upstars on the table at the center of the room.
+goto Elwynn Forest,84,69 |tip Located upstars on the table at the center of the room.
 .' Click on Lethargy of the Orcs |tip It looks like a reddish book sitting on a chair at the bottom of this tower.
 .' Read Lethargy of the Orcs |achieve 1244/14
 step
@@ -398,13 +398,13 @@ goto 51,74
 .' Click on Mount Hyjal and Illidan's Gift |tip It looks like a green book sitting on the corner of a wooden table inside this building.
 .' Read Mount Hyjal and Illidan's Gift |achieve 1244/15
 step
-goto Ironforge 74.9,9.1
+goto Ironforge,74.9,9.1
 .' Click on Ironforge - the Awakening of the Dwarves |tip It looks like a blue book on this small table.
 .' Read Ironforge - the Awakening of the Dwarves |achieve 1244/11
 .' Click on War of the Three Hammers |tip It looks like a brown book on this small table.
 .' Read War of the Three Hammers |achieve 1244/41
 step
-goto Ironforge 77.0,9.2
+goto Ironforge,77.0,9.2
 .' Click on Arathor and the Troll Wars |tip It looks like a green book at the edge of this table.
 .' Read Arathor and the Troll Wars |achieve 1244/3
 step
@@ -424,15 +424,15 @@ goto Ironforge,77.1,13.7
 .' Click on The Battle of Grim Batol |tip It looks like a brown book at the edge of this table.
 .' Read The Battle of Grim Batol |achieve 1244/22
 step
-goto Stratholme/1 30.1,41.3
+goto Stratholme/1,30.1,41.3
 .' Click on The Seven Kingdoms |tip It looks like a brown book on the edge of the middle table here.
 .' Read The Seven Kingdoms |achieve 1244/36
 step
-goto Stratholme/1 25.8,71.6
+goto Stratholme/1,25.8,71.6
 .' Click on Icecrown and the Frozen Throne |tip It looks like a blue book on the corner of this small table.
 .' Read Icecrown and the Frozen Throne |achieve 1244/10
 step
-goto Stratholme/1 25.1,70.3
+goto Stratholme/1,25.1,70.3
 .' Click on Kel'Thuzad and the Forming of the Scourge |tip It looks like a black book on the edge of this small table.
 .' Read Kel'Thuzad and the Forming of the Scourge |achieve 1244/12
 .' Click on The Birth of the Lich King |tip It looks like a black book on the corner of this table.
@@ -452,7 +452,7 @@ goto Northern Barrens,67.0,75.0
 .' Click on Sargeras and the Betrayal |tip It looks like a black book on a square table.
 .' Read Sargeras and the Betrayal |achieve 1244/19
 step
-goto Tanaris 50.97,30.29
+goto Tanaris,50.97,30.29
 .' Click on Old Hatreds - The Colonization of Kalimdor
 .' Read Old Hatreds - The Colonization of Kalimdor |achieve 1244/16
 ]])
@@ -541,7 +541,7 @@ step
 'Drink the Highland Spring Water |use Highland Spring Water##58257
 |confirm
 step
-goto Thousand Needles 76.5,74.8
+goto Thousand Needles,76.5,74.8
 .talk 40832
 .buy 1 Bottle of Pinot Noir##2723
 .buy 1 Glass of Eversong Wine##44570
@@ -633,7 +633,7 @@ step
 'Eat the Buttery Wheat Roll |use Buttery Wheat Roll##58261
 |confirm
 step
-goto Stormwind City 64.9,32.0
+goto Stormwind City,64.9,32.0
 .talk 44235
 .buy 1 Forest Mushroom Cap##4604
 .buy 1 Red-Speckeled Mushroom##4605
@@ -650,7 +650,7 @@ step
 'Eat the Raw Black Truffle |use Raw Black Truffle##4608
 'Eat the Dried King Bolete |use Dried King Bolete##8948
 step
-goto Darnassus 48.8,61.3
+goto Darnassus,48.8,61.3
 .talk 4221
 .buy 1 Slitherskin Mackerel##787
 .buy 1 Longjaw Mud Snapper##4592
@@ -799,7 +799,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Achievements Guides\\General A
 description This will guide you to the area to fight the Whale Shark.
 step
 condition achieved(4975)
-goto Shimmering Expanse 70.6,55.0
+goto Shimmering Expanse,70.6,55.0
 .' The _Whale Shark_ swims in a circle around Nespirah. Some searching may be required.
 .' When fighting the whale shark, it is important to know that you cannot use melee attacks, as he will kill you rather quickly. The best strategy is to use ranged attacks to kite him around and just slowly drain his health to 0.
 .from Whale Shark##40728 |achieve 4975
@@ -812,7 +812,7 @@ description Kill all of the Rare enemies in Outlands
 step
 achieveid 1311
 condition achieved(1312)
-goto Hellfire Peninsula 69.0,71.4
+goto Hellfire Peninsula,69.0,71.4
 .from Mekthorg the Wild##18677
 .' If Mekthorg the Wild is not here, you may be able to find him in the following locations:
 .' [41.6,71.6]
@@ -840,7 +840,7 @@ goto 41.0,32.8
 .' [72.6,56.8]
 |achieve 1312/20
 step
-goto Blade's Edge Mountains 30.6,67.2
+goto Blade's Edge Mountains,30.6,67.2
 .from Hemathion##18692
 .' If Hemathion is not here, you may be able to find him at [30.6,48.4]
 |achieve 1312/11
@@ -863,7 +863,7 @@ goto 44.6,77.4
 .' [66.2,23.6]
 |achieve 1312/18
 step
-goto Zangarmarsh 25.0,24.0
+goto Zangarmarsh,25.0,24.0
 .from Bog Lurker##18682
 .' If Bog Lurker is not here, you may be able to find him in the following locations:
 .' [41.2,60.8]
@@ -889,7 +889,7 @@ goto 10.6,51.0
 .' [79.6,53.6]
 |achieve 1312/13
 step
-goto Netherstorm 59.8,66.4
+goto Netherstorm,59.8,66.4
 .from Chief Engineer Lorthander##18697
 .' If Chief Engineer Lorthander is not here, you may be able to find him in the following locations:
 .' [47.6,81.2]
@@ -910,7 +910,7 @@ goto 25.6,82.6
 .' [36.0,20.8]
 |achieve 1312/16
 step
-goto Nagrand 39.8,71.0
+goto Nagrand,39.8,71.0
 .from Voidhunter Yar##18683 |tip He walks in a circle around Oshu'Gun, you may need to fly around to find him.
 |achieve 1312/19
 step
@@ -922,7 +922,7 @@ goto 34.0,50.0
 .' [77.0,80.2]
 |achieve 1312/10
 step
-goto Terokkar Forest 39.0,63.6
+goto Terokkar Forest,39.0,63.6
 .from Crippler##18689 |tip He walks around and inside Auchindoun, so you may need to search for him.
 |achieve 1312/6
 step
@@ -943,7 +943,7 @@ goto 56.6,67.6
 .' [59.8,24.2]
 |achieve 1312/17
 step
-goto Shadowmoon Valley 71.0,61.6
+goto Shadowmoon Valley,71.0,61.6
 .from Ambassador Jerrikar##18695
 .' If Ambassador Jerrikar is not here, you may be able to find him in the following locations:
 .' [47.6,68.6]
@@ -978,7 +978,7 @@ description Kill all of the extremely rare and hard to find Northrend Creatures.
 step
 achieveid 2256
 condition achieved(2257)
-goto Borean Tundra 25.6,34.4
+goto Borean Tundra,25.6,34.4
 .from Old Crystalbark##32357 |tip He walks all around the Nexus, so you may need to search for him.
 |achieve 2257/4
 step
@@ -996,7 +996,7 @@ goto 88.6,39.8
 .' [91.6,32.6]
 |achieve 2257/6
 step
-goto Dragonblight 26.6,58.6
+goto Dragonblight,26.6,58.6
 .from Crazed Indu'le Survivor##32409 |tip He walks around this area, so you may need to search for him.
 |achieve 2257/11
 step
@@ -1017,7 +1017,7 @@ goto 72.6,25.8
 .' [72.0,74.0]
 |achieve 2257/12
 step
-goto Grizzly Hills 25.0,57.0
+goto Grizzly Hills,25.0,57.0
 .from Grocklar##32422
 .' If Grocklar is not here, you may be able to find him in the following locations:
 .' [13.2,48.6]
@@ -1036,7 +1036,7 @@ goto 69.6,32.2
 .from Syreian the Bonecarver##32438 |tip She walks around in this area, so you may need to search for her.
 |achieve 2257/15
 step
-goto Howling Fjord 33.2,80.6
+goto Howling Fjord,33.2,80.6
 .from King Ping##32398 |tip He is wandering about this island and the one north of it. You may need to search for him.
 |achieve 2257/9
 step
@@ -1053,7 +1053,7 @@ goto 50.6,4.8
 .' [71.6,13.8]
 |achieve 2257/7
 step
-goto Icecrown 48.6,80.2
+goto Icecrown,48.6,80.2
 .from High Thane Jorfus##32501
 .' If High Thane Jorfus is not here, you may be able to find him in the following locations:
 .' [32.0,69.6]
@@ -1072,7 +1072,7 @@ goto 55.6,41.2
 .from Putridus the Ancient##32487 |tip He walks around this whole trench, so you may need to search for him.
 |achieve 2257/23
 step
-goto Sholazar Basin 54.8,52.6
+goto Sholazar Basin,54.8,52.6
 .from Aotona##32481
 .' If Aotona is not here, you may be able to find it in the following locations:
 .' [58.2,64.0]
@@ -1103,7 +1103,7 @@ goto 71.6,72.0
 .' [59.4,22.6]
 |achieve 2257/1
 step
-goto The Storm Peaks 68.0,47.6
+goto The Storm Peaks,68.0,47.6
 .from Dirkee##32500
 .' If Dirkee is not here, you may be able to find him in the following locations:
 .' [37.8,58.6]
@@ -1115,7 +1115,7 @@ goto 41.2,59.0
 .from Vyragosa##32630 |tip This dragon flies around the whole zone, so you may need to search for him a bit.
 |achieve 2257/21
 step
-goto Zul'Drak 21.2,79.8
+goto Zul'Drak,21.2,79.8
 .from Griegen##32471
 .' If Griegen is not here, you may be able to find him in the following locations:
 .' [25.8,76.8]
@@ -1226,7 +1226,7 @@ condition achieved(546)
 'This achievement will cost you _111.1_ Gold to complete.
 |confirm
 step
-goto Stormwind City 63.5,80.0
+goto Stormwind City,63.5,80.0
 .talk 43692
 .' Purchase 7 Bank Slots.
 .' Earn the Safe Deposit Achievement |achieve 546
@@ -1241,7 +1241,7 @@ condition achieved(2097)
 .' Click here to make this item yourself |next collect |confirm
 .' Click here to purchase this item froomo the Auction House |confirm
 step
-goto Stormwind City 60.8,70.9
+goto Stormwind City,60.8,70.9
 .talk 8670
 .buy Mekgineer's Chopper##44413
 |next learn
@@ -1253,7 +1253,7 @@ label "collect"
 .' Once you have collected these items, you will need to collect 3 more, which come from vendors.
 |confirm
 step
-goto Vale of Eternal Blossoms/0 64.1,41.4
+goto Vale of Eternal Blossoms/0,64.1,41.4
 .talk 61650
 .buy 1 Salvaged Iron Golem Parts##44499 |tip 3,000 gold
 .buy 8 Goblin-Machined Piston##44501 |tip 8,000 gold
@@ -1277,43 +1277,43 @@ condition achieved(4827)
 .' In order to earn this achievement, you will need to visit the places that Deathwing had the most effect on during Cataclysm.
 |confirm
 step
-goto Westfall/0 38.5,42.3
+goto Westfall/0,38.5,42.3
 .' The Raging Chasm in Westfall |achieve 4827/11
 step
-goto Northern Stranglethorn 50.4,66.5
+goto Northern Stranglethorn,50.4,66.5
 .' The Sundering in Stranglethorn |achieve 4827/2
 step
-goto Badlands/0 43.4,42.5
+goto Badlands/0,43.4,42.5
 .' The Scar of the Worldbreaker in Badlands /3
 step
-goto Loch Modan/0 42.0,11.3
+goto Loch Modan/0,42.0,11.3
 .' The Stonewrought Dam in Loch Modan /12
 step
-goto Hillsbrad Foothills/0 51.3,71.4
+goto Hillsbrad Foothills/0,51.3,71.4
 .' Ruins of Southshore in Hillsbrad Foothills /13
 step
-goto Ruins of Gilneas/0 60.2,10.5
+goto Ruins of Gilneas/0,60.2,10.5
 .' The Greymane Wall in Silverpine /10
 step
-goto Southern Barrens/0 45.5,70.3
+goto Southern Barrens/0,45.5,70.3
 .' The Battlescar in Southern Barrens /1
 step
-goto Tanaris/0 37.7,78.9
+goto Tanaris/0,37.7,78.9
 .' The Valley of the Watchers in Tanaris /5
 step
-goto Thousand Needles/0 74.4,82.1
+goto Thousand Needles/0,74.4,82.1
 .' The Shimmering Deep in Thousand Needles /9
 step
-goto Desolace/0 57.5,54.3
+goto Desolace/0,57.5,54.3
 .' Cenarion Wildlands in Desolace /8
 step
-goto Ashenvale/0 48.2,53.5
+goto Ashenvale/0,48.2,53.5
 .' Thunder Peak in Ashenvale /6
 step
-goto Durotar/0 38.8,38.5
+goto Durotar/0,38.8,38.5
 .' Southfury Watershed in Durotar /7
 step
-goto Darkshore/0 38.6,45.3
+goto Darkshore/0,38.6,45.3
 .' The Ruins of Auberdine in Darkshore /4
 step
 .' Congratulations, you have earned the _Surveying the Damage_ achievement.
@@ -1325,12 +1325,12 @@ step
 'This achievement will require you to kill 50 rookery whelps within 15 seconds.
 |confirm
 step
-goto Blackrock Spire/6 33.1,27.1
+goto Blackrock Spire/6,33.1,27.1
 .click Blackrock Altar##04076
 .kill Pyroguard Emberseer##9816 |n
 |confirm
 step
-goto Blackrock Spire/6 30.8,35.0
+goto Blackrock Spire/6,30.8,35.0
 .from 50 Rookery Whelp##10161+ |achieve 2188/1 |tip You have 15 seconds from the first kill to get the rest of the 50.
 step
 'Congratulations! You have earned the Title _Jenkins_!!
@@ -1455,7 +1455,7 @@ condition achieved(941)
 .' Redirecting to end of guide |next "end" |only if default
 step
 title +The Green Hills of Stranglethorn
-goto Northern Stranglethorn 44.3,22.1
+goto Northern Stranglethorn,44.3,22.1
 .talk 716
 ..accept 583
 step
@@ -1921,7 +1921,7 @@ description Complete the Green Hills of Stranglethorn questline.
 step
 condition achieved(940)
 title +The Green Hills of Stranglethorn
-goto Northern Stranglethorn 44.3,22.1
+goto Northern Stranglethorn,44.3,22.1
 .talk 716
 ..accept 583
 step
@@ -3240,7 +3240,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Achievements Guides\\Quest Ach
 description Complete the D.E.H.T.A. questline in Borean Tundra
 step
 condition achieved(561)
-goto Borean Tundra 57,44.3
+goto Borean Tundra,57,44.3
 .talk 25809
 ..accept 11864 |instant
 ..accept 11866
@@ -3488,7 +3488,7 @@ step
 step
 'The entrance to the Dalaran sewers starts here|goto Dalaran,60.2,47.7,0.3|c|q 13100
 step
-goto Dalaran/2 51.6,41.6
+goto Dalaran/2,51.6,41.6
 .click Infused Mushroom##359+
 .collect 4 Infused Mushroom##43100 |q 13100
 step
@@ -3763,7 +3763,7 @@ step
 .create 4 Northern Stew##57421,Cooking,4 total |n
 .get 4 Northern Stew |q 13101/1
 step
-goto Dalaran/2 59.5,43.6
+goto Dalaran/2,59.5,43.6
 ..collect 4 Infused Mushroom##43100 |q 13100 |tip They spawn randomly along the sewer lines.
 step
 goto Dragonblight,30.0,49.8
@@ -4013,11 +4013,11 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Achievements Guides\\Professio
 description Successfully fish in each of the junk nodes.
 step
 condition achieved(1257)
-goto Zangarmarsh 57.0,56.0
+goto Zangarmarsh,57.0,56.0
 .' Look for Steam Pump Flotsam in the water around this area and fish from it |cast Fishing##7620
 .' Fish from Steam Pump Flotsam |achieve 1257/1
 step
-goto Northern Stranglethorn 55.0,64.0
+goto Northern Stranglethorn,55.0,64.0
 .' Look for Schooner Wreckage around this area |tip You may need to fish from other pools to get this to show up |cast Fishing##7620
 .' Fish from Schooner Wreckage |achieve 1257/3
 step
@@ -4027,7 +4027,7 @@ goto 30.9,81.5
 .' Look for Bloodsail Wreckage around this area |tip You may need to fish from other pools to get this to show up |cast Fishing##7620
 .' Fish from Bloodsail Wreckage |achieve 1257/2
 step
-goto Tanaris 67.4,38.2
+goto Tanaris,67.4,38.2
 .' Look for Floating Wreckage around this area |tip You may have to fish from other pools to get this to show up |cast Fishing##7620
 .' Fish from Floating Wreckage |achieve 1257/5
 step
@@ -4043,7 +4043,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Achievements Guides\\Professio
 description Fish something up in Orgrimmar and Stormwind.
 step
 condition achieved(150)
-goto Stormwind City 69.0,92.2
+goto Stormwind City,69.0,92.2
 .' Use your fishing skill in the moat in front of Stormwind City |cast Fishing##7620
 .' Fish in Stormwind City |achieve 150/2
 step

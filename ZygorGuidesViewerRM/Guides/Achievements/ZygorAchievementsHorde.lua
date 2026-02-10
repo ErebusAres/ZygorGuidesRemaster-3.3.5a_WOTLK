@@ -58,7 +58,7 @@ description Visit your class trainer when you are at least level 30 and activate
 author support@zygorguides.com
 step
 condition achieved(2716)
-goto Orgrimmar 63.8,32.7
+goto Orgrimmar,63.8,32.7
 .talk 3352
 .' Learn Dual Talent Specialization |achieve 2716
 only Hunter
@@ -67,47 +67,47 @@ goto Orgrimmar,45.9,66.9 |n
 .' Enter the cave |goto Orgrimmar,45.9,66.9,0.5 |noway |c
 only Rogue,Mage,Warlock
 step
-goto Orgrimmar 44.4,61.6
+goto Orgrimmar,44.4,61.6
 .talk 3328
 .' Learn Dual Talent Specialization |achieve 2716
 only Rogue
 step
-goto Orgrimmar 49.2,70.9
+goto Orgrimmar,49.2,70.9
 .talk 45337
 .' Learn Dual Talent Specialization |achieve 2716
 only Priest
 step
-goto Orgrimmar 44.8,51.5
+goto Orgrimmar,44.8,51.5
 .talk 44726
 .' Learn Dual Talent Specialization |achieve 2716
 only Druid
 step
-goto Orgrimmar 49.3,71.1
+goto Orgrimmar,49.3,71.1
 .talk 23128
 .' Learn Dual Talent Specialization |achieve 2716
 only Paladin
 step
-goto Orgrimmar 48.6,62.7
+goto Orgrimmar,48.6,62.7
 .talk 47247
 .' Learn Dual Talent Specialization |achieve 2716
 only Mage
 step
-goto Orgrimmar 44.6,52.0
+goto Orgrimmar,44.6,52.0
 .talk 44740
 .' Learn Dual Talent Specialization |achieve 2716
 only Shaman
 step
-goto Orgrimmar 48.4,55.9
+goto Orgrimmar,48.4,55.9
 .talk 5815
 .' Learn Dual Talent Specialization |achieve 2716
 only Warlock
 step
-goto Orgrimmar 44.7,53.3
+goto Orgrimmar,44.7,53.3
 .talk 44723
 .' Learn Dual Talent Specialization |achieve 2716
 only Warrior
 step
-goto Orgrimmar 68.8,40.2
+goto Orgrimmar,68.8,40.2
 .talk 62445
 .' Learn Dual Talent Specialization |achieve 2716
 only Monk
@@ -240,7 +240,7 @@ goto 56.0,50.6
 .' Click on The Old Gods and the Ordering of Azeroth |tip It looks like a blue book sitting on the edge of this wooden table.
 .' Read The Old Gods and the Ordering of Azeroth |achieve 1244/33
 step
-goto Tirisfal Glades 60.9,52.1
+goto Tirisfal Glades,60.9,52.1
 .' Click on Aegwynn and the Dragon Hunt |tip It looks like a brownish red book laying on the ground.
 .' Read Aegwynn and the Dragon Hunt |achieve 1244/1
 step
@@ -248,28 +248,28 @@ goto 60.9,50.6
 .' Click on Charge of the Dragonflights |tip It looks like a brown book laying on the ground behind this big building.  It's outside, not inside the building.
 .' Read Charge of the Dragonflights |achieve 1244/6
 step
-goto Scholomance/1 63.3,60.6
+goto Scholomance/1,63.3,60.6
 .from Instructor Chillheart##58633
 |confirm
 step
-goto Scholomance/2 59.7,19.4
+goto Scholomance/2,59.7,19.4
 .from Jandice Barov##59184
 |confirm
 step
-goto Scholomance/2 45.9,26.6
+goto Scholomance/2,45.9,26.6
 .from Rattlegore##59153
 |confirm
 step
-goto Scholomance/2 56.4,41.1
+goto Scholomance/2,56.4,41.1
 .' Click on the _The Invasion of Draenor_, on the ledge in the corner.
 .' Read The Invasion of Draenor |achieve 1244/28
 step
-goto Stratholme/1 39.0,37.9
+goto Stratholme/1,39.0,37.9
 .' Click on War of the Spider |tip It looks like a blue book laying on the ground.
 .' Read War of the Spider |achieve 1244/40
 .' This can also be found at [25.8,71.5].
 step
-goto Stratholme/1 30.1,41.3
+goto Stratholme/1,30.1,41.3
 .' Click on The Seven Kingdoms |tip It looks like a brown book on the edge of the middle table here.
 .' Read The Seven Kingdoms |achieve 1244/36
 step
@@ -277,11 +277,11 @@ goto 30.5,40.7
 .' Click on Kil'Jaeden and the Shadow Pact |tip It looks like a black book on this small table.
 .' Read Kil'Jaeden and the Shadow Pact |achieve 1244/13
 step
-goto Stratholme/1 25.8,71.6
+goto Stratholme/1,25.8,71.6
 .' Click on Icecrown and the Frozen Throne |tip It looks like a blue book on the corner of this small table.
 .' Read Icecrown and the Frozen Throne |achieve 1244/10
 step
-goto Stratholme/1 25.1,70.3
+goto Stratholme/1,25.1,70.3
 .' Click on Kel'Thuzad and the Forming of the Scourge |tip It looks like a black book on the edge of this small table.
 .' Read Kel'Thuzad and the Forming of the Scourge |achieve 1244/12
 .' Click on The Birth of the Lich King |tip It looks like a black book on the corner of this table.
@@ -289,12 +289,12 @@ goto Stratholme/1 25.1,70.3
 .' Click on The Lich King Triumphant |tip It looks like a brown book on the corner of this table.
 .' Read The Lich King Triumphant |achieve 1244/31
 step
-goto Hillsbrad Foothills 56.7,47.5
+goto Hillsbrad Foothills,56.7,47.5
 .' Click on Arathor and the Troll Wars |tip It looks like a green book laying on the ground.
 .' Read Arathor and the Troll Wars |achieve 1244/3
 .' This can also be found at [58.5,47.9]
 step
-goto Arathi Highlands 69.2,33.1
+goto Arathi Highlands,69.2,33.1
 .' Click on Rise of the Blood Elves |tip It looks like a red book on the corner of this table.
 .' Read Rise of the Blood Elves |achieve 1244/17
 step
@@ -303,7 +303,7 @@ goto Loch Modan,37.2,46.9
 .' Read The Last Guardian |achieve 1244/30
 .' You can also find it in Westfall at 52.6,53.1 |goto Westfall,52.6,53.1 |n |tip Click to set waypoint.
 step
-goto Swamp of Sorrows 49.3,55.5
+goto Swamp of Sorrows,49.3,55.5
 .' Click on The Dark Portal and the Fall of Stormwind |tip It looks like a blue book on the ledge next to the wall.
 .' Read The Dark Portal and the Fall of Stormwind |achieve 1244/25
 step
@@ -321,11 +321,11 @@ goto Stormwind City,85.3,23.4
 .' Click on The War of the Ancients |tip It looks like a green book at the edge of this table.
 .' Read The War of the Ancients |achieve 1244/38
 step
-goto Duskwood 74,45 |tip The book is upstairs.
+goto Duskwood,74,45 |tip The book is upstairs.
 .' Click on Kil'Jaeden and the Shadow Pact |tip It looks like a black book on this small table.
 .' Read Kil'Jaeden and the Shadow Pact |achieve 1244/13
 step
-goto Blasted Lands 60.1,13.6
+goto Blasted Lands,60.1,13.6
 .' The only place to get this book is inside of Alliance cities at the moment.
 .' Click on Aftermath of the Second War |tip It looks like a blue book at the edge of this table.
 .' Read Aftermath of the Second War |achieve 1244/2
@@ -334,7 +334,7 @@ goto The Cape of Stranglethorn,41.0,74.4
 .' Click on Sunwell - The Fall of Quel'Thalas |tip It looks like a green book sitting on a small wooden table inside the inn.
 .' Read Sunwell - The Fall of Quel'Thalas |achieve 1244/20
 step
-goto The Cape of Stranglethorn 40.7,7..8 |tip It will be on the edge of a table.
+goto The Cape of Stranglethorn,40.7,7..8 |tip It will be on the edge of a table.
 .' Click on Beyond the Dark Portal |tip It looks like a green book laying on the corner of this table.
 .' Read Beyond the Dark Portal |achieve 1244/5
 step
@@ -355,7 +355,7 @@ goto 42.2,73.6
 .' Click on The Sentinels and the Long Vigil |tip It looks like a brown book sitting on a small wooden table next to a bed upstairs in this building.
 .' Read The Sentinels and the Long Vigil |achieve 1244/35
 step
-goto Northern Barrens 66.9,74.7
+goto Northern Barrens,66.9,74.7
 .' Click on Mount Hyjal and Illidan's Gift |tip It looks like a green book sitting on the corner of a wooden table inside this building.
 .' Read Mount Hyjal and Illidan's Gift |achieve 1244/15
 step
@@ -363,7 +363,7 @@ goto Northern Barrens,67.0,75.0
 .' Click on Sargeras and the Betrayal |tip It looks like a black book on a square table.
 .' Read Sargeras and the Betrayal |achieve 1244/19
 step
-goto Northern Barrens 68.0,73.5
+goto Northern Barrens,68.0,73.5
 .' Click on Archimonde's Return and the Flight to Kalimdor |tip It looks like a brown book laying on the ground.
 .' Read Archimonde's Return and the Flight to Kalimdor |achieve 1244/4
 step
@@ -371,7 +371,7 @@ goto Southern Barrens,65.5,46.7
 .' Click on Lethargy of the Orcs |tip It looks like a reddish book sitting on a chair at the bottom of this tower.
 .' Read Lethargy of the Orcs |achieve 1244/14
 step
-goto Southern Barrens 50.1,86.6
+goto Southern Barrens,50.1,86.6
 .' Click on War of the Three Hammers |tip It looks like a brown book on a wooden table in this small side room.
 .' Read War of the Three Hammers |achieve 1244/41
 step
@@ -391,11 +391,11 @@ goto 66.5,49.8
 .' Click on The Kaldorei and the Well of Eternity |tip It looks like a brown book sitting on a ledge inside this small side room.
 .' Read The Kaldorei and the Well of Eternity |achieve 1244/29
 step
-goto Tanaris 51.4,29.4
+goto Tanaris,51.4,29.4
 .' Click on Old Hatreds - The Colonization of Kalimdor |tip It looks like a brown book on this table.
 .' Read Old Hatreds - The Colonization of Kalimdor |achieve 1244/16
 step
-goto Dalaran 66.9,36.1
+goto Dalaran,66.9,36.1
 .' Click on The Guardians of Tirisfal |tip It looks like a black book laying on the ground upstairs in this building.
 .' Read The Guardians of Tirisfal |achieve 1244/27
 step
@@ -486,7 +486,7 @@ step
 'Drink the Highland Spring Water |use Highland Spring Water##58257
 |confirm
 step
-goto Thousand Needles 76.5,74.8
+goto Thousand Needles,76.5,74.8
 .talk 40832
 .buy 1 Bottle of Pinot Noir##2723
 .buy 1 Glass of Eversong Wine##44570
@@ -745,7 +745,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Achievements Guides\\General Achi
 description This guide will help you obtain the From Hell's Heart I Stab At Thee Achievement
 step
 condition achieved(4975)
-goto Shimmering Expanse 70.6,55.0
+goto Shimmering Expanse,70.6,55.0
 .' The _Whale Shark_ swims in a circle around Nespirah. Some searching may be required.
 .' When fighting the whale shark, it is important to know that you cannot use melee attacks, as he will kill you rather quickly. The best strategy is to use ranged attacks to kite him around and just slowly drain his health to 0.
 .from Whale Shark##40728 |achieve 4975
@@ -758,7 +758,7 @@ description Kill all of the Rare enemies in Outlands
 step
 achieveid 1311
 condition achieved(1312)
-goto Hellfire Peninsula 69.0,71.4
+goto Hellfire Peninsula,69.0,71.4
 .from Mekthorg the Wild##18677
 .' If Mekthorg the Wild is not here, you may be able to find him in the following locations:
 .' [41.6,71.6]
@@ -786,7 +786,7 @@ goto 41.0,32.8
 .' [72.6,56.8]
 |achieve 1312/20
 step
-goto Blade's Edge Mountains 30.6,67.2
+goto Blade's Edge Mountains,30.6,67.2
 .from Hemathion##18692
 .' If Hemathion is not here, you may be able to find him at [30.6,48.4]
 |achieve 1312/11
@@ -809,7 +809,7 @@ goto 44.6,77.4
 .' [66.2,23.6]
 |achieve 1312/18
 step
-goto Zangarmarsh 25.0,24.0
+goto Zangarmarsh,25.0,24.0
 .from Bog Lurker##18682
 .' If Bog Lurker is not here, you may be able to find him in the following locations:
 .' [41.2,60.8]
@@ -835,7 +835,7 @@ goto 10.6,51.0
 .' [79.6,53.6]
 |achieve 1312/13
 step
-goto Netherstorm 59.8,66.4
+goto Netherstorm,59.8,66.4
 .from Chief Engineer Lorthander##18697
 .' If Chief Engineer Lorthander is not here, you may be able to find him in the following locations:
 .' [47.6,81.2]
@@ -856,7 +856,7 @@ goto 25.6,82.6
 .' [36.0,20.8]
 |achieve 1312/16
 step
-goto Nagrand 39.8,71.0
+goto Nagrand,39.8,71.0
 .from Voidhunter Yar##18683 |tip He walks in a circle around Oshu'Gun, you may need to fly around to find him.
 |achieve 1312/19
 step
@@ -868,7 +868,7 @@ goto 34.0,50.0
 .' [77.0,80.2]
 |achieve 1312/10
 step
-goto Terokkar Forest 39.0,63.6
+goto Terokkar Forest,39.0,63.6
 .from Crippler##18689 |tip He walks around and inside Auchindoun, so you may need to search for him.
 |achieve 1312/6
 step
@@ -889,7 +889,7 @@ goto 56.6,67.6
 .' [59.8,24.2]
 |achieve 1312/17
 step
-goto Shadowmoon Valley 71.0,61.6
+goto Shadowmoon Valley,71.0,61.6
 .from Ambassador Jerrikar##18695
 .' If Ambassador Jerrikar is not here, you may be able to find him in the following locations:
 .' [47.6,68.6]
@@ -924,7 +924,7 @@ description Kill all of the extremely rare and hard to find Northrend Creatures.
 step
 achieveid 2256
 condition achieved(2257)
-goto Borean Tundra 25.6,34.4
+goto Borean Tundra,25.6,34.4
 .from Old Crystalbark##32357 |tip He walks all around the Nexus, so you may need to search for him.
 |achieve 2257/4
 step
@@ -942,7 +942,7 @@ goto 88.6,39.8
 .' [91.6,32.6]
 |achieve 2257/6
 step
-goto Dragonblight 26.6,58.6
+goto Dragonblight,26.6,58.6
 .from Crazed Indu'le Survivor##32409 |tip He walks around this area, so you may need to search for him.
 |achieve 2257/11
 step
@@ -963,7 +963,7 @@ goto 72.6,25.8
 .' [72.0,74.0]
 |achieve 2257/12
 step
-goto Grizzly Hills 25.0,57.0
+goto Grizzly Hills,25.0,57.0
 .from Grocklar##32422
 .' If Grocklar is not here, you may be able to find him in the following locations:
 .' [13.2,48.6]
@@ -982,7 +982,7 @@ goto 69.6,32.2
 .from Syreian the Bonecarver##32438 |tip She walks around in this area, so you may need to search for her.
 |achieve 2257/15
 step
-goto Howling Fjord 33.2,80.6
+goto Howling Fjord,33.2,80.6
 .from King Ping##32398 |tip He is wandering about this island and the one north of it. You may need to search for him.
 |achieve 2257/9
 step
@@ -999,7 +999,7 @@ goto 50.6,4.8
 .' [71.6,13.8]
 |achieve 2257/7
 step
-goto Icecrown 48.6,80.2
+goto Icecrown,48.6,80.2
 .from High Thane Jorfus##32501
 .' If High Thane Jorfus is not here, you may be able to find him in the following locations:
 .' [32.0,69.6]
@@ -1018,7 +1018,7 @@ goto 55.6,41.2
 .from Putridus the Ancient##32487 |tip He walks around this whole trench, so you may need to search for him.
 |achieve 2257/23
 step
-goto Sholazar Basin 54.8,52.6
+goto Sholazar Basin,54.8,52.6
 .from Aotona##32481
 .' If Aotona is not here, you may be able to find it in the following locations:
 .' [58.2,64.0]
@@ -1049,7 +1049,7 @@ goto 71.6,72.0
 .' [59.4,22.6]
 |achieve 2257/1
 step
-goto The Storm Peaks 68.0,47.6
+goto The Storm Peaks,68.0,47.6
 .from Dirkee##32500
 .' If Dirkee is not here, you may be able to find him in the following locations:
 .' [37.8,58.6]
@@ -1061,7 +1061,7 @@ goto 41.2,59.0
 .from Vyragosa##32630 |tip This dragon flies around the whole zone, so you may need to search for him a bit.
 |achieve 2257/21
 step
-goto Zul'Drak 21.2,79.8
+goto Zul'Drak,21.2,79.8
 .from Griegen##32471
 .' If Griegen is not here, you may be able to find him in the following locations:
 .' [25.8,76.8]
@@ -1096,49 +1096,49 @@ condition achieved(891)
 .' For this achievement, you will need to reach level 20.
 |confirm
 step
-goto Orgrimmar 49.0,59.6
+goto Orgrimmar,49.0,59.6
 .talk 44919
 .learn Apprentice Riding##33388
 .' You can also purchase a mount from the vendor at [61.6,35.6]
 |only Orc
 |next "end"
 step
-goto Tirisfal Glades 61.8,51.8
+goto Tirisfal Glades,61.8,51.8
 .talk 4773
 .learn Apprentice Riding##33388
 .' You can also purchase a mount from the vendor at [61.8,51.8]
 |only Undead
 |next "end"
 step
-goto Mulgore 47.6,58.0
+goto Mulgore,47.6,58.0
 .talk 3690
 .learn Apprentice Riding##33388
 .' You can also purchase a mount from the vendor at [47.6,58.0]
 |only Tauren
 |next "end"
 step
-goto Durotar 55.2,75.4
+goto Durotar,55.2,75.4
 .talk 7953
 .learn Apprentice Riding##33388
 .' You can also purchase a mount from the vendor at [55.2,75.6]
 |only Troll
 |next "end"
 step
-goto Eversong Woods 61.2,54.0
+goto Eversong Woods,61.2,54.0
 .talk 16280
 .learn Apprentice Riding##33388
 .' You can also purchase a mount from the vendor at [61.0,54.6]
 |only Blood Elf
 |next "end"
 step
-goto Orgrimmar 36.6,87.0
+goto Orgrimmar,36.6,87.0
 .talk 48513
 .learn Apprentice Riding##33388
 .' You can also purchase a mount from the vendor at [36.2,86.6]
 |only Goblin
 |next "end"
 step
-goto Orgrimmar 49.0,59.6
+goto Orgrimmar,49.0,59.6
 .talk 44919
 .learn Apprentice Riding##33388
 .' You can also purchase a mount from the vendor at [69.8,41.0]
@@ -1154,49 +1154,49 @@ condition achieved(889)
 .' For this achievement, you will need to reach level 40.
 |confirm
 step
-goto Orgrimmar 49.0,59.6
+goto Orgrimmar,49.0,59.6
 .talk 44919
 .learn Journeyman Riding##33391
 .' You can also purchase a mount from the vendor at [61.6,35.6]
 |only Orc
 |next "end"
 step
-goto Tirisfal Glades 61.8,51.8
+goto Tirisfal Glades,61.8,51.8
 .talk 4773
 .learn Journeyman Riding##33391
 .' You can also purchase a mount from the vendor at [61.8,51.8]
 |only Undead
 |next "end"
 step
-goto Mulgore 47.6,58.0
+goto Mulgore,47.6,58.0
 .talk 3690
 .learn Journeyman Riding##33391
 .' You can also purchase a mount from the vendor at [47.6,58.0]
 |only Tauren
 |next "end"
 step
-goto Durotar 55.2,75.4
+goto Durotar,55.2,75.4
 .talk 7953
 .learn Journeyman Riding##33391
 .' You can also purchase a mount from the vendor at [55.2,75.6]
 |only Troll
 |next "end"
 step
-goto Eversong Woods 61.2,54.0
+goto Eversong Woods,61.2,54.0
 .talk 16280
 .learn Journeyman Riding##33391
 .' You can also purchase a mount from the vendor at [61.0,54.6]
 |only Blood Elf
 |next "end"
 step
-goto Orgrimmar 36.6,87.0
+goto Orgrimmar,36.6,87.0
 .talk 48513
 .learn Journeyman Riding##33391
 .' You can also purchase a mount from the vendor at [36.2,86.6]
 |only Goblin
 |next "end"
 step
-goto Orgrimmar 49.0,59.6
+goto Orgrimmar,49.0,59.6
 .talk 44919
 .learn Journeyman Riding##33391
 .' You can also purchase a mount from the vendor at [69.8,41.0]
@@ -1213,7 +1213,7 @@ condition achieved(890)
 'The cost of this riding training is _250 Gold_ (but can be reduced by faction discounts).
 |confirm
 step
-goto Orgrimmar 49.0,59.6
+goto Orgrimmar,49.0,59.6
 .talk 44919
 .learn Expert Riding##34090
 .' You can also purchase a mount from the vendor at [49.0,59.6]
@@ -1306,7 +1306,7 @@ condition achieved(2097)
 .' |next collect |confirm
 .' |confirm
 step
-goto Orgrimmar 66.5,36.3
+goto Orgrimmar,66.5,36.3
 .talk 46637
 .buy Mechano-Hog##41508
 |next learn
@@ -1318,7 +1318,7 @@ label "collect"
 .' Once you have collected these items, you will need to collect 3 more, which come from vendors.
 |confirm
 step
-goto Vale of Eternal Blossoms/0 64.1,41.4
+goto Vale of Eternal Blossoms/0,64.1,41.4
 .talk 61650
 .buy 1 Salvaged Iron Golem Parts##44499 |tip 3,000 gold
 .buy 8 Goblin-Machined Piston##44501 |tip 8,000 gold
@@ -1342,43 +1342,43 @@ condition achieved(4827)
 .' In order to earn this achievement, you will need to visit the places that Deathwing had the most effect on during Cataclysm.
 |confirm
 step
-goto Durotar/0 38.8,38.5
+goto Durotar/0,38.8,38.5
 .' Southfury Watershed in Durotar /7
 step
-goto Ashenvale/0 48.2,53.5
+goto Ashenvale/0,48.2,53.5
 .' Thunder Peak in Ashenvale /6
 step
-goto Darkshore/0 38.6,45.3
+goto Darkshore/0,38.6,45.3
 .' The Ruins of Auberdine in Darkshore /4
 step
-goto Southern Barrens/0 45.5,70.3
+goto Southern Barrens/0,45.5,70.3
 .' The Battlescar in Southern Barrens /1
 step
-goto Desolace/0 57.5,54.3
+goto Desolace/0,57.5,54.3
 .' Cenarion Wildlands in Desolace /8
 step
-goto Thousand Needles/0 74.4,82.1
+goto Thousand Needles/0,74.4,82.1
 .' The Shimmering Deep in Thousand Needles /9
 step
-goto Tanaris/0 37.7,78.9
+goto Tanaris/0,37.7,78.9
 .' The Valley of the Watchers in Tanaris /5
 step
-goto Northern Stranglethorn 50.4,66.5
+goto Northern Stranglethorn,50.4,66.5
 .' The Sundering in Stranglethorn |achieve 4827/2
 step
-goto Westfall/0 38.5,42.3
+goto Westfall/0,38.5,42.3
 .' The Raging Chasm in Westfall |achieve 4827/11
 step
-goto Badlands/0 43.4,42.5
+goto Badlands/0,43.4,42.5
 .' The Scar of the Worldbreaker in Badlands /3
 step
-goto Loch Modan/0 42.0,11.3
+goto Loch Modan/0,42.0,11.3
 .' The Stonewrought Dam in Loch Modan /12
 step
-goto Hillsbrad Foothills/0 51.3,71.4
+goto Hillsbrad Foothills/0,51.3,71.4
 .' Ruins of Southshore in Hillsbrad Foothills /13
 step
-goto Ruins of Gilneas/0 60.2,10.5
+goto Ruins of Gilneas/0,60.2,10.5
 .' The Greymane Wall in Silverpine /10
 step
 .' Congratulations, you have earned the _Surveying the Damage_ achievement.
@@ -1390,12 +1390,12 @@ step
 'This achievement will require you to kill 50 rookery whelps within 15 seconds.
 |confirm
 step
-goto Blackrock Spire/6 33.1,27.1
+goto Blackrock Spire/6,33.1,27.1
 .click Blackrock Altar##04076
 .kill Pyroguard Emberseer##9816 |n
 |confirm
 step
-goto Blackrock Spire/6 30.8,35.0
+goto Blackrock Spire/6,30.8,35.0
 .from 50 Rookery Whelp##10161+ |achieve 2188/1 |tip You have 15 seconds from the first kill to get the rest of the 50.
 step
 'Congratulations! You have earned the Title _Jenkins_!!
@@ -1557,7 +1557,7 @@ title +Hunting down quests
 step
 label "TheGreenHills"
 title +The Green Hills of Stranglethorn
-goto Northern Stranglethorn 44.3,22.1
+goto Northern Stranglethorn,44.3,22.1
 .talk 716
 ..accept 583
 step
@@ -2023,7 +2023,7 @@ description Complete the Green Hills of Stranglethorn questline.
 step
 condition achieved(940)
 title +The Green Hills of Stranglethorn
-goto Northern Stranglethorn 44.3,22.1
+goto Northern Stranglethorn,44.3,22.1
 .talk 716
 ..accept 583
 step
@@ -3359,7 +3359,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Achievements Guides\\Quest Achiev
 description Complete the D.E.H.T.A. questline in Borean Tundra
 step
 condition achieved(561)
-goto Borean Tundra 57,44.3
+goto Borean Tundra,57,44.3
 .talk 25809
 ..accept 11864 |instant
 ..accept 11866
@@ -3829,7 +3829,7 @@ step
 .learn Captain Rumsey's Lager##45695 |use Recipe: Captain Rumsey's Lager##34834
 step
 label "create"
-goto Thousand Needles 76.5,74.8
+goto Thousand Needles,76.5,74.8
 .talk 40832
 .buy 1 Flagon of Mead##2594
 .buy 1 Skin of Dwarven Stout##2596
@@ -3956,11 +3956,11 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Achievements Guides\\Profession A
 description Successfully fish each of the junk nodes.
 step
 condition achieved(1257)
-goto Zangarmarsh 57.0,56.0
+goto Zangarmarsh,57.0,56.0
 .' Look for Steam Pump Flotsam in the water around this area and fish from it |cast Fishing##7620
 .' Fish from Steam Pump Flotsam |achieve 1257/1
 step
-goto Orgrimmar 67.4,38.2
+goto Orgrimmar,67.4,38.2
 .' Look for Floating Wreckage around this area |tip You may have to fish from other pools to get this to show up |cast Fishing##7620
 .' Fish from Floating Wreckage |achieve 1257/5
 step
@@ -3968,11 +3968,11 @@ goto Feralas,63.1,51.5
 .' Look for Waterlogged Wreckage around this area |tip You may have to fish from other pools to get this to show up |cast Fishing##7620
 .' Fish from Waterlogged Wreckage |achieve 1257/4
 step
-goto Northern Stranglethorn 55.0,64.0
+goto Northern Stranglethorn,55.0,64.0
 .' Look for Schooner Wreckage around this area |tip You may need to fish from other pools to get this to show up |cast Fishing##7620
 .' Fish from Schooner Wreckage |achieve 1257/3
 step
-goto The Cape of Stranglethorn 30.9,81.5
+goto The Cape of Stranglethorn,30.9,81.5
 .' Look for Bloodsail Wreckage around this area |tip You may need to fish from other pools to get this to show up |cast Fishing##7620
 .' Fish from Bloodsail Wreckage |achieve 1257/2
 step
@@ -3988,7 +3988,7 @@ goto Orgrimmar,24.8,62.8
 .' Use your fishing skill in the pond |cast Fishing##7620
 .' Fish in Orgrimmar |achieve 150/1
 step
-goto Stormwind City 69.0,92.2
+goto Stormwind City,69.0,92.2
 .' Use your fishing skill in the moat in front of Stormwind City |cast Fishing##7620
 .' Fish in Stormwind City |achieve 150/2
 step
@@ -4907,7 +4907,7 @@ INSTANCE // // TIME PER RUN
 //COMPLETE
 //-------------------------------
 //Scarlet Monastery (6m 1s)
-		goto Scarlet Monastery/1 75.7,45.8
+		goto Scarlet Monastery/1,75.7,45.8
 		'Run through the Scarlet Monastery dungeon, killing all mobs along the way.
 		..collect 60 Soul Dust##11083
 		..collect 10 Lesser Mystic Essence##11134
@@ -4918,7 +4918,7 @@ INSTANCE // // TIME PER RUN
 		..collect 50 Stormwind Brie##1707
 //Scarlet Halls (5m 36s)
 	step
-		goto Scarlet Halls/1 34.3,90.1
+		goto Scarlet Halls/1,34.3,90.1
 		'Run through the Scarlet Halls dungeon, killing all mobs along the way.
 		..collect 32 Greater Astral Essence##11082
 		..collect 86 Soul Dust##11083
@@ -4931,7 +4931,7 @@ INSTANCE // // TIME PER RUN
 		..collect 139 Ruined Pelt##4865
 //Scholomance (7m 29s)
 	step
-		goto Scholomance/1 18.1,60.9
+		goto Scholomance/1,18.1,60.9
 		'Run through the Scholomance dungeon, killing all mobs along the way.
 		..collect 48 Small Radiant Shard##11177
 		..collect 88 Vision Dust##11137
@@ -4942,7 +4942,7 @@ INSTANCE // // TIME PER RUN
 		..collect 144 Bone Fragments##22526
 //Stratholme (9m 48s)
 	step
-		goto Stratholme/1 68.02,88.46
+		goto Stratholme/1,68.02,88.46
 		'Run through the Stratholme dungeon, killing all mobs along the way.
 		..collect 42 Large Radiant Shard##11178
 		..collect 24 Vision Dust##11137
@@ -4961,7 +4961,7 @@ INSTANCE // // TIME PER RUN
 		..collect 102 Fine Aged Cheddar##3927
 //Shadowfang Keep (9m 47s)
 	step
-		goto Shadowfang Keep 69.46,60.97
+		goto Shadowfang Keep,69.46,60.97
 		'Run through the Scholomance dungeon, killing all mobs along the way.
 		..collect 78 Strange Dust##10940
 		..collect 18 Greater Magic Essence##10939
@@ -4975,7 +4975,7 @@ INSTANCE // // TIME PER RUN
 		..collect 24 Spongy Morel##4606
 //Stockade (4m 16s)
 	step
-		goto The Stockade 50.1,68.1
+		goto The Stockade,50.1,68.1
 		'Run through the Scholomance dungeon, killing all mobs along the way.
 		..collect 56 Small Glimmering Shard##10978
 		..collect 140 Strange Dust##10940
@@ -4993,7 +4993,7 @@ INSTANCE // // TIME PER RUN
 		..collect 84 Lesser Mana Potion##3385
 //The Deadmines (7m 16s)
 	step
-		goto The Deadmines/1 26.5,13.4
+		goto The Deadmines/1,26.5,13.4
 		'Run through the Deadmines dungeon, killing all mobs along the way.
 		..collect 149 Strange Dust##10940
 		..collect 33 Greater Magic Essence##10939
@@ -5009,7 +5009,7 @@ INSTANCE // // TIME PER RUN
 		..collect 41 Ice Cold Milk##1179
 //Gnomeregan (14m 11s)
 	step
-		goto Gnomeregan 64.33,28.96
+		goto Gnomeregan,64.33,28.96
 		'Run through the Deadmines dungeon, killing all mobs along the way.
 		..collect 17 Large Glimmering Shard##11084
 		..collect 25 Vision Dust##11137
@@ -5024,7 +5024,7 @@ INSTANCE // // TIME PER RUN
 		..collect 8 Healing Potion##929
 //Uldaman (9m 20s)
 	step
-		goto Uldaman 67.03,72.71
+		goto Uldaman,67.03,72.71
 		'Run through the Uldaman dungeon, killing all mobs along the way.
 		..collect 13 Greater Mystic Essence##11135
 		..collect 84 Vision Dust##11137
@@ -5044,7 +5044,7 @@ INSTANCE // // TIME PER RUN
 		..collect 26 Broken Basilisk Teeth##11384
 //Blackrock Depths (12m 55s) 4.65
 	step
-		goto Blackrock Depths 34.7,77.8
+		goto Blackrock Depths,34.7,77.8
 		'Run through the Blackrock Depths dungeon, killing all mobs along the way.
 		..collect 153 Illusion Dust##16204
 		..collect 37 Large Brilliant Shard##14344
@@ -5066,7 +5066,7 @@ INSTANCE // // TIME PER RUN
 		..collect 42 Roasted Quail##8952
 //Blackrock Spire (12m 4s) 4.97
 	step
-		goto Blackrock Spire/4 26.77,38.23
+		goto Blackrock Spire/4,26.77,38.23
 		'Run through the Blackrock Spire dungeon, killing all mobs along the way.
 		..collect 25 Greater Eternal Essence##16203
 		..collect 45 Large Brilliant Shard##14344
@@ -5080,7 +5080,7 @@ INSTANCE // // TIME PER RUN
 		..collect 10 Major Mana Potion##13444
 //The Shattered Halls (6m 27s) 9.30
 	step
-		goto The Shattered Halls/1 61.14,92.81
+		goto The Shattered Halls/1,61.14,92.81
 		'Run through the Shattered Halls dungeon, killing all mobs along the way.
 		..collect 65 Greater Planar Essence##22446
 		..collect 214 Arcane Dust##22445
@@ -5093,7 +5093,7 @@ INSTANCE // // TIME PER RUN
 		..collect 28 Purified Draenic Water##27860
 //Throne of Tides (11m 30s) 5.22
 	step
-		goto Throne of the Tides/1 49.85,88.23
+		goto Throne of the Tides/1,49.85,88.23
 		'Run through the Throne of the Tides dungeon, killing all mobs along the way.
 		..collect 31 Small Heavenly Shard##52720
 		..collect 16 Hypnotic Dust##52555
@@ -5108,7 +5108,7 @@ INSTANCE // // TIME PER RUN
 		..collect 57 Fish Oil##17058
 //The Slave Pens (7m 15s) 8.28
 	step
-		goto The Slave Pens 19.95,13.37
+		goto The Slave Pens,19.95,13.37
 		'Run through the Slave Pens dungeon, killing all mobs along the way.
 		..collect 17 Lesser Planar Essence##22447
 		..collect 25 Small Prismatic Shard##22448
@@ -5126,7 +5126,7 @@ INSTANCE // // TIME PER RUN
 		..collect 17 Filtered Draenic Water##28399
 //The Steamvault (6m 50s) 8.78
 	step
-		goto The Steamvault 17.59,29.76
+		goto The Steamvault,17.59,29.76
 		'Run through the Steamvault dungeon, killing all mobs along the way.
 		..collect 35 Large Prismatic Shard##22449
 		..collect 105 Arcane Dust##22445
@@ -5145,7 +5145,7 @@ INSTANCE // // TIME PER RUN
 		..collect 17 Death Cap Fungus##25453
 //The Underbog (8m 26s) 7.11
 	step
-		goto The Underbog 29.68,67.88
+		goto The Underbog,29.68,67.88
 		'Run through the Underbog dungeon, killing all mobs along the way.
 		..collect 28 Small Prismatic Shard##22448
 		..collect 142 Arcane Dust##22445
@@ -5165,7 +5165,7 @@ INSTANCE // // TIME PER RUN
 		..collect 107 Insect Nociceptor Sample##56206
 //Mana-Tombs (5m 51s) 10.26
 	step
-		goto Mana-Tombs 33.52,17.29
+		goto Mana-Tombs,33.52,17.29
 		'Run through the Mana Tombs dungeon, killing all mobs along the way.
 		..collect 31 Small Prismatic Shard##22448
 		..collect 92 Lesser Planar Essence##22447
@@ -5179,7 +5179,7 @@ INSTANCE // // TIME PER RUN
 		..collect 31 Filtered Draenic Water##28399
 //Auchenai Crypts (5m 58s) 10.06
 	step
-		goto Auchenai Crypts/1 44.12,75.10
+		goto Auchenai Crypts/1,44.12,75.10
 		'Run through the Auchenai Crypts dungeon, killing all mobs along the way.
 		..collect 40 Large Prismatic Shard##22449
 		..collect 50 Lesser Planar Essence##22447
@@ -5188,7 +5188,7 @@ INSTANCE // // TIME PER RUN
 		..collect 30 Mag'har Grainbread##27855
 //Sethekk Halls (4m 15s) 14.12
 	step
-		goto Sethekk Halls 73.35,36.47
+		goto Sethekk Halls,73.35,36.47
 		'Run through the Sethekk Halls dungeon, killing all mobs along the way.
 		..collect 56 Large Prismatic Shard##22449
 		..collect 42 Greater Planar Essence##22446
@@ -5204,7 +5204,7 @@ INSTANCE // // TIME PER RUN
 		..collect 56 Spirit Shard##28558
 //Shadow Labyrinth (6m 59s) 8.59
 	step
-		goto Shadow Labyrinth 22.01,12.45
+		goto Shadow Labyrinth,22.01,12.45
 		'Run through the Shadow Labyrinth dungeon, killing all mobs along the way.
 		..collect 43 Large Prismatic Shard##22449
 		..collect 34 Greater Planar Essence##22446
@@ -5219,7 +5219,7 @@ INSTANCE // // TIME PER RUN
 		..collect 69 Spirit Shard##28558
 //The Mechanar (5m 36s) 10.71
 	step
-		goto The Mechanar/1 49.41,83.51
+		goto The Mechanar/1,49.41,83.51
 		'Run through the Mechanar dungeon, killing all mobs along the way.
 		..collect 64 Large Prismatic Shard##22449
 		..collect 161 Arcane Dust##22445
@@ -5233,7 +5233,7 @@ INSTANCE // // TIME PER RUN
 		..collect 171 Sunfury Signet##30810
 //The Arcatraz (9m 2s) 6.64
 	step
-		goto The Arcatraz/1 41.26,81.70
+		goto The Arcatraz/1,41.26,81.70
 		'Run through the Arcatraz dungeon, killing all mobs along the way.
 		..collect 33 Large Prismatic Shard##22449
 		..collect 33 Arcane Dust##22445
@@ -5250,7 +5250,7 @@ INSTANCE // // TIME PER RUN
 		..collect 166 Razor Sharp Fang##25418
 //The Botanica (6m 7s) 9.81
 	step
-		goto The Botanica/1 89.59,41.09
+		goto The Botanica/1,89.59,41.09
 		'Run through the Botanica dungeon, killing all mobs along the way.
 		..collect 57 Large Prismatic Shard##22449
 		..collect 39 Greater Planar Essence##22446
@@ -5270,7 +5270,7 @@ INSTANCE // // TIME PER RUN
 		..collect 461 Lasher Blossom##18224
 //Magisters' Terrace (7m 22s) 8.14
 	step
-		goto Magisters' Terrace/2 42.53,90.01
+		goto Magisters' Terrace/2,42.53,90.01
 		'Run through the Magisters' Terrace dungeon, killing all mobs along the way.
 		..collect 16 Void Crystal##22450
 		..collect 33 Large Prismatic Shard##22449
@@ -5284,7 +5284,7 @@ INSTANCE // // TIME PER RUN
 		..collect 16 Purified Draenic Water##27860
 //The Oculus (8m 24s) 7.14
 	step
-		goto The Oculus 61.30,47.58
+		goto The Oculus,61.30,47.58
 		'Run through the Oculus dungeon, killing all mobs along the way.
 		..collect 36 Dream Shard##34052
 		..collect 7 Greater Cosmic Essence##34055
@@ -5305,7 +5305,7 @@ INSTANCE // // TIME PER RUN
 		..collect 14 Efflorescing Shards##39513
 //Azjol-Nerub (4m 4s) 14.75
 	step
-		goto Azjol-Nerub/3 9.44,93.32
+		goto Azjol-Nerub/3,9.44,93.32
 		'Run through the Azjol-Nerub dungeon, killing all mobs along the way.
 		..collect 44 Small Dream Shard##34053
 		..collect 29 Lesser Cosmic Essence##34056
@@ -5315,7 +5315,7 @@ INSTANCE // // TIME PER RUN
 		..collect 14 Thick Fur Clothing Scraps##43852
 //Ahn'Kahet: The Old Kingdom (6m 57s) 8.63
 	step
-		goto Ahn'kahet: The Old Kingdom 88.99,79.12
+		goto Ahn'kahet: The Old Kingdom,88.99,79.12
 		'Run through the Ahn'Kahet: The Old Kingdom dungeon, killing all mobs along the way.
 		..collect 35 Dream Shard##34052
 		..collect 17 Lesser Cosmic Essence##34056
@@ -5329,7 +5329,7 @@ INSTANCE // // TIME PER RUN
 		..collect 52 Icy Fang##33630
 //The Violet Hold (7m 39s) 7.84
 	step
-		goto The Violet Hold 46.15,98.03
+		goto The Violet Hold,46.15,98.03
 		'Run through the Violet Hold dungeon, killing all mobs along the way.
 		..collect 55 Dream Shard##34052
 		..collect 63 Infinite Dust##34054
@@ -5338,7 +5338,7 @@ INSTANCE // // TIME PER RUN
 		..collect 71 Thick Fur Clothing Scraps##43852
 //Forge of Souls (6m 12s) 9.68
 	step
-		goto The Forge of Souls 66.05,88.89
+		goto The Forge of Souls,66.05,88.89
 		'Run through the Forge of Souls dungeon, killing all mobs along the way.
 		..collect 29 Abyss Crystal##34057
 		..collect 58 Infinite Dust##34054
@@ -5349,7 +5349,7 @@ INSTANCE // // TIME PER RUN
 		..collect 19 Thick Fur Clothing Scraps##43852
 //Pit of Saron (8m 53s) 6.75
 	step
-		goto Pit of Saron 40.91,80.52
+		goto Pit of Saron,40.91,80.52
 		'Run through the Pit of Saron dungeon, killing all mobs along the way.
 		..collect 27 Abyss Crystal##34057
 		..collect 7 Greater Cosmic Essence##34055
@@ -5361,7 +5361,7 @@ INSTANCE // // TIME PER RUN
 		..collect 13 Sparkling Frostcap##35947
 //Halls of Reflection (10m 48s) 5.56
 	step
-		goto Halls of Reflection 47.33,80.81
+		goto Halls of Reflection,47.33,80.81
 		'Run through the Halls of Reflection dungeon, killing all mobs along the way.
 		..collect 22 Abyss Crystal##34057
 		..collect 78 Infinite Dust##34054
@@ -5371,7 +5371,7 @@ INSTANCE // // TIME PER RUN
 		..collect 11 Sparkling Frostcap##35947
 //Halls of Stone (11m 58s) 5
 	step
-		goto Halls of Stone 34.4,36.2
+		goto Halls of Stone,34.4,36.2
 		'Run through the Halls of Stone dungeon, killing all mobs along the way.
 		..collect 30 Dream Shard##34052
 		..collect 5 Small Dream Shard##34053
@@ -5385,7 +5385,7 @@ INSTANCE // // TIME PER RUN
 		..collect 15 Salted Venison##33454
 //Halls of Lightning (8m 8s) 7.38
 	step
-		goto Halls of Lightning 7.38,53.81
+		goto Halls of Lightning,7.38,53.81
 		'Run through the Halls of Lightning dungeon, killing all mobs along the way.
 		..collect 59 Dream Shard##34052 (5 from bosses)
 		..collect 66 Greater Cosmic Essence##34055
@@ -5404,7 +5404,7 @@ INSTANCE // // TIME PER RUN
 		..collect 30 Salted Venison##33454
 //Drak'Tharon Keep (6m 28s) 9.28
 	step
-		goto Drak'Tharon Keep 29.38,80.96
+		goto Drak'Tharon Keep,29.38,80.96
 		'Run through the Drak'tharon Keep dungeon, killing all mobs along the way.
 		..collect 37 Dream Shard##34052
 		..collect 130 Infinite Dust##34054
@@ -5424,7 +5424,7 @@ INSTANCE // // TIME PER RUN
 		..collect 28 Blood-Soaked Raptor War Feather##44783
 //Utgarde Pinnacle (9m 24s) 6.38
 	step
-		goto Utgarde Pinnacle 44.49,16.12
+		goto Utgarde Pinnacle,44.49,16.12
 		'Run through the Utgarde Pinnacle dungeon, killing all mobs along the way.
 		..collect 32 Dream Shard##34052
 		..collect 70 Infinite Dust##34054
@@ -5437,7 +5437,7 @@ INSTANCE // // TIME PER RUN
 		..collect 115 Serrated Fang##39211
 //Utgarde Keep (6m 33s) 9.16
 	step
-		goto Utgarde Keep 69.27,73.00
+		goto Utgarde Keep,69.27,73.00
 		'Run through the Utgarde Keep dungeon, killing all mobs along the way.
 		..collect 37 Small Dream Shard##34053
 		..collect 55 Lesser Cosmic Essence##34056
@@ -5454,7 +5454,7 @@ INSTANCE // // TIME PER RUN
 		..collect 165 Caustic Claw##39532
 //Blackrock Caverns (9m 13s) 6.51
 	step
-		goto Blackrock Caverns 32.02,70.10
+		goto Blackrock Caverns,32.02,70.10
 		'Run through the Blackrock Caverns dungeon, killing all mobs along the way.
 		..collect 33 Hypnotic Dust##52555
 		..collect 46 Small Heavenly Shard##52720
@@ -5465,7 +5465,7 @@ INSTANCE // // TIME PER RUN
 		..collect 26 Roasted Beef##58268
 //Lost City of the Tol'vir (10m 35s) 5.67
 	step
-		goto Lost City of the Tol'vir 31.78,16.78
+		goto Lost City of the Tol'vir,31.78,16.78
 		'Run through the Lost City of Tol'vir dungeon, killing all mobs along the way.
 		..collect 28 Heavenly Shard##52721
 		..collect 17 Lesser Celestial Essence##52718
@@ -5478,7 +5478,7 @@ INSTANCE // // TIME PER RUN
 		..collect 40 Ruined Embersilk Scraps##68198
 //The Vortex Pinnacle (10M 34S) 5.68
 	step
-		goto The Vortex Pinnacle 54.12,16.81
+		goto The Vortex Pinnacle,54.12,16.81
 		'Run through the Vortex Pinnacle dungeon, killing all mobs along the way.
 		..collect 102 Hypnotic Dust##52555
 		..collect 11 Lesser Celestial Essence##52718
@@ -5487,7 +5487,7 @@ INSTANCE // // TIME PER RUN
 		..collect 57 Volatile Air##52328
 //Grim Batol (13m 31s) 4.44
 	step
-		goto Grim Batol 12.15,55.67
+		goto Grim Batol,12.15,55.67
 		'Run through the Grim Batol dungeon, killing all mobs along the way.
 		..collect 27 Heavenly Shard##52721
 		..collect 80 Hypnotic Dust##52555
@@ -5501,7 +5501,7 @@ INSTANCE // // TIME PER RUN
 		..collect 22 Roasted Beef##58268
 //The Stonecore (13m 6s) 4.58
 	step
-		goto The Stonecore 54.27,93.90
+		goto The Stonecore,54.27,93.90
 		'Run through the Stonecore dungeon, killing all mobs along the way.
 		..collect 32 Small Heavenly Shard##52720
 		..collect 32 Hypnotic Dust##52555
@@ -5513,7 +5513,7 @@ INSTANCE // // TIME PER RUN
 		..collect 18 Roasted Beef##58268
 //Ragefire Chasm (3m00s)
 	step
-		goto Ragefire Chasm 62.41,7.88
+		goto Ragefire Chasm,62.41,7.88
 		'Run through the Ragefire Chasm dungeon, killing all mobs along the way.
 		..collect 100 Small Glimmering Shard##10978
 		..collect 60 Strange Dust##10940
@@ -5523,7 +5523,7 @@ INSTANCE // // TIME PER RUN
 		..collect 40 Haunch of Meat##2287
 //Wailing Caverns (9m 11s) 6.53
 	step
-		goto Wailing Caverns 45.8,59.7
+		goto Wailing Caverns,45.8,59.7
 		'Run through the Wailing Caverns dungeon, killing all mobs along the way.
 		..collect 170 Strange Dust##10940
 		..collect 46 Small Glimmering Shard##10978
@@ -5545,7 +5545,7 @@ INSTANCE // // TIME PER RUN
 		..collect 39 Forest Mushroom Cap##4604
 //The Blood Furnace (8m30s) 7.06
 	step
-		goto The Blood Furnace/1 47.75,90.56
+		goto The Blood Furnace/1,47.75,90.56
 		'Run through the Blood Furnace dungeon, killing all mobs along the way.
 		..collect 28 Small Prismatic Shard##22448
 		..collect 99 Arcane Dust##22445
@@ -5556,7 +5556,7 @@ INSTANCE // // TIME PER RUN
 		..collect 21 Morning Glory Dew##8766
 //Gundrak (8m43s) 6.88
 	step
-		goto Gundrak 58.99,30.92
+		goto Gundrak,58.99,30.92
 		'Run through the Gundrak dungeon, killing all mobs along the way.
 		..collect 41 Dream Shard##34052
 		..collect 41 Infinite Dust##34054
@@ -5569,7 +5569,7 @@ INSTANCE // // TIME PER RUN
 		..collect 55 Thick Fur Clothing Scraps##43852
 //Razorfen Kraul (7m 10s) 8.37
 	step
-		goto Razorfen Kraul 69.89,82.97
+		goto Razorfen Kraul,69.89,82.97
 		'Run through the Razorfen Kraul dungeon, killing all mobs along the way.
 		..collect 59 Small Glowing Shard##11138
 		..collect 42 Soul Dust##11083
@@ -5587,7 +5587,7 @@ INSTANCE // // TIME PER RUN
 		..collect 25 Bat Heart##11394
 //Razorfen Downs (8m 48s) 6.82
 	step
-		goto Razorfen Downs 23.79,18.80
+		goto Razorfen Downs,23.79,18.80
 		'Run through the Razorfen Downs dungeon, killing all mobs along the way.
 		..collect 116 Vision Dust##11137
 		..collect 27 Lesser Nether Essence##11174
@@ -5610,7 +5610,7 @@ INSTANCE // // TIME PER RUN
 		..collect 75 Greater Mana Potion##6149
 //Blackfathom Deeps (7m 38s) 7.86
 	step
-		goto Blackfathom Deeps 44.29,10.66
+		goto Blackfathom Deeps,44.29,10.66
 		'Run through the Blackfathom Depths dungeon, killing all mobs along the way.
 		..collect 31 Lesser Astral Essence##10998
 		..collect 55 Small Glimmering Shard##10978
@@ -5632,7 +5632,7 @@ INSTANCE // // TIME PER RUN
 		..collect 24 Slimy Murloc Scale##5784
 //Zul'Farrak (10m 2s) 5.98
 	step
-		goto Zul'Farrak 56.60,90.95
+		goto Zul'Farrak,56.60,90.95
 		'Run through the Zul'Farrak dungeon, killing all mobs along the way.
 		..collect 6 Greater Nether Essence##11175
 		..collect 42 Large Prismatic Shard##22449

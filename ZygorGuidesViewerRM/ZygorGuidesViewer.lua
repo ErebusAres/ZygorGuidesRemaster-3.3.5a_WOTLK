@@ -4105,7 +4105,8 @@ function me:GoalOnClick(goalframe,button)
 				end
 			end
 			local max = self.maxQuestLevels[goal.questid]
-			self:Print("Quest \""..goal.quest.."\" (#"..tostring(goal.questid).."): done at level "..tostring(goal.parentStep.level)..", reaches to level "..tostring(max))
+			local qname = goal.quest or (goal.questid and tostring(goal.questid)) or "?"
+			self:Print("Quest \""..qname.."\" (#"..tostring(goal.questid).."): done at level "..tostring(goal.parentStep.level)..", reaches to level "..tostring(max))
 			local mentioned = me:GetMentionedFollowups(goal.questid)
 			if #mentioned>1 then
 				local s=""

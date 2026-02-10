@@ -127,6 +127,13 @@ ZGV.ConditionEnv = {
 	-- variables needing update
 	level=1,
 	ZGV=ZGV,
+	achieved = function(id)
+		if ZGV.GetAchievementStatus then
+			return ZGV:GetAchievementStatus(id)
+		end
+		local _, _, _, completed = GetAchievementInfo(id)
+		return completed
+	end,
 
 	_Update = function()
 		ZGV.ConditionEnv.level = UnitLevel("player")
