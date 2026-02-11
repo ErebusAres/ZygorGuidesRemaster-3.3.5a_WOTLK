@@ -23,9 +23,9 @@ local REMASTER_LAYOUT = {
 	MIN_STEP_HEIGHT = 18,
 	LINE_HEIGHT = 14,
 	ICON_SIZE = 16,
-	SECTION_FONT = "Interface\\AddOns\\ZygorGuidesViewer\\Skins\\segoeuib.ttf",
+	SECTION_FONT = "Interface\\AddOns\\ZygorGuidesViewerRM\\Skins\\segoeuib.ttf",
 	SECTION_FONT_SIZE = 13,
-	LINE_FONT = "Interface\\AddOns\\ZygorGuidesViewer\\Skins\\segoeui.ttf",
+	LINE_FONT = "Interface\\AddOns\\ZygorGuidesViewerRM\\Skins\\segoeui.ttf",
 	LINE_FONT_SIZE = 11,
 }
 
@@ -61,7 +61,7 @@ local function CaptureDefaultLayout()
 		MIN_STEP_HEIGHT = ZGV.MIN_STEP_HEIGHT,
 		LINE_HEIGHT = 12,
 		ICON_SIZE = 14,
-		SECTION_FONT = "Interface\\Addons\\ZygorGuidesViewer\\skin\\antiquen.ttf",
+		SECTION_FONT = STANDARD_TEXT_FONT,
 		SECTION_FONT_SIZE = 11,
 	}
 end
@@ -638,7 +638,15 @@ function ZygorGuidesViewerFrame_OnLoad(self)
 	ZygorGuidesViewerFrame_Skipper_PrevButton:RegisterForClicks("LeftButtonUp", "RightButtonUp")
 	ZygorGuidesViewerFrame_Skipper_NextButton:RegisterForClicks("LeftButtonUp", "RightButtonUp")
 
-	ZygorGuidesViewerFrame_Border_SectionTitle:SetFont("Interface\\Addons\\ZygorGuidesViewer\\skin\\antiquen.ttf",11)
+	if ZGV and ZGV.db and ZGV.db.profile and ZGV.db.profile.skin == "remaster" then
+		SafeSetFont(ZygorGuidesViewerFrame_Border_SectionTitle, REMASTER_LAYOUT.SECTION_FONT, REMASTER_LAYOUT.SECTION_FONT_SIZE)
+	else
+		local ok = pcall(ZygorGuidesViewerFrame_Border_SectionTitle.SetFontObject, ZygorGuidesViewerFrame_Border_SectionTitle, "GameFontNormalSmall")
+		if not ok then
+			SafeSetFont(ZygorGuidesViewerFrame_Border_SectionTitle, STANDARD_TEXT_FONT, 11)
+		end
+		EnsureFont(ZygorGuidesViewerFrame_Border_SectionTitle, 11)
+	end
 	--ZygorGuidesViewerFrame_Skipper_Step:SetFont("Interface\\Addons\\ZygorGuidesViewer\\skin\\VinerHandITC.ttf",14)
 	--ZygorGuidesViewerFrame_Border_SectionTitle:SetJustifyV("MIDDLE")
 
