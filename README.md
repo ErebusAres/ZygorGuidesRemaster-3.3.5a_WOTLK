@@ -10,17 +10,27 @@ This is a remastered UI/UX fork of Zygor Guides Viewer for **World of Warcraft 3
 - New remaster skins including **Goals** theme.
 
 ## Installation
-1. Download or clone this repo.
-2. Copy the folder **`ZygorGuidesViewerRM`** into your WoW AddOns directory:
+1. Exit World of Warcraft completely.
+2. Open your AddOns folder:
+   - `%WoWFolder%\Interface\AddOns\`
+3. Remove any existing Zygor folders:
+   - Delete `ZygorGuidesViewer`
+   - (Optional but recommended) Delete `ZygorTalentAdvisor` to avoid leftover files or confusion.
+4. Download or clone this repository.
+5. Copy the folder **`ZygorGuidesViewerRM`** into your AddOns directory:
    - `%WoWFolder%\Interface\AddOns\ZygorGuidesViewerRM`
-3. Start the game and enable **Zygor Guides Viewer Remastered** in the AddOns list.
-4. Remove the original Zygor Guides Viewer folder from your AddOns directory.
-5. Install this remaster fresh to avoid conflicts.
+6. (Optional) Install `ZygorTalentAdvisor`:
+   - You may copy the `ZygorTalentAdvisor` folder into the AddOns directory.
+   - It can be installed over an existing version, or you can delete the old folder first for a clean install.
+7. Start the game and enable:
+   - **Zygor Guides Viewer Remastered**
+   - **Zygor Talent Advisor** (optional)
+
 
 ## Notes
 - This project is designed for **WotLK 3.3.5a (build 12340)**.
 - This remaster focuses on UI/UX and guide organization for 3.3.5a; core logic is preserved.
-- The old `ZygorTalentAdvisor` folder is not required for the remaster.
+- `ZygorTalentAdvisor` is included for convenience. It has not been modified and is provided only to consolidate the addon package.
 
 ## Known Issues
 - Some imported guides may be incomplete or require content beyond 3.3.5a; if a guide behaves oddly, disable it in `Guides/Autoload.xml` and report the issue.
