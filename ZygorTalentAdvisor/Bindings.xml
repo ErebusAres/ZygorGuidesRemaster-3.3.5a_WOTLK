@@ -1,0 +1,16 @@
+<Bindings>
+  <Binding name="ZYGORTALENTADVISOR_OPENPOPUP" description="Toggle Zygor Talent Advisor" header="ZYGORTALENTADVISOR">
+<![CDATA[
+	if ( UnitLevel("player") < SHOW_TALENT_LEVEL ) then
+		return;
+	end
+	if not ZygorTalentAdvisorPopout:IsVisible() then
+		-- show it
+		ZygorTalentAdvisorPopout_Popout()
+	else
+		-- hide it
+		ZygorTalentAdvisorPopout:Hide()
+	end
+]]>
+  </Binding>
+</Bindings>

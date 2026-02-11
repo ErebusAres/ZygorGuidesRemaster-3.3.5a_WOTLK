@@ -1,0 +1,324 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ D:\UI.xsd">
+	<Script file="Popout.lua"/>
+	<Frame name="ZygorTalentAdvisorPopout" parent="UIParent" movable="true" clampedToScreen="true" hidden="true" frameStrata="MEDIUM" toplevel="true" enableMouse="true">
+		<Size x="250" y="300"/>
+
+		<Scripts>
+			<OnShow function="ZygorTalentAdvisorPopout_OnShow"/>
+			<OnHide function="ZygorTalentAdvisorPopout_OnHide"/>
+			<OnUpdate function="ZygorTalentAdvisorPopout_OnUpdate"/>
+			<OnLoad function="ZygorTalentAdvisorPopout_OnLoad"/>
+			<!-- OnDragStart function="ZygorTalentAdvisorPopout_OnDragStart"/> -->
+			<!-- OnDragStop function="ZygorTalentAdvisorPopout_OnDragStop"/> -->
+			<OnMouseDown></OnMouseDown>
+		</Scripts>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentTitleBG" file="Interface\PaperDollInfoFrame\UI-GearManager-Title-Background">
+					<Anchors>
+						<Anchor point="TOPLEFT"><Offset x="9" y="-6"/></Anchor>
+						<Anchor point="BOTTOMRIGHT" relativePoint="TOPRIGHT"><Offset x="-28" y="-24"/></Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentDialogBG" file="Interface\Tooltips\UI-Tooltip-Background">
+					<Anchors>
+						<Anchor point="TOPLEFT"><Offset x="8" y="-24"/></Anchor>
+						<Anchor point="BOTTOMRIGHT"><Offset x="-6" y="8"/></Anchor>
+					</Anchors>
+					<Color r="0" g="0" b="0" a=".85"/>
+				</Texture>
+			</Layer>
+			<Layer level="BORDER">
+				<Texture name="$parentTopLeft" file="Interface\PaperDollInfoFrame\UI-GearManager-Border">
+					<Animations>
+						<AnimationGroup>
+							
+						</AnimationGroup>
+					</Animations>
+					<Size x="64" y="64"/>
+					<Anchors>
+						<Anchor point="TOPLEFT"/>
+					</Anchors>
+					<TexCoords left="0.501953125" right="0.625" top="0" bottom="1"/>
+				</Texture>			
+				<Texture name="$parentTopRight" file="Interface\PaperDollInfoFrame\UI-GearManager-Border">
+					<Size x="64" y="64"/>
+					<Anchors>
+						<Anchor point="TOPRIGHT"/>
+					</Anchors>
+					<TexCoords left="0.625" right="0.75" top="0" bottom="1"/>
+				</Texture>
+				<Texture name="$parentTop" file="Interface\PaperDollInfoFrame\UI-GearManager-Border">
+					<Size x="0" y="64"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentTopLeft" relativePoint="TOPRIGHT"/>
+						<Anchor point="TOPRIGHT" relativeTo="$parentTopRight" relativePoint="TOPLEFT"/>
+					</Anchors>
+					<TexCoords left="0.25" right="0.369140625" top="0" bottom="1"/>
+				</Texture>
+				<Texture name="$parentBottomLeft" file="Interface\PaperDollInfoFrame\UI-GearManager-Border">
+					<Size x="64" y="64"/>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT"/>
+					</Anchors>
+					<TexCoords left="0.751953125" right="0.875" top="0" bottom="1"/>
+				</Texture>			
+				<Texture name="$parentBottomRight" file="Interface\PaperDollInfoFrame\UI-GearManager-Border">
+					<Size x="64" y="64"/>
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT"/>
+					</Anchors>
+					<TexCoords left="0.875" right="1" top="0" bottom="1"/>
+				</Texture>
+				<Texture name="$parentBottom" file="Interface\PaperDollInfoFrame\UI-GearManager-Border">
+					<Size x="0" y="64"/>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" relativeTo="$parentBottomLeft" relativePoint="BOTTOMRIGHT"/>
+						<Anchor point="BOTTOMRIGHT" relativeTo="$parentBottomRight" relativePoint="BOTTOMLEFT"/>
+					</Anchors>
+					<TexCoords left="0.376953125" right="0.498046875" top="0" bottom="1"/>
+				</Texture>
+				<Texture name="$parentLeft" file="Interface\PaperDollInfoFrame\UI-GearManager-Border">
+					<Size x="64" y="0"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentTopLeft" relativePoint="BOTTOMLEFT"/>
+						<Anchor point="BOTTOMLEFT" relativeTo="$parentBottomLeft" relativePoint="TOPLEFT"/>
+					</Anchors>
+					<TexCoords left="0.001953125" right="0.125" top="0" bottom="1"/>
+				</Texture>
+				<Texture name="$parentRight" file="Interface\PaperDollInfoFrame\UI-GearManager-Border">
+					<Size x="64" y="0"/>
+					<Anchors>
+						<Anchor point="TOPRIGHT" relativeTo="$parentTopRight" relativePoint="BOTTOMRIGHT"/>
+						<Anchor point="BOTTOMRIGHT" relativeTo="$parentBottomRight" relativePoint="TOPRIGHT"/>
+					</Anchors>
+					<TexCoords left="0.1171875" right="0.2421875" top="0" bottom="1"/>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<FontString name="$parentTitle" inherits="GameFontNormal" text="Zygor Talent Advisor">
+					<Anchors>
+						<Anchor point="TOPLEFT"><Offset x="12" y="-8"/></Anchor>
+						<Anchor point="TOPRIGHT"><Offset x="-32" y="-8"/></Anchor>
+					</Anchors>
+				</FontString>
+				
+				<FontString name="$parentBuildLabel" parentKey="buildLabel" inherits="GameFontNormalSmall" text="" justifyH="LEFT" justifyV="TOP">
+					<Anchors>
+						<Anchor point="TOPLEFT"><Offset x="12" y="-29"/></Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentBuild" parentKey="build" inherits="GameFontHighlight" text="" justifyH="LEFT" justifyV="TOP">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativePoint="TOPRIGHT" relativeTo="$parentBuildLabel"><Offset x="5" y="1"/></Anchor>
+						<Anchor point="BOTTOMRIGHT" relativePoint="TOPRIGHT"><Offset x="-20" y="-50"/></Anchor>
+					</Anchors>
+				</FontString>
+
+				<FontString name="$parentSuggestionLabel" parentKey="suggestionLabel" inherits="GameFontNormalSmall" text="" justifyV="TOP" justifyH="LEFT">
+					<Size y="100"/>
+					<Anchors>
+						<Anchor point="TOPLEFT"><Offset x="10" y="-50"/></Anchor>
+						<Anchor point="TOPRIGHT"><Offset x="-10" y="-50"/></Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentCloseButton" inherits="UIPanelCloseButton">
+				<Size x="32" y="32"/>
+				<Anchors>
+					<Anchor point="TOPRIGHT"><Offset x="2" y="1"/></Anchor>
+				</Anchors>
+			</Button>
+			<ScrollFrame name="$parentScroll" parentKey="scroll" inherits="UIPanelScrollFrameTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT"><Offset x="15" y="-70"/></Anchor>
+					<Anchor point="BOTTOMRIGHT"><Offset x="-35" y="70"/></Anchor>
+				</Anchors>
+
+				<Frames>
+					<Frame>
+						<Anchors>
+							<Anchor point="TOPLEFT"><Offset x="-5" y="3"/></Anchor>
+							<Anchor point="BOTTOMRIGHT"><Offset x="25" y="-3"/></Anchor>
+						</Anchors>
+						<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border">
+							<TileSize val="10"/>
+							<EdgeSize val="10"/>
+						</Backdrop>
+					</Frame>
+				</Frames>
+
+				<ScrollChild>
+					<Frame name="$parentChild" parentKey="child">
+						<Size x="200" y="1"/>
+						<Anchors>
+							<Anchor point="TOPLEFT"/>
+							<Anchor point="BOTTOMRIGHT"/>
+						</Anchors>
+						<Layers>
+							<Layer level="OVERLAY">
+								<FontString name="$parentGroup1" parentKey="group1" inherits="GameFontHighlightLarge" text="grp1" justifyH="LEFT" justifyV="TOP">
+									<Size x="200" y="0"/>
+									<Anchors><Anchor point="TOPLEFT"/></Anchors>
+								</FontString>
+								<FontString name="$parentTalents1" parentKey="talents1" inherits="GameFontNormal" text="tal1" justifyH="LEFT" justifyV="TOP">
+									<Size x="200" y="0"/>
+									<Anchors><Anchor point="TOP" relativeTo="$parentGroup1" relativePoint="BOTTOM" /></Anchors>
+								</FontString>
+								<FontString name="$parentGroup2" parentKey="group2" inherits="GameFontHighlightLarge" text="grp2" justifyH="LEFT" justifyV="TOP">
+									<Size x="200" y="0"/>
+									<Anchors><Anchor point="TOP" relativeTo="$parentTalents1" relativePoint="BOTTOM" /></Anchors>
+								</FontString>
+								<FontString name="$parentTalents2" parentKey="talents2" inherits="GameFontNormal" text="tal2" justifyH="LEFT" justifyV="TOP">
+									<Size x="200" y="0"/>
+									<Anchors><Anchor point="TOP" relativeTo="$parentGroup2" relativePoint="BOTTOM" /></Anchors>
+								</FontString>
+								<FontString name="$parentGroup3" parentKey="group3" inherits="GameFontHighlightLarge" text="grp3" justifyH="LEFT" justifyV="TOP">
+									<Size x="200" y="0"/>
+									<Anchors><Anchor point="TOP" relativeTo="$parentTalents2" relativePoint="BOTTOM" /></Anchors>
+								</FontString>
+								<FontString name="$parentTalents3" parentKey="talents3" inherits="GameFontNormal" text="tal3" justifyH="LEFT" justifyV="TOP">
+									<Size x="200" y="0"/>
+									<Anchors><Anchor point="TOP" relativeTo="$parentGroup3" relativePoint="BOTTOM" /></Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+				</ScrollChild>
+			</ScrollFrame>
+
+			<Frame name="$parentTitleDrag" enableMouse="true">
+				<Size x="230" y="20"/>
+				<Anchors>
+					<Anchor point="TOPLEFT"></Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						self:RegisterForDrag("LeftButton")
+					</OnLoad>
+					<OnDragStart>
+						ZygorTalentAdvisorPopout_OnDragStart(self:GetParent())
+					</OnDragStart>
+					<OnDragStop>
+						ZygorTalentAdvisorPopout_OnDragStop(self:GetParent())
+					</OnDragStop>
+				</Scripts>
+			</Frame>
+			<Frame name="$parentWarning" parentKey="warning">
+				<Size x="16" y="16"/>
+				<Anchors>
+					<Anchor point="TOPRIGHT">
+						<Offset x="-7" y="-30"/>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="ARTWORK">
+						<Texture file="Interface\OptionsFrame\UI-OptionsFrame-NewFeatureIcon" setAllPoints="true"/>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnEnter>
+						GameTooltip:SetOwner(self,"ANCHOR_BOTTOMRIGHT")
+						GameTooltip:SetText("Build status:")
+						GameTooltip:AddLine(ZygorTalentAdvisor:GetStatusMessage(ZygorTalentAdvisorPopout.pet),1,1,1)
+						GameTooltipTextLeft1:SetWidth(300)
+						GameTooltipTextLeft2:SetWidth(300)
+						GameTooltip:Show()
+						GameTooltip:SetWidth(100)
+						GameTooltip:Show()
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide()
+					</OnLeave>
+				</Scripts>
+			</Frame>
+			<Button name="$parentPreviewButton" parentKey="preview" inherits="UIPanelButtonTemplate" text="PREVIEW">
+				<Size x="80" y="22"/>
+				<Anchors><Anchor point="BOTTOMLEFT"><Offset x="10" y="40"/></Anchor></Anchors>
+				<Scripts>
+					<OnClick>
+						ZygorTalentAdvisor:PreviewSuggestions()
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(self,"ANCHOR_TOPLEFT")
+						GameTooltip:SetText(ZygorTalentAdvisor.L['preview_button_tooltip'])
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide()
+					</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="$parentAcceptButton" parentKey="accept" inherits="UIPanelButtonTemplate" text="ACCEPT">
+				<Size x="80" y="22"/>
+				<Anchors><Anchor point="BOTTOMRIGHT"><Offset x="-10" y="40"/></Anchor></Anchors>
+				<Scripts>
+					<OnClick>
+						ZygorTalentAdvisor:LearnSuggestedTalents(ZygorTalentAdvisorPopout.pet)
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(self,"ANCHOR_TOPLEFT")
+						GameTooltip:SetText(ZygorTalentAdvisor.L['learn_button_tooltip'])
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide()
+					</OnLeave>
+				</Scripts>
+				<Layers>
+					<Layer level="OVERLAY">
+						<Texture name="$parentBorder" file="Interface\Buttons\UI-MicroButton-Hilight" alphaMode="ADD">
+							<Anchors>
+								<Anchor point="TOPLEFT"><Offset x="-8" y="11"/></Anchor>
+								<Anchor point="BOTTOMRIGHT"><Offset x="8" y="0"/></Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+			</Button>
+			<Button name="$parentConfigureButton" parentKey="configure" inherits="UIPanelButtonTemplate" text="Configure">
+				<Size x="120" y="22"/>
+				<Anchors>
+					<Anchor point="BOTTOM">
+						<Offset x="0" y="12"/>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						ZygorTalentAdvisor:OpenOptions()
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(self,"ANCHOR_TOPLEFT")
+						GameTooltip:SetText(ZygorTalentAdvisor.L['configure_button_tooltip'])
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide()
+					</OnLeave>
+				</Scripts>
+			</Button>
+		</Frames>		
+	</Frame>
+
+	<Button name="ZygorTalentAdvisorPopoutButton" hidden="true" parent="PlayerTalentFrame">
+		<Size x="32" y="32"/>
+		<Scripts>
+			<OnEnter>
+				GameTooltip_AddNewbieTip(self, ZygorTalentAdvisor.L['name'], 1,1,1, ZygorTalentAdvisor.L['popout_button_tip'])
+			</OnEnter>
+			<OnLeave function="GameTooltip_Hide"/>
+			<OnClick>
+				if ZygorTalentAdvisorPopout:IsShown() then
+					ZygorTalentAdvisorPopout:Hide()
+				else
+					ZygorTalentAdvisorPopout:Show()
+				end
+			</OnClick>
+		</Scripts>
+		<NormalTexture file="Interface\Addons\ZygorTalentAdvisor\Skin\popout-button"/>
+		<PushedTexture file="Interface\Addons\ZygorTalentAdvisor\Skin\popout-button-pushed"/>
+		<HighlightTexture file="Interface\Buttons\UI-MicroButton-Hilight" alphaMode="ADD">
+			<TexCoords left="0" right="1" top="0.390625" bottom="0.96875"/>
+		</HighlightTexture>
+	</Button>				
+
+</Ui>
