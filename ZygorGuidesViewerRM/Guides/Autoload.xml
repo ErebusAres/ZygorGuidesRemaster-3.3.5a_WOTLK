@@ -8,6 +8,7 @@
 	<Script file="Dailies\ZygorDailiesHorde.lua"/>
 	<Script file="Dailies\AresDailiesAlliance.lua"/>
 	<Script file="Reputations\AresReputationsAlliance.lua"/>
+	<Script file="Reputations\AresReputationsNorthrend.lua"/>
 	<Script file="Achievements\AresAchievementExploration.lua"/>
 	<Script file="Achievements\ZygorAchievementsAlliance.lua"/>
 	<Script file="Achievements\ZygorAchievementsHorde.lua"/>
@@ -28,7 +29,9 @@
 	<Script file="Dungeons\ZygorGearCommon.lua"/>
 	<Script file="Dungeons\ZygorGearHorde.lua"/>
 	<Script file="Professions\ZygorProfessionsCommon.lua"/>
-	<Script file="Fun\AresNoggenfoggerQuest.lua"/>
+	<Script file="Fun\AresFunQuestsAlliance.lua"/>
+	<Script file="PetsMounts\AresPetsMountsAlliance.lua"/>
+	<Script file="Legendary\AresLegendariesWotLK.lua"/>
 	<Script file="Guide01.lua"/>
 	<Script file="Guide02.lua"/>
 	<Script file="Guide03.lua"/>
