@@ -1,0 +1,49 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<!-- Autoloading of included builds. Add more files here as you please. -->
+	
+	<Script file="ZygorGuidesBuilds.lua"/>
+	<Script file="ZygorGuidesBuildsTrial.lua"/>
+
+	<Script file="Build01.lua"/>
+	<Script file="Build02.lua"/>
+	<Script file="Build03.lua"/>
+	<Script file="Build04.lua"/>
+	<Script file="Build05.lua"/>
+	<Script file="Build06.lua"/>
+	<Script file="Build07.lua"/>
+	<Script file="Build08.lua"/>
+	<Script file="Build09.lua"/>
+	<Script file="Build10.lua"/>
+	<Script file="Build11.lua"/>
+	<Script file="Build12.lua"/>
+	<Script file="Build13.lua"/>
+	<Script file="Build14.lua"/>
+	<Script file="Build15.lua"/>
+	<Script file="Build16.lua"/>
+	<Script file="Build17.lua"/>
+	<Script file="Build18.lua"/>
+	<Script file="Build19.lua"/>
+	<Script file="Build20.lua"/>
+	<Script file="Build21.lua"/>
+	<Script file="Build22.lua"/>
+	<Script file="Build23.lua"/>
+	<Script file="Build24.lua"/>
+	<Script file="Build25.lua"/>
+	<Script file="Build26.lua"/>
+	<Script file="Build27.lua"/>
+	<Script file="Build28.lua"/>
+	<Script file="Build29.lua"/>
+	<Script file="Build30.lua"/>
+	<Script file="Build31.lua"/>
+	<Script file="Build32.lua"/>
+	<Script file="Build33.lua"/>
+	<Script file="Build34.lua"/>
+	<Script file="Build35.lua"/>
+	<Script file="Build36.lua"/>
+	<Script file="Build37.lua"/>
+	<Script file="Build38.lua"/>
+	<Script file="Build39.lua"/>
+	<Script file="Build40.lua"/>
+
+</Ui>

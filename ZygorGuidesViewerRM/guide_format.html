@@ -1,8 +1,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML>
+<HTML lang="en">
 <HEAD>
-	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1250">
-	<TITLE></TITLE>
+	<META charset="utf-8">
+	<META name="viewport" content="width=device-width, initial-scale=1">
+	<TITLE>Guide Format</TITLE>
 	<META NAME="GENERATOR" CONTENT="OpenOffice.ux.pl 3.0  (Win32)">
 	<META NAME="AUTHOR" CONTENT="Sinus">
 	<META NAME="CREATED" CONTENT="20090424;2392000">
@@ -44,6 +45,15 @@
 
 		tt.display { display:block; background:black; color:white; font:normal 0.8em Verdana; padding:0.4em; width:27em; }
 
+		.code-w700 { width:700px; }
+		.code-w650 { width:650px; }
+		.code-w600 { width:600px; }
+		.code-w800 { width:800px; }
+		.code-w520 { width:520px; }
+		.display-w520 { width:520px; }
+		.col-nowrap { white-space:nowrap; }
+		.hidden { display:none; }
+
 		.disp_coords { color:#f88; }
 		.disp_npc { color:#8f8; }
 		.disp_quest { color:#88f; }
@@ -72,7 +82,7 @@
 	-->
 	</STYLE>
 </HEAD>
-<BODY LANG="pl-PL" LINK="#000080" VLINK="#800000" DIR="LTR" onload="setup()">
+<BODY LANG="en" LINK="#000080" VLINK="#800000" DIR="LTR" onload="setup()">
 <script>
 function getElementsByClass(searchClass,node,tag) {
 	var classElements = new Array();
@@ -123,20 +133,20 @@ function doexpand(but) {
 <h1>Creating a guide</h1>
 <p>Every user guide needs to be <i>registered</i> with the Guide Viewer for it to display. This can be done in two ways:</p>
 	<ol type="A">
- <li>Creating a stand-alone "guide addon".</li>
-  <ol style="1">
-	 <li>If you have written addons before, just skip the basics here :)
-	 <li>Create a new directory under <tt>\Interface\Addons</tt>, naming it - <i>for example</i> - MyGuide.</li>
+ <li>Creating a stand-alone "guide addon".
+  <ol type="1">
+	 <li>If you have written addons before, just skip the basics here :)</li>
+	 <li>Create a new directory under <tt>\Interface\AddOns</tt>, naming it - <i>for example</i> - MyGuide.</li>
    <li>Create a file in there, naming it <tt>MyGuide.toc</tt>, containing - basically - this:
-	  <code style="width:700px;">
+	  <code class="code-w700">
 		## Interface: 30300<br>
 		## Title: My Guide For Something<br>
-		## Dependencies: ZygorGuidesViewer<br>
+		## Dependencies: ZygorGuidesViewerRM<br>
 		<br>
 		MyGuide.lua
 		</code>
    <li>Create another file, name it <tt>MyGuide.lua</tt>, and paste this into it:
-		<pre><code style="width:700px;">ZygorGuidesViewer:RegisterGuide("My Leet Guides\\My First Guide",[[
+		<pre><code class="code-w700">ZygorGuidesViewer:RegisterGuide("My Leet Guides\\My First Guide",[[
 	author me@myself.com
 	step
 		Do some very secret unspecified something :)
@@ -144,17 +154,19 @@ function doexpand(but) {
 		Keep playing...
 ]])
 		</code></pre>
-	 <li>Edit this to your likings.
-	 <li>Start WoW, open the ZygorGuidesViewer window, hover at the title and click the guide selection button - your guide should be visible in the drop-down list.
+	 <li>Edit this to your likings.</li>
+	 <li>Start WoW, open the ZygorGuidesViewerRM window, hover at the title and click the guide selection button - your guide should be visible in the drop-down list.</li>
 	</ol>
 	<p>Now all you need is keep writing the guide, and reloading the game's UI to reload the guide.</p>
 	<p>This method is by far the easiest and best way to create and distribute your guides - it has one major drawback, however. According to Blizzard's policies, you are not allowed to sell addons of any kind. Distribution of a commercial guide in this form could probably be considered violating their terms. Stay safe.</p>
- <li>Including data in the addon's folder</li>
-  <ol style="1">
-    <li>Prepare a guide according to the syntax described above and below.
-    <li>Save it as <tt>Guide01.lua</tt> (through <tt>Guide40.lua</tt>) in the <tt>ZygorGuidesViewer\Guides</tt> folder.
-    <li>Re-launch the game. Your guides should be available for selection.
+ </li>
+ <li>Including data in the addon's folder
+  <ol type="1">
+    <li>Prepare a guide according to the syntax described above and below.</li>
+    <li>Save it as <tt>Guide01.lua</tt> (through <tt>Guide40.lua</tt>) in the <tt>ZygorGuidesViewerRM\Guides</tt> folder.</li>
+    <li>Re-launch the game. Your guides should be available for selection.</li>
   </ol>
+ </li>
 </ol>
 
 <H1>Guide format</H1>
@@ -179,8 +191,7 @@ Additionally, some <a href="#globaloptions"><b>global options</b></a> may be set
 &nbsp;&nbsp;<span class="tag exm"><I>tag</I></span><span class="sep">|</span><span class="tag exm"><I>tag</I></span><span class="sep">|</span><span class="tag exm"><I>tag</I></span><br>
 </code>
 
-<a name="globaloptions"></a>
-<H1>Global options:</H1>
+<H1 id="globaloptions">Global options:</H1>
 <dl class="code">
 	<dt class="global">defaultfor <span class="params">race</span></dt>
 		<dd>Makes this guide loaded by default when starting a character of a specific race. Death Knights are considered a race, for convenience. Examples: <tt>defaultfor Human</tt>, <tt>defaultfor DeathKnight</tt>.</dd>
@@ -188,28 +199,24 @@ Additionally, some <a href="#globaloptions"><b>global options</b></a> may be set
 		<dd>Sets the author's credentials. Used in generated bug reports.</dd>
 	<dt class="global">description <span class="params">text</span></dt>
 		<dd>Sets the description used in the guide's details in the addon's main settings screen.</dd>
-	<a name="global_startlevel"></a>
-	<dt class="global">startlevel <span class="params">level</span></dt>
+	<dt id="global_startlevel" class="global">startlevel <span class="params">level</span></dt>
 		<dd>Use this level as default for the first steps of the guide. Steps use levels to determine what's obsolete; set to 80 to never obsolete your steps.</dd>
 	<dt class="global">next <span class="params">guide title</span></dt>
 		<dd>Designates <span class="params">guide title</span> to follow this guide. Note: full title needed, multi-folder path and all.</dd>
 
-	<a name="global_daily"></a>
-	<dt class="global">daily</dt>
+	<dt id="global_daily" class="global">daily</dt>
 		<dd>Marks the guide as a "dailies" guide, enabling periodic resetting of <a href="#tag_daily">daily</a>-marked quests.</dd>
 </dl>
 
-<a name="steps"></a>
-<H1>Steps:</H1>
+<H1 id="steps">Steps:</H1>
 <p>Each step starts with a<tt> step </tt>word, alone in a line. This marker is followed by <a href="#stepoptions" class="stepopt"><b>step options</b></a> and <a href="#lines"><b>lines</b></a>.</p>
 
-<a name="stepoptions"></a>
-<H1>Step options:</H1>
+<H1 id="stepoptions">Step options:</H1>
 <P>These pertain to one step, setting its properties.</P>
 
 <table class="tab">
 	<colgroup>
-		<col style="white-space:nowrap;">
+		<col class="col-nowrap">
 	</colgroup>
 	<tr>
 		<th width="150">Option</th>
@@ -217,22 +224,22 @@ Additionally, some <a href="#globaloptions"><b>global options</b></a> may be set
 		<th>Example</th>
 	</tr>
 	<tr>
-		<td><a name="stepopt_map"></a><span class="stepopt tt">map </span><span class="params">name</span></td>
+		<td><span id="stepopt_map" class="stepopt tt">map </span><span class="params">name</span></td>
 		<td>Sets a default map for this (and subsequent) step's waypoints. Use it if you prefer your waypoint markers to have only coordinates.</td>
 		<td><code class="examp"><span class="stepopt">map</span> Elwynn Forest</code></td>
 	</tr>
 	<tr>
-		<td><a name="stepopt_level"></a><span class="stepopt tt">level </span><span class="params">level</span></td>
+		<td><span id="stepopt_level" class="stepopt tt">level </span><span class="params">level</span></td>
 		<td>Indicates that the step should be completed at level <span class="params">level</span>. Optional. If no level is set for a step, the previous step's level is used, or the guide's <a href="#global_startlevel">startlevel</a> setting. Note: the <a href="#tag_ding">ding</a> tag sets the level as well.</td>
 		<td><code class="examp"><span class="stepopt">level</span> 12</code></td>
 	</tr>
 	<tr>
-		<td><a name="stepopt_title"></a><span class="stepopt tt">title </span><span class="params">text</span></td>
+		<td><span id="stepopt_title" class="stepopt tt">title </span><span class="params">text</span></td>
 		<td>Sets the title of the waypoint pertaining to the step. May be overridden by a line-specific <a href="tag_title"><tt class="tag">title</tt></a> tag. Optional.
 		<td><code class="examp"><span class="stepopt">title</span> Entrance to the mine</code></td>
 	</tr>
 	<tr>
-		<td><a name="stepopt_only"></a><span class="stepopt tt">only </span><span class="params">race/class...</span></td>
+		<td><span id="stepopt_only" class="stepopt tt">only </span><span class="params">race/class...</span></td>
 		<td>
 			Designates the step as being valid only for a specific race/class.<br>
 			Any combination of races/classes, separated with commas. A race starting with <b>!</b> means 'NOT'. As the races are OR-ed together, multiple NOTs don't make sense.<br>
@@ -245,7 +252,7 @@ Additionally, some <a href="#globaloptions"><b>global options</b></a> may be set
 		</code></td>
 	</tr>
 	<tr>
-		<td><a name="stepopt_only if"></a><span class="stepopt tt">only if </span><span class="params">condition</span></td>
+		<td><span id="stepopt_only_if" class="stepopt tt">only if </span><span class="params">condition</span></td>
 		<td>
 			Sets a raw scripted condition for the step's availability.<br>
 			<span class="params">Condition</span> is a simple Lua expression. Available shorthands:
@@ -264,12 +271,11 @@ Additionally, some <a href="#globaloptions"><b>global options</b></a> may be set
 </table>
 
 
-<a name="lines"></a>
-<H1>Step lines:</H1>
+<H1 id="lines">Step lines:</H1>
 <p><b>Completable lines.</b> Each step line is intended to either require the player to perform some action, or just provide advice. If a line contains one of the "completable" tags, it becomes a completable line. A line containing only "descriptive" actions or tags, or forced into incompletability (using the <a href="#tag_n">|n</a> tag), will just be displayed for the player to read.</p>
 <p><b>Completion condition.</b> The first <u>completable</u> <a href="#tags" class="tag"><b>tag</b></a> on a line decides its <i>completion condition</i>. Other tags in the line can only enhance the completable tag's behaviour. Or, they can make no sense at all. Tags are separated using the '<span class="sep">|</span>' pipe character.
 Example:<br>
-<code style="width:650px;"><a href="#tag_'">'</a>Hearth to Ironforge<span class="sep">|</span><a href="#tag_goto">goto</a> Ironforge,12.3,45.6<span class="sep">|</span><a href="#tag_use">use</a> Hearthstone##6948<span class="sep">|</span><a href="#tag_noway">noway</a></code>
+<code class="code-w650"><a href="#tag_quote">'</a>Hearth to Ironforge<span class="sep">|</span><a href="#tag_goto">goto</a> Ironforge,12.3,45.6<span class="sep">|</span><a href="#tag_use">use</a> Hearthstone##6948<span class="sep">|</span><a href="#tag_noway">noway</a></code>
 This would read as: "Display a descriptive instruction; then, use <a href="#tag_goto">goto</a> completion upon reaching Ironforge; add a usable item icon with Hearthstone on it; finally, make this line not show a waypoint arrow.</p>
 <p><b>Waypoints.</b> A <a href="#tag_goto">goto</a> tag, or a <a href="#action_'">'</a> ("text") tag with a coordinate pair in its contents, will automatically create a mapnote and a waypoint for it. The mapnote's title can be set using the <a href="#stepopt_title">title</a> step option, or individually for the line using the <a href="#tag_title">title</a> line tag. A line with coordinates can be clicked to force a waypoint to this location to be displayed.</p>
 <p><b>Indentation.</b> Step lines can be prepended with multiple '<tt>.</tt>'s (periods) to indent them visually. Example:
@@ -285,15 +291,13 @@ Go to <span class="disp_coords">12,34</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accept <span class="disp_quest">`Into the Hall'</span>
 </tt>
 
-<a name="tags"></a>
-<h1>Tags</h1>
+<H1 id="tags">Tags</h1>
 <h2>Simple actions:</h2>
 <dl class="code expandable">
-	<a name="tag_'"></a>
-	<dt class="tag">' <span class="params">text</span></dt>
+	<dt id="tag_quote" class="tag">' <span class="params">text</span></dt>
 		<dd>Provides a descriptive instruction for the player, in full-text form. This action overrides the default display that other actions might provide for this line.<br>
 		Also, if a proper coordinate pair is found in the text, a mapnote and a waypoint is generated <u>and</u> this tag works like a <a href="#tag_goto">goto</tt></a> tag and follows its completability.<br>
-		Can be written as <a href="#tag_'">'</a><span class="params">text</span> (no space) or even with no tag and just text, as long as the first word is not a valid tag.</span></dd>
+		Can be written as <a href="#tag_quote">'</a><span class="params">text</span> (no space) or even with no tag and just text, as long as the first word is not a valid tag.</span></dd>
 		<dd>
 			<dl>
 				<dt class="incompletable">Incompletable.</dt>
@@ -320,8 +324,7 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_goto"></a>
-	<dt><span class="tag">goto</span> <span class="params">map,x,y</span> &nbsp; or &nbsp; <span class="params">map</span> &nbsp; or &nbsp; <span class="params">x,y</span> &nbsp; or &nbsp; <span class="params">x,	y,dist</span> &nbsp; or &nbsp; <span class="params">map,x,y,dist</span></dt>
+	<dt id="tag_goto"><span class="tag">goto</span> <span class="params">map,x,y</span> &nbsp; or &nbsp; <span class="params">map</span> &nbsp; or &nbsp; <span class="params">x,y</span> &nbsp; or &nbsp; <span class="params">x,	y,dist</span> &nbsp; or &nbsp; <span class="params">map,x,y,dist</span></dt>
 		<dd>Instructs the player to go to the specified location. If coordinates are specified, a mapnote/waypoint will be created for the line. If multiple goto lines are present, multiple mapnotes will be created, as well as a proper queue of waypoints.
 		<dd>
 			<dl>
@@ -350,8 +353,7 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_talk"></a>
-	<dt class="tag">talk <span class="params">npc_name##id</span></dt>
+	<dt id="tag_talk" class="tag">talk <span class="params">npc_name##id</span></dt>
 		<dd>Instructs the player to talk to an NPC.</dd>
 		<dd>
 			<dl>
@@ -373,8 +375,7 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_accept"></a>
-	<dt class="tag">accept <span class="params">quest##id</span></dt>
+	<dt id="tag_accept" class="tag">accept <span class="params">quest##id</span></dt>
 		<dd>Instructs the player to accept a quest.</dd>
 		<dd>
 			<dl>
@@ -399,8 +400,7 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_turnin"></a>
-	<dt class="tag">turnin <span class="params">quest##id</span></dt>
+	<dt id="tag_turnin" class="tag">turnin <span class="params">quest##id</span></dt>
 		<dd>Instructs the player to turn in a completed quest.</dd>
 		<dd>
 			<dl>
@@ -421,8 +421,7 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_goal"></a>
-	<dt class="tag">goal <span class="params">count goalname</span></dt>
+	<dt id="tag_goal" class="tag">goal <span class="params">count goalname</span></dt>
 		<dd>Instructs the player to complete <span class="params">count</span> of quest goals named <span class="params">goalname</span>. REQUIRES <a href="#tag_q">q</a>.</dd>
 		<dd>
 			<dl>
@@ -446,8 +445,7 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_kill"></a>
-	<dt class="tag">kill <span class="params">count mob##id</span></dt>
+	<dt id="tag_kill" class="tag">kill <span class="params">count mob##id</span></dt>
 		<dd>Instructs the player to kill <span class="params">count</span> of the specified <span class="params">mob</span> (in singular form). Mob must be present in the NPCs files for localization. Using <span class="params">count</span>>1 or adding a <b>+</b> after the <span class="params">id</span> shows a plural form.<br>
 		Note that the quest must expect explicitly killing the specified mob; if a quest requires not the kill itself, but bringing back a dropped item, it's better to mark kill actions as non-completeable using <a href="#tag_n"><tt class="tag">n</tt></a> and follow them with <a href="#tag_get">get</a> tags.</dd>
 		<dd>
@@ -470,8 +468,7 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_get"></a>
-	<dt class="tag">get <span class="params">count item</span></dt>
+	<dt id="tag_get" class="tag">get <span class="params">count item</span></dt>
 		<dd>Instructs the player to pick up <span class="params">count</span> of the specified <span class="params">object</span> (written in singular form) as a quest goal. REQUIRES <a href="#tag_q">q</a>.</dd>
 		<dd>
 			<dl>
@@ -493,8 +490,7 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_collect"></a>
-	<dt class="tag">collect <span class="params">count item##id</span></dt>
+	<dt id="tag_collect" class="tag">collect <span class="params">count item##id</span></dt>
 		<dd>Requires of the player to have <span class="params">count</span> of the specified <span class="params">item</span> in their inventory. If <span class="params">##id</span> is given (and should be), item name is overridden by the game. Use <b>+</b> after the <span class="params">##id</span> to make it plural.
 		<dd>
 			<dl>
@@ -514,8 +510,7 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_buy"></a>
-	<dt class="tag">buy <span class="params">count item##id</span></dt>
+	<dt id="tag_buy" class="tag">buy <span class="params">count item##id</span></dt>
 		<dd>Works just like <a href="#tag_collect">collect</a>, except that it's displayed differently and is <a href="#tag_future">future</a> by default for convenience.
 		<dd>
 			<dl>
@@ -534,8 +529,7 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_fpath"></a>
-	<dt class="tag">fpath <span class="params">flightpath</span></dt>
+	<dt id="tag_fpath" class="tag">fpath <span class="params">flightpath</span></dt>
 		<dd>Instructs the player to learn the specified <span class="params">flightpath</span> from a flight master.
 		<dd>
 			<dl>
@@ -554,8 +548,7 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_home"></a>
-	<dt class="tag">home <span class="params">location</span></dt>
+	<dt id="tag_home" class="tag">home <span class="params">location</span></dt>
 		<dd>Instructs the player to set their home location to <span class="params">location</span>.
 		<dd>
 			<dl>
@@ -574,8 +567,7 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_ding"></a>
-	<dt class="tag">ding <span class="params">level</span></dt>
+	<dt id="tag_ding" class="tag">ding <span class="params">level</span></dt>
 		<dd>Requires the player reach a <span class="params">level</span> before proceeding. Instructs them to grind a bit, if they're too low-level.<br>
 		All steps after this one have the specified level suggestion (no need to use the <a href="#stepopt_level">level</a> step option).
 		<dd>
@@ -596,8 +588,7 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_havebuff"></a>
-	<dt class="tag">havebuff <span class="params">name</span></dt>
+	<dt id="tag_havebuff" class="tag">havebuff <span class="params">name</span></dt>
 		<dd>Requires the player to have a specific spell effect active on them. Opposite of <a href="#tag_nobuff">nobuff</a>.
 		<dd>
 			<dl>
@@ -606,14 +597,13 @@ Go to <span class="disp_coords">12,34</span><br>
 				<dt>Parameters:</dt>
 				<dd><span class="params">name</span> - might be the buff name (unadvised: locale-dependent) or the texture name (much better: locale-independent).</dd>
 				<dt>Example:</dt>
-				<dd><code style="width:600px">
+				<dd><code class="code-w600">
 					' Take control over the Eye |havebuff Spell_Shadow_UnholyFrenzy
 				</code></dd>
 			</dl>
 		</dd>
 
-	<a name="tag_nobuff"></a>
-	<dt class="tag">nobuff <span class="params">name</span></dt>
+	<dt id="tag_nobuff" class="tag">nobuff <span class="params">name</span></dt>
 		<dd>Requires the player NOT to have a specific buff active. Opposite of <a href="#tag_havebuff">havebuff</a>.
 		<dd>
 			<dl>
@@ -622,63 +612,59 @@ Go to <span class="disp_coords">12,34</span><br>
 				<dt>Parameters:</dt>
 				<dd><span class="params">name</span> - might be the buff name (unadvised: locale-dependent) or the texture name (much better: locale-independent).</dd>
 				<dt>Example:</dt>
-				<dd><code style="width:600px">
+				<dd><code class="code-w600">
 					'Make sure you don't have Animal Blood on you. |nobuff Ability_Seal
 				</code></dd>
 			</dl>
 		</dd>
 
-	<a name="tag_invehicle"></a>
-	<dt class="tag">invehicle</dt>
+	<dt id="tag_invehicle" class="tag">invehicle</dt>
 		<dd>Requires the player to be in a vehicle. Opposite of <a href="#tag_outvehicle">outvehicle</a>.
 		<dd>
 			<dl>
 				<dt class="completable">Completable:</dt>
 				<dd>The player is in a vehicle.</dd>
 				<dt>Example:</dt>
-				<dd><code style="width:600px">
+				<dd><code class="code-w600">
 					' Get into the tank |invehicle
 				</code></dd>
 			</dl>
 		</dd>
 
-	<a name="tag_outvehicle"></a>
-	<dt class="tag">outvehicle</dt>
+	<dt id="tag_outvehicle" class="tag">outvehicle</dt>
 		<dd>Requires the player NOT to be in a vehicle. Opposite of <a href="#tag_invehicle">invehicle</a>.
 		<dd>
 			<dl>
 				<dt class="completable">Completable:</dt>
 				<dd>The player is out of their vehicle.</dd>
 				<dt>Example:</dt>
-				<dd><code style="width:600px">
+				<dd><code class="code-w600">
 					' Get off the horse |outvehicle
 				</code></dd>
 			</dl>
 		</dd>
 
-	<a name="tag_rep"></a>
-	<dt class="tag">rep <span class="params">faction,standing</span></dt>
+	<dt id="tag_rep" class="tag">rep <span class="params">faction,standing</span></dt>
 		<dd>Dictates the player to achieve a specific reputation with a faction.
 		<dd>
 			<dl>
 				<dt class="completable">Completable:</dt>
 				<dd>The player has at achieved or exceeded the reputation requirement.</dd>
 				<dt>Example:</dt>
-				<dd><code style="width:800px">
+				<dd><code class="code-w800">
 					.' Kill Magrams until you are friendly with the Gelkis |rep Gelkis Clan Centaur,Friendly
 				</code></dd>
 			</dl>
 		</dd>
 
-	<a name="tag_condition"></a>
-	<dt class="tag">condition <span class="params">Lua expression</span></dt>
+	<dt id="tag_condition" class="tag">condition <span class="params">Lua expression</span></dt>
 		<dd>Completes the line using any Lua expression.
 		<dd>
 			<dl>
 				<dt class="completable">Completable:</dt>
 				<dd>Expression evaluates to true. If the expression returns two values, the second value indicates possibility of completion at all. Three values? Third indicates progress.</dd>
 				<dt>Example:</dt>
-				<dd><code style="width:800px">
+				<dd><code class="code-w800">
 					.' Earn at least 1 gold |condition GetMoney()>10000
 				</code></dd>
 			</dl>
@@ -690,8 +676,7 @@ Go to <span class="disp_coords">12,34</span><br>
 
 <dl class="code expandable">
 
-	<a name="tag_use"></a>
-	<dt class="tag">use <span class="params">item##id</span></dt>
+	<dt id="tag_use" class="tag">use <span class="params">item##id</span></dt>
 		<dd>Instructs the player to use an <span class="params">item</span>, providing a clickable icon if they have the item in their bags.
 		<dd>
 			<dl>
@@ -709,8 +694,7 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_cast"></a>
-	<dt class="tag">cast <span class="params">spell##id</span></dt>
+	<dt id="tag_cast" class="tag">cast <span class="params">spell##id</span></dt>
 		<dd>Instructs the player to cast a specific <span class="params">spell</span>, providing a clickable icon if they have the spell in their spellbook.
 		<dd>
 			<dl>
@@ -728,8 +712,7 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_petaction"></a>
-	<dt class="tag">petaction <span class="params">number or name</span></dt>
+	<dt id="tag_petaction" class="tag">petaction <span class="params">number or name</span></dt>
 		<dd>Provides an icon to invoke the <span class="params">number</span>'th action on the pet/summon action bar.
 		<dd>
 			<dl>
@@ -747,8 +730,7 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_script"></a>
-	<dt class="tag">script <span class="params">Lua code</span></dt>
+	<dt id="tag_script" class="tag">script <span class="params">Lua code</span></dt>
 		<dd>Executes a Lua script line when the player clicks the provided icon.
 		<dd>
 			<dl>
@@ -772,8 +754,7 @@ Go to <span class="disp_coords">12,34</span><br>
 
 <dl class="code expandable">
 
-	<a name="tag_q"></a>
-	<dt><tt class="tag">q</tt> <span class="params">quest_id</span> &nbsp;or&nbsp; <span class="params">quest_id<tt>/</tt>objective_num</span></dt>
+	<dt id="tag_q"><tt class="tag">q</tt> <span class="params">quest_id</span> &nbsp;or&nbsp; <span class="params">quest_id<tt>/</tt>objective_num</span></dt>
 		<dd>This links the line with a quest or quest objective and causes it to become completable in reference to the quest or objective. <b>Basically the most important tag of them all.</b></dd>
 		<dd>
 			<dl>
@@ -808,8 +789,7 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 	
-	<a name="tag_n"></a>
-	<dt class="tag">n</dt>
+	<dt id="tag_n" class="tag">n</dt>
 		<dd>This marks the line as <tt class="tag">n</tt>ot completable, even if by default it would have been completable. Display is not affected, but the line's objective is neither tracked or required to complete the step.</dd>
 		<dd>
 			<dl>
@@ -827,10 +807,9 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 	
-	<a name="tag_c"></a>
-	<dt class="tag">c</dt>
+	<dt id="tag_c" class="tag">c</dt>
 		<dd>This marks the line as <tt class="tag">c</tt>ompleteable, even if by default it would be incompletable.<br>
-		Useful mostly with <a href="#tag_'">'</a> or <a href="#tag_goto">goto</a> tags.</dd>
+		Useful mostly with <a href="#tag_quote">'</a> or <a href="#tag_goto">goto</a> tags.</dd>
 		<dd>
 			<dl>
 				<dt>Example - explicitly require the player to visit several waypoints in sequence:</dt>
@@ -848,19 +827,18 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_noway"></a>
-	<dt class="tag">noway</dt>
+	<dt id="tag_noway" class="tag">noway</dt>
 		<dd>Prevents any waypoints to be created by this line. Useful when you do want to detect instant arrival somewhere (using <a href="#action_goto"><tt class="action">goto</tt></a> or <a href="#action_'"><tt class="action">'</tt></a>/<a href="#tag_at"><tt class="tag">at</tt></a>), and a waypoint arrow would only confuse the player.</dd>
 		<dd>
 			<dl>
 				<dt>Example - several ways to instruct the player to hearth home:</dt>
-					<dd><code style="width:520px">
+					<dd><code class="code-w520">
 					'Hearth to Ammen Vale<br>
 					'Hearth to Ammen Vale|at Azuremyst Isle,84.3,43.0,0.5<br>
 					'Hearth to Ammen Vale|at Azuremyst Isle,84.3,43.0,0.5|noway
 					</code></dd>
 				<dt>Displayed as:</dt>
-				<dd><tt class="display" style="width:520px">
+				<dd><tt class="display display-w520">
 					<div>Hearth to Ammen Vale <i>&nbsp;&nbsp;-- bad: not detected</i></div>
 					<div class="incomp">Hearth to Ammen Vale (at <span class="disp_coords">84,43</span>) <i>&nbsp;&nbsp;-- bad: waypoint suggests walking</i></div>
 					<div class="incomp">Hearth to Ammen Vale</div>
@@ -868,87 +846,81 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_sticky"></a>
-	<dt class="tag">sticky</dt>
+	<dt id="tag_sticky" class="tag">sticky</dt>
 		<dd>Forces its line to remain complete even if the objectives are no longer met.<br>Useful for auto-completing steps with multiple mutually exclusive objectives completed in sequence. "Sticky" lines remain complete until the step is changed.</dd>
 		<dd>
 			<dl>
 				<dt>Example - transform an item into another:</dt>
-					<dd><code style="width:600px">
+					<dd><code class="code-w600">
 						collect Battle-worn Sword##38607 <b>|sticky</b><br>
 						' Click the Battle-worn Sword in your bags |use Battle-worn Sword##38607<br>
 						get Runebladed Sword |q 12619/1
 					</code></dd>
 				<dt>Displayed as:</dt>
-				<dd><tt class="display" style="width:520px">
+				<dd><tt class="display display-w520">
 					<div class="comp">Collect 1 <span class="disp_goal">Battle-worn Sword</span> (0/1)</div>
-					<div><img src="http://static.wowhead.com/images/icons/large/inv_sword_bloodelf_03.jpg" width="12" height="12"> Click the Battle-worn Sword in your bags</div>
+					<div><img src="http://static.wowhead.com/images/icons/large/inv_sword_bloodelf_03.jpg" width="12" height="12" alt="Battle-worn Sword icon" title="Battle-worn Sword icon"> Click the Battle-worn Sword in your bags</div>
 					<div class="comp">Get <span class="disp_goal">Runebladed Sword</span> (1/1)</div>
 				</tt>
 				The first line remains complete, even though the player no longer has the Battle-worn Sword (count shows 0/1).
 			</dl>
 		</dd>
 
-	<a name="tag_future"></a>
-	<dt class="tag">future</dt>
+	<dt id="tag_future" class="tag">future</dt>
 		<dd>Signifies that if the line is linked to a quest, only mark it as complete when the quest is complete, but NOT mark it as impossible when the player is not on that quest (as would have been done otherwise).<br>
 		This allows for collection of quest-important objects when not on that quest yet, but have the line marked green if the quest was already done.</dd>
 		<dd>
 			<dl>
 				<dt>Example - collect an object for a future quest:</dt>
-					<dd><code style="width:600px">
+					<dd><code class="code-w600">
 						collect 5 Flask of Oil##814 |q 103 |future
 					</code></dd>
 				<dt>Displayed as:</dt>
-				<dd><tt class="display" style="width:520px">
+				<dd><tt class="display display-w520">
 					<div class="incomp">Collect 5 <span class="disp_goal">Flasks of Oil</span> (0/5)</div>
 				</tt>
 			</dl>
 		</dd>
 
-	<a name="tag_noobsolete"></a>
-	<dt class="tag">noobsolete</dt>
+	<dt id="tag_noobsolete" class="tag">noobsolete</dt>
 		<dd>Forces to never obsolete the quest that is mentioned in the line (by either <a href="#tag_accept">accept</a>, <a href="#tag_turnin">turnin</a> or <a href="#tag_q">q</a>). Useful for class quests that you want the player to complete regardless of their level.<br>
 		<dd>
 			<dl>
 				<dt>Example:</dt>
-					<dd><code style="width:600px">
+					<dd><code class="code-w600">
 						accept Devourer of Souls##1716 |noobsolete
 					</code></dd>
 			</dl>
 		</dd>
 
-	<a name="tag_daily"></a>
-	<dt class="tag">daily</dt>
+	<dt id="tag_daily" class="tag">daily</dt>
 		<dd>Marks the quest referenced in the line (by either <a href="#tag_accept">accept</a>, <a href="#tag_turnin">turnin</a> or <a href="#tag_q">q</a>) as a daily quest. This results in periodic resetting of the quest's completion status in <a href="#global_daily">daily</a> guides.<br>
 		<dd>
 			<dl>
 				<dt>Example:</dt>
-					<dd><code style="width:600px">
+					<dd><code class="code-w600">
 						accept Devourer of Souls##1716 |noobsolete
 					</code></dd>
 			</dl>
 		</dd>
 
-	<a name="tag_instant"></a>
-	<dt class="tag">instant</dt>
+	<dt id="tag_instant" class="tag">instant</dt>
 		<dd>Causes the referenced quest to be identified by its title, not by its number. This is necessary for some "instant completion" quests, which never have a corresponding <a href="#tag_turnin">turnin</a> line.
 		<dd>
 			<dl>
 				<dt>Example:</dt>
-					<dd><code style="width:600px">
+					<dd><code class="code-w600">
 						accept Mage Training##9290 |instant
 					</code></dd>
 			</dl>
 		</dd>
 
-	<a name="tag_or"></a>
-	<dt><tt class="tag">or</tt> , <tt class="tag">or</tt> <span class="params">count</span></dt>
+	<dt id="tag_or"><tt class="tag">or</tt> , <tt class="tag">or</tt> <span class="params">count</span></dt>
 		<dd>Invokes "or" logic on all the lines marked with this tag on the current step. One or <span class="params">count</span> completed lines complete them all. Or-lines do not cause implied completion of any non-or lines on the step!
 		<dd>
 			<dl>
 				<dt>Examples:</dt>
-					<dd><code style="width:600px">
+					<dd><code class="code-w600">
 					  accept Static Quest##20000<br>
 					  'Accept one of the following:<br>
 						accept First Random Quest##20001 |or<br>
@@ -956,7 +928,7 @@ Go to <span class="disp_coords">12,34</span><br>
 						accept Third Random Quest##20003 |or
 					</code>
 					This step is completed by accepting Static Quest##20000 and any of the remaining random quests.
-					<code style="width:600px">
+					<code class="code-w600">
 					  'Accept two of the following:<br>
 						accept First Random Quest##20001 |or 2<br>
 						accept Second Random Quest##20002 |or 2<br>
@@ -967,8 +939,7 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_only"></a>
-	<dt><tt class="tag">only</tt> <span class="params">raceclass...</span></dt>
+	<dt id="tag_only"><tt class="tag">only</tt> <span class="params">raceclass...</span></dt>
 		<dd>Displays the line only when the player's race and/or class matches the requirement. Works exactly like the <a href="#stepopt_only">only</a> step option, just for one line.<dd>
 			<dl class="props">
 				<dt>Example:</dt>
@@ -979,19 +950,17 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_only if"></a>
-	<dt><tt class="tag">only if</tt> <span class="params">condition</span></dt>
-		<dd>Displays the line only when the scripted condition is met. Works exactly like the <a href="#stepopt_only if">only if</a> step option, just for one line.<dd>
+	<dt id="tag_only_if"><tt class="tag">only if</tt> <span class="params">condition</span></dt>
+		<dd>Displays the line only when the scripted condition is met. Works exactly like the <a href="#stepopt_only_if">only if</a> step option, just for one line.<dd>
 			<dl class="props">
 				<dt>Example:</dt>
-				<dd><code style="width:700px">
+				<dd><code class="code-w700">
 				info Don't forget to harvest the Ancients for herbs. |only if skill('Herbalism')>0
 				</code></dd>
 			</dl>
 		</dd>
 
-	<a name="tag_title"></a>
-	<dt class="tag">title</dt>
+	<dt id="tag_title" class="tag">title</dt>
 		<dd>Used in a waypointed line, sets the title of the mapnote created by this line. This overrides the step-wide title tag.</dd>
 		<dd>
 			<dl class="props">
@@ -1004,8 +973,7 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_at"></a>
-	<dt class="tag">at</dt>
+	<dt id="tag_at" class="tag">at</dt>
 		<dd>This is just an alias for the <a href="#tag_goto"><tt class="tag">goto</tt></a> tag.
 		<dd>
 			<dl class="props">
@@ -1020,8 +988,7 @@ Go to <span class="disp_coords">12,34</span><br>
 <h2> Other tags: </h2>
 
 <dl class="code expandable">
-	<a name="tag_tip"></a>
-	<dt class="tag">tip <span class="params">text</span></dt>
+	<dt id="tag_tip" class="tag">tip <span class="params">text</span></dt>
 		<dd>Adds an inline information line. According to the player's preferences, this might be displayed as a tooltip for the line.
 		<dd>
 			<dl class="props">
@@ -1030,9 +997,8 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_autoscript"></a>
-	<dt class="tag">autoscript <span class="params">Lua code</span></dt>
-		<dd>Causes <b>instant</b> execution of the code upon reaching the step containing this line, as long as the line is displayed (see <a href="#tag_only if">only if</a>. Useful for loops, conditional jumps etc.
+	<dt id="tag_autoscript" class="tag">autoscript <span class="params">Lua code</span></dt>
+		<dd>Causes <b>instant</b> execution of the code upon reaching the step containing this line, as long as the line is displayed (see <a href="#tag_only_if">only if</a>. Useful for loops, conditional jumps etc.
 		<dd>
 			<dl class="props">
 				<dt>Example:</dt>
@@ -1040,8 +1006,7 @@ Go to <span class="disp_coords">12,34</span><br>
 			</dl>
 		</dd>
 
-	<a name="tag_info"></a>
-	<dt class="tag">info <span class="params">text</span></dt>
+	<dt id="tag_info" class="tag">info <span class="params">text</span></dt>
 		<dd>Adds an information line. Just like <a href="#action_text">text</a>, just displayed with a different font/color.
 		<dd>
 			<dl class="props">
@@ -1052,7 +1017,7 @@ Go to <span class="disp_coords">12,34</span><br>
 
 </dl>
 
-<div style="display:none;">
+<div class="hidden">
 
 Advanced
 examples:
@@ -1130,3 +1095,8 @@ Just a bunch of different options.
 
 </BODY>
 </HTML>
+
+
+
+
+

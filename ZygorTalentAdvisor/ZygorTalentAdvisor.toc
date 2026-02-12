@@ -1,0 +1,24 @@
+## Interface: 30300
+## Notes: Helps you build your character quickly, suggesting talents to take on each level.|n|nDesigned for use with Zygor Guides' proposed builds, but supporting user-supplied builds as well.
+## Note-frFR: 
+## Notes-esES: 
+## Title: |cffffff88Z|cffffee66y|cffffdd44g|cffffcc22o|cffffbb00r|r Talent Advisor
+## Author: Sinus Pi
+## DefaultState: enabled
+## LoadOnDemand: 0
+## SavedVariables: ZygorTalentAdvisorSettings
+## OptionalDeps: 
+## X-Category: 
+## X-Credits: 
+## X-eMail: zygor@zygorguides.com
+## X-Website: http://zygorguides.com/
+## X-License: GPL
+## Version: 2.0.240
+
+embeds.xml
+
+Localization\load.xml
+
+files.xml
+
+Builds\Autoload.xml
