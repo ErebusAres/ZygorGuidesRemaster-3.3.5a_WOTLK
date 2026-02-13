@@ -199,6 +199,117 @@ function me:EnsureSectionTitleFont()
 	safeSetFont(title, STANDARD_TEXT_FONT, size)
 end
 
+function me:UpdateLegacyHeaderTitle(fullTitle)
+	local titleFS = ZygorGuidesViewerFrame_Border_SectionTitle
+	if not titleFS then return end
+	local title = (fullTitle or ""):gsub("%s+", " "):gsub("^%s+", ""):gsub("%s+$", "")
+	if title == "" then
+		titleFS:SetText("")
+		return
+	end
+	self:EnsureSectionTitleFont()
+	titleFS:SetJustifyH("CENTER")
+	titleFS:SetJustifyV("MIDDLE")
+	local maxWidth = (titleFS.GetWidth and titleFS:GetWidth() or 0)
+	if maxWidth < 80 and ZygorGuidesViewerFrame_Border_Top and ZygorGuidesViewerFrame_Border_Top.GetWidth then
+		maxWidth = math.max(80, (ZygorGuidesViewerFrame_Border_Top:GetWidth() or 0) - 60)
+	end
+	if maxWidth < 80 then maxWidth = 220 end
+	titleFS:SetWidth(maxWidth)
+
+	self.LegacyHeaderMeasure = self.LegacyHeaderMeasure or UIParent:CreateFontString(nil, "ARTWORK")
+	local measureFS = self.LegacyHeaderMeasure
+	local fontPath, fontSize, fontFlags = titleFS:GetFont()
+	local measureReady = false
+	if fontPath then
+		measureReady = safeSetFont(measureFS, fontPath, fontSize or 11, fontFlags)
+	end
+	if not measureReady then
+		measureReady = safeSetFont(measureFS, "Interface\\Addons\\ZygorGuidesViewer\\skin\\antiquen.ttf", 11)
+	end
+	if not measureReady then
+		measureReady = safeSetFont(measureFS, STANDARD_TEXT_FONT, 11)
+	end
+	if measureReady then
+		pcall(measureFS.SetText, measureFS, "")
+	end
+	local function widthOf(text)
+		if not measureReady then return 0 end
+		local ok = pcall(measureFS.SetText, measureFS, text or "")
+		if not ok then return 0 end
+		return measureFS:GetStringWidth() or 0
+	end
+	local function fitWithEllipsis(text)
+		local ell = "..."
+		if widthOf(text) <= maxWidth then return text end
+		if widthOf(ell) > maxWidth then return ell end
+		local lo, hi, best = 1, #text, ell
+		while lo <= hi do
+			local mid = math.floor((lo + hi) / 2)
+			local cand = string.sub(text, 1, mid)..ell
+			if widthOf(cand) <= maxWidth then
+				best = cand
+				lo = mid + 1
+			else
+				hi = mid - 1
+			end
+		end
+		return best
+	end
+
+	if widthOf(title) <= maxWidth then
+		titleFS:SetHeight(16)
+		titleFS:SetText(title)
+		return
+	end
+
+	local words = {}
+	for word in title:gmatch("%S+") do table.insert(words, word) end
+	local bestA, bestB, bestScore
+	if #words >= 2 then
+		for i = 1, #words - 1 do
+			local a = table.concat(words, " ", 1, i)
+			local b = table.concat(words, " ", i + 1, #words)
+			local wa, wb = widthOf(a), widthOf(b)
+			if wa <= maxWidth and wb <= maxWidth then
+				local score = math.abs(wa - wb)
+				if not bestScore or score < bestScore then
+					bestScore = score
+					bestA, bestB = a, b
+				end
+			end
+		end
+	end
+	if bestA and bestB then
+		titleFS:SetHeight(30)
+		titleFS:SetText(bestA.."\n"..bestB)
+		return
+	end
+
+	local line1, splitAt = "", 0
+	for i = 1, #words do
+		local cand = table.concat(words, " ", 1, i)
+		if widthOf(cand) <= maxWidth then
+			line1, splitAt = cand, i
+		else
+			break
+		end
+	end
+	if line1 == "" then
+		line1 = fitWithEllipsis(title)
+		splitAt = #words
+	end
+	local rest = ""
+	if splitAt > 0 and splitAt < #words then
+		rest = table.concat(words, " ", splitAt + 1, #words)
+	else
+		rest = string.sub(title, #line1 + 1):gsub("^%s+", "")
+	end
+	local line2 = fitWithEllipsis(rest ~= "" and rest or title)
+	titleFS:SetHeight(30)
+	titleFS:SetText(line1.."\n"..line2)
+end
+
 
 function me:UpdateRemasterHeader()
 	if not self.RemasterFrames then
@@ -208,6 +319,165 @@ function me:UpdateRemasterHeader()
 	if not frames.headerTitle or not frames.headerMeta then
 		return
 	end
+	local function fitRemasterHeaderTitle(fullTitle)
+		local titleFS = frames.headerTitle
+		local header = frames.header
+		if not titleFS or not header then
+			if titleFS and titleFS.SetText then
+				pcall(titleFS.SetText, titleFS, fullTitle or "")
+			end
+			return
+		end
+		local function ensureTitleFont()
+			local fp = titleFS.GetFont and titleFS:GetFont()
+			if fp then return true end
+			if safeSetFont(titleFS, ZGV.DIR.."\\Skins\\segoeuib.ttf", 13) then return true end
+			if safeSetFont(titleFS, ZGV.DIR.."\\Skins\\segoeui.ttf", 13) then return true end
+			if safeSetFont(titleFS, STANDARD_TEXT_FONT, 13) then return true end
+			local ok = pcall(titleFS.SetFontObject, titleFS, "GameFontNormalSmall")
+			if ok and titleFS.GetFont and titleFS:GetFont() then return true end
+			return safeSetFont(titleFS, STANDARD_TEXT_FONT, 13)
+		end
+		local function setTitleText(text)
+			if not ensureTitleFont() then return end
+			pcall(titleFS.SetText, titleFS, text or "")
+		end
+
+		local maxWidth = math.max(80, (header:GetWidth() or 0) - 70)
+		titleFS:ClearAllPoints()
+		titleFS:SetPoint("CENTER", header, "CENTER", 0, 0)
+		titleFS:SetJustifyH("CENTER")
+		titleFS:SetJustifyV("MIDDLE")
+		titleFS:SetWidth(maxWidth)
+
+		frames.headerTitleMeasure = frames.headerTitleMeasure or UIParent:CreateFontString(nil, "ARTWORK")
+		local measureFS = frames.headerTitleMeasure
+		local measureReady = false
+		local fontPath, fontSize, fontFlags = titleFS:GetFont()
+		if fontPath then
+			measureReady = safeSetFont(measureFS, fontPath, fontSize or 13, fontFlags)
+		else
+			measureReady = safeSetFont(measureFS, ZGV.DIR.."\\Skins\\segoeuib.ttf", 13)
+		end
+		if not measureReady then
+			measureReady = safeSetFont(measureFS, STANDARD_TEXT_FONT, 13)
+		end
+		if measureReady then
+			pcall(measureFS.SetText, measureFS, "")
+		end
+
+		local function widthOf(text)
+			if not measureReady then
+				return 0
+			end
+			local ok = pcall(measureFS.SetText, measureFS, text or "")
+			if not ok then
+				return 0
+			end
+			return measureFS:GetStringWidth() or 0
+		end
+
+		local title = (fullTitle or ""):gsub("%s+", " "):gsub("^%s+", ""):gsub("%s+$", "")
+		if title == "" then
+			titleFS:SetHeight(16)
+			setTitleText("")
+			return
+		end
+
+		if widthOf(title) <= maxWidth then
+			titleFS:SetHeight(16)
+			setTitleText(title)
+			return
+		end
+
+		local words = {}
+		for word in title:gmatch("%S+") do
+			table.insert(words, word)
+		end
+
+		local bestA, bestB, bestScore
+		if #words >= 2 then
+			for i = 1, #words - 1 do
+				local a = table.concat(words, " ", 1, i)
+				local b = table.concat(words, " ", i + 1, #words)
+				local wa = widthOf(a)
+				local wb = widthOf(b)
+				if wa <= maxWidth and wb <= maxWidth then
+					local score = math.abs(wa - wb)
+					if not bestScore or score < bestScore then
+						bestScore = score
+						bestA, bestB = a, b
+					end
+				end
+			end
+		end
+
+		if bestA and bestB then
+			titleFS:SetHeight(30)
+			setTitleText(bestA.."\n"..bestB)
+			return
+		end
+
+		local ell = "..."
+		local function fitWithEllipsis(text)
+			if widthOf(text) <= maxWidth then
+				return text
+			end
+			if widthOf(ell) > maxWidth then
+				return ell
+			end
+			local lo, hi = 1, #text
+			local best = ell
+			while lo <= hi do
+				local mid = math.floor((lo + hi) / 2)
+				local cand = string.sub(text, 1, mid)..ell
+				if widthOf(cand) <= maxWidth then
+					best = cand
+					lo = mid + 1
+				else
+					hi = mid - 1
+				end
+			end
+			return best
+		end
+
+		local line1 = ""
+		local splitAt = 0
+		for i = 1, #words do
+			local cand = table.concat(words, " ", 1, i)
+			if widthOf(cand) <= maxWidth then
+				line1 = cand
+				splitAt = i
+			else
+				break
+			end
+		end
+
+		if line1 == "" then
+			local lo, hi = 1, #title
+			while lo <= hi do
+				local mid = math.floor((lo + hi) / 2)
+				local cand = string.sub(title, 1, mid)
+				if widthOf(cand) <= maxWidth then
+					line1 = cand
+					lo = mid + 1
+				else
+					hi = mid - 1
+				end
+			end
+		end
+
+		local rest = ""
+		if splitAt > 0 and splitAt < #words then
+			rest = table.concat(words, " ", splitAt + 1, #words)
+		else
+			rest = string.sub(title, #line1 + 1):gsub("^%s+", "")
+		end
+		local line2 = fitWithEllipsis(rest ~= "" and rest or title)
+		titleFS:SetHeight(30)
+		setTitleText(line1.."\n"..line2)
+	end
+
 	local title = ""
 	if self.CurrentGuide and self.CurrentGuide.title_short then
 		title = self.CurrentGuide.title_short
@@ -221,7 +491,7 @@ function me:UpdateRemasterHeader()
 			title = "No Guide Selected"
 		end
 	end
-	frames.headerTitle:SetText(title or "")
+	fitRemasterHeaderTitle(title or "")
 	local stepText = ""
 	if self.CurrentGuide and self.CurrentGuide.steps then
 		local total = #self.CurrentGuide.steps
@@ -377,7 +647,8 @@ function me:EnsureRemasterFrames()
 	title:SetPoint("LEFT", header, "LEFT", 8, 0)
 	title:SetJustifyH("LEFT")
 	title:SetTextColor(0.92, 0.94, 0.98, 1)
-	if not safeSetFont(title, ZGV.DIR.."\\Skins\\segoeuib.ttf", 13) then
+	if not safeSetFont(title, ZGV.DIR.."\\Skins\\segoeuib.ttf", 13)
+		and not safeSetFont(title, ZGV.DIR.."\\Skins\\segoeui.ttf", 13) then
 		safeSetFont(title, STANDARD_TEXT_FONT, 13)
 	end
 	frames.headerTitle = title
@@ -1468,7 +1739,7 @@ function me:UpdateFrame(full,onupdate)
 
 	if self.loading then
 
-		ZygorGuidesViewerFrame_Border_SectionTitle:SetText()
+		self:UpdateLegacyHeaderTitle("")
 		ZygorGuidesViewerFrame_MissingText:Show()
 		ZygorGuidesViewerFrame_MissingText:SetText(L['miniframe_loading']:format((self.loadprogress or 0)*100))
 
@@ -1488,7 +1759,7 @@ function me:UpdateFrame(full,onupdate)
 			if full then
 				ZygorGuidesViewerFrameScrollScrollBar:SetMinMaxValues(1,#self.CurrentGuide.steps>0 and #self.CurrentGuide.steps or 1)
 				ZygorGuidesViewerFrame_Skipper_Step:SetText(self.CurrentStepNum)
-				ZygorGuidesViewerFrame_Border_SectionTitle:SetText(self.CurrentGuide.title_short)
+				self:UpdateLegacyHeaderTitle(self.CurrentGuide.title_short)
 			end
 
 			--ZygorGuidesViewerFrame_Border_TitleBar_PrevButton:Show()
@@ -1878,7 +2149,7 @@ function me:UpdateFrame(full,onupdate)
 
 		else -- no current guide?
 
-			ZygorGuidesViewerFrame_Border_SectionTitle:SetText()
+			self:UpdateLegacyHeaderTitle("")
 
 			--ZygorGuidesViewerFrame_LocationLabel:Hide()
 			--ZygorGuidesViewerFrame_LevelLabel:Hide()
@@ -1921,7 +2192,7 @@ function me:UpdateFrame(full,onupdate)
 				ZygorGuidesViewerFrameScrollScrollBar:Show()
 				ZygorGuidesViewerFrameScrollScrollBar:SetMinMaxValues(1,#spots)
 				if ZygorGuidesViewerFrame_Skipper then ZygorGuidesViewerFrame_Skipper:Hide() end
-				ZygorGuidesViewerFrame_Border_SectionTitle:SetText("Gold Spots")
+				self:UpdateLegacyHeaderTitle("Gold Spots")
 			end
 
 		else -- no gold guides or no spots in range
@@ -3165,6 +3436,17 @@ function me:ApplyRemasterSkin()
 	if remasterFrames and remasterFrames.miniButton then remasterFrames.miniButton:Show() end
 	if remasterFrames and remasterFrames.lockButton then remasterFrames.lockButton:Show() end
 
+	if ZygorGuidesViewerFrame_MissingText and remasterFrames and remasterFrames.content then
+		ZygorGuidesViewerFrame_MissingText:SetParent(remasterFrames.content)
+		ZygorGuidesViewerFrame_MissingText:ClearAllPoints()
+		ZygorGuidesViewerFrame_MissingText:SetPoint("TOPLEFT", remasterFrames.content, "TOPLEFT", 5, -10)
+		ZygorGuidesViewerFrame_MissingText:SetPoint("TOPRIGHT", remasterFrames.content, "TOPRIGHT", -5, -10)
+		ZygorGuidesViewerFrame_MissingText:SetPoint("BOTTOM", remasterFrames.content, "BOTTOM", 0, 5)
+		if ZygorGuidesViewerFrame_MissingText.SetDrawLayer then
+			ZygorGuidesViewerFrame_MissingText:SetDrawLayer("OVERLAY")
+		end
+	end
+
 	-- apply user settings to remaster visuals
 	if self.db and self.db.profile and remasterFrames then
 		local textc = self.db.profile.skincolors and self.db.profile.skincolors.text or {0.9, 0.92, 0.98}
@@ -3600,6 +3882,14 @@ function me:RestoreLegacySkin()
 
 	if ZygorGuidesViewerFrame_Border_SectionTitle then
 		ZygorGuidesViewerFrame_Border_SectionTitle:SetAlpha(1)
+	end
+
+	if ZygorGuidesViewerFrame_MissingText then
+		ZygorGuidesViewerFrame_MissingText:SetParent(ZygorGuidesViewerFrame)
+		ZygorGuidesViewerFrame_MissingText:ClearAllPoints()
+		ZygorGuidesViewerFrame_MissingText:SetPoint("TOPLEFT", ZygorGuidesViewerFrame, "TOPLEFT", 5, -30)
+		ZygorGuidesViewerFrame_MissingText:SetPoint("TOPRIGHT", ZygorGuidesViewerFrame, "TOPRIGHT", -5, -30)
+		ZygorGuidesViewerFrame_MissingText:SetPoint("BOTTOM", ZygorGuidesViewerFrame, "BOTTOM", 0, 5)
 	end
 
 	if self.RemasterDefaults and self.RemasterDefaults.goalcolors and self.db and self.db.profile then

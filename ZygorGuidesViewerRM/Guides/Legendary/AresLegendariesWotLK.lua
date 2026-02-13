@@ -114,7 +114,7 @@ ZygorGuidesViewer:RegisterGuide("Ares' WotLK 3.3.5a Guides\\Legendary\\Val'anyr\
 		'Go to Ulduar|goto Ulduar|noway|c
 	step //2
 		.' Farm Ulduar bosses for fragments.
-		.get 30 Fragment of Val'anyr##45038
+		.get 30 Fragment of Val'anyr##45038 |n
 	step //3
 		.' Combine fragments in your bags.
 		.use Fragment of Val'anyr##45038
@@ -127,7 +127,7 @@ ZygorGuidesViewer:RegisterGuide("Ares' WotLK 3.3.5a Guides\\Legendary\\Val'anyr\
 	step //5
 		.' Continue in Ulduar 25 to Yogg-Saron.
 		.' During the Yogg-Saron fight, use the reforging quest item as required by the quest.
-		.kill Yogg-Saron##33288
+		.kill Yogg-Saron##33288 |n
 		.' Loot the reforged hammer objective item.
 		.get Reforged Hammer of Ancient Kings##45896 |q 13629/1
 	step //6
