@@ -43,7 +43,7 @@ All credit for the original Zygor Guides concept and content belongs to the orig
 
 ## Example Image(s)
 
-<img width="444" height="294" alt="image" src="https://github.com/user-attachments/assets/21b70f37-30ea-400c-9ef8-b8fca0ef6f0c" />
-<img width="579" height="265" alt="image" src="https://github.com/user-attachments/assets/baec3cb5-d02e-4e92-bf4e-26f667557e26" />
-<img width="649" height="205" alt="image" src="https://github.com/user-attachments/assets/d14d6676-4bbf-488e-80c0-78195e445b91" />
-<img width="441" height="689" alt="image" src="https://github.com/user-attachments/assets/a7c63088-c854-49d7-8600-ea3a1e510eea" />
+<img width="436" height="264" alt="image" src="https://github.com/user-attachments/assets/f0dddbf0-7bfa-4b95-a250-0692c7690921" />
+<img width="586" height="260" alt="image" src="https://github.com/user-attachments/assets/e6b85c9c-8835-4e49-96b1-608ad9944b0f" />
+<img width="637" height="197" alt="image" src="https://github.com/user-attachments/assets/cd258eb1-ebb6-420d-9516-4abe9d75d88c" />
+<img width="443" height="687" alt="image" src="https://github.com/user-attachments/assets/b3f2c2ef-2bef-4ca4-b033-37c314b151d5" />
