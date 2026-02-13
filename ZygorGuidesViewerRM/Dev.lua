@@ -1,2 +1,0 @@
--- Stub module to satisfy files.xml reference.
--- Intentionally empty for remaster build.
