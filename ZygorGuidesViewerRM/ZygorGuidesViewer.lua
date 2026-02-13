@@ -418,6 +418,21 @@ function me:EnsureRemasterFrames()
 			selfBtn:SetBackdropColor(c[1], c[2], c[3], c[4] or 1)
 		end)
 	end
+	local function styleCompositeButton(button, textureName)
+		button:SetText("")
+		local darkDir = "Interface\\AddOns\\"..(addonName or "ZygorGuidesViewer").."\\Skin\\rm_dark\\"
+		if not button.rmDarkBG then
+			button.rmDarkBG = button:CreateTexture(nil, "BACKGROUND")
+			button.rmDarkBG:SetAllPoints(button)
+		end
+		button.rmDarkBG:SetTexture(nil)
+		if not button.rmDarkArrow then
+			button.rmDarkArrow = button:CreateTexture(nil, "ARTWORK")
+			button.rmDarkArrow:SetAllPoints(button)
+		end
+		button.rmDarkArrow:SetTexture(darkDir..textureName)
+		button.rmDarkArrow:SetBlendMode("BLEND")
+	end
 	local function tipColor()
 		local probe = L and (L['frame_stepnav_prev_click'] or L['frame_stepnav_next_click'])
 		if type(probe) == "string" then
@@ -447,6 +462,7 @@ function me:EnsureRemasterFrames()
 
 	local prevButton = CreateFrame("Button", "ZGVRemasterPrevButton", toolbar)
 	styleButton(prevButton, "<", 20, 20)
+	styleCompositeButton(prevButton, "LeftArrow-WithBG")
 	prevButton:SetPoint("LEFT", guideButton, "RIGHT", 8, 0)
 	prevButton:SetScript("OnClick", function(selfBtn, button)
 		if ZygorGuidesViewer then
@@ -469,6 +485,7 @@ function me:EnsureRemasterFrames()
 
 	local nextButton = CreateFrame("Button", "ZGVRemasterNextButton", toolbar)
 	styleButton(nextButton, ">", 20, 20)
+	styleCompositeButton(nextButton, "RightArrow-WithBG")
 	nextButton:SetPoint("LEFT", prevButton, "RIGHT", 4, 0)
 	nextButton:SetScript("OnClick", function(selfBtn, button)
 		if ZygorGuidesViewer then
@@ -500,6 +517,7 @@ function me:EnsureRemasterFrames()
 
 	local closeButton = CreateFrame("Button", "ZGVRemasterCloseButton", header)
 	styleButton(closeButton, "X", 20, 20)
+	styleCompositeButton(closeButton, "X-WithBG")
 	closeButton:SetPoint("RIGHT", header, "RIGHT", -8, 0)
 	closeButton:SetScript("OnClick", function()
 		HideUIPanel(ZygorGuidesViewerFrame)
@@ -517,6 +535,7 @@ function me:EnsureRemasterFrames()
 
 	local settingsButton = CreateFrame("Button", "ZGVRemasterSettingsButton", toolbar)
 	styleButton(settingsButton, "S", 20, 20)
+	styleCompositeButton(settingsButton, "Gear-WithBG")
 	settingsButton:SetPoint("RIGHT", toolbar, "RIGHT", -8, 0)
 	settingsButton:SetScript("OnClick", function(selfBtn, button)
 		if button == "RightButton" then
@@ -540,6 +559,7 @@ function me:EnsureRemasterFrames()
 
 	local miniButton = CreateFrame("Button", "ZGVRemasterMiniButton", toolbar)
 	styleButton(miniButton, "M", 20, 20)
+	styleCompositeButton(miniButton, "Menu-WithBG")
 	miniButton:SetPoint("RIGHT", settingsButton, "LEFT", -6, 0)
 	miniButton:SetScript("OnClick", function(selfBtn, button)
 		if button == "LeftButton" then
@@ -569,6 +589,7 @@ function me:EnsureRemasterFrames()
 
 	local lockButton = CreateFrame("Button", "ZGVRemasterLockButton", toolbar)
 	styleButton(lockButton, "L", 20, 20)
+	styleCompositeButton(lockButton, "Unlocked-Lock-WithBG")
 	lockButton:SetPoint("RIGHT", miniButton, "LEFT", -6, 0)
 	lockButton:SetScript("OnClick", function()
 		ZygorGuidesViewer:SetOption("Display","windowlocked")
@@ -1232,7 +1253,12 @@ function me:UpdateLocking()
 		btn:SetNormalTexture(nil)
 		btn:SetPushedTexture(nil)
 		btn:SetHighlightTexture(nil)
-		btn:SetText(locked and "U" or "L")
+		btn:SetText("")
+		if btn.rmDarkArrow then
+			local darkDir = "Interface\\AddOns\\"..(addonName or "ZygorGuidesViewer").."\\Skin\\rm_dark\\"
+			btn.rmDarkArrow:SetTexture(darkDir..(locked and "Locked-Lock-WithBG" or "Unlocked-Lock-WithBG"))
+			btn.rmDarkArrow:SetBlendMode("BLEND")
+		end
 	end
 
 	if self.db.profile["showallsteps"] then
@@ -3156,13 +3182,16 @@ function me:ApplyRemasterSkin()
 		end
 
 		local theme = {
-			frameBorder = { 0.12, 0.12, 0.14, 0.9 },
-			frameLight = { 1, 1, 1, 0.08 },
-			insetBg = backc,
-			insetBorder = { 0.12, 0.12, 0.14, 0.8 },
-			buttonBack = { 0.14, 0.15, 0.18, 0.9 },
-			buttonHover = { 0.20, 0.21, 0.26, 0.95 },
-			buttonBorder = { 0.22, 0.24, 0.28, 0.9 },
+			frameBorder = { 0.18, 0.18, 0.20, 0.92 },
+			frameLight = { 0.28, 0.28, 0.30, 0.18 },
+			insetBg = { 0.10, 0.10, 0.11, 0.95 },
+			insetBorder = { 0.20, 0.20, 0.22, 0.90 },
+			buttonBack = { 0.13, 0.13, 0.14, 0.95 },
+			buttonHover = { 0.19, 0.19, 0.21, 0.98 },
+			buttonBorder = { 0.27, 0.27, 0.30, 0.95 },
+			separator = { 0.32, 0.32, 0.35, 0.80 },
+			textPrimary = { 0.86, 0.86, 0.88, 1.00 },
+			textMeta = { 0.72, 0.72, 0.75, 0.90 },
 		}
 
 		if remastercolor == "goals" then
@@ -3174,6 +3203,8 @@ function me:ApplyRemasterSkin()
 			theme.buttonHover = { 0.20, 0.18, 0.12, 0.98 }
 			theme.buttonBorder = { 0.45, 0.38, 0.22, 0.9 }
 			theme.separator = { 0.92, 0.80, 0.50, 0.55 }
+			theme.textPrimary = { 0.92, 0.80, 0.50, 1.00 }
+			theme.textMeta = { 0.70, 0.78, 0.90, 0.90 }
 		end
 		if remasterFrames.root then
 			remasterFrames.root:SetAlpha(opacitymain)
@@ -3211,25 +3242,16 @@ function me:ApplyRemasterSkin()
 			setTexColor(remasterFrames.separator, c[1], c[2], c[3], c[4] or 1)
 		end
 		if remasterFrames.headerTitle then
-			if remastercolor == "goals" then
-				remasterFrames.headerTitle:SetTextColor(0.92, 0.80, 0.50, 1)
-			else
-				remasterFrames.headerTitle:SetTextColor(textc[1], textc[2], textc[3], 1)
-			end
+			local c = theme.textPrimary or textc
+			remasterFrames.headerTitle:SetTextColor(c[1], c[2], c[3], c[4] or 1)
 		end
 		if remasterFrames.headerMeta then
-			if remastercolor == "goals" then
-				remasterFrames.headerMeta:SetTextColor(0.70, 0.78, 0.90, 0.9)
-			else
-				remasterFrames.headerMeta:SetTextColor(textc[1], textc[2], textc[3], 0.85)
-			end
+			local c = theme.textMeta or textc
+			remasterFrames.headerMeta:SetTextColor(c[1], c[2], c[3], c[4] or 0.85)
 		end
 		if remasterFrames.stepLabel then
-			if remastercolor == "goals" then
-				remasterFrames.stepLabel:SetTextColor(0.92, 0.80, 0.50, 1)
-			else
-				remasterFrames.stepLabel:SetTextColor(textc[1], textc[2], textc[3], 1)
-			end
+			local c = theme.textPrimary or textc
+			remasterFrames.stepLabel:SetTextColor(c[1], c[2], c[3], c[4] or 1)
 		end
 
 		local function applyButtonTheme(button)
