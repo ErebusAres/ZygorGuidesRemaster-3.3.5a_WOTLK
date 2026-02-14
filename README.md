@@ -11,14 +11,14 @@ This project keeps the classic Zygor workflow while delivering a cleaner remaste
 [![Help](https://img.shields.io/badge/Help-Localize-f0883e?style=for-the-badge&labelColor=555555)](#-support-wanted-localization-qa)
 [![Safety](https://img.shields.io/badge/Safety-VirusTotal_Report-1f6feb?style=for-the-badge&labelColor=555555)](https://www.virustotal.com/gui/url/d55dfec1532a98b39fc87a1a4f34c06b644de5988b24288bf207610b0c1b46fa/detection)
 
-![Guides](https://img.shields.io/badge/Guides-Included-f0883e?style=for-the-badge&labelColor=555555) ![Feb 2026](https://img.shields.io/badge/Feb_2026-Updated-2ea043?style=for-the-badge&labelColor=555555) ![For](https://img.shields.io/badge/For-WoW-f2cc60?style=for-the-badge&labelColor=555555) ![Era](https://img.shields.io/badge/Era-WotLK_3.3.5a-1f6feb?style=for-the-badge&labelColor=555555)
+![Guides Included](https://img.shields.io/badge/Guides-Included-orange) ![Feb 2026 Updated](https://img.shields.io/badge/Feb_2026-Updated-brightgreen) ![WoW Compatible](https://img.shields.io/badge/For-WoW-yellow) ![Era WotLK 3.3.5a](https://img.shields.io/badge/Era-WotLK_3.3.5a-blue)
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/T6T01U9GMM)
 
 ## 🔖 Version
 
 - 📦 Addon version: **3.0**
-- 🔢 Revision: **67**
+- 🔢 Revision: **68**
 - 🎮 Intended client: **WotLK 3.3.5a / 12340**
 
 ## 🎯 Who This Is For
@@ -138,7 +138,7 @@ This addon is fully open source and can be inspected before use.
 
 ## 📜 Changelog
 
-### v3.0 (Revision 67)
+### v3.0 (Revision 68)
 
 - Remastered UI improvements
 - Packaging and installation cleanup
@@ -182,3 +182,4 @@ This remaster focuses on UI/UX modernization, packaging quality, compatibility m
 <img width="586" height="260" alt="Guide Window Layout" src="https://github.com/user-attachments/assets/e6b85c9c-8835-4e49-96b1-608ad9944b0f" />
 <img width="637" height="197" alt="Waypoint and Route Display" src="https://github.com/user-attachments/assets/cd258eb1-ebb6-420d-9516-4abe9d75d88c" />
 <img width="443" height="687" alt="Talent Advisor Panel" src="https://github.com/user-attachments/assets/b3f2c2ef-2bef-4ca4-b033-37c314b151d5" />
+
