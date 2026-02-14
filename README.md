@@ -34,38 +34,28 @@ This is a remastered UI/UX fork of Zygor Guides Viewer for **World of Warcraft 3
 
 ## Localization Status (Estimated)
 
-These percentages are a repository-snapshot estimate, not a final QA-certified metric.
-Last updated: **February 13, 2026**.
+Localization coverage work is complete at the key/ID level, but language quality still needs human review.
+Last updated: **February 14, 2026**.
 
-Method used:
-- Compared each locale against `Localization/enUS.lua` and `Localization/NPCs_enUS.lua`.
-- Counted entries as "completed" when a locale entry exists and differs from enUS text.
-- Overall estimate is weighted by total string count (`Main` + `NPCs`).
+Current state summary:
+- All shipped locales now have full key/ID coverage against `enUS` references.
+- Placeholder and formatting consistency checks have been run (for example `%s`, `%d`, color tags, and newline markers).
+- Remaining work is primarily language QA polish: phrasing naturalness, terminology consistency, and validating NPC proper names against official localized client data.
 
-| Locale | Main (Estimated) | NPCs (Estimated) | Overall (Estimated) |
-|---|---:|---:|---:|
-| deDE | 50.50% | 75.48% | 74.71% |
-| esES | 2.68% | 67.41% | 65.42% |
-| frFR | 49.50% | 68.15% | 67.58% |
-| koKR | 0.00% | 80.06% | 77.60% |
-| ruRU | 60.20% | 80.14% | 79.53% |
-| zhCN | 53.85% | 77.06% | 76.35% |
-| zhTW | 53.85% | 80.80% | 79.97% |
-
-Notes:
-- `Main` localization key coverage varies by locale; some files intentionally only include partial overrides.
-- `NPCs` files currently have substantial coverage but still miss a large set of enUS IDs in several locales.
-- Current `deDE` NPC key coverage: **8827 / 9430** entries.
-- Values above should be treated as close estimates for planning and contribution prioritization.
+Method (summary):
+- Locale files were compared against `Localization/enUS.lua` and `Localization/NPCs_enUS.lua`.
+- Structural/token-only strings were treated separately from true translatable content.
+- This remains an engineering estimate, not a linguist-certified translation grade.
 
 ## Localization Support Wanted
 
-If you can help with localization, support is welcome and appreciated.
+Localization was largely AI-assisted and needs human verification. Community review is welcome and appreciated.
 
 Areas where help is most valuable:
-- Filling missing `NPCs_*` ID entries from `NPCs_enUS.lua`.
-- Translating missing/English-fallback keys in `Localization/*.lua`.
-- Spot-checking terminology consistency (quests, classes, factions, locations) for WotLK 3.3.5a.
+- Verifying that text reads naturally in-context (UI labels, tooltips, and guide step wording).
+- Checking terminology consistency (quests, classes, factions, locations) for WotLK 3.3.5a.
+- Confirming NPC proper names against official locale client data where possible.
+- Reporting any mistranslations, awkward phrasing, encoding oddities, or placeholder mistakes.
 
 If you contribute, please keep placeholders/formatting intact (`%s`, `%d`, color codes, `|n`) and avoid changing IDs/keys.
 
