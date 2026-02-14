@@ -2,30 +2,44 @@
 
 Remastered Zygor Guides Viewer for **World of Warcraft: Wrath of the Lich King (WotLK) 3.3.5a (build 12340)**.
 
+A remastered version of the classic Zygor Guides Viewer, updated for WotLK 3.3.5a private servers with a cleaner UI and maintained compatibility.
+
 This project keeps the classic Zygor workflow while delivering a cleaner remastered presentation and active upkeep for the 3.3.5a community.
 
-[![Install Addon](https://img.shields.io/badge/Install-Addon-orange?style=for-the-badge)](https://github.com/ErebusAres/ZygorGuidesRemaster-3.3.5a_WOTLK/archive/refs/heads/main.zip)
-[![Quick Install](https://img.shields.io/badge/Open-Quick_Install-6f42c1?style=for-the-badge)](#-quick-install)
-[![Localization QA](https://img.shields.io/badge/Help-Localization_QA-yellow?style=for-the-badge)](#-support-wanted-localization-qa)
-[![VirusTotal Report](https://img.shields.io/badge/VirusTotal-URL_Report-success?style=for-the-badge)](https://www.virustotal.com/gui/url/d55dfec1532a98b39fc87a1a4f34c06b644de5988b24288bf207610b0c1b46fa/detection)
+[![Download](https://img.shields.io/badge/Download-Addon-2ea043?style=for-the-badge&labelColor=555555)](https://github.com/ErebusAres/ZygorGuidesRemaster-3.3.5a_WOTLK/archive/refs/heads/main.zip)
+[![Install](https://img.shields.io/badge/Install-Quickly-8250df?style=for-the-badge&labelColor=555555)](#-quick-install)
+[![Help](https://img.shields.io/badge/Help-Localize-f0883e?style=for-the-badge&labelColor=555555)](#-support-wanted-localization-qa)
+[![Safety](https://img.shields.io/badge/Safety-VirusTotal_Report-1f6feb?style=for-the-badge&labelColor=555555)](https://www.virustotal.com/gui/url/d55dfec1532a98b39fc87a1a4f34c06b644de5988b24288bf207610b0c1b46fa/detection)
 
-![Guides Included](https://img.shields.io/badge/Guides-Included-brightgreen) ![2025 Updated](https://img.shields.io/badge/2025-Updated-blue) ![For WotLK](https://img.shields.io/badge/For-WotLK_3.3.5a-orange)
+![Guides](https://img.shields.io/badge/Guides-Included-f0883e?style=for-the-badge&labelColor=555555) ![Feb 2026](https://img.shields.io/badge/Feb_2026-Updated-2ea043?style=for-the-badge&labelColor=555555) ![For](https://img.shields.io/badge/For-WoW-f2cc60?style=for-the-badge&labelColor=555555) ![Era](https://img.shields.io/badge/Era-WotLK_3.3.5a-1f6feb?style=for-the-badge&labelColor=555555)
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/T6T01U9GMM)
 
 ## 🔖 Version
 
 - 📦 Addon version: **3.0**
-- 🔢 Revision: **66**
+- 🔢 Revision: **67**
 - 🎮 Intended client: **WotLK 3.3.5a / 12340**
+
+## 🎯 Who This Is For
+
+This addon is intended for:
+
+- World of Warcraft **WotLK 3.3.5a (build 12340)** clients
+- Private server environments (for example TrinityCore-based servers)
+- Players who want the classic Zygor guide experience with a cleaner UI
+
+This project is primarily focused on **WotLK 3.3.5a**. Other clients may work, but support and testing are centered on 3.3.5a.
 
 ## ⭐ What You Get
 
 - 🗺️ Step-by-step leveling and quest progression guidance.
 - 🧭 Arrow and waypoint navigation while you play.
 - ✅ Structured objective flow (accept, complete, and turn-in).
-- 🎨 Remastered viewer UI that is easier to read during long sessions.
-- 🧠 Included talent guidance through `ZygorTalentAdvisor`.
+- 🎨 A cleaner, more readable viewer UI designed for long play sessions.
+- 🧠 Includes talent guidance via the bundled `ZygorTalentAdvisor` addon.
 
-## 🧱 Core Compatibility
+## 🧱 What Stayed the Same
 
 Core 3.3.5a-era behavior is preserved:
 
@@ -34,7 +48,7 @@ Core 3.3.5a-era behavior is preserved:
 - ⚙️ Legacy guide execution patterns.
 - 🧠 Base `ZygorTalentAdvisor` behavior and structure.
 
-## ✨ What This Remaster Improves
+## ✨ What's New in the Remaster
 
 - 🎨 Cleaner UI presentation without changing core guide logic.
 - 🧰 Improved package layout for easier installation and maintenance.
@@ -49,6 +63,15 @@ Core 3.3.5a-era behavior is preserved:
 
 ## 🚀 Quick Install
 
+### 📦 Installation Overview
+
+1. Download the ZIP.
+2. Extract to `Interface\AddOns\`.
+3. Launch the game.
+4. Enable both addons.
+
+### Detailed Steps
+
 1. Close World of Warcraft.
 2. Open `%WoWFolder%\Interface\AddOns\`.
 3. Remove older folders if present:
@@ -62,6 +85,23 @@ Core 3.3.5a-era behavior is preserved:
    - `Interface\AddOns\ZygorGuidesViewerRM\ZygorGuidesViewerRM.toc`
    - `Interface\AddOns\ZygorTalentAdvisor\ZygorTalentAdvisor.toc`
 6. Launch the game and enable both addons.
+
+## ❓ Common Issues
+
+**Addon not showing in-game**
+
+- Make sure the folder structure is:
+  - `Interface\AddOns\ZygorGuidesViewerRM\ZygorGuidesViewerRM.toc`
+- Do not nest folders (no double folder level).
+
+**Out of date warning**
+
+- Enable **Load out of date AddOns** on the character select screen.
+
+**Guide not progressing**
+
+- Some imported guides may not fully match 3.3.5a data.
+- See the Known Issues section below.
 
 ## 🌍 Localization
 
@@ -90,10 +130,20 @@ Please report:
 
 ## 🔒 Safety and Trust
 
-Community-maintained addons are often labeled as risky without clear evidence. This project is fully inspectable as source code, and users are encouraged to review files before use.
+This addon is fully open source and can be inspected before use.
 
 - [![VirusTotal Report](https://img.shields.io/badge/VirusTotal-View_Report-3bb143?style=flat-square)](https://www.virustotal.com/gui/url/d55dfec1532a98b39fc87a1a4f34c06b644de5988b24288bf207610b0c1b46fa/detection)
-- This repository is public, so you can audit changes, scripts, and addon behavior directly.
+- You can review all files and changes directly in this repository.
+- A VirusTotal scan of the download link is provided for transparency.
+
+## 📜 Changelog
+
+### v3.0 (Revision 67)
+
+- Remastered UI improvements
+- Packaging and installation cleanup
+- Expanded guide coverage
+- Localization key completion
 
 ## 📝 Notes
 
@@ -105,6 +155,20 @@ Community-maintained addons are often labeled as risky without clear evidence. T
 
 - Some imported guides may be incomplete or not fully aligned to 3.3.5a data.
 - If a guide behaves incorrectly, disable it in `ZygorGuidesViewerRM/Guides/Autoload.xml` and report it.
+
+## ❔ Q&A
+
+**Is this remaster free?**
+
+Yes. This remastered version is and will remain free.
+
+**Where should I download it from?**
+
+Use the main repository download link in this README.
+
+**Are third-party mirrors or repacks safe?**
+
+Not always. Use other sites/downloads at your own risk.
 
 ## 🙏 Credits
 
