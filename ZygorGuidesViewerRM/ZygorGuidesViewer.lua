@@ -3212,6 +3212,17 @@ function me:AlignFrame()
 end
 
 function me:UpdateSkin()
+	local preserveHidden = false
+	if self.db and self.db.profile and self.db.profile.hideborder then
+		preserveHidden = self.borderfadedout == true
+		if not preserveHidden and ZygorGuidesViewerFrame_Border then
+			preserveHidden = (not ZygorGuidesViewerFrame_Border:IsShown()) or ((ZygorGuidesViewerFrame_Border:GetAlpha() or 1) < 0.05)
+		end
+		if not preserveHidden and self.RemasterFrames and self.RemasterFrames.toolbar then
+			preserveHidden = (not self.RemasterFrames.toolbar:IsShown()) or ((self.RemasterFrames.toolbar:GetAlpha() or 1) < 0.05)
+		end
+	end
+
 	SKINDIR = DIR.."\\Skin\\"..self.db.profile.skin
 
 	ZygorGuidesViewerFrame_Border_GuideButton.ntx:SetTexture(SKINDIR.."\\leavesofsteel_dropdown_up")
@@ -3328,6 +3339,19 @@ function me:UpdateSkin()
 
 	self:UpdateLocking()
 	self:AlignFrame()
+	self:ResizeFrame()
+	if self.RefreshAutoHideBorderState then
+		self:RefreshAutoHideBorderState()
+	end
+	if preserveHidden and self.ForceHideBorderNow then
+		self:ForceHideBorderNow()
+		self:ScheduleTimer(function()
+			if ZGV and ZGV.ForceHideBorderNow then ZGV:ForceHideBorderNow() end
+		end, 0.05)
+		self:ScheduleTimer(function()
+			if ZGV and ZGV.ForceHideBorderNow then ZGV:ForceHideBorderNow() end
+		end, 0.15)
+	end
 end
 
 function me:ApplyRemasterSkin()
@@ -3414,12 +3438,6 @@ function me:ApplyRemasterSkin()
 
 	if remasterFrames and remasterFrames.root then
 		remasterFrames.root:Show()
-	end
-	if ZygorGuidesViewerFrame then
-		local minHeight = 260
-		if ZygorGuidesViewerFrame:GetHeight() < minHeight then
-			ZygorGuidesViewerFrame:SetHeight(minHeight)
-		end
 	end
 	if remasterFrames and remasterFrames.header then remasterFrames.header:Show() end
 	if remasterFrames and remasterFrames.separator then remasterFrames.separator:Show() end
@@ -3718,6 +3736,12 @@ function me:ApplyRemasterSkin()
 		self.db.profile.goalbackaux = { r = 0.15, g = 0.22, b = 0.32, a = 0.6 }
 		self.db.profile.goalbackobsolete = { r = 0.15, g = 0.22, b = 0.32, a = 0.6 }
 		self.db.profile.stepbackalpha = 0.2
+	end
+
+	-- On reload, some layers can momentarily reappear before OnUpdate runs.
+	-- If auto-hide is enabled, force hidden immediately at remaster-apply time.
+	if self.db and self.db.profile and self.db.profile.hideborder and self.ForceHideBorderNow then
+		self:ForceHideBorderNow()
 	end
 	self.remasterApplied = true
 end
@@ -4360,6 +4384,29 @@ function me:Frame_OnShow()
 	self.db.profile.visible = not not self.Frame:IsVisible()
 	self:UpdateFrame(true)
 	self:AlignFrame()
+	if self.RefreshAutoHideBorderState then
+		self:RefreshAutoHideBorderState()
+		-- Re-apply once shortly after show to catch post-layout frame updates on reload.
+		self:ScheduleTimer(function()
+			if ZGV and ZGV.RefreshAutoHideBorderState then
+				ZGV:RefreshAutoHideBorderState()
+				if ZGV.db and ZGV.db.profile and ZGV.db.profile.hideborder and ZGV.ForceHideBorderNow then
+					local hovered = MouseIsOver(ZygorGuidesViewerFrame,10,-10,-30,30)
+					if ZGV.db.profile.skin == "remaster" and ZGV.RemasterFrames then
+						local rf = ZGV.RemasterFrames
+						hovered = hovered
+							or (rf.root and MouseIsOver(rf.root,10,-10,-30,30))
+							or (rf.content and MouseIsOver(rf.content,10,-10,-30,30))
+							or (rf.header and MouseIsOver(rf.header,10,-10,-30,30))
+							or (rf.toolbar and MouseIsOver(rf.toolbar,10,-10,-30,30))
+					elseif ZygorGuidesViewerFrame_Border_TitleBar then
+						hovered = hovered or MouseIsOver(ZygorGuidesViewerFrame_Border_TitleBar,10,-10,-30,30)
+					end
+					if not hovered then ZGV:ForceHideBorderNow() end
+				end
+			end
+		end, 0.1)
+	end
 
 	if self.db.profile.hidearrowwithguide then
 		self:SetWaypoint()

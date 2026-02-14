@@ -18,7 +18,7 @@ This project keeps the classic Zygor workflow while delivering a cleaner remaste
 ## 🔖 Version
 
 - 📦 Addon version: **3.0**
-- 🔢 Revision: **68**
+- 🔢 Revision: **69**
 - 🎮 Intended client: **WotLK 3.3.5a / 12340**
 
 ## 🎯 Who This Is For
@@ -138,7 +138,7 @@ This addon is fully open source and can be inspected before use.
 
 ## 📜 Changelog
 
-### v3.0 (Revision 68)
+### v3.0 (Revision 69)
 
 - Remastered UI improvements
 - Packaging and installation cleanup

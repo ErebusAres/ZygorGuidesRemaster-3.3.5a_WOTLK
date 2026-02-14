@@ -412,8 +412,8 @@ function me:Options_DefineOptions()
 						name = L["opt_hideborder"],
 						desc = L["opt_hideborder_desc"],
 						type = 'toggle',
-						set = function()
-							self.db.profile.hideborder = not self.db.profile.hideborder
+						set = function(i,v)
+							self.db.profile.hideborder = v
 							--[[
 							if not self.db.profile.hideborder and ZygorGuidesViewerFrame_Border:GetAlpha()<0.5 then
 								UIFrameFadeIn(ZygorGuidesViewerFrame_Border,0.3,0.0,ZGV.db.profile.opacitymain)
@@ -421,6 +421,20 @@ function me:Options_DefineOptions()
 							end
 							--]]
 							ZGV.borderfadedout = nil
+							if self.RefreshAutoHideBorderState then
+								self:RefreshAutoHideBorderState()
+							end
+							if not v then
+								-- Force immediate visibility restore when disabling auto-hide.
+								if ZygorGuidesViewerFrame_Border then
+									ZygorGuidesViewerFrame_Border:Show()
+									ZygorGuidesViewerFrame_Border:SetAlpha(ZGV.db.profile.opacitymain or 1.0)
+								end
+								if ZygorGuidesViewerFrame_Skipper and ZygorGuidesViewerFrame_Skipper.mustbevisible then
+									ZygorGuidesViewerFrame_Skipper:Show()
+									ZygorGuidesViewerFrame_Skipper:SetAlpha(ZGV.db.profile.opacitymain or 1.0)
+								end
+							end
 						      end,
 						order=2.3,
 					},

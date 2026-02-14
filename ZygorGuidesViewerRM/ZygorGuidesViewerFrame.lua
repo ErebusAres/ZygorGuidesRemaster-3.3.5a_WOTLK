@@ -673,6 +673,167 @@ local stepframe,line
 
 local throttle=0
 
+local function SetRemasterChromeHidden(remasterFrames, hidden, force)
+	if not remasterFrames or not remasterFrames.root or not remasterFrames.content then return end
+	if ZGV.remasterChromeHidden == hidden and not force then return end
+	ZGV.remasterChromeHidden = hidden
+
+	local header = remasterFrames.header
+	local toolbar = remasterFrames.toolbar
+	local separator = remasterFrames.separator
+	local content = remasterFrames.content
+	local root = remasterFrames.root
+
+	if hidden then
+		if root and root.GetBackdropColor and root.SetBackdropColor then
+			ZGV.remasterRootBackdropColor = ZGV.remasterRootBackdropColor or { root:GetBackdropColor() }
+			ZGV.remasterRootBorderColor = ZGV.remasterRootBorderColor or { root:GetBackdropBorderColor() }
+			local r,g,b = unpack(ZGV.remasterRootBackdropColor)
+			root:SetBackdropColor(r or 0, g or 0, b or 0, 0)
+			local br,bg,bb = unpack(ZGV.remasterRootBorderColor)
+			root:SetBackdropBorderColor(br or 0, bg or 0, bb or 0, 0)
+		end
+		if content and content.GetBackdropColor and content.SetBackdropColor then
+			ZGV.remasterContentBackdropColor = ZGV.remasterContentBackdropColor or { content:GetBackdropColor() }
+			ZGV.remasterContentBorderColor = ZGV.remasterContentBorderColor or { content:GetBackdropBorderColor() }
+			local cr,cg,cb = unpack(ZGV.remasterContentBackdropColor)
+			content:SetBackdropColor(cr or 0, cg or 0, cb or 0, 0)
+			local cbr,cbg,cbb = unpack(ZGV.remasterContentBorderColor)
+			content:SetBackdropBorderColor(cbr or 0, cbg or 0, cbb or 0, 0)
+		end
+		if header then header:Hide() end
+		if toolbar then toolbar:Hide() end
+		if separator then separator:Hide() end
+		content:ClearAllPoints()
+		content:SetPoint("TOPLEFT", root, "TOPLEFT", 6, -6)
+		content:SetPoint("BOTTOMRIGHT", root, "BOTTOMRIGHT", -6, 8)
+	else
+		if root and root.SetBackdropColor and ZGV.remasterRootBackdropColor then
+			root:SetBackdropColor(unpack(ZGV.remasterRootBackdropColor))
+		end
+		if root and root.SetBackdropBorderColor and ZGV.remasterRootBorderColor then
+			root:SetBackdropBorderColor(unpack(ZGV.remasterRootBorderColor))
+		end
+		if content and content.SetBackdropColor and ZGV.remasterContentBackdropColor then
+			content:SetBackdropColor(unpack(ZGV.remasterContentBackdropColor))
+		end
+		if content and content.SetBackdropBorderColor and ZGV.remasterContentBorderColor then
+			content:SetBackdropBorderColor(unpack(ZGV.remasterContentBorderColor))
+		end
+		if header then
+			header:Show()
+			header:SetAlpha(1)
+		end
+		if toolbar then
+			toolbar:Show()
+			toolbar:SetAlpha(1)
+		end
+		if separator then
+			separator:Show()
+			separator:SetAlpha(1)
+		end
+		content:ClearAllPoints()
+		if ZGV and ZGV.db and ZGV.db.profile and ZGV.db.profile.resizeup then
+			content:SetPoint("TOPLEFT", root, "TOPLEFT", 6, -6)
+			content:SetPoint("BOTTOMRIGHT", toolbar, "TOPRIGHT", 0, 10)
+		else
+			content:SetPoint("TOPLEFT", toolbar, "BOTTOMLEFT", 0, -10)
+			content:SetPoint("BOTTOMRIGHT", root, "BOTTOMRIGHT", -6, 8)
+		end
+	end
+end
+
+function ZGV:RefreshAutoHideBorderState()
+	if not ZGVF or not self.db or not self.db.profile then return end
+	local hideborder = self.db.profile.hideborder
+	local opacity = self.db.profile.opacitymain or 1.0
+	local isRemaster = self.db.profile.skin == "remaster"
+	local remasterFrames = isRemaster and self.RemasterFrames
+	local remasterHeader = remasterFrames and remasterFrames.header
+	local remasterToolbar = remasterFrames and remasterFrames.toolbar
+	local remasterSeparator = remasterFrames and remasterFrames.separator
+
+	local hovering = MouseIsOver(ZGVF,10,-10,-30,30)
+	if isRemaster and remasterFrames then
+		hovering = hovering
+			or (remasterFrames.root and MouseIsOver(remasterFrames.root,10,-10,-30,30))
+			or (remasterFrames.content and MouseIsOver(remasterFrames.content,10,-10,-30,30))
+	end
+	if isRemaster and remasterHeader then
+		hovering = hovering or MouseIsOver(remasterHeader,10,-10,-30,30)
+	elseif TitleBar then
+		hovering = hovering or MouseIsOver(TitleBar,10,-10,-30,30)
+	end
+
+	if not hideborder then
+		self.borderfadedout = nil
+		if isRemaster and remasterFrames then
+			if remasterHeader then remasterHeader:Show() remasterHeader:SetAlpha(1) end
+			if remasterToolbar then remasterToolbar:Show() remasterToolbar:SetAlpha(1) end
+			if remasterSeparator then remasterSeparator:Show() remasterSeparator:SetAlpha(1) end
+			SetRemasterChromeHidden(remasterFrames,false,true)
+		else
+			if Border then Border:Show() Border:SetAlpha(opacity) end
+			if Skipper and Skipper.mustbevisible then Skipper:Show() Skipper:SetAlpha(opacity) end
+		end
+		return
+	end
+
+	-- Preserve hidden state across skin swaps/reloads when auto-hide is already active.
+	if self.borderfadedout then
+		if isRemaster and remasterFrames then
+			if remasterHeader then remasterHeader:SetAlpha(0) remasterHeader:Hide() end
+			if remasterToolbar then remasterToolbar:SetAlpha(0) remasterToolbar:Hide() end
+			if remasterSeparator then remasterSeparator:SetAlpha(0) remasterSeparator:Hide() end
+			SetRemasterChromeHidden(remasterFrames,true,true)
+		else
+			if Border then Border:SetAlpha(0) Border:Hide() end
+			if Skipper then Skipper:SetAlpha(0) Skipper:Hide() end
+		end
+		return
+	end
+
+	if hovering then
+		self.borderfadedout = nil
+		if isRemaster and remasterFrames then
+			if remasterHeader then remasterHeader:Show() remasterHeader:SetAlpha(1) end
+			if remasterToolbar then remasterToolbar:Show() remasterToolbar:SetAlpha(1) end
+			if remasterSeparator then remasterSeparator:Show() remasterSeparator:SetAlpha(1) end
+			SetRemasterChromeHidden(remasterFrames,false)
+		else
+			if Border then Border:Show() Border:SetAlpha(opacity) end
+			if Skipper and Skipper.mustbevisible then Skipper:Show() Skipper:SetAlpha(opacity) end
+		end
+	else
+		self.borderfadedout = true
+		if isRemaster and remasterFrames then
+			if remasterHeader then remasterHeader:SetAlpha(0) remasterHeader:Hide() end
+			if remasterToolbar then remasterToolbar:SetAlpha(0) remasterToolbar:Hide() end
+			if remasterSeparator then remasterSeparator:SetAlpha(0) remasterSeparator:Hide() end
+			SetRemasterChromeHidden(remasterFrames,true,true)
+		else
+			if Border then Border:SetAlpha(0) Border:Hide() end
+			if Skipper then Skipper:SetAlpha(0) Skipper:Hide() end
+		end
+	end
+end
+
+function ZGV:ForceHideBorderNow()
+	if not self.db or not self.db.profile or not self.db.profile.hideborder then return end
+	local isRemaster = self.db.profile.skin == "remaster"
+	local remasterFrames = isRemaster and self.RemasterFrames
+	if isRemaster and remasterFrames then
+		if remasterFrames.header then remasterFrames.header:SetAlpha(0) remasterFrames.header:Hide() end
+		if remasterFrames.toolbar then remasterFrames.toolbar:SetAlpha(0) remasterFrames.toolbar:Hide() end
+		if remasterFrames.separator then remasterFrames.separator:SetAlpha(0) remasterFrames.separator:Hide() end
+		SetRemasterChromeHidden(remasterFrames, true, true)
+	else
+		if Border then Border:SetAlpha(0) Border:Hide() end
+		if Skipper then Skipper:SetAlpha(0) Skipper:Hide() end
+	end
+	self.borderfadedout = true
+end
+
 function ZygorGuidesViewerFrameMaster_OnUpdate(self,elapsed)
 	if not ZGV.guidesloaded and ZGV.db and ZGV.db.char.maint_startguides then
 		local st=GetTime()
@@ -711,8 +872,22 @@ function ZygorGuidesViewerFrame_OnUpdate(self,elapsed)
 	local locked = ZGV.db.profile.windowlocked
 
 	local isRemaster = ZGV.db and ZGV.db.profile and ZGV.db.profile.skin == "remaster"
+	local remasterFrames = isRemaster and ZGV.RemasterFrames
+	local remasterHeader = remasterFrames and remasterFrames.header
+	local remasterToolbar = remasterFrames and remasterFrames.toolbar
+	local remasterSeparator = remasterFrames and remasterFrames.separator
+	local remasterHover = isRemaster and remasterFrames and (
+		(remasterFrames.root and MouseIsOver(remasterFrames.root,10,-10,-30,30))
+		or (remasterFrames.content and MouseIsOver(remasterFrames.content,10,-10,-30,30))
+	)
 	if isRemaster and ZygorGuidesViewerFrame_Border_GuideButton then
 		ZygorGuidesViewerFrame_Border_GuideButton:Hide()
+	end
+	if isRemaster and Border then
+		Border:Hide()
+	end
+	if isRemaster and Skipper then
+		Skipper:Hide()
 	end
 
 	-- auto-hide border
@@ -728,44 +903,114 @@ function ZygorGuidesViewerFrame_OnUpdate(self,elapsed)
 			self.oldxPos,self.oldyPos = xPos,yPos
 		--end
 
-		if (  (locked and MouseIsOver(TitleBar,10,-10,-30,30))
-		   or (--[[not locked and]] MouseIsOver(ZGVF,0,0,-20,0))
-		   ) and ZGV.borderfadedout then
-			self.mouseCount = self.mouseCount+elapsed
-			self.leftCount=0
-			if self.mouseCount>delay then
-				UIFrameFadeIn(Border,fadespeed,0.0,ZGV.db.profile.opacitymain)
-				UIFrameFadeIn(Skipper,fadespeed,0.0,ZGV.db.profile.opacitymain)
-				ZGV.borderfadedout=nil
+		if isRemaster and remasterFrames then
+			local headerHover = remasterHeader and MouseIsOver(remasterHeader,10,-10,-30,30)
+			if ((locked and headerHover) or MouseIsOver(ZGVF,0,0,-20,0) or remasterHover) and ZGV.borderfadedout then
+				self.mouseCount = self.mouseCount+elapsed
+				self.leftCount=0
+				if self.mouseCount>delay then
+					if remasterHeader then
+						remasterHeader:Show()
+						UIFrameFadeIn(remasterHeader,fadespeed,0.0,1.0)
+					end
+					if remasterToolbar then
+						remasterToolbar:Show()
+						UIFrameFadeIn(remasterToolbar,fadespeed,0.0,1.0)
+					end
+					if remasterSeparator then
+						remasterSeparator:Show()
+						UIFrameFadeIn(remasterSeparator,fadespeed,0.0,1.0)
+					end
+					ZGV.borderfadedout=nil
+					SetRemasterChromeHidden(remasterFrames,false)
+				end
+				if GuideButton and GuideButton.delay then GuideButton.delay=-2 end
 			end
-			GuideButton.delay=-2
-		end
 
-		if not MouseIsOver(self,10,-10,-30,30)
-		and (not ZGV.Tab1 or not MouseIsOver(ZGV.Tab1))
-		and (not ZGV.Tab2 or not MouseIsOver(ZGV.Tab2)) then
-			self.leftCount = self.leftCount+elapsed
-			self.mouseCount=0
-			if self.leftCount>delay and Border:GetAlpha()>0.05 and not ZGV.borderfadedout then
-				UIFrameFadeOut(Border,fadespeed,ZGV.db.profile.opacitymain,0.0)
-				UIFrameFadeOut(Skipper,fadespeed,ZGV.db.profile.opacitymain,0.0)
-				ZGV.borderfadedout=true
+			if not MouseIsOver(self,10,-10,-30,30)
+			and not remasterHover
+			and (not ZGV.Tab1 or not MouseIsOver(ZGV.Tab1))
+			and (not ZGV.Tab2 or not MouseIsOver(ZGV.Tab2)) then
+				self.leftCount = self.leftCount+elapsed
+				self.mouseCount=0
+				local chromeAlpha = remasterToolbar and remasterToolbar:GetAlpha() or 1
+				if self.leftCount>delay and chromeAlpha>0.05 and not ZGV.borderfadedout then
+					if remasterHeader then UIFrameFadeOut(remasterHeader,fadespeed,1.0,0.0) end
+					if remasterToolbar then UIFrameFadeOut(remasterToolbar,fadespeed,1.0,0.0) end
+					if remasterSeparator then UIFrameFadeOut(remasterSeparator,fadespeed,1.0,0.0) end
+					ZGV.borderfadedout=true
+				end
 			end
-		end
-		
-		if Border:GetAlpha()<0.05 then
-			Border:Hide()
-			Skipper:Hide()
+
+			local chromeAlpha = remasterToolbar and remasterToolbar:GetAlpha() or 1
+			if chromeAlpha<0.05 then
+				if remasterHeader then remasterHeader:Hide() end
+				if remasterToolbar then remasterToolbar:Hide() end
+				if remasterSeparator then remasterSeparator:Hide() end
+				SetRemasterChromeHidden(remasterFrames,true)
+			else
+				if remasterHeader then remasterHeader:Show() end
+				if remasterToolbar then remasterToolbar:Show() end
+				if remasterSeparator then remasterSeparator:Show() end
+				SetRemasterChromeHidden(remasterFrames,false)
+			end
 		else
-			Border:Show()
-			if Skipper.mustbevisible then Skipper:Show() end
+			if (  (locked and MouseIsOver(TitleBar,10,-10,-30,30))
+			   or (--[[not locked and]] MouseIsOver(ZGVF,0,0,-20,0))
+			   ) and ZGV.borderfadedout then
+				self.mouseCount = self.mouseCount+elapsed
+				self.leftCount=0
+				if self.mouseCount>delay then
+					UIFrameFadeIn(Border,fadespeed,0.0,ZGV.db.profile.opacitymain)
+					UIFrameFadeIn(Skipper,fadespeed,0.0,ZGV.db.profile.opacitymain)
+					ZGV.borderfadedout=nil
+				end
+				GuideButton.delay=-2
+			end
+
+			if not MouseIsOver(self,10,-10,-30,30)
+			and (not ZGV.Tab1 or not MouseIsOver(ZGV.Tab1))
+			and (not ZGV.Tab2 or not MouseIsOver(ZGV.Tab2)) then
+				self.leftCount = self.leftCount+elapsed
+				self.mouseCount=0
+				if self.leftCount>delay and Border:GetAlpha()>0.05 and not ZGV.borderfadedout then
+					UIFrameFadeOut(Border,fadespeed,ZGV.db.profile.opacitymain,0.0)
+					UIFrameFadeOut(Skipper,fadespeed,ZGV.db.profile.opacitymain,0.0)
+					ZGV.borderfadedout=true
+				end
+			end
+			
+			if Border:GetAlpha()<0.05 then
+				Border:Hide()
+				Skipper:Hide()
+			else
+				Border:Show()
+				if Skipper.mustbevisible then Skipper:Show() end
+			end
 		end
 	else
-		Border:Show()
-		Border:SetAlpha(1)
-		if Skipper.mustbevisible then
-			Skipper:Show()
-			Skipper:SetAlpha(1)
+		ZGV.borderfadedout=nil
+		if isRemaster and remasterFrames then
+			if remasterHeader then
+				remasterHeader:Show()
+				remasterHeader:SetAlpha(1)
+			end
+			if remasterToolbar then
+				remasterToolbar:Show()
+				remasterToolbar:SetAlpha(1)
+			end
+			if remasterSeparator then
+				remasterSeparator:Show()
+				remasterSeparator:SetAlpha(1)
+			end
+			SetRemasterChromeHidden(remasterFrames,false)
+		else
+			Border:Show()
+			Border:SetAlpha(1)
+			if Skipper.mustbevisible then
+				Skipper:Show()
+				Skipper:SetAlpha(1)
+			end
 		end
 	end
 
