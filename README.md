@@ -13,7 +13,7 @@ This fork keeps core guide behavior intact while modernizing UI/UX and packaging
 ## 🔖 Version
 
 - 📦 Addon version: **3.0**
-- 🧾 Revision: **63** (repo-derived + next push)
+- 🧾 Revision: **63** 
 - 🎮 Target client: **3.3.5a / 12340**
 
 ## 🧱 Original Addon Baseline
