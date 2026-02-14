@@ -1,20 +1,20 @@
 # Zygor Guides Viewer Remaster
 
-Remastered Zygor Guides Viewer for **World of Warcraft 3.3.5a (build 12340)**.
+Remastered Zygor Guides Viewer for **World of Warcraft: Wrath of the Lich King (WotLK) 3.3.5a (build 12340)**.
 
 This fork keeps core guide behavior intact while modernizing UI/UX and packaging for private-server use (for example TrinityCore-based realms).
 
 [![Install Addon](https://img.shields.io/badge/Install-Addon-orange?style=for-the-badge)](https://github.com/ErebusAres/ZygorGuidesRemaster-3.3.5a_WOTLK/archive/refs/heads/main.zip)
 [![Quick Install](https://img.shields.io/badge/View-Quick_Install-6f42c1?style=for-the-badge)](#-quick-install)
-[![Client](https://img.shields.io/badge/WoW-3.3.5a-blue?style=for-the-badge)](#version)
+[![Client](https://img.shields.io/badge/WoW-WotLK_3.3.5a-blue?style=for-the-badge)](#version)
 [![Addon](https://img.shields.io/badge/Version-3.0-brightgreen?style=for-the-badge)](#version)
 [![Localization](https://img.shields.io/badge/Localization-AI_Assisted-yellow?style=for-the-badge)](#localization)
 
 ## 🔖 Version
 
 - 📦 Addon version: **3.0**
-- 🧾 Revision: **63** 
-- 🎮 Target client: **3.3.5a / 12340**
+- 🧾 Revision: **65**
+- 🎮 Target client: **WotLK 3.3.5a / 12340**
 
 ## 🧱 Original Addon Baseline
 
@@ -106,3 +106,4 @@ When submitting fixes:
 
 Original Zygor Guides concept and content belong to the original creators.
 This project focuses on remastering UI/UX, packaging, and compatibility maintenance for 3.3.5a.
+
