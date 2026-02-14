@@ -1,39 +1,51 @@
-# Zygor Guides Viewer Remaster
+﻿# Zygor Guides Viewer Remaster
 
 Remastered Zygor Guides Viewer for **World of Warcraft: Wrath of the Lich King (WotLK) 3.3.5a (build 12340)**.
 
-This fork keeps core guide behavior intact while modernizing UI/UX and packaging for private-server use (for example TrinityCore-based realms).
+This project keeps the classic Zygor workflow while delivering a cleaner remastered presentation and active upkeep for the 3.3.5a community.
 
 [![Install Addon](https://img.shields.io/badge/Install-Addon-orange?style=for-the-badge)](https://github.com/ErebusAres/ZygorGuidesRemaster-3.3.5a_WOTLK/archive/refs/heads/main.zip)
-[![Quick Install](https://img.shields.io/badge/View-Quick_Install-6f42c1?style=for-the-badge)](#-quick-install)
-[![Client](https://img.shields.io/badge/WoW-WotLK_3.3.5a-blue?style=for-the-badge)](#version)
-[![Addon](https://img.shields.io/badge/Version-3.0-brightgreen?style=for-the-badge)](#version)
-[![Localization](https://img.shields.io/badge/Localization-AI_Assisted-yellow?style=for-the-badge)](#localization)
+[![Quick Install](https://img.shields.io/badge/Open-Quick_Install-6f42c1?style=for-the-badge)](#-quick-install)
+[![Localization QA](https://img.shields.io/badge/Help-Localization_QA-yellow?style=for-the-badge)](#-support-wanted-localization-qa)
+[![VirusTotal Report](https://img.shields.io/badge/VirusTotal-URL_Report-success?style=for-the-badge)](https://www.virustotal.com/gui/url/d55dfec1532a98b39fc87a1a4f34c06b644de5988b24288bf207610b0c1b46fa/detection)
+
+![Guides Included](https://img.shields.io/badge/Guides-Included-brightgreen) ![2025 Updated](https://img.shields.io/badge/2025-Updated-blue) ![For WotLK](https://img.shields.io/badge/For-WotLK_3.3.5a-orange)
 
 ## 🔖 Version
 
 - 📦 Addon version: **3.0**
-- 🧾 Revision: **65**
-- 🎮 Target client: **WotLK 3.3.5a / 12340**
+- 🔢 Revision: **66**
+- 🎮 Intended client: **WotLK 3.3.5a / 12340**
 
-## 🧱 Original Addon Baseline
+## ⭐ What You Get
 
-This remaster keeps the core behavior of the original 3.3.5a-era addon stack:
+- 🗺️ Step-by-step leveling and quest progression guidance.
+- 🧭 Arrow and waypoint navigation while you play.
+- ✅ Structured objective flow (accept, complete, and turn-in).
+- 🎨 Remastered viewer UI that is easier to read during long sessions.
+- 🧠 Included talent guidance through `ZygorTalentAdvisor`.
 
-- 📘 Guide parsing and step progression logic.
-- 🧭 Waypoint/arrow workflow and map interaction behavior.
-- ⚙️ Standard guide execution flow (accept/turn-in/goal tracking patterns).
-- 🧠 `ZygorTalentAdvisor` base behavior and structure.
+## 🧱 Core Compatibility
 
-## ✨ What's New In This Remaster
+Core 3.3.5a-era behavior is preserved:
 
-- 🎨 Remastered default UI with cleaner visuals.
-- 🧬 Legacy-style behavior preserved for core guide flow.
-- 🔧 Guide progression, parser behavior, and waypoint systems retained.
-- 📚 Expanded guide bundle support where applicable.
-- 🧩 `ZygorTalentAdvisor` is included as part two of this package:
-  - based on original functionality,
-  - with additional guides/content integrated by you.
+- 📘 Guide parser and step engine.
+- 🧭 Map and waypoint workflow.
+- ⚙️ Legacy guide execution patterns.
+- 🧠 Base `ZygorTalentAdvisor` behavior and structure.
+
+## ✨ What This Remaster Improves
+
+- 🎨 Cleaner UI presentation without changing core guide logic.
+- 🧰 Improved package layout for easier installation and maintenance.
+- 🔧 Ongoing compatibility focus for 3.3.5a environments.
+- 📚 Expanded guide coverage where applicable in this branch.
+- 🧩 `ZygorTalentAdvisor` is included as the second component of this package, with additional guide content integrated in the remaster.
+
+## 📦 Included Components
+
+1. `ZygorGuidesViewerRM` - Remastered viewer and guide runtime.
+2. `ZygorTalentAdvisor` - Bundled as part of this package, based on original behavior, and expanded with additional guide content in this remaster.
 
 ## 🚀 Quick Install
 
@@ -42,60 +54,52 @@ This remaster keeps the core behavior of the original 3.3.5a-era addon stack:
 3. Remove older folders if present:
    - `ZygorGuidesViewer`
    - `ZygorTalentAdvisor`
-4. Copy addon folders into `AddOns`:
+   - This avoids mixed files from older releases.
+4. Copy these folders into `AddOns`:
    - `ZygorGuidesViewerRM`
    - `ZygorTalentAdvisor`
-5. Ensure both are top-level sibling folders:
+5. Confirm both are top-level folders:
    - `Interface\AddOns\ZygorGuidesViewerRM\ZygorGuidesViewerRM.toc`
    - `Interface\AddOns\ZygorTalentAdvisor\ZygorTalentAdvisor.toc`
-6. Launch game and enable:
-   - `Zygor Guides Viewer Remastered`
-   - `Zygor Talent Advisor`
+6. Launch the game and enable both addons.
 
 ## 🌍 Localization
 
-Localization key coverage is complete across shipped locales (`Main` + `NPCs`), including placeholder/format consistency checks.
+Localization key coverage is complete across shipped locales (`Main` + `NPCs`) with placeholder and format-consistency checks.
 
-Current focus is quality verification:
-- natural phrasing in context,
+Current focus is community QA review:
+
+- natural phrasing in live gameplay context,
 - terminology consistency,
 - official localized NPC proper names,
-- and catching any encoding anomalies.
+- encoding and readability verification.
 
-Localization work was largely AI-assisted and should be treated as review-required until human QA sign-off.
-
-## 🗂️ Package Structure
-
-This repository is shipped as a two-part addon package:
-
-1. `ZygorGuidesViewerRM`
-   - remastered viewer/UI layer,
-   - guide loading and runtime behavior for 3.3.5a.
-2. `ZygorTalentAdvisor`
-   - included as part of this package (not a separate recommendation),
-   - essentially the original talent advisor behavior,
-   - with additional guides/content integrated by you.
+Localization was largely AI-assisted and should be treated as needing community review until native-speaker QA confirms quality.
 
 ## 🤝 Support Wanted (Localization QA)
 
-If you can help verify localization quality, contributions are welcome.
+If you can validate translations in-game, your help is very welcome.
 
-Please prioritize:
-- UI/tooltips/step text readability in live gameplay.
-- Terminology consistency (quests, classes, factions, locations).
-- NPC proper-name validation against official locale clients.
-- Reports of mistranslations, awkward wording, encoding artifacts, and placeholder issues.
+Please report:
 
-When submitting fixes:
-- keep placeholders/formatting intact (`%s`, `%d`, `|n`, color codes),
-- do not alter key names or NPC IDs.
+- mistranslations,
+- awkward phrasing,
+- broken placeholders (`%s`, `%d`, `|n`, color codes),
+- incorrect NPC names,
+- encoding artifacts.
+
+## 🔒 Safety and Trust
+
+Community-maintained addons are often labeled as risky without clear evidence. This project is fully inspectable as source code, and users are encouraged to review files before use.
+
+- [![VirusTotal Report](https://img.shields.io/badge/VirusTotal-View_Report-3bb143?style=flat-square)](https://www.virustotal.com/gui/url/d55dfec1532a98b39fc87a1a4f34c06b644de5988b24288bf207610b0c1b46fa/detection)
+- This repository is public, so you can audit changes, scripts, and addon behavior directly.
 
 ## 📝 Notes
 
-- This remaster is intended for **WotLK 3.3.5a (12340)**.
+- Intended target client is **WotLK 3.3.5a (12340)**.
 - It may work on other versions, but compatibility is not guaranteed.
-- Newer expansion-era data is not the primary target.
-- `ZygorTalentAdvisor` remains a separate folder by WoW addon design (its own `.toc`), but is part of this package.
+- `ZygorTalentAdvisor` is a separate addon folder by WoW design (its own `.toc`) while still being part of this package.
 
 ## ⚠️ Known Issues
 
@@ -105,5 +109,12 @@ When submitting fixes:
 ## 🙏 Credits
 
 Original Zygor Guides concept and content belong to the original creators.
-This project focuses on remastering UI/UX, packaging, and compatibility maintenance for 3.3.5a.
 
+This remaster focuses on UI/UX modernization, packaging quality, compatibility maintenance, and localization completion for the 3.3.5a player community.
+
+## 🖼️ Example Images
+
+<img width="436" height="264" alt="Viewer Step Flow" src="https://github.com/user-attachments/assets/f0dddbf0-7bfa-4b95-a250-0692c7690921" />
+<img width="586" height="260" alt="Guide Window Layout" src="https://github.com/user-attachments/assets/e6b85c9c-8835-4e49-96b1-608ad9944b0f" />
+<img width="637" height="197" alt="Waypoint and Route Display" src="https://github.com/user-attachments/assets/cd258eb1-ebb6-420d-9516-4abe9d75d88c" />
+<img width="443" height="687" alt="Talent Advisor Panel" src="https://github.com/user-attachments/assets/b3f2c2ef-2bef-4ca4-b033-37c314b151d5" />
