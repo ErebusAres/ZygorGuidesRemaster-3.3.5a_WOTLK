@@ -4,7 +4,8 @@ Remastered Zygor Guides Viewer for **World of Warcraft 3.3.5a (build 12340)**.
 
 This fork keeps core guide behavior intact while modernizing UI/UX and packaging for private-server use (for example TrinityCore-based realms).
 
-[![Install Addon](https://img.shields.io/badge/Install-Addon-orange?style=for-the-badge)](#quick-install)
+[![Install Addon](https://img.shields.io/badge/Install-Addon-orange?style=for-the-badge)](https://github.com/ErebusAres/ZygorGuidesRemaster-3.3.5a_WOTLK/archive/refs/heads/main.zip)
+[![Quick Install](https://img.shields.io/badge/View-Quick_Install-6f42c1?style=for-the-badge)](#-quick-install)
 [![Client](https://img.shields.io/badge/WoW-3.3.5a-blue?style=for-the-badge)](#version)
 [![Addon](https://img.shields.io/badge/Version-3.0-brightgreen?style=for-the-badge)](#version)
 [![Localization](https://img.shields.io/badge/Localization-AI_Assisted-yellow?style=for-the-badge)](#localization)
@@ -12,6 +13,7 @@ This fork keeps core guide behavior intact while modernizing UI/UX and packaging
 ## 🔖 Version
 
 - 📦 Addon version: **3.0**
+- 🧾 Revision: **59** (repo-derived)
 - 🎮 Target client: **3.3.5a / 12340**
 
 ## 🧱 Original Addon Baseline
