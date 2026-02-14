@@ -1,77 +1,106 @@
-# Zygor Guides Viewer Remaster (3.3.5a WotLK)
+# Zygor Guides Viewer Remaster
 
-This is a remastered UI/UX fork of Zygor Guides Viewer for **World of Warcraft 3.3.5a (build 12340)**, intended for private servers (e.g., TrinityCore). It is intended to **replace the original Zygor Guides Viewer addon** for 3.3.5a.
+Remastered Zygor Guides Viewer for **World of Warcraft 3.3.5a (build 12340)**.
 
-## What's New
+This fork keeps core guide behavior intact while modernizing UI/UX and packaging for private-server use (for example TrinityCore-based realms).
 
-- **Remastered UI** (default) with modernized layout and styling.
-- **Legacy UI still available** for those who want the original look.
-- Guide content is preserved and expanded where applicable (e.g., additional imported guides).
-- Functional behavior preserved: step progression, waypoints, parsing, etc.
-- New remaster skins including **Legacy** colors.
+[![Install Addon](https://img.shields.io/badge/Install-Addon-orange?style=for-the-badge)](#quick-install)
+[![Client](https://img.shields.io/badge/WoW-3.3.5a-blue?style=for-the-badge)](#version)
+[![Addon](https://img.shields.io/badge/Version-3.0-brightgreen?style=for-the-badge)](#version)
+[![Localization](https://img.shields.io/badge/Localization-AI_Assisted-yellow?style=for-the-badge)](#localization)
 
-## Installation
+## 🔖 Version
 
-1. Exit World of Warcraft completely.
-2. Open your AddOns folder:
-   - `%WoWFolder%\Interface\AddOns\`
-3. Remove any existing Zygor folders:
-   - Delete `ZygorGuidesViewer`
-   - Delete `ZygorTalentAdvisor`; Optionally, if you plan to reinstall ZygorTalentAdvisor.
-4. Download or clone this repository.
-5. Copy the folder **`ZygorGuidesViewerRM`**, Optionally: **`ZygorTalentAdvisor`** into your AddOns directory:
-   - `%WoWFolder%\Interface\AddOns\ZygorGuidesViewerRM`
-   - `%WoWFolder%\Interface\Addons\ZygorTalentAdvisor`
-   - Do **not** place `ZygorTalentAdvisor` inside `ZygorGuidesViewerRM`; both must be top-level sibling folders in `AddOns`.
-6. Start the game and enable:
-   - **Zygor Guides Viewer Remastered**
-   - **Zygor Talent Advisor** (optional)
+- 📦 Addon version: **3.0**
+- 🎮 Target client: **3.3.5a / 12340**
 
-## Notes
+## 🧱 Original Addon Baseline
 
-- This project is designed for **WotLK 3.3.5a (build 12340)**.
-- This remaster focuses on UI/UX and guide organization for 3.3.5a; core logic is preserved.
-- `ZygorTalentAdvisor` is included for convenience. It has not been modified and is provided only to consolidate the addon package.
+This remaster keeps the core behavior of the original 3.3.5a-era addon stack:
 
-## Localization Status (Estimated)
+- 📘 Guide parsing and step progression logic.
+- 🧭 Waypoint/arrow workflow and map interaction behavior.
+- ⚙️ Standard guide execution flow (accept/turn-in/goal tracking patterns).
+- 🧠 `ZygorTalentAdvisor` base behavior and structure.
 
-Localization coverage work is complete at the key/ID level, but language quality still needs human review.
-Last updated: **February 14, 2026**.
+## ✨ What's New In This Remaster
 
-Current state summary:
-- All shipped locales now have full key/ID coverage against `enUS` references.
-- Placeholder and formatting consistency checks have been run (for example `%s`, `%d`, color tags, and newline markers).
-- Remaining work is primarily language QA polish: phrasing naturalness, terminology consistency, and validating NPC proper names against official localized client data.
+- 🎨 Remastered default UI with cleaner visuals.
+- 🧬 Legacy-style behavior preserved for core guide flow.
+- 🔧 Guide progression, parser behavior, and waypoint systems retained.
+- 📚 Expanded guide bundle support where applicable.
+- 🧩 `ZygorTalentAdvisor` is included as part two of this package:
+  - based on original functionality,
+  - with additional guides/content integrated by you.
 
-Method (summary):
-- Locale files were compared against `Localization/enUS.lua` and `Localization/NPCs_enUS.lua`.
-- Structural/token-only strings were treated separately from true translatable content.
-- This remains an engineering estimate, not a linguist-certified translation grade.
+## 🚀 Quick Install
 
-## Localization Support Wanted
+1. Close World of Warcraft.
+2. Open `%WoWFolder%\Interface\AddOns\`.
+3. Remove older folders if present:
+   - `ZygorGuidesViewer`
+   - `ZygorTalentAdvisor`
+4. Copy addon folders into `AddOns`:
+   - `ZygorGuidesViewerRM`
+   - `ZygorTalentAdvisor`
+5. Ensure both are top-level sibling folders:
+   - `Interface\AddOns\ZygorGuidesViewerRM\ZygorGuidesViewerRM.toc`
+   - `Interface\AddOns\ZygorTalentAdvisor\ZygorTalentAdvisor.toc`
+6. Launch game and enable:
+   - `Zygor Guides Viewer Remastered`
+   - `Zygor Talent Advisor`
 
-Localization was largely AI-assisted and needs human verification. Community review is welcome and appreciated.
+## 🌍 Localization
 
-Areas where help is most valuable:
-- Verifying that text reads naturally in-context (UI labels, tooltips, and guide step wording).
-- Checking terminology consistency (quests, classes, factions, locations) for WotLK 3.3.5a.
-- Confirming NPC proper names against official locale client data where possible.
-- Reporting any mistranslations, awkward phrasing, encoding oddities, or placeholder mistakes.
+Localization key coverage is complete across shipped locales (`Main` + `NPCs`), including placeholder/format consistency checks.
 
-If you contribute, please keep placeholders/formatting intact (`%s`, `%d`, color codes, `|n`) and avoid changing IDs/keys.
+Current focus is quality verification:
+- natural phrasing in context,
+- terminology consistency,
+- official localized NPC proper names,
+- and catching any encoding anomalies.
 
-## Known Issues
+Localization work was largely AI-assisted and should be treated as review-required until human QA sign-off.
 
-- Some imported guides may be incomplete or require content beyond 3.3.5a; if a guide behaves oddly, disable it in `Guides/Autoload.xml` and report the issue.
-- This remaster targets 3.3.5a (build 12340) only. Newer expansion data is intentionally excluded.
+## 🗂️ Package Structure
 
-## Credits
+This repository is shipped as a two-part addon package:
 
-All credit for the original Zygor Guides concept and content belongs to the original creators. This remaster focuses on UI/UX modernization and packaging for 3.3.5a private server use.
+1. `ZygorGuidesViewerRM`
+   - remastered viewer/UI layer,
+   - guide loading and runtime behavior for 3.3.5a.
+2. `ZygorTalentAdvisor`
+   - included as part of this package (not a separate recommendation),
+   - essentially the original talent advisor behavior,
+   - with additional guides/content integrated by you.
 
-## Example Image(s)
+## 🤝 Support Wanted (Localization QA)
 
-<img width="436" height="264" alt="image" src="https://github.com/user-attachments/assets/f0dddbf0-7bfa-4b95-a250-0692c7690921" />
-<img width="586" height="260" alt="image" src="https://github.com/user-attachments/assets/e6b85c9c-8835-4e49-96b1-608ad9944b0f" />
-<img width="637" height="197" alt="image" src="https://github.com/user-attachments/assets/cd258eb1-ebb6-420d-9516-4abe9d75d88c" />
-<img width="443" height="687" alt="image" src="https://github.com/user-attachments/assets/b3f2c2ef-2bef-4ca4-b033-37c314b151d5" />
+If you can help verify localization quality, contributions are welcome.
+
+Please prioritize:
+- UI/tooltips/step text readability in live gameplay.
+- Terminology consistency (quests, classes, factions, locations).
+- NPC proper-name validation against official locale clients.
+- Reports of mistranslations, awkward wording, encoding artifacts, and placeholder issues.
+
+When submitting fixes:
+- keep placeholders/formatting intact (`%s`, `%d`, `|n`, color codes),
+- do not alter key names or NPC IDs.
+
+## 📝 Notes
+
+- This remaster is intended for **WotLK 3.3.5a (12340)**.
+- It may work on other versions, but compatibility is not guaranteed.
+- Newer expansion-era data is not the primary target.
+- `ZygorTalentAdvisor` remains a separate folder by WoW addon design (its own `.toc`), but is part of this package.
+
+## ⚠️ Known Issues
+
+- Some imported guides may be incomplete or not fully aligned to 3.3.5a data.
+- If a guide behaves incorrectly, disable it in `ZygorGuidesViewerRM/Guides/Autoload.xml` and report it.
+
+## 🙏 Credits
+
+Original Zygor Guides concept and content belong to the original creators.
+This project focuses on remastering UI/UX, packaging, and compatibility maintenance for 3.3.5a.
