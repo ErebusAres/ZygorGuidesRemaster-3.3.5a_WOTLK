@@ -22,6 +22,7 @@ This is a remastered UI/UX fork of Zygor Guides Viewer for **World of Warcraft 3
 5. Copy the folder **`ZygorGuidesViewerRM`**, Optionally: **`ZygorTalentAdvisor`** into your AddOns directory:
    - `%WoWFolder%\Interface\AddOns\ZygorGuidesViewerRM`
    - `%WoWFolder%\Interface\Addons\ZygorTalentAdvisor`
+   - Do **not** place `ZygorTalentAdvisor` inside `ZygorGuidesViewerRM`; both must be top-level sibling folders in `AddOns`.
 6. Start the game and enable:
    - **Zygor Guides Viewer Remastered**
    - **Zygor Talent Advisor** (optional)
