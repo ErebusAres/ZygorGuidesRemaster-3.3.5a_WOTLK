@@ -8,7 +8,7 @@ This is a remastered UI/UX fork of Zygor Guides Viewer for **World of Warcraft 3
 - **Legacy UI still available** for those who want the original look.
 - Guide content is preserved and expanded where applicable (e.g., additional imported guides).
 - Functional behavior preserved: step progression, waypoints, parsing, etc.
-- New remaster skins including **Goals** theme.
+- New remaster skins including **Legacy** colors.
 
 ## Installation
 
