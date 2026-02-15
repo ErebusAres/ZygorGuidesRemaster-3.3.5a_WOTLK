@@ -18,7 +18,7 @@ This project keeps the classic Zygor workflow while delivering a cleaner remaste
 ## 🔖 Version
 
 - 📦 Addon version: **3.0**
-- 🔢 Revision: **69**
+- 🔢 Revision: **72**
 - 🎮 Intended client: **WotLK 3.3.5a / 12340**
 
 ## 🎯 Who This Is For
@@ -138,8 +138,7 @@ This addon is fully open source and can be inspected before use.
 
 ## 📜 Changelog
 
-### v3.0 (Revision 69)
-
+### v3.0 (Revision 72)
 - Remastered UI improvements
 - Packaging and installation cleanup
 - Expanded guide coverage
@@ -152,6 +151,11 @@ This addon is fully open source and can be inspected before use.
 - `ZygorTalentAdvisor` is a separate addon folder by WoW design (its own `.toc`) while still being part of this package.
 
 ## ⚠️ Known Issues
+- Arrow scale/position drift:
+  - On some setups, changing Waypoint Arrow Scale can shift the arrow position unexpectedly.
+  - Resetting arrow position may not fully normalize the anchor in all UI/minimap addon combinations.
+  - Status: deferred for now.
+
 
 - Some imported guides may be incomplete or not fully aligned to 3.3.5a data.
 - If a guide behaves incorrectly, disable it in `ZygorGuidesViewerRM/Guides/Autoload.xml` and report it.
@@ -177,10 +181,18 @@ Original Zygor Guides concept and content belong to the original creators.
 This remaster focuses on UI/UX modernization, packaging quality, compatibility maintenance, and localization completion for the 3.3.5a player community.
 
 ## 🖼️ Example Images
+### new pointer arrow
+![new pointer arrow](docs/images/new-pointer-arrow.png)
+
 
 <img width="436" height="264" alt="Viewer Step Flow" src="https://github.com/user-attachments/assets/f0dddbf0-7bfa-4b95-a250-0692c7690921" />
 <img width="586" height="260" alt="Guide Window Layout" src="https://github.com/user-attachments/assets/e6b85c9c-8835-4e49-96b1-608ad9944b0f" />
 <img width="637" height="197" alt="Waypoint and Route Display" src="https://github.com/user-attachments/assets/cd258eb1-ebb6-420d-9516-4abe9d75d88c" />
 <img width="443" height="687" alt="Talent Advisor Panel" src="https://github.com/user-attachments/assets/b3f2c2ef-2bef-4ca4-b033-37c314b151d5" />
 ![Wow_q8lrRmP6Yn](https://github.com/user-attachments/assets/b8b1600e-052a-40e5-8ab5-13f448ae8074)
+
+
+
+
+
 
