@@ -182,4 +182,5 @@ This remaster focuses on UI/UX modernization, packaging quality, compatibility m
 <img width="586" height="260" alt="Guide Window Layout" src="https://github.com/user-attachments/assets/e6b85c9c-8835-4e49-96b1-608ad9944b0f" />
 <img width="637" height="197" alt="Waypoint and Route Display" src="https://github.com/user-attachments/assets/cd258eb1-ebb6-420d-9516-4abe9d75d88c" />
 <img width="443" height="687" alt="Talent Advisor Panel" src="https://github.com/user-attachments/assets/b3f2c2ef-2bef-4ca4-b033-37c314b151d5" />
+![Wow_q8lrRmP6Yn](https://github.com/user-attachments/assets/b8b1600e-052a-40e5-8ab5-13f448ae8074)
 
