@@ -18,7 +18,7 @@ This project keeps the classic Zygor workflow while delivering a cleaner remaste
 ## 🔖 Version
 
 - 📦 Addon version: **3.0**
-- 🔢 Revision: **72**
+- 🔢 Revision: **74**
 - 🎮 Intended client: **WotLK 3.3.5a / 12340**
 
 ## 🎯 Who This Is For
@@ -138,7 +138,7 @@ This addon is fully open source and can be inspected before use.
 
 ## 📜 Changelog
 
-### v3.0 (Revision 72)
+### v3.0 (Revision 74)
 - Remastered UI improvements
 - Packaging and installation cleanup
 - Expanded guide coverage
@@ -183,6 +183,7 @@ This remaster focuses on UI/UX modernization, packaging quality, compatibility m
 ## 🖼️ Example Images
 ### new pointer arrow
 ![new pointer arrow](docs/images/new-pointer-arrow.png)
+![new pointer arrow gif](docs/images/new-pointer-arrow.gif)
 
 
 <img width="436" height="264" alt="Viewer Step Flow" src="https://github.com/user-attachments/assets/f0dddbf0-7bfa-4b95-a250-0692c7690921" />
@@ -190,6 +191,7 @@ This remaster focuses on UI/UX modernization, packaging quality, compatibility m
 <img width="637" height="197" alt="Waypoint and Route Display" src="https://github.com/user-attachments/assets/cd258eb1-ebb6-420d-9516-4abe9d75d88c" />
 <img width="443" height="687" alt="Talent Advisor Panel" src="https://github.com/user-attachments/assets/b3f2c2ef-2bef-4ca4-b033-37c314b151d5" />
 ![Wow_q8lrRmP6Yn](https://github.com/user-attachments/assets/b8b1600e-052a-40e5-8ab5-13f448ae8074)
+
 
 
 
