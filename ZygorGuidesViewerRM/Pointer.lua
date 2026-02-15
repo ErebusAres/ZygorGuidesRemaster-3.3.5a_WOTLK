@@ -18,6 +18,9 @@ local scarlet_zone = 1
 
 
 local Astrolabe = DongleStub("Astrolabe-0.4-Zygor")
+local function GetMinimapMarkerParent()
+	return UIParent or Minimap
+end
 
 local unusedMarkers = {}
 
@@ -35,6 +38,523 @@ local minimap_lastset = 0
 local cuedinged=nil
 
 local profile={}
+
+local RETAIL_REMASTER_ARROW = {
+	dir = "\\Skin\\remaster_arrow\\",
+	spr_w = 102,
+	spr_h = 68,
+	img_w = 1024,
+	img_h = 1024,
+	spritecount = 150,
+	mirror = true,
+}
+
+local RETAIL_REMASTER_ARROW_STEP = 360 / (RETAIL_REMASTER_ARROW.spritecount * 2 - 2)
+local RETAIL_REMASTER_ARROW_DEG_COORDS = {}
+
+do
+	-- Build sprite coords exactly like retail CreateSprite + SetBounce + ConvertSpritesForArrows.
+	local base = {}
+	local w = RETAIL_REMASTER_ARROW.spr_w / RETAIL_REMASTER_ARROW.img_w
+	local h = RETAIL_REMASTER_ARROW.spr_h / RETAIL_REMASTER_ARROW.img_h
+	local inrow = math.floor(RETAIL_REMASTER_ARROW.img_w / RETAIL_REMASTER_ARROW.spr_w)
+
+	for num = 1, RETAIL_REMASTER_ARROW.spritecount do
+		local row = math.floor((num - 1) / inrow)
+		local col = (num - 1) % inrow
+		local x1,x2,y1,y2 = col * w, (col + 1) * w, row * h, (row + 1) * h
+		base[num] = {x1,x2,y1,y2}
+	end
+
+	local count = #base
+	for numextra = 1, count - 2 do
+		local truenum = count - numextra
+		local x1,x2,y1,y2 = unpack(base[truenum])
+		base[count + numextra] = {x2,x1,y1,y2}
+	end
+
+	for deg = 0,359 do
+		local spriteNum = math.floor(deg / RETAIL_REMASTER_ARROW_STEP) + 1
+		RETAIL_REMASTER_ARROW_DEG_COORDS[deg] = base[spriteNum]
+	end
+end
+
+function Pointer:IsRetailRemasterArrowEnabled()
+	return ZGV and ZGV.db and ZGV.db.profile and (
+		ZGV.db.profile.skin == "remaster"
+		or ZGV.db.profile.remasterpointeronlegacy
+	)
+end
+
+local function IsCarboniteActive()
+	return _G.Nx ~= nil
+end
+
+local function ApplyMinimapMarkerVisualState(frame)
+	if not frame then return end
+	local blend = IsCarboniteActive() and "ADD" or "BLEND"
+	frame:SetFrameStrata("HIGH")
+	frame:SetFrameLevel((Minimap:GetFrameLevel() or 0) + 8)
+	frame:SetScale(1)
+	frame:SetAlpha(1)
+	if frame.icon then
+		frame.icon:SetDrawLayer("OVERLAY",7)
+		frame.icon:SetVertexColor(1,1,1,1)
+		frame.icon:SetAlpha(1)
+		frame.icon:SetBlendMode(blend)
+		if frame.icon.SetDesaturated then frame.icon:SetDesaturated(false) end
+	end
+	if frame.arrow then
+		frame.arrow:SetDrawLayer("OVERLAY",7)
+		frame.arrow:SetVertexColor(1,1,1,1)
+		frame.arrow:SetAlpha(1)
+		frame.arrow:SetBlendMode(blend)
+		if frame.arrow.SetDesaturated then frame.arrow:SetDesaturated(false) end
+	end
+end
+
+function Pointer:CarbonitePruneManagedButtons()
+	local Nx = _G.Nx
+	local map = Nx and Nx.Map
+	local doc = map and map.Doc
+	if not (map and doc) then return end
+
+	-- Remove our waypoint frames from Carbonite's managed minimap button list.
+	local list = doc.MMF1
+	if type(list)=="table" then
+		for i=#list,1,-1 do
+			local f = list[i]
+			if f and f.isZygorWaypoint then
+				table.remove(list,i)
+			end
+		end
+	end
+
+	-- Mark our frames as already managed so Carbonite skips re-adding them.
+	local mmof = map.MMOF
+	if type(mmof)=="table" then
+		for way in pairs(self.waypoints) do
+			if way.minimapFrame then
+				mmof[way.minimapFrame] = 1
+				ApplyMinimapMarkerVisualState(way.minimapFrame)
+			end
+		end
+		for _,way in ipairs(unusedMarkers) do
+			if way.minimapFrame then
+				mmof[way.minimapFrame] = 1
+				ApplyMinimapMarkerVisualState(way.minimapFrame)
+			end
+		end
+	end
+end
+
+function Pointer:SetupCarboniteHooks()
+	if self._carboniteHooksInstalled then return end
+	local Nx = _G.Nx
+	if not (Nx and Nx.Map and Nx.Map.Doc) then return end
+
+	if Nx.Map.Doc.MOI then
+		hooksecurefunc(Nx.Map.Doc, "MOI", function()
+			Pointer:CarbonitePruneManagedButtons()
+		end)
+	end
+	if Nx.Map.MDF1 then
+		hooksecurefunc(Nx.Map, "MDF1", function()
+			Pointer:CarbonitePruneManagedButtons()
+		end)
+	end
+	if Nx.Map.MBSU then
+		hooksecurefunc(Nx.Map, "MBSU", function()
+			Pointer:CarbonitePruneManagedButtons()
+		end)
+	end
+
+	self._carboniteHooksInstalled = true
+	self:CarbonitePruneManagedButtons()
+end
+
+function Pointer:DetachMarkerFromCarboniteDock(markerFrame)
+	if not markerFrame then return end
+	local Nx = _G.Nx
+	local list = Nx and Nx.Map and Nx.Map.Doc and Nx.Map.Doc.MMF1
+	if type(list)=="table" then
+		for i=#list,1,-1 do
+			if list[i]==markerFrame then
+				table.remove(list,i)
+			end
+		end
+	end
+	local markerParent = GetMinimapMarkerParent()
+	if markerFrame:GetParent() ~= markerParent then
+		markerFrame:SetParent(markerParent)
+	end
+	local mmof = Nx and Nx.Map and Nx.Map.MMOF
+	if type(mmof)=="table" then
+		mmof[markerFrame] = 1
+	end
+	ApplyMinimapMarkerVisualState(markerFrame)
+end
+
+local function RemasterProgressSuffix(goal)
+	if not goal or not goal.action then return "" end
+	if goal.action~="kill" and goal.action~="get" and goal.action~="collect" and goal.action~="goal" then return "" end
+	local count = tonumber(goal.count)
+	if not count or count<=0 then return "" end
+	local complete,_,progress = goal:IsComplete()
+	local left
+	if complete then
+		left = 0
+	elseif type(progress)=="number" then
+		local done = math.floor(count * progress + 0.0001)
+		if done<0 then done=0 elseif done>count then done=count end
+		left = count - done
+		if left<0 then left=0 end
+	else
+		return ""
+	end
+	local perc = count>0 and (1-(left/count)) or 1
+	local dgrad = ZGV.GetDistanceColorGradient and ZGV:GetDistanceColorGradient() or nil
+	local bad = (dgrad and dgrad.bad) or {1.0,0.5,0.4}
+	local mid = (dgrad and dgrad.mid) or {1.0,0.9,0.5}
+	local good = (dgrad and dgrad.good) or {0.7,1.0,0.6}
+	local r,g,b = ZGV.gradient3(perc, bad[1],bad[2],bad[3], mid[1],mid[2],mid[3], good[1],good[2],good[3], 0.7)
+	return (" |cff%02x%02x%02x(%d left)|r"):format(r*255,g*255,b*255,left)
+end
+
+local function RemasterPickDisplayGoal(baseGoal,step)
+	local function isNavOnly(g) return g and g.action=="goto" and not g.npc end
+	local displayActions = {
+		accept=true, turnin=true, talk=true, goto=true, use=true, buy=true,
+		get=true, collect=true, goal=true, kill=true, from=true,
+	}
+	local function isActionable(g)
+		if not g or not g.action or g.force_noway then return false end
+		if isNavOnly(g) then return false end
+		return not not displayActions[g.action]
+	end
+	if not baseGoal then return nil end
+	if isActionable(baseGoal) then return baseGoal end
+	if not (step and step.goals and type(step.goals)=="table") then return baseGoal end
+
+	local firstIncomplete
+	local lastAny
+	for _,g in ipairs(step.goals) do
+		if isActionable(g) then
+			local complete,possible = g:IsComplete()
+			if not complete and possible then return g end
+			if not complete and not firstIncomplete then firstIncomplete = g end
+			lastAny = g
+		end
+	end
+	return firstIncomplete or lastAny or baseGoal
+end
+
+local function RemasterFormatGoTo(goal,title)
+	local locColor = "|cff7fc8ff"
+	local coordColor = "|cffffd166"
+	local reset = "|r"
+	local map = goal and goal.map
+	local x = goal and goal.x
+	local y = goal and goal.y
+
+	if map and x and y then
+		return ("|cffffffffGo to |r%s%s%s %s%.1f,%.1f%s"):format(
+			locColor,map,reset,coordColor,x,y,reset
+		)
+	end
+	if x and y then
+		return ("|cffffffffGo to |r%s%.1f,%.1f%s"):format(coordColor,x,y,reset)
+	end
+	if map then
+		return ("|cffffffffGo to |r%s%s%s"):format(locColor,map,reset)
+	end
+
+	-- Fallback: parse a raw title like "Go to Terokkar Forest 30.1,42.5".
+	if title then
+		local prefix,rest = title:match("^(Go to%s+)(.+)$")
+		if prefix and rest then
+			local base,cx,cy,tail = rest:match("^(.-)(%d+%.?%d*)[,; ]+(%d+%.?%d*)(.-)$")
+			if cx and cy then
+				return "|cffffffff"..prefix.."|r"..locColor..(base or "").."|r"..coordColor..cx..","..cy..(tail or "").."|r"
+			end
+			return "|cffffffff"..prefix.."|r"..locColor..rest.."|r"
+		end
+	end
+	return nil
+end
+
+local function RemasterUseSimplifiedNounColors()
+	if not (ZGV and ZGV.db and ZGV.db.profile) then return false end
+	local mode = ZGV.db.profile.colorblindmode
+	if mode=="protan" or mode=="deutan" or mode=="tritan" then return true end
+	return ZGV.db.profile.simplifyarrownouncolors
+end
+
+local function RemasterNounColor(kind)
+	local mode = ZGV and ZGV.GetColorblindMode and ZGV:GetColorblindMode() or "off"
+	if RemasterUseSimplifiedNounColors() then
+		-- Force a single high-contrast noun color per colorblind mode.
+		if mode=="protan" then return "|cff63d7ff" end   -- bright cyan
+		if mode=="deutan" then return "|cff7fa8ff" end   -- vivid blue
+		if mode=="tritan" then return "|cffff7ccf" end   -- bright pink
+		return "|cffbb99ff"
+	end
+	if kind=="quest" then return "|cffbb99ff" end
+	if kind=="location" then return "|cff6fa8ff" end
+	if kind=="coord" then return "|cffffd166" end
+	if kind=="enemy" then return "|cffff6f6f" end
+	if kind=="npc" then return "|cff66e6ff" end
+	return "|cffbb99ff"
+end
+
+local function RemasterFormatGoToColored(goal,title)
+	local locColor = RemasterNounColor("location")
+	local coordColor = RemasterNounColor("coord")
+	local reset = "|r"
+	local map = goal and goal.map
+	local x = goal and goal.x
+	local y = goal and goal.y
+
+	if map and x and y then
+		return ("|cffffffffGo to |r%s%s%s %s%.1f,%.1f%s"):format(
+			locColor,map,reset,coordColor,x,y,reset
+		)
+	end
+	if x and y then
+		return ("|cffffffffGo to |r%s%.1f,%.1f%s"):format(coordColor,x,y,reset)
+	end
+	if map then
+		return ("|cffffffffGo to |r%s%s%s"):format(locColor,map,reset)
+	end
+	return RemasterFormatGoTo(goal,title)
+end
+
+local function RemasterFormatFromGoalText(goal)
+	if not (goal and goal.GetText) then return nil end
+	local raw = goal:GetText(true)
+	if not raw or raw=="" then return nil end
+	-- Strip WoW color codes/markup and progress suffixes to get a stable action prefix.
+	raw = raw:gsub("|c%x%x%x%x%x%x%x%x",""):gsub("|r","")
+	raw = raw:gsub("%s+%(%d+/%d+%)$","")
+	raw = raw:gsub("%s+%d+%%$","")
+	local p,s = raw:match("^(Kill%s+)(.+)$")
+	if p and s then return "|cffffffffKill |r"..RemasterNounColor("enemy")..s.."|r"..RemasterProgressSuffix(goal) end
+	p,s = raw:match("^(Get%s+)(.+)$")
+	if p and s then return "|cffffffffCollect |r"..RemasterNounColor("quest")..s.."|r"..RemasterProgressSuffix(goal) end
+	p,s = raw:match("^(Collect%s+)(.+)$")
+	if p and s then return "|cffffffffCollect |r"..RemasterNounColor("quest")..s.."|r"..RemasterProgressSuffix(goal) end
+	p,s = raw:match("^(Talk to%s+)(.+)$")
+	if p and s then return "|cffffffffTalk to |r"..RemasterNounColor("npc")..s.."|r" end
+	p,s = raw:match("^(Turn in%s+)(.+)$")
+	if p and s then return "|cffffffffTurn in |r"..RemasterNounColor("quest")..s.."|r" end
+	p,s = raw:match("^(Accept%s+)(.+)$")
+	if p and s then return "|cffffffffAccept |r"..RemasterNounColor("quest")..s.."|r" end
+	return nil
+end
+
+local function RemasterFormatTitle(title,waypoint)
+	if not title then return nil end
+	-- Preserve existing explicit color formatting from guide text if present.
+	if title:find("|c%x%x%x%x%x%x%x%x") then return title end
+
+	local step = ZGV and ZGV.CurrentStep
+	local goal = waypoint and waypoint.goal
+	goal = RemasterPickDisplayGoal(goal,step)
+	if goal and goal.action then
+		if goal.action=="accept" and goal.quest and (not title or title == goal.npc or title == goal.quest) then
+			return "|cffffffffAccept |r"..RemasterNounColor("quest").."'"..goal.quest.."'|r"
+		end
+		if goal.action=="turnin" and goal.quest and (not title or title == goal.npc or title == goal.quest) then
+			return "|cffffffffTurn in |r"..RemasterNounColor("quest").."'"..goal.quest.."'|r"
+		end
+		if goal.action=="kill" and goal.target then
+			return "|cffffffffKill |r"..RemasterNounColor("enemy")..goal.target.."|r"..RemasterProgressSuffix(goal)
+		end
+		if (goal.action=="get" or goal.action=="collect") and goal.target then
+			return "|cffffffffCollect |r"..RemasterNounColor("quest")..goal.target.."|r"..RemasterProgressSuffix(goal)
+		end
+		if goal.action=="goto" and (goal.map or goal.x or goal.y) and not goal.npc then
+			return RemasterFormatGoToColored(goal,title) or "|cffffffffGo to|r"
+		end
+		if (goal.action=="talk" or goal.action=="goto") and goal.npc and (not title or title == goal.npc or title == goal.quest) then
+			return "|cffffffffTalk to |r"..RemasterNounColor("npc")..goal.npc.."|r"
+		end
+		local fromText = RemasterFormatFromGoalText(goal)
+		if fromText then return fromText end
+	end
+
+	-- Fallback: if the waypoint only carries NPC/quest text, infer action from current step goals.
+	if step and step.goals and type(step.goals)=="table" then
+		-- Prefer turnin/accept context over generic talk when both share the same NPC in a step.
+		for _,g in ipairs(step.goals) do
+			if g and g.action=="turnin" and g.quest and (title==g.quest or title==g.npc) then
+				return "|cffffffffTurn in |r"..RemasterNounColor("quest").."'"..g.quest.."'|r"
+			end
+		end
+		for _,g in ipairs(step.goals) do
+			if g and g.action=="accept" and g.quest and (title==g.quest or title==g.npc) then
+				return "|cffffffffAccept |r"..RemasterNounColor("quest").."'"..g.quest.."'|r"
+			end
+		end
+		for _,g in ipairs(step.goals) do
+			if g and g.action=="kill" and g.target and (title==g.target or title==g.npc) then
+				return "|cffffffffKill |r"..RemasterNounColor("enemy")..g.target.."|r"..RemasterProgressSuffix(g)
+			end
+		end
+		for _,g in ipairs(step.goals) do
+			if g and g.action=="kill" and g.target and g.quest and title==g.quest then
+				return "|cffffffffKill |r"..RemasterNounColor("enemy")..g.target.."|r"..RemasterProgressSuffix(g)
+			end
+		end
+		for _,g in ipairs(step.goals) do
+			if g and (g.action=="get" or g.action=="collect") and g.target and (title==g.target or title==g.quest) then
+				return "|cffffffffCollect |r"..RemasterNounColor("quest")..g.target.."|r"..RemasterProgressSuffix(g)
+			end
+		end
+		for _,g in ipairs(step.goals) do
+			if g and g.action=="goto" and not g.npc and (title==g.map or title==g.autotitle or title==g.title or title==g.text or title==g.quest) then
+				return RemasterFormatGoToColored(g,title) or "|cffffffffGo to|r"
+			end
+		end
+		for _,g in ipairs(step.goals) do
+			if g and (g.action=="talk" or g.action=="goto") and g.npc and title==g.npc then
+				return "|cffffffffTalk to |r"..RemasterNounColor("npc")..g.npc.."|r"
+			end
+		end
+	end
+
+	local prefix,quest = title:match("^(Accept%s+)(.+)$")
+	if prefix and quest then
+		return "|cffffffff"..prefix.."|r"..RemasterNounColor("quest")..quest.."|r"
+	end
+	prefix,quest = title:match("^(Turn in%s+)(.+)$")
+	if prefix and quest then
+		return "|cffffffff"..prefix.."|r"..RemasterNounColor("quest")..quest.."|r"
+	end
+	prefix,quest = title:match("^(Talk to%s+)(.+)$")
+	if prefix and quest then
+		return "|cffffffff"..prefix.."|r"..RemasterNounColor("npc")..quest.."|r"
+	end
+	prefix,quest = title:match("^(Go to%s+)(.+)$")
+	if prefix and quest then
+		local out = RemasterFormatGoToColored(goal,title)
+		if out then return out end
+		return "|cffffffff"..prefix.."|r"..RemasterNounColor("location")..quest.."|r"
+	end
+	prefix,quest = title:match("^(Kill%s+)(.+)$")
+	if prefix and quest then
+		return "|cffffffff"..prefix.."|r"..RemasterNounColor("enemy")..quest.."|r"
+	end
+	prefix,quest = title:match("^(Get%s+)(.+)$")
+	if prefix and quest then
+		return "|cffffffffCollect |r"..RemasterNounColor("quest")..quest.."|r"
+	end
+	prefix,quest = title:match("^(Collect%s+)(.+)$")
+	if prefix and quest then
+		return "|cffffffff"..prefix.."|r"..RemasterNounColor("quest")..quest.."|r"
+	end
+	prefix,quest = title:match("^(Gather%s+)(.+)$")
+	if prefix and quest then
+		return "|cffffffffCollect |r"..RemasterNounColor("quest")..quest.."|r"
+	end
+	prefix,quest = title:match("^(Loot%s+)(.+)$")
+	if prefix and quest then
+		return "|cffffffffCollect |r"..RemasterNounColor("quest")..quest.."|r"
+	end
+	prefix,quest = title:match("^(Obtain%s+)(.+)$")
+	if prefix and quest then
+		return "|cffffffffCollect |r"..RemasterNounColor("quest")..quest.."|r"
+	end
+	prefix,quest = title:match("^(Acquire%s+)(.+)$")
+	if prefix and quest then
+		return "|cffffffffCollect |r"..RemasterNounColor("quest")..quest.."|r"
+	end
+	prefix,quest = title:match("^(Recover%s+)(.+)$")
+	if prefix and quest then
+		return "|cffffffffCollect |r"..RemasterNounColor("quest")..quest.."|r"
+	end
+	prefix,quest = title:match("^(Defeat%s+)(.+)$")
+	if prefix and quest then
+		return "|cffffffffKill |r"..RemasterNounColor("enemy")..quest.."|r"
+	end
+	prefix,quest = title:match("^(Slay%s+)(.+)$")
+	if prefix and quest then
+		return "|cffffffffKill |r"..RemasterNounColor("enemy")..quest.."|r"
+	end
+	prefix,quest = title:match("^(Eliminate%s+)(.+)$")
+	if prefix and quest then
+		return "|cffffffffKill |r"..RemasterNounColor("enemy")..quest.."|r"
+	end
+	prefix,quest = title:match("^(Speak with%s+)(.+)$")
+	if prefix and quest then
+		return "|cffffffffTalk to |r"..RemasterNounColor("npc")..quest.."|r"
+	end
+	prefix,quest = title:match("^(Buy%s+)(.+)$")
+	if prefix and quest then
+		return "|cffffffffBuy |r"..RemasterNounColor("quest")..quest.."|r"
+	end
+	prefix,quest = title:match("^(Use%s+)(.+)$")
+	if prefix and quest then
+		return "|cffffffffUse |r"..RemasterNounColor("quest")..quest.."|r"
+	end
+	-- Generic quoted quest title fallback.
+	local before,quoted,after = title:match("^(.-)('.*')(.-)$")
+	if quoted then
+		return "|cffffffff"..before.."|r"..RemasterNounColor("quest")..quoted.."|r|cffffffff"..after.."|r"
+	end
+	return "|cffffffff"..title.."|r"
+end
+
+function Pointer:RefreshArrowStyle()
+	local frame = self.ArrowFrame
+	if not frame then return end
+
+	local skin = ZGV and ZGV.db and ZGV.db.profile and ZGV.db.profile.skin or ""
+	local useRetail = self:IsRetailRemasterArrowEnabled()
+	if frame._retail_style == useRetail and frame._retail_skin == skin then return end
+
+	if useRetail then
+		local dir = ZGV.DIR .. RETAIL_REMASTER_ARROW.dir
+		frame.arrow:SetTexture(dir .. "arrow")
+		frame.gem:SetTexture(dir .. "arrow-specular")
+		frame.gem:SetBlendMode("BLEND")
+		frame.gem:SetAlpha(0.6)
+		frame.gemhl:Hide()
+		frame.back:Hide()
+		frame.arrow:SetSize(60,40)
+		frame.gem:SetSize(60,40)
+
+		-- Specials sheet col 1 row 1: "here" icon from retail arrow pack.
+		frame.here:SetTexture(dir .. "specials")
+		frame.here:SetTexCoord(0,1/8,0,1/2)
+		frame.here:SetSize(50,50)
+		frame.title:ClearAllPoints()
+		-- Increase gap below the arrow (negative Y moves text farther down).
+		frame.title:SetPoint("TOP",frame.arrow,"BOTTOM",0,-3)
+		if frame.title.SetSpacing then frame.title:SetSpacing(0) end
+	else
+		local dir = ZGV.DIR .. "\\Skin\\"
+		frame.arrow:SetTexture(dir .. "arrow")
+		frame.gem:SetTexture(dir .. "arrow-gem")
+		frame.gemhl:SetTexture(dir .. "arrow-gemhl")
+		frame.gem:SetBlendMode("BLEND")
+		frame.gem:SetAlpha(1)
+		frame.gemhl:Show()
+		frame.back:Show()
+		frame.arrow:SetSize(60,60)
+		frame.gem:SetSize(60,60)
+		frame.here:SetTexture(dir .. "arrow-here")
+		frame.here:SetTexCoord(0,1,0,1)
+		frame.here:SetSize(50,50)
+		frame.title:ClearAllPoints()
+		frame.title:SetPoint("TOP",frame.arrow,"BOTTOM",0,3)
+		if frame.title.SetSpacing then frame.title:SetSpacing(0) end
+	end
+
+	self:SetFontSize(profile and profile.arrowfontsize or 10)
+	frame._retail_style = useRetail
+	frame._retail_skin = skin
+end
 
 function Pointer:Startup()
 	profile = ZGV.db.profile
@@ -92,6 +612,22 @@ function Pointer:Startup()
 	--ZGV.ScheduleRepeatingTimer(self,"FixMapLevel", 1.0)
 
 	Pointer.ready = true
+	self:SetupCarboniteHooks()
+	if not self.CarboniteCompatEventFrame then
+		local ef = CreateFrame("Frame")
+		ef:RegisterEvent("ADDON_LOADED")
+		ef:RegisterEvent("PLAYER_ENTERING_WORLD")
+		ef:SetScript("OnEvent", function(_,event,addon)
+			if event=="ADDON_LOADED" then
+				if type(addon)=="string" and addon:find("^Carbonite") then
+					Pointer:SetupCarboniteHooks()
+				end
+			else
+				Pointer:SetupCarboniteHooks()
+			end
+		end)
+		self.CarboniteCompatEventFrame = ef
+	end
 
 	self:HandleCamRegistration()
 
@@ -278,6 +814,8 @@ function Pointer:ShowArrow(waypoint)
 	speed=0
 	lastbeeptime=GetTime()+3
 	cuedinged=nil
+	etaval=nil
+	etatxt=nil
 
 	initialdist = nil
 	lastminimapdist=99999
@@ -307,8 +845,14 @@ function Pointer:GetMarker()
 	setmetatable(marker,markermeta)
 
 	nummarkers=nummarkers+1
-	marker.minimapFrame = CreateFrame("Button", "ZGVMarker"..nummarkers.."Mini", Minimap, "ZygorGuidesViewerPointerMinimapMarker")
+	marker.minimapFrame = CreateFrame("Button", "ZGVMarker"..nummarkers.."Mini", GetMinimapMarkerParent(), "ZygorGuidesViewerPointerMinimapMarker")
 	marker.worldmapFrame = CreateFrame("Button", "ZGVMarker"..nummarkers.."World", self.OverlayFrame, "ZygorGuidesViewerPointerWorldMapMarker")
+	marker.minimapFrame.isZygorWaypoint = true
+	ApplyMinimapMarkerVisualState(marker.minimapFrame)
+	if IsCarboniteActive() then
+		self:DetachMarkerFromCarboniteDock(marker.minimapFrame)
+		self:CarbonitePruneManagedButtons()
+	end
 
 	return marker
 end
@@ -470,6 +1014,43 @@ local function FormatDistance(dist)
 end
 ZGV.FormatDistance=FormatDistance
 
+local function FormatETASeconds(eta)
+	if not eta then return nil end
+	if eta<0 then eta = 0 end
+	local mins = math.floor(eta / 60)
+	local secs = math.floor(eta % 60)
+	return ("%01d:%02d"):format(mins, secs)
+end
+
+function Pointer:GetFarText(waypoint)
+	if not waypoint then return nil end
+	if waypoint.c and waypoint.c > 0 then
+		return select(waypoint.c, GetMapContinents())
+	end
+	return nil
+end
+
+function Pointer:GetDistTxt(dist, waypoint)
+	if not dist or dist=="far" or ((tonumber(dist or 0) or 0)>9999998) then
+		return self:GetFarText(waypoint)
+	elseif type(dist)=="string" then
+		return dist
+	else
+		return FormatDistance(dist)
+	end
+end
+
+function Pointer:GetETATxt(eta)
+	if eta and tonumber(eta) and eta<7200 and eta>0 then
+		local subsec = GetTime()%1
+		local etacolor = (eta<10 and GetUnitSpeed("player")>0 and subsec>0.7) and "ffff7700" or "ffffbb00"
+		return ("  |c".. etacolor .. FormatETASeconds(eta) .. "|r")
+	elseif type(eta)=="string" then
+		return eta
+	end
+	return nil
+end
+
 ---------------
 function Pointer:CreateArrowFrame()
 	self.ArrowFrame = CreateFrame("Frame","ZygorGuidesViewerPointerArrowFrame",UIParent,"ZygorGuidesViewerFloatingArrow")
@@ -478,8 +1059,25 @@ function Pointer:CreateArrowFrame()
 	self.ArrowFrame.arrow:SetTexture(true)
 	self.ArrowFrame.arrow:SetTexture(tex,false)
 	self.ArrowFrame:Hide()
+	self:RefreshArrowStyle()
+	self.ArrowFrame:SetMovable(true)
+	self.ArrowFrame:SetClampedToScreen(false)
 
-	self.ArrowFrameCtrl = CreateFrame("Frame",nil,UIParent,nil)
+	self:ApplyArrowAnchor()
+	self.ArrowFrame:SetScript("OnDragStart", function(frame)
+		if profile.arrowfreeze then return end
+		frame:StartMoving()
+		frame.dragging = true
+	end)
+	self.ArrowFrame:SetScript("OnDragStop", function(frame)
+		frame:StopMovingOrSizing()
+		frame.dragging = nil
+		Pointer:SaveArrowAnchor(frame)
+	end)
+
+	if not self.ArrowFrameCtrl then
+		self.ArrowFrameCtrl = CreateFrame("Frame",nil,UIParent,nil)
+	end
 	self.ArrowFrameCtrl:SetScript("OnUpdate",self.ArrowFrameControl_OnUpdate)
 	self.ArrowFrameCtrl:Show()
 
@@ -489,7 +1087,11 @@ end
 
 function Pointer:SetupArrowFreeze()
 	self.ArrowFrame:EnableMouse(not profile.arrowfreeze)
-	self.ArrowFrame:RegisterForDrag(not profile.arrowfreeze and "LeftButton")
+	if profile.arrowfreeze then
+		self.ArrowFrame:RegisterForDrag()
+	else
+		self.ArrowFrame:RegisterForDrag("LeftButton")
+	end
 end
 
 function Pointer:UpdateWaypoints()
@@ -502,14 +1104,123 @@ end
 function Pointer:SetScale(scale)
 	if not scale then return end
 	self.ArrowFrame:SetScale(scale)
-	self.ArrowFrame:SetScale(scale)
-	self.ArrowFrame:SetScale(scale)
-	self.ArrowFrame:SetScale(scale)
+	self:ApplyArrowAnchor()
+end
+
+function Pointer:GetDefaultArrowAnchor()
+	local w,h = UIParent:GetWidth() or 0, UIParent:GetHeight() or 0
+	return {
+		point = "CENTER",
+		relPoint = "BOTTOMLEFT",
+		x = w * 0.5,
+		y = h * 0.70,
+	}
+end
+
+function Pointer:NormalizeArrowAnchor(anchor)
+	local a = anchor or self:GetDefaultArrowAnchor()
+	local x = tonumber(a.x)
+	local y = tonumber(a.y)
+	local w,h = UIParent:GetWidth() or 0, UIParent:GetHeight() or 0
+	if not x or x~=x or x==math.huge or x==-math.huge then x = w*0.5 end
+	if not y or y~=y or y==math.huge or y==-math.huge then y = h*0.5 end
+	if w>0 then
+		if x<0 then x=0 elseif x>w then x=w end
+	end
+	if h>0 then
+		if y<0 then y=0 elseif y>h then y=h end
+	end
+	return { point="CENTER", relPoint="BOTTOMLEFT", x=x, y=y }
+end
+
+function Pointer:EnsureArrowAnchorProfile()
+	if not profile then return end
+	local a = profile.anchor_arrow
+	if type(a)~="table" or not tonumber(a.x) or not tonumber(a.y) then
+		if tonumber(profile.arrowposx) and tonumber(profile.arrowposy) then
+			a = { point="CENTER", relPoint="BOTTOMLEFT", x=profile.arrowposx, y=profile.arrowposy }
+		else
+			a = self:GetDefaultArrowAnchor()
+		end
+	end
+	a = self:NormalizeArrowAnchor(a)
+	profile.anchor_arrow = a
+	-- Keep legacy fields synced for compatibility with older saves/code paths.
+	profile.arrowposx,profile.arrowposy = a.x,a.y
+end
+
+function Pointer:ResetArrowAnchorToDefault()
+	if not profile then return end
+	local a = self:NormalizeArrowAnchor(self:GetDefaultArrowAnchor())
+	profile.anchor_arrow = a
+	profile.arrowposx,profile.arrowposy = a.x,a.y
+	self:ApplyArrowAnchor()
 end
 
 function Pointer:SetFontSize(size)
-	local f=self.ArrowFrame.title:GetFont()
-	self.ArrowFrame.title:SetFont(f,size)
+	if not size then size = profile and profile.arrowfontsize or 10 end
+	local font = self.ArrowFrame.title:GetFont()
+	-- Outline modes: reduced, default, strong. Fall back to legacy bool if needed.
+	local outlineMode = profile and profile.arrowoutlinemode or nil
+	if outlineMode~="reduced" and outlineMode~="default" and outlineMode~="strong" then
+		outlineMode = (profile and profile.arrowoutline) and "strong" or "default"
+	end
+	local flags = nil
+	if outlineMode=="strong" then
+		flags = "OUTLINE"
+	else
+		flags = nil
+	end
+	if self:IsRetailRemasterArrowEnabled() then
+		local candidates = {
+			(ZGV and ZGV.DIR and (ZGV.DIR .. "\\Skin\\remaster_arrow\\fonts\\OpenSans.TTF")) or nil,
+			(ZGV and ZGV.DIR and (ZGV.DIR .. "\\Skin\\remaster_arrow\\fonts\\opensans.ttf")) or nil,
+			"Interface\\AddOns\\ZygorGuidesViewerRM\\Skin\\remaster_arrow\\fonts\\OpenSans.TTF",
+			"Interface\\AddOns\\ZygorGuidesViewer\\Skin\\remaster_arrow\\fonts\\OpenSans.TTF",
+		}
+		local applied = false
+		for _,cand in ipairs(candidates) do
+			if cand and pcall(self.ArrowFrame.title.SetFont, self.ArrowFrame.title, cand, size) then
+				local cur = self.ArrowFrame.title:GetFont()
+				if cur and (string.find(string.lower(cur),"opensans",1,true) or string.lower(cur)==string.lower(cand)) then
+					font = cand
+					applied = true
+					break
+				end
+			end
+		end
+		if not applied then
+			font = STANDARD_TEXT_FONT
+		end
+	end
+	if self:IsRetailRemasterArrowEnabled() then
+		if not self.ArrowFrame.title:SetFont(font,size,flags) then
+			-- Fallback if explicit retail font path fails on a given client setup.
+			self.ArrowFrame.title:SetFont(STANDARD_TEXT_FONT,size,flags)
+		end
+		if self.ArrowFrame.desc then
+			self.ArrowFrame.desc:SetFont(font,size,flags)
+		end
+		local shadowAlpha = (outlineMode=="strong" and 0.88) or (outlineMode=="reduced" and 0.24) or 0.86
+		self.ArrowFrame.title:SetShadowColor(0,0,0,shadowAlpha)
+		self.ArrowFrame.title:SetShadowOffset((outlineMode=="reduced" and 0) or 1, (outlineMode=="reduced" and 0) or -1)
+		if self.ArrowFrame.desc then
+			self.ArrowFrame.desc:SetShadowColor(0,0,0,shadowAlpha)
+			self.ArrowFrame.desc:SetShadowOffset((outlineMode=="reduced" and 0) or 1, (outlineMode=="reduced" and 0) or -1)
+		end
+	else
+		self.ArrowFrame.title:SetFont(font,size,flags)
+		if self.ArrowFrame.desc then
+			self.ArrowFrame.desc:SetFont(font,size,flags)
+		end
+		local shadowAlpha = (outlineMode=="strong" and 0.79) or (outlineMode=="reduced" and 0.22) or 0.76
+		self.ArrowFrame.title:SetShadowColor(0,0,0,shadowAlpha)
+		self.ArrowFrame.title:SetShadowOffset((outlineMode=="reduced" and 0) or 1, (outlineMode=="reduced" and 0) or -1)
+		if self.ArrowFrame.desc then
+			self.ArrowFrame.desc:SetShadowColor(0,0,0,shadowAlpha)
+			self.ArrowFrame.desc:SetShadowOffset((outlineMode=="reduced" and 0) or 1, (outlineMode=="reduced" and 0) or -1)
+		end
+	end
 	--[[
 	self.ArrowFrame.dist:SetFont(f,size)
 	self.ArrowFrame.eta:SetFont(f,size)
@@ -520,6 +1231,31 @@ function Pointer:SetFontSize(size)
 	--]]
 end
 
+function Pointer:SaveArrowAnchor(frame)
+	frame = frame or self.ArrowFrame
+	if not frame then return end
+	local cx,cy = frame:GetCenter()
+	if not cx or not cy then return end
+	local x,y = cx,cy
+	-- Normalize anchor point after dragging; corner anchors cause diagonal drift on scale.
+	frame:ClearAllPoints()
+	frame:SetPoint("CENTER",UIParent,"BOTTOMLEFT",x,y)
+	local a = self:NormalizeArrowAnchor({ point="CENTER", relPoint="BOTTOMLEFT", x=x, y=y })
+	profile.anchor_arrow = a
+	profile.arrowposx,profile.arrowposy = a.x,a.y
+end
+
+function Pointer:ApplyArrowAnchor()
+	local frame = self.ArrowFrame
+	if not frame then return end
+	self:EnsureArrowAnchorProfile()
+	local a = profile and profile.anchor_arrow or self:GetDefaultArrowAnchor()
+	frame:ClearAllPoints()
+	a = self:NormalizeArrowAnchor(a)
+	frame:SetPoint(a.point or "CENTER",UIParent,a.relPoint or "BOTTOMLEFT",a.x,a.y)
+	profile.anchor_arrow = a
+	profile.arrowposx,profile.arrowposy = a.x,a.y
+end
 
 function GetCurrentMapContinentAndZone()
 	local c,z = GetCurrentMapContinent(), GetCurrentMapZone()
@@ -604,6 +1340,22 @@ function Pointer.MinimapButton_OnUpdate(self,elapsed)
 	self.minimap_count = 0
 
 	if not profile.minicons then self.icon:Hide() self.arrow:Hide() return end
+	local markerParent = GetMinimapMarkerParent()
+	if self:GetParent() ~= markerParent or self:GetScale() < 0.99 or self:GetAlpha() < 0.99 then
+		self:SetParent(markerParent)
+	end
+	ApplyMinimapMarkerVisualState(self)
+	if IsCarboniteActive() then
+		self._carbonite_detach_elapsed = (self._carbonite_detach_elapsed or 0) + elapsed
+		if self._carbonite_detach_elapsed > 0.5 then
+			self._carbonite_detach_elapsed = 0
+			Pointer:SetupCarboniteHooks()
+			Pointer:CarbonitePruneManagedButtons()
+			Pointer:DetachMarkerFromCarboniteDock(self)
+		end
+	else
+		self._carbonite_detach_elapsed = 0
+	end
 
 	local dist,x,y = Astrolabe:GetDistanceToIcon(self)
 
@@ -923,7 +1675,6 @@ local dungeons = {
 
 function WorldMapZygorDungeonButton_OnClick(self)
 	UIDropDownMenu_SetSelectedID(WorldMapZoneDropDown, self:GetID())
-	ZGV:Print("dupa mapa")
 end
 
 
@@ -1025,7 +1776,7 @@ end
 
 -- And we have an onupdating frame even if hidden. Yay!
 
-local title,disttxt,etatxt
+local title,disttxt,etatxt,etaval
 
 local speeds={}
 local stoptime=0
@@ -1068,6 +1819,7 @@ function Pointer.ArrowFrame_OnUpdate(self,elapsed)
 	-- okay, we're live. 3, 2, 1, action!
 
 	self:Show()
+	Pointer:RefreshArrowStyle()
 
 	local msin,mcos,mabs=math.sin,math.cos,math.abs
 
@@ -1125,7 +1877,7 @@ function Pointer.ArrowFrame_OnUpdate(self,elapsed)
 
 		self.arrow:Show()
 		self.gem:Show()
-		self.gemhl:Show()
+		if not self._retail_style then self.gemhl:Show() end
 		self.title:Show()
 		--self.eta:Show()
 		--self.dist:Show()
@@ -1141,14 +1893,24 @@ function Pointer.ArrowFrame_OnUpdate(self,elapsed)
 		end
 
 		------------ color
-		local ar,ag,ab = 1,0,0
-		local br,bg,bb = 0.8,0.7,0
-		local cr,cg,cb = 0,1,0
+		local grad = ZGV.GetArrowColorGradient and ZGV:GetArrowColorGradient() or nil
+		local ar,ag,ab = unpack((grad and grad.bad) or {1,0,0})
+		local br,bg,bb = unpack((grad and grad.mid) or {0.8,0.7,0})
+		local cr,cg,cb = unpack((grad and grad.good) or {0,1,0})
 
 		local perc
 
 		while angle<0 do angle=angle+6.28319 end
-		if profile.arrowcolordir then
+		local colorByDirection
+		if profile.arrowcolormode=="direction" then
+			colorByDirection = true
+		elseif profile.arrowcolormode=="distance" then
+			colorByDirection = false
+		else
+			-- Backward compatibility for older profiles.
+			colorByDirection = profile.arrowcolordir
+		end
+		if colorByDirection then
 			perc = mabs(1-angle*0.3183)  -- 1/pi
 		else
 			if not initialdist then initialdist=dist end
@@ -1184,17 +1946,30 @@ function Pointer.ArrowFrame_OnUpdate(self,elapsed)
 		end
 
 	
-		local sin,cos = msin(angle + 2.356194)*0.85, mcos(angle + 2.356194)*0.85
-		self.arrow:SetTexCoord(0.5-sin, 0.5+cos, 0.5+cos, 0.5+sin, 0.5-cos, 0.5-sin, 0.5+sin, 0.5-cos)
-		self.gem:SetTexCoord(0.5-sin, 0.5+cos, 0.5+cos, 0.5+sin, 0.5-cos, 0.5-sin, 0.5+sin, 0.5-cos)
-		self.gemhl:SetTexCoord(0.5-sin, 0.5+cos, 0.5+cos, 0.5+sin, 0.5-cos, 0.5-sin, 0.5+sin, 0.5-cos)
+		if self._retail_style then
+			local deg = math.floor((angle * 57.295779513082) + 0.5) % 360
+			local coords = RETAIL_REMASTER_ARROW_DEG_COORDS[deg]
+			local x1,x2,y1,y2 = coords[1],coords[2],coords[3],coords[4]
+			self.arrow:SetTexCoord(x1,x2,y1,y2)
+			self.gem:SetTexCoord(x1,x2,y1,y2)
+			self.gemhl:Hide()
+			self.gem:SetAlpha(0.45 + (msin(GetTime() * 4) + 1) * 0.12)
+		else
+			local sin,cos = msin(angle + 2.356194)*0.85, mcos(angle + 2.356194)*0.85
+			self.arrow:SetTexCoord(0.5-sin, 0.5+cos, 0.5+cos, 0.5+sin, 0.5-cos, 0.5-sin, 0.5+sin, 0.5-cos)
+			self.gem:SetTexCoord(0.5-sin, 0.5+cos, 0.5+cos, 0.5+sin, 0.5-cos, 0.5-sin, 0.5+sin, 0.5-cos)
+			self.gemhl:SetTexCoord(0.5-sin, 0.5+cos, 0.5+cos, 0.5+sin, 0.5-cos, 0.5-sin, 0.5+sin, 0.5-cos)
+			self.gem:SetAlpha(1)
+		end
 
 
 		------------- background
 
-		local wheelangle = angle*16
-		sin,cos = msin(wheelangle + 2.356194)*0.71, mcos(wheelangle + 2.356194)*0.71
-		self.back:SetTexCoord(0.5-sin, 0.5+cos, 0.5+cos, 0.5+sin, 0.5-cos, 0.5-sin, 0.5+sin, 0.5-cos)
+		if not self._retail_style then
+			local wheelangle = angle*16
+			local sin,cos = msin(wheelangle + 2.356194)*0.71, mcos(wheelangle + 2.356194)*0.71
+			self.back:SetTexCoord(0.5-sin, 0.5+cos, 0.5+cos, 0.5+sin, 0.5-cos, 0.5-sin, 0.5+sin, 0.5-cos)
+		end
 
 		--[[
 		local cell
@@ -1227,11 +2002,7 @@ function Pointer.ArrowFrame_OnUpdate(self,elapsed)
 		title=nil
 	end
 
-	if dist>9999998 then
-		disttxt = select(self.waypoint.c,GetMapContinents()) --"Far away"
-	else
-		disttxt = FormatDistance(dist)
-	end
+	disttxt = Pointer:GetDistTxt(dist, self.waypoint)
 
 
 	--ZGV:Debug(("dist %.2f  chg %.2f  speed %.2f  ela %.2f"):format(dist,last_distance-dist,speed,eta_elapsed))
@@ -1273,7 +2044,6 @@ function Pointer.ArrowFrame_OnUpdate(self,elapsed)
 			else
 				spd=("%.02f mph"):format(speed) --*2.0454
 			end
-			print(spd)
 			self.eta:SetText(spd)
 		end
 		--]]
@@ -1336,22 +2106,65 @@ function Pointer.ArrowFrame_OnUpdate(self,elapsed)
 		if #speeds>=minlimit and avg>0 then
 			local eta = math.abs(dist / avg)
 			if eta<7200 and eta>0 then
-				etatxt=("%01d:%02d"):format(eta / 60, eta % 60)
+				etaval = eta
 			else
-				etatxt=nil
+				etaval = nil
 			end
 		else
-			etatxt=nil
+			etaval = nil
 		end
 		etadisp_elapsed = 0
 	end
+	etatxt = Pointer:GetETATxt(etaval)
+	local legacyDistHex = "ffcc00"
+	if type(dist)=="number" then
+		local perc = math.max(0,1-(dist/math.min(math.max(100,initialdist or 0),500)))
+		local dgrad = ZGV.GetDistanceColorGradient and ZGV:GetDistanceColorGradient() or nil
+		local bad = (dgrad and dgrad.bad) or {1.0,0.5,0.4}
+		local mid = (dgrad and dgrad.mid) or {1.0,0.9,0.5}
+		local good = (dgrad and dgrad.good) or {0.7,1.0,0.6}
+		local r,g,b = ZGV.gradient3(perc, bad[1],bad[2],bad[3], mid[1],mid[2],mid[3], good[1],good[2],good[3], 0.7)
+		legacyDistHex = ("%02x%02x%02x"):format(r*255,g*255,b*255)
+	end
 
 	-- spew it out.
-	self.title:SetText( (title and "|cffffffff"..title.."|r\n" or "") .. (disttxt and "|cffffcc00"..disttxt.."|r" or "") .. (etatxt and "  |cffff7700"..etatxt.."|r" or "") )
+	if self._retail_style then
+		local showTitle = RemasterFormatTitle(title,self.waypoint)
+		local desc = ""
+		local distcolor = "|cffffff00"
+		if type(dist)=="number" then
+			local perc = math.max(0,1-(dist/math.min(math.max(100,initialdist or 0),500)))
+			local dgrad = ZGV.GetDistanceColorGradient and ZGV:GetDistanceColorGradient() or nil
+			local bad = (dgrad and dgrad.bad) or {1.0,0.5,0.4}
+			local mid = (dgrad and dgrad.mid) or {1.0,0.9,0.5}
+			local good = (dgrad and dgrad.good) or {0.7,1.0,0.6}
+			local r,g,b = ZGV.gradient3(perc, bad[1],bad[2],bad[3], mid[1],mid[2],mid[3], good[1],good[2],good[3], 0.7)
+			distcolor = ("|cff%02x%02x%02x"):format(r*255,g*255,b*255)
+		end
+		if disttxt then desc = desc .. distcolor .. disttxt .. "|r" end
+		if etatxt and etatxt ~= "" then desc = desc .. etatxt end
+		self.title:SetText(showTitle or "")
+		if self.desc then
+			self.desc:SetText(desc)
+		else
+			self.title:SetText((showTitle and (showTitle.."\n") or "") .. desc)
+		end
+	else
+		local legacyTitle = title and ("|cffffffff"..title.."|r") or ""
+		local legacyDesc = (disttxt and ("|cff"..legacyDistHex..disttxt.."|r") or "") .. (etatxt or "")
+		self.title:SetText(legacyTitle)
+		if self.desc then
+			self.desc:SetText(legacyDesc)
+		elseif legacyDesc~="" then
+			-- Legacy fallback if desc fontstring is unavailable in a custom skin.
+			self.title:SetText(legacyTitle .. "\n" .. legacyDesc)
+		end
+	end
 
 end
 
 function Pointer.ArrowFrame_OnShow(frame)
+	Pointer:RefreshArrowStyle()
 	lastturntime=GetTime()
 end
 

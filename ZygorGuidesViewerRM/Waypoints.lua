@@ -9,6 +9,55 @@ local Astrolabe
 
 local tinsert=tinsert
 
+local function GetRemasterArrowTitle(self,goal,explicitTitle)
+	local useRemasterPointer =
+		(self and self.db and self.db.profile and self.db.profile.skin == "remaster")
+		or (self and self.Pointer and self.Pointer.IsRetailRemasterArrowEnabled and self.Pointer:IsRetailRemasterArrowEnabled())
+	if not useRemasterPointer then
+		return (explicitTitle and explicitTitle ~= "") and explicitTitle or nil
+	end
+	if not goal then return nil end
+
+	if goal.action=="accept" and goal.quest then
+		return ("Accept '%s'"):format(goal.quest)
+	end
+	if goal.action=="turnin" and goal.quest then
+		return ("Turn in '%s'"):format(goal.quest)
+	end
+	if goal.action=="talk" and goal.npc then
+		return ("Talk to %s"):format(goal.npc)
+	end
+	if goal.action=="goto" and goal.npc then
+		return ("Talk to %s"):format(goal.npc)
+	end
+	if goal.action=="goto" and (goal.map or goal.x or goal.y) and not goal.npc then
+		if goal.map and goal.x and goal.y then
+			return ("Go to %s %.1f,%.1f"):format(goal.map,goal.x,goal.y)
+		elseif goal.x and goal.y then
+			return ("Go to %.1f,%.1f"):format(goal.x,goal.y)
+		end
+		return "Go to destination"
+	end
+	if goal.action=="kill" and goal.target then
+		return ("Kill %s"):format(goal.target)
+	end
+	if (goal.action=="get" or goal.action=="collect") and goal.target then
+		return ("Collect %s"):format(goal.target)
+	end
+	if goal.GetText then
+		local raw = goal:GetText(true)
+		if raw and raw~="" then
+			raw = raw:gsub("|c%x%x%x%x%x%x%x%x",""):gsub("|r","")
+			raw = raw:gsub("%s+%(%d+/%d+%)$","")
+			raw = raw:gsub("%s+%d+%%$","")
+			if raw:match("^(Accept%s+)") or raw:match("^(Turn in%s+)") or raw:match("^(Talk to%s+)") or raw:match("^(Kill%s+)") or raw:match("^(Get%s+)") or raw:match("^(Collect%s+)") then
+				return raw:gsub("^(Get%s+)","Collect ")
+			end
+		end
+	end
+	return (explicitTitle and explicitTitle ~= "") and explicitTitle or nil
+end
+
 function me:getXY(id)
 	self:Debug("getXY "..id)
 	return (id % 10001)/10000, math.floor(id / 10001)/10000
@@ -254,20 +303,113 @@ me.WaypointFunctions['internal'] = {
 		if goalnumORx==false then return end
 		if not y then
 			local goals={}
-			local firstpoint
+			local firstpoint,lastpoint
+			local points = {}
+			local preferredDisplayGoal
+			local lastDisplayGoal
+			local displayActions = {
+				accept=true, turnin=true, talk=true, goto=true, use=true, buy=true,
+				get=true, collect=true, goal=true, kill=true, from=true,
+			}
+			local function IsNavOnly(goal)
+				return goal and goal.action=="goto" and not goal.npc
+			end
 			if not self.CurrentStep or not self.CurrentStep.goals then return end
 			if goalnumORx then goals={self.CurrentStep.goals[goalnumORx]} else for i=1,#self.CurrentStep.goals do if self.CurrentStep.goals[i].x then tinsert(goals,self.CurrentStep.goals[i]) end end end
+			if not goalnumORx then
+				for i=1,#self.CurrentStep.goals do
+					local g = self.CurrentStep.goals[i]
+					if g and displayActions[g.action] and not g.force_noway and not IsNavOnly(g) then
+						local complete,possible = g:IsComplete()
+						if not complete and possible then
+							preferredDisplayGoal = g
+							break
+						end
+					end
+				end
+				if not preferredDisplayGoal then
+					for i=1,#self.CurrentStep.goals do
+						local g = self.CurrentStep.goals[i]
+						if g and displayActions[g.action] and not g.force_noway and not IsNavOnly(g) then
+							local complete = g:IsComplete()
+							if not complete then
+								preferredDisplayGoal = g
+								break
+							end
+						end
+					end
+				end
+				for i=1,#self.CurrentStep.goals do
+					local g = self.CurrentStep.goals[i]
+					if g and displayActions[g.action] and not g.force_noway and not IsNavOnly(g) then
+						lastDisplayGoal = g
+					end
+				end
+			end
 			for k,goal in ipairs(goals) do
 				if not goal.force_noway then
-					local way = self.Pointer:SetWaypoint (nil,goal.map,goal.x,goal.y,{title=title or self.CurrentStep:GetTitle() or (goal.map and goal.x and ("%s %d,%d"):format(goal.map,goal.x,goal.y)) or L['waypoint_step']:format(self.CurrentStepNum),onminimap="always",overworld=true})
+					local arrowTitle =
+						GetRemasterArrowTitle(self,goal,title)
+						or self.CurrentStep:GetTitle()
+						or (goal.map and goal.x and ("%s %d,%d"):format(goal.map,goal.x,goal.y))
+						or L['waypoint_step']:format(self.CurrentStepNum)
+					local way = self.Pointer:SetWaypoint (nil,goal.map,goal.x,goal.y,{title=arrowTitle,goal=goal,onminimap="always",overworld=true})
 					if way then
 						if not firstpoint then firstpoint=way end
+						lastpoint=way
+						table.insert(points,{goal=goal,way=way})
 					else
 						self:Print("Unable to create waypoint: "..goal.map.." "..goal.x.." "..goal.y)
 					end
 				end
 			end
-			if firstpoint then
+			local selected
+			-- Strict top-to-bottom progression through sub-goals, but prefer
+			-- non-navigation goals over pure goto markers.
+			for _,p in ipairs(points) do
+				local complete,possible = p.goal:IsComplete()
+				if not complete and possible and not IsNavOnly(p.goal) then selected=p.way break end
+			end
+			if not selected then
+				for _,p in ipairs(points) do
+					local complete = p.goal:IsComplete()
+					if not complete and not IsNavOnly(p.goal) then selected=p.way break end
+				end
+			end
+			for _,p in ipairs(points) do
+				if selected then break end
+				local complete,possible = p.goal:IsComplete()
+				if not complete and possible then selected=p.way break end
+			end
+			if not selected then
+				for _,p in ipairs(points) do
+					local complete = p.goal:IsComplete()
+					if not complete then selected=p.way break end
+				end
+			end
+			if selected then
+				if preferredDisplayGoal and selected.goal and IsNavOnly(selected.goal) then
+					selected.goal = preferredDisplayGoal
+					selected.t =
+						GetRemasterArrowTitle(self,preferredDisplayGoal,title)
+						or self.CurrentStep:GetTitle()
+						or (preferredDisplayGoal.map and preferredDisplayGoal.x and ("%s %d,%d"):format(preferredDisplayGoal.map,preferredDisplayGoal.x,preferredDisplayGoal.y))
+						or L['waypoint_step']:format(self.CurrentStepNum)
+				end
+				self.Pointer:ShowArrow (selected)
+			elseif lastpoint then
+				-- All goals complete or none selectable: keep location fallback, but show
+				-- the final meaningful objective title for better context.
+				if lastDisplayGoal then
+					lastpoint.goal = lastDisplayGoal
+					lastpoint.t =
+						GetRemasterArrowTitle(self,lastDisplayGoal,title)
+						or self.CurrentStep:GetTitle()
+						or (lastDisplayGoal.map and lastDisplayGoal.x and ("%s %d,%d"):format(lastDisplayGoal.map,lastDisplayGoal.x,lastDisplayGoal.y))
+						or L['waypoint_step']:format(self.CurrentStepNum)
+				end
+				self.Pointer:ShowArrow (lastpoint)
+			elseif firstpoint then
 				self.Pointer:ShowArrow (firstpoint)
 			end
 		else

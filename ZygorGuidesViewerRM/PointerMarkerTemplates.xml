@@ -3,7 +3,7 @@
 	<Button name="ZygorGuidesViewerPointerMinimapMarker" virtual="true" hidden="false" movable="false" enableMouse="true">
 		<Size x="20" y="20"/>
 		<Layers>
-			<Layer level="BACKGROUND">
+			<Layer level="OVERLAY">
 				<Texture parentKey="icon" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\minimaparrow-green-dot">
 					<Size x="12" y="12"/>
 					<Anchors><Anchor point="CENTER" relativePoint="CENTER" /></Anchors>
@@ -148,6 +148,13 @@
 					<Size x="200" y="0"/>
 					<FontHeight val="10"/>
 				</FontString>
+				<FontString parentKey="desc" name="$parentDesc" justifyH="CENTER" justifyV="TOP" inherits="GameFontHighlightSmall">
+					<Anchors>
+						<Anchor relativeTo="$parentTitle" relativePoint="BOTTOM" point="TOP"><Offset x="0" y="-3"/></Anchor>
+					</Anchors>
+					<Size x="200" y="0"/>
+					<FontHeight val="10"/>
+				</FontString>
 				<!--
 				<FontString parentKey="dist" name="$parentDist" justifyH="CENTER" inherits="GameFontNormalSmall">
 					<Anchors>
@@ -184,9 +191,6 @@
 		</Layers>
 
 		<Scripts>
-			<OnLoad> self:RegisterForDrag("LeftButton") self:EnableMouse(not ZGV.db.profile.arrowfreeze)  self:ClearAllPoints()  self:SetPoint("BOTTOMLEFT",UIParent,"BOTTOMLEFT",ZGV.db.profile.arrowposx,ZGV.db.profile.arrowposy) </OnLoad>
-			<OnDragStart> self:StartMoving() self.dragging=true </OnDragStart>
-			<OnDragStop> self:StopMovingOrSizing() self.dragging=nil  ZGV.db.profile.arrowposx=self:GetLeft()+self:GetWidth()/2  ZGV.db.profile.arrowposy=self:GetBottom()+self:GetHeight()/2 </OnDragStop>
 			<OnShow> ZygorGuidesViewer.Pointer.ArrowFrame_OnShow(self) </OnShow>
 		</Scripts>
 	</Frame>

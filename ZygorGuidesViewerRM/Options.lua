@@ -47,6 +47,7 @@ function me:Options_RegisterDefaults()
 			autoturnin = false,
 			fixblizzardautoaccept = false,
 			analyzereps = false,
+			colorblindmode = "off",
 
 
 			skin = "remaster",
@@ -111,6 +112,11 @@ function me:Options_RegisterDefaults()
 			arrowfreeze = false,
 			--arrowcam = false,
 			arrowcolordir = true,
+			arrowcolormode = "direction",
+			arrowoutline = false,
+			arrowoutlinemode = "default",
+			simplifyarrownouncolors = false,
+			remasterpointeronlegacy = false,
 			arrowscale = 1.0,
 			arrowfontsize = 10,
 			minimapzoom = false,
@@ -119,6 +125,7 @@ function me:Options_RegisterDefaults()
 
 			arrowposx=500,
 			arrowposy=400,
+			anchor_arrow=nil,
 
 			fullheight = 400,
 
@@ -141,6 +148,18 @@ function me:Options_DefineOptions()
 	end
 	local Setter_Simple = function(info,value)
 		self.db.profile[info[#info]] = value
+	end
+	local ResetArrowPosition = function()
+		if self.Pointer and self.Pointer.ResetArrowAnchorToDefault then
+			self.Pointer:ResetArrowAnchorToDefault()
+		else
+			-- Fallback when pointer frame is not initialized yet.
+			local x = UIParent:GetWidth() * 0.5
+			local y = UIParent:GetHeight() * 0.70
+			self.db.profile.arrowposx = x
+			self.db.profile.arrowposy = y
+			self.db.profile.anchor_arrow = { point="CENTER", relPoint="BOTTOMLEFT", x=x, y=y }
+		end
 	end
 
 	self.options = {
@@ -328,7 +347,7 @@ function me:Options_DefineOptions()
 						type = "select",
 						values = {
 							remaster_dark="|cffcfd6e8Dark|r",
-							remaster_goals="|cffebd199Goals|r",
+							remaster_goldaccent="|cffebd199Gold Accent|r",
 							remaster_blue="|cff88b3ffBlue|r",
 							remaster_green="|cff88ff88Green|r",
 							remaster_orange="|cffffcc66Orange|r",
@@ -340,14 +359,16 @@ function me:Options_DefineOptions()
 						},
 						get = function()
 							if self.db.profile.skin == "remaster" then
-								return "remaster_"..(self.db.profile.remastercolor or "dark")
+								local rc = self.db.profile.remastercolor or "dark"
+								if rc == "goals" then rc = "goldaccent" end
+								return "remaster_"..rc
 							end
 							return self.db.profile.skin
 						end,
 						set = function(_,n)
 							local colors = {
 										remaster_dark={text={0.90,0.92,0.98},back={0.08,0.09,0.12}},
-										remaster_goals={text={0.92,0.80,0.50},back={0.10,0.11,0.15}},
+										remaster_goldaccent={text={0.92,0.80,0.50},back={0.07,0.08,0.10}},
 										remaster_blue={text={0.70,0.80,1.00},back={0.08,0.11,0.24}},
 										remaster_green={text={0.50,1.00,0.50},back={0.09,0.20,0.07}},
 										remaster_orange={text={1.00,0.80,0.00},back={0.23,0.11,0.07}},
@@ -358,8 +379,10 @@ function me:Options_DefineOptions()
 										orange={text={1.0,0.8,0.0},back={0.23,0.11,0.07}}}
 							if n:match("^remaster_") then
 								self.db.profile.skin = "remaster"
-								self.db.profile.remastercolor = n:gsub("^remaster_", "")
-								self.db.profile.skincolors = colors[n]
+								local rc = n:gsub("^remaster_", "")
+								if rc == "goals" then rc = "goldaccent" end
+								self.db.profile.remastercolor = rc
+								self.db.profile.skincolors = colors["remaster_"..rc] or colors.remaster_dark
 							else
 								self.db.profile.skin = n
 								self.db.profile.skincolors = colors[self.db.profile.skin]
@@ -791,50 +814,6 @@ function me:Options_DefineOptions()
 		}
 	}
 			
-	self.optionsgold = {
-		name = L['opt_group_gold'],
-		desc = L['opt_group_gold_desc'],
-		type = 'group',
-		order = 3,
-		hidden = not ZGV.AllianceGoldInstalled and not ZGV.HordeGoldInstalled,
-		handler = self,
-		get = Getter_Simple,
-		set = Setter_Simple,
-		args = {
-			desc = {
-				order = 1,
-				type = "description",
-				name = L['opt_group_gold_desc'],
-			},
-			golddetectiondist = {
-				name = L['opt_gold_detectiondist'],
-				desc = L['opt_gold_detectiondist_desc'],
-				type = 'range',
-				min = 100,
-				max = 3000,
-				step = 1,
-				bigStep = 1,
-				set = function(i,v) Setter_Simple(i,v)  end,
-				width = "double",
-				order = 2,
-			},
-			goldreqmode = {
-				name = L['opt_gold_reqmode'],
-				desc = L['opt_gold_reqmode_desc'],
-				type = "select",
-				style = "radio",
-				values = {
-					[1]=L['opt_gold_reqmode_all'],
-					[2]=L['opt_gold_reqmode_future'],
-					[3]=L['opt_gold_reqmode_current'],
-				},
-				set = function(i,v) Setter_Simple(i,v)  ZGV:UpdateMapSpotVisibilities()  end,
-				width = "double",
-				order = 3,
-			},
-		}
-	}
-			
 	self.optionsconv = {
 		name = L["opt_group_convenience"],
 		desc = L["opt_group_convenience_desc"],
@@ -881,6 +860,44 @@ function me:Options_DefineOptions()
 				set = function(i,v) Setter_Simple(i,v)  end,
 				width = "full",
 				order = 3.7,
+			},
+			colorblind = {
+				name = "Colorblind Options",
+				type = "group",
+				inline = true,
+				order = 3.9,
+				args = {
+					colorblindmode = {
+						name = "Colorblind Mode",
+						desc = "Override guide, arrow, and distance colors with colorblind-friendly palettes. Also forces simplified arrow noun colors with optimized contrast.",
+						type = "select",
+						values = {
+							[1] = "Off",
+							[2] = "Protanopia",
+							[3] = "Deuteranopia",
+							[4] = "Tritanopia",
+						},
+						width = "normal",
+						get = function()
+							local m = self.db.profile.colorblindmode
+							if m=="protan" then return 2 end
+							if m=="deutan" then return 3 end
+							if m=="tritan" then return 4 end
+							return 1
+						end,
+						set = function(_,v)
+							local map = { [1]="off",[2]="protan",[3]="deutan",[4]="tritan" }
+							self.db.profile.colorblindmode = map[v] or "off"
+							self:UpdateSkin()
+							self:UpdateFrame(true)
+							if self.Pointer and self.Pointer.ArrowFrame then
+								self.Pointer:RefreshArrowStyle()
+							end
+							self:SetWaypoint()
+						end,
+						order = 1,
+					},
+				},
 			},
 		}
 	}
@@ -995,12 +1012,27 @@ function me:Options_DefineOptions()
 						order = 10.17,
 					},
 					--]]
-					arrowcolordir = {
+					arrowcolormode = {
 						name = L["opt_arrowcolordir"],
 						desc = L["opt_arrowcolordir_desc"],
-						type = 'toggle',
-						width = "full",
-						order = 10.2,
+						type = "select",
+						values = {
+							[1] = "Direction",
+							[2] = "Distance",
+						},
+						get = function()
+							local mode = self.db.profile.arrowcolormode
+							if mode=="distance" then return 2 end
+							if mode=="direction" then return 1 end
+							return self.db.profile.arrowcolordir and 1 or 2
+						end,
+						set = function(_,v)
+							self.db.profile.arrowcolormode = (v==2) and "distance" or "direction"
+							-- Keep legacy bool in sync for compatibility with any older paths.
+							self.db.profile.arrowcolordir = (v~=2)
+						end,
+						width = "normal",
+						order = 11.001,
 					},
 					arrowscale = {
 						name = L["opt_arrowscale"],
@@ -1026,6 +1058,64 @@ function me:Options_DefineOptions()
 						width = "full",
 						set = function(i,v) Setter_Simple(i,v)  ZGV.Pointer:SetFontSize(v)  end,
 						order = 10.21
+					},
+					arrowoutlinemode = {
+						name = "Arrow Text Outline",
+						desc = "Choose outline strength for waypoint arrow text.",
+						type = "select",
+						values = {
+							[1] = "Default",
+							[2] = "Strong",
+							[3] = "Reduced",
+						},
+						get = function()
+							local m = self.db.profile.arrowoutlinemode
+							if m=="strong" then return 2 end
+							if m=="reduced" then return 3 end
+							return 1
+						end,
+						set = function(_,v)
+							local mode = (v==2 and "strong") or (v==3 and "reduced") or "default"
+							self.db.profile.arrowoutlinemode = mode
+							-- Keep legacy bool in sync for older code paths.
+							self.db.profile.arrowoutline = (mode=="strong")
+							if ZGV.Pointer then
+								ZGV.Pointer:SetFontSize(self.db.profile.arrowfontsize)
+								ZGV.Pointer:RefreshArrowStyle()
+							end
+							ZGV:SetWaypoint()
+						end,
+						width = "normal",
+						order = 10.215,
+					},
+					simplifyarrownouncolors = {
+						name = "Simplified Arrow Noun Colors",
+						desc = "Use one noun color on remastered arrow text. Coordinates remain gold. Auto-forced by Colorblind Mode.",
+						type = "toggle",
+						width = "full",
+						disabled = function()
+							local m = self.db.profile.colorblindmode
+							return m=="protan" or m=="deutan" or m=="tritan"
+						end,
+						set = function(i,v)
+							Setter_Simple(i,v)
+							ZGV:SetWaypoint()
+						end,
+						order = 11.01,
+					},
+					remasterpointeronlegacy = {
+						name = "Use Remastered Pointer on Legacy Skins",
+						desc = "When enabled, legacy skins use the remastered waypoint arrow style.",
+						type = "toggle",
+						width = "full",
+						set = function(i,v)
+							Setter_Simple(i,v)
+							if ZGV.Pointer then
+								ZGV.Pointer:RefreshArrowStyle()
+								ZGV.Pointer:SetFontSize(self.db.profile.arrowfontsize)
+							end
+						end,
+						order = 10.216,
 					},
 					desc1 = { type="header", name=L["opt_progressbackcolor_desc"], order=11 },
 					foglight = {
@@ -1062,6 +1152,14 @@ function me:Options_DefineOptions()
 					},
 					--]]
 				}
+			},
+			resetarrowposition = {
+				name = "Reset Arrow Position",
+				desc = "Reset the waypoint arrow to retail default position.",
+				type = "execute",
+				func = function() ResetArrowPosition() end,
+				disabled = function() return self.db.profile.waypointaddon~="internal" end,
+				order = 98.9,
 			},
 			foglightdebug = {
 				name = "(Debug) Check foglight",
@@ -1167,7 +1265,6 @@ function me:Options_SetupConfig()
 	LibStub("AceConfig-3.0"):RegisterOptionsTable("ZygorGuidesViewer-Display", self.optionsdisplay, "zgdisplay");
 	LibStub("AceConfig-3.0"):RegisterOptionsTable("ZygorGuidesViewer-Progress", self.optionsprogress, "zgprogress");
 	LibStub("AceConfig-3.0"):RegisterOptionsTable("ZygorGuidesViewer-Map", self.optionsmap, "zgmap");
-	LibStub("AceConfig-3.0"):RegisterOptionsTable("ZygorGuidesViewer-Gold", self.optionsgold, "zggold");
 	LibStub("AceConfig-3.0"):RegisterOptionsTable("ZygorGuidesViewer-Conv", self.optionsconv, "zgconv");
 	LibStub("AceConfig-3.0"):RegisterOptionsTable("ZygorGuidesViewer-Debug", self.optionsdebug, "zgdebug");
 	--LibStub("AceConfig-3.0"):RegisterOptionsTable("ZygorGuidesViewer-Data", self.optionsdata, "--[[#$$#]]");
@@ -1181,7 +1278,6 @@ function me:Options_SetupBlizConfig()
 	LibStub("AceConfigDialog-3.0"):AddToBlizOptions("ZygorGuidesViewer-Display", self.optionsdisplay.name, self.options.name)
 	LibStub("AceConfigDialog-3.0"):AddToBlizOptions("ZygorGuidesViewer-Progress", self.optionsprogress.name, self.options.name);
 	LibStub("AceConfigDialog-3.0"):AddToBlizOptions("ZygorGuidesViewer-Map", self.optionsmap.name, self.options.name)
-	LibStub("AceConfigDialog-3.0"):AddToBlizOptions("ZygorGuidesViewer-Gold", self.optionsgold.name, self.options.name)
 	LibStub("AceConfigDialog-3.0"):AddToBlizOptions("ZygorGuidesViewer-Conv", self.optionsconv.name, self.options.name)
 	if (self.db.profile.debug) then
 		LibStub("AceConfigDialog-3.0"):AddToBlizOptions("ZygorGuidesViewer-Debug", self.optionsdebug.name, self.options.name)

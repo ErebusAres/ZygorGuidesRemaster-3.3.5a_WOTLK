@@ -1010,6 +1010,24 @@ function me:OnInitialize()
 --	self:Echo(L["initialized"])
 	self:Debug ("Initialized.")
 
+	-- Hide internal waypoint marker frames from minimap button collectors (Carbonite, bag addons, etc.).
+	if not self._minimapGetChildrenPatched then
+		local trueMinimapGetChildren = Minimap and Minimap.GetChildren
+		if trueMinimapGetChildren then
+			Minimap.GetChildren = function(frame)
+				local res = { trueMinimapGetChildren(frame) }
+				for i=#res,1,-1 do
+					local child = res[i]
+					if child and child.isZygorWaypoint then
+						table.remove(res, i)
+					end
+				end
+				return unpack(res)
+			end
+			self._minimapGetChildrenPatched = true
+		end
+	end
+
 
 	if self.LibTaxi then
 		if not self.db.char.taxis then self.db.char.taxis = {} end
@@ -2067,24 +2085,26 @@ function me:UpdateFrame(full,onupdate)
 						frame.border:SetBackdrop({ edgeFile = "Interface\\Addons\\ZygorGuidesViewer\\skin\\popup_border", edgeSize = 16 })
 					end
 
+					local goalcolors = self:GetEffectiveGoalColors()
 					if stepdata:AreRequirementsMet() then
 						if stepdata:IsComplete() then
-							frame:SetBackdropColor(fromRGBmul_a(self.db.profile.goalbackcomplete,0.5,self.db.profile.stepbackalpha))
+							frame:SetBackdropColor(fromRGBmul_a(goalcolors.goalbackcomplete,0.5,self.db.profile.stepbackalpha))
 							--frame:SetBackdropColor(0,0.7,0,0.5)
 							frame.border:SetBackdropBorderColor(1,1,1,1)
 						elseif (self.db.profile.showobsolete and stepdata:IsObsolete()) then
-							frame:SetBackdropColor(fromRGBmul_a(self.db.profile.goalbackobsolete,0.5,self.db.profile.stepbackalpha))
+							frame:SetBackdropColor(fromRGBmul_a(goalcolors.goalbackobsolete,0.5,self.db.profile.stepbackalpha))
 							frame.border:SetBackdropBorderColor(1,1,1,1)
 						elseif (self.db.profile.skipauxsteps and stepdata:IsAuxiliarySkippable()) then
-							frame:SetBackdropColor(fromRGBmul_a(self.db.profile.goalbackaux,0.5,self.db.profile.stepbackalpha))
+							frame:SetBackdropColor(fromRGBmul_a(goalcolors.goalbackaux,0.5,self.db.profile.stepbackalpha))
 							frame.border:SetBackdropBorderColor(1,1,1,1)
 						else
 							frame:SetBackdropColor(0.0,0.0,0.0,self.db.profile.stepbackalpha)
 							frame.border:SetBackdropBorderColor(1,1,1,1)
 						end
 					else
-						frame:SetBackdropColor(0.5,0.0,0.0,self.db.profile.stepbackalpha)
-						frame.border:SetBackdropBorderColor(0.5,0.0,0.0,0.5)
+						local inc = goalcolors.goalbackincomplete
+						frame:SetBackdropColor(inc.r*0.5,inc.g*0.5,inc.b*0.5,self.db.profile.stepbackalpha)
+						frame.border:SetBackdropBorderColor(inc.r,inc.g,inc.b,0.5)
 					end
 
 					if self.db.profile.hidestepborders then
@@ -2792,10 +2812,11 @@ function me:UpdateFrameCurrent()
 				
 					local progress = type(detail)=="number" and detail or 0
 
-					local inc=self.db.profile.goalbackincomplete
-					local pro=self.db.profile.goalbackprogressing
-					local com=self.db.profile.goalbackcomplete
-					local a = self.db.profile.goalbackincomplete.a
+					local gc = self:GetEffectiveGoalColors()
+					local inc=gc.goalbackincomplete
+					local pro=gc.goalbackprogressing
+					local com=gc.goalbackcomplete
+					local a = inc.a
 					local r,g,b = self.gradient3(self.db.profile.goalbackprogress and progress*0.7 or 0,  inc.r,inc.g,inc.b, pro.r,pro.g,pro.b, com.r,com.g,com.b, 0.5)
 
 					--local r,g,b,a = gradientRGBA(self.db.profile.goalbackincomplete,self.db.profile.goalbackcomplete,self.db.profile.goalbackprogress and progress*0.7 or 0)
@@ -2829,7 +2850,7 @@ function me:UpdateFrameCurrent()
 					icon:SetIcon(3)
 					icon:SetDesaturated(false)
 					if anim_w2g:IsDone() or not anim_w2g:IsPlaying() then
-						back:SetVertexColor(fromRGBA(self.db.profile.goalbackcomplete))
+						back:SetVertexColor(fromRGBA(self:GetEffectiveGoalColors().goalbackcomplete))
 					end
 
 				elseif status=="impossible" then
@@ -2837,13 +2858,13 @@ function me:UpdateFrameCurrent()
 					--impossible!
 					icon:SetIcon(actionicon[goal.action])
 					icon:SetDesaturated(true)
-					back:SetVertexColor(fromRGBA(self.db.profile.goalbackimpossible))
+					back:SetVertexColor(fromRGBA(self:GetEffectiveGoalColors().goalbackimpossible))
 
 				elseif status=="obsolete" then
 					
 					--icon:SetIcon(actionicon[goal.action])
 					--icon:SetDesaturated(false)
-					back:SetVertexColor(fromRGBA(self.db.profile.goalbackobsolete))
+					back:SetVertexColor(fromRGBA(self:GetEffectiveGoalColors().goalbackobsolete))
 				
 				end
 
@@ -3472,6 +3493,7 @@ function me:ApplyRemasterSkin()
 		local backalpha = self.db.profile.backopacity or 0.3
 		local opacitymain = self.db.profile.opacitymain or 1.0
 		local remastercolor = self.db.profile.remastercolor or "dark"
+		local isGoldAccent = (remastercolor == "goldaccent" or remastercolor == "goals")
 		local function setTexColor(tex, r, g, b, a)
 			if not tex then return end
 			if tex.SetColorTexture then
@@ -3494,23 +3516,23 @@ function me:ApplyRemasterSkin()
 			textMeta = { 0.72, 0.72, 0.75, 0.90 },
 		}
 
-		if remastercolor == "goals" then
-			theme.frameBorder = { 0.20, 0.22, 0.26, 0.75 }
-			theme.frameLight = { 0.14, 0.15, 0.19, 0.40 }
-			theme.insetBg = { 0.10, 0.11, 0.15, 0.95 }
-			theme.insetBorder = { 0.17, 0.19, 0.24, 0.85 }
-			theme.buttonBack = { 0.12, 0.13, 0.17, 0.95 }
-			theme.buttonHover = { 0.20, 0.18, 0.12, 0.98 }
-			theme.buttonBorder = { 0.45, 0.38, 0.22, 0.9 }
-			theme.separator = { 0.92, 0.80, 0.50, 0.55 }
+		if isGoldAccent then
+			theme.frameBorder = { 0.17, 0.15, 0.10, 0.88 }
+			theme.frameLight = { 0.12, 0.10, 0.07, 0.42 }
+			theme.insetBg = { 0.05, 0.05, 0.06, 0.97 }
+			theme.insetBorder = { 0.22, 0.18, 0.10, 0.90 }
+			theme.buttonBack = { 0.09, 0.08, 0.07, 0.96 }
+			theme.buttonHover = { 0.22, 0.17, 0.08, 0.98 }
+			theme.buttonBorder = { 0.50, 0.40, 0.18, 0.95 }
+			theme.separator = { 0.90, 0.74, 0.40, 0.62 }
 			theme.textPrimary = { 0.92, 0.80, 0.50, 1.00 }
-			theme.textMeta = { 0.70, 0.78, 0.90, 0.90 }
+			theme.textMeta = { 0.78, 0.70, 0.55, 0.92 }
 		end
 		if remasterFrames.root then
 			remasterFrames.root:SetAlpha(opacitymain)
 			local rootc = backc
-			if remastercolor == "goals" then
-				rootc = { 0.08, 0.09, 0.12 }
+			if isGoldAccent then
+				rootc = { 0.04, 0.04, 0.05 }
 			end
 			remasterFrames.root:SetBackdropColor(rootc[1], rootc[2], rootc[3], backalpha)
 			remasterFrames.root:SetBackdropBorderColor(theme.frameBorder[1], theme.frameBorder[2], theme.frameBorder[3], theme.frameBorder[4] or 1)
@@ -3522,16 +3544,16 @@ function me:ApplyRemasterSkin()
 			remasterFrames.content:SetBackdropBorderColor(theme.insetBorder[1], theme.insetBorder[2], theme.insetBorder[3], theme.insetBorder[4] or 1)
 		end
 		if remasterFrames.headerBg then
-			if remastercolor == "goals" then
-				setTexColor(remasterFrames.headerBg, 0, 0, 0, 0.45)
+			if isGoldAccent then
+				setTexColor(remasterFrames.headerBg, 0, 0, 0, 0.58)
 			else
 				local c = theme.frameLight
 				setTexColor(remasterFrames.headerBg, c[1], c[2], c[3], c[4] or 1)
 			end
 		end
 		if remasterFrames.toolbarBg then
-			if remastercolor == "goals" then
-				setTexColor(remasterFrames.toolbarBg, 0, 0, 0, 0.30)
+			if isGoldAccent then
+				setTexColor(remasterFrames.toolbarBg, 0, 0, 0, 0.42)
 			else
 				local c = theme.frameLight
 				setTexColor(remasterFrames.toolbarBg, c[1], c[2], c[3], (c[4] or 1) * 0.8)
@@ -5463,6 +5485,80 @@ function me.gradient3(perc,ar,ag,ab,br,bg,bb,cr,cg,cb, middle)
 			return br+(cr-br)*perc, bg+(cg-bg)*perc, bb+(cb-bb)*perc
 		end
 	end
+end
+
+local COLORBLIND_PALETTES = {
+	protan = {
+		arrow = { bad={0.25,0.45,0.90}, mid={0.95,0.80,0.30}, good={0.15,0.80,0.85} },
+		dist  = { bad={0.25,0.45,0.90}, mid={0.95,0.80,0.30}, good={0.15,0.80,0.85} },
+		goals = {
+			goalbackincomplete = {r=0.22,g=0.34,b=0.78,a=0.72},
+			goalbackprogressing= {r=0.50,g=0.44,b=0.78,a=0.74},
+			goalbackcomplete   = {r=0.16,g=0.74,b=0.82,a=0.76},
+			goalbackimpossible = {r=0.30,g=0.30,b=0.30,a=0.62},
+			goalbackaux        = {r=0.30,g=0.48,b=0.72,a=0.62},
+			goalbackobsolete   = {r=0.30,g=0.48,b=0.72,a=0.62},
+		},
+	},
+	deutan = {
+		arrow = { bad={0.72,0.42,0.90}, mid={0.95,0.74,0.28}, good={0.20,0.78,0.90} },
+		dist  = { bad={0.72,0.42,0.90}, mid={0.95,0.74,0.28}, good={0.20,0.78,0.90} },
+		goals = {
+			goalbackincomplete = {r=0.55,g=0.32,b=0.76,a=0.72},
+			goalbackprogressing= {r=0.70,g=0.48,b=0.56,a=0.74},
+			goalbackcomplete   = {r=0.16,g=0.66,b=0.86,a=0.76},
+			goalbackimpossible = {r=0.30,g=0.30,b=0.30,a=0.62},
+			goalbackaux        = {r=0.34,g=0.45,b=0.72,a=0.62},
+			goalbackobsolete   = {r=0.34,g=0.45,b=0.72,a=0.62},
+		},
+	},
+	tritan = {
+		arrow = { bad={0.90,0.35,0.25}, mid={0.88,0.40,0.70}, good={0.25,0.80,0.35} },
+		dist  = { bad={0.90,0.35,0.25}, mid={0.88,0.40,0.70}, good={0.25,0.80,0.35} },
+		goals = {
+			goalbackincomplete = {r=0.74,g=0.30,b=0.24,a=0.72},
+			goalbackprogressing= {r=0.70,g=0.32,b=0.55,a=0.74},
+			goalbackcomplete   = {r=0.24,g=0.70,b=0.30,a=0.76},
+			goalbackimpossible = {r=0.30,g=0.30,b=0.30,a=0.62},
+			goalbackaux        = {r=0.58,g=0.34,b=0.56,a=0.62},
+			goalbackobsolete   = {r=0.58,g=0.34,b=0.56,a=0.62},
+		},
+	},
+}
+
+function me:GetColorblindMode()
+	local m = self.db and self.db.profile and self.db.profile.colorblindmode
+	if m=="protan" or m=="deutan" or m=="tritan" then return m end
+	return "off"
+end
+
+function me:GetColorblindPalette()
+	return COLORBLIND_PALETTES[self:GetColorblindMode()]
+end
+
+function me:GetArrowColorGradient()
+	local p = self:GetColorblindPalette()
+	if p and p.arrow then return p.arrow end
+	return { bad={1.0,0.0,0.0}, mid={0.8,0.7,0.0}, good={0.0,1.0,0.0} }
+end
+
+function me:GetDistanceColorGradient()
+	local p = self:GetColorblindPalette()
+	if p and p.dist then return p.dist end
+	return { bad={1.0,0.5,0.4}, mid={1.0,0.9,0.5}, good={0.7,1.0,0.6} }
+end
+
+function me:GetEffectiveGoalColors()
+	local p = self:GetColorblindPalette()
+	if p and p.goals then return p.goals end
+	return {
+		goalbackincomplete = self.db.profile.goalbackincomplete,
+		goalbackprogressing= self.db.profile.goalbackprogressing,
+		goalbackcomplete   = self.db.profile.goalbackcomplete,
+		goalbackimpossible = self.db.profile.goalbackimpossible,
+		goalbackaux        = self.db.profile.goalbackaux,
+		goalbackobsolete   = self.db.profile.goalbackobsolete,
+	}
 end
 
 --hooksecurefunc("WorldMapFrame_UpdateQuests",function() if not InCombatLockdown() then text=nil end end)
