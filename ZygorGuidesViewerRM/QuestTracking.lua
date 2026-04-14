@@ -2,12 +2,88 @@ local me = ZygorGuidesViewer
 local ZGV = me
 if not ZGV then return end
 
+-- Blizzard API Upvalues
+local _G = _G
+local GetQuestLogTitle = _G.GetQuestLogTitle
+local GetNumQuestLeaderBoards = _G.GetNumQuestLeaderBoards
+local GetQuestLogLeaderBoard = _G.GetQuestLogLeaderBoard
+local GetTime = _G.GetTime
+local tonumber = _G.tonumber
+local tostring = _G.tostring
+local ipairs = _G.ipairs
+local pairs = _G.pairs
+local type = _G.type
+local tinsert = _G.table.insert
+local tremove = _G.table.remove
+local twipe = _G.table.wipe
+
+-- Table Pools
+local questPool = {}
+local goalPool = {}       -- Single goal objects { item, num, needed, ... }
+local goalsTablePool = {} -- Array container holding multiple goals
+local goalNamedPool = {}  -- Map container { [itemname] = goal }
+
+-- Pool Acquisition Functions (DEFINED FIRST - before usage!)
+local function AcquireQuest()
+	local q = tremove(questPool)
+	return q or {}
+end
+
+local function AcquireGoalsTable()
+	local t = tremove(goalsTablePool)
+	return t or {}
+end
+
+local function AcquireGoalsNamedTable()
+	local t = tremove(goalNamedPool)
+	return t or {}
+end
+
+local function AcquireGoal()
+	local g = tremove(goalPool)
+	return g or {}
+end
+
+-- Pool Recycling Functions
+local function RecycleGoal(goal)
+	if not goal then return end
+	twipe(goal)
+	tinsert(goalPool, goal)
+end
+
+local function RecycleQuest(quest)
+	if not quest then return end
+	
+	-- Recycle subtables first
+	if quest.goals then
+		for _,g in ipairs(quest.goals) do
+			RecycleGoal(g)
+		end
+		twipe(quest.goals)
+		tinsert(goalsTablePool, quest.goals)
+	end
+	
+	if quest.goalsNamed then
+		twipe(quest.goalsNamed)
+		tinsert(goalNamedPool, quest.goalsNamed)
+	end
+	
+	-- Recycle quest itself
+	twipe(quest)
+	tinsert(questPool, quest)
+end
+
+-- Event Throttling
+local lastQuestCacheUpdate = 0
+local QUEST_CACHE_THROTTLE = 0.2 -- 200ms
+
 tinsert(ZGV.startups,function(self)
 	self:AddEvent("CHAT_MSG_SYSTEM","CHAT_MSG_SYSTEM_QuestTracking")
 	self:AddEvent("QUEST_LOG_UPDATE","QUEST_LOG_UPDATE_QuestTracking")
 	self:AddEvent("QUEST_QUERY_COMPLETE","QUEST_QUERY_COMPLETE_QuestTracking")
 
 	self:ScheduleRepeatingTimer("QueryQuests", 10)
+	self:ScheduleRepeatingTimer("QuestTracking_CacheQuestLog", 2) -- Safety polling every 2 seconds
 
 	self:QueryQuests()
 end)
@@ -50,8 +126,9 @@ end
 
 local function GetQuestLeaderBoards(questindex)
 	local numgoals = tonumber(GetNumQuestLeaderBoards(questindex))
-	local goals = {}
-	local goalsNamed = {}
+	local goals = AcquireGoalsTable()
+	local goalsNamed = AcquireGoalsNamedTable()
+	
 	if numgoals>0 then
 		for g=1,numgoals,1 do
 			local leaderboard,type,complete = GetQuestLogLeaderBoard(g,questindex)
@@ -61,12 +138,21 @@ local function GetQuestLeaderBoards(questindex)
 			if not needed then needed=1 end
 			if not num then num=complete and needed or 0 end
 
-			goals[g] = { item=item, num=num, needed=needed, type=type, complete=complete, leaderboard=leaderboard }
-			goalsNamed[item] = goals[g]
+			local goal = AcquireGoal()
+			goal.item = item
+			goal.num = num
+			goal.needed = needed
+			goal.type = type
+			goal.complete = complete
+			goal.leaderboard = leaderboard
+
+			goals[g] = goal
+			goalsNamed[item] = goal
 		end
 	end
 	return goals,goalsNamed
 end
+
 
 function me:GetQuest(indexortitle)
 	local link,title
@@ -74,7 +160,8 @@ function me:GetQuest(indexortitle)
 		local title,_,_,_,_,_,_,daily,id = GetQuestLogTitle(indexortitle)
 		return id,title,daily
 	else
-		for i = 1, 50, 1 do
+		local numEntries = GetNumQuestLogEntries()
+		for i = 1, numEntries, 1 do
 			local title,_,_,_,_,_,_,daily,id = GetQuestLogTitle(i)
 			if title == indexortitle then
 				ZGV:Debug(("GetQuestId: id of quest '%s' = %d"):format(indexortitle,id))
@@ -86,113 +173,125 @@ function me:GetQuest(indexortitle)
 end
 
 function me:QuestTracking_CacheQuestLog()
-	--self:Debug('CacheQuestLog: '..zone..'/'..subzone)
-	--if not zone or zone=='' then return nil end
+	-- Throttle protection
+	local now = GetTime()
+	if now - lastQuestCacheUpdate < QUEST_CACHE_THROTTLE then return end
+	lastQuestCacheUpdate = now
 
-	--if 1 then self:Debug('**BREAK**'); return end
-	--[[
-	local time = GetTime()
-	if time - self.QuestCacheTime < 1 then
-		self.QuestCacheUndertimeRepeats = self.QuestCacheUndertimeRepeats + 1
-		if self.QuestCacheUndertimeRepeats > 10 then return end
-	else
-		-- overtime; everything in order.
-		self.QuestCacheUndertimeRepeats = 0
-		self.QuestCacheTime = time
-	end
-	--]]
-
-	--self:Debug("CacheQuestLog starts --> (after ".. (time - self.QuestCacheTime)..")")
-
-	--local iNumEntries, iNumQuests = GetNumQuestLogEntries() -- this SUCKS. Entries can be muddled by collapsing the quest log, and NumQuests is useless anyway.
-	local iNumEntries = 50 -- WHAT EVER.
-
-	local oldquests=self.quests
-	--for qi,q in pairs(self.quests) do oldquests[qi]=q end
-	self.quests = {}
-
-	--local selected = GetQuestLogSelection()
-
+	local iNumEntries = GetNumQuestLogEntries()
+	local foundIDs = {}
 	local newquests = {}
-
+	local lostquests = {}
 	local nc=0
+
+	-- First, clear the ordered list (we will rebuild it in exact log order)
+	twipe(self.quests)
+
+	-- 1. SCAN PHASE (MARK) - Read Blizzard Quest Log
 	for i = 1, iNumEntries, 1 do
 		local strQuestLogTitleText, strQuestLevel, strQuestTag, numPlayers, isHeader, isCollapsed, isComplete, isDaily, questID = GetQuestLogTitle(i)
 
-		if not isHeader and strQuestLogTitleText then
-			strQuestLogTitleText = strQuestLogTitleText:gsub(" ?\[[0-9D\+]+\] ?","") -- fix for [12] level display
+		if not isHeader and strQuestLogTitleText and questID then
+			strQuestLogTitleText = strQuestLogTitleText:gsub(" ?\[[0-9D\+]+\] ?","")
+			
+			local quest
+			local isNewQuest = false
+
+			-- Check if quest already exists in our cache
+			local old_complete = false
+			if self.questsbyid[questID] then
+				-- EXISTING QUEST: UPDATE IN-PLACE - KEEP TABLE REFERENCE!
+				quest = self.questsbyid[questID]
+				old_complete = quest.complete
+				
+				-- Recycle old goals first before replacing them
+				if quest.goals then
+					for _,g in ipairs(quest.goals) do
+						RecycleGoal(g)
+					end
+					twipe(quest.goals)
+					tinsert(goalsTablePool, quest.goals)
+				end
+				if quest.goalsNamed then
+					twipe(quest.goalsNamed)
+					tinsert(goalNamedPool, quest.goalsNamed)
+				end
+			else
+				-- NEW QUEST: Acquire fresh object from pool
+				quest = AcquireQuest()
+				isNewQuest = true
+			end
+
+			-- Fetch fresh goals for this quest
 			local goals,goalsNamed = GetQuestLeaderBoards(i)
 
-			local quest = {
-				title = strQuestLogTitleText,
-				level = strQuestLevel,
-				--objective = obj,
-				--description = desc,
-				complete = (isComplete==1),
-				failed = (isComplete==-1),
-				daily = isDaily,
-				goals = goals,
-				goalsNamed = goalsNamed,
-				id = questID,
-				index = tonumber(i)
-			}
-			tinsert(self.quests,quest)
-			if not self.questsbyid[questID] and not self.recentlyAcceptedQuests[questID] then
-				table.insert(newquests,quest)
-				--self:Debug(dumpquest(quest))
+			-- Update quest properties (in-place for existing objects!)
+			quest.title = strQuestLogTitleText
+			quest.level = strQuestLevel
+			quest.complete = (isComplete==1)
+			quest.failed = (isComplete==-1)
+			quest.daily = isDaily
+			quest.goals = goals
+			quest.goalsNamed = goalsNamed
+			quest.id = questID
+			quest.index = tonumber(i)
+
+			-- STATUS SYNCHRONIZATION: If Blizzard says quest is complete, force all goals to 100%
+			if quest.complete then
+				for _, goal in ipairs(quest.goals) do
+					goal.num = goal.needed
+					goal.complete = true
+				end
+			end
+
+			-- DETECT COMPLETION STATUS CHANGE
+			if quest.complete and not old_complete and not isNewQuest then
+				-- Quest just became completed! Fire event immediately
+				self:CompletedQuestEvent(quest.title, quest.id, quest.daily)
+			end
+
+			-- Add to ordered list in Blizzard's exact order
+			tinsert(self.quests, quest)
+
+			-- Store/update in ID map
+			self.questsbyid[questID] = quest
+
+			-- Mark this quest as found
+			foundIDs[questID] = true
+
+			-- Track new quests for event
+			if isNewQuest and not self.recentlyAcceptedQuests[questID] then
+				tinsert(newquests, quest)
 			end
 
 			nc=nc+1
-		
 		end
 	end
 
-	table.wipe(self.questsbyid)
-	for qi,q in pairs(self.quests) do
-		if q.id then
-			self.questsbyid[q.id]=q
-		else
-			self:Print("Quest '"..q.title.."' has no ID! What the hell?")
+	-- 2. CLEANUP PHASE (SWEEP) - Remove quests no longer in log
+	for questID, questObj in pairs(self.questsbyid) do
+		if not foundIDs[questID] then
+			-- Quest is gone from log
+			tinsert(lostquests, questObj)
+			self.recentlyAcceptedQuests[questID] = nil
+			
+			-- Recycle quest object back to pool
+			RecycleQuest(questObj)
+			
+			-- Remove from ID map
+			self.questsbyid[questID] = nil
 		end
 	end
 
-	self:Debug("CacheQuestLog cached "..nc.." quests")
+	self:Debug("CacheQuestLog cached "..nc.." quests | New: "..#newquests.." | Lost: "..#lostquests)
 
-	local lostquests = {}
-
-	-- any abandoned?
-	if #oldquests>0 then
-		for qi,q in pairs(oldquests) do
-			if not self.questsbyid[q.id] and not self.completedQuests[id] then
-				table.insert(lostquests,q)
-				self.recentlyAcceptedQuests[q.id]=nil
-				self.recentlyAcceptedQuests[q.title]=nil
-			end
-			--[[
-			if self.recentlyCompletedQuests[q.title] then
-				self.db.char.completedQuests[q.title]=true
-			end
-			-- chat parsing already fired CompletedQuestEvent, sorry
-			if q.id and self.recentlyCompletedQuests[q.id] then
-				self.db.char.completedQuests[q.id]=true
-				if q.daily then
-					self.db.char.completedDailies[q.id]=time()
-				end
-			end
-			--]]
-
-			-- NOT to rely on .complete - a quest could be complete AND get abandoned, which would result in false-completion.
-		end
-		--self.recentlyCompletedQuests = {}
+	-- 3. EVENT PHASE: Fire ALL events ONLY after everything is finished
+	for _,q in ipairs(newquests) do
+		self:NewQuestEvent(q.title, q.id)
 	end
 
-	-- Now, handle the news and losts.
-
-	for i,q in ipairs(newquests) do
-		self:NewQuestEvent(q.title,q.id)
-	end
-	for i,q in ipairs(lostquests) do
-		self:LostQuestEvent(q.title,q.id,q.complete)
+	for _,q in ipairs(lostquests) do
+		self:LostQuestEvent(q.title, q.id, q)
 	end
 
 	return self.quests
@@ -355,10 +454,10 @@ function me:CHAT_MSG_SYSTEM_QuestTracking(event,text)
 	local quest = string.match(text,detection_complete)
 	if quest then
 		local id,_,daily = self:GetQuest(quest)
-		--if not q.id then
-			-- re-query completed quests; nasty, but the only way to fetch this sucker.
-			--if QueryQuestsCompleted then QueryQuestsCompleted() end
-		--end
+		-- Bypass throttle for immediate quest completion detection
+		lastQuestCacheUpdate = 0
+		self:QuestTracking_CacheQuestLog()
+		
 		self:CompletedQuestEvent(quest,id,daily)
 	end
 end
