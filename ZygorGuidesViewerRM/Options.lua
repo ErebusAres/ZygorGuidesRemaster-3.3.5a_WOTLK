@@ -2347,8 +2347,8 @@ function me:Options_DefineOptions()
 
 	-- ===================== GEAR ADVISOR =====================
 	self.optionsgear = {
-		name = "Gear Advisor",
-		desc = "Gear scoring and upgrade detection",
+		name = L["opt_gearadvisor_title"],
+		desc = L["opt_gearadvisor_desc"],
 		type = 'group',
 		order = 4.1,
 		handler = self,
@@ -2358,17 +2358,17 @@ function me:Options_DefineOptions()
 			desc = {
 				order = 1,
 				type = "description",
-				name = "Set how Zygor detects upgrades, how it prompts you, and which sources Gear Finder should search.",
+				name = L["opt_gearadvisor_intro"],
 			},
 			detection_header = {
 				order = 1.5,
 				type = "header",
-				name = "Detection",
+				name = L["opt_gearadvisor_detection_header"],
 			},
 			autogear = {
 				order = 2,
-				name = "Enable Gear Advisor",
-				desc = "Enable item scoring and upgrade detection",
+				name = L["opt_gearadvisor_enable"],
+				desc = L["opt_gearadvisor_enable_desc"],
 				type = "toggle",
 				width = "full",
 				set = function(i,v)
@@ -2380,16 +2380,16 @@ function me:Options_DefineOptions()
 			},
 			itemscore_tooltips = {
 				order = 3,
-				name = "Show ItemScore on Tooltips",
-				desc = "Show upgrade percentage on item tooltips",
+				name = L["opt_itemscore_tooltips"],
+				desc = L["opt_itemscore_tooltips_desc"],
 				type = "toggle",
 				width = "full",
 				disabled = function() return not self.db.profile.autogear end,
 			},
 			itemscore_tooltips_allbuilds = {
 				order = 3.1,
-				name = "Show All Builds on Tooltips",
-				desc = "Show upgrade or downgrade lines for all specs of your class on item tooltips. Active-build suggestions and equip prompts still use only your detected active build.",
+				name = L["opt_itemscore_tooltips_allbuilds"],
+				desc = L["opt_itemscore_tooltips_allbuilds_desc"],
 				type = "toggle",
 				width = "full",
 				disabled = function() return not self.db.profile.autogear or not self.db.profile.itemscore_tooltips end,
@@ -2397,28 +2397,28 @@ function me:Options_DefineOptions()
 			prompting_header = {
 				order = 3.5,
 				type = "header",
-				name = "Prompting",
+				name = L["opt_gearadvisor_prompting_header"],
 			},
 			autogearauto = {
 				order = 4,
-				name = "Auto-equip Upgrades",
-				desc = "Automatically equip upgrades without asking (notification only)",
+				name = L["opt_autogearauto"],
+				desc = L["opt_autogearauto_desc"],
 				type = "toggle",
 				width = "full",
 				disabled = function() return not self.db.profile.autogear end,
 			},
 			masterloot_notices = {
 				order = 4.1,
-				name = "Show Master Loot Upgrade Notices",
-				desc = "Print a local Gear Advisor message when a visible master-loot item is a true upgrade for your active build.",
+				name = L["opt_masterloot_notices"],
+				desc = L["opt_masterloot_notices_desc"],
 				type = "toggle",
 				width = "full",
 				disabled = function() return not self.db.profile.autogear end,
 			},
 			masterloot_compare = {
 				order = 4.2,
-				name = "Include Compared Equipped Item in Master Loot Notices",
-				desc = "Include the equipped baseline item link in the local master-loot upgrade message when available.",
+				name = L["opt_masterloot_compare"],
+				desc = L["opt_masterloot_compare_desc"],
 				type = "toggle",
 				width = "full",
 				disabled = function() return not self.db.profile.autogear or not self.db.profile.masterloot_notices end,
@@ -2426,19 +2426,19 @@ function me:Options_DefineOptions()
 			vendorheader = {
 				order = 6,
 				type = "header",
-				name = "Vendor & Convenience",
+				name = L["opt_gearadvisor_vendor_header"],
 			},
 			autosellgrey = {
 				order = 7,
-				name = "Auto-sell Grey Items",
-				desc = "Automatically sell grey (junk) items when visiting a vendor",
+				name = L["opt_autosellgrey"],
+				desc = L["opt_autosellgrey_desc"],
 				type = "toggle",
 				width = "full",
 			},
 			autorepair = {
 				order = 8,
-				name = "Auto-repair",
-				desc = "Automatically repair gear when visiting a vendor",
+				name = L["opt_autorepair"],
+				desc = L["opt_autorepair_desc"],
 				type = "select",
 				values = {
 					[1] = "Off",
@@ -2451,16 +2451,16 @@ function me:Options_DefineOptions()
 			sources_desc = {
 				order = 9,
 				type = "description",
-				name = "Choose which dungeon and raid difficulties Gear Finder can suggest.",
+				name = L["opt_gearadvisor_sources_desc"],
 			},
 			dungeonheader = {
 				order = 10,
 				type = "header",
-				name = "Gear Finder Sources",
+				name = L["opt_gearadfinder_sources_header"],
 			},
 			gear_1 = {
 				order = 11,
-				name = "Normal Dungeons",
+				name = L["opt_gear_normal_dungeons"],
 				type = "toggle",
 				width = "double",
 				set = function(i,v) Setter_Simple(i,v) if ZGV.ItemScore then ZGV.ItemScore.GearFinder:ClearResults() end end,
@@ -2468,7 +2468,7 @@ function me:Options_DefineOptions()
 			},
 			gear_2 = {
 				order = 12,
-				name = "Heroic Dungeons",
+				name = L["opt_gear_heroic_dungeons"],
 				type = "toggle",
 				width = "double",
 				set = function(i,v) Setter_Simple(i,v) if ZGV.ItemScore then ZGV.ItemScore.GearFinder:ClearResults() end end,
@@ -2476,7 +2476,7 @@ function me:Options_DefineOptions()
 			},
 			gear_14 = {
 				order = 13,
-				name = "Normal Raids",
+				name = L["opt_gear_normal_raids"],
 				type = "toggle",
 				width = "double",
 				set = function(i,v) Setter_Simple(i,v) self.db.profile.gear_3=v self.db.profile.gear_4=v if ZGV.ItemScore then ZGV.ItemScore.GearFinder:ClearResults() end end,
@@ -2484,7 +2484,7 @@ function me:Options_DefineOptions()
 			},
 			gear_15 = {
 				order = 14,
-				name = "Heroic Raids",
+				name = L["opt_gear_heroic_raids"],
 				type = "toggle",
 				width = "double",
 				set = function(i,v) Setter_Simple(i,v) self.db.profile.gear_5=v self.db.profile.gear_6=v if ZGV.ItemScore then ZGV.ItemScore.GearFinder:ClearResults() end end,
@@ -2493,18 +2493,18 @@ function me:Options_DefineOptions()
 			maintenance_header = {
 				order = 15,
 				type = "header",
-				name = "Maintenance",
+				name = L["opt_gearadvisor_maintenance_header"],
 			},
 			clearnotupgrades = {
 				order = 16,
-				name = "Reset Declined Upgrades",
-				desc = "Clear the list of items you previously declined",
+				name = L["opt_clearnotupgrades"],
+				desc = L["opt_clearnotupgrades_desc"],
 				type = "execute",
 				func = function()
 					if ZGV.db.char.badupgrade then
 						wipe(ZGV.db.char.badupgrade)
 					end
-					ZGV:Print("Declined upgrades list cleared.")
+					ZGV:Print(L["opt_clearnotupgrades_done"])
 				end,
 				disabled = function() return not self.db.profile.autogear end,
 			},
@@ -2611,17 +2611,17 @@ function me:Options_DefineOptions()
 			desc = {
 				order = 1,
 				type = "description",
-				name = "Adjust how strongly each stat affects item scoring for a selected class and spec. Higher values make the stat more important.",
+				name = L["opt_statweights_intro"],
 			},
 			warning = {
 				order = 2,
 				type = "description",
-				name = "|cffff6600Warning:|r Changing stat weights is for advanced users. Incorrect values may cause bad gear suggestions.\n",
+				name = L["opt_statweights_warning"],
 			},
 			curated = {
 				order = 2.1,
 				type = "description",
-				name = "|cff88ccffRecommended defaults:|r Wrath stat weights are source-backed curated baselines intended for 3.3.5a. Most players should start here and only customize when they have a clear reason.\n",
+				name = L["opt_statweights_curated"],
 			},
 			selectedsummary = {
 				order = 2.2,
@@ -2649,7 +2649,7 @@ function me:Options_DefineOptions()
 			classdesc = {
 				order = 3,
 				type = "header",
-				name = "Class & Spec Selection",
+				name = L["opt_statweights_class_header"],
 			},
 		}
 
@@ -2657,7 +2657,7 @@ function me:Options_DefineOptions()
 		IS_args.gear_selected_class = {
 			order = 4,
 			type = "select",
-			name = "Class",
+			name = L["opt_statweights_class"],
 			values = WrapStatWeightsCallback("values", "gear_selected_class", {}, function()
 				local male = LOCALIZED_CLASS_NAMES_MALE or {}
 				local female = LOCALIZED_CLASS_NAMES_FEMALE or {}
@@ -2714,7 +2714,7 @@ function me:Options_DefineOptions()
 		IS_args.gear_selected_build = {
 			order = 5,
 			type = "select",
-			name = "Spec",
+			name = L["opt_statweights_spec"],
 			values = WrapStatWeightsCallback("values", "gear_selected_build", {}, function()
 				if not ZGV.ItemScore or not ZGV.ItemScore.Builds then return {} end
 				local classId = ZGV.db.char.gear_selected_class or 1
@@ -2759,8 +2759,8 @@ function me:Options_DefineOptions()
 		IS_args.activebuildoverride = {
 			order = 5.5,
 			type = "toggle",
-			name = "Override Active Build",
-			desc = "Use the selected spec from this panel as your live active build for tooltips and gear recommendations until disabled.",
+			name = L["opt_statweights_override"],
+			desc = L["opt_statweights_override_desc"],
 			get = WrapStatWeightsCallback("get", "activebuildoverride", false, function()
 				if not ZGV.ItemScore then return false end
 				return ZGV.ItemScore:GetActiveBuildOverrideBuild(ZGV.ItemScore.playerclass, ZGV.ItemScore:GetActiveTalentGroupKey()) and true or false
@@ -2797,8 +2797,8 @@ function me:Options_DefineOptions()
 		IS_args.activatebuild = {
 			order = 6,
 			type = "execute",
-			name = "Set as Active Spec Weight",
-			desc = "Use these stat weights for gear scoring",
+			name = L["opt_statweights_activate"],
+			desc = L["opt_statweights_activate_desc"],
 			func = WrapStatWeightsSet("activatebuild", function()
 				local classNum = tonumber(ZGV.db.char.gear_selected_class)
 				local buildNum = tonumber(ZGV.db.char.gear_selected_build)
@@ -2834,7 +2834,7 @@ function me:Options_DefineOptions()
 		IS_args.activelabel = {
 			order = 6.1,
 			type = "description",
-			name = "|cff00ff00This is your active stat weight set.|r",
+			name = L["opt_statweights_activelabel"],
 			hidden = WrapStatWeightsCallback("hidden", "activelabel", true, function()
 				if not ZGV.ItemScore then return true end
 				local isOwnClass = (tonumber(ZGV.db.char.gear_selected_class) == ZGV.ItemScore.playerclassNum)
@@ -2847,13 +2847,13 @@ function me:Options_DefineOptions()
 		IS_args.visibilityheader = {
 			order = 7,
 			type = "header",
-			name = "Visibility",
+			name = L["opt_statweights_visibility_header"],
 		}
 
 		IS_args.showallstats = {
 			order = 8,
-			name = "Show All Stats",
-			desc = "Show all stat weight fields, even those not used by this spec",
+			name = L["opt_statweights_showallstats"],
+			desc = L["opt_statweights_showallstats_desc"],
 			type = "toggle",
 			width = "full",
 			get = WrapStatWeightsCallback("get", "showallstats", false, function() return ZGV.db.profile.gearshowallstats end, function(value) return SafeBool(value, false) end),
@@ -2869,9 +2869,9 @@ function me:Options_DefineOptions()
 		IS_args.weightsheader = {
 			order = 9,
 			type = "header",
-			name = "Stat Weights",
+			name = L["opt_statweights_weights_header"],
 		}
-		IS_args.spacer = { order = 9.1, type = "description", name = "Edit the weight for each stat below. Higher values make the stat more valuable for scoring.\n", width = "full" }
+		IS_args.spacer = { order = 9.1, type = "description", name = L["opt_statweights_spacer"], width = "full" }
 		IS_args.recommendedsummary = {
 			order = 9.2,
 			type = "description",
@@ -3002,7 +3002,7 @@ function me:Options_DefineOptions()
 		end
 
 		self.optionsitemscore = {
-			name = "Stat Weights",
+			name = L["opt_statweights_weights_header"],
 			desc = "Edit stat weights for item scoring",
 			type = 'group',
 			order = 4.2,
