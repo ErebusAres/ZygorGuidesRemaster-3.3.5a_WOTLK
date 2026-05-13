@@ -2301,11 +2301,33 @@ do
 
 	function me:ActionButtons_Refresh(force)
 		if not self.db or not self.db.profile or not self.db.profile.actionbuttonbar_enabled then
-			if self.ActionButtonBar then self.ActionButtonBar:Hide() end
+			if self.ActionButtonBar then
+				local barToHide = self.ActionButtonBar
+				self:ScheduleTimer(function()
+					if barToHide then
+						if InCombatLockdown() then
+							self.actionButtonsRefreshPending = true
+						else
+							barToHide:Hide()
+						end
+					end
+				end, 0.05)
+			end
 			return
 		end
 		if not self.Frame or not self.Frame:IsShown() then
-			if self.ActionButtonBar then self.ActionButtonBar:Hide() end
+			if self.ActionButtonBar then
+				local barToHide = self.ActionButtonBar
+				self:ScheduleTimer(function()
+					if barToHide then
+						if InCombatLockdown() then
+							self.actionButtonsRefreshPending = true
+						else
+							barToHide:Hide()
+						end
+					end
+				end, 0.05)
+			end
 			return
 		end
 		if InCombatLockdown() then
@@ -2334,10 +2356,20 @@ do
 		self:ActionButtons_Layout()
 		self:ActionButtons_UpdateDragState()
 		if shouldShow then
-			bar:Show()
-			self:ActionButtons_UpdateCooldowns()
+			self:ScheduleTimer(function()
+				if bar then
+					if InCombatLockdown() then
+						self.actionButtonsRefreshPending = true
+					else
+						bar:Show()
+						self:ActionButtons_UpdateCooldowns()
+					end
+				end
+			end, 0.05)
 		else
-			bar:Hide()
+			self:ScheduleTimer(function()
+				if bar then bar:Hide() end
+			end, 0.05)
 		end
 	end
 

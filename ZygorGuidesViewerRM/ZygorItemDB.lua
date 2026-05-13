@@ -1,6 +1,6 @@
 ﻿-- ZygorItemDB.lua
--- Updated: 2026-05-04 17:42:17 -05:00
--- AzerothCore 3.3.5a Export | 24933 Items
+-- Updated: 2026-05-13 14:18:32 -05:00
+-- AzerothCore 3.3.5a Export
 --
 -- Fields per item:
 --   n  = Name
@@ -25302,6 +25302,10 @@ ZygorItemDB.items = {
 	[43659]={n="Bloodied Prison Shank",i=136,q=0,s="OneHand",cl=-1,rc=-1,rl=70,st={},ar=0,bk=0,w={93.0,174.0,0,0.0,0.0,0,2000},re=nil,so=nil,sb=0,se=0,bd=0},
 	[37659]={n="Enti's Quenched Sword",i=200,q=0,s="TwoHand",cl=-1,rc=-1,rl=70,st={},ar=0,bk=0,w={2.0,4.0,0,0.0,0.0,0,3700},re=nil,so=nil,sb=0,se=0,bd=0},
 	[6126]={n="Trapper's Pants",i=1,q=0,s="Legs",cl=-1,rc=-1,rl=1,st={},ar=2,bk=0,w=nil,re=nil,so=nil,sb=0,se=0,bd=0},
+	[23478]={n="Recruit's Pants",i=1,q=0,s="Legs",cl=-1,rc=-1,rl=1,st={},ar=2,bk=0,w=nil,re=nil,so=nil,sb=0,se=0,bd=0},
+	[23479]={n="Recruit's Robe",i=1,q=0,s="Chest",cl=-1,rc=-1,rl=1,st={},ar=3,bk=0,w=nil,re=nil,so=nil,sb=0,se=0,bd=0},
+	[1374]={n="Frayed Shoes",i=4,q=0,s="Feet",cl=-1,rc=-1,rl=1,st={},ar=5,bk=0,w=nil,re=nil,so=nil,sb=0,se=0,bd=0},
+	[2650]={n="Flimsy Chain Boots",i=3,q=0,s="Feet",cl=-1,rc=-1,rl=1,st={},ar=34,bk=0,w=nil,re=nil,so=nil,sb=0,se=0,bd=0},
 }
 
 -- Ende ZygorItemDB.lua
