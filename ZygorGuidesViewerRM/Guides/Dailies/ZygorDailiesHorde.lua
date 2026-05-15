@@ -5886,7 +5886,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Dailies Guides\\Icecrown\\Crusade
 	step //492
 		goto 59.3,57.7
 		.' Use Benedict's Key to open Benedict's Chest |tip Down the hall and then up the wooden staircase from Lord Benedict.
-		.collect 1 Aged Envelope##4881 |n
+		.collect 1 Aged Envelope##4881 |future |q 830 |sticky
 		.' Click the Aged Envelope |use Aged Envelope##4881
 		..accept The Admiral's Orders (1)##830
 	step //493

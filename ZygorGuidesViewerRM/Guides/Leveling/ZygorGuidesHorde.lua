@@ -1854,7 +1854,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Orc (1-13)",[[
 	step //61
 		goto 59.3,57.7
 		.' Use Benedict's Key to open Benedict's Chest |tip Down the hall and then up the wooden staircase from Lord Benedict.
-		.collect 1 Aged Envelope##4881 |n
+		.collect 1 Aged Envelope##4881 |future |q 830 |sticky
 		.' Click the Aged Envelope |use Aged Envelope##4881
 		..accept The Admiral's Orders (1)##830
 	step //62
@@ -2686,13 +2686,13 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Troll (1-13)",[[
 	step //61
 		goto 59.7,58.3
 		.kill Lieutenant Benedict##3192|q 784/3
-		.collect 1 Benedict's Key##4882|q 830
+		.collect 1 Benedict's Key##4882 |future |q 830
 	step //62
 		'Leave the room and run across the hall and up the wooden steps|goto 60.0,57.6,0.3
 	step //63
 		goto 59.3,57.7
 		.' Use Benedict's Key to open Benedict's Chest
-		.collect 1 Aged Envelope##4881|q 830
+		.collect 1 Aged Envelope##4881 |future |q 830 |sticky
 		.' Click the Aged Envelope|use Aged Envelope##4881
 		..accept The Admiral's Orders (1)##830
 		info Down the hall and then up the wooden staircase from Lord Benedict.

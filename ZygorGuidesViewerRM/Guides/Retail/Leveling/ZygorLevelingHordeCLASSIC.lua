@@ -1888,7 +1888,7 @@ Follow the path |goto 59.23,57.98 < 5 |walk
 Run up the stairs |goto 59.90,57.87 < 5 |walk
 click Benedict's Chest
 |tip Upstairs, on top of the building.
-collect Aged Envelope##4881 |goto 59.26,57.66 |q 830 |future
+collect Aged Envelope##4881 |goto 59.26,57.66 |q 830 |future |sticky
 step
 use the Aged Envelope##4881
 accept The Admiral's Orders##830
