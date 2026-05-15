@@ -8796,6 +8796,8 @@ function me:RegisterGuide(title,data,extra)
 		if header.next then guide.next = header.next end
 		if header.startlevel then guide.startlevel = header.startlevel end
 		if header.endlevel then guide.endlevel = header.endlevel end
+		if header.defaultfor then guide.defaultfor = header.defaultfor end
+		if header.faction then guide.faction = header.faction end
 		guide.type = DeriveGuideType(title, header)
 	end
 
@@ -8810,6 +8812,8 @@ function me:RegisterGuide(title,data,extra)
 		if data.next then guide.next = data.next end
 		if data.startlevel then guide.startlevel = data.startlevel end
 		if data.endlevel then guide.endlevel = data.endlevel end
+		if data.defaultfor then guide.defaultfor = data.defaultfor end
+		if data.faction then guide.faction = data.faction end
 		guide.type = DeriveGuideType(title, data)
 	end
 	if not guide.rawdata or guide.rawdata == "" then
