@@ -456,7 +456,7 @@ function Goal:IsFitting()
 	if self.wrong then return nil end
 	if not self.requirement then return true end
 	self.wrong = not ZygorGuidesViewer:RaceClassMatch(self.requirement)
-	return not wrong
+	return not self.wrong
 end
 
 function Goal:NeedsTranslation()
