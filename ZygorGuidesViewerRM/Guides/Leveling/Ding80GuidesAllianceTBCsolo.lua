@@ -1065,7 +1065,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Nig
 	step
 		goto 56.0,61.5
 		.talk Kal##3602
-		..accept Heeding the Call##5923
+		..accept Heeding the Call##5923 |noobsolete
 		only NightElf Druid
 	step
 		'Hearth to Darnassus|goto Darnassus|use Hearthstone##6948|noway|c
@@ -1118,7 +1118,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Nig
 	step
 		goto Teldrassil,56.7,59.5
 		.talk Dazalar##3601
-		..accept Taming the Beast (1)##6063
+		..accept Taming the Beast (1)##6063 |noobsolete
 		only NightElf Hunter
 	step
 		goto 59,60
@@ -1128,8 +1128,8 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Nig
 	step
 		goto 56.7,59.5
 		.talk Dazalar##3601
-		..turnin Taming the Beast (1)##6063
-		..accept Taming the Beast (2)##6101
+		..turnin Taming the Beast (1)##6063 |noobsolete
+		..accept Taming the Beast (2)##6101 |noobsolete
 		only NightElf Hunter
 	step
 		goto 56,72
@@ -1139,8 +1139,8 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Nig
 	step
 		goto 56.7,59.5
 		.talk Dazalar##3601
-		..turnin Taming the Beast (2)##6101
-		..accept Taming the Beast (3)##6102
+		..turnin Taming the Beast (2)##6101 |noobsolete
+		..accept Taming the Beast (3)##6102 |noobsolete
 		only NightElf Hunter
 	step
 		goto 38.9,51.7
@@ -1150,8 +1150,8 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Nig
 	step
 		goto 56.7,59.5
 		.talk Dazalar##3601
-		..turnin Taming the Beast (3)##6102
-		..accept Training the Beast##6103
+		..turnin Taming the Beast (3)##6102 |noobsolete
+		..accept Training the Beast##6103 |noobsolete
 		only NightElf Hunter
 	step
 		'Go west to Darnassus|goto Darnassus|noway|c
@@ -1159,7 +1159,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Nig
 	step
 		goto Darnassus,40.4,8.5
 		.talk Jocaste##4146
-		..turnin Training the Beast##6103
+		..turnin Training the Beast##6103 |noobsolete
 		only NightElf Hunter
 	step
 		'Go east out of Darnassus to Teldrassil|goto Teldrassil|noway|c
@@ -1167,8 +1167,8 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Nig
 	step
 		goto Darnassus,35.2,8.1
 		.talk Mathrengyl Bearwalker##4217
-		..turnin Heeding the Call##5923
-		..accept Moonglade##5921
+		..turnin Heeding the Call##5923 |noobsolete
+		..accept Moonglade##5921 |noobsolete
 		only NightElf Druid
 	step
 		'He gives you a spell called Teleport: Moonglade
@@ -1177,7 +1177,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Nig
 	step
 		goto Moonglade,56.2,30.5
 		.talk Dendrite Starblaze##11802
-		..turnin Moonglade##5921
+		..turnin Moonglade##5921 |noobsolete
 		..accept Great Bear Spirit##5929
 		only NightElf Druid
 	step
@@ -1192,7 +1192,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Nig
 		goto 56.2,30.5
 		.talk Dendrite Starblaze##11802
 		..turnin Great Bear Spirit##5929
-		..accept Back to Darnassus##5931
+		..accept Back to Darnassus##5931 |noobsolete
 		only NightElf Druid
 	step
 		goto 44.2,45.3|n
@@ -1205,8 +1205,8 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Nig
 	step
 		goto Darnassus,35.2,8.1
 		.talk Mathrengyl Bearwalker##4217
-		..turnin Back to Darnassus##5931
-		..accept Body and Heart##6001
+		..turnin Back to Darnassus##5931 |noobsolete
+		..accept Body and Heart##6001 |noobsolete
 		only NightElf Druid
 	step
 		.'Go into the pink portal to Rut'theran Village|goto Teldrassil,56.3,92.4,6|noway|c
@@ -1242,7 +1242,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Nig
 	step
 		goto Darnassus,35.2,8.1
 		.talk Mathrengyl Bearwalker##4217
-		..turnin Body and Heart##6001
+		..turnin Body and Heart##6001 |noobsolete
 		only NightElf Druid
 	step
 		.'Go into the pink portal to Rut'theran Village|goto Teldrassil,56.3,92.4,6|noway|c
@@ -1416,7 +1416,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Dra
 	step
 		goto 79.3,49.1
 		.talk Firmanvaar##17089
-		..accept Call of Earth (1)##9449
+		..accept Call of Earth (1)##9449 |noobsolete
 		only Draenei Shaman
 	step
 		goto 74.0,42.0|n
@@ -1425,8 +1425,8 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Dra
 	step
 		goto 71.3,39
 		.talk Spirit of the Vale##17087
-		..turnin Call of Earth (1)##9449
-		..accept Call of Earth (2)##9450
+		..turnin Call of Earth (1)##9449 |noobsolete
+		..accept Call of Earth (2)##9450 |noobsolete
 		only Draenei Shaman
 	step
 		goto 70.8,37.8
@@ -1435,13 +1435,13 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Dra
 	step
 		goto 71.3,39
 		.talk Spirit of the Vale##17087
-		..turnin Call of Earth (2)##9450
-		..accept Call of Earth (3)##9451
+		..turnin Call of Earth (2)##9450 |noobsolete
+		..accept Call of Earth (3)##9451 |noobsolete
 		only Draenei Shaman
 	step
 		goto 79.3,49.1
 		.talk Firmanvaar##17089
-		..turnin Call of Earth (3)##9451
+		..turnin Call of Earth (3)##9451 |noobsolete
 		only Draenei Shaman
 	step
 		goto 79.5,51.4
@@ -1808,7 +1808,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Dra
 	step
 		goto Azuremyst Isle,48.1,50.4
 		.talk Tuluun##17212
-		..accept Call of Fire (2)##9464
+		..accept Call of Fire (2)##9464 |noobsolete
 		only Draenei Shaman
 	step
 		goto Azuremyst Isle,49.8,51.9
@@ -1819,7 +1819,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Dra
 		goto 24.2,54.3
 		.talk Huntress Kella Nightbow##17614
 		..turnin Seek Huntress Kella Nightbow##9757
-		..accept Taming the Beast (1)##9591
+		..accept Taming the Beast (1)##9591 |noobsolete
 		only Draenei Hunter
 	step
 		goto 22.8,75
@@ -1829,8 +1829,8 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Dra
 	step
 		goto 24.2,54.3
 		.talk Huntress Kella Nightbow##17614
-		..turnin Taming the Beast (1)##9591
-		..accept Taming the Beast (2)##9592
+		..turnin Taming the Beast (1)##9591 |noobsolete
+		..accept Taming the Beast (2)##9592 |noobsolete
 		only Draenei Hunter
 	step
 		goto 34.9,35.1
@@ -1840,8 +1840,8 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Dra
 	step
 		goto 24.2,54.3
 		.talk Huntress Kella Nightbow##17614
-		..turnin Taming the Beast (2)##9592
-		..accept Taming the Beast (3)##9593
+		..turnin Taming the Beast (2)##9592 |noobsolete
+		..accept Taming the Beast (3)##9593 |noobsolete
 		only Draenei Hunter
 	step
 		goto 36.6,40.8
@@ -1851,8 +1851,8 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Dra
 	step
 		goto 24.2,54.3
 		.talk Huntress Kella Nightbow##17614
-		..turnin Taming the Beast (3)##9593
-		..accept Beast Training##9675
+		..turnin Taming the Beast (3)##9593 |noobsolete
+		..accept Beast Training##9675 |noobsolete
 		only Draenei Hunter
 	step
 		'Go northeast to the Exodar|goto The Exodar|noway|c
@@ -1860,7 +1860,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Dra
 	step
 		goto The Exodar,44,86.7
 		.talk Ganaar##16712
-		..turnin Beast Training##9675
+		..turnin Beast Training##9675 |noobsolete
 		only Draenei Hunter
 	step
 		'Go outside of the Exodar to Azuremyst Isle|goto Azuremyst Isle|noway|c
@@ -1884,8 +1884,8 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Dra
 	step
 		goto 59.5,18.1
 		.talk Temper##17205
-		..turnin Call of Fire (2)##9464
-		..accept Call of Fire (3)##9465
+		..turnin Call of Fire (2)##9464 |noobsolete
+		..accept Call of Fire (3)##9465 |noobsolete
 		only Draenei Shaman
 	step
 		goto 33.8,25.7
@@ -1960,8 +1960,8 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Dra
 	step
 		goto 59.5,18.1
 		.talk Temper##17205
-		..turnin Call of Fire (3)##9465
-		..accept Call of Fire (4)##9467
+		..turnin Call of Fire (3)##9465 |noobsolete
+		..accept Call of Fire (4)##9467 |noobsolete
 		only Draenei Shaman
 	step
 		goto 47.1,50.6
@@ -1985,14 +1985,14 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Dra
 	step
 		goto 59.5,18.1
 		.talk Temper##17205
-		..turnin Call of Fire (4)##9467
-		..accept Call of Fire (5)##9468
+		..turnin Call of Fire (4)##9467 |noobsolete
+		..accept Call of Fire (5)##9468 |noobsolete
 		only Draenei Shaman
 	step
 		goto 48.1,50.4
 		.talk Tuluun##17212
-		..turnin Call of Fire (5)##9468
-		..accept Call of Fire (6)##9461
+		..turnin Call of Fire (5)##9468 |noobsolete
+		..accept Call of Fire (6)##9461 |noobsolete
 		only Draenei Shaman
 	step
 		'Go northwest to the Exodar|goto The Exodar|noway|c
@@ -2000,13 +2000,13 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Dra
 	step
 		goto The Exodar,32.8,54.5
 		.talk Prophet Velen##17468
-		..turnin Call of Fire (6)##9461
-		..accept Call of Fire (7)##9555
+		..turnin Call of Fire (6)##9461 |noobsolete
+		..accept Call of Fire (7)##9555 |noobsolete
 		only Draenei Shaman
 	step
 		goto 31.4,27.7
 		.talk Farseer Nobundo##17204
-		..turnin Call of Fire (7)##9555
+		..turnin Call of Fire (7)##9555 |noobsolete
 		only Draenei Shaman
 	step
 		'Go outside to Azuremyst Isle|goto Azuremyst Isle|noway|c
@@ -2029,10 +2029,10 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Dra
 		goto The Exodar,38,82
 		.talk Jol##17509
 		..turnin Jol##10366
-		..accept Redemption (1)##9598
+		..accept Redemption (1)##9598 |noobsolete
 		.'Click the Tome of Divinity in your bags to read it|use Tome of Divinity##23926
-		..turnin Redemption (1)##9598
-		..accept Redemption (2)##9600
+		..turnin Redemption (1)##9598 |noobsolete
+		..accept Redemption (2)##9600 |noobsolete
 		only Draenei Paladin
 	step
 		'Go outside to Azuremyst Isle|goto Azuremyst Isle|noway|c
@@ -2054,7 +2054,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Dra
 	step
 		goto The Exodar,38,82
 		.talk Jol##17509
-		..turnin Redemption (2)##9600
+		..turnin Redemption (2)##9600 |noobsolete
 		only Draenei Paladin
 	step
 		goto Azuremyst Isle,21.6,54|n
@@ -2160,7 +2160,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Mai
 		goto 25.3,78.6
 		.talk Gakin the Darkbinder##6122
 		..turnin The Slaughtered Lamb##1715
-		..accept Surena Caledon##1688
+		..accept Surena Caledon##1688 |noobsolete
 		only Warlock
 	step
 		goto 66.2,62.5
@@ -2558,7 +2558,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Mai
 	step
 		goto Darnassus,35.2,8.1
 		.talk Mathrengyl Bearwalker##4217
-		..accept Lessons Anew##6121
+		..accept Lessons Anew##6121 |noobsolete
 		only NightElf Druid
 	step
 		'Remember, you have the spell Teleport: Moonglade
@@ -2567,8 +2567,8 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Mai
 	step
 		goto 56.2,30.5
 		.talk Dendrite Starblaze##11802
-		..turnin Lessons Anew##6121
-		..accept The Principal Source##6122
+		..turnin Lessons Anew##6121 |noobsolete
+		..accept The Principal Source##6122 |noobsolete
 		only NightElf Druid
 	step
 		goto 44.2,45.3|n
@@ -2591,7 +2591,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Mai
 	step
 		goto 38,41
 		.talk Alanndarian Nightsong##3702
-		..turnin The Principal Source##6122
+		..turnin The Principal Source##6122 |noobsolete
 		..accept Gathering the Cure##6123
 		only NightElf Druid
 	step
@@ -2661,8 +2661,8 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Mai
 	step
 		goto 25.3,78.6
 		.talk Gakin the Darkbinder##6122
-		..turnin Surena Caledon##1688
-		..accept The Binding##1689
+		..turnin Surena Caledon##1688 |noobsolete
+		..accept The Binding##1689 |noobsolete
 		only Warlock
 	step
 		'Go downstairs into the catacombs to 25.1,77.4|goto 25.1,77.4
@@ -2672,7 +2672,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Mai
 	step
 		'Go upstairs to 25.3,78.6|goto 25.3,78.6
 		.talk Gakin the Darkbinder##6122
-		..turnin The Binding##1689
+		..turnin The Binding##1689 |noobsolete
 		only Warlock
 	step
 		'Go outside to Elwynn Forest|goto Elwynn Forest|noway|c
@@ -4051,7 +4051,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Lev
 	step
 		goto 47.6,9.3
 		.talk Lago Blackwrench##6120
-		..accept Gakin's Summons##1717
+		..accept Gakin's Summons##1717 |noobsolete
 		only Warlock
 	step
 		'Fly to Menethil Harbor|goto Wetlands,9.5,59.7,0.5|noway|c
@@ -4541,8 +4541,8 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Lev
 	step
 		goto 25.3,78.6
 		.talk Gakin the Darkbinder##6122
-		..turnin Gakin's Summons##1717
-		..accept Devourer of Souls##1716
+		..turnin Gakin's Summons##1717 |noobsolete
+		..accept Devourer of Souls##1716 |noobsolete
 		..accept Seeking Strahad##1798
 		only Warlock
 	step
@@ -4813,7 +4813,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Lev
 		goto 68.6,49.2
 		.talk Klannoc Macleod##
 		..turnin The Islander##1718
-		..accept The Affray##1719
+		..accept The Affray##1719 |noobsolete
 		only Warrior
 	step
 		goal Step on the grate to begin the Affray|q 1719/1
@@ -4822,14 +4822,14 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Lev
 	step
 		goto 68.6,49.2
 		.talk Klannoc Macleod##
-		..turnin The Affray##1719
+		..turnin The Affray##1719 |noobsolete
 		..accept The Windwatcher##1791
 		only Warrior
 	step
 		goto 49.3,57.1
 		.talk Takar the Seer##6244	
-		..turnin Devourer of Souls##1716
-		..accept Heartswood##1738
+		..turnin Devourer of Souls##1716 |noobsolete
+		..accept Heartswood##1738 |noobsolete
 		only Warlock
 	step
 		'Fly to Astranaar|goto Ashenvale,35.5,50.2,5|noway|c
@@ -5199,8 +5199,8 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Lev
 	step
 		goto 25.3,78.6
 		.talk Gakin the Darkbinder##6122
-		..turnin Heartswood##1738
-		..accept The Binding##1739
+		..turnin Heartswood##1738 |noobsolete
+		..accept The Binding##1739 |noobsolete
 		only Warlock
 	step
 		'Go downstairs into the catacombs to 25.1,77.4|goto 25.1,77.4
@@ -5210,7 +5210,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Lev
 	step
 		'Go upstairs to 25.3,78.6|goto 25.3,78.6
 		.talk Gakin the Darkbinder##6122
-		..turnin The Binding##1739
+		..turnin The Binding##1739 |noobsolete
 		only Warlock
 	step
 		goto 39.8,81.5
@@ -5781,7 +5781,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Lev
 		goto 62.6,35.5
 		.talk Strahad Farsan##6251
 		..turnin Tome of the Cabal##1804
-		..accept The Binding##1795
+		..accept The Binding##1795 |noobsolete
 		.talk Menara Voidrender##6266
 		..turnin Knowledge of the Orb of Orahil##4965
 		only Warlock
@@ -5793,7 +5793,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Lev
 	step
 		goto 62.6,35.5
 		.talk Strahad Farsan##6251
-		..turnin The Binding##1795
+		..turnin The Binding##1795 |noobsolete
 		only Warlock
 	step
 		'Fly to Theramore|goto Dustwallow Marsh|noway|c
@@ -9983,7 +9983,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Hel
 		goto 49.2,74.8
 		.talk "Screaming" Screed Luckheed##19367
 		..turnin In Case of Emergency...##10161
-		..accept Voidwalkers Gone Wild##9351
+		..accept Voidwalkers Gone Wild##9351 |noobsolete
 		.talk Legassi##19344
 		..turnin Smooth as Butter##9356
 	step
@@ -10250,7 +10250,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Hel
 	step
 		goto 49.2,74.8
 		.talk "Screaming" Screed Luckheed##19367
-		..turnin Voidwalkers Gone Wild##9351
+		..turnin Voidwalkers Gone Wild##9351 |noobsolete
 	step
 		goto 56.6,66.7
 		.talk Force Commander Danath Trollbane##16819

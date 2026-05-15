@@ -700,7 +700,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC duo\\Main
 		goto 25.3,78.6
 		.talk Gakin the Darkbinder##6122
 		..turnin The Slaughtered Lamb##1715
-		..accept Surena Caledon##1688
+		..accept Surena Caledon##1688 |noobsolete
 		only Warlock
 	step
 		goto 66.2,62.5
@@ -1081,7 +1081,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC duo\\Main
 	step
 		goto Darnassus,35.2,8.1
 		.talk Mathrengyl Bearwalker##4217
-		..accept Lessons Anew##6121
+		..accept Lessons Anew##6121 |noobsolete
 		only NightElf Druid
 	step
 		'Remember, you have the spell Teleport: Moonglade
@@ -1090,8 +1090,8 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC duo\\Main
 	step
 		goto 56.2,30.5
 		.talk Dendrite Starblaze##11802
-		..turnin Lessons Anew##6121
-		..accept The Principal Source##6122
+		..turnin Lessons Anew##6121 |noobsolete
+		..accept The Principal Source##6122 |noobsolete
 		only NightElf Druid
 	step
 		goto 44.2,45.3|n
@@ -1114,7 +1114,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC duo\\Main
 	step
 		goto 38,41
 		.talk Alanndarian Nightsong##3702
-		..turnin The Principal Source##6122
+		..turnin The Principal Source##6122 |noobsolete
 		..accept Gathering the Cure##6123
 		only NightElf Druid
 	step
@@ -1184,8 +1184,8 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC duo\\Main
 	step
 		goto 25.3,78.6
 		.talk Gakin the Darkbinder##6122
-		..turnin Surena Caledon##1688
-		..accept The Binding##1689
+		..turnin Surena Caledon##1688 |noobsolete
+		..accept The Binding##1689 |noobsolete
 		only Warlock
 	step
 		'Go downstairs into the catacombs to 25.1,77.4|goto 25.1,77.4
@@ -1195,7 +1195,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC duo\\Main
 	step
 		'Go upstairs to 25.3,78.6|goto 25.3,78.6
 		.talk Gakin the Darkbinder##6122
-		..turnin The Binding##1689
+		..turnin The Binding##1689 |noobsolete
 		only Warlock
 	step
 		'Go outside to Elwynn Forest|goto Elwynn Forest|noway|c
@@ -2522,7 +2522,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC duo\\Leve
 	step
 		goto 47.6,9.3
 		.talk Lago Blackwrench##6120
-		..accept Gakin's Summons##1717
+		..accept Gakin's Summons##1717 |noobsolete
 		only Warlock
 	step
 		'Fly to Menethil Harbor|goto Wetlands,9.5,59.7,0.5|noway|c
@@ -3014,8 +3014,8 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC duo\\Leve
 	step
 		goto 25.3,78.6
 		.talk Gakin the Darkbinder##6122
-		..turnin Gakin's Summons##1717
-		..accept Devourer of Souls##1716
+		..turnin Gakin's Summons##1717 |noobsolete
+		..accept Devourer of Souls##1716 |noobsolete
 		only Warlock
 	step
 		goto 59.9,64.2
@@ -3444,7 +3444,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC duo\\Leve
 		goto 68.6,49.2
 		.talk Klannoc Macleod##
 		..turnin The Islander##1718
-		..accept The Affray##1719
+		..accept The Affray##1719 |noobsolete
 		only Warrior
 	step
 		goal Step on the grate to begin the Affray|q 1719/1
@@ -3453,14 +3453,14 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC duo\\Leve
 	step
 		goto 68.6,49.2
 		.talk Klannoc Macleod##
-		..turnin The Affray##1719
+		..turnin The Affray##1719 |noobsolete
 		..accept The Windwatcher##1791
 		only Warrior
 	step
 		goto 49.3,57.1
 		.talk Takar the Seer##6244	
-		..turnin Devourer of Souls##1716
-		..accept Heartswood##1738
+		..turnin Devourer of Souls##1716 |noobsolete
+		..accept Heartswood##1738 |noobsolete
 		only Warlock
 	step
 		'Fly to Astranaar|goto Ashenvale,35.5,50.2,5|noway|c
@@ -3854,8 +3854,8 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC duo\\Leve
 	step
 		goto 25.3,78.6
 		.talk Gakin the Darkbinder##6122
-		..turnin Heartswood##1738
-		..accept The Binding##1739
+		..turnin Heartswood##1738 |noobsolete
+		..accept The Binding##1739 |noobsolete
 		only Warlock
 	step
 		'Go downstairs into the catacombs to 25.1,77.4|goto 25.1,77.4
@@ -3865,7 +3865,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC duo\\Leve
 	step
 		'Go upstairs to 25.3,78.6|goto 25.3,78.6
 		.talk Gakin the Darkbinder##6122
-		..turnin The Binding##1739
+		..turnin The Binding##1739 |noobsolete
 		only Warlock
 	step
 		goto 39.8,81.5
@@ -4480,7 +4480,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC duo\\Leve
 		goto 62.6,35.5
 		.talk Strahad Farsan##6251
 		..turnin Tome of the Cabal##1804
-		..accept The Binding##1795
+		..accept The Binding##1795 |noobsolete
 		.talk Menara Voidrender##6266
 		..turnin Knowledge of the Orb of Orahil##4965
 		only Warlock
@@ -4492,7 +4492,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC duo\\Leve
 	step
 		goto 62.6,35.5
 		.talk Strahad Farsan##6251
-		..turnin The Binding##1795
+		..turnin The Binding##1795 |noobsolete
 		only Warlock
 	step
 		'Fly to Theramore|goto Dustwallow Marsh|noway|c
@@ -9277,9 +9277,9 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC duo\\TBC 
 		..turnin Demon Dogs##5542
 		..turnin Blood Tinged Skies##5543
 		..turnin Carrion Grubbage##5544
-		..accept Redemption##5742
+		..accept Redemption##5742 |noobsolete
 		..'Listen to his story
-		..turnin Redemption##5742
+		..turnin Redemption##5742 |noobsolete
 		..accept Of Forgotten Memories##5781
 	step
 		goto 26.5,74.7
@@ -10391,7 +10391,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC duo\\Hell
 		goto 49.2,74.8
 		.talk "Screaming" Screed Luckheed##19367
 		..turnin In Case of Emergency...##10161
-		..accept Voidwalkers Gone Wild##9351
+		..accept Voidwalkers Gone Wild##9351 |noobsolete
 		.talk Legassi##19344
 		..turnin Smooth as Butter##9356
 	step
@@ -10651,7 +10651,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC duo\\Hell
 	step
 		goto 49.2,74.8
 		.talk "Screaming" Screed Luckheed##19367
-		..turnin Voidwalkers Gone Wild##9351
+		..turnin Voidwalkers Gone Wild##9351 |noobsolete
 	step
 		goto 47.97,56.27
 		.kill Drillmaster Zurok|q 10937/1

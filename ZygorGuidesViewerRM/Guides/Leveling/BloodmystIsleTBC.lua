@@ -320,10 +320,10 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Blo
 		goto The Exodar,38,82
 		.talk Jol##17509
 		..turnin Jol##10366
-		..accept Redemption (1)##9598
+		..accept Redemption (1)##9598 |noobsolete
 		.' Click the Tome of Divinity in your bags to read it|use Tome of Divinity##23926
-		..turnin Redemption (1)##9598
-		..accept Redemption (2)##9600
+		..turnin Redemption (1)##9598 |noobsolete
+		..accept Redemption (2)##9600 |noobsolete
 		only Draenei Paladin
 	step
 		'Go outside to Azuremyst Isle|goto Azuremyst Isle|noway|c
@@ -558,7 +558,7 @@ ZygorGuidesViewer:RegisterGuide("Ding80's Alliance Leveling Guides TBC solo\\Blo
 	step
 		goto The Exodar,38,82
 		.talk Jol##17509
-		..turnin Redemption (2)##9600
+		..turnin Redemption (2)##9600 |noobsolete
 		only Draenei Paladin
 	step
 		goto 68.3,63.5

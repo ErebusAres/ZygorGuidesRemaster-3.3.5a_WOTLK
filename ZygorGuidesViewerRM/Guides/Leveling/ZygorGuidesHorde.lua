@@ -452,7 +452,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Undead (1-13)",[
 		goto Undercity,85.1,26
 		.talk Carendin Halgar##5675
 		..turnin Creature of the Void##1473
-		..accept The Binding##1471
+		..accept The Binding##1471 |noobsolete
 		only Scourge Warlock
 	step //101
 		goto 86.6,27.1
@@ -463,7 +463,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Undead (1-13)",[
 	step //102
 		goto 85.1,26
 		.talk Carendin Halgar##5675
-		..turnin The Binding##1471
+		..turnin The Binding##1471 |noobsolete
 		only Scourge Warlock
 	step //103
 		'Go outside to Tirisfal Glades|goto Tirisfal Glades
@@ -836,7 +836,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Tauren (1-13)",[
 	step //22
 		goto 44.7,76.2
 		.talk Seer Ravenfeather##5888
-		..accept Call of Earth (1)##1519
+		..accept Call of Earth (1)##1519 |noobsolete
 		only Tauren Shaman
 	step //23
 		goto 58.2,84.9
@@ -867,8 +867,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Tauren (1-13)",[
 	step //30
 		goto 44.7,76.2
 		.talk Seer Ravenfeather##5888
-		..turnin Call of Earth (1)##1519
-		..accept Call of Earth (2)##1520
+		..turnin Call of Earth (1)##1519 |noobsolete
+		..accept Call of Earth (2)##1520 |noobsolete
 		only Tauren Shaman
 	step //31
 		goto 44.2,76.1
@@ -879,13 +879,13 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Tauren (1-13)",[
 		goto 53.7,80.2
 		.' Drink your Earth Sapta in your bags while standing next to the huge rock|use Earth Sapta##6635
 		.talk the Minor Manifestation of Earth##5891
-		..turnin Call of Earth (2)##1520
-		..accept Call of Earth (3)##1521
+		..turnin Call of Earth (2)##1520 |noobsolete
+		..accept Call of Earth (3)##1521 |noobsolete
 		only Tauren Shaman
 	step //33
 		goto 44.7,76.2
 		.talk Seer Ravenfeather##5888
-		..turnin Call of Earth (3)##1521
+		..turnin Call of Earth (3)##1521 |noobsolete
 		only Tauren Shaman
 	step //34
 		goto 38.5,81.6
@@ -1137,7 +1137,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Tauren (1-13)",[
 	step //89
 		goto 48.3,59.1
 		.talk Narm Skychaser##3066
-		..accept Call of Fire (1)##2984
+		..accept Call of Fire (1)##2984 |noobsolete
 		only Tauren Shaman
 		info2 He is the Shaman Class Trainer
 	step //90
@@ -1146,8 +1146,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Tauren (1-13)",[
 	step //91
 		goto The Barrens,55.8,19.8
 		.talk Kranal Fiss##5907
-		..turnin Call of Fire (1)##2984
-		..accept Call of Fire (2)##1524
+		..turnin Call of Fire (1)##2984 |noobsolete
+		..accept Call of Fire (2)##1524 |noobsolete
 		only Tauren Shaman
 	step //92
 		'Go east to Durotar|goto Durotar
@@ -1160,8 +1160,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Tauren (1-13)",[
 	step //94
 		'Go up the path to 38,59|goto 38,59
 		.talk Telf Joolam##5900
-		..turnin Call of Fire (2)##1524
-		..accept Call of Fire (3)##1525
+		..turnin Call of Fire (2)##1524 |noobsolete
+		..accept Call of Fire (3)##1525 |noobsolete
 		only Tauren Shaman
 	step //95
 		'Go northwest to the Barrens|goto The Barrens
@@ -1182,8 +1182,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Tauren (1-13)",[
 	step //99
 		goto 38,59
 		.talk Telf Joolam##5900
-		..turnin Call of Fire (3)##1525
-		..accept Call of Fire (4)##1526
+		..turnin Call of Fire (3)##1525 |noobsolete
+		..accept Call of Fire (4)##1526 |noobsolete
 		.' Drink the Fire Sapta in your bags next to the huge rock to your right
 		only Tauren Shaman
 	step //100
@@ -1191,8 +1191,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Tauren (1-13)",[
 		.from Minor Manifestation of Fire##5893
 		.get Glowing Ember|q 1526/1
 		.' Click the silver Brazier of the Dormant Flame on the ground
-		..turnin Call of Fire (4)##1526
-		..accept Call of Fire (5)##1527
+		..turnin Call of Fire (4)##1526 |noobsolete
+		..accept Call of Fire (5)##1527 |noobsolete
 		only Tauren Shaman
 	step //101
 		'Go northwest to the Barrens|goto The Barrens
@@ -1200,7 +1200,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Tauren (1-13)",[
 	step //102
 		goto The Barrens,55.8,19.8
 		.talk Kranal Fiss##5907
-		..turnin Call of Fire (5)##1527
+		..turnin Call of Fire (5)##1527 |noobsolete
 		only Tauren Shaman
 	step //103
 		'Go southwest to Mulgore|goto Mulgore
@@ -1208,7 +1208,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Tauren (1-13)",[
 	step //104
 		goto 47.8,55.7
 		.talk Yaw Sharpmane##3065
-		..accept Taming the Beast (1)##6061
+		..accept Taming the Beast (1)##6061 |noobsolete
 		only Tauren Hunter
 		info2 He is the Hunter Class Trainer
 	step //105
@@ -1219,8 +1219,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Tauren (1-13)",[
 	step //106
 		goto 47.8,55.7
 		.talk Yaw Sharpmane##3065
-		..turnin Taming the Beast (1)##6061
-		..accept Taming the Beast (2)##6087
+		..turnin Taming the Beast (1)##6061 |noobsolete
+		..accept Taming the Beast (2)##6087 |noobsolete
 		only Tauren Hunter
 		info2 He is the Hunter Class Trainer
 	step //107
@@ -1231,8 +1231,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Tauren (1-13)",[
 	step //108
 		goto 47.8,55.7
 		.talk Yaw Sharpmane##3065
-		..turnin Taming the Beast (2)##6087
-		..accept Taming the Beast (3)##6088
+		..turnin Taming the Beast (2)##6087 |noobsolete
+		..accept Taming the Beast (3)##6088 |noobsolete
 		only Tauren Hunter
 		info2 He is the Hunter Class Trainer
 	step //109
@@ -1243,7 +1243,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Tauren (1-13)",[
 	step //110
 		goto 47.8,55.7
 		.talk Yaw Sharpmane##3065
-		..turnin Taming the Beast (3)##6088
+		..turnin Taming the Beast (3)##6088 |noobsolete
 		..accept Training the Beast (2)##6089
 		only Tauren Hunter
 		info2 He is the Hunter Class Trainer
@@ -1253,7 +1253,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Tauren (1-13)",[
 	step //112
 		goto Thunder Bluff,57.3,89.8
 		.talk Holt Thunderhorn##3039
-		..turnin Training the Beast##6089
+		..turnin Training the Beast##6089 |noobsolete
 		only Tauren Hunter
 		info2 He is the Hunter Class Trainer
 	step //113
@@ -1262,7 +1262,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Tauren (1-13)",[
 	step //114
 		goto 48.5,59.7
 		.talk Gennia Runetotem##3064
-		..accept Heeding the Call##5926
+		..accept Heeding the Call##5926 |noobsolete
 		only Tauren Druid
 		info2 She is the Druid Class Trainer
 	step //115
@@ -1271,8 +1271,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Tauren (1-13)",[
 	step //116
 		goto Thunder Bluff,76.4,27.3
 		.talk Turak Runetotem##3033
-		..turnin Heeding the Call##5926
-		..accept Moonglade##5922
+		..turnin Heeding the Call##5926 |noobsolete
+		..accept Moonglade##5922 |noobsolete
 		only Tauren Druid
 		info2 He is the Druid Class Trainer
 	step //117
@@ -1282,7 +1282,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Tauren (1-13)",[
 	step //118
 		goto Moonglade,56.4,30.5
 		.talk Dendrite Starblaze##11802
-		..turnin Moonglade##5922
+		..turnin Moonglade##5922 |noobsolete
 		..accept Great Bear Spirit##5930
 		only Tauren Druid
 	step //119
@@ -1305,7 +1305,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Tauren (1-13)",[
 		goto Thunder Bluff,76.4,27.3
 		.talk Turak Runetotem##3033
 		..turnin Back to Thunder Bluff##5932
-		..accept Body and Heart##6002
+		..accept Body and Heart##6002 |noobsolete
 		only Tauren Druid
 		info2 He is the Druid Class Trainer
 	step //123
@@ -1332,7 +1332,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Tauren (1-13)",[
 	step //128
 		goto Thunder Bluff,76.4,27.3
 		.talk Turak Runetotem##3033
-		..turnin Body and Heart##6002
+		..turnin Body and Heart##6002 |noobsolete
 		only Tauren Druid
 		info2 He is the Druid Class Trainer
 	step //129
@@ -1603,7 +1603,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Orc (1-13)",[[
 	step //5
 		goto 42.8,69.1
 		.talk Zureetha Fargaze##3145
-		..accept Vile Familiars##792
+		..accept Vile Familiars##792 |noobsolete
 	step //6
 		'Go into the cave to 42,68|goto 42.1,68.3
 		.talk Gornek##3143
@@ -1741,7 +1741,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Orc (1-13)",[[
 	step //34
 		goto 42.4,69.2
 		.talk Canaga Earthcaller##5887
-		..accept Call of Earth (1)##1516
+		..accept Call of Earth (1)##1516 |noobsolete
 		only Orc Shaman
 	step //35
 		goto 45.3,55.7
@@ -1751,8 +1751,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Orc (1-13)",[[
 	step //36
 		goto 42.4,69.2
 		.talk Canaga Earthcaller##5887
-		..turnin Call of Earth (1)##1516
-		..accept Call of Earth (2)##1517
+		..turnin Call of Earth (1)##1516 |noobsolete
+		..accept Call of Earth (2)##1517 |noobsolete
 		only Orc Shaman
 	step //37
 		goto 41.5,73.4|n
@@ -1762,18 +1762,18 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Orc (1-13)",[[
 		'Go southeast up the path to 44,76|goto 44.1,76.1
 		.' Drink the Earth Sapta in your bags|use Earth Sapta##6635
 		.talk the Minor Manifestation of Earth##5891
-		..turnin Call of Earth (2)##1517
-		..accept Call of Earth (3)##1518
+		..turnin Call of Earth (2)##1517 |noobsolete
+		..accept Call of Earth (3)##1518 |noobsolete
 		only Orc Shaman
 	step //39
 		goto 42.4,69.2
 		.talk Canaga Earthcaller##5887
-		..turnin Call of Earth (3)##1518
+		..turnin Call of Earth (3)##1518 |noobsolete
 		only Orc Shaman
 	step //40
 		goto 42.8,69.1
 		.talk Zureetha Fargaze##3145
-		..turnin Vile Familiars (1)##792
+		..turnin Vile Familiars (1)##792 |noobsolete
 		..accept Burning Blade Medallion##794
 	step //41
 		goto 44.6,68.6
@@ -2068,7 +2068,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Orc (1-13)",[[
 		goto Orgrimmar,48.2,45.3
 		.talk Gan'rul Bloodeye##5875
 		..turnin Creature of the Void##1501
-		..accept The Binding##1504
+		..accept The Binding##1504 |noobsolete
 		only Orc Warlock
 	step //112
 		goto 49.5,50.0
@@ -2078,7 +2078,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Orc (1-13)",[[
 	step //113
 		goto 48.2,45.3
 		.talk Gan'rul Bloodeye##5875
-		..turnin The Binding##1504
+		..turnin The Binding##1504 |noobsolete
 		only Orc Warlock
 	step //114
 		'Go outside to Durotar|goto Durotar
@@ -2086,7 +2086,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Orc (1-13)",[[
 	step //115
 		goto Durotar,54.4,42.6
 		.talk Swart##3173
-		..accept Call of Fire (1)##2983
+		..accept Call of Fire (1)##2983 |noobsolete
 		only Orc Shaman
 		info2 He is the Shaman Class Trainer
 	step //116
@@ -2095,8 +2095,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Orc (1-13)",[[
 	step //117
 		goto The Barrens,55.8,19.8
 		.talk Kranal Fiss##5907
-		..turnin Call of Fire (1)##2983
-		..accept Call of Fire (2)##1524
+		..turnin Call of Fire (1)##2983 |noobsolete
+		..accept Call of Fire (2)##1524 |noobsolete
 		only Orc Shaman
 	step //118
 		'Go east to Durotar|goto Durotar
@@ -2108,8 +2108,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Orc (1-13)",[[
 	step //120
 		'Go up the path to 38.6,58.9|goto 38.6,58.9
 		.talk Telf Joolam##5900
-		..turnin Call of Fire (2)##1524
-		..accept Call of Fire (3)##1525
+		..turnin Call of Fire (2)##1524 |noobsolete
+		..accept Call of Fire (3)##1525 |noobsolete
 		only Orc Shaman
 	step //121
 		'Go northwest to the Barrens|goto The Barrens
@@ -2130,8 +2130,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Orc (1-13)",[[
 	step //125
 		goto 38.6,58.9
 		.talk Telf Joolam##5900
-		..turnin Call of Fire (3)##1525
-		..accept Call of Fire (4)##1526
+		..turnin Call of Fire (3)##1525 |noobsolete
+		..accept Call of Fire (4)##1526 |noobsolete
 		.' Drink the Fire Sapta in your bags next to the huge rock to your right
 		only Orc Shaman
 	step //126
@@ -2139,8 +2139,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Orc (1-13)",[[
 		.from Minor Manifestation of Fire##5893
 		.get Glowing Ember|q 1526/1
 		.' Click the silver Brazier of the Dormant Flame on the ground
-		..turnin Call of Fire (4)##1526
-		..accept Call of Fire (5)##1527
+		..turnin Call of Fire (4)##1526 |noobsolete
+		..accept Call of Fire (5)##1527 |noobsolete
 		only Orc Shaman
 	step //127
 		'Go northwest to the Barrens|goto The Barrens
@@ -2148,12 +2148,12 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Orc (1-13)",[[
 	step //128
 		goto The Barrens,55.8,19.8
 		.talk Kranal Fiss##5907
-		..turnin Call of Fire (5)##1527
+		..turnin Call of Fire (5)##1527 |noobsolete
 		only Orc Shaman
 	step //129
 		goto Durotar,51.9,43.5
 		.talk Thotar##3171
-		..accept Taming the Beast (1)##6062
+		..accept Taming the Beast (1)##6062 |noobsolete
 		only Orc Hunter
 		info2 He is the Hunter Class Trainer
 	step //130
@@ -2164,8 +2164,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Orc (1-13)",[[
 	step //131
 		goto 51.9,43.5
 		.talk Thotar##3171
-		..turnin Taming the Beast (1)##6062
-		..accept Taming the Beast (2)##6083
+		..turnin Taming the Beast (1)##6062 |noobsolete
+		..accept Taming the Beast (2)##6083 |noobsolete
 		only Orc Hunter
 		info2 He is the Hunter Class Trainer
 	step //132
@@ -2176,8 +2176,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Orc (1-13)",[[
 	step //133
 		goto 51.9,43.5
 		.talk Thotar##3171
-		..turnin Taming the Beast (2)##6083
-		..accept Taming the Beast (3)##6082
+		..turnin Taming the Beast (2)##6083 |noobsolete
+		..accept Taming the Beast (3)##6082 |noobsolete
 		only Orc Hunter
 		info2 He is the Hunter Class Trainer
 	step //134
@@ -2188,8 +2188,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Orc (1-13)",[[
 	step //135
 		goto 51.9,43.5
 		.talk Thotar##3171
-		..turnin Taming the Beast (3)##6082
-		..accept Training the Beast##6081
+		..turnin Taming the Beast (3)##6082 |noobsolete
+		..accept Training the Beast##6081 |noobsolete
 		only Orc Hunter
 		info2 He is the Hunter Class Trainer
 	step //136
@@ -2198,7 +2198,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Orc (1-13)",[[
 	step //137
 		goto Orgrimmar,65.8,18.3
 		.talk Ormak Grimshot##3352
-		..turnin Training the Beast##6081
+		..turnin Training the Beast##6081 |noobsolete
 		only Orc Hunter
 		info2 He is the Hunter Class Trainer
 	step //138
@@ -2423,7 +2423,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Troll (1-13)",[[
 	step //5
 		goto 42.8,69.1
 		.talk Zureetha Fargaze##3145
-		..accept Vile Familiars (1)##792
+		..accept Vile Familiars (1)##792 |noobsolete
 	step //6
 		'Go into the cave to 42.1,68.3|goto 42.1,68.3
 		.talk Gornek##3143
@@ -2544,7 +2544,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Troll (1-13)",[[
 	step //28
 		goto 42.4,69.2
 		.talk Canaga Earthcaller##5887
-		..accept Call of Earth (1)##1516
+		..accept Call of Earth (1)##1516 |noobsolete
 		only Troll Shaman
 	step //29
 		goto 45.5,56.4|n
@@ -2587,8 +2587,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Troll (1-13)",[[
 	step //38
 		goto 42.4,69.2
 		.talk Canaga Earthcaller##5887
-		..turnin Call of Earth (1)##1516
-		..accept Call of Earth (2)##1517
+		..turnin Call of Earth (1)##1516 |noobsolete
+		..accept Call of Earth (2)##1517 |noobsolete
 		only Troll Shaman
 	step //39
 		goto 41.5,73.4|n
@@ -2598,18 +2598,18 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Troll (1-13)",[[
 		'Go up the path to 44.1,76.1|goto 44.1,76.1
 		.' Drink the Earth Sapta in your bags|use Earth Sapta##6635
 		.talk the Minor Manifestation of Earth##5891
-		..turnin Call of Earth (2)##1517
-		..accept Call of Earth (3)##1518
+		..turnin Call of Earth (2)##1517 |noobsolete
+		..accept Call of Earth (3)##1518 |noobsolete
 		only Troll Shaman
 	step //41
 		goto 42.4,69.2
 		.talk Canaga Earthcaller##5887
-		..turnin Call of Earth (3)##1518
+		..turnin Call of Earth (3)##1518 |noobsolete
 		only Troll Shaman
 	step //42
 		goto 42.8,69.2
 		.talk Zureetha Fargaze##3145
-		..turnin Vile Familiars (1)##792
+		..turnin Vile Familiars (1)##792 |noobsolete
 		..accept Burning Blade Medallion##794
 	step //43
 		goto 44.6,68.6
@@ -2875,7 +2875,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Troll (1-13)",[[
 	step //106
 		goto Durotar,54.4,42.6
 		.talk Swart##3173
-		..accept Call of Fire (1)##2983
+		..accept Call of Fire (1)##2983 |noobsolete
 		only Troll Shaman
 		info2 He is the Shaman Class Trainer
 	step //107
@@ -2884,8 +2884,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Troll (1-13)",[[
 	step //108
 		goto The Barrens,55.8,19.8
 		.talk Kranal Fiss##5907
-		..turnin Call of Fire (1)##2983
-		..accept Call of Fire (2)##1524
+		..turnin Call of Fire (1)##2983 |noobsolete
+		..accept Call of Fire (2)##1524 |noobsolete
 		only Troll Shaman
 	step //109
 		'Go east to Durotar|goto Durotar
@@ -2897,8 +2897,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Troll (1-13)",[[
 	step //111
 		'Go up the path to 38,59|goto 38,59
 		.talk Telf Joolam##5900
-		..turnin Call of Fire (2)##1524
-		..accept Call of Fire (3)##1525
+		..turnin Call of Fire (2)##1524 |noobsolete
+		..accept Call of Fire (3)##1525 |noobsolete
 		only Troll Shaman
 	step //112
 		'Go northwest to the Barrens|goto The Barrens
@@ -2919,8 +2919,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Troll (1-13)",[[
 	step //116
 		goto 38.6,58.9
 		.talk Telf Joolam##5900
-		..turnin Call of Fire (3)##1525
-		..accept Call of Fire (4)##1526
+		..turnin Call of Fire (3)##1525 |noobsolete
+		..accept Call of Fire (4)##1526 |noobsolete
 		.' Drink the Fire Sapta in your bags next to the huge rock to your right
 		only Troll Shaman
 	step //117
@@ -2928,8 +2928,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Troll (1-13)",[[
 		.from Minor Manifestation of Fire##5893
 		.get Glowing Ember|q 1526/1
 		.' Click the silver Brazier of the Dormant Flame on the ground
-		..turnin Call of Fire (4)##1526
-		..accept Call of Fire (5)##1527
+		..turnin Call of Fire (4)##1526 |noobsolete
+		..accept Call of Fire (5)##1527 |noobsolete
 		only Troll Shaman
 	step //118
 		'Go northwest to the Barrens|goto The Barrens
@@ -2937,7 +2937,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Troll (1-13)",[[
 	step //119
 		goto The Barrens,55.8,19.8
 		.talk Kranal Fiss##5907
-		..turnin Call of Fire (5)##1527
+		..turnin Call of Fire (5)##1527 |noobsolete
 		only Troll Shaman
 	step //120
 		'Go northeast to Durotar|goto Durotar
@@ -2945,7 +2945,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Troll (1-13)",[[
 	step //121
 		goto Durotar,51.9,43.5
 		.talk Thotar##3171
-		..accept Taming the Beast (1)##6062
+		..accept Taming the Beast (1)##6062 |noobsolete
 		only Troll Hunter
 		info2 He is the Hunter Class Trainer
 	step //122
@@ -2956,8 +2956,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Troll (1-13)",[[
 	step //123
 		goto 51.9,43.5
 		.talk Thotar##3171
-		..turnin Taming the Beast (1)##6062
-		..accept Taming the Beast (2)##6083
+		..turnin Taming the Beast (1)##6062 |noobsolete
+		..accept Taming the Beast (2)##6083 |noobsolete
 		only Troll Hunter
 		info2 He is the Hunter Class Trainer
 	step //124
@@ -2968,8 +2968,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Troll (1-13)",[[
 	step //125
 		goto 51.9,43.5
 		.talk Thotar##3171
-		..turnin Taming the Beast (2)##6083
-		..accept Taming the Beast (3)##6082
+		..turnin Taming the Beast (2)##6083 |noobsolete
+		..accept Taming the Beast (3)##6082 |noobsolete
 		only Troll Hunter
 		info2 He is the Hunter Class Trainer
 	step //126
@@ -2980,8 +2980,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Troll (1-13)",[[
 	step //127
 		goto 51.9,43.5
 		.talk Thotar##3171
-		..turnin Taming the Beast (3)##6082
-		..accept Training the Beast##6081
+		..turnin Taming the Beast (3)##6082 |noobsolete
+		..accept Training the Beast##6081 |noobsolete
 		only Troll Hunter
 		info2 He is the Hunter Class Trainer
 	step //128
@@ -2990,7 +2990,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Troll (1-13)",[[
 	step //129
 		goto Orgrimmar,65.8,18.3
 		.talk Ormak Grimshot##3352
-		..turnin Training the Beast##6081
+		..turnin Training the Beast##6081 |noobsolete
 		only Troll Hunter
 		info2 He is the Hunter Class Trainer
 	step //130
@@ -3729,7 +3729,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Blood Elf (1-13)
 	step //110
 		goto Eversong Woods,60.3,62.8
 		.talk Lieutenant Dawnrunner##15399
-		..accept Taming the Beast (1)##9484
+		..accept Taming the Beast (1)##9484 |noobsolete
 		only BloodElf Hunter
 	step //111
 		goto 61.2,65.5
@@ -3739,8 +3739,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Blood Elf (1-13)
 	step //112
 		goto 60.3,62.8
 		.talk Lieutenant Dawnrunner##15399
-		..turnin Taming the Beast (1)##9484
-		..accept Taming the Beast (2)##9486
+		..turnin Taming the Beast (1)##9484 |noobsolete
+		..accept Taming the Beast (2)##9486 |noobsolete
 		only BloodElf Hunter
 	step //113
 		goto 64.7,60.9
@@ -3750,8 +3750,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Blood Elf (1-13)
 	step //114
 		goto 60.3,62.8
 		.talk Lieutenant Dawnrunner##15399
-		..turnin Taming the Beast (2)##9486
-		..accept Taming the Beast (3)##9485
+		..turnin Taming the Beast (2)##9486 |noobsolete
+		..accept Taming the Beast (3)##9485 |noobsolete
 		only BloodElf Hunter
 	step //115
 		'Go southwest to the Ghostlands|goto Ghostlands
@@ -3767,8 +3767,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Blood Elf (1-13)
 	step //118
 		goto Eversong Woods,60.3,62.8
 		.talk Lieutenant Dawnrunner##15399
-		..turnin Taming the Beast (3)##9485
-		..accept Beast Training##9673
+		..turnin Taming the Beast (3)##9485 |noobsolete
+		..accept Beast Training##9673 |noobsolete
 		only BloodElf Hunter
 	step //119
 		'Go northwest to Silvermoon City|goto Silvermoon City
@@ -3776,7 +3776,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Blood Elf (1-13)
 	step //120
 		goto Silvermoon City,82.2,28.1
 		.talk Halthenis##16675
-		..turnin Beast Training##9673
+		..turnin Beast Training##9673 |noobsolete
 		only BloodElf Hunter
 		info2 He is the Pet Trainer
 	step //121
@@ -4902,9 +4902,9 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Death Knight (55
 		..turnin Demon Dogs##5542
 		..turnin Blood Tinged Skies##5543
 		..turnin Carrion Grubbage##5544
-		..accept Redemption##5742
+		..accept Redemption##5742 |noobsolete
 		..'Listen to his story
-		..turnin Redemption##5742
+		..turnin Redemption##5742 |noobsolete
 	step //208
 		goto 23.0,68.2
 		.talk Nathanos Blightcaller##11878
@@ -5062,7 +5062,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Main Guide (13-2
 	step //25
 		goto Thunder Bluff,76,27
 		.talk Turak Runetotem##3033
-		..accept Lessons Anew##6126
+		..accept Lessons Anew##6126 |noobsolete
 		only Tauren Druid
 	step //26
 		'Remember, you have the spell Teleport: Moonglade
@@ -5071,8 +5071,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Main Guide (13-2
 	step //27
 		goto Moonglade,56.4,30.5
 		.talk Dendrite Starblaze##11802
-		..turnin Lessons Anew##6126
-		..accept The Principal Source##6127
+		..turnin Lessons Anew##6126 |noobsolete
+		..accept The Principal Source##6127 |noobsolete
 		only Tauren Druid
 	step //28
 		goto 44.3,45.9
@@ -5098,7 +5098,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Main Guide (13-2
 	step //33
 		goto 52.3,31.9
 		.talk Tonga Runetotem##3448
-		..turnin The Principal Source##6127
+		..turnin The Principal Source##6127 |noobsolete
 		..accept Gathering the Cure##6128
 		only Tauren Druid
 	step //34
@@ -5424,7 +5424,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Main Guide (13-2
 		goto 56.4,30.5
 		.talk Dendrite Starblaze##11802
 		..turnin Trial of the Sea Lion##30
-		..accept Aquatic Form##31
+		..accept Aquatic Form##31 |noobsolete
 		only Tauren Druid
 	step //109
 		goto 44.3,45.9
@@ -5434,7 +5434,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Main Guide (13-2
 	step //110
 		goto Thunder Bluff,76,27
 		.talk Turak Runetotem##3033
-		..turnin Aquatic Form##31
+		..turnin Aquatic Form##31 |noobsolete
 		only Tauren Druid
 	step //111
 		Fly to Orgrimmar|goto Orgrimmar
@@ -5842,7 +5842,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Levels (20-25)",
 	step //7
 		goto 47.8,46.9
 		.talk Cazul##5909
-		..turnin Devourer of Souls##1507
+		..turnin Devourer of Souls##1507 |noobsolete
 		..accept Blind Cazul##1508 |noobsolete
 		only Warlock
 	step //8
@@ -5905,7 +5905,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Levels (20-25)",
 	step //20
 		goto 48.2,45.3
 		.talk Gan'rul Bloodeye##5875
-		..turnin The Binding##1513
+		..turnin The Binding##1513 |noobsolete
 		only Warlock
 	step //21
 		'Fly to Camp Taurajo|goto The Barrens,44.5,59.1,0.1|noway|c
@@ -5924,7 +5924,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Levels (20-25)",
 	step //25
 		goto The Barrens,65.8,43.8
 		.talk Islen Waterseer##5901
-		..turnin Call of Water (1)##1528
+		..turnin Call of Water (1)##1528 |noobsolete
 		..accept Call of Water (2)##1530 |noobsolete
 		only Shaman
 	step //26
@@ -5935,7 +5935,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Levels (20-25)",
 	step //27
 		goto 43.4,77.4
 		.talk Brine##5899
-		..turnin Call of Water (2)##1530
+		..turnin Call of Water (2)##1530 |noobsolete
 		..accept Call of Water (3)##1535 |noobsolete
 		only Shaman
 	step //28
@@ -5947,7 +5947,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Levels (20-25)",
 	step //29
 		'Go back up the hill to 43,77|goto 43.4,77.4
 		.talk Brine##5899
-		..turnin Call of Water (3)##1535
+		..turnin Call of Water (3)##1535 |noobsolete
 		..accept Call of Water (4)##1536 |noobsolete
 		only Shaman
 	step //30
@@ -5994,7 +5994,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Levels (20-25)",
 	step //42
 		goto The Barrens,43.4,77.4
 		.talk Brine##5899
-		..turnin Call of Water (4)##1536
+		..turnin Call of Water (4)##1536 |noobsolete
 		..accept Call of Water (5)##1534 |noobsolete
 		only Shaman
 	step //43
@@ -6011,7 +6011,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Levels (20-25)",
 	step //46
 		goto The Barrens,43.4,77.4
 		.talk Brine##5899
-		..turnin Call of Water (5)##1534
+		..turnin Call of Water (5)##1534 |noobsolete
 		..accept Call of Water (6)##220 |noobsolete
 		only Shaman
 	step //47
@@ -6020,7 +6020,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Levels (20-25)",
 	step //48
 		goto 65.8,43.8
 		.talk Islen Waterseer##5901
-		..turnin Call of Water (6)##220
+		..turnin Call of Water (6)##220 |noobsolete
 		..accept Call of Water (7)##63 |noobsolete
 		only Shaman
 	step //49
@@ -6048,7 +6048,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Levels (20-25)",
 	step //55
 		goto 38.3,44.6
 		.' Click the Brazier of Everfount
-		..turnin Call of Water (7)##63
+		..turnin Call of Water (7)##63 |noobsolete
 		..accept Call of Water (8)##100 |noobsolete
 		only Shaman
 		info It looks like a small metal plate on the ground with a small fire in it
@@ -6059,7 +6059,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Levels (20-25)",
 	step //57
 		goto 38.8,44.6
 		.talk the Minor Manifestation of Water##5895
-		..turnin Call of Water (8)##100
+		..turnin Call of Water (8)##100 |noobsolete
 		..accept Call of Water (9)##96 |noobsolete
 		only Shaman
 	step //58
@@ -6078,7 +6078,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Levels (20-25)",
 	step //62
 		goto The Barrens,65.8,43.8
 		.talk Islen Waterseer##5901
-		..turnin Call of Water (9)##96
+		..turnin Call of Water (9)##96 |noobsolete
 		only Shaman
 	step //63
 		'Go northwest to Ratchet and fly to Camp Taurajo|goto The Barrens,44.5,59.1,0.1|noway|c
@@ -7204,7 +7204,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Levels (30-35)",
 		goto The Barrens,68.6,49.2
 		.talk Klannoc Macleod##6236
 		..turnin The Islander##1718
-		..accept The Affray##1719
+		..accept The Affray##1719 |noobsolete
 		only Warrior
 		info2 He's hold a samurai sword
 	step //6
@@ -7216,7 +7216,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Levels (30-35)",
 	step //7
 		goto 68.6,49.2
 		.talk Klannoc Mcleod##6236
-		..turnin The Affray##1719
+		..turnin The Affray##1719 |noobsolete
 		only Warrior
 	step //8
 		'Go to Ratchet and fly to Orgrimmar|goto Orgrimmar
@@ -7224,7 +7224,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Levels (30-35)",
 	step //9
 		goto Orgrimmar,38,38
 		.talk Searn Firewarder##5892
-		..accept Call of Air (1)##1531
+		..accept Call of Air (1)##1531 |noobsolete
 		only Shaman
 	step //10
 		'Fly to Freewind Post|goto Thousand Needles,45.0,49.1,0.1|noway|c
@@ -7236,7 +7236,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Levels (30-35)",
 	step //12
 		'Go up to the path to 53.6,42.7|goto 53.6,42.7
 		.talk Prate Cloudseer##5905
-		..turnin Call of Air (1)##1531
+		..turnin Call of Air (1)##1531 |noobsolete
 		only Shaman
 	step //13
 		'Go southwest to Freewind Post and fly to Orgrimmar|goto Orgrimmar
@@ -12120,10 +12120,10 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Levels (55-60)",
 		..turnin Demon Dogs##5542
 		..turnin Blood Tinged Skies##5543
 		..turnin Carrion Grubbage##5544
-		..accept Redemption##5742
+		..accept Redemption##5742 |noobsolete
 		.talk Tirion Fordring##1855
 		..'Listen to his story
-		..turnin Redemption##5742
+		..turnin Redemption##5742 |noobsolete
 	step //204
 		Hearth to Undercity|goto Undercity|use hearthstone##6948|noway|c
 	step //205
@@ -12531,7 +12531,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Outland (60-62)"
 		goto 49.2,74.8
 		.talk "Screaming" Screed Luckheed##19367
 		..turnin In Case of Emergency...##10161
-		..accept Voidwalkers Gone Wild##9351
+		..accept Voidwalkers Gone Wild##9351 |noobsolete
 	step //74
 		goto 49.5,81.8
 		.kill voidwalkers|n
@@ -12550,7 +12550,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Outland (60-62)"
 	step //77
 		goto 49.2,74.8
 		.talk "Screaming" Screed Luckheed##19367
-		..turnin Voidwalkers Gone Wild##9351
+		..turnin Voidwalkers Gone Wild##9351 |noobsolete
 		.talk Legassi##19344
 		..turnin Ravager Egg Roundup##9349
 		..accept Helboar, the Other White Meat##9361

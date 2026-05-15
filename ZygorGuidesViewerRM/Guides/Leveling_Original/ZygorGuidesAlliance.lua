@@ -408,7 +408,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Human (1-13)"
 	step //94
 		goto 44.5,66.3
 		.talk Remen Marcot##6121
-		..accept Gakin's Summons##1685
+		..accept Gakin's Summons##1685 |noobsolete
 		only Human Warlock
 	step //95
 		goto 41.1,65.8
@@ -453,8 +453,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Human (1-13)"
 	step //103
 		goto 39.2,85.3
 		.talk Gakin the Darkbinder##6122
-		..turnin Gakin's Summons##1685
-		..accept Surena Caledon##1688
+		..turnin Gakin's Summons##1685 |noobsolete
+		..accept Surena Caledon##1688 |noobsolete
 		only Human Warlock
 	step //104
 		'Go outside to Elwynn Forest|goto Elwynn Forest|noway|c
@@ -470,8 +470,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Human (1-13)"
 	step //107
 		goto Stormwind City,39.2,85.3
 		.talk Gakin the Darkbinder##6122
-		..turnin Surena Caledon##1688
-		..accept The Binding##1689
+		..turnin Surena Caledon##1688 |noobsolete
+		..accept The Binding##1689 |noobsolete
 		only Human Warlock
 	step //108
 		'Go downstairs into the catacombs to 39.1,84.3|goto 39.1,84.3
@@ -481,7 +481,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Human (1-13)"
 	step //109
 		'Go upstairs to 39.2,85.3|goto 39.2,85.3
 		.talk Gakin the Darkbinder##6122
-		..turnin The Binding##1689
+		..turnin The Binding##1689 |noobsolete
 		only Human Warlock
 	step //110
 		goto 69,30.9|n
@@ -686,7 +686,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Human (1-13)"
 	step //163
 		goto Elwynn Forest,41.1,66
 		.talk Brother Wilhelm##927
-		..accept Tome of Divinity##2998
+		..accept Tome of Divinity##2998 |noobsolete
 		only Human Paladin
 	step //164
 		'Go northwest to Stormwind|goto Stormwind City|noway|c
@@ -694,21 +694,21 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Human (1-13)"
 	step //165
 		goto Stormwind City,50.6,47.5
 		.talk Duthorian Rall##6171
-		..turnin Tome of Divinity##2998
+		..turnin Tome of Divinity##2998 |noobsolete
 		only Human Paladin
 	step //166
 		goto 50.6,47.5
 		'Click the Tome of Divinity in your bags|use Tome of Divinity##6775
 		.accept The Tome of Divinity (1)##1642
 		.talk Duthorian Rall##6171
-		..turnin The Tome of Divinity (1)##1642
-		..accept The Tome of Divinity (2)##1643
+		..turnin The Tome of Divinity (1)##1642 |noobsolete
+		..accept The Tome of Divinity (2)##1643 |noobsolete
 		only Human Paladin
 	step //167
 		goto 63.8,72.2
 		.talk Stephanie Turner##6174
-		..turnin The Tome of Divinity (2)##1643
-		..accept The Tome of Divinity (3)##1644
+		..turnin The Tome of Divinity (2)##1643 |noobsolete
+		..accept The Tome of Divinity (3)##1644 |noobsolete
 		only Human Paladin
 	step //168
 		'Make sure you have 10 Linen Cloth|buy 10 Linen Cloth|q 1644/1|c|tip If you do not already have it, buy 10 Linen Cloth from the Auction House.
@@ -716,20 +716,20 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Human (1-13)"
 	step //169
 		goto 63.8,72.2
 		.talk Stephanie Turner##6174
-		..turnin The Tome of Divinity (3)##1644
-		..accept The Tome of Divinity (4)##1780
+		..turnin The Tome of Divinity (3)##1644 |noobsolete
+		..accept The Tome of Divinity (4)##1780 |noobsolete
 		only Human Paladin
 	step //170
 		goto 50.6,47.5
 		.talk Duthorian Rall##6171
-		..turnin The Tome of Divinity (4)##1780
-		..accept The Tome of Divinity (5)##1781
+		..turnin The Tome of Divinity (4)##1780 |noobsolete
+		..accept The Tome of Divinity (5)##1781 |noobsolete
 		only Human Paladin
 	step //171
 		goto 49.5,45.0
 		.talk Gazin Tenorm##6173
-		..turnin The Tome of Divinity (5)##1781
-		..accept The Tome of Divinity (6)##1786
+		..turnin The Tome of Divinity (5)##1781 |noobsolete
+		..accept The Tome of Divinity (6)##1786 |noobsolete
 		only Human Paladin
 	step //172
 		'Go outside to Elwynn Forest|goto Elwynn Forest|noway|c
@@ -738,8 +738,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Human (1-13)"
 		goto Elwynn Forest,72.6,51.4
 		.' Click the Symbol of Life in your bags to resurrect Henze Faulk|use Symbol of Life##6866
 		.talk Henze Faulk##6172
-		..turnin The Tome of Divinity (6)##1786
-		..accept The Tome of Divinity (7)##1787
+		..turnin The Tome of Divinity (6)##1786 |noobsolete
+		..accept The Tome of Divinity (7)##1787 |noobsolete
 		only Human Paladin
 	step //174
 		goto 73.6,51.3
@@ -752,13 +752,13 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Human (1-13)"
 	step //176
 		goto Stormwind City,49.5,45.0
 		.talk Gazin Tenorm##6173
-		..turnin The Tome of Divinity (7)##1787
-		..accept The Tome of Divinity (8)##1788
+		..turnin The Tome of Divinity (7)##1787 |noobsolete
+		..accept The Tome of Divinity (8)##1788 |noobsolete
 		only Human Paladin
 	step //177
 		goto 50.6,47.5
 		.talk Duthorian Rall##6171
-		..turnin The Tome of Divinity (8)##1788
+		..turnin The Tome of Divinity (8)##1788 |noobsolete
 		only Human Paladin
 	step //178
 		'Go outside to Elwynn Forest|goto Elwynn Forest|noway|c
@@ -1236,7 +1236,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Night Elf (1-
 	step //112
 		goto Teldrassil,56.7,59.5
 		.talk Dazalar##3601
-		..accept Taming the Beast (1)##6063
+		..accept Taming the Beast (1)##6063 |noobsolete
 		only NightElf Hunter
 	step //113
 		goto 59,60
@@ -1246,8 +1246,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Night Elf (1-
 	step //114
 		goto 56.7,59.5
 		.talk Dazalar##3601
-		..turnin Taming the Beast (1)##6063
-		..accept Taming the Beast (2)##6101
+		..turnin Taming the Beast (1)##6063 |noobsolete
+		..accept Taming the Beast (2)##6101 |noobsolete
 		only NightElf Hunter
 	step //115
 		goto 56,72
@@ -1257,8 +1257,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Night Elf (1-
 	step //116
 		goto 56.7,59.5
 		.talk Dazalar##3601
-		..turnin Taming the Beast (2)##6101
-		..accept Taming the Beast (3)##6102
+		..turnin Taming the Beast (2)##6101 |noobsolete
+		..accept Taming the Beast (3)##6102 |noobsolete
 		only NightElf Hunter
 	step //117
 		goto 38.9,51.7
@@ -1268,8 +1268,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Night Elf (1-
 	step //118
 		goto 56.7,59.5
 		.talk Dazalar##3601
-		..turnin Taming the Beast (3)##6102
-		..accept Training the Beast##6103
+		..turnin Taming the Beast (3)##6102 |noobsolete
+		..accept Training the Beast##6103 |noobsolete
 		only NightElf Hunter
 	step //119
 		'Go west to Darnassus|goto Darnassus|noway|c
@@ -1277,7 +1277,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Night Elf (1-
 	step //120
 		goto Darnassus,40.4,8.5
 		.talk Jocaste##4146
-		..turnin Training the Beast##6103
+		..turnin Training the Beast##6103 |noobsolete
 		only NightElf Hunter
 	step //121
 		'Go east out of Darnassus to Teldrassil|goto Teldrassil|noway|c
@@ -1285,7 +1285,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Night Elf (1-
 	step //122
 		goto Teldrassil,56.0,61.5
 		.talk Kal##3602
-		..accept Heeding the Call##5925
+		..accept Heeding the Call##5925 |noobsolete
 		only NightElf Druid
 	step //123
 		'Go west to Darnassus|goto Darnassus|noway|c
@@ -1293,8 +1293,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Night Elf (1-
 	step //124
 		goto Darnassus,35.2,8.1
 		.talk Mathrengyl Bearwalker##4217
-		..turnin Heeding the Call##5925
-		..accept Moonglade##5921
+		..turnin Heeding the Call##5925 |noobsolete
+		..accept Moonglade##5921 |noobsolete
 		only NightElf Druid
 	step //125
 		'He gives you a spell called Teleport: Moonglade
@@ -1303,7 +1303,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Night Elf (1-
 	step //126
 		goto Moonglade,56.2,30.5
 		.talk Dendrite Starblaze##11802
-		..turnin Moonglade##5921
+		..turnin Moonglade##5921 |noobsolete
 		..accept Great Bear Spirit##5929
 		only NightElf Druid
 	step //127
@@ -1319,7 +1319,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Night Elf (1-
 		goto 56.2,30.5
 		.talk Dendrite Starblaze##11802
 		..turnin Great Bear Spirit##5929
-		..accept Back to Darnassus##5931
+		..accept Back to Darnassus##5931 |noobsolete
 		only NightElf Druid
 	step //130
 		goto 44.2,45.3|n
@@ -1332,8 +1332,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Night Elf (1-
 	step //132
 		goto Darnassus,35.2,8.1
 		.talk Mathrengyl Bearwalker##4217
-		..turnin Back to Darnassus##5931
-		..accept Body and Heart##6001
+		..turnin Back to Darnassus##5931 |noobsolete
+		..accept Body and Heart##6001 |noobsolete
 		only NightElf Druid
 	step //133
 		goto 31,42|n
@@ -1358,7 +1358,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Night Elf (1-
 	step //138
 		goto Darnassus,35.2,8.1
 		.talk Mathrengyl Bearwalker##4217
-		..turnin Body and Heart##6001
+		..turnin Body and Heart##6001 |noobsolete
 		only NightElf Druid
 	step //139
 		'Go east outside of Darnassus to Teldrassil|goto Teldrassil|noway|c
@@ -2028,7 +2028,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Gnome (1-13)"
 		goto Stormwind City,39.2,85.3
 		.talk Gakin the Darkbinder##6122
 		..turnin The Slaughtered Lamb##1715
-		..accept Surena Caledon##1688
+		..accept Surena Caledon##1688 |noobsolete
 		only Gnome Warlock
 	step //95
 		'Go outside to Elwynn Forest|goto Elwynn Forest|noway|c
@@ -2044,8 +2044,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Gnome (1-13)"
 	step //98
 		goto Stormwind City,39.2,85.3
 		.talk Gakin the Darkbinder##6122
-		..turnin Surena Caledon##1688
-		..accept The Binding##1689
+		..turnin Surena Caledon##1688 |noobsolete
+		..accept The Binding##1689 |noobsolete
 		only Gnome Warlock
 	step //99
 		'Go downstairs into the catacombs to 39.1,84.3|goto 39.1,84.3
@@ -2055,7 +2055,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Gnome (1-13)"
 	step //100
 		'Go upstairs to 39.2,85.3|goto 39.2,85.3
 		.talk Gakin the Darkbinder##6122
-		..turnin The Binding##1689
+		..turnin The Binding##1689 |noobsolete
 		only Gnome Warlock
 	step //101
 		goto 69,30.9
@@ -2646,7 +2646,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Dwarf (1-13)"
 	step //90
 		goto Dun Morogh,45.8,53
 		.talk Grif Wildheart##1231
-		..accept Taming the Beast (1)##6064
+		..accept Taming the Beast (1)##6064 |noobsolete
 		only Dwarf Hunter
 	step //91
 		goto 47.9,56.6
@@ -2656,8 +2656,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Dwarf (1-13)"
 	step //92
 		goto 45.8,53
 		.talk Grif Wildheart##1231
-		..turnin Taming the Beast (1)##6064
-		..accept Taming the Beast (2)##6084
+		..turnin Taming the Beast (1)##6064 |noobsolete
+		..accept Taming the Beast (2)##6084 |noobsolete
 		only Dwarf Hunter
 	step //93
 		goto 48.5,56.4
@@ -2667,8 +2667,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Dwarf (1-13)"
 	step //94
 		goto 45.8,53
 		.talk Grif Wildheart##1231
-		..turnin Taming the Beast (2)##6084
-		..accept Taming the Beast (3)##6085
+		..turnin Taming the Beast (2)##6084 |noobsolete
+		..accept Taming the Beast (3)##6085 |noobsolete
 		only Dwarf Hunter
 	step //95
 		goto 49.3,62.3
@@ -2678,8 +2678,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Dwarf (1-13)"
 	step //96
 		goto 45.8,53
 		.talk Grif Wildheart##1231
-		..turnin Taming the Beast (3)##6085
-		..accept Training the Beast##6086
+		..turnin Taming the Beast (3)##6085 |noobsolete
+		..accept Training the Beast##6086 |noobsolete
 		only Dwarf Hunter
 	step //97
 		'Go northeast to Ironforge|goto Ironforge|noway|c
@@ -2687,7 +2687,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Dwarf (1-13)"
 	step //98
 		goto Ironforge,70.9,85.8
 		.talk Belia Thundergranite##10090
-		..turnin Training the Beast##6086
+		..turnin Training the Beast##6086 |noobsolete
 		only Dwarf Hunter
 	step //99
 		'Go outside to Dun Morogh|goto Dun Morogh|noway|c
@@ -2825,27 +2825,27 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Dwarf (1-13)"
 	step //134
 		goto Ironforge,27.6,12.2
 		.talk Tiza Battleforge##6179
-		..turnin The Tome of Divinity##3000
+		..turnin The Tome of Divinity##3000 |noobsolete
 		..Click the Tome of Divinity|use Tome of Divinity##6775
-		..accept The Tome of Divinity##1646
+		..accept The Tome of Divinity##1646 |noobsolete
 		.talk Tiza Battleforge##6179
-		..turnin The Tome of Divinity##1646
-		..accept The Tome of Divinity##1647
+		..turnin The Tome of Divinity##1646 |noobsolete
+		..accept The Tome of Divinity##1647 |noobsolete
 		only Dwarf Paladin
 	step //135
 		goto 31.8,78.2
 		.talk John Turner
-		..turnin The Tome of Divinity##1647
-		..accept The Tome of Divinity##1648
+		..turnin The Tome of Divinity##1647 |noobsolete
+		..accept The Tome of Divinity##1648 |noobsolete
 		..If you don't have 10 Linen Cloth, buy it from the Auction House|get 10 Linen Cloth|n
-		..turnin The Tome of Divinity##1648
-		..accept The Tome of Divinity##1778
+		..turnin The Tome of Divinity##1648 |noobsolete
+		..accept The Tome of Divinity##1778 |noobsolete
 		only Dwarf Paladin
 	step //136
 		goto 27.6,12.2
 		.talk Tiza Battleforge##6179
-		..turnin The Tome of Divinity##1778
-		..accept The Tome of Divinity##1779
+		..turnin The Tome of Divinity##1778 |noobsolete
+		..accept The Tome of Divinity##1779 |noobsolete
 		only Dwarf Paladin
 	step //137
 		'Go outside to Dun Morogh|goto Dun Morogh|noway|c
@@ -2854,8 +2854,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Dwarf (1-13)"
 		goto Dun Morogh,78.3,58.1
 		.Use the Symbol of Life on Narm Faulk|use Symbol of Life##6866
 		.talk to Narm Faulk
-		..turnin The Tome of Divinity##1783
-		..accept The Tome of Divinity##1784
+		..turnin The Tome of Divinity##1783 |noobsolete
+		..accept The Tome of Divinity##1784 |noobsolete
 		only Dwarf Paladin
 	step //139
 		goto 77.9,58.4
@@ -2868,13 +2868,13 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Dwarf (1-13)"
 	step //141
 		goto Ironforge,23.5,8.3
 		.talk Muiredon Battleforge##6179
-		..turnin The Tome of Divinity##1784
-		..accept The Tome of Divinity##1785
+		..turnin The Tome of Divinity##1784 |noobsolete
+		..accept The Tome of Divinity##1785 |noobsolete
 		only Dwarf Paladin
 	step //142
 		goto 27.6,12.2
 		.talk Tiza Battleforge##6179
-		..turnin The Tome of Divinity##1785
+		..turnin The Tome of Divinity##1785 |noobsolete
 		only Dwarf Paladin
 	step //143
 		'Ride the train to Stormwind|goto Stormwind City|noway|c
@@ -3079,7 +3079,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Draenei (1-13
 	step //27
 		goto 79.3,49.1
 		.talk Firmanvaar##17089
-		..accept Call of Earth (1)##9449
+		..accept Call of Earth (1)##9449 |noobsolete
 		only Draenei Shaman
 	step //28
 		goto 74.0,42.0|n
@@ -3088,8 +3088,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Draenei (1-13
 	step //29
 		goto 71.3,39
 		.talk Spirit of the Vale##17087
-		..turnin Call of Earth (1)##9449
-		..accept Call of Earth (2)##9450
+		..turnin Call of Earth (1)##9449 |noobsolete
+		..accept Call of Earth (2)##9450 |noobsolete
 		only Draenei Shaman
 	step //30
 		goto 70.8,37.8
@@ -3098,13 +3098,13 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Draenei (1-13
 	step //31
 		goto 71.3,39
 		.talk Spirit of the Vale##17087
-		..turnin Call of Earth (2)##9450
-		..accept Call of Earth (3)##9451
+		..turnin Call of Earth (2)##9450 |noobsolete
+		..accept Call of Earth (3)##9451 |noobsolete
 		only Draenei Shaman
 	step //32
 		goto 79.3,49.1
 		.talk Firmanvaar##17089
-		..turnin Call of Earth (3)##9451
+		..turnin Call of Earth (3)##9451 |noobsolete
 		only Draenei Shaman
 	step //33
 		goto 79.5,51.4
@@ -3442,7 +3442,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Draenei (1-13
 	step //107
 		goto The Exodar,32.3,23.9
 		.talk Sulaa##17219
-		..accept Call of Fire (1)##9462
+		..accept Call of Fire (1)##9462 |noobsolete
 		only Draenei Shaman
 	step //108
 		'Go outside to Azuremyst Isle|goto Azuremyst Isle|noway|c
@@ -3450,14 +3450,14 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Draenei (1-13
 	step //109
 		goto Azuremyst Isle,48.1,50.4
 		.talk Tuluun##17212
-		..turnin Call of Fire (1)##9462
-		..accept Call of Fire (2)##9464
+		..turnin Call of Fire (1)##9462 |noobsolete
+		..accept Call of Fire (2)##9464 |noobsolete
 		only Draenei Shaman
 	step //110
 		goto 59.5,18.1
 		.talk Temper##17205
-		..turnin Call of Fire (2)##9464
-		..accept Call of Fire (3)##9465
+		..turnin Call of Fire (2)##9464 |noobsolete
+		..accept Call of Fire (3)##9465 |noobsolete
 		only Draenei Shaman
 	step //111
 		'Go west into Stillpine Hold to 46.1,16.6|goto 46.1,16.6
@@ -3467,8 +3467,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Draenei (1-13
 	step //112
 		'Leave the cave and go east to 59.5,18.1|goto 59.5,18.1
 		.talk Temper##17205
-		..turnin Call of Fire (3)##9465
-		..accept Call of Fire (4)##9467
+		..turnin Call of Fire (3)##9465 |noobsolete
+		..accept Call of Fire (4)##9467 |noobsolete
 		only Draenei Shaman
 	step //113
 		goto 11.4,82.3
@@ -3481,14 +3481,14 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Draenei (1-13
 	step //114
 		goto 59.5,18.1
 		.talk Temper##17205
-		..turnin Call of Fire (4)##9467
-		..accept Call of Fire (5)##9468
+		..turnin Call of Fire (4)##9467 |noobsolete
+		..accept Call of Fire (5)##9468 |noobsolete
 		only Draenei Shaman
 	step //115
 		goto 48.1,50.4
 		.talk Tuluun##17212
-		..turnin Call of Fire (5)##9468
-		..accept Call of Fire (6)##9461
+		..turnin Call of Fire (5)##9468 |noobsolete
+		..accept Call of Fire (6)##9461 |noobsolete
 		only Draenei Shaman
 	step //116
 		'Go northwest to the Exodar|goto The Exodar|noway|c
@@ -3496,13 +3496,13 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Draenei (1-13
 	step //117
 		goto The Exodar,32.8,54.5
 		.talk Prophet Velen##17468
-		..turnin Call of Fire (6)##9461
-		..accept Call of Fire (7)##9555
+		..turnin Call of Fire (6)##9461 |noobsolete
+		..accept Call of Fire (7)##9555 |noobsolete
 		only Draenei Shaman
 	step //118
 		goto 31.4,27.7
 		.talk Farseer Nobundo##17204
-		..turnin Call of Fire (7)##9555
+		..turnin Call of Fire (7)##9555 |noobsolete
 		only Draenei Shaman
 	step //119
 		'Go outside to Azuremyst Isle|goto Azuremyst Isle|noway|c
@@ -3516,7 +3516,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Draenei (1-13
 		goto 24.2,54.3
 		.talk Huntress Kella Nightbow##17614
 		..turnin Seek Huntress Kella Nightbow##9757
-		..accept Taming the Beast (1)##9591
+		..accept Taming the Beast (1)##9591 |noobsolete
 		only Draenei Hunter
 	step //122
 		goto 22.8,75
@@ -3526,8 +3526,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Draenei (1-13
 	step //123
 		goto 24.2,54.3
 		.talk Huntress Kella Nightbow##17614
-		..turnin Taming the Beast (1)##9591
-		..accept Taming the Beast (2)##9592
+		..turnin Taming the Beast (1)##9591 |noobsolete
+		..accept Taming the Beast (2)##9592 |noobsolete
 		only Draenei Hunter
 	step //124
 		goto 34.9,35.1
@@ -3537,8 +3537,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Draenei (1-13
 	step //125
 		goto 24.2,54.3
 		.talk Huntress Kella Nightbow##17614
-		..turnin Taming the Beast (2)##9592
-		..accept Taming the Beast (3)##9593
+		..turnin Taming the Beast (2)##9592 |noobsolete
+		..accept Taming the Beast (3)##9593 |noobsolete
 		only Draenei Hunter
 	step //126
 		goto 36.6,40.8
@@ -3548,8 +3548,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Draenei (1-13
 	step //127
 		goto 24.2,54.3
 		.talk Huntress Kella Nightbow##17614
-		..turnin Taming the Beast (3)##9593
-		..accept Beast Training##9675
+		..turnin Taming the Beast (3)##9593 |noobsolete
+		..accept Beast Training##9675 |noobsolete
 		only Draenei Hunter
 	step //128
 		'Go northeast to the Exodar|goto The Exodar|noway|c
@@ -3557,7 +3557,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Draenei (1-13
 	step //129
 		goto The Exodar,44,86.7
 		.talk Ganaar##16712
-		..turnin Beast Training##9675
+		..turnin Beast Training##9675 |noobsolete
 		only Draenei Hunter
 	step //130
 		'Go outside of the Exodar to Azuremyst Isle|goto Azuremyst Isle|noway|c
@@ -3744,10 +3744,10 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Draenei (1-13
 		goto The Exodar,38,82
 		.talk Jol##17509
 		..turnin Jol##10366
-		..accept Redemption (1)##9598
+		..accept Redemption (1)##9598 |noobsolete
 		.' Click the Tome of Divinity in your bags to read it|use Tome of Divinity##23926
-		..turnin Redemption (1)##9598
-		..accept Redemption (2)##9600
+		..turnin Redemption (1)##9598 |noobsolete
+		..accept Redemption (2)##9600 |noobsolete
 		only Draenei Paladin
 	step //177
 		'Go outside to Azuremyst Isle|goto Azuremyst Isle|noway|c
@@ -3769,7 +3769,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Draenei (1-13
 	step //182
 		goto The Exodar,38,82
 		.talk Jol##17509
-		..turnin Redemption (2)##9600
+		..turnin Redemption (2)##9600 |noobsolete
 		only Draenei Paladin
 	step //183
 		goto 22,54|n
@@ -4824,7 +4824,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Main Guide (1
 	step //17
 		goto Darnassus,35.2,8.1
 		.talk Mathrengyl Bearwalker##4217
-		..accept Lessons Anew##6121
+		..accept Lessons Anew##6121 |noobsolete
 		only NightElf Druid
 	step //18
 		'Remember, you have the spell Teleport: Moonglade
@@ -4833,8 +4833,8 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Main Guide (1
 	step //19
 		goto 56.2,30.5
 		.talk Dendrite Starblaze##11802
-		..turnin Lessons Anew##6121
-		..accept The Principal Source##6122
+		..turnin Lessons Anew##6121 |noobsolete
+		..accept The Principal Source##6122 |noobsolete
 		only NightElf Druid
 	step //20
 		goto 44.2,45.3|n
@@ -4857,7 +4857,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Main Guide (1
 	step //24
 		goto 38,41
 		.talk Alanndarian Nightsong##3702
-		..turnin The Principal Source##6122
+		..turnin The Principal Source##6122 |noobsolete
 		..accept Gathering the Cure##6123
 		only NightElf Druid
 	step //25
@@ -5231,7 +5231,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Main Guide (1
 		goto 56.2,30.5
 		.talk Dendrite Starblaze##11802
 		..turnin Trial of the Sea Lion##272
-		..accept Aquatic Form##5061
+		..accept Aquatic Form##5061 |noobsolete
 		only NightElf Druid
 	step //114
 		goto 44.2,45.3|n
@@ -5244,7 +5244,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Main Guide (1
 	step //116
 		goto Darnassus,35.2,8.1
 		.talk Mathrengyl Bearwalker##4217
-		..turnin Aquatic Form##5061
+		..turnin Aquatic Form##5061 |noobsolete
 		only NightElf Druid
 	step //117
 		'Go to Rut'theran Village|goto Teldrassil,56.3,92.4,6|noway|c
@@ -5621,7 +5621,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Levels (20-25
 	step //9
 		goto Stormwind City,39.6,84.6
 		.talk Gakin the Darkbinder##6122
-		..turnin Gakin's Summons##1717
+		..turnin Gakin's Summons##1717 |noobsolete
 		..accept Devourer of Souls##1716 |noobsolete
 		only Gnome Warlock,Human Warlock
 	step //10
@@ -5637,7 +5637,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Levels (20-25
 	step //13
 		goto The Barrens,49.3,57.2
 		.talk Takar the Seer##6244
-		..turnin Devourer of Souls##1716
+		..turnin Devourer of Souls##1716 |noobsolete
 		..accept Heartswood##1738 |noobsolete
 		only Gnome Warlock,Human Warlock
 	step //14
@@ -5658,7 +5658,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Levels (20-25
 	step //18
 		goto Stormwind City,39.6,84.6
 		.talk Gakin the Darkbinder##6122
-		..turnin Heartswood##1738
+		..turnin Heartswood##1738 |noobsolete
 		..accept The Binding##1739 |noobsolete
 		only Gnome Warlock,Human Warlock
 	step //19
@@ -5669,7 +5669,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Levels (20-25
 	step //20
 		'Go upstairs to 39.6,84.6|goto 39.6,84.6
 		.talk Gakin the Darkbinder##6122
-		..turnin The Binding##1739
+		..turnin The Binding##1739 |noobsolete
 		only Gnome Warlock,Human Warlock
 	step //21
 		'Fly to Lakeshire|goto Redridge Mountains|noway|c
@@ -6961,7 +6961,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Levels (30-35
 		goto The Barrens,68.6,49.2
 		.talk Klannoc Macleod##6236
 		..turnin The Islander##1718
-		..accept The Affray##1719
+		..accept The Affray##1719 |noobsolete
 		only Draenei Warrior,Gnome Warrior,NightElf Warrior,Dwarf Warrior,Human Warrior
 	step //7
 		goto 68.6,48.7
@@ -6971,7 +6971,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Levels (30-35
 	step //8
 		goto 68.6,49.2
 		.talk Klannoc Macleod##6236
-		..turnin The Affray##1719
+		..turnin The Affray##1719 |noobsolete
 		only Draenei Warrior,Gnome Warrior,NightElf Warrior,Dwarf Warrior,Human Warrior
 	step //9
 		'Go northwest to Ashenvale|goto Ashenvale|noway|c
@@ -7001,13 +7001,13 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Levels (30-35
 	step //17
 		goto The Exodar,32.3,23.9
 		.talk Sulaa##17219
-		..accept Call of Air (1)##9551
+		..accept Call of Air (1)##9551 |noobsolete
 		only Draenei Shaman
 	step //18
 		goto 31.4,27.7
 		.talk Farseer Nobundo##17204
-		..turnin Call of Air (1)##9551
-		..accept Call of Air (2)##9552
+		..turnin Call of Air (1)##9551 |noobsolete
+		..accept Call of Air (2)##9552 |noobsolete
 		only Draenei Shaman
 	step //19
 		'Go outside to Azuremyst Isle|goto Azuremyst Isle|noway|c
@@ -7019,21 +7019,21 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Levels (30-35
 	step //21
 		'Go up the path to 24.6,35.6|goto 24.6,35.6
 		.talk Velaada##17431
-		..turnin Call of Air (2)##9552
-		..accept Call of Air (3)##9553
+		..turnin Call of Air (2)##9552 |noobsolete
+		..accept Call of Air (3)##9553 |noobsolete
 		only Draenei Shaman
 	step //22
 		goto 22.6,32.4
 		.talk Susurrus##17435
-		..turnin Call of Air (3)##9553
-		..accept Call of Air (4)##9554
+		..turnin Call of Air (3)##9553 |noobsolete
+		..accept Call of Air (4)##9554 |noobsolete
 		..'Click -I am ready-
 		..'He brings you back down the mountain to the Exodar at 78,55|noway|c
 		only Draenei Shaman
 	step //23
 		'Go inside the Exodar to 31.4,27.7|goto The Exodar,31.4,27.7
 		.talk Farseer Nobundo##17204
-		..turnin Call of Air (4)##9554
+		..turnin Call of Air (4)##9554 |noobsolete
 		only Draenei Shaman
 	step //24
 		'Go outside to Azuremyst Isle|goto Azuremyst Isle|noway|c
@@ -12185,9 +12185,9 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Levels (55-60
 		..turnin Demon Dogs##5542
 		..turnin Blood Tinged Skies##5543
 		..turnin Carrion Grubbage##5544
-		..accept Redemption##5742
+		..accept Redemption##5742 |noobsolete
 		..'Listen to his story
-		..turnin Redemption##5742
+		..turnin Redemption##5742 |noobsolete
 	step //241
 		'Hearth to Ironforge|goto Ironforge|use Hearthstone##6948|noway|c
 	step //242
@@ -12473,7 +12473,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Outland (60-6
 		goto 49.2,74.8
 		.talk "Screaming" Screed Luckheed##19367
 		..turnin In Case of Emergency...##10161
-		..accept Voidwalkers Gone Wild##9351
+		..accept Voidwalkers Gone Wild##9351 |noobsolete
 		.talk Legassi##19344
 		..turnin Smooth as Butter##9356
 	step //59
@@ -12712,7 +12712,7 @@ ZygorGuidesViewer:RegisterGuide("Zygor's Alliance Leveling Guides\\Outland (60-6
 	step //109
 		goto 49.2,74.8
 		.talk "Screaming" Screed Luckheed##19367
-		..turnin Voidwalkers Gone Wild##9351
+		..turnin Voidwalkers Gone Wild##9351 |noobsolete
 	step //110
 		'Hearth to the Temple of Telhamat|goto Hellfire Peninsula,23.4,37.2,3|use Hearthstone##6948|noway|c
 	step //111
