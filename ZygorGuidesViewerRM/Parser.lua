@@ -1173,6 +1173,12 @@ function me:ParseEntry(text)
 				else
 					goal.force_noway = true
 				end
+			elseif cmd=="localmap" then
+				if generated_goals then
+					for _,g in ipairs(generated_goals) do g.localmap=true end
+				else
+					goal.localmap = true
+				end
 			elseif cmd=="sticky" then
 				if generated_goals then
 					for _,g in ipairs(generated_goals) do g.force_sticky=true end

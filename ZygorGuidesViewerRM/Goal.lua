@@ -285,7 +285,7 @@ function Goal:IsComplete()
 		return UnitLevel("player")>=tonumber(self.level), UnitLevel("player")>=tonumber(self.level)-1, percent
 	elseif self.action=="goto" then
 		local zone = GetRealZoneText()
-		if self.map and zone~=self.map then return false,true end
+		if self.map and not self.localmap and zone~=self.map then return false,true end
 
 		local step = self.parentStep
 		local firstgoto
@@ -908,17 +908,6 @@ function Goal:Prepare()
 		end
 	end
 	--]]
-
-	if not InCombatLockdown() then
-		if self.script then
-			local macroname = "ZygorGuidesMacro" .. self.num
-			local macro = GetMacroIndexByName(macroname)
-			if macro==0 then
-				macro = CreateMacro(macroname,1,"/run "..self.script,1)
-			end
-			self.macro = macro
-		end
-	end
 
 	if self.autoscript then
 		local func=loadstring(self.autoscript)

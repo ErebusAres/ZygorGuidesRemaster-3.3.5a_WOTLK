@@ -164,6 +164,14 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 193 - 3.0.193
+
+- Fixed guide `|script` action buttons so they no longer create saved player macros, preventing `CreateMacro() failed, already have 36 macros` errors on login or guide restore when macro storage is full.
+- Added opt-in custom-server local waypoint support with `|localmap` for guide authors using incomplete custom map data.
+- `|localmap` supports both `goto x,y |localmap` and `goto Name,x,y |localmap`, using the player's current local map coordinates with the built-in waypoint arrow.
+- Kept normal non-`|localmap` waypoint behavior unchanged.
+- Updated addon version metadata to 3.0.193.
+
 ### Revision 192 - 3.0.192
 
 - Fixed Talent Advisor saved-build restoration so selected Zygor leveling builds survive relog/reload and remain ready for auto-learn.
@@ -203,16 +211,6 @@ This addon is fully open source and can be inspected before use.
 - Added missing item database coverage for grey item ID `1513` (`Old Greatsword`) so Gear Advisor no longer reports it as absent.
 - Fixed a compatibility issue where `!!!ClassicAPI` 1.16+ could make Guide Manager option pages render blank by injecting a clipping shim into 3.3.5a frames.
 - Updated addon version metadata to 3.0.188.
-
-### Revision 187 - 3.0.187
-
-- Fixed Gear Finder paired-slot duplicate handling so the same trinket or ring is not recommended in both slots when item IDs are represented differently internally.
-- Improved tier-progression filtering so early results are pruned before display while still allowing the next regular T7/Naxx progression step when a current pre-raid or heroic slot has no upgrade.
-- Fixed AtlasLoot compatibility with `GetItemQualityColor()` so external addon item names no longer show raw quality hex prefixes such as `ffa334eeItem Name`.
-- Added a Gear Finder startup item-cache guard. Opening Gear Finder immediately after login now shows a loading state and auto-scans after item data has had time to load.
-- Updated addon version metadata to 3.0.187.
-
-
 ## Notes
 
 - Intended target client is **WotLK 3.3.5a (12340)**.

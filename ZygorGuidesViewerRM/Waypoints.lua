@@ -853,7 +853,7 @@ me.WaypointFunctions['internal'] = {
 			local advancedTravelGoal = nil
 			for _,goal in ipairs(goals) do
 				local gmap = goal.map or (self.CurrentStep and self.CurrentStep.map)
-				if gmap and gmap ~= currentZone and goal.x and goal.y then
+				if gmap and not goal.localmap and gmap ~= currentZone and goal.x and goal.y then
 					crossZoneDest = gmap
 					if not goal.force_noway and not goal.waypoint_notravel then
 						advancedTravelGoal = goal
@@ -936,10 +936,11 @@ me.WaypointFunctions['internal'] = {
 						or self.CurrentStep:GetTitle()
 						or (gmap and goal.x and ("%s %d,%d"):format(gmap,goal.x,goal.y))
 						or L['waypoint_step']:format(self.CurrentStepNum)
-					local way = self.Pointer:SetWaypoint (nil,gmap,goal.x,goal.y,{
+					local way = self.Pointer:SetWaypoint (nil,goal.localmap and nil or gmap,goal.x,goal.y,{
 						title=waypointTitle,
 						titleloc=FormatWaypointLocation(goal, gmap),
 						goal=goal,
+						localmap=goal.localmap,
 						onminimap="always",
 						overworld=true
 					})

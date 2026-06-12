@@ -943,7 +943,12 @@ end
 function Pointer:ShowArrow(waypoint)
 	if waypoint.type~="manual" then self:ClearWaypoints("manual") end
 
-	Astrolabe:PlaceIconOnMinimap(waypoint.minimapFrame, waypoint.c, waypoint.z, waypoint.x, waypoint.y) -- if it's not already there, place it
+	if waypoint.localmap then
+		Astrolabe:RemoveIconFromMinimap(waypoint.minimapFrame)
+		waypoint.minimapFrame:Hide()
+	else
+		Astrolabe:PlaceIconOnMinimap(waypoint.minimapFrame, waypoint.c, waypoint.z, waypoint.x, waypoint.y) -- if it's not already there, place it
+	end
 
 	self.ArrowFrame.waypoint = waypoint
 
@@ -1008,6 +1013,10 @@ function markerproto:Show()
 end
 
 function markerproto:UpdateWorldMapIcon(c,z)
+	if self.localmap then
+		self.worldmapFrame:Hide()
+		return
+	end
 	local show=true
 	if not ZGV.Pointer.OverlayFrame:IsShown() or self.hidden then show=false end
 	if ZGV.Pointer.carbTargetId and ZGV.Pointer.carbTargetWaypoint == self and ZGV.Pointer.ArrowFrame and ZGV.Pointer.ArrowFrame.waypoint == self then
@@ -1037,6 +1046,11 @@ function markerproto:UpdateWorldMapIcon(c,z)
 end
 
 function markerproto:UpdateMiniMapIcon(c,z)
+	if self.localmap then
+		Astrolabe:RemoveIconFromMinimap(self.minimapFrame)
+		self.minimapFrame:Hide()
+		return
+	end
 	if not c then c,z=GetCurrentMapContinentAndZone() end
 	if profile.minicons and not self.hidden and not ZGV.Pointer:IsWaypointSuppressedOnMinimap(self) and 
 	(
@@ -1491,6 +1505,11 @@ function Pointer.MinimapButton_OnUpdate(self,elapsed)
 	end
 	local waypoint = self.waypoint
 	if not waypoint then
+		self.icon:Hide()
+		self.arrow:Hide()
+		return
+	end
+	if waypoint.localmap then
 		self.icon:Hide()
 		self.arrow:Hide()
 		return
@@ -1950,6 +1969,22 @@ local lastturntime=lastbeeptime
 local laststoptime=lastbeeptime
 local lastmovetime=lastbeeptime
 
+local function GetLocalWaypointMetrics(waypoint)
+	if not waypoint then return nil end
+	local px, py = GetPlayerMapPosition("player")
+	if (not px or not py or (px==0 and py==0)) and SetMapToCurrentZone then
+		SetMapToCurrentZone()
+		px, py = GetPlayerMapPosition("player")
+	end
+	if not px or not py or (px==0 and py==0) then return nil end
+	local dx = (waypoint.x or 0) - px
+	local dy = (waypoint.y or 0) - py
+	local dist = math.sqrt(dx*dx + dy*dy) * 10000
+	local atan2 = math.atan2 or math.atan
+	local angle = atan2(dx, -dy)
+	return dist, dx, dy, angle
+end
+
 function Pointer.ArrowFrame_OnUpdate(self,elapsed)
 
 	--[[
@@ -1974,7 +2009,10 @@ function Pointer.ArrowFrame_OnUpdate(self,elapsed)
 	local dist,x,y
 	local cc,cz = GetCurrentMapContinentAndZone()
 
-	if self.waypoint.c~=cc then
+	local localAngle
+	if self.waypoint.localmap then
+		dist,x,y,localAngle = GetLocalWaypointMetrics(self.waypoint)
+	elseif self.waypoint.c~=cc then
 		dist,x,y = 9999999,0,1000
 	else
 		dist,x,y = Astrolabe:GetDistanceToIcon(self.waypoint.minimapFrame)
@@ -1998,7 +2036,8 @@ function Pointer.ArrowFrame_OnUpdate(self,elapsed)
 	local playerangle = GetPlayerFacing()
 	local angle=0
 
-	if dist <= 10.0 then
+	local arriveDist = self.waypoint.localmap and (((self.waypoint.goal and self.waypoint.goal.dist) or 0.2) * 100) or 10.0
+	if dist <= arriveDist then
 		self.arrow:Hide()
 		self.gem:Hide()
 		self.gemhl:Hide()
@@ -2056,7 +2095,7 @@ function Pointer.ArrowFrame_OnUpdate(self,elapsed)
 
 
 		------------- angle
-		angle = Astrolabe:GetDirectionToIcon(self.waypoint.minimapFrame)
+		angle = self.waypoint.localmap and localAngle or Astrolabe:GetDirectionToIcon(self.waypoint.minimapFrame)
 		if not angle or dist>9999998 then
 			angle=3.1415
 		else

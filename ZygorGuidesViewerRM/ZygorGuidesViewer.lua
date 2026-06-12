@@ -1771,7 +1771,7 @@ do
 		end
 
 		if goal.script then
-			return { kind = "script", type = "macro", macro = "ZygorGuidesMacro" .. goal.num, icon = SCRIPT_ICON, tooltip = "script", signature = "script:" .. tostring(goal.num), fallbackicon = AB_GetMacroIcon(goal) }
+			return { kind = "script", type = "macro", macrotext = "/run " .. goal.script, icon = SCRIPT_ICON, tooltip = "script", signature = "script:" .. tostring(goal.num), fallbackicon = SCRIPT_ICON }
 		end
 
 		if goal.action == "talk" then
@@ -6255,7 +6255,7 @@ function me:UpdateFrameCurrent(nonsecure_only)
 								action.actionSpec = nil
 								action.previewSubject = nil
 								AB_SetInlineVisualShown(action, true)
-								if actionIcon then actionIcon:SetTexture(select(2, GetMacroInfo(goal.macro))) end
+								if actionIcon then actionIcon:SetTexture(SCRIPT_ICON.file) end
 								vis = true
 							end
 						elseif goal.petaction then

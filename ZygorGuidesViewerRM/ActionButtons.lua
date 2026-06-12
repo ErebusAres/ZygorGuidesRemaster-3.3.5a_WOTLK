@@ -196,8 +196,8 @@ function ZGV:GetGoalActionSpec(goal)
 		return {
 			kind = "script",
 			type = "macro",
-			macro = "ZygorGuidesMacro" .. goal.num,
-			icon = goal.macro and getmacroicon(goal) or SCRIPT_ICON,
+			macrotext = "/run " .. goal.script,
+			icon = SCRIPT_ICON,
 			tooltip = "script",
 			signature = "script:" .. tostring(goal.num),
 		}
