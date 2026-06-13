@@ -164,6 +164,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 194 - 3.0.194
+
+- Fixed `|localmap` built-in waypoint arrow direction on custom-server maps by normalizing the local coordinate angle the same way the normal Astrolabe waypoint path does.
+- Confirmed `|localmap` direction and completion behavior with reporter testing; custom-map yard distance remains approximate without map-specific scale data.
+- Updated addon version metadata to 3.0.194.
+
 ### Revision 193 - 3.0.193
 
 - Fixed guide `|script` action buttons so they no longer create saved player macros, preventing `CreateMacro() failed, already have 36 macros` errors on login or guide restore when macro storage is full.
@@ -202,15 +208,6 @@ This addon is fully open source and can be inspected before use.
 - Deduplicated the integrated Talent Advisor startup chat message.
 - Updated addon version metadata to 3.0.189.
 
-### Revision 188 - 3.0.188
-
-- Fixed Gear Advisor behavior on custom-server classes/specs so unknown builds no longer spam raw `Unknown spec` chat messages.
-- Added user-editable `Custom Spec 1`, `Custom Spec 2`, and `Custom Spec 3` stat-weight profiles for custom-server fallback use.
-- Unknown class/spec fallback now defaults to `Custom Spec 1` and prints one Zygor-branded Gear Advisor notice pointing users to Stat Weights.
-- Fixed embedded Stat Weights `Show All Stats` refresh so the scrollbar appears immediately, and right-aligned the scrollbar inside the options frame.
-- Added missing item database coverage for grey item ID `1513` (`Old Greatsword`) so Gear Advisor no longer reports it as absent.
-- Fixed a compatibility issue where `!!!ClassicAPI` 1.16+ could make Guide Manager option pages render blank by injecting a clipping shim into 3.3.5a frames.
-- Updated addon version metadata to 3.0.188.
 ## Notes
 
 - Intended target client is **WotLK 3.3.5a (12340)**.

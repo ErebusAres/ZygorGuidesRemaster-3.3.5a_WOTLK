@@ -1982,6 +1982,11 @@ local function GetLocalWaypointMetrics(waypoint)
 	local dist = math.sqrt(dx*dx + dy*dy) * 10000
 	local atan2 = math.atan2 or math.atan
 	local angle = atan2(dx, -dy)
+	if angle and angle > 0 then
+		angle = 6.283185307179586 - angle
+	elseif angle then
+		angle = -angle
+	end
 	return dist, dx, dy, angle
 end
 

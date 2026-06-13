@@ -15,7 +15,7 @@
 ## X-eMail: zygor@zygorguides.com
 ## X-Website: http://zygorguides.com/
 ## X-License: GPL
-## Version: 3.0.193
+## Version: 3.0.194
 
 embeds.xml
 
