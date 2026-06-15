@@ -164,6 +164,14 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 195 - 3.0.195
+
+- Fixed Gear Finder compatibility with custom character-window patches that remove or rename normal Blizzard character-frame header widgets.
+- Added a Gear Finder layout guard so the full slot grid stays visible on patched character frames with unusual dimensions.
+- Fixed Gear Finder `C` key / character-toggle state so pressing `C` closes the embedded Gear Finder cleanly instead of leaving stale character-frame layers behind.
+- Fixed server QuestHelper-style map marker compatibility by letting the original `QuestPOI_HideButtons` run first and only using Zygor's fallback if it errors.
+- Added a Gear Finder item-data loading retry so first-open scans show `Loading item data...` and rescan once before displaying final empty rows.
+- Updated addon version metadata to 3.0.195.
 ### Revision 194 - 3.0.194
 
 - Fixed `|localmap` built-in waypoint arrow direction on custom-server maps by normalizing the local coordinate angle the same way the normal Astrolabe waypoint path does.
@@ -200,13 +208,6 @@ This addon is fully open source and can be inspected before use.
 - Built-in waypointing now skips LibRover route calculation in the phased DK starter/Acherus/Scarlet Enclave area and falls back to a direct internal arrow.
 - External waypoint addons such as Carbonite remain unchanged.
 - Updated addon version metadata to 3.0.190.
-
-### Revision 189 - 3.0.189
-
-- Fixed an Ebonhold/Rogue-Lite hard client crash where the server-provided `AwesomeWotlkLib.dll` implementation of `GetItemInfoInstant` could trigger `ERROR #132` during addon startup.
-- Removed remaining direct addon calls to `GetItemInfoInstant`; Gear Advisor and Gold Guide compatibility paths now use regular item info or DB-backed data instead.
-- Deduplicated the integrated Talent Advisor startup chat message.
-- Updated addon version metadata to 3.0.189.
 
 ## Notes
 

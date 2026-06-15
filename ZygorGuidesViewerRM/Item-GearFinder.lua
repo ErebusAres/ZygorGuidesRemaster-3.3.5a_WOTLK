@@ -11,6 +11,11 @@ local CHAIN = ZGV.ChainCall
 local ui = ZGV.UI
 local SkinData = ui and ui.SkinData
 
+local GEARFINDER_BUTTON_HEIGHT = 54
+local GEARFINDER_BUTTON_GAP = 2
+local GEARFINDER_MAX_COLUMN_ROWS = 9
+local GEARFINDER_MIN_HEIGHT = 48 + 5 + (GEARFINDER_MAX_COLUMN_ROWS * GEARFINDER_BUTTON_HEIGHT) + ((GEARFINDER_MAX_COLUMN_ROWS - 1) * GEARFINDER_BUTTON_GAP) + 108 + 8
+
 local function GF_GetSlotLabel(slotKey, fallback)
 	return _G[slotKey] or fallback
 end
@@ -2063,6 +2068,7 @@ local function loot_score_dungeon_thread()
 	prune_all_to_progression_band()
 	promote_fallback_results()
 	enforce_distinct_pair_results(distinct_slot_pairs)
+	if GearFinder:DeferFinalResultsForItemInfo() then return end
 	GearFinder.ResultsReady=true
 	GearFinder.MainFrame.Progress:Hide()
 
@@ -2178,6 +2184,27 @@ function GearFinder:ScheduleItemInfoRefresh()
 	end, 0.4)
 end
 
+function GearFinder:DeferFinalResultsForItemInfo()
+	if not self.HadUnresolvedItems or self.ItemInfoFinalRetry then return false end
+	if not self.MainFrame or not self.MainFrame:IsVisible() then return false end
+
+	self.ItemInfoFinalRetry = true
+	self.ResultsReady = false
+	cancel_gearfinder_timer("AntsTimer")
+	if self.MainFrame.Progress then self.MainFrame.Progress:Hide() end
+	self:ShowItemInfoLoadingMessage()
+
+	if self.ItemInfoRefreshTimer then return true end
+	self.ItemInfoRefreshTimer = ZGV:ScheduleTimer(function()
+		self.ItemInfoRefreshTimer = nil
+		if not self.MainFrame or not self.MainFrame:IsVisible() then return end
+		self:ClearResults()
+		self.ItemInfoFinalRetry = true
+		self:ScoreDungeonItems(true)
+	end, 1.0)
+	return true
+end
+
 function GearFinder:ScoreDungeonItems(force)
 	if GearFinder.ResultsReady then return end
 	local startupGrace = not force and self:GetStartupItemInfoGraceRemaining()
@@ -2193,6 +2220,7 @@ function GearFinder:ScoreDungeonItems(force)
 
 	GearFinder.DungeonItemsScored = false
 	GearFinder.HadUnresolvedItems = false
+	if not force then GearFinder.ItemInfoFinalRetry = nil end
 	GearFinder.LastError = nil
 	GearFinder.PlayerProfessionSkills = nil
 	GearFinder.PlayerProfessionSpecializations = nil
@@ -2420,7 +2448,7 @@ local function make_button(object)
 	local parent = GearFinder.MainFrame.CenterColumn or GearFinder.MainFrame
 	local button = CHAIN(CreateFrame("Button",nil,parent))
 		:SetFrameLevel(parent:GetFrameLevel()+2)
-		:SetSize(274,54)
+		:SetSize(274,GEARFINDER_BUTTON_HEIGHT)
 		:Show()
 	.__END
 		button.card = CHAIN(CreateFrame("Frame", nil, button))
@@ -2627,7 +2655,7 @@ function GearFinder:CreateMainFrame()
 	self.MainFrame = CHAIN(ZGV.CreateFrameWithBG("Frame","ZygorGearFinder",CharacterFrame))
 		:SetPoint("TOPLEFT", CharacterFrame, "TOPLEFT")
 		:SetWidth(600)
-		:SetHeight(CharacterFrame:GetHeight() + 176)
+		:SetHeight(math.max(GEARFINDER_MIN_HEIGHT, (CharacterFrame and CharacterFrame:GetHeight() or 424) + 176))
 		:SetFrameStrata("HIGH")
 		:SetFrameLevel(CharacterFrame:GetFrameLevel()+10)
 		:SetToplevel(true)
@@ -2736,7 +2764,7 @@ function GearFinder:CreateMainFrame()
 		local button = make_button(object)
 	
 		if previous then
-			button:SetPoint("TOPLEFT",previous,"BOTTOMLEFT",0,-2)
+			button:SetPoint("TOPLEFT",previous,"BOTTOMLEFT",0,-GEARFINDER_BUTTON_GAP)
 		else
 			button:SetPoint("TOPLEFT",MF.CenterColumn,"TOPLEFT",10,-5)
 		end
@@ -2749,7 +2777,7 @@ function GearFinder:CreateMainFrame()
 		local button = make_button(object)
 	
 		if previous then
-			button:SetPoint("TOPLEFT",previous,"BOTTOMLEFT",0,-2)
+			button:SetPoint("TOPLEFT",previous,"BOTTOMLEFT",0,-GEARFINDER_BUTTON_GAP)
 		else
 			button:SetPoint("TOPLEFT",MF.Buttons[INVSLOT_HEAD],"TOPRIGHT",8,0)
 		end
@@ -3411,6 +3439,9 @@ function GearFinder:ClearResults()
 	end
 	if GearFinder.StartupItemInfoTimer then
 		cancel_gearfinder_timer("StartupItemInfoTimer")
+	end
+	if GearFinder.ItemInfoRefreshTimer then
+		cancel_gearfinder_timer("ItemInfoRefreshTimer")
 	end
 	
 	-- Release coroutine reference for GC (Lua 5.1 has no coroutine.close())

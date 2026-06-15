@@ -2,6 +2,20 @@ local ZGV = ZygorGuidesViewer
 if not (ZGV and ZGV.ItemScore and ZGV.ItemScore.GearFinder) then return end
 local GearFinder = ZGV.ItemScore.GearFinder
 
+local function SetCharacterHeaderShown(shown)
+	local method = shown and "Show" or "Hide"
+	local frames = {
+		_G.CharacterNameText,
+		_G.CharacterFramePortrait,
+		_G.CharacterFrameCloseButton,
+	}
+	for _,frame in ipairs(frames) do
+		if frame and frame[method] then
+			frame[method](frame)
+		end
+	end
+end
+
 GearFinder.PAST_DUNGEONS_LIMIT = 10 -- match retail-style finder focus; ignore far-obsolete dungeons sooner
 GearFinder.FUTURE_DUNGEONS_LIMIT = 5 -- how many levels to look ahead for future upgrades
 
@@ -10,17 +24,20 @@ function GearFinder:Initialise()
 	GearFinder:UpdateSystemTab()
 
 	GearFinder.MainFrame:SetScript("OnHide",function()
-		CharacterNameText:Show()
-		CharacterFramePortrait:Show()
-		CharacterFrameCloseButton:Show()
+		SetCharacterHeaderShown(true)
 		-- Restore the character tab that was active before
-		if PaperDollFrame then PaperDollFrame:Show() end
+		if not GearFinder.ClosingCharacterFrame and PaperDollFrame then PaperDollFrame:Show() end
+		GearFinder.ClosingCharacterFrame = nil
 	end)
 
 	if not GearFinder.ToggleCharacterHooked and ToggleCharacter and hooksecurefunc then
 		hooksecurefunc("ToggleCharacter", function()
-			if GearFinder.MainFrame and GearFinder.MainFrame:IsShown() and CharacterFrame and not CharacterFrame:IsShown() then
+			if GearFinder.MainFrame and GearFinder.MainFrame:IsShown() then
+				GearFinder.ClosingCharacterFrame = true
 				GearFinder.MainFrame:Hide()
+				if CharacterFrame and CharacterFrame:IsShown() and HideUIPanel then
+					HideUIPanel(CharacterFrame)
+				end
 			end
 		end)
 		GearFinder.ToggleCharacterHooked = true
@@ -57,9 +74,7 @@ local FUTURE_DUNGEONS_LIMIT = 5 -- how many levels to look ahead for future upgr
 -- support function for character frame system tab creation
 local function OnNonZygorClick()
 	if GearFinder.MainFrame:IsVisible() then
-		CharacterNameText:Show()
-		CharacterFramePortrait:Show()
-		CharacterFrameCloseButton:Show()
+		SetCharacterHeaderShown(true)
 		GearFinder.MainFrame:Hide()
 	end
 end
@@ -117,21 +132,20 @@ function GearFinder:ShowFinder()
 
 	-- Hook character frame tabs to hide gear finder when user clicks them
 	if not GearFinder.HookedChar then
-		hooksecurefunc("CharacterFrameTab_OnClick", function()
-			if GearFinder.MainFrame and GearFinder.MainFrame:IsVisible() then
-				CharacterNameText:Show()
-				CharacterFramePortrait:Show()
-				CharacterFrameCloseButton:Show()
-				GearFinder.MainFrame:Hide()
-			end
-		end)
+		if hooksecurefunc and _G.CharacterFrameTab_OnClick then
+			hooksecurefunc("CharacterFrameTab_OnClick", function()
+				if GearFinder.MainFrame and GearFinder.MainFrame:IsVisible() then
+					GearFinder.ClosingCharacterFrame = nil
+					SetCharacterHeaderShown(true)
+					GearFinder.MainFrame:Hide()
+				end
+			end)
+		end
 		GearFinder.HookedChar = true
 	end
 
 	-- Hide ALL character frame sub-panels
-	CharacterNameText:Hide()
-	CharacterFramePortrait:Hide()
-	CharacterFrameCloseButton:Hide()
+	SetCharacterHeaderShown(false)
 	if PaperDollFrame then PaperDollFrame:Hide() end
 	if SkillFrame then SkillFrame:Hide() end
 	if ReputationFrame then ReputationFrame:Hide() end

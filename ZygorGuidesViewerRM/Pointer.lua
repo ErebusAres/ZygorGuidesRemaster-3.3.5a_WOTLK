@@ -252,20 +252,15 @@ function Pointer:EnsureQuestPOICompatPatch()
 	_G.QuestPOI_HideButtons = function(parentName,buttonType,numButtons)
 		local safeNum = tonumber(numButtons) or 0
 		local buttonName = "poi"..tostring(parentName or "")..tostring(buttonType or "").."_"
+		local ok,ret = pcall(orig,parentName,buttonType,safeNum)
+		if ok then return ret end
 
 		for i=1,safeNum do
-			if not _G[buttonName..i] then
-				for j=1,safeNum do
-					local poiButton = _G[buttonName..j]
-					if poiButton then
-						poiButton:Hide()
-					end
-				end
-				return
+			local poiButton = _G[buttonName..i]
+			if poiButton then
+				poiButton:Hide()
 			end
 		end
-
-		return orig(parentName,buttonType,safeNum)
 	end
 
 	self._questPOIPatched = true
