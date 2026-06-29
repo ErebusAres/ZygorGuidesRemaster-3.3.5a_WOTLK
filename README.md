@@ -164,6 +164,11 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 196 - 3.0.196
+
+- Fixed LibRover waypoint/pathfinding crashes when another addon loads a partial `C_Map` shim whose `GetPlayerMapPosition()` returns two numeric coordinates instead of a retail-style position table.
+- Preserved the existing `UnitPosition()` fallback for clients where `C_Map.GetPlayerMapPosition()` returns no usable position.
+- Updated addon version metadata to 3.0.196.
 ### Revision 195 - 3.0.195
 
 - Fixed Gear Finder compatibility with custom character-window patches that remove or rename normal Blizzard character-frame header widgets.
@@ -202,12 +207,6 @@ This addon is fully open source and can be inspected before use.
 - Resolved the `GoldUI\Auctiontools-Core.lua:830` `ContainerIDToInventoryID` Lua error and restored settings persistence when Zygor runs alongside Aux.
 - Updated addon version metadata to 3.0.191.
 
-### Revision 190 - 3.0.190
-
-- Fixed an Ebonhold/Rogue-Lite Death Knight starter freeze when switching to the built-in waypointing system with the DK starter guide active.
-- Built-in waypointing now skips LibRover route calculation in the phased DK starter/Acherus/Scarlet Enclave area and falls back to a direct internal arrow.
-- External waypoint addons such as Carbonite remain unchanged.
-- Updated addon version metadata to 3.0.190.
 
 ## Notes
 

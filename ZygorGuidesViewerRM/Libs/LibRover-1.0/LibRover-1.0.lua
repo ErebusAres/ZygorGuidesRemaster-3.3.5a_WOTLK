@@ -5059,11 +5059,13 @@ do
 			if not map then return 0,0,0 end
 			local remap = LibRover.data.RemapData
 
-			local pos = C_Map.GetPlayerMapPosition(map,"player")
+			local pos,pos_y = C_Map.GetPlayerMapPosition(map,"player")
 			local x,y
 			
-			if pos then
+			if type(pos)=="table" then
 				x,y=pos.x,pos.y
+			elseif type(pos)=="number" and type(pos_y)=="number" then
+				x,y=pos,pos_y
 			else
 				--try a fallback
 				y,x=UnitPosition("player")
