@@ -2,6 +2,10 @@ if GetLocale()~="koKR" then return end
 
 ZygorGuidesViewer.LocaleFont = [[Fonts\2002.TTF]]
 
+local COLOR_TIP_MOUSE = "|cffeedd99"
+local COLOR_TIP_HINT = "|cff99ff00"
+local COLOR_TIP = "|cff00ff00"
+
 ZygorGuidesViewer_L("Main", "koKR", function() return {
 	["name"] = "|cffffff88Z|cffffee66y|cffffdd44g|cffffcc22o|cffffbb00r |cffffaa00Guides Viewer|r",
 	["name_plain"] = "Zygor Guides Viewer",
@@ -540,6 +544,24 @@ ZygorGuidesViewer_L("Main", "koKR", function() return {
 	["(%a)man$"] = "%1men",
 } end)
 
+ZygorGuidesViewer_L("Main", "koKR", function() return {
+	["minimap_tooltip"] = COLOR_TIP_MOUSE.."클릭|r: 가이드 창 표시/숨김|n"..COLOR_TIP_MOUSE.."오른쪽 클릭|r: 가이드 관리자 열기|n"..COLOR_TIP_MOUSE.."Shift + 오른쪽 클릭|r: 옵션 열기|n"..COLOR_TIP_MOUSE.."드래그|r: 아이콘 이동",
+	["opt_fixblizzardautoaccept_desc"] = "3.2 패치 이후 1-3레벨 퀘스트는 자동으로 수락되지만 퀘스트 창은 계속 열려 있어 일부 플레이어가 혼동할 수 있습니다. 이 옵션은 '수락' 버튼을 '수락됨'으로 바꾸어 더 자연스럽게 보이게 합니다.|r",
+	["report_title"] = "Ctrl+C를 눌러 이 보고서를 복사하세요.|n그런 다음 |cffffffff%s|r의 작성자에게 보내세요:|n|cffffffff%s|r.",
+	["stepgoal_rep"] = "%s 평판을 %s까지 올리기",
+	["gold_app_old_servertrends"] = "추세 데이터가 오래되었습니다(%s). 클라이언트로 업데이트하세요.",
+	["gold_app_old_servertrends_short"] = "추세 데이터가 오래되었습니다(%s). ",
+	["gold_farming_error_noitemtype"] = "현재 레벨에 맞는 파밍 가능한 %s 아이템을 찾지 못했습니다.",
+	["gold_gathering_error_one_noresults"] = "%s에 대한 수익성 있는 채집 경로를 찾지 못했습니다.",
+	["gold_gathering_error_one_noskillin"] = "%s을(를) 배우지 않았습니다.",
+	["gold_gathering_error_one_nothing"] = "채집 경로를 찾지 못했습니다.\n\n보유한 채집 전문기술: %s",
+	["gold_gathering_error_prof"] = "%s (%d)",
+	["stepgoal_arrive"] = "%s에 도착",
+	["stepgoal_cast"] = "%s 시전",
+	["stepgoal_click"] = "%s 클릭",
+	["stepgoal_fly"] = "%s로 비행",
+} end)
+
 ZygorGuidesViewer_L("G_string", "koKR", function() return {
 	["blabla"] = TRUE,
 } end)
@@ -769,4 +791,22 @@ ZygorGuidesViewer_L("Main", "koKR", function() return {
 	["opt_optimization_memory_desc"] = "향후 최적화 목표: 가이드/단계를 선택적으로 불러와 초기 메모리 사용량을 줄입니다. 이번 작업에는 구현되지 않았습니다.",
 	["opt_optimization_diagnostics_header"] = "진단",
 	["opt_optimization_diagnostics_desc"] = "향후 최적화 목표: 끊김과 로딩 급증을 분석하기 위한 가벼운 FPS 또는 메모리 진단 기능입니다. 이번 작업에는 구현되지 않았습니다.",
+} end)
+
+ZygorGuidesViewer_L("Main", "koKR", function() return {
+	["minimap_tooltip"] = COLOR_TIP_MOUSE.."클릭|r: 가이드 창 표시/숨김|n"..COLOR_TIP_MOUSE.."오른쪽 클릭|r: 가이드 관리자 열기|n"..COLOR_TIP_MOUSE.."Shift + 오른쪽 클릭|r: 옵션 열기|n"..COLOR_TIP_MOUSE.."드래그|r: 아이콘 이동",
+	["opt_fixblizzardautoaccept_desc"] = "3.2 패치 이후 1-3레벨 퀘스트는 자동으로 수락되지만 퀘스트 창은 계속 열려 있어 일부 플레이어가 혼동할 수 있습니다. 이 옵션은 '수락' 버튼을 '수락됨'으로 바꾸어 더 자연스럽게 보이게 합니다.|r",
+	["report_title"] = "Ctrl+C를 눌러 이 보고서를 복사하세요.|n그런 다음 |cffffffff%s|r의 작성자에게 보내세요:|n|cffffffff%s|r.",
+	["stepgoal_rep"] = "%s 평판을 %s까지 올리기",
+	["gold_app_old_servertrends"] = "추세 데이터가 오래되었습니다(%s). 클라이언트로 업데이트하세요.",
+	["gold_app_old_servertrends_short"] = "추세 데이터가 오래되었습니다(%s). ",
+	["gold_farming_error_noitemtype"] = "현재 레벨에 맞는 파밍 가능한 %s 아이템을 찾지 못했습니다.",
+	["gold_gathering_error_one_noresults"] = "%s에 대한 수익성 있는 채집 경로를 찾지 못했습니다.",
+	["gold_gathering_error_one_noskillin"] = "%s을(를) 배우지 않았습니다.",
+	["gold_gathering_error_one_nothing"] = "채집 경로를 찾지 못했습니다.\n\n보유한 채집 전문기술: %s",
+	["gold_gathering_error_prof"] = "%s (%d)",
+	["stepgoal_arrive"] = "%s에 도착",
+	["stepgoal_cast"] = "%s 시전",
+	["stepgoal_click"] = "%s 클릭",
+	["stepgoal_fly"] = "%s로 비행",
 } end)

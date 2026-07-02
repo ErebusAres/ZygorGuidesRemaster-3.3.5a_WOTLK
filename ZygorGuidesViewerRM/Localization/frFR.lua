@@ -881,3 +881,13 @@ ZygorGuidesViewer_L("Main", "frFR", function() return {
 	["opt_optimization_diagnostics_desc"] = "Future optimization target: lightweight FPS or memory diagnostics for profiling stutter and load spikes. Not implemented in this pass.",
 } end)
 
+ZygorGuidesViewer_L("Main", "frFR", function() return {
+	["minimap_tooltip"] = COLOR_TIP_MOUSE.."Clic|r pour afficher/masquer la fenêtre des guides|n"..COLOR_TIP_MOUSE.."Clic droit|r pour ouvrir le gestionnaire de guides|n"..COLOR_TIP_MOUSE.."Maj + clic droit|r pour ouvrir les options|n"..COLOR_TIP_MOUSE.."Faire glisser|r pour déplacer l'icône",
+	["waypointaddon_connected"] = "Connecté à |cffddeeff%s|r pour les points de passage.",
+	["waypointaddon_fail"] = "|cffffddddÉchec de la connexion|r à |cffddeeff%s|r.",
+	["menu_last_entry"] = "%s |cffaaaaaa%d|r",
+	["opt_autoaccept_desc"] = "Accepte automatiquement les quêtes lorsque l'étape actuelle le demande.\n|cffffaa88Cela accélère beaucoup la progression, mais peut prêter à confusion.|r",
+	["opt_autoturnin_desc"] = "Rend automatiquement les quêtes lorsque l'étape actuelle le demande.\nLe choix des récompenses de quête est réglé séparément ci-dessous.\n|cffffaa88Cela accélère beaucoup la progression, mais peut prêter à confusion.|r",
+	["opt_fixblizzardautoaccept_desc"] = "Depuis la mise à jour 3.2, les quêtes des niveaux 1 à 3 sont acceptées automatiquement, mais la fenêtre de quête reste ouverte, ce qui peut dérouter certains joueurs. Cette option transforme le bouton 'Accepter' en 'Acceptée' pour un comportement plus naturel.|r",
+} end)
+

@@ -4,6 +4,10 @@ if GetLocale()~="zhCN" then return end
 -- Forcing Fonts\ZYKai_T.ttf can fail on clients that do not ship that exact file.
 ZygorGuidesViewer.LocaleFont = nil
 
+local COLOR_TIP_MOUSE = "|cffeedd99"
+local COLOR_TIP_HINT = "|cff99ff00"
+local COLOR_TIP = "|cff00ff00"
+
 ZygorGuidesViewer_L("Main", "zhCN", function() return {
 	["name"] = "|cffffff88Z|cffffee66y|cffffdd44g|cffffcc22o|cffffbb00r |cffffaa00Guides Viewer|r",
 	["name_plain"] = "Zygor 指南查看器",
@@ -893,4 +897,27 @@ ZygorGuidesViewer_L("Main", "zhCN", function() return {
 	["opt_optimization_memory_desc"] = "未来优化目标：通过更有选择地加载指南和步骤来降低初始内存占用。本次未实现。",
 	["opt_optimization_diagnostics_header"] = "诊断",
 	["opt_optimization_diagnostics_desc"] = "未来优化目标：提供轻量级 FPS 或内存诊断，用于分析卡顿和加载峰值。本次未实现。",
+} end)
+
+ZygorGuidesViewer_L("Main", "zhCN", function() return {
+	["minimap_tooltip"] = COLOR_TIP_MOUSE.."点击|r切换指引窗口|n"..COLOR_TIP_MOUSE.."右键点击|r打开指引管理器|n"..COLOR_TIP_MOUSE.."Shift + 右键点击|r打开选项|n"..COLOR_TIP_MOUSE.."拖动|r移动图标",
+	["waypointaddon_connected"] = "已成功连接到 |cffddeeff%s|r 作为路径点插件。",
+	["waypointaddon_fail"] = "|cffffdddd无法连接|r到 |cffddeeff%s|r。",
+	["message_errorloading_full"] = "|cffff4444错误|r：加载指引 |cffaaffaa%s|r 失败\n第 %d 行：%s\n错误：%s",
+	["message_errorloading_brief"] = "|cffff4444错误|r：加载指引 |cffaaffaa%s|r 失败",
+	["message_missingguide"] = "|cffff4444缺少|r指引：|cffaaffaa%s|r",
+	["opt_autoaccept_desc"] = "如果当前步骤要求，自动接受任务。\n|cffffaa88这会让任务流程非常快，但可能令人困惑。|r",
+	["opt_autoturnin_desc"] = "如果当前步骤要求，自动交还任务。\n任务奖励选择在下方单独控制。\n|cffffaa88这会让任务流程非常快，但可能令人困惑。|r",
+	["opt_fixblizzardautoaccept_desc"] = "从 3.2 补丁起，1-3 级任务会被自动接受，但任务窗口仍会保持打开，可能让部分玩家困惑。此选项会把“接受”按钮改成“已接受”，使行为更自然。|r",
+	["gold_app_old_servertrends"] = "趋势数据已过期（%s）。请使用客户端更新。",
+	["gold_app_old_servertrends_short"] = "趋势数据已过期（%s）。",
+	["gold_farming_error_noitemtype"] = "未找到适合你等级的可刷 %s 物品。",
+	["gold_gathering_error_one_noresults"] = "未找到适合 %s 的有收益采集路线。",
+	["gold_gathering_error_one_noskillin"] = "你尚未学习 %s。",
+	["gold_gathering_error_one_nothing"] = "未找到采集路线。\n\n你的采集专业：%s",
+	["gold_gathering_error_prof"] = "%s（%d）",
+	["stepgoal_arrive"] = "到达 %s",
+	["stepgoal_cast"] = "施放 %s",
+	["stepgoal_click"] = "点击 %s",
+	["stepgoal_fly"] = "飞往 %s",
 } end)

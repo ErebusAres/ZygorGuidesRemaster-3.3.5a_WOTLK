@@ -896,3 +896,22 @@ ZygorGuidesViewer_L("Main", "ruRU", function() return {
 	["opt_optimization_diagnostics_desc"] = "Будущая цель оптимизации: лёгкая диагностика FPS или памяти для профилирования подлагиваний и всплесков загрузки. В этом проходе не реализовано.",
 } end)
 
+ZygorGuidesViewer_L("Main", "ruRU", function() return {
+	["waypointaddon_connected"] = "Успешное подключение к |cffddeeff%s|r для путевых точек.",
+	["waypointaddon_fail"] = "|cffffddddНе удалось подключиться|r к |cffddeeff%s|r.",
+	["opt_autoaccept_desc"] = "Автоматически принимать задания, если текущий шаг просит это сделать.\n|cffffaa88Это сильно ускоряет прохождение, но может сбивать с толку.|r",
+	["opt_autoturnin_desc"] = "Автоматически сдавать задания, если текущий шаг просит это сделать.\nВыбор награды за задание настраивается отдельно ниже.\n|cffffaa88Это сильно ускоряет прохождение, но может сбивать с толку.|r",
+	["opt_fixblizzardautoaccept_desc"] = "Начиная с патча 3.2 задания 1-3 уровней принимаются автоматически, но окно задания остается открытым, что может путать игроков. Эта опция меняет кнопку 'Принять' на 'Принято', чтобы поведение выглядело естественнее.|r",
+	["gold_app_old_servertrends"] = "Данные трендов устарели (%s). Обновите их через клиент.",
+	["gold_app_old_servertrends_short"] = "Данные трендов устарели (%s). ",
+	["gold_farming_error_noitemtype"] = "Для вашего уровня не найдено предметов для фарма типа %s.",
+	["gold_gathering_error_one_noresults"] = "Для %s не найдено прибыльных маршрутов сбора.",
+	["gold_gathering_error_one_noskillin"] = "Вы не изучили %s.",
+	["gold_gathering_error_one_nothing"] = "Маршруты сбора не найдены.\n\nВаши собирательные профессии: %s",
+	["gold_gathering_error_prof"] = "%s (%d)",
+	["stepgoal_arrive"] = "Прибыть в %s",
+	["stepgoal_cast"] = "Применить %s",
+	["stepgoal_click"] = "Нажать %s",
+	["stepgoal_fly"] = "Лететь в %s",
+} end)
+

@@ -871,3 +871,19 @@ ZygorGuidesViewer_L("Main", "esES", function() return {
 	["opt_optimization_diagnostics_header"] = "Diagnostics",
 	["opt_optimization_diagnostics_desc"] = "Future optimization target: lightweight FPS or memory diagnostics for profiling stutter and load spikes. Not implemented in this pass.",
 } end)
+
+ZygorGuidesViewer_L("Main", "esES", function() return {
+	["minimap_tooltip"] = COLOR_TIP_MOUSE.."Clic|r para mostrar u ocultar la ventana de guías|n"..COLOR_TIP_MOUSE.."Clic derecho|r para abrir el Gestor de guías|n"..COLOR_TIP_MOUSE.."Mayús + clic derecho|r para abrir Opciones|n"..COLOR_TIP_MOUSE.."Arrastrar|r para mover el icono",
+	["waypointaddon_connected"] = "Conectado a |cffddeeff%s|r para los puntos de ruta.",
+	["waypointaddon_fail"] = "|cffffddddNo se pudo conectar|r a |cffddeeff%s|r.",
+	["gb_action_open_goldguide"] = "Abrir guía de oro",
+	["gb_action_open_goldguide_tooltip"] = "Abre la guía de oro integrada.",
+	["frame_toolbar_close"] = "Cerrar",
+	["frame_toolbar_close_click"] = "para cerrar",
+	["frame_toolbar_guides"] = "Guías",
+	["frame_toolbar_guides_click"] = "para abrir el menú de guías",
+	["frame_toolbar_guides_right"] = "para abrir el gestor de guías",
+	["frame_toolbar_settings"] = "Opciones",
+	["frame_toolbar_settings_click"] = "para abrir el menú rápido",
+	["frame_toolbar_settings_right"] = "para abrir las opciones del gestor de guías",
+} end)

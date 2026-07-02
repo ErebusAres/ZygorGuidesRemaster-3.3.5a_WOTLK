@@ -2,6 +2,10 @@ if GetLocale()~="zhTW" then return end
 
 ZygorGuidesViewer.LocaleFont = [[Fonts\bLEI00D.ttf]]
 
+local COLOR_TIP_MOUSE = "|cffeedd99"
+local COLOR_TIP_HINT = "|cff99ff00"
+local COLOR_TIP = "|cff00ff00"
+
 ZygorGuidesViewer_L("Main", "zhTW", function() return {
 	["name"] = "|cffffff88Z|cffffee66y|cffffdd44g|cffffcc22o|cffffbb00r |cffffaa00Guides Viewer|r",
 	["name_plain"] = "Zygor 指南檢視器",
@@ -891,4 +895,27 @@ ZygorGuidesViewer_L("Main", "zhTW", function() return {
 	["opt_optimization_memory_desc"] = "未來最佳化目標：透過更有選擇地載入指南與步驟來降低初始記憶體占用。本次未實作。",
 	["opt_optimization_diagnostics_header"] = "診斷",
 	["opt_optimization_diagnostics_desc"] = "未來最佳化目標：提供輕量級 FPS 或記憶體診斷，用於分析卡頓與載入尖峰。本次未實作。",
+} end)
+
+ZygorGuidesViewer_L("Main", "zhTW", function() return {
+	["minimap_tooltip"] = COLOR_TIP_MOUSE.."點擊|r切換指引視窗|n"..COLOR_TIP_MOUSE.."右鍵點擊|r開啟指引管理器|n"..COLOR_TIP_MOUSE.."Shift + 右鍵點擊|r開啟選項|n"..COLOR_TIP_MOUSE.."拖曳|r移動圖示",
+	["waypointaddon_connected"] = "已成功連接到 |cffddeeff%s|r 作為路徑點插件。",
+	["waypointaddon_fail"] = "|cffffdddd無法連接|r到 |cffddeeff%s|r。",
+	["message_errorloading_full"] = "|cffff4444錯誤|r：載入指引 |cffaaffaa%s|r 失敗\n第 %d 行：%s\n錯誤：%s",
+	["message_errorloading_brief"] = "|cffff4444錯誤|r：載入指引 |cffaaffaa%s|r 失敗",
+	["message_missingguide"] = "|cffff4444缺少|r指引：|cffaaffaa%s|r",
+	["opt_autoaccept_desc"] = "如果目前步驟要求，自動接受任務。\n|cffffaa88這會讓任務流程非常快，但可能令人困惑。|r",
+	["opt_autoturnin_desc"] = "如果目前步驟要求，自動交還任務。\n任務獎勵選擇在下方另行控制。\n|cffffaa88這會讓任務流程非常快，但可能令人困惑。|r",
+	["opt_fixblizzardautoaccept_desc"] = "從 3.2 更新起，1-3 級任務會被自動接受，但任務視窗仍會保持開啟，可能讓部分玩家困惑。此選項會把「接受」按鈕改成「已接受」，使行為更自然。|r",
+	["gold_app_old_servertrends"] = "趨勢資料已過期（%s）。請使用客戶端更新。",
+	["gold_app_old_servertrends_short"] = "趨勢資料已過期（%s）。",
+	["gold_farming_error_noitemtype"] = "未找到適合你等級的可刷 %s 物品。",
+	["gold_gathering_error_one_noresults"] = "未找到適合 %s 的有收益採集路線。",
+	["gold_gathering_error_one_noskillin"] = "你尚未學習 %s。",
+	["gold_gathering_error_one_nothing"] = "未找到採集路線。\n\n你的採集專業：%s",
+	["gold_gathering_error_prof"] = "%s（%d）",
+	["stepgoal_arrive"] = "抵達 %s",
+	["stepgoal_cast"] = "施放 %s",
+	["stepgoal_click"] = "點擊 %s",
+	["stepgoal_fly"] = "飛往 %s",
 } end)

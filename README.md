@@ -164,6 +164,16 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 197 - 3.0.197
+
+- Completed a broad localization safety pass across all shipped UI locales, preserving format tokens, color codes, newlines, and tooltip markup.
+- Fixed Korean, Russian, Simplified Chinese, and Traditional Chinese format-token mismatches in Gold Guide and step-goal strings.
+- Fixed Korean locale loading for appended tooltip strings that referenced missing color constants.
+- Normalized malformed NPC localization rows so `GetTranslatedNPC()` can parse localized names consistently.
+- Source-checked clear English-fallback NPC names against AzerothCore WotLK locale data and updated confirmed localized names across deDE, esES, frFR, koKR, ruRU, zhCN, and zhTW.
+- Audited guide quest IDs against AzerothCore WotLK quest locale data; guide files remain English-authored because runtime quest-title localization already uses client quest data by quest ID.
+- Updated addon version metadata to 3.0.197.
+
 ### Revision 196 - 3.0.196
 
 - Fixed LibRover waypoint/pathfinding crashes when another addon loads a partial `C_Map` shim whose `GetPlayerMapPosition()` returns two numeric coordinates instead of a retail-style position table.

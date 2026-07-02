@@ -740,6 +740,16 @@ ZygorGuidesViewer_L("Main", "deDE", function() return {
 
 } end)
 
+ZygorGuidesViewer_L("Main", "deDE", function() return {
+    ["minimap_tooltip"] = COLOR_TIP_MOUSE.."Klick|r zum Ein-/Ausblenden des Guide-Fensters|n"..COLOR_TIP_MOUSE.."Rechtsklick|r zum Öffnen des Guide-Managers|n"..COLOR_TIP_MOUSE.."Umschalt + Rechtsklick|r zum Öffnen der Optionen|n"..COLOR_TIP_MOUSE.."Ziehen|r zum Verschieben des Symbols",
+    ["waypointaddon_connected"] = "Erfolgreich mit |cffddeeff%s|r für Wegpunkte verbunden.",
+    ["waypointaddon_fail"] = "|cffffddddVerbindung fehlgeschlagen|r mit |cffddeeff%s|r.",
+    ["menu_last_entry"] = "%s |cffaaaaaa%d|r",
+    ["opt_autoaccept_desc"] = "Quests automatisch annehmen, wenn der aktuelle Schritt dich dazu auffordert.\n|cffffaa88Das macht Questen sehr schnell, kann aber verwirrend sein.|r",
+    ["opt_autoturnin_desc"] = "Quests automatisch abgeben, wenn der aktuelle Schritt dich dazu auffordert.\nDie Auswahl von Questbelohnungen wird weiter unten separat gesteuert.\n|cffffaa88Das macht Questen sehr schnell, kann aber verwirrend sein.|r",
+    ["opt_fixblizzardautoaccept_desc"] = "Seit Patch 3.2 werden Quests der Stufen 1-3 automatisch angenommen, aber das Questfenster bleibt geöffnet, was einige Spieler verwirrt. Diese Option ändert die Schaltfläche 'Annehmen' in 'Angenommen', damit es natürlicher wirkt.|r",
+} end)
+
 
 
 local plurals = {
