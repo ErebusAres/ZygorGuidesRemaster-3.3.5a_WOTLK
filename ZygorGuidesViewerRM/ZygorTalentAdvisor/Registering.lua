@@ -130,6 +130,13 @@ local function NormalizeWowheadTalentCode(raw)
 	if not s:match("^[0-9%-]+$") then
 		return nil, "Use digits and '-' only (or a full Wowhead URL)."
 	end
+	-- Wowhead omits trailing empty trees, so pad them back to the
+	-- three-tree representation expected by the WotLK talent parser.
+	if s:match("^%d+$") then
+		s = s.."--"
+	elseif s:match("^%d*%-%d*$") then
+		s = s.."-"
+	end
 	if s:match("^%d*%-%d*%-%d*$") then
 		return s
 	end

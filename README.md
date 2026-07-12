@@ -164,6 +164,13 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 198 - 3.0.198
+
+- Fixed Talent Advisor rejecting valid shortened Wowhead talent URLs when the final talent tree has zero points.
+- Normalized omitted trailing talent trees before parsing, restoring the affected Mage, Shaman, and Rogue `WH T7+` presets without rewriting individual builds.
+- Kept strict rejection for malformed talent codes containing invalid characters or more than three tree segments.
+- Updated addon version metadata to 3.0.198.
+
 ### Revision 197 - 3.0.197
 
 - Completed a broad localization safety pass across all shipped UI locales, preserving format tokens, color codes, newlines, and tooltip markup.
@@ -200,23 +207,6 @@ This addon is fully open source and can be inspected before use.
 - `|localmap` supports both `goto x,y |localmap` and `goto Name,x,y |localmap`, using the player's current local map coordinates with the built-in waypoint arrow.
 - Kept normal non-`|localmap` waypoint behavior unchanged.
 - Updated addon version metadata to 3.0.193.
-
-### Revision 192 - 3.0.192
-
-- Fixed Talent Advisor saved-build restoration so selected Zygor leveling builds survive relog/reload and remain ready for auto-learn.
-- Fixed ruRU flight-path guide steps that could stall when guide-authored English `fpath` names did not match localized taxi names; opening the flight master now advances matching nearby steps.
-- Fixed Gear Advisor BoE equip prompts so Blizzard's bind confirmation stays open and can be confirmed normally.
-- Added high-ID custom item database warning suppression for unknown server-specific items above the WotLK item range.
-- Closed the automatic NPC target/mark request as not planned because target selection is a protected player action and must remain click-triggered.
-- Updated addon version metadata to 3.0.192.
-
-### Revision 191 - 3.0.191
-
-- Fixed compatibility with Aux auction addon forks that create a partial global `C_Container` table on WotLK clients.
-- Zygor now backfills missing `C_Container` methods individually instead of assuming an existing compatibility table is complete.
-- Resolved the `GoldUI\Auctiontools-Core.lua:830` `ContainerIDToInventoryID` Lua error and restored settings persistence when Zygor runs alongside Aux.
-- Updated addon version metadata to 3.0.191.
-
 
 ## Notes
 
