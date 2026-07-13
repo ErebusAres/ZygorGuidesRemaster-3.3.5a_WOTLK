@@ -164,6 +164,13 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 201 - 3.0.201
+
+- Fixed class guides failing to load when race/class requirements use parenthesized `or` alternatives such as Orc Shaman or Troll Shaman.
+- Fixed two-handed weapon upgrade percentages and stat rationale comparing against only the equipped main hand instead of the combined main-hand/off-hand setup.
+- Kept the player's current weapon style when two-handed and main/off-hand combinations have exactly equal scores, while still switching for a genuine combined upgrade.
+- Updated addon version metadata to 3.0.201.
+
 ### Revision 200 - 3.0.200
 
 - Fixed Gear Advisor allowing Protection Warriors and Protection Paladins to replace one-hand-and-shield setups with higher-scoring two-handed weapons.
@@ -201,14 +208,6 @@ This addon is fully open source and can be inspected before use.
 - Fixed LibRover waypoint/pathfinding crashes when another addon loads a partial `C_Map` shim whose `GetPlayerMapPosition()` returns two numeric coordinates instead of a retail-style position table.
 - Preserved the existing `UnitPosition()` fallback for clients where `C_Map.GetPlayerMapPosition()` returns no usable position.
 - Updated addon version metadata to 3.0.196.
-### Revision 195 - 3.0.195
-
-- Fixed Gear Finder compatibility with custom character-window patches that remove or rename normal Blizzard character-frame header widgets.
-- Added a Gear Finder layout guard so the full slot grid stays visible on patched character frames with unusual dimensions.
-- Fixed Gear Finder `C` key / character-toggle state so pressing `C` closes the embedded Gear Finder cleanly instead of leaving stale character-frame layers behind.
-- Fixed server QuestHelper-style map marker compatibility by letting the original `QuestPOI_HideButtons` run first and only using Zygor's fallback if it errors.
-- Added a Gear Finder item-data loading retry so first-open scans show `Loading item data...` and rescan once before displaying final empty rows.
-- Updated addon version metadata to 3.0.195.
 ## Notes
 
 - Intended target client is **WotLK 3.3.5a (12340)**.

@@ -387,9 +387,15 @@ local function ParseOnlyIfRequirementList(text)
 	if not text then return nil end
 	text = text:gsub("^%s+",""):gsub("%s+$","")
 	if text == "" then return nil end
+	-- Retail guide data sometimes expresses race/class alternatives as
+	-- "(Orc Shaman) or (Troll Shaman)" instead of a comma-separated list.
+	text = text:gsub("%s+[oO][rR]%s+",",")
 	local list = {}
 	for part in text:gmatch("([^,]+)") do
 		part = part:gsub("^%s+",""):gsub("%s+$","")
+		while part:match("^%b()$") do
+			part = part:sub(2,-2):gsub("^%s+",""):gsub("%s+$","")
+		end
 		if part ~= "" then
 			list[#list+1] = part
 		end
@@ -399,11 +405,11 @@ local function ParseOnlyIfRequirementList(text)
 end
 
 local function IsRaceClassOnlyIfText(text)
-	if not text then return false end
-	text = text:gsub("^%s+",""):gsub("%s+$","")
-	if text == "" then return false end
-	for part in text:gmatch("([^,]+)") do
-		part = part:gsub("^%s+",""):gsub("%s+$",""):upper()
+	local requirements = ParseOnlyIfRequirementList(text)
+	if not requirements then return false end
+	if type(requirements) == "string" then requirements = {requirements} end
+	for _,part in ipairs(requirements) do
+		part = part:upper()
 		if part:sub(1,1) == "!" then part = part:sub(2) end
 		if not RACE_CLASS_ONLYIF_TOKENS[part] and not part:find("^[A-Z]+ [A-Z]+$") then
 			return false

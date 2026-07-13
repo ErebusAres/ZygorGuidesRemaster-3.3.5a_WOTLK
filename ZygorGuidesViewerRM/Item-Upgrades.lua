@@ -271,6 +271,11 @@ local function get_primary_comparison_delta(slot, newitem, secondnewitem)
 	if secondnewitem and secondnewitem.itemlink and (slot == INVSLOT_MAINHAND or slot == INVSLOT_OFFHAND) then
 		return build_stat_delta(newitem.itemlink, secondnewitem.itemlink, currentLink, "equip_pair")
 	end
+	if newitem.twohander and slot == INVSLOT_MAINHAND then
+		local offhand = Upgrades.EquippedItems[INVSLOT_OFFHAND]
+		local offhandLink = offhand and offhand.itemlink
+		return build_stat_delta(newitem.itemlink, currentLink, offhandLink)
+	end
 	return build_stat_delta(newitem.itemlink, currentLink)
 end
 
@@ -367,7 +372,12 @@ function Upgrades:GetUpgradeComparison(slot, newitem, secondnewitem)
 	local hasBaselineItem = current and current.itemlink and true or false
 	baselineScore = current and (current.artifactscore or current.score or 0) or 0
 
-	if secondnewitem and (slot == INVSLOT_MAINHAND or slot == INVSLOT_OFFHAND) then
+	if newitem and newitem.twohander and slot == INVSLOT_MAINHAND and not secondnewitem then
+		local mh = self:GetEquippedItemData(INVSLOT_MAINHAND)
+		local oh = self:GetEquippedItemData(INVSLOT_OFFHAND)
+		hasBaselineItem = (mh and mh.itemlink) or (oh and oh.itemlink) or false
+		baselineScore = (mh and (mh.artifactscore or mh.score or 0) or 0) + (oh and (oh.artifactscore or oh.score or 0) or 0)
+	elseif secondnewitem and (slot == INVSLOT_MAINHAND or slot == INVSLOT_OFFHAND) then
 		candidateScore = candidateScore + (secondnewitem.artifactscore or secondnewitem.score or 0)
 		local mh = self:GetEquippedItemData(INVSLOT_MAINHAND)
 		local oh = self:GetEquippedItemData(INVSLOT_OFFHAND)
@@ -1050,7 +1060,12 @@ function Upgrades:ProcessWeaponQueue()
 	ZGV:Debug("&itemscore PWQ Best OH %d %s",best_off_score,best_off and best_off.itemlink or "")
 	ZGV:Debug("&itemscore PWQ Best 2H %d %s",best_two_score,best_two and best_two.itemlink or "")
 
-	if best_two_score > (best_main_score + best_off_score) then -- two hander is better than main/off combination
+	local best_pair_score = best_main_score + best_off_score
+	-- On an exact tie, keep the weapon style the player is already using.
+	-- Switching between a two-hander and a main/off-hand pair should require a real gain.
+	local prefer_twohand = best_two_score > best_pair_score or (twohand and best_two_score == best_pair_score)
+
+	if prefer_twohand then -- two hander is better, or tied while already using one
 		ZGV:Debug("&itemscore PWQ 2H better than pair")
 		--if best_two and (best_two_score > (equipped_weapon_1 and equipped_weapon_1_score or 0)) and (equipped_weapon_1 and equipped_weapon_1.itemlink ~= best_two.itemlink) then
 		if best_two and (best_two_score > (equipped_weapon_1 and equipped_weapon_1_score or 0)) then
