@@ -108,6 +108,7 @@ local function NormalizeWowheadTalentCode(raw)
 	if type(raw) ~= "string" then return nil, "Input is not text." end
 	local s = raw:gsub("%s+", "")
 	if s == "" then return nil, "Input is empty." end
+	local fromWowheadUrl = false
 	-- Normalize common Unicode dash variants to ASCII hyphen.
 	s = s:gsub("\226\128\145","-") -- non-breaking hyphen
 	s = s:gsub("\226\128\147","-") -- en dash
@@ -115,6 +116,7 @@ local function NormalizeWowheadTalentCode(raw)
 	s = s:gsub("\226\136\146","-") -- minus sign
 	-- For full URLs, grab the talent code segment after /talent-calc/<class>/...
 	if s:find("wowhead.com", 1, true) then
+		fromWowheadUrl = true
 		local extracted = s:match("talent%-calc/[^/]+/([^%?#]+)") or s:match("/([^/%?#]+)$")
 		if not extracted then
 			return nil, "URL does not end with a talent code."
@@ -125,14 +127,14 @@ local function NormalizeWowheadTalentCode(raw)
 	if s:find("_", 1, true) then
 		s = s:match("^([^_]+)") or s
 	end
-	-- Defensive cleanup for malformed pasted inputs.
-	s = s:gsub("[^0-9%-]", "")
 	if not s:match("^[0-9%-]+$") then
 		return nil, "Use digits and '-' only (or a full Wowhead URL)."
 	end
 	-- Wowhead omits trailing empty trees, so pad them back to the
 	-- three-tree representation expected by the WotLK talent parser.
-	if s:match("^%d+$") then
+	-- Digits-only raw strings belong to Blizzard's legacy format, so only
+	-- treat that shortened form as Wowhead when it came from a Wowhead URL.
+	if fromWowheadUrl and s:match("^%d+$") then
 		s = s.."--"
 	elseif s:match("^%d*%-%d*$") then
 		s = s.."-"

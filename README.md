@@ -164,6 +164,13 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 199 - 3.0.199
+
+- Fixed a 3.0.198 Talent Advisor regression that could misclassify named talent-list builds as compact Wowhead talent codes.
+- Restricted digits-only shortened Wowhead handling to actual Wowhead URLs, preserving legacy Blizzard numeric builds and normal named-talent presets.
+- Added regression coverage for the affected Shaman text builds shown in issue #76's follow-up video.
+- Updated addon version metadata to 3.0.199.
+
 ### Revision 198 - 3.0.198
 
 - Fixed Talent Advisor rejecting valid shortened Wowhead talent URLs when the final talent tree has zero points.
@@ -199,14 +206,6 @@ This addon is fully open source and can be inspected before use.
 - Fixed `|localmap` built-in waypoint arrow direction on custom-server maps by normalizing the local coordinate angle the same way the normal Astrolabe waypoint path does.
 - Confirmed `|localmap` direction and completion behavior with reporter testing; custom-map yard distance remains approximate without map-specific scale data.
 - Updated addon version metadata to 3.0.194.
-
-### Revision 193 - 3.0.193
-
-- Fixed guide `|script` action buttons so they no longer create saved player macros, preventing `CreateMacro() failed, already have 36 macros` errors on login or guide restore when macro storage is full.
-- Added opt-in custom-server local waypoint support with `|localmap` for guide authors using incomplete custom map data.
-- `|localmap` supports both `goto x,y |localmap` and `goto Name,x,y |localmap`, using the player's current local map coordinates with the built-in waypoint arrow.
-- Kept normal non-`|localmap` waypoint behavior unchanged.
-- Updated addon version metadata to 3.0.193.
 
 ## Notes
 
