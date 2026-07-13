@@ -164,6 +164,14 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 200 - 3.0.200
+
+- Fixed Gear Advisor allowing Protection Warriors and Protection Paladins to replace one-hand-and-shield setups with higher-scoring two-handed weapons.
+- Fixed grey/white armor-only items replacing stat-bearing armor when raw armor score outweighed early-level stats.
+- Fixed paired-weapon comparisons crashing when an equipped comparison slot was empty while preserving deferred item-data retries.
+- Fixed Gold Guide chore calculation failing when Gold Guide was enabled after login and its usefulness table had not been initialized.
+- Updated addon version metadata to 3.0.200.
+
 ### Revision 199 - 3.0.199
 
 - Fixed a 3.0.198 Talent Advisor regression that could misclassify named talent-list builds as compact Wowhead talent codes.
@@ -201,12 +209,6 @@ This addon is fully open source and can be inspected before use.
 - Fixed server QuestHelper-style map marker compatibility by letting the original `QuestPOI_HideButtons` run first and only using Zygor's fallback if it errors.
 - Added a Gear Finder item-data loading retry so first-open scans show `Loading item data...` and rescan once before displaying final empty rows.
 - Updated addon version metadata to 3.0.195.
-### Revision 194 - 3.0.194
-
-- Fixed `|localmap` built-in waypoint arrow direction on custom-server maps by normalizing the local coordinate angle the same way the normal Astrolabe waypoint path does.
-- Confirmed `|localmap` direction and completion behavior with reporter testing; custom-map yard distance remains approximate without map-specific scale data.
-- Updated addon version metadata to 3.0.194.
-
 ## Notes
 
 - Intended target client is **WotLK 3.3.5a (12340)**.

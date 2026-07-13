@@ -191,6 +191,11 @@ local function build_stat_delta(item1, item2, item3, mode_new, mode_old)
 	if item2 and not item2_stats then return false end
 	if item3 and not item3_stats then return false end
 
+	-- Empty comparison slots are a valid zero-stat baseline, but supplied items
+	-- must still resolve above so the deferred item-data scan can retry them.
+	item2_stats = item2_stats or {}
+	item3_stats = item3_stats or {}
+
 	local delta
 	if not item3 and not (mode_old or mode_new) then
 		if item1 and item2 then
@@ -204,11 +209,11 @@ local function build_stat_delta(item1, item2, item3, mode_new, mode_old)
 	else
 		delta = {}
 		for i,v in pairs(item1_stats) do delta[i] = 0 end
-		for i,v in pairs(item2_stats or {}) do delta[i] = 0 end
-		for i,v in pairs(item3_stats or {}) do delta[i] = 0 end
+		for i,v in pairs(item2_stats) do delta[i] = 0 end
+		for i,v in pairs(item3_stats) do delta[i] = 0 end
 
 		if mode_old == "artifact" then
-			for i,v in pairs(item3_stats or {}) do item3_stats[i] = v * ARTIFACT_MULTIPLIER end
+			for i,v in pairs(item3_stats) do item3_stats[i] = v * ARTIFACT_MULTIPLIER end
 		end
 		if mode_new == "artifact" then
 			for i,v in pairs(item1_stats) do item1_stats[i] = v * ARTIFACT_MULTIPLIER end
@@ -657,6 +662,14 @@ local function get_upgrade(newitem,olditem,secondnewitem)
 	end
 	-- if it is loom replacing loom, regular scoring will take over
 
+
+	if olditem_details and newitem and newitem.class == LE_ITEM_CLASS_ARMOR and olditem_details.class == LE_ITEM_CLASS_ARMOR and newitem.type ~= "INVTYPE_CLOAK" then
+		local candidateHasStats = has_non_armor_stats(newitem)
+		local currentHasStats = has_non_armor_stats(olditem_details)
+		if newitem.quality and newitem.quality <= 1 and not candidateHasStats and currentHasStats then
+			return 0 -- do not replace stat-bearing armor with grey/white armor-only gear
+		end
+	end
 
 	if olditem and not ItemScore:IsValidItem(olditem.itemlink) then
 		return 100 -- old item is not valid, spec change?

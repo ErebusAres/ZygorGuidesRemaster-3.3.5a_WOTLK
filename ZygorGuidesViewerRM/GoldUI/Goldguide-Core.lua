@@ -437,6 +437,10 @@ function Goldguide:BuildRouteChores()
 end
 
 function Goldguide:Initialise()
+	-- This startup assignment is skipped when Gold Guide is enabled after login.
+	-- Restore it here before any chore calculation uses the stack-size lookup.
+	ZGVG.usefulness = ZGVG.usefulness or ZGV.StackSizes or {}
+
 	if Goldguide.initialized then
 		if not Goldguide.Chores or ((#Goldguide.Chores.Gathering==0 and #Goldguide.Chores.Farming==0) and ZGV.Gold and ZGV.Gold.guides_loaded) then
 			Goldguide:BuildRouteChores()
@@ -1287,7 +1291,7 @@ function Goldguide.Common:CalculateDetails(refresh)
 				itemdata.est_sold = trend and trend.sold
 				if itemdata.est_sold and itemdata.est_sold>0 then itemdata.is_lively=true end
 
-				local useful = ZGVG.usefulness[itemid]
+				local useful = (ZGVG.usefulness or ZGV.StackSizes or {})[itemid]
 				
 				local statusName,statusText,statusIcon 
 				vendor,scanprice = ZGVG:GetItemPrice(itemid)
