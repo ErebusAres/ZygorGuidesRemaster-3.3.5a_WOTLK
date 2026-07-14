@@ -62,6 +62,9 @@ Upgrades.UniqueEquipped = {}
 
 local BOE_CONFIRM_DIALOGS = {
 	EQUIP_BIND = true,
+	AUTOEQUIP_BIND = true,
+	EQUIP_BIND_CONFIRM = true,
+	AUTOEQUIP_BIND_CONFIRM = true,
 }
 
 local function is_boe_confirm_visible()
@@ -1101,6 +1104,19 @@ function Upgrades:ScanBagsForUpgrades(onlyscan)
 	if not ZGV.db.profile.autogear then return end -- disabled
 	if not ItemScore.ActiveRuleSet then return end -- we are early, itemscore is not ready
 	if not Upgrades.ScoredEquippedItems then return end  -- we are early, upgrades is not ready
+	if is_boe_confirm_visible() then
+		if not Upgrades.BoeConfirmScanTimer and ZGV.ScheduleTimer then
+			Upgrades.BoeConfirmScanTimer = ZGV:ScheduleTimer(function()
+				Upgrades.BoeConfirmScanTimer = nil
+				Upgrades:ScanBagsForUpgrades()
+			end, 0.5)
+		end
+		return
+	end
+	if Upgrades.BoeConfirmScanTimer and ZGV.CancelTimer then
+		ZGV:CancelTimer(Upgrades.BoeConfirmScanTimer)
+	end
+	Upgrades.BoeConfirmScanTimer = nil
 
 	-- clear any related popups
 	if Upgrades.EquipPopup then Upgrades.EquipPopup:Hide() end

@@ -164,6 +164,13 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 202 - 3.0.202
+
+- Fixed bind-on-equip confirmation dialogs disappearing before the player could respond when automatic upgrade equipping was disabled.
+- Recognized both manual and auto-equip WotLK bind-confirm paths and stopped fallback equip attempts as soon as confirmation is pending.
+- Deferred Gear Advisor bag rescans while a bind confirmation is visible, then resumed normal scanning after the dialog closes.
+- Updated addon version metadata to 3.0.202.
+
 ### Revision 201 - 3.0.201
 
 - Fixed class guides failing to load when race/class requirements use parenthesized `or` alternatives such as Orc Shaman or Troll Shaman.
@@ -203,11 +210,6 @@ This addon is fully open source and can be inspected before use.
 - Audited guide quest IDs against AzerothCore WotLK quest locale data; guide files remain English-authored because runtime quest-title localization already uses client quest data by quest ID.
 - Updated addon version metadata to 3.0.197.
 
-### Revision 196 - 3.0.196
-
-- Fixed LibRover waypoint/pathfinding crashes when another addon loads a partial `C_Map` shim whose `GetPlayerMapPosition()` returns two numeric coordinates instead of a retail-style position table.
-- Preserved the existing `UnitPosition()` fallback for clients where `C_Map.GetPlayerMapPosition()` returns no usable position.
-- Updated addon version metadata to 3.0.196.
 ## Notes
 
 - Intended target client is **WotLK 3.3.5a (12340)**.
