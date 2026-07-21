@@ -1203,6 +1203,9 @@ function ItemScore:Initialise()
 
 	-- 3.3.5a: use talent/skill events instead of retail spec events
 	self.eventFrame:RegisterEvent("CHARACTER_POINTS_CHANGED")
+	-- Some 3.3.5a cores update the talent window without firing CHARACTER_POINTS_CHANGED.
+	-- Register this defensively because unsupported custom-core events can raise an error.
+	pcall(self.eventFrame.RegisterEvent, self.eventFrame, "PLAYER_TALENT_UPDATE")
 	self.eventFrame:RegisterEvent("SKILL_LINES_CHANGED")
 
 
@@ -1268,11 +1271,21 @@ function ItemScore:GetTalentState(classToken, level)
 	local numTabs = GetNumTalentTabs and GetNumTalentTabs() or 0
 
 	for i = 1, numTabs do
-		local _, _, pointsSpent
+		local pointsSpent
 		if activeTalentGroup and activeTalentGroup > 0 then
-			_, _, pointsSpent = GetTalentTabInfo(i, false, false, activeTalentGroup)
-		else
-			_, _, pointsSpent = GetTalentTabInfo(i)
+			local ok, _, _, groupedPoints = pcall(GetTalentTabInfo, i, false, false, activeTalentGroup)
+			if ok then pointsSpent = tonumber(groupedPoints) end
+		end
+
+		-- A few private-server cores expose GetActiveTalentGroup but return zero points
+		-- when talentGroup is supplied. The no-group form still describes the active spec,
+		-- so use it when it provides better data instead of falling back to a leveling build.
+		do
+			local ok, _, _, defaultPoints = pcall(GetTalentTabInfo, i)
+			defaultPoints = ok and tonumber(defaultPoints) or nil
+			if defaultPoints and (not pointsSpent or defaultPoints > pointsSpent) then
+				pointsSpent = defaultPoints
+			end
 		end
 		pointsSpent = tonumber(pointsSpent) or 0
 		treePoints[i] = pointsSpent
@@ -2147,7 +2160,7 @@ end
 
 function ItemScore:OnEvent(event,arg1,arg2,...)
 	if not self.Initialised then return end
-	if event == "PLAYER_LEVEL_UP" or event == "CHARACTER_POINTS_CHANGED" or event == "ACTIVE_TALENT_GROUP_CHANGED" then
+	if event == "PLAYER_LEVEL_UP" or event == "CHARACTER_POINTS_CHANGED" or event == "PLAYER_TALENT_UPDATE" or event == "ACTIVE_TALENT_GROUP_CHANGED" then
 		-- using timer as delay, since in the same frame PLAYER_LEVEL_UP player is still on previous level
 		-- and to run it only once, as both PLU and PSC can fire more than once
 		ItemScore:DelayedRefreshUserData()

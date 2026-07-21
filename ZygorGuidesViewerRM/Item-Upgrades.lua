@@ -367,6 +367,25 @@ function Upgrades:GetEquippedItemData(slot)
 	return slotdata
 end
 
+local function get_live_equipped_link(slot)
+	local itemlink = slot and GetInventoryItemLink("player", slot)
+	return itemlink and (strip_link(itemlink) or itemlink) or nil
+end
+
+function Upgrades:IsQueuedBaselineCurrent(slot, queuedItem)
+	if not queuedItem then return false end
+	local liveLink = get_live_equipped_link(slot)
+	if liveLink == queuedItem.baselineitemlink then return true end
+
+	ZGV:Debug("&itemscore queued baseline changed slot=%s queued=%s live=%s", tostring(slot), tostring(queuedItem.baselineitemlink), tostring(liveLink))
+	table.wipe(queuedItem)
+	queuedItem.score = 0
+	if ItemScore.ScheduleEquipRescore then
+		ItemScore:ScheduleEquipRescore(0.1)
+	end
+	return false
+end
+
 function Upgrades:GetUpgradeComparison(slot, newitem, secondnewitem)
 	local candidateScore = newitem and (newitem.artifactscore or newitem.score or 0) or 0
 	local baselineScore = 0
@@ -545,6 +564,8 @@ function Upgrades:ScoreEquippedItems()
 						-- cache counts of unique-equipped items
 						local family, _ = Upgrades:GetItemUniqueness(item.itemid)
 						if (family or 0)>0 then Upgrades.UniqueEquipped[family]=(Upgrades.UniqueEquipped[family] or 0)+1 end
+					else
+						skipped = true
 					end
 				else
 					skipped = true
@@ -1283,6 +1304,7 @@ function Upgrades:ScoreBagsItems()
 							if Upgrades:CanUseUniqueItem(itemlink,slot) and queue_candidate_beats_existing(deltaScore, score, item, queuedDelta, upgrade_slot.score, upgrade_slot) then
 								ZGV:Debug("&itemscore SBFU armor upgrade slot=%d item=%s delta=%.2f score=%.2f replacing=%s olddelta=%.2f oldscore=%.2f",slot,itemlink,deltaScore,score or 0,upgrade_slot.itemlink or "",queuedDelta,upgrade_slot.score or 0)
 								upgrade_slot.itemlink = itemlink
+								upgrade_slot.baselineitemlink = get_live_equipped_link(slot)
 								upgrade_slot.score = score or 0 
 								upgrade_slot.change = change or 0
 								upgrade_slot.deltascore = deltaScore
@@ -1314,6 +1336,7 @@ function Upgrades:ScoreBagsItems()
 							if Upgrades:CanUseUniqueItem(itemlink,slot_2) and queue_candidate_beats_existing(deltaScore2, score, item, queuedDelta2, upgrade_slot.score, upgrade_slot) then
 								ZGV:Debug("&itemscore SBFU second slot=%d item=%s delta=%.2f score=%.2f replacing=%s olddelta=%.2f oldscore=%.2f",slot_2,itemlink,deltaScore2,score or 0,upgrade_slot.itemlink or "",queuedDelta2,upgrade_slot.score or 0)
 								upgrade_slot.itemlink = itemlink
+								upgrade_slot.baselineitemlink = get_live_equipped_link(slot_2)
 								upgrade_slot.score = score or 0
 								upgrade_slot.change = change_2 or 0
 								upgrade_slot.deltascore = deltaScore2
@@ -1352,6 +1375,7 @@ function Upgrades:ScoreBagsItems()
 		local upgrade_slot = Upgrades.UpgradeQueue[INVSLOT_MAINHAND]
 		local comparison = Upgrades:GetUpgradeComparison(INVSLOT_MAINHAND, th, nil)
 		upgrade_slot.itemlink = th.itemlink
+		upgrade_slot.baselineitemlink = get_live_equipped_link(INVSLOT_MAINHAND)
 		upgrade_slot.score = th.score
 		upgrade_slot.change = get_upgrade(th,equipped_weapon_1)
 		upgrade_slot.deltascore = comparison.deltaScore
@@ -1368,6 +1392,7 @@ function Upgrades:ScoreBagsItems()
 			local upgrade_slot = Upgrades.UpgradeQueue[INVSLOT_MAINHAND]
 			local comparison = Upgrades:GetUpgradeComparison(INVSLOT_MAINHAND, mh, oh)
 			upgrade_slot.itemlink = mh.itemlink
+			upgrade_slot.baselineitemlink = get_live_equipped_link(INVSLOT_MAINHAND)
 			upgrade_slot.score = mh.score
 			upgrade_slot.change = get_upgrade(mh,equipped_weapon_1,oh)
 			upgrade_slot.deltascore = comparison.deltaScore
@@ -1385,6 +1410,7 @@ function Upgrades:ScoreBagsItems()
 			local upgrade_slot = Upgrades.UpgradeQueue[INVSLOT_OFFHAND]
 			local comparison = Upgrades:GetUpgradeComparison(INVSLOT_OFFHAND, oh, mh)
 			upgrade_slot.itemlink = oh.itemlink
+			upgrade_slot.baselineitemlink = get_live_equipped_link(INVSLOT_OFFHAND)
 			upgrade_slot.score = oh.score
 			upgrade_slot.change = get_upgrade(oh,equipped_weapon_2,mh)
 			upgrade_slot.deltascore = comparison.deltaScore
@@ -1419,7 +1445,7 @@ function Upgrades:ProcessPossibleUpgrades()
 	for slot,newitem in pairs(Upgrades.UpgradeQueue) do 
 		if slot==17 and process_slot then ZGV:Debug("&itemscore PPU slot %d: processed, breaking",slot) break end -- don't look at offhands if we have mainhand queued
 
-		if newitem.itemlink then
+		if newitem.itemlink and Upgrades:IsQueuedBaselineCurrent(slot, newitem) then
 			local cooldownUntil = Upgrades.EquipFailureCooldown[cooldown_key(newitem.itemlink)]
 			if cooldownUntil and cooldownUntil > GetTime() then
 				ZGV:Debug("&itemscore PPU slot %d: equip cooldown active for %s",slot,newitem.itemlink)
@@ -1481,6 +1507,7 @@ function Upgrades:ShowEquipmentChangeNotification(slot)
 	if not slot then return end
 	local n_item = Upgrades.UpgradeQueue[slot]
 	if not n_item or not n_item.itemlink then return end
+	if not Upgrades:IsQueuedBaselineCurrent(slot, n_item) then return end
 	if n_item.frombank then
 		return Upgrades:ShowEquipmentChangePopup(slot)
 	end
@@ -2291,6 +2318,7 @@ function Upgrades:ShowEquipmentChangePopup(slot)
 	if not slot then return nil,"no slot" end
 	local n_item = Upgrades.UpgradeQueue[slot]
 	if not n_item or not n_item.itemlink then return nil,"no upgrade for slot",slot end
+	if not Upgrades:IsQueuedBaselineCurrent(slot, n_item) then return nil,"equipped item changed",slot end
 	local new_item = get_ready_item_details(n_item.itemlink)
 	if not new_item then return nil,"no details for item" end
 

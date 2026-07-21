@@ -164,6 +164,14 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 203 - 3.0.203
+
+- Fixed Gear Advisor falling back to the Warrior Arms leveling profile when some 3.3.5a cores return zero talent points from the active-group API despite a populated Protection build.
+- Added a defensive talent refresh event and active-spec API fallback while preserving normal dual-spec detection.
+- Prevented recommendations queued against a temporarily empty equipment slot from surviving a boost or rapid equipment change and replacing much stronger equipped gear.
+- Kept equipped-item scans pending when an occupied slot has not finished scoring instead of treating that slot as empty.
+- Updated addon version metadata to 3.0.203.
+
 ### Revision 202 - 3.0.202
 
 - Fixed bind-on-equip confirmation dialogs disappearing before the player could respond when automatic upgrade equipping was disabled.
@@ -199,16 +207,6 @@ This addon is fully open source and can be inspected before use.
 - Normalized omitted trailing talent trees before parsing, restoring the affected Mage, Shaman, and Rogue `WH T7+` presets without rewriting individual builds.
 - Kept strict rejection for malformed talent codes containing invalid characters or more than three tree segments.
 - Updated addon version metadata to 3.0.198.
-
-### Revision 197 - 3.0.197
-
-- Completed a broad localization safety pass across all shipped UI locales, preserving format tokens, color codes, newlines, and tooltip markup.
-- Fixed Korean, Russian, Simplified Chinese, and Traditional Chinese format-token mismatches in Gold Guide and step-goal strings.
-- Fixed Korean locale loading for appended tooltip strings that referenced missing color constants.
-- Normalized malformed NPC localization rows so `GetTranslatedNPC()` can parse localized names consistently.
-- Source-checked clear English-fallback NPC names against AzerothCore WotLK locale data and updated confirmed localized names across deDE, esES, frFR, koKR, ruRU, zhCN, and zhTW.
-- Audited guide quest IDs against AzerothCore WotLK quest locale data; guide files remain English-authored because runtime quest-title localization already uses client quest data by quest ID.
-- Updated addon version metadata to 3.0.197.
 
 ## Notes
 
