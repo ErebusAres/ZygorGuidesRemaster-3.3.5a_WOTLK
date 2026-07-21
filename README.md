@@ -164,6 +164,13 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 204 - 3.0.204
+
+- Fixed a recurring first-start freeze for Death Knights on custom WotLK cores when the legacy 55-60 starter guide activates with built-in waypointing.
+- Made the existing phased-zone safeguard recognize the active Death Knight starter guide even when the server reports a nonstandard Acherus or Scarlet Enclave map name.
+- Kept the built-in direct arrow available while preventing unsafe LibRover route calculation for that starter guide.
+- Updated addon version metadata to 3.0.204.
+
 ### Revision 203 - 3.0.203
 
 - Fixed Gear Advisor falling back to the Warrior Arms leveling profile when some 3.3.5a cores return zero talent points from the active-group API despite a populated Protection build.
@@ -200,13 +207,6 @@ This addon is fully open source and can be inspected before use.
 - Restricted digits-only shortened Wowhead handling to actual Wowhead URLs, preserving legacy Blizzard numeric builds and normal named-talent presets.
 - Added regression coverage for the affected Shaman text builds shown in issue #76's follow-up video.
 - Updated addon version metadata to 3.0.199.
-
-### Revision 198 - 3.0.198
-
-- Fixed Talent Advisor rejecting valid shortened Wowhead talent URLs when the final talent tree has zero points.
-- Normalized omitted trailing talent trees before parsing, restoring the affected Mage, Shaman, and Rogue `WH T7+` presets without rewriting individual builds.
-- Kept strict rejection for malformed talent codes containing invalid characters or more than three tree segments.
-- Updated addon version metadata to 3.0.198.
 
 ## Notes
 

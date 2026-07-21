@@ -278,6 +278,15 @@ local function IsDeathKnightStarterZone(zone)
 		or zone == "Acherus: The Ebon Hold"
 end
 
+local function IsDeathKnightStarterGuide()
+	local guide = ZGV and ZGV.CurrentGuide
+	if not guide then return false end
+	local _, class = UnitClass("player")
+	if class ~= "DEATHKNIGHT" then return false end
+	if guide.defaultfor == "DeathKnight" and tonumber(guide.startlevel) == 55 then return true end
+	return type(guide.title) == "string" and guide.title:find("Death Knight (55-60)", 1, true) ~= nil
+end
+
 local function StartLibRoverIfNeeded()
 	if not ZGV or not ZGV.LibRover or not ZGV.LibRover.DoStartup then return end
 	if ZGV.LibRover.ready or ZGV.LibRover.startup_thread or ZGV.LibRover.initializing then return end
@@ -388,10 +397,17 @@ end
 
 local function StartLibRoverPath(finalWaypoint)
 	if not CanUseLibRoverPath() or not finalWaypoint or not finalWaypoint.goal then return false end
-	StartLibRoverIfNeeded()
 	local goal = finalWaypoint.goal
 	if goal.waypoint_notravel then return false end
-	if IsDeathKnightStarterZone(GetRealZoneText()) or IsDeathKnightStarterZone(finalWaypoint.map) then return false end
+	-- Custom WotLK cores do not always report the phased DK map consistently.
+	-- Keep the starter guide on the direct arrow even when its map name differs.
+	if IsDeathKnightStarterGuide()
+		or IsDeathKnightStarterZone(GetRealZoneText())
+		or IsDeathKnightStarterZone(goal.map)
+		or IsDeathKnightStarterZone(finalWaypoint.map) then
+		return false
+	end
+	StartLibRoverIfNeeded()
 	local mapID = GetMapIDForGoal(goal, finalWaypoint.map)
 	local x = goal.x
 	local y = goal.y
