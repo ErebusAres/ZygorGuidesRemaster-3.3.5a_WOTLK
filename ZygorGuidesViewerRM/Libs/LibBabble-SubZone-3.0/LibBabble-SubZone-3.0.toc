@@ -1,0 +1,17 @@
+﻿## Interface: 30300
+## LoadOnDemand: 1
+## Title: Lib: Babble-SubZone-3.0
+## Notes: A library to help with localization of in-game subzone names.
+## Notes-zhTW: 為本地化服務的函式庫 [副區域名稱]
+## Author: Arith
+## X-eMail: arithmandarjp@yahoo.co.jp
+## X-Category: Library
+## X-License: MIT
+## X-Curse-Packaged-Version: 3.3-release6
+## X-Curse-Project-Name: LibBabble-SubZone-3.0
+## X-Curse-Project-ID: libbabble-subzone-3-0
+## X-Curse-Repository-ID: wow/libbabble-subzone-3-0/mainline
+
+LibStub\LibStub.lua
+lib.xml
+

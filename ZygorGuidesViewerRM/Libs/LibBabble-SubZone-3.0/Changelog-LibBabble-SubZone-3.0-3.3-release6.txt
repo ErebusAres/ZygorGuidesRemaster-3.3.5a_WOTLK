@@ -1,0 +1,25 @@
+------------------------------------------------------------------------
+r30 | arith | 2010-10-06 09:02:57 -0500 (Wed, 06 Oct 2010) | 1 line
+Changed paths:
+   A /tags/3.3-release6 (from /trunk:29)
+
+Tagging as 3.3-release6
+------------------------------------------------------------------------
+r29 | arith | 2010-10-06 09:01:41 -0500 (Wed, 06 Oct 2010) | 1 line
+Changed paths:
+   M /trunk/LibBabble-SubZone-3.0.lua
+
+zhCN syntax error fixing
+------------------------------------------------------------------------
+r28 | arith | 2010-10-06 08:58:29 -0500 (Wed, 06 Oct 2010) | 1 line
+Changed paths:
+   M /trunk/LibBabble-SubZone-3.0.lua
+
+zhCN syntax error fixing
+------------------------------------------------------------------------
+r26 | arith | 2010-10-06 08:06:49 -0500 (Wed, 06 Oct 2010) | 1 line
+Changed paths:
+   M /trunk/LibBabble-SubZone-3.0.lua
+
+German and Simplified Chinese translation update
+------------------------------------------------------------------------
