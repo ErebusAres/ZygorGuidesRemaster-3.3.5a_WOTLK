@@ -920,7 +920,7 @@ function me:ParseEntry(text)
 					if not plural then name=mob end
 
 					local nm,id = self:ParseID(name)
-					
+
 					tinsert(goal.mobs,{name=nm,id=id,pl=plural and true or false})
 				end
 			elseif cmd=="complete" then
@@ -992,7 +992,7 @@ function me:ParseEntry(text)
 				goal.action = goal.action or cmd
 				goal.recipe,goal.recipeid = self:ParseID(params)
 				if not goal.recipeid then return nil,"'learn': no recipe found",linecount,chunk end
-				
+
 			elseif cmd=="fpath" or cmd=="home" then
 				goal.action = goal.action or cmd
 				goal.param = params
@@ -1428,4 +1428,3 @@ function me:ParseEntry(text)
 	end
 	return guide
 end
-

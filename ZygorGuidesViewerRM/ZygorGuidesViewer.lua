@@ -3850,17 +3850,17 @@ local math_modf=math.modf
 math.round=function(n) local x,y=math_modf(n) return n>0 and (y>=0.5 and x+1 or x) or (y<=-0.5 and x-1 or x) end
 local round=math.round
 
-function me:OnInitialize() 
+function me:OnInitialize()
 
 --	if not ZygorGuidesViewerMiniFrame then error("Zygor Guide Viewer step frame not loaded.") end
 	if not ZygorGuidesViewerFrame then error("Zygor Guide Viewer frame not loaded.") end
-	
+
 	self.db = LibStub("AceDB-3.0"):New("ZygorGuidesViewerSettings")
 
 	self:Debug ("Initializing...")
 
 	self:Options_RegisterDefaults()
-	
+
 	--self.db:SetProfile("char/"..UnitName("player").." - "..GetRealmName())
 
 	self:Options_DefineOptions()
@@ -3964,7 +3964,7 @@ function me:OnInitialize()
 	end
 
 	if self.LocaleFont then FONT=self.LocaleFont end
-	
+
 	-- home detection, fire-and-forget style.
 	hooksecurefunc("ConfirmBinder",function() ZygorGuidesViewer.recentlyHomeChanged=true end)
 end
@@ -4322,7 +4322,7 @@ function me:SetGuide(name,step,temp)
 		self:QuestTracking_ResetDailies(true)
 
 		self:Debug("Guide loaded: "..name)
-		
+
 		self:FocusStep(step)
 		self:TrimParsedGuideCache()
 
@@ -4534,9 +4534,9 @@ function me:ListMentionedQuests()
 	end
 	self:TrimParsedGuideCache()
 end
-	
+
 --- Attempt to complete current step.
--- 09-09-24: 
+-- 09-09-24:
 function me:TryToCompleteStep(force)
 	if not self.CurrentStep then return end
 	local triedStepBefore = self.lasttriedstep
@@ -4717,9 +4717,9 @@ function me:InitializeDropDown(frame)
 	if not self.guidesloaded then return end
 
 	local guides = ZygorGuidesViewer.registeredguides
-	
+
 	if not guides then return end
-	
+
 	for i,guide in ipairs(guides) do
 
 --		ChatFrame1:AddMessage(section)
@@ -5085,7 +5085,7 @@ function me:UpdateFrame(full,onupdate,nonsecure_only)
 			-- run through buttons and assign steps for them
 
 			local nomoredisplayed=false
-			
+
 			for stepbuttonnum = 1,self.StepLimit do repeat
 				--frame = _G['ZygorGuidesViewerFrame_Step'..stepbuttonnum]
 				frame = self.stepframes[stepbuttonnum]
@@ -5096,7 +5096,7 @@ function me:UpdateFrame(full,onupdate,nonsecure_only)
 				if not frame then break end
 
 				stepnum = firststep + stepbuttonnum - 1
-				
+
 				-- show this button at all?
 				if stepnum>=firststep and stepnum<=laststep and stepnum<=#self.CurrentGuide.steps then
 					local stepdata = self.CurrentGuide.steps[stepnum]
@@ -5290,7 +5290,7 @@ function me:UpdateFrame(full,onupdate,nonsecure_only)
 								self.frameNeedsUpdating=true
 							end
 						end
-					
+
 						if heightleft<self.MIN_STEP_HEIGHT then
 							frame:Hide()
 							nomoredisplayed=true
@@ -5604,14 +5604,14 @@ function me:UpdateFrame(full,onupdate,nonsecure_only)
 		-- run through buttons and assign steps for them
 
 		local nomoredisplayed=false
-		
+
 		for spotbuttonnum = 1,self.StepLimit do repeat
 			--frame = _G['ZygorGuidesViewerFrame_Step'..stepbuttonnum]
 				frame = self.spotframes[spotbuttonnum]
 			assert(frame,"Out of spot frames at "..spotbuttonnum)
-			
+
 			spotnum = firstspot + spotbuttonnum - 1
-			
+
 			-- show this button at all?
 			if spotnum>=firstspot and spotnum<=lastspot and spotnum<=#spots then
 				local spotdata = spots[spotnum]
@@ -5652,7 +5652,7 @@ function me:UpdateFrame(full,onupdate,nonsecure_only)
 				assert(frame.lines[line],"Out of lines ("..line..") in spot frame "..spotbuttonnum)
 
 				frame.lines[line].label:SetFont(FONT,round(self.db.profile.fontsize))
-				
+
 				-- cardinal names
 				--frame.lines[line].label:SetText(("|cffffbb00%s|r (%s %s)"):format(spotdata.title or "?",ZGV.FormatDistance(spotdata.waypoint.minimapFrame.dist),GetCardinalDirName(Astrolabe:GetDirectionToIcon(spotdata.waypoint.minimapFrame))))
 
@@ -5661,7 +5661,7 @@ function me:UpdateFrame(full,onupdate,nonsecure_only)
 				local dirnum2=dirnum>8 and 16-dirnum or dirnum
 				local arrow = ("|Tinterface\\addons\\ZygorGuidesViewer\\skin\\arrow-mini-multi:20:20:0:0:32:512:%d:%d:%d:%d|t"):format(dirnum>8 and 32 or 0,dirnum>8 and 0 or 32,dirnum2*32,(dirnum2+1)*32)
 				frame.lines[line].label:SetText(("%s |cffffbb00%s|r (%s)"):format(arrow, spotdata.title or "?",ZGV.FormatDistance(spotdata.waypoint.minimapFrame.dist)))
-				
+
 				line=line+1
 
 				--[[
@@ -5692,7 +5692,7 @@ function me:UpdateFrame(full,onupdate,nonsecure_only)
 							elseif spotdata.vendorid then
 								mobtext = spotdata.vendor
 							end
-							
+
 							--[[
 							-- all in one line; tidy but impractical
 							local header = L['gold_header_'..source]:format(mobtext or "mob")
@@ -5764,7 +5764,7 @@ function me:UpdateFrame(full,onupdate,nonsecure_only)
 							--self.frameNeedsUpdating=true
 						end
 					end
-				
+
 					if heightleft<self.MIN_STEP_HEIGHT then
 						frame:Hide()
 						nomoredisplayed=true
@@ -5783,7 +5783,7 @@ function me:UpdateFrame(full,onupdate,nonsecure_only)
 					local text = lineframe.label
 					if l<line and not frame.truncated then
 						text:SetWidth(frame:GetWidth()-ICON_INDENT-2*ZGV.STEPMARGIN_X)
-						
+
 						-- old non-HTML stuff
 						--textheight = text:GetHeight()
 						textheight = text:GetRegions():GetHeight()
@@ -5895,7 +5895,7 @@ function me:UpdateFrame(full,onupdate,nonsecure_only)
 
 		-- steps displayed, clear the remaining slots
 
-	
+
 		--ZygorGuidesViewerFrame_Border_TitleBar_PrevButton:Show()
 		--ZygorGuidesViewerFrame_Border_TitleBar_NextButton:Show()
 		--ZygorGuidesViewerFrame_Border_TitleBar_Step:Show()
@@ -6032,12 +6032,12 @@ function me:UpdateFrameCurrent(nonsecure_only)
 		--]]
 
 		--[[
-		ZygorGuidesViewerFrame_ActiveStep:SetBackdrop({bgFile = "Interface/Tooltips/UI-Tooltip-Background", 
-							    edgeFile = "Interface/Tooltips/UI-Tooltip-Border", 
-							    tile = true, tileSize = 16, edgeSize = 16, 
+		ZygorGuidesViewerFrame_ActiveStep:SetBackdrop({bgFile = "Interface/Tooltips/UI-Tooltip-Background",
+							    edgeFile = "Interface/Tooltips/UI-Tooltip-Border",
+							    tile = true, tileSize = 16, edgeSize = 16,
 							    insets = { left = 4, right = 4, top = 4, bottom = 4 }})
 		--]]
-		
+
 		--[[
 		if self.CurrentStep.requirement then
 			ZygorGuidesViewerFrame_ActiveStep_Line0:SetText((self.CurrentStep:AreRequirementsMet() and "|cff88cc88" or "|cffbb0000") .. "(" .. table.concat(self.CurrentStep.requirement,L["stepreqor"]) .. ")")
@@ -6357,7 +6357,7 @@ function me:UpdateFrameCurrent(nonsecure_only)
 					back:SetVertexColor(0.0,0.0,0.0,0)
 
 				elseif status=="incomplete" then
-				
+
 					local progress = type(detail)=="number" and detail or 0
 
 					local gc = self:GetEffectiveGoalColors()
@@ -6406,11 +6406,11 @@ function me:UpdateFrameCurrent(nonsecure_only)
 					back:SetVertexColor(fromRGBA(self:GetEffectiveGoalColors().goalbackimpossible))
 
 				elseif status=="obsolete" then
-					
+
 					--icon:SetIcon(actionicon[goal.action])
 					--icon:SetDesaturated(false)
 					back:SetVertexColor(fromRGBA(self:GetEffectiveGoalColors().goalbackobsolete))
-				
+
 				end
 
 				local iconsize = math.max(self.db.profile.fontsize * 1.45, 15)
@@ -6453,7 +6453,7 @@ function me:UpdateFrameCurrent(nonsecure_only)
 						line:SetHeight(compactTextHeight)
 					end
 				end
-				
+
 				--clicker:Show()
 
 				--height = height + line:GetHeight()
@@ -6463,10 +6463,10 @@ function me:UpdateFrameCurrent(nonsecure_only)
 				HideInlineVisuals(line, action, petaction, cooldown, actionholder)
 				--label:SetText("")
 				--label:SetHeight(0)
-				
+
 				--line:SetHeight(0)  -- NO. This breaks stuff.
 				-- but... it's necessary..!
-				
+
 				--line:SetHeight(0)
 				--cooldown:Hide()
 			end
@@ -6657,14 +6657,14 @@ function me:AlignFrame()
 	ZygorGuidesViewerFrame_Border_MiniButton:SetPoint("CENTER",ZygorGuidesViewerFrame_Border,UP_TOPRIGHT,-40,-5*UP)
 	ZygorGuidesViewerFrame_Border_SettingsButton:SetPoint("CENTER",ZygorGuidesViewerFrame_Border,UP_TOPLEFT,40,-5*UP)
 	ZygorGuidesViewerFrame_Border_CloseButton:SetPoint("CENTER",ZygorGuidesViewerFrame_Border,UP_TOPRIGHT,5,-2*UP)
-	
+
 	--ntx:SetTexCoord(731/1024,850/1024,76/512,145/512)
 	--ptx:SetTexCoord(731/1024,850/1024,211/512,280/512)
 	--htx:SetTexCoord(731/1024,850/1024,346/512,415/512)
 	ZygorGuidesViewerFrame_Border_GuideButton.upsideup = upsideup
 	ZygorGuidesViewerFrame_Border_GuideButton:ClearAllPoints()
 	ZygorGuidesViewerFrame_Border_GuideButton:SetPoint(UP_BOTTOM,ZygorGuidesViewerFrame_Border,UP_TOPRIGHT,-58,-19*UP)
-	
+
 	if minimized then
 		ZygorGuidesViewerFrame_Skipper:Hide()
 		ZygorGuidesViewerFrame_Border:Hide()
@@ -7643,7 +7643,7 @@ function me:ResizeFrame()
 		ZygorGuidesViewerFrame_Border_Right:SetTexCoord(0.2,0.8,0,1*ysize2)
 		ZygorGuidesViewerFrame_Border_Bottom:SetTexCoord(0,-xsize,1,-xsize,0,xsize,1,xsize)
 	end
-	
+
 	ZygorGuidesViewerFrame_Border:SetBackdropColor(self.db.profile.skincolors.back[1],self.db.profile.skincolors.back[2],self.db.profile.skincolors.back[3],self.db.profile.backopacity)
 
 
@@ -7670,7 +7670,7 @@ function me:ResizeFrame()
 
 	--self:Debug(("%d %d"):format(left,bottom))
 --		ZygorGuidesViewerFrame:SetHeight(ZygorGuidesViewerFrame_Text:GetHeight()+35)
-	
+
 
 --	if ZygorGuidesViewerFrame_ActiveStep_Line1:GetTop() then
 		--ZygorGuidesViewerFrame_Resize.max = ZygorGuidesViewerFrame_Line1:GetTop()-ZygorGuidesViewerFrame_TextInfo2:GetBottom()+35
@@ -7819,7 +7819,7 @@ function me:SkipStep(delta,fast)
 		local i = self.CurrentStepNum+delta
 		if i<1 then
 			--if self.CurrentGuideName==1 then return end		-- first section? bail.
-			if self.CurrentGuide.defaultfor then 
+			if self.CurrentGuide.defaultfor then
 				atstart=true
 				break
 			end		-- no skipping back from a starter section.
@@ -7870,10 +7870,10 @@ function me:SkipStep(delta,fast)
 				end
 			end
 		end
-		
+
 		self.pause=not fast
 		self.fastforward=fast
-		
+
 		self.LastSkip = delta
 		self:Debug("LastSkip "..self.LastSkip)
 
@@ -8087,13 +8087,13 @@ function me:CompletedQuestEvent(questTitle,id,daily)
 		--self.recentlyCompletedQuests[questTitle]=true
 		--if daily then self.db.char.completedDailies[questTitle]=time() end
 	end
-	
+
 	if self.Writer then self.Writer:NotifyQuest("COMPLETED",id,questTitle) end
 end
 
 function me:LostQuestEvent(questTitle,id,surelyComplete)
 	self:Debug("Lost Quest: "..tostring(questTitle)..", id: "..tostring(id)..", complete: "..tostring(surelyComplete))
-	
+
 	-- NO sure-completing. A quest may well be abandoned while complete.
 	surelyComplete = false
 
@@ -9136,7 +9136,7 @@ function me:BugReport(maint)
 	s = ("Zygor Guides Viewer v%s\n"):format(self.version)
 	s = s .. "\n"
 	s = s .. ("Guide: %s\nStep: %d\n"):format(tostr(self.CurrentGuideName),tostr(self.CurrentStepNum))
-	
+
 	if maint then
 		s = s .. "\nMAINTENANCE OPTIONS THAT WERE ENABLED PROPERLY: ______________\nMAINTENANCE OPTION THAT CAUSED DISCONNECTION: _______________\n\n"
 	end
@@ -9157,7 +9157,7 @@ function me:BugReport(maint)
 		for i,goal in ipairs(step.goals) do
 			s = s .. ("%d. %s %s\n"):format(i,(". "):rep(goal.indent),goal.text and "\""..goal.text.."\"" or "<"..goal:GetText()..">")
 			for k,v in pairs(goal) do
-				if k~="map" and k~="x" and k~="y" and k~="dist" 
+				if k~="map" and k~="x" and k~="y" and k~="dist"
 				and k~="indent" and k~="text" and k~="parentStep" and k~="num" and k~="status"
 				and k~="useitem" and k~="useitemid"
 				and k~="castspell" and k~="castspellid"
@@ -9395,7 +9395,7 @@ function me:CreateDumpFrame()
 	frame:Hide()
 	frame:SetFrameStrata("DIALOG")
 	tinsert(UISpecialFrames, name)
-	
+
 	local scrollArea = CreateFrame("ScrollFrame", name.."Scroll", frame, "UIPanelScrollFrameTemplate")
 	scrollArea:SetPoint("TOPLEFT", frame, "TOPLEFT", 8, -50)
 	scrollArea:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -30, 8)
@@ -9410,9 +9410,9 @@ function me:CreateDumpFrame()
 	editBox:SetHeight(270)
 	editBox:SetScript("OnEscapePressed", function() frame:Hide() end)
 	self.dumpFrame.editBox = editBox
-	
+
 	scrollArea:SetScrollChild(editBox)
-	
+
 	local close = CreateFrame("Button", nil, frame, "UIPanelCloseButton")
 	close:SetPoint("TOPRIGHT", frame, "TOPRIGHT")
 
@@ -9445,7 +9445,7 @@ function me:Test (arg1,arg2)
 end
 
 function me:Echo (s)
-	--if not self.db.profile.silent then 
+	--if not self.db.profile.silent then
 	self:Print(tostring(s))
 	--end
 end
