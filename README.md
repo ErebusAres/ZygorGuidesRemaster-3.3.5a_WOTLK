@@ -164,6 +164,13 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 205 - 3.0.205
+
+- Removed obsolete dungeon-map development code that added a fake `dupa` entry to Blizzard's world-map zone dropdown.
+- Removed the same stray placeholder text from an isolated Hunter debug talent build.
+- Preserved normal world-map overlays, waypoint behavior, and dungeon data.
+- Updated addon version metadata to 3.0.205.
+
 ### Revision 204 - 3.0.204
 
 - Fixed a recurring first-start freeze for Death Knights on custom WotLK cores when the legacy 55-60 starter guide activates with built-in waypointing.
@@ -200,13 +207,6 @@ This addon is fully open source and can be inspected before use.
 - Fixed paired-weapon comparisons crashing when an equipped comparison slot was empty while preserving deferred item-data retries.
 - Fixed Gold Guide chore calculation failing when Gold Guide was enabled after login and its usefulness table had not been initialized.
 - Updated addon version metadata to 3.0.200.
-
-### Revision 199 - 3.0.199
-
-- Fixed a 3.0.198 Talent Advisor regression that could misclassify named talent-list builds as compact Wowhead talent codes.
-- Restricted digits-only shortened Wowhead handling to actual Wowhead URLs, preserving legacy Blizzard numeric builds and normal named-talent presets.
-- Added regression coverage for the affected Shaman text builds shown in issue #76's follow-up video.
-- Updated addon version metadata to 3.0.199.
 
 ## Notes
 

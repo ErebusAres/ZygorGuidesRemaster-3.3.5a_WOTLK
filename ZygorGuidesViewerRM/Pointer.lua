@@ -1668,15 +1668,6 @@ if not ZGV_DEV then instancemaps={} end
 
 -- DUNGEON MAPS
 
-function after_WorldMapFrame_LoadZones(...)
-	local info = UIDropDownMenu_CreateInfo();
-	info.text = "dupa"
-	info.func = WorldMapZygorDungeonButton_OnClick
-	info.checked = nil
-	UIDropDownMenu_AddButton(info)
-end
-hooksecurefunc("WorldMapFrame_LoadZones",after_WorldMapFrame_LoadZones)
-
 local dungeons = {
 	[1] = {
 		['Blackfathom Deeps']={
@@ -1817,11 +1808,6 @@ local dungeons = {
 		['Wyrmrest Temple: The Ruby Sanctum']={ l1=80,l2=83,type='R',builtin=true}
 	},
 }
-
-function WorldMapZygorDungeonButton_OnClick(self)
-	UIDropDownMenu_SetSelectedID(WorldMapZoneDropDown, self:GetID())
-end
-
 
 function Pointer.Overlay_OnEvent(self,event,...)
 	if event == "WORLD_MAP_UPDATE" then

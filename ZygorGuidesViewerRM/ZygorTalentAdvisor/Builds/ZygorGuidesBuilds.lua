@@ -605,7 +605,7 @@ ZygorTalentAdvisor:RegisterBuild("HUNTER","debug Completely Not Zygor Hunter",{
 ZygorTalentAdvisor:RegisterBuild("HUNTER","debug Zygor Hunter broken",{
 	"Improved Aspect of the Hawk",
 	"Improved Aspect of the Hawk",
-	"Improved Aspect of the Hawk dupa",
+	"Improved Aspect of the Hawk",
 	"Improved Tracking",
 	"Improved Tracking",
 	"Improved Tracking",
