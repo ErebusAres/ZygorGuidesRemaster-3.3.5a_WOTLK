@@ -1163,6 +1163,11 @@ local BZL = BZ:GetUnstrictLookupTable()
 local BZR = BZ:GetReverseLookupTable()
 me.BZL = BZL
 me.BZR = BZR
+local LBSZ = LibStub("LibBabble-SubZone-3.0", true)
+local BSZL = LBSZ and LBSZ:GetUnstrictLookupTable() or setmetatable({}, {__index=function(t,k) return k end})
+local BSZR = LBSZ and LBSZ:GetReverseLookupTable() or setmetatable({}, {__index=function(t,k) return k end})
+me.BSZL = BSZL
+me.BSZR = BSZR
 local BF = LibStub("LibBabble-Faction-3.0")
 local BFL = BF:GetUnstrictLookupTable()
 local BFR = BF:GetReverseLookupTable()
@@ -9266,7 +9271,7 @@ function me:BugReport(maint)
 	local x,y = GetPlayerMapPosition("player")
 	s = s .. ("Position: realzone:'%s' x:%g,y:%g (zone:'%s' subzone:'%s' minimapzone:'%s')\n"):format(GetRealZoneText(),x*100,y*100,GetZoneText(),GetSubZoneText(),GetMinimapZoneText())
 	if GetLocale()~="enUS" then
-		s = s .. ("    enUS: realzone:'%s' zone:'%s' subzone:'%s' minimapzone:'%s')\n"):format(BZR[GetRealZoneText()],BZR[GetZoneText()],BZR[GetSubZoneText()] or "("..GetSubZoneText()..")",BZR[GetMinimapZoneText()] or "("..GetMinimapZoneText()..")")
+		s = s .. ("    enUS: realzone:'%s' zone:'%s' subzone:'%s' minimapzone:'%s')\n"):format(BZR[GetRealZoneText()],BZR[GetZoneText()],BSZR[GetSubZoneText()] or BZR[GetSubZoneText()] or "("..GetSubZoneText()..")",BZR[GetMinimapZoneText()] or "("..GetMinimapZoneText()..")")
 		s = s .. ("Locale: %s\n"):format(GetLocale())
 	end
 	s = s .. "\n"

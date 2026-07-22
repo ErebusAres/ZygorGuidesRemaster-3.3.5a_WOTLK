@@ -5,6 +5,7 @@ local ZGV=me
 local L = ZygorGuidesViewer_L("Main")
 
 local BZL=me.BZL
+local BSZL=me.BSZL
 
 local table,string,tonumber,ipairs,pairs,setmetatable,tinsert = table,string,tonumber,ipairs,pairs,setmetatable,tinsert
 
@@ -293,7 +294,8 @@ ZGV.ConditionEnv = {
 	end,
 	-- Retail condition functions
 	subzone = function(name)
-		return GetSubZoneText() == name or GetMinimapZoneText() == name
+		local localName = BSZL and BSZL[name] or name
+		return GetSubZoneText() == localName or GetMinimapZoneText() == localName
 	end,
 	zone = function(name)
 		return GetZoneText() == name or GetRealZoneText() == name
