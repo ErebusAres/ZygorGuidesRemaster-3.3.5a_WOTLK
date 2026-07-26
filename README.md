@@ -164,6 +164,13 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 208 - 3.0.208
+
+- Added a class-wide Wrath 3.3.5a weapon proficiency matrix so Gear Advisor consistently rejects weapons the current class cannot equip, including swords on Druids and shields on Death Knights.
+- Added the missing Wrath weapon proficiencies for Druid polearms and Rogue one-handed axes across their Gear Advisor builds.
+- Kept spec-specific weapon preferences layered beneath the class proficiency guard so scoring cannot override hard class restrictions.
+- Updated addon version metadata to 3.0.208.
+
 ### Revision 207 - 3.0.207
 
 - Added HD/WDM map compatibility for 53 phased starting-area, cave, mine, and dungeon-entrance map identifiers used by common 3.3.5a map patches.
@@ -199,13 +206,6 @@ This addon is fully open source and can be inspected before use.
 - Prevented recommendations queued against a temporarily empty equipment slot from surviving a boost or rapid equipment change and replacing much stronger equipped gear.
 - Kept equipped-item scans pending when an occupied slot has not finished scoring instead of treating that slot as empty.
 - Updated addon version metadata to 3.0.203.
-
-### Revision 202 - 3.0.202
-
-- Fixed bind-on-equip confirmation dialogs disappearing before the player could respond when automatic upgrade equipping was disabled.
-- Recognized both manual and auto-equip WotLK bind-confirm paths and stopped fallback equip attempts as soon as confirmation is pending.
-- Deferred Gear Advisor bag rescans while a bind confirmation is visible, then resumed normal scanning after the dialog closes.
-- Updated addon version metadata to 3.0.202.
 
 ## Notes
 

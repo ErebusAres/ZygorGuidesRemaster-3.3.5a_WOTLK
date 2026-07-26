@@ -838,31 +838,34 @@ local CLASS_MAX_ARMOR_FAMILY = {
 	PRIEST = "CLOTH",
 }
 
-local SHIELD_CLASSES = {
-	WARRIOR = true,
-	PALADIN = true,
-	SHAMAN = true,
+-- Maximum trainable weapon proficiencies in Wrath 3.3.5a. Keep this class-level
+-- guard independent of spec weights so unusable weapons never reach scoring.
+local CLASS_WEAPON_FAMILIES = {
+	DEATHKNIGHT = {AXE=true, TH_AXE=true, MACE=true, TH_MACE=true, TH_POLE=true, SWORD=true, TH_SWORD=true, SIGIL=true},
+	DRUID = {DAGGER=true, FIST=true, MACE=true, TH_MACE=true, TH_POLE=true, TH_STAFF=true, IDOL=true},
+	HUNTER = {AXE=true, TH_AXE=true, BOW=true, CROSSBOW=true, DAGGER=true, FIST=true, GUN=true, TH_POLE=true, TH_STAFF=true, SWORD=true, TH_SWORD=true, THROWN=true},
+	MAGE = {DAGGER=true, TH_STAFF=true, SWORD=true, WAND=true},
+	PALADIN = {AXE=true, TH_AXE=true, MACE=true, TH_MACE=true, TH_POLE=true, SWORD=true, TH_SWORD=true, SHIELD=true, LIBRAM=true},
+	PRIEST = {DAGGER=true, MACE=true, TH_STAFF=true, WAND=true},
+	ROGUE = {AXE=true, BOW=true, CROSSBOW=true, DAGGER=true, FIST=true, GUN=true, MACE=true, SWORD=true, THROWN=true},
+	SHAMAN = {AXE=true, TH_AXE=true, DAGGER=true, FIST=true, MACE=true, TH_MACE=true, TH_STAFF=true, SHIELD=true, TOTEM=true},
+	WARLOCK = {DAGGER=true, TH_STAFF=true, SWORD=true, WAND=true},
+	WARRIOR = {AXE=true, TH_AXE=true, BOW=true, CROSSBOW=true, DAGGER=true, FIST=true, GUN=true, MACE=true, TH_MACE=true, TH_POLE=true, TH_STAFF=true, SWORD=true, TH_SWORD=true, THROWN=true, SHIELD=true},
 }
 
-local RANGED_FAMILY_CLASSES = {
-	BOW = {HUNTER=true, ROGUE=true, WARRIOR=true},
-	GUN = {HUNTER=true, ROGUE=true, WARRIOR=true},
-	CROSSBOW = {HUNTER=true, ROGUE=true, WARRIOR=true},
-	WAND = {PRIEST=true, MAGE=true, WARLOCK=true},
-	THROWN = {ROGUE=true, WARRIOR=true},
-	IDOL = {DRUID=true},
-	TOTEM = {SHAMAN=true},
-	LIBRAM = {PALADIN=true},
-	SIGIL = {DEATHKNIGHT=true},
-}
+local STANDARD_WEAPON_FAMILIES = {}
+for _, families in pairs(CLASS_WEAPON_FAMILIES) do
+	for family in pairs(families) do
+		STANDARD_WEAPON_FAMILIES[family] = true
+	end
+end
 
 local function class_can_use_standard_family(classToken, family, level)
 	if not classToken or not family then return nil end
-	if family == "SHIELD" then
-		return SHIELD_CLASSES[classToken] and true or false
-	end
-	if RANGED_FAMILY_CLASSES[family] then
-		return RANGED_FAMILY_CLASSES[family][classToken] and true or false
+	if STANDARD_WEAPON_FAMILIES[family] then
+		local classFamilies = CLASS_WEAPON_FAMILIES[classToken]
+		if not classFamilies then return nil end
+		return classFamilies[family] and true or false
 	end
 	local wantedRank = ARMOR_FAMILY_ORDER[family]
 	if not wantedRank then return nil end
