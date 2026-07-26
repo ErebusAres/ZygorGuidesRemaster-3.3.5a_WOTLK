@@ -25,6 +25,7 @@
 	<Include file="Libs\AceConsole-3.0\AceConsole-3.0.xml"/>
 	<Include file="Libs\AceTimer-3.0\AceTimer-3.0.xml"/>
 	<Include file="Libs\LibBabble-Zone-3.0\lib.xml"/>
+	<Include file="Libs\LibBabble-SubZone-3.0\lib.xml"/>
 	<Include file="Libs\LibBabble-Faction-3.0\lib.xml"/>
 	<Include file="Libs\LibBetterBlizzOptions-1.0\lib.xml"/>
 	<Include file="Libs\LibGratuity-3.0\lib.xml"/>

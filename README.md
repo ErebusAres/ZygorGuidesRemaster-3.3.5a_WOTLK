@@ -164,6 +164,13 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 207 - 3.0.207
+
+- Added HD/WDM map compatibility for 53 phased starting-area, cave, mine, and dungeon-entrance map identifiers used by common 3.3.5a map patches.
+- Added localized subzone lookups for guide conditions and diagnostic reports while preserving the addon's existing zone library and stock-client behavior.
+- Integrated the focused compatibility work from community pull request #84 without its duplicate library loaders, replacement zone library, or unrelated formatting changes.
+- Updated addon version metadata to 3.0.207.
+
 ### Revision 206 - 3.0.206
 
 - Fixed Gear Advisor treating generic two-handed mace, axe, and sword subtype data as one-handed weapon families, which could recommend unusable two-handed weapons to classes such as Rogues.
@@ -199,13 +206,6 @@ This addon is fully open source and can be inspected before use.
 - Recognized both manual and auto-equip WotLK bind-confirm paths and stopped fallback equip attempts as soon as confirmation is pending.
 - Deferred Gear Advisor bag rescans while a bind confirmation is visible, then resumed normal scanning after the dialog closes.
 - Updated addon version metadata to 3.0.202.
-
-### Revision 201 - 3.0.201
-
-- Fixed class guides failing to load when race/class requirements use parenthesized `or` alternatives such as Orc Shaman or Troll Shaman.
-- Fixed two-handed weapon upgrade percentages and stat rationale comparing against only the equipped main hand instead of the combined main-hand/off-hand setup.
-- Kept the player's current weapon style when two-handed and main/off-hand combinations have exactly equal scores, while still switching for a genuine combined upgrade.
-- Updated addon version metadata to 3.0.201.
 
 ## Notes
 
