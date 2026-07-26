@@ -1,6 +1,7 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/FrameXML/UI.xsd">
 
 	<Script file="ZygorGuidesViewer.lua"/>
+
 	<Script file="TargetPreview.lua"/>
 	<Script file="Ver.lua"/>
 	<Script file="Parser.lua"/>
@@ -22,7 +23,6 @@
 	<!-- ItemScore & Gear Finder system -->
 	<Script file="ZygorItemDB.lua"/>
 	<Script file="ZygorBossLootDB.lua"/>
-	<Script file="ZygorQuestDB.lua"/>
 	<Script file="ZygorQuestLootDB.lua"/>
 	<Script file="Code-WOTLK\Item-DataTables.lua"/>
 	<Script file="Data-WOTLK\Item-Statweights.lua"/>

@@ -1,7 +1,7 @@
 ## Interface: 30300
 ## Notes: Free multi-purpose leveling guide viewer.|n|nDesigned for use with Zygor Guides, but supporting user-supplied guides as well.
-## Note-frFR: 
-## Notes-esES: 
+## Note-frFR:
+## Notes-esES:
 ## Title: |cffffff88Z|cffffee66y|cffffdd44g|cffffcc22o|cffffbb00r|r Guides Viewer Remastered
 ## qqqTitle: |cffffff88Z|cffffee66y|cffffdd44g|cffffcc22o|cffffbb00r|r Guides Viewer Remastered |TInterface\AddOns\ZygorGuidesViewerRM\Skin\gnome:48:48:0:0|t
 ## Author: Sinus Pi
@@ -10,8 +10,8 @@
 ## SavedVariables: ZygorGuidesViewerSettings,ZygorTalentAdvisorSettings
 ## - SavedVariablesPerCharacter: ZygorGuidesViewerSettingsChar
 ## OptionalDeps: Cartographer, Cartographer3, TomTom
-## X-Category: 
-## X-Credits: 
+## X-Category:
+## X-Credits:
 ## X-eMail: zygor@zygorguides.com
 ## X-Website: http://zygorguides.com/
 ## X-License: GPL
@@ -21,10 +21,10 @@ embeds.xml
 
 Localization\load.xml
 Localization\names.xml
+Localization\quests.xml
 
 files.xml
 Bindings.xml
 
 Guides\Autoload.xml
 -
-

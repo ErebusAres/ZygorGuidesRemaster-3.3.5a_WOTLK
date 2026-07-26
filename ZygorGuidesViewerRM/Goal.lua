@@ -81,7 +81,7 @@ function Goal:IsCompleteable()
 	if self.force_nocomplete then return false end
 
 	if self.questid --[[and self.objnum--]] then return true end
-	
+
 	if self.action=="from"
 	or self.action==""
 	then return false end
@@ -183,7 +183,7 @@ function Goal:IsComplete()
 		return turned, turned or (inlog and (inlog.complete or #inlog.goals==0))
 	end
 
-	
+
 	if self.achieveid then
 		-- oh gods. The below, redux.
 		local completed
@@ -218,7 +218,7 @@ function Goal:IsComplete()
 		-- okay, so the quest may yet be possible. Is it in the log?
 		local questInLog = ZGV.questsbyid[self.questid]
 		if questInLog then
-		
+
 			-- Now if it is goalbound, complete it as the goal would.
 
 			if self.objnum then
@@ -248,7 +248,7 @@ function Goal:IsComplete()
 				end
 				-- pure questbound? complete if the whole quest is complete...
 				-- or not. Just drop.
-				
+
 				--[[
 				if questInLog.complete or #questInLog.goals==0 then
 					return true,true
@@ -509,6 +509,9 @@ function Goal:AutoTranslate()
 	end
 	if self.questid then
 		local qt,qobjs = ZGV:GetQuestData(self.questid)
+		if (not qt or qt == "") and ZGV.QuestDB then
+			qt = ZGV.QuestDB:GetQuestName(self.questid)
+		end
 		if qt and qt~="" then
 			self.quest=qt
 			if (self.action=='get' or self.action=='kill' or self.action=='goal')
@@ -637,11 +640,15 @@ local ICON_OPTIONAL = "Interface\\GossipFrame\\DailyQuestIcon"
 
 function Goal:GetText(showcompleteness,hidecustomicons)
 	--if type(goal)=="number" then goal=self.CurrentStep.goals[goal] end
-	
+
 	local text="?"
 	if self.text then text = self.text
-	elseif self.action=='accept' then text = L["stepgoal_accept"]:format(COLOR_QUEST((self.questpart and L['questtitle_part'] or L['questtitle']):format(self.quest,self.questpart)))
-	elseif self.action=='turnin' then text = L["stepgoal_turn in"]:format(COLOR_QUEST((self.questpart and L['questtitle_part'] or L['questtitle']):format(self.quest,self.questpart)))
+	elseif self.action=='accept' then
+		local _quest = (self.questid and ZGV.QuestDB and ZGV.QuestDB:GetQuestName(self.questid)) or self.quest
+		text = L["stepgoal_accept"]:format(COLOR_QUEST((self.questpart and L['questtitle_part'] or L['questtitle']):format(_quest,self.questpart)))
+	elseif self.action=='turnin' then
+		local _quest = (self.questid and ZGV.QuestDB and ZGV.QuestDB:GetQuestName(self.questid)) or self.quest
+		text = L["stepgoal_turn in"]:format(COLOR_QUEST((self.questpart and L['questtitle_part'] or L['questtitle']):format(_quest,self.questpart)))
 	elseif self.action=='talk' then text = L["stepgoal_talk to"]:format(COLOR_NPC(self.npc))
 	elseif self.action=='get' and self.count and self.count>1 then text = L["stepgoal_get #"]:format(self.count>0 and self.count or "?",COLOR_ITEM(plural(self.target,self.count)))
 	elseif self.action=='get' then text = L["stepgoal_get"]:format(COLOR_ITEM(plural(self.target,self.plural and 2 or 1)))
@@ -668,7 +675,7 @@ function Goal:GetText(showcompleteness,hidecustomicons)
 		if #self.mobs>1 then
 			-- contraction
 			ZGV.db.profile.contractmobs = true
-			
+
 			if ZGV.db.profile.contractmobs and ZygorGuidesViewer_L("Specials")['contract_mobs'] then
 				local contr = ZygorGuidesViewer_L("Specials")['contract_mobs'](self.mobs)
 

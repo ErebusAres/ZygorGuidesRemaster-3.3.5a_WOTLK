@@ -1,17 +1,7 @@
--- ZygorQuestDB.lua
--- Generiert: 2026-05-03 11:31:35
--- AzerothCore 3.3.5a | 9450 Quests
---
--- Stellt ZGV.QuestDB bereit mit:
---   ZGV.QuestDB:GetQuestName(questID)  ->  string oder nil
---
-local ZGV = ZygorGuidesViewer
-if not ZGV then return end
-
-ZGV.QuestDB = ZGV.QuestDB or {}
-local QuestDB = ZGV.QuestDB
-
-QuestDB._names = {
+-- ZygorQuestDB_enUS.lua
+-- Generated: 2026-07-26 18:11:55
+-- AzerothCore 3.3.5a | locale enUS | 9465 quests
+ZygorGuidesViewer_L("QuestDB", "enUS", function() return {
 	[1]="Kanrethad's Quest",
 	[2]="Sharptalon's Claw",
 	[5]="Jitters' Growling Gut",
@@ -2992,7 +2982,7 @@ QuestDB._names = {
 	[6565]="Allegiance to the Old Gods",
 	[6566]="What the Wind Carries",
 	[6567]="The Champion of the Horde",
-	[6568]="Mistress of Deception",
+	[6568]="The Testament of Rexxar",
 	[6569]="Oculus Illusions",
 	[6570]="Emberstrife",
 	[6571]="Warsong Supplies",
@@ -3765,7 +3755,7 @@ QuestDB._names = {
 	[8412]="Spirit Totem",
 	[8413]="Da Voodoo",
 	[8414]="Dispelling Evil",
-	[8415]="Chillwind Camp",
+	[8415]="Chillwind Point",
 	[8416]="Inert Scourgestones",
 	[8417]="A Troubled Spirit",
 	[8418]="Forging the Mightstone",
@@ -5561,7 +5551,9 @@ QuestDB._names = {
 	[10213]="Investigate the Crash",
 	[10214]="When This Mine's a-Rockin'",
 	[10216]="Safety Is Job One",
+	[10217]="Fossil Fuel",
 	[10218]="Someone Else's Hard Work Pays Off",
+	[10219]="Walk the Dog",
 	[10220]="Make Them Listen",
 	[10221]="Dr. Boom!",
 	[10222]="The Sunfury Garrison",
@@ -6183,6 +6175,7 @@ QuestDB._names = {
 	[10838]="The Demoniac Scryer",
 	[10839]="Veil Skith: Darkstone of Terokk",
 	[10840]="The Tomb of Lights",
+	[10841]="The Vengeful Harbinger",
 	[10842]="Vengeful Souls",
 	[10843]="Since Time Forgotten...",
 	[10844]="Forge Camp: Anger",
@@ -6266,6 +6259,7 @@ QuestDB._names = {
 	[10922]="Digging Through Bones",
 	[10923]="Evil Draws Near",
 	[10924]="Bloody Imp-ossible!",
+	[10925]="Evil Draws Near",
 	[10926]="Return to Sha'tari Base Camp",
 	[10927]="Killing the Crawlers",
 	[10928]="Killing the Crawlers",
@@ -6562,7 +6556,7 @@ QuestDB._names = {
 	[11219]="Stop the Fires!",
 	[11220]="The Headless Horseman",
 	[11221]="Reports from the Field",
-	[11222]="Proof of Treachery",
+	[11222]="Warn Bolvar!",
 	[11223]="Return to Jaina",
 	[11224]="Send Them Packing",
 	[11225]="The Hermit of Witch Hill",
@@ -9461,11 +9455,16 @@ QuestDB._names = {
 	[25485]="World Event Dungeon - Hummel",
 	[25495]="Preparin' For Battle",
 	[25500]="Words for Delivery",
-	[99002]="Die Kobold-Plage und Magie",
-}
-
-function QuestDB:GetQuestName(questID)
-	if not questID then return nil end
-	if type(questID) == 'table' then questID = questID[1] or questID[2] end
-	return self._names[questID]
-end
+	[26012]="Trouble at Wyrmrest",
+	[26013]="Assault on the Sanctum",
+	[26034]="The Twilight Destroyer",
+	[108743]="Simply Bang a Gong!",
+	[108744]="Chaos and Destruction",
+	[108745]="Colossus of Zora",
+	[108746]="Colossus of Regal",
+	[108747]="Colossus of Ashi",
+	[108850]="Complete the War Effort",
+	[108855]="Complete the War Effort",
+	[109681]="A Study in Power",
+	[109684]="Claiming the Light",
+} end)

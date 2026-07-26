@@ -123,7 +123,7 @@ function Step:PrepareCompletion()
 	end
 end
 
---- 
+---
 -- @return changed,stilldirty
 function Step:Translate()
 	local changed=false
@@ -140,6 +140,7 @@ function Step:Translate()
 			local name,id = ZGV:ParseID(self.title)
 			if id then
 				local qt = ZGV:GetQuestData(id)
+				if not qt and ZGV.QuestDB then qt = ZGV.QuestDB:GetQuestName(id) end
 				if qt then
 					self.title=qt
 					self.L = true
@@ -155,7 +156,7 @@ function Step:Translate()
 			self.L = true
 		end
 	end
-			
+
 	return changed,stilldirty
 end
 
@@ -224,7 +225,8 @@ function Step:GetTitle()
 	if self.title then return self.title end
 	for i,goal in ipairs(self.goals) do
 		if goal.title then return goal.title end
-		if goal.quest and goal.L then return goal.quest end
+		local questName = (goal.questid and ZGV.QuestDB and ZGV.QuestDB:GetQuestName(goal.questid)) or (goal.L and goal.quest)
+		if questName then return questName end
 		if goal.npc and goal.L then return goal.npc end
 	end
 end

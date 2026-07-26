@@ -1,0 +1,15 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+
+<Script file="Quests_enUS.lua"/>
+<Script file="Quests_deDE.lua"/>
+<Script file="Quests_esES.lua"/>
+<Script file="Quests_frFR.lua"/>
+<Script file="Quests_koKR.lua"/>
+<Script file="Quests_ruRU.lua"/>
+<Script file="Quests_zhCN.lua"/>
+<Script file="Quests_zhTW.lua"/>
+
+<Script file="Quests_Helper.lua"/>
+
+</Ui>

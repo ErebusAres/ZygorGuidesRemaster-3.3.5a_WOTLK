@@ -784,6 +784,10 @@ function me:ParseEntry(text)
 				local q,qp = goal.quest:match("^(.-)%s-%((%d+)%)$")
 				if q then goal.quest,goal.questpart=q,qp end
 				if not goal.quest and not goal.questid then return nil,"no quest parameter",linecount,chunk end
+				if goal.questid and ZGV.QuestDB then
+					local localized = ZGV.QuestDB:GetQuestName(goal.questid)
+					if localized then goal.quest=localized end
+				end
 
 				if goal.questid then
 					guide.quests[goal.questid]=step.level
