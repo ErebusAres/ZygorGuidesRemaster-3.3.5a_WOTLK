@@ -747,11 +747,25 @@ function ItemScore:GetResolvedItemDetailsReady(itemOrLink)
 	return nil, item
 end
 
+local TWO_HANDED_WEAPON_FAMILIES = {
+	AXE = "TH_AXE",
+	MACE = "TH_MACE",
+	SWORD = "TH_SWORD",
+}
+
+local function canonicalize_weapon_handedness(family, equipLoc)
+	if equipLoc == "INVTYPE_2HWEAPON" then
+		return TWO_HANDED_WEAPON_FAMILIES[family] or family
+	end
+	return family
+end
+
 local function get_item_family(item)
 	if not item then return nil end
-	local equipFamily = resolve_family_from_equip_loc(item.equiploc or item.type)
+	local equipLoc = item.equiploc or item.type
+	local equipFamily = resolve_family_from_equip_loc(equipLoc)
 	if equipFamily and equipFamily ~= "MISCARM" and equipFamily ~= "OFFHAND" then return equipFamily end
-	if item.family then return item.family end
+	if item.family then return canonicalize_weapon_handedness(item.family, equipLoc) end
 	if (item.equiploc == "INVTYPE_RANGED" or item.equiploc == "INVTYPE_RANGEDRIGHT") and ItemScore and ItemScore.playerclass then
 		if ItemScore.playerclass == "PRIEST" or ItemScore.playerclass == "MAGE" or ItemScore.playerclass == "WARLOCK" then
 			return "WAND"
@@ -771,9 +785,9 @@ local function get_item_family(item)
 			if normalizedName:find("polearm", 1, true) or normalizedName:find("halberd", 1, true) or normalizedName:find("glaive", 1, true) or normalizedName:find("lance", 1, true) or normalizedName:find("pike", 1, true) or normalizedName:find("spear", 1, true) then return "TH_POLE" end
 			if normalizedName:find("staff", 1, true) or normalizedName:find("stave", 1, true) then return "TH_STAFF" end
 			if normalizedName:find("dagger", 1, true) then return "DAGGER" end
-			if normalizedName:find("sword", 1, true) then return normalizedName:find("two%-hand", 1) and "TH_SWORD" or "SWORD" end
-			if normalizedName:find("axe", 1, true) then return normalizedName:find("two%-hand", 1) and "TH_AXE" or "AXE" end
-			if normalizedName:find("mace", 1, true) or normalizedName:find("hammer", 1, true) then return normalizedName:find("two%-hand", 1) and "TH_MACE" or "MACE" end
+			if normalizedName:find("sword", 1, true) then return canonicalize_weapon_handedness(normalizedName:find("two%-hand", 1) and "TH_SWORD" or "SWORD", equipLoc) end
+			if normalizedName:find("axe", 1, true) then return canonicalize_weapon_handedness(normalizedName:find("two%-hand", 1) and "TH_AXE" or "AXE", equipLoc) end
+			if normalizedName:find("mace", 1, true) or normalizedName:find("hammer", 1, true) then return canonicalize_weapon_handedness(normalizedName:find("two%-hand", 1) and "TH_MACE" or "MACE", equipLoc) end
 			if normalizedName:find("fist", 1, true) or normalizedName:find("claw", 1, true) then return "FIST" end
 			if normalizedName:find("idol", 1, true) then return "IDOL" end
 			if normalizedName:find("totem", 1, true) then return "TOTEM" end
@@ -788,18 +802,18 @@ local function get_item_family(item)
 				for _, alias in ipairs(aliases) do
 					local normalizedAlias = normalize_label(alias)
 					if normalizedAlias and (normalizedSubtype == normalizedAlias or normalizedSubtype:find(normalizedAlias, 1, true)) then
-						return family
+						return canonicalize_weapon_handedness(family, equipLoc)
 					end
 				end
 			end
 		end
 		local subtypeFamily = select(1, resolve_item_family(item.class, item.subtype))
-		if subtypeFamily then return subtypeFamily end
+		if subtypeFamily then return canonicalize_weapon_handedness(subtypeFamily, equipLoc) end
 	end
 	if item.class == LE_ITEM_CLASS_ARMOR then
 		return item_armor_types[item.subclass]
 	elseif item.class == LE_ITEM_CLASS_WEAPON then
-		return item_weapon_types[item.subclass]
+		return canonicalize_weapon_handedness(item_weapon_types[item.subclass], equipLoc)
 	end
 	return nil
 end

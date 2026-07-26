@@ -164,6 +164,13 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 206 - 3.0.206
+
+- Fixed Gear Advisor treating generic two-handed mace, axe, and sword subtype data as one-handed weapon families, which could recommend unusable two-handed weapons to classes such as Rogues.
+- Prevented Gear Advisor from presenting or automatically equipping armor candidates that are both more than 20 item levels lower and below half the level of uncommon-or-better equipped gear.
+- Preserved normal leveling upgrades and existing exceptions for invalid equipped gear, protected quest items, heirlooms, low-quality equipped armor, and weapons.
+- Updated addon version metadata to 3.0.206.
+
 ### Revision 205 - 3.0.205
 
 - Removed obsolete dungeon-map development code that added a fake `dupa` entry to Blizzard's world-map zone dropdown.
@@ -199,14 +206,6 @@ This addon is fully open source and can be inspected before use.
 - Fixed two-handed weapon upgrade percentages and stat rationale comparing against only the equipped main hand instead of the combined main-hand/off-hand setup.
 - Kept the player's current weapon style when two-handed and main/off-hand combinations have exactly equal scores, while still switching for a genuine combined upgrade.
 - Updated addon version metadata to 3.0.201.
-
-### Revision 200 - 3.0.200
-
-- Fixed Gear Advisor allowing Protection Warriors and Protection Paladins to replace one-hand-and-shield setups with higher-scoring two-handed weapons.
-- Fixed grey/white armor-only items replacing stat-bearing armor when raw armor score outweighed early-level stats.
-- Fixed paired-weapon comparisons crashing when an equipped comparison slot was empty while preserving deferred item-data retries.
-- Fixed Gold Guide chore calculation failing when Gold Guide was enabled after login and its usefulness table had not been initialized.
-- Updated addon version metadata to 3.0.200.
 
 ## Notes
 

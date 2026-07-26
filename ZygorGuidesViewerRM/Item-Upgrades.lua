@@ -386,6 +386,21 @@ function Upgrades:IsQueuedBaselineCurrent(slot, queuedItem)
 	return false
 end
 
+local function is_extreme_armor_downgrade(newitem, olditem)
+	if not newitem or not olditem or newitem.class ~= LE_ITEM_CLASS_ARMOR or olditem.class ~= LE_ITEM_CLASS_ARMOR then
+		return false
+	end
+	local newItemLevel = tonumber(newitem.itemlvl) or 0
+	local oldItemLevel = tonumber(olditem.itemlvl) or 0
+	local oldQuality = tonumber(olditem.quality) or 0
+	return oldQuality >= 2
+		and newitem.quality ~= 7
+		and newItemLevel > 0
+		and oldItemLevel > 0
+		and newItemLevel + 20 < oldItemLevel
+		and newItemLevel * 2 < oldItemLevel
+end
+
 function Upgrades:GetUpgradeComparison(slot, newitem, secondnewitem)
 	local candidateScore = newitem and (newitem.artifactscore or newitem.score or 0) or 0
 	local baselineScore = 0
@@ -419,6 +434,11 @@ function Upgrades:GetUpgradeComparison(slot, newitem, secondnewitem)
 		end
 	end
 
+	local itemLevelProtected = is_extreme_armor_downgrade(newitem, currentDetails)
+	if itemLevelProtected and candidateScore > baselineScore then
+		candidateScore = baselineScore
+	end
+
 	local deltaScore = candidateScore - baselineScore
 	local isNewItem = not hasBaselineItem
 	local percent = (not isNewItem and baselineScore and baselineScore > 0) and ((candidateScore * 100 / baselineScore) - 100) or nil
@@ -444,6 +464,7 @@ function Upgrades:GetUpgradeComparison(slot, newitem, secondnewitem)
 		rawScore = rawScore,
 		delta = delta,
 		armorFallback = armorFallback,
+		itemLevelProtected = itemLevelProtected,
 	}
 end
 
@@ -707,6 +728,11 @@ local function get_upgrade(newitem,olditem,secondnewitem)
 
 	if olditem and not ItemScore:IsValidItem(olditem.itemlink) then
 		return 100 -- old item is not valid, spec change?
+	end
+
+	if is_extreme_armor_downgrade(newitem, olditem_details) then
+		ZGV:Debug("&itemscore rejecting extreme armor downgrade new_ilvl=%d old_ilvl=%d item=%s", newitem.itemlvl, olditem_details.itemlvl, tostring(newitem.itemlink))
+		return 0
 	end
 
 	if olditem_details and newitem and newitem.class == LE_ITEM_CLASS_ARMOR and olditem_details.class == LE_ITEM_CLASS_ARMOR and newitem.type ~= "INVTYPE_CLOAK" then
