@@ -21,6 +21,7 @@ embeds.xml
 
 Localization\load.xml
 Localization\names.xml
+Localization\quests.xml
 
 files.xml
 Bindings.xml

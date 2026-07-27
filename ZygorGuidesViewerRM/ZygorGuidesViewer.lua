@@ -19,6 +19,7 @@ local ZGV = me
 
 me.L = ZygorGuidesViewer_L("Main")
 me.LS = ZygorGuidesViewer_L("G_string")
+me.LQ = ZygorGuidesViewer_L("Quests")
 
 local L = me.L
 local LI = me.LI
@@ -9594,6 +9595,13 @@ function me:PruneNPCs()
 	for i,d in pairs(ZygorGuidesNPCs) do
 		if d:sub(1,1)==badf then ZygorGuidesNPCs[i]=nil end
 	end
+end
+
+function me:GetQuestName(questID)
+	if not questID then return nil end
+	if type(questID) == "table" then questID = questID[1] or questID[2] end
+	if not LQ then return nil end
+	return rawget(LQ, questID)
 end
 
 function me:ReloadTranslation()

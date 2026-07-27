@@ -786,6 +786,11 @@ function me:ParseEntry(text)
 				if not goal.quest and not goal.questid then return nil,"no quest parameter",linecount,chunk end
 
 				if goal.questid then
+					local localized = ZGV:GetQuestName(goal.questid)
+					if localized then goal.quest = localized end
+				end
+
+				if goal.questid then
 					guide.quests[goal.questid]=step.level
 					if not step.level then return nil,"Missing step level information",linecount,chunk end
 				end
@@ -1430,4 +1435,3 @@ function me:ParseEntry(text)
 	end
 	return guide
 end
-

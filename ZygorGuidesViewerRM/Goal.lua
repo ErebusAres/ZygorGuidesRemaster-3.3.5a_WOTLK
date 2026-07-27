@@ -509,6 +509,9 @@ function Goal:AutoTranslate()
 	end
 	if self.questid then
 		local qt,qobjs = ZGV:GetQuestData(self.questid)
+		if (not qt or qt=="") then
+			qt = ZGV:GetQuestName(self.questid)
+		end
 		if qt and qt~="" then
 			self.quest=qt
 			if (self.action=='get' or self.action=='kill' or self.action=='goal')
@@ -640,8 +643,12 @@ function Goal:GetText(showcompleteness,hidecustomicons)
 	
 	local text="?"
 	if self.text then text = self.text
-	elseif self.action=='accept' then text = L["stepgoal_accept"]:format(COLOR_QUEST((self.questpart and L['questtitle_part'] or L['questtitle']):format(self.quest,self.questpart)))
-	elseif self.action=='turnin' then text = L["stepgoal_turn in"]:format(COLOR_QUEST((self.questpart and L['questtitle_part'] or L['questtitle']):format(self.quest,self.questpart)))
+	elseif self.action=='accept' then
+		local _quest = (self.questid and ZGV:GetQuestName(self.questid)) or self.quest
+		text = L["stepgoal_accept"]:format(COLOR_QUEST((self.questpart and L['questtitle_part'] or L['questtitle']):format(_quest,self.questpart)))
+	elseif self.action=='turnin' then
+		local _quest = (self.questid and ZGV:GetQuestName(self.questid)) or self.quest
+		text = L["stepgoal_turn in"]:format(COLOR_QUEST((self.questpart and L['questtitle_part'] or L['questtitle']):format(_quest,self.questpart)))
 	elseif self.action=='talk' then text = L["stepgoal_talk to"]:format(COLOR_NPC(self.npc))
 	elseif self.action=='get' and self.count and self.count>1 then text = L["stepgoal_get #"]:format(self.count>0 and self.count or "?",COLOR_ITEM(plural(self.target,self.count)))
 	elseif self.action=='get' then text = L["stepgoal_get"]:format(COLOR_ITEM(plural(self.target,self.plural and 2 or 1)))
