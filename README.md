@@ -164,6 +164,14 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 209 - 3.0.209
+
+- Changed fallback armor scoring so it remains useful for early statless equipment but cannot outweigh an item's other attributes; tank profiles that explicitly value armor are unchanged.
+- Expanded the extreme armor-downgrade safeguard to reject candidates more than 40 item levels below uncommon-or-better equipped gear, covering the level-72 Elemental Shaman example reported in issue #79.
+- Prioritized the corpse waypoint while the player is dead, including clearing external quest arrows when the death event fires and preventing later guide updates from replacing the corpse arrow.
+- Cleaned up confirmed invalid or obsolete XML, texture, font, binding-header, and TOC declarations reported in issue #89 while preserving optional custom guide and talent-build slots.
+- Updated addon version metadata to 3.0.209.
+
 ### Revision 208 - 3.0.208
 
 - Added a class-wide Wrath 3.3.5a weapon proficiency matrix so Gear Advisor consistently rejects weapons the current class cannot equip, including swords on Druids and shields on Death Knights.
@@ -198,14 +206,6 @@ This addon is fully open source and can be inspected before use.
 - Made the existing phased-zone safeguard recognize the active Death Knight starter guide even when the server reports a nonstandard Acherus or Scarlet Enclave map name.
 - Kept the built-in direct arrow available while preventing unsafe LibRover route calculation for that starter guide.
 - Updated addon version metadata to 3.0.204.
-
-### Revision 203 - 3.0.203
-
-- Fixed Gear Advisor falling back to the Warrior Arms leveling profile when some 3.3.5a cores return zero talent points from the active-group API despite a populated Protection build.
-- Added a defensive talent refresh event and active-spec API fallback while preserving normal dual-spec detection.
-- Prevented recommendations queued against a temporarily empty equipment slot from surviving a boost or rapid equipment change and replacing much stronger equipped gear.
-- Kept equipped-item scans pending when an occupied slot has not finished scoring instead of treating that slot as empty.
-- Updated addon version metadata to 3.0.203.
 
 ## Notes
 

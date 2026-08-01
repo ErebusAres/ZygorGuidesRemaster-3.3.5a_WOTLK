@@ -6,11 +6,11 @@
 		<Size x="20" y="20"/>
 		<Layers>
 			<Layer level="BACKGROUND">
-				<Texture parentKey="icon" file="Interface\AddOns\ZygorGuidesViewer\Skin\arrow-dot">
+				<Texture parentKey="icon" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\minimaparrow-green-dot">
 					<Size x="12" y="12"/>
 					<Anchors><Anchor point="CENTER" relativePoint="CENTER" /></Anchors>
 				</Texture>
-				<Texture parentKey="arrow" hidden="true" file="Interface\AddOns\ZygorGuidesViewer\Skin\arrow-edge">
+				<Texture parentKey="arrow" hidden="true" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\minimaparrow-green-edge">
 					<Size x="40" y="40"/>
 					<Anchors><Anchor point="CENTER" relativePoint="CENTER" /></Anchors>
 				</Texture>
@@ -31,7 +31,7 @@
 		<Size x="25" y="25"/>
 		<Layers>
 			<Layer level="ARTWORK">
-				<Texture parentKey="icon" name="$parentIcon" file="Interface\AddOns\ZygorGuidesViewer\Skin\arrow-dot" setAllPoints="true" >
+				<Texture parentKey="icon" name="$parentIcon" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\minimaparrow-green-dot" setAllPoints="true" >
 					<!--
 					<Anchors><Anchor point="CENTER" relativePoint="CENTER" /></Anchors>
 					<Size x="25" y="25"/>

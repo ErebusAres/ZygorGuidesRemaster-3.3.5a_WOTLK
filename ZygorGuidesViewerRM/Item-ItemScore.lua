@@ -1828,6 +1828,19 @@ local function get_item_socket_score(item, statweights, caps, playerlevel)
 	return score, table.concat(details, ", ")
 end
 
+-- Armor is a useful fallback for early, statless gear, but it should not
+-- outweigh class-relevant stats once an item has any other attributes.
+-- Rulesets that explicitly weight ARMOR (tank profiles) are unaffected.
+local function item_has_non_armor_stats(item)
+	if not item or not item.stats then return false end
+	for statname, value in pairs(item.stats) do
+		if (tonumber(value) or 0) ~= 0 and ItemScore:NormaliseStatName(statname) ~= "ARMOR" then
+			return true
+		end
+	end
+	return false
+end
+
 function ItemScore:GetItemScoreForContext(itemlink, context)
 	local item = ItemScore:GetResolvedItemDetails(itemlink)
 	if not item then return -1, false, "no info yet" end
@@ -1847,7 +1860,7 @@ function ItemScore:GetItemScoreForContext(itemlink, context)
 	end
 	score = score + get_item_socket_score(item, statweights, caps, context.playerlevel)
 
-	if not statweights.ARMOR then
+	if not statweights.ARMOR and not item_has_non_armor_stats(item) then
 		score = score + (item.stats.ARMOR or 0) * context.whiteScoreWeight
 	end
 	if not statweights.DAMAGE_PER_SECOND then
@@ -1967,19 +1980,6 @@ function ItemScore:GetItemValidityForContext(itemlink, future, context)
 	return {valid = true, final = true, reason = "ok", code = "ok", item = item, slot = slot_1, slot_2 = slot_2, twohander = twohander, family = fallbackFamily}
 end
 
-local function context_has_non_armor_stats(item)
-	if not item or not item.stats then return false end
-	for statname, value in pairs(item.stats) do
-		if value and value ~= 0 then
-			local normalized = ItemScore:NormaliseStatName(statname)
-			if normalized ~= "ARMOR" then
-				return true
-			end
-		end
-	end
-	return false
-end
-
 local function context_get_normalized_stat_value(item, statname)
 	if not item or not item.stats then return 0 end
 	local total = 0
@@ -2011,9 +2011,9 @@ function ItemScore:GetUpgradeComparisonForContext(slot, newitem, context, second
 
 	local armorFallback = false
 	if newitem and newitem.class == LE_ITEM_CLASS_ARMOR and newitem.type ~= "INVTYPE_CLOAK" then
-		local candidateHasStats = context_has_non_armor_stats(newitem)
+		local candidateHasStats = item_has_non_armor_stats(newitem)
 		local currentIsArmor = current and current.class == LE_ITEM_CLASS_ARMOR
-		local currentHasStats = current and context_has_non_armor_stats(current)
+		local currentHasStats = current and item_has_non_armor_stats(current)
 		if not candidateHasStats and (not current or (currentIsArmor and not currentHasStats)) then
 			candidateScore = context_get_normalized_stat_value(newitem, "ARMOR")
 			baselineScore = current and context_get_normalized_stat_value(current, "ARMOR") or 0
@@ -3154,7 +3154,7 @@ function ItemScore:GetItemScore(itemlink,verbose)
 	end
 
 	-- add dps and armor at minimal weight, unless proper statweights for them exist
-	if not statweights.ARMOR then 
+	if not statweights.ARMOR and not item_has_non_armor_stats(item) then
 		if verbose then table.insert(verbose,("  + |cff00ff00%.1f extra %s|r: |cffaaaaaa * %.1f|r = |cffffffff%.1f|r"):format((item.stats.ARMOR or 0),RESISTANCE0_NAME, self.whiteScoreWeight, (item.stats.ARMOR or 0)*self.whiteScoreWeight ))  end
 		score = score + (item.stats.ARMOR or 0)*self.whiteScoreWeight 
 	end

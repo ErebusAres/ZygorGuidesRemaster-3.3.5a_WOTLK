@@ -1080,6 +1080,12 @@ for k,v in pairs(me.WaypointFunctions) do setmetatable (v,nilfuncs) end
 
 
 function me:SetWaypoint(...)
+	if UnitIsDeadOrGhost("player") then
+		if self.Pointer and self.Pointer.SetCorpseArrow then
+			self.Pointer:SetCorpseArrow()
+		end
+		return
+	end
 	-- Safety fallback: if no external waypointer is active/ready, use internal arrow.
 	if (not self.ConnectedWaypointer) or self.db.profile.waypointaddon=="none" then
 		if self.WaypointFunctions and self.WaypointFunctions['internal'] and self.WaypointFunctions['internal'].isready(self) then

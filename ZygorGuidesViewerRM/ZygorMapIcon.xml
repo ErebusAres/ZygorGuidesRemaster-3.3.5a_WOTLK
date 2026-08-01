@@ -10,19 +10,19 @@
 		</Texture>
 		</Layer></Layers>
 
-		<NormalTexture file="(zglogo)" parentKey="ntx">
+		<NormalTexture parentKey="ntx">
 			<Anchors><Anchor point="CENTER" relativePoint="CENTER"><Offset><AbsDimension x="1" y="1"/></Offset></Anchor></Anchors>
 			<Size><AbsDimension x="37" y="37"/></Size>
 			<TexCoords left="0.000" right="1.000" top="0.000" bottom="0.250"/>
 		</NormalTexture>
 
-		<PushedTexture file="(zglogo)" parentKey="ptx">
+		<PushedTexture parentKey="ptx">
 			<Anchors><Anchor point="CENTER" relativePoint="CENTER"><Offset><AbsDimension x="1" y="1"/></Offset></Anchor></Anchors>
 			<Size><AbsDimension x="37" y="37"/></Size>
 			<TexCoords left="0.000" right="1.000" top="0.250" bottom="0.500"/>
 		</PushedTexture>
 
-		<HighlightTexture file="(zglogo)" alphaMode="ADD" parentKey="htx">
+		<HighlightTexture alphaMode="ADD" parentKey="htx">
 			<Anchors><Anchor point="CENTER" relativePoint="CENTER"><Offset><AbsDimension x="1" y="1"/></Offset></Anchor></Anchors>
 			<Size><AbsDimension x="37" y="37"/></Size>
 			<TexCoords left="0.000" right="1.000" top="0.500" bottom="0.750"/>

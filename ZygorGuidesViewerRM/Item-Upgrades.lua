@@ -398,7 +398,7 @@ local function is_extreme_armor_downgrade(newitem, olditem)
 		and newItemLevel > 0
 		and oldItemLevel > 0
 		and newItemLevel + 20 < oldItemLevel
-		and newItemLevel * 2 < oldItemLevel
+		and (newItemLevel * 2 < oldItemLevel or newItemLevel + 40 < oldItemLevel)
 end
 
 function Upgrades:GetUpgradeComparison(slot, newitem, secondnewitem)

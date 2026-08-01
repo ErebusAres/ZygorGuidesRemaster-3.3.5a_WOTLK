@@ -245,7 +245,6 @@
 				</Animations>
 
 				<Scripts>
-					<OnEvent function="ZygorGuidesViewerFrame_OnEvent" />
 					<OnLoad function="ZygorGuidesViewerFrame_OnLoad" />
 					<OnShow function="ZygorGuidesViewerFrame_OnShow" />
 					<OnHide function="ZygorGuidesViewerFrame_OnHide" />
@@ -364,24 +363,24 @@
 							<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT"/>
 						</Anchors>
 
-						<Backdrop bgFile="Interface\AddOns\ZygorGuidesViewer\Skin\leavesofsteel_bgr" qedgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+						<Backdrop bgFile="Interface\AddOns\ZygorGuidesViewerRM\Skin\leavesofsteel_bgr" qedgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
 							<BackgroundInsets left="0" right="0" top="20" bottom="0" />	
 							<TileSize val="128"/>
 						</Backdrop>
 
 						<Layers>
 							<Layer level="BORDER">
-								<Texture name="$parent_Top" file="skinned"/>
-								<Texture name="$parent_Left" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_border"/>
-								<Texture name="$parent_Right" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_border"/>
-								<Texture name="$parent_Bottom" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_border"/>
+								<Texture name="$parent_Top"/>
+								<Texture name="$parent_Left" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\leavesofsteel_border"/>
+								<Texture name="$parent_Right" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\leavesofsteel_border"/>
+								<Texture name="$parent_Bottom" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\leavesofsteel_border"/>
 							</Layer>
 							<Layer level="OVERLAY">
-								<FontString name="$parent_SectionTitle" inherits="GameFontSmall" justifyH="CENTER" justifyV="TOP">
+								<FontString name="$parent_SectionTitle" inherits="GameFontNormalSmall" justifyH="CENTER" justifyV="TOP">
 									<Size x="145" y="15"/>
 								</FontString>
 
-								<Texture name="$parent_Gear1" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_gear1" parentKey="Gear1">
+								<Texture name="$parent_Gear1" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\leavesofsteel_gear1" parentKey="Gear1">
 									<Size x="45" y="45"/>
 									<Animations>
 										<AnimationGroup name="$parent_turn"><Animation duration="0.5" maxFramerate="30" smoothing="IN_OUT"><Scripts><OnUpdate>AnimRotOnUpdate(self,-13)</OnUpdate><OnFinished>self:GetParent():GetParent().angle=self:GetParent():GetParent().angle+self.step</OnFinished></Scripts></Animation></AnimationGroup>
@@ -389,7 +388,7 @@
 										<AnimationGroup name="$parent_turn2"><Animation duration="0.7" maxFramerate="30" smoothing="OUT"><Scripts><OnPlay>self.tex=self:GetParent():GetParent()  self.tex.targetangle=self.tex.tangle  if self.tex.curangle then self.tex.angle=self.tex.curangle end </OnPlay><OnUpdate>AnimRotOnUpdate2(self)</OnUpdate><OnFinished>self.tex.angle=self.tex.curangle</OnFinished></Scripts></Animation></AnimationGroup>
 									</Animations>
 								</Texture>
-								<Texture name="$parent_Gear2" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_gear2" parentKey="Gear2">
+								<Texture name="$parent_Gear2" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\leavesofsteel_gear2" parentKey="Gear2">
 									<Size x="30" y="26"/>
 									<Animations>
 										<AnimationGroup name="$parent_turn"><Animation duration="0.5" maxFramerate="30" smoothing="IN_OUT"><Scripts><OnUpdate>AnimRotOnUpdate(self,60) </OnUpdate><OnFinished>self:GetParent():GetParent().angle=self:GetParent():GetParent().angle+self.step</OnFinished></Scripts></Animation></AnimationGroup>
@@ -397,7 +396,7 @@
 										<AnimationGroup name="$parent_turn2"><Animation duration="0.7" maxFramerate="30" smoothing="OUT"><Scripts><OnPlay>self.tex=self:GetParent():GetParent()  self.tex.targetangle=self.tex.tangle  if self.tex.curangle then self.tex.angle=self.tex.curangle end </OnPlay><OnUpdate>AnimRotOnUpdate2(self)</OnUpdate><OnFinished>self.tex.angle=self.tex.curangle</OnFinished></Scripts></Animation></AnimationGroup>
 									</Animations>
 								</Texture>
-								<Texture name="$parent_Gear3" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_gear3" parentKey="Gear3">
+								<Texture name="$parent_Gear3" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\leavesofsteel_gear3" parentKey="Gear3">
 									<Size x="20" y="20"/>
 									<Animations>
 										<AnimationGroup name="$parent_turn"><Animation duration="0.5" maxFramerate="30" smoothing="IN_OUT"><Scripts><OnUpdate>AnimRotOnUpdate(self,90) </OnUpdate><OnFinished>self:GetParent():GetParent().angle=self:GetParent():GetParent().angle+self.step</OnFinished></Scripts></Animation></AnimationGroup>
@@ -565,7 +564,7 @@
 												<Texture name="$parent_TopRight" file=""/>
 												<Texture name="$parent_BottomLeft" file=""/>
 												<Texture name="$parent_BottomRight" file=""/>
-												<Texture name="$parent_Logo" file="(zglogo)">
+												<Texture name="$parent_Logo">
 													<Size x="26" y="26"/>
 													<TexCoords left="0.000" right="1.000" top="0.000" bottom="0.250"/>
 												</Texture>
@@ -751,19 +750,19 @@
 															</AnimationGroup>
 														</Animations>
 
-														<Layers>
-															<Layer level="BORDER">
-																<Texture name="$parent_Top" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_top_flash.blp" alphaMode="ADD"/>
-																<Texture name="$parent_Left" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_border_flash.blp" alphaMode="ADD"/>
-																<Texture name="$parent_Right" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_border_flash.blp" alphaMode="ADD"/>
-																<Texture name="$parent_Bottom" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_border_flash.blp" alphaMode="ADD"/>
-															</Layer>
-															<Layer level="ARTWORK">
-																<Texture name="$parent_TopLeft" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_flash" alphaMode="ADD"/>
-																<Texture name="$parent_TopRight" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_flash" alphaMode="ADD"/>
-																<Texture name="$parent_BottomLeft" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_flash" alphaMode="ADD"/>
-																<Texture name="$parent_BottomRight" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_flash" alphaMode="ADD"/>
-																<Texture name="$parent_Logo" file="Interface\AddOns\ZygorGuidesViewer\Skin\LeavesOfSteel_flash" alphaMode="ADD">
+												<Layers>
+													<Layer level="BORDER">
+														<Texture name="$parent_Top" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\leavesofsteel_top_flash" alphaMode="ADD"/>
+														<Texture name="$parent_Left" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\leavesofsteel_border_flash" alphaMode="ADD"/>
+														<Texture name="$parent_Right" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\leavesofsteel_border_flash" alphaMode="ADD"/>
+														<Texture name="$parent_Bottom" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\leavesofsteel_border_flash" alphaMode="ADD"/>
+													</Layer>
+													<Layer level="ARTWORK">
+														<Texture name="$parent_TopLeft" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\leavesofsteel_flash" alphaMode="ADD"/>
+														<Texture name="$parent_TopRight" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\leavesofsteel_flash" alphaMode="ADD"/>
+														<Texture name="$parent_BottomLeft" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\leavesofsteel_flash" alphaMode="ADD"/>
+														<Texture name="$parent_BottomRight" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\leavesofsteel_flash" alphaMode="ADD"/>
+														<Texture name="$parent_Logo" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\leavesofsteel_flash" alphaMode="ADD">
 																	<Size x="50" y="50"/>
 																	<TexCoords left="0.8198" right="0.9087" top="0.7627" bottom="0.9404"/>
 																</Texture>

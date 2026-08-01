@@ -6,7 +6,7 @@
 				<Texture name="$parentHighlight" parentKey="Highlight" file="Interface\QuestFrame\UI-QuestTitleHighlight" alphaMode="ADD" setAllPoints="true" hidden="true"/>
 			</Layer>
 			<Layer level="ARTWORK">
-				<Texture name="$parentCheck" file="Interface\Common\UI-DropDownRadioChecks">
+				<Texture name="$parentCheck" file="Interface\Buttons\UI-DropDownRadioChecks">
 					<Size x="14" y="14"/>
 					<Anchors>
 						<Anchor point="RIGHT">
@@ -15,7 +15,7 @@
 					</Anchors>
 					<TexCoords left="0" right="0.5" top="0.5" bottom="1.0"/>
 				</Texture>
-				<Texture name="$parentUnCheck" file="Interface\Common\UI-DropDownRadioChecks">
+				<Texture name="$parentUnCheck" file="Interface\Buttons\UI-DropDownRadioChecks">
 					<Size x="14" y="14"/>
 					<Anchors>
 						<Anchor point="RIGHT">

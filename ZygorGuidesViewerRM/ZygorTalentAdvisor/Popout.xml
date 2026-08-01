@@ -324,7 +324,7 @@
 		</Frames>		
 	</Frame>
 
-	<Button name="ZygorTalentAdvisorPopoutButton" hidden="true" parent="PlayerTalentFrame">
+	<Button name="ZygorTalentAdvisorPopoutButton" hidden="true" parent="UIParent">
 		<Size x="32" y="32"/>
 		<Scripts>
 			<OnEnter>

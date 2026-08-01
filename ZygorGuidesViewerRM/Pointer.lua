@@ -705,6 +705,7 @@ function Pointer:Startup()
 	--overlay:SetFrameLevel(WorldMapButton:GetFrameLevel()+1)
 	overlay:SetScript("OnEvent",self.Overlay_OnEvent)
 	overlay:RegisterEvent("PLAYER_ENTERING_WORLD")
+	overlay:RegisterEvent("PLAYER_DEAD")
 	overlay:RegisterEvent("PLAYER_ALIVE")
 	overlay:RegisterEvent("PLAYER_UNGHOST")
 	overlay:RegisterEvent("ZONE_CHANGED_NEW_AREA")
@@ -828,6 +829,13 @@ function Pointer:SetWaypoint (c,z,x,y,data)
 	if not data then data={} end
 	if not data.title then data.title="Waypoint" end
 	if not data.type then data.type="way" end
+	if data.type~="corpse" and UnitIsDeadOrGhost("player") then
+		self:SetCorpseArrow()
+		if type(self.corpsearrow)=="table" and self.waypoints[self.corpsearrow] then
+			self:ShowArrow(self.corpsearrow)
+		end
+		return self.corpsearrow
+	end
 	if not data.icon then data.icon=ZGV.DIR .. "\\Skin\\minimaparrow-green-dot" end
 	if not data.edgeicon then data.edgeicon=ZGV.DIR .. "\\Skin\\minimaparrow-green-edge" end
 
@@ -1854,10 +1862,14 @@ function Pointer.Overlay_OnEvent(self,event,...)
 				if way.worldmapFrame:IsShown() and way.OnEvent then way:OnEvent(event,...) end
 			end
 		end
-	elseif event=="PLAYER_ALIVE" or event=="PLAYER_ENTERING_WORLD" or event=="ZONE_CHANGED_NEW_AREA" then
+	elseif event=="PLAYER_DEAD" or event=="PLAYER_ALIVE" or event=="PLAYER_ENTERING_WORLD" or event=="ZONE_CHANGED_NEW_AREA" then
 		ZGV:Debug(event.." (dead?)")
 		if UnitIsDeadOrGhost("player") and select(2, IsInInstance()) ~= "pvp" and not IsActiveBattlefieldArena() then
 			ZGV:Debug("Player dead!")
+			local internalWaypointer = ZGV.WaypointFunctions and ZGV.WaypointFunctions.internal
+			if ZGV.ConnectedWaypointer and ZGV.ConnectedWaypointer ~= internalWaypointer and ZGV.ConnectedWaypointer.setwaypoint then
+				ZGV.ConnectedWaypointer.setwaypoint(ZGV,false)
+			end
 			-- corpse arrow
 			ZGV.Pointer:SetCorpseArrow()
 		else
@@ -2448,7 +2460,11 @@ end
 
 function Pointer:SetCorpseArrow()
 
-	if self.corpsearrow then return end
+	if type(self.corpsearrow)=="table" and self.waypoints[self.corpsearrow] then
+		self:ShowArrow(self.corpsearrow)
+		return self.corpsearrow
+	end
+	self.corpsearrow = nil
 	if not UnitIsDeadOrGhost("player") then ZGV:Debug("Pointer.SetCorpseArrow: not dead!") return end
 
 	local x=0
@@ -2500,9 +2516,9 @@ function Pointer:SetCorpseArrow()
 
 	if x>0 and y>0 and c>0 and z>0 then
 		self:ClearWaypoints("corpse")
-		self:SetWaypoint(c,z,x,y,{title=L["pointer_corpselabel"..math.random(5)],type="corpse"})
-		self.corpsearrow=true
+		self.corpsearrow = self:SetWaypoint(c,z,x,y,{title=L["pointer_corpselabel"..math.random(5)],type="corpse"})
 	end
+	return self.corpsearrow
 end
 
 -- ===== ANT TRAIL SYSTEM =====
