@@ -164,6 +164,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 210 - 3.0.210
+
+- Fixed the route-calculation budget option calling LibRover without the required active profile, which caused a nil-profile error when changing the dropdown.
+- Made the dropdown check indicators use a bundled addon texture instead of depending on a stock UI texture that can be absent from GlueXML-modified clients.
+- Updated addon version metadata to 3.0.210.
+
 ### Revision 209 - 3.0.209
 
 - Changed fallback armor scoring so it remains useful for early statless equipment but cannot outweigh an item's other attributes; tank profiles that explicitly value armor are unchanged.
@@ -199,13 +205,6 @@ This addon is fully open source and can be inspected before use.
 - Removed the same stray placeholder text from an isolated Hunter debug talent build.
 - Preserved normal world-map overlays, waypoint behavior, and dungeon data.
 - Updated addon version metadata to 3.0.205.
-
-### Revision 204 - 3.0.204
-
-- Fixed a recurring first-start freeze for Death Knights on custom WotLK cores when the legacy 55-60 starter guide activates with built-in waypointing.
-- Made the existing phased-zone safeguard recognize the active Death Knight starter guide even when the server reports a nonstandard Acherus or Scarlet Enclave map name.
-- Kept the built-in direct arrow available while preventing unsafe LibRover route calculation for that starter guide.
-- Updated addon version metadata to 3.0.204.
 
 ## Notes
 

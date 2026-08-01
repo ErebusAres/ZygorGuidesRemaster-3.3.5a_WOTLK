@@ -2168,7 +2168,7 @@ function me:Options_DefineOptions()
 				end,
 				set = function(_,v)
 					self.db.profile.pathfinding_speed = tonumber(v) or 1
-					if self.LibRover and self.LibRover.UpdateConfig then self.LibRover:UpdateConfig() end
+					if self.LibRover and self.LibRover.UpdateConfig then self.LibRover:UpdateConfig(self.db.profile) end
 					if self.Pointer and self.Pointer.DestinationWaypoint and self.Pointer.DestinationWaypoint.type == "manual" then
 						if self.LibRover and self.LibRover.UpdateNow then self.LibRover:UpdateNow() end
 					else

@@ -6,23 +6,24 @@
 				<Texture name="$parentHighlight" parentKey="Highlight" file="Interface\QuestFrame\UI-QuestTitleHighlight" alphaMode="ADD" setAllPoints="true" hidden="true"/>
 			</Layer>
 			<Layer level="ARTWORK">
-				<Texture name="$parentCheck" file="Interface\Buttons\UI-DropDownRadioChecks">
+				<Texture name="$parentCheck" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\minimaparrow-green-dot">
 					<Size x="14" y="14"/>
 					<Anchors>
 						<Anchor point="RIGHT">
 							<Offset x="0" y="0"/>
 						</Anchor>
 					</Anchors>
-					<TexCoords left="0" right="0.5" top="0.5" bottom="1.0"/>
+					<TexCoords left="0" right="1" top="0" bottom="1"/>
 				</Texture>
-				<Texture name="$parentUnCheck" file="Interface\Buttons\UI-DropDownRadioChecks">
+				<Texture name="$parentUnCheck" file="Interface\AddOns\ZygorGuidesViewerRM\Skin\minimaparrow-green-dot">
 					<Size x="14" y="14"/>
 					<Anchors>
 						<Anchor point="RIGHT">
 							<Offset x="0" y="0"/>
 						</Anchor>
 					</Anchors>
-					<TexCoords left="0.5" right="1.0" top="0.5" bottom="1.0"/>
+					<Color r="0.35" g="0.35" b="0.35" a="1"/>
+					<TexCoords left="0" right="1" top="0" bottom="1"/>
 				</Texture>
 				<Texture parentKey="Icon" name="$parentIcon" hidden="true">
 					<Size>
