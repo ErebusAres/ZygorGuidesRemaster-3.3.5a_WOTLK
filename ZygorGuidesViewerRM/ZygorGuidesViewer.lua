@@ -8446,7 +8446,7 @@ local function insert_guides(arr,guides)
 			tinsert(page,guide_to_menu_item(guides[index]))
 		end
 		tinsert(arr,{
-			text = ("%d - %d"):format(first,last),
+			text = ("[ %d - %d ]"):format(first,last),
 			hasArrow = true,
 			menuList = page,
 			keepShownOnClick = true,

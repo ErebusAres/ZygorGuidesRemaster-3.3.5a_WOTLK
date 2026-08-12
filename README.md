@@ -164,6 +164,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 212 - 3.0.212
+
+- Wrapped legacy quick-guide pagination ranges in brackets so structural submenu entries are visually distinct from guide level ranges.
+- Kept the labels locale-neutral without adding untranslated UI text.
+- Updated addon version metadata to 3.0.212.
+
 ### Revision 211 - 3.0.211
 
 - Fixed zhCN startup failing because the locale loaded before the main viewer object existed, and hardened the same initialization path for koKR and zhTW.
@@ -199,13 +205,6 @@ This addon is fully open source and can be inspected before use.
 - Added localized subzone lookups for guide conditions and diagnostic reports while preserving the addon's existing zone library and stock-client behavior.
 - Integrated the focused compatibility work from community pull request #84 without its duplicate library loaders, replacement zone library, or unrelated formatting changes.
 - Updated addon version metadata to 3.0.207.
-
-### Revision 206 - 3.0.206
-
-- Fixed Gear Advisor treating generic two-handed mace, axe, and sword subtype data as one-handed weapon families, which could recommend unusable two-handed weapons to classes such as Rogues.
-- Prevented Gear Advisor from presenting or automatically equipping armor candidates that are both more than 20 item levels lower and below half the level of uncommon-or-better equipped gear.
-- Preserved normal leveling upgrades and existing exceptions for invalid equipped gear, protected quest items, heirlooms, low-quality equipped armor, and weapons.
-- Updated addon version metadata to 3.0.206.
 
 ## Notes
 
