@@ -98,6 +98,7 @@ function DropDown:New(parent,style,frameLevel,multi)
 		:SetBackdrop(SkinData("DropDownPulloutBackdrop"))
 		:SetBackdropColor(unpack(SkinData("DropDownPulloutColor")))
 		:SetBackdropBorderColor(unpack(SkinData("DropDownPulloutBorderColor")))
+		:SetClampedToScreen(true)
 		:SetParent(dropdown)
 
 	-- Fix the text now.

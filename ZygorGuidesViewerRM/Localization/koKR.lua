@@ -1,6 +1,8 @@
 if GetLocale()~="koKR" then return end
 
-ZygorGuidesViewer.LocaleFont = [[Fonts\2002.TTF]]
+-- Localization loads before the viewer object is created. Preserve the locale
+-- font until ZygorGuidesViewer.lua can attach it to the addon instance.
+ZygorGuidesViewerLocaleFont = [[Fonts\2002.TTF]]
 
 local COLOR_TIP_MOUSE = "|cffeedd99"
 local COLOR_TIP_HINT = "|cff99ff00"

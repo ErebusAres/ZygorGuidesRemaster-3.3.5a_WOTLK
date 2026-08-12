@@ -11,6 +11,8 @@ local me = LibStub("AceAddon-3.0"):NewAddon("ZygorGuidesViewer", "AceConsole-3.0
 
 --global export
 ZygorGuidesViewer = me
+me.LocaleFont = ZygorGuidesViewerLocaleFont
+ZygorGuidesViewerLocaleFont = nil
 
 ZGV = me
 local ZGV = me
@@ -8406,19 +8408,50 @@ function me:GoalOnLeave(goalframe,num)
 end
 
 
+local GUIDE_MENU_PAGE_SIZE = 25
+local guideMenuClampHooked
+
+local function clamp_guide_menu_lists(maxLevel)
+	maxLevel = tonumber(maxLevel) or 4
+	for level=1,maxLevel do
+		local list = _G["DropDownList"..level]
+		if list and list.SetClampedToScreen then list:SetClampedToScreen(true) end
+	end
+end
+
+local function guide_to_menu_item(guide)
+	local data = ZGV:GetGuideByTitle(guide.full)
+	return {
+		text = guide.step and L['menu_last_entry']:format(guide.short or "?",guide.step) or (guide.short or "?"),
+		checked = function() return ZGV.CurrentGuideName==guide.full end,
+		func = function()  CloseDropDownMenus()  ZGV:SetGuide(guide.full,guide.step) end,
+		tooltipTitle = data and data.description and guide.short,
+		tooltipText = data and data.description,
+		tooltipOnButton = true,
+	}
+end
+
 local function insert_guides(arr,guides)
-	local data
-	for i,guide in ipairs(guides) do
-		data = ZGV:GetGuideByTitle(guide.full)
-		local item = {
-			text = guide.step and L['menu_last_entry']:format(guide.short or "?",guide.step) or (guide.short or "?"),
-			checked = function() return ZGV.CurrentGuideName==guide.full end,
-			func = function()  CloseDropDownMenus()  ZGV:SetGuide(guide.full,guide.step) end,
-			tooltipTitle = data and data.description and guide.short,
-			tooltipText = data and data.description,
-			tooltipOnButton = true,
-		}
-		tinsert(arr,item)
+	if #guides <= GUIDE_MENU_PAGE_SIZE then
+		for _,guide in ipairs(guides) do
+			tinsert(arr,guide_to_menu_item(guide))
+		end
+		return
+	end
+
+	for first=1,#guides,GUIDE_MENU_PAGE_SIZE do
+		local last = math.min(first + GUIDE_MENU_PAGE_SIZE - 1,#guides)
+		local page = {}
+		for index=first,last do
+			tinsert(page,guide_to_menu_item(guides[index]))
+		end
+		tinsert(arr,{
+			text = ("%d - %d"):format(first,last),
+			hasArrow = true,
+			menuList = page,
+			keepShownOnClick = true,
+			func = function(self) _G[self:GetName().."Check"]:Hide() end,
+		})
 	end
 end
 
@@ -8469,7 +8502,18 @@ function me:OpenGuideMenu()
 	--DropDownList1:SetBackdrop(backdrop)
 	EasyMenu(menu,ZGVFMenu,nil,30,10,"MENU",3)
 	UIDropDownMenu_SetWidth(ZGVFMenu, 300)
-	-- Clamp the root dropdown so it always opens fully on-screen near UI edges.
+	-- Clamp every guide-menu tier, including deeper frames the legacy dropdown
+	-- code creates lazily after the player opens a submenu.
+	if not guideMenuClampHooked and type(UIDropDownMenu_CreateFrames)=="function" then
+		hooksecurefunc("UIDropDownMenu_CreateFrames",function(level)
+			clamp_guide_menu_lists(level)
+		end)
+		guideMenuClampHooked = true
+	end
+	clamp_guide_menu_lists(4)
+
+	-- Reposition the root dropdown if the legacy menu anchor still placed it
+	-- beyond an edge before clamping took effect.
 	local root = _G.DropDownList1
 	if root and root.IsShown and root:IsShown() and root.GetLeft and root.GetRight then
 		root:SetClampedToScreen(true)

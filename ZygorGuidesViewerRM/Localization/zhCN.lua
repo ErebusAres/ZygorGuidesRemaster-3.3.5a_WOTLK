@@ -2,7 +2,6 @@ if GetLocale()~="zhCN" then return end
 
 -- Use the client-provided Chinese font through STANDARD_TEXT_FONT.
 -- Forcing Fonts\ZYKai_T.ttf can fail on clients that do not ship that exact file.
-ZygorGuidesViewer.LocaleFont = nil
 
 local COLOR_TIP_MOUSE = "|cffeedd99"
 local COLOR_TIP_HINT = "|cff99ff00"

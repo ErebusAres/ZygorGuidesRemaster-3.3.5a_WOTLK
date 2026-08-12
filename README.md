@@ -164,6 +164,14 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 211 - 3.0.211
+
+- Fixed zhCN startup failing because the locale loaded before the main viewer object existed, and hardened the same initialization path for koKR and zhTW.
+- Paginated oversized legacy quick-guide folders into groups of 25 so every guide remains reachable on smaller displays or larger UI scales.
+- Kept native cascading guide menus and custom settings dropdowns clamped to the screen, including submenu frames created on demand.
+- Reviewed and adapted the initial guide-menu patch supplied by @Polypheides in issue #92.
+- Updated addon version metadata to 3.0.211.
+
 ### Revision 210 - 3.0.210
 
 - Fixed the route-calculation budget option calling LibRover without the required active profile, which caused a nil-profile error when changing the dropdown.
@@ -198,13 +206,6 @@ This addon is fully open source and can be inspected before use.
 - Prevented Gear Advisor from presenting or automatically equipping armor candidates that are both more than 20 item levels lower and below half the level of uncommon-or-better equipped gear.
 - Preserved normal leveling upgrades and existing exceptions for invalid equipped gear, protected quest items, heirlooms, low-quality equipped armor, and weapons.
 - Updated addon version metadata to 3.0.206.
-
-### Revision 205 - 3.0.205
-
-- Removed obsolete dungeon-map development code that added a fake `dupa` entry to Blizzard's world-map zone dropdown.
-- Removed the same stray placeholder text from an isolated Hunter debug talent build.
-- Preserved normal world-map overlays, waypoint behavior, and dungeon data.
-- Updated addon version metadata to 3.0.205.
 
 ## Notes
 
