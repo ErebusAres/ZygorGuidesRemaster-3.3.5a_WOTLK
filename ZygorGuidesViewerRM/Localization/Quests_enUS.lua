@@ -1,17 +1,8 @@
--- ZygorQuestDB.lua
--- Generiert: 2026-05-03 11:31:35
--- AzerothCore 3.3.5a | 9450 Quests
---
--- Stellt ZGV.QuestDB bereit mit:
---   ZGV.QuestDB:GetQuestName(questID)  ->  string oder nil
---
-local ZGV = ZygorGuidesViewer
-if not ZGV then return end
-
-ZGV.QuestDB = ZGV.QuestDB or {}
-local QuestDB = ZGV.QuestDB
-
-QuestDB._names = {
+-- Quests_enUS.lua
+-- Generated: 2026-07-27 13:10:16
+-- AzerothCore 3.3.5a AzerothCore rev. ff1f543a102b+ 2026-07-26 18:07:10 -0300 (master branch) (Unix, RelWithDebInfo, Static) | rev ff1f543a102b+ | db ACDB 335.17-dev
+-- locale enUS | 9456 quests
+ZygorGuidesViewer_L("Quests", "enUS", function() return {
 	[1]="Kanrethad's Quest",
 	[2]="Sharptalon's Claw",
 	[5]="Jitters' Growling Gut",
@@ -5561,7 +5552,9 @@ QuestDB._names = {
 	[10213]="Investigate the Crash",
 	[10214]="When This Mine's a-Rockin'",
 	[10216]="Safety Is Job One",
+	[10217]="Fossil Fuel",
 	[10218]="Someone Else's Hard Work Pays Off",
+	[10219]="Walk the Dog",
 	[10220]="Make Them Listen",
 	[10221]="Dr. Boom!",
 	[10222]="The Sunfury Garrison",
@@ -6183,6 +6176,7 @@ QuestDB._names = {
 	[10838]="The Demoniac Scryer",
 	[10839]="Veil Skith: Darkstone of Terokk",
 	[10840]="The Tomb of Lights",
+	[10841]="The Vengeful Harbinger",
 	[10842]="Vengeful Souls",
 	[10843]="Since Time Forgotten...",
 	[10844]="Forge Camp: Anger",
@@ -6266,6 +6260,7 @@ QuestDB._names = {
 	[10922]="Digging Through Bones",
 	[10923]="Evil Draws Near",
 	[10924]="Bloody Imp-ossible!",
+	[10925]="Evil Draws Near",
 	[10926]="Return to Sha'tari Base Camp",
 	[10927]="Killing the Crawlers",
 	[10928]="Killing the Crawlers",
@@ -9461,11 +9456,8 @@ QuestDB._names = {
 	[25485]="World Event Dungeon - Hummel",
 	[25495]="Preparin' For Battle",
 	[25500]="Words for Delivery",
-	[99002]="Die Kobold-Plage und Magie",
-}
-
-function QuestDB:GetQuestName(questID)
-	if not questID then return nil end
-	if type(questID) == 'table' then questID = questID[1] or questID[2] end
-	return self._names[questID]
-end
+	[26012]="Trouble at Wyrmrest",
+	[26013]="Assault on the Sanctum",
+	[26034]="The Twilight Destroyer",
+    [99002]="Die Kobold-Plage und Magie",	
+} end)

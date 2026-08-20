@@ -224,6 +224,8 @@ function Step:GetTitle()
 	if self.title then return self.title end
 	for i,goal in ipairs(self.goals) do
 		if goal.title then return goal.title end
+		local questName = (goal.questid and ZGV:GetQuestName(goal.questid))
+		if questName then return questName end
 		if goal.quest and goal.L then return goal.quest end
 		if goal.npc and goal.L then return goal.npc end
 	end

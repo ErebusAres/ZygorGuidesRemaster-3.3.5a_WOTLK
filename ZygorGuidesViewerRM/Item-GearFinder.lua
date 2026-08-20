@@ -2269,7 +2269,7 @@ function GearFinder:ScoreDungeonItems(force)
 								-- 3.3.5a: no level scaling, no mythic bonuses
 								local qname
 								if bossdata.quest and bossdata.quest[faction] then
-									qname = ZGV.QuestDB and ZGV.QuestDB:GetQuestName(bossdata.quest[faction])
+									qname = ZGV:GetQuestName(bossdata.quest[faction])
 								end
 								table.insert(GearFinder.ItemsToScore[ident],{itemlink=itemlink,boss=bossdata.boss, bossname=GF_GetBossNameFromID(bossdata.boss, bossdata.name), special=bossdata.special, phase=bossdata.phase, encounterId=bossdata.encounterId, quest=bossdata.quest and bossdata.quest[faction], questname=qname})
 							elseif not knownClientItem then
@@ -2300,7 +2300,7 @@ function GearFinder:ScoreDungeonItems(force)
 								-- 3.3.5a: no level scaling, no mythic bonuses
 								local qname
 								if bossdata.quest and bossdata.quest[faction] then
-									qname = ZGV.QuestDB and ZGV.QuestDB:GetQuestName(bossdata.quest[faction])
+									qname = ZGV:GetQuestName(bossdata.quest[faction])
 								end
 								table.insert(GearFinder.ItemsToMaybeScore[ident],{itemlink=itemlink,boss=bossdata.boss, bossname=GF_GetBossNameFromID(bossdata.boss, bossdata.name), special=bossdata.special, phase=bossdata.phase, encounterId=bossdata.encounterId, quest=bossdata.quest and bossdata.quest[faction], questname=qname})
 							elseif not knownClientItem then
@@ -3231,7 +3231,7 @@ function GearFinder:DisplayResults()
 				elseif staticSource then
 					button.itemencounter:SetText(staticSource)
 				elseif upgrade.quest then
-					local questname = ZGV.QuestDB:GetQuestName(upgrade.quest)
+					local questname = ZGV:GetQuestName(upgrade.quest)
 					button.itemencounter:SetText("Quest: "..(upgrade.questname or questname or ""))
 				elseif upgrade.encounterId then
 					button.itemencounter:SetText("Boss: "..GF_GetEncounterLabel(upgrade.encounterId, bossLabel))
@@ -3250,7 +3250,7 @@ function GearFinder:DisplayResults()
 				elseif staticSource then
 					button.itemencounter:SetText(staticSource)
 				elseif upgrade.quest then
-					local questname = ZGV.QuestDB:GetQuestName(upgrade.quest)
+					local questname = ZGV:GetQuestName(upgrade.quest)
 					button.itemencounter:SetText("Quest: "..(upgrade.questname or questname or ""))
 				elseif upgrade.encounterId then
 					button.itemencounter:SetText("Boss: "..GF_GetEncounterLabel(upgrade.encounterId, bossLabel))
