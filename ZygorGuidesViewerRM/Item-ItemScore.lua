@@ -2215,6 +2215,7 @@ function ItemScore:OnEvent(event,arg1,arg2,...)
 		ItemScore:ScheduleEquipRescore(0.5)
 	elseif event == "PLAYER_REGEN_DISABLED" then -- combat started, kill all upgrade popups
 		if ItemScore.Upgrades.EquipPopup then ItemScore.Upgrades.EquipPopup:Hide() end
+		if ZGV.NotificationCenter then ZGV.NotificationCenter:RemoveEntry("ZygorItemPopup") end
 	elseif event == "PLAYER_REGEN_ENABLED" then -- combat ended, check if anything is waiting for equip
 		ItemScore.Upgrades:ProcessPossibleUpgrades()
 	elseif event == "START_LOOT_ROLL" then

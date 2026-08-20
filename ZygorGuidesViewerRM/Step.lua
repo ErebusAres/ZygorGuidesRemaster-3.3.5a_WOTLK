@@ -189,6 +189,69 @@ function Step:IsObsolete()
 	return true
 end
 
+-- A pure travel step contains at least one visible goto and no other visible
+-- action. Passive text-only goals do not make the step into a work step.
+function Step:IsTravelStep()
+	local hasGoto = false
+	for _,goal in ipairs(self.goals) do
+		if goal:IsVisible() then
+			if goal.action == "goto" then
+				hasGoto = true
+			elseif goal.action and goal.action ~= "" then
+				return false
+			end
+		end
+	end
+	return hasGoto
+end
+
+-- Mirror the current smart-skip rules without advancing or changing guide state.
+function Step:WouldAutoSkip()
+	local complete,possible,manual = self:IsComplete()
+	if complete then
+		if self.condition_until and not self.condition_until() then return false end
+		return true
+	end
+
+	local profile = ZGV.db and ZGV.db.profile
+	if not profile then return false end
+	if profile.skipimpossible and not possible and not manual then return true end
+	if profile.skipobsolete and self:IsObsolete() then return true end
+	if profile.skipauxsteps and self:IsAuxiliarySkippable() then return true end
+	return false
+end
+
+local function StepHasJump(step)
+	if step.next then return true end
+	for _,goal in ipairs(step.goals) do
+		if goal.next then return true end
+	end
+	return false
+end
+
+-- Travel is pointless only when every sequential work step before the next
+-- destination would already be skipped. Jumping steps are deliberately excluded,
+-- and there is no arbitrary lookahead cutoff that could strand later work.
+function Step:IsPointlessTravel()
+	if not self:IsTravelStep() or StepHasJump(self) then return false end
+
+	local guide = self.parentGuide
+	if not guide or not guide.steps then return false end
+	local sawWork = false
+
+	for i = self.num + 1,#guide.steps do
+		local step = guide.steps[i]
+		if not step then return false end
+		if step:IsTravelStep() then return sawWork end
+		if StepHasJump(step) then return false end
+
+		sawWork = true
+		if not step:WouldAutoSkip() then return false end
+	end
+
+	return sawWork
+end
+
 --- Checks if the step has any use - if not, it can be safely skipped as long as it's followed by other skippable steps up to a completed step.
 -- @return true if the step is useful, false if not.
 function Step:IsAuxiliarySkippable()

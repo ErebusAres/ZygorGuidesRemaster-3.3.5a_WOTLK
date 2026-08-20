@@ -2199,6 +2199,12 @@ function Upgrades:CreatePopup()
 		:ClearAllPoints()
 		:SetPoint("CENTER",F.footer,"CENTER",-66,-1)
 	F.acceptbutton:SetScript("OnClick", function(self)
+		if ZGV:IsPlayerInCombat() then
+			F.selfHidden = true
+			ZGV.NotificationCenter:RemoveEntry("ZygorItemPopup")
+			F:Hide()
+			return
+		end
 		F.selfHidden = true
 		ZGV.NotificationCenter:RemoveEntry("ZygorItemPopup")
 		F:Hide()
@@ -2570,6 +2576,11 @@ end
 
 function Upgrades:Equip(item,retry)
 	if not item then return end
+	if ZGV:IsPlayerInCombat() then
+		if Upgrades.EquipPopup then Upgrades.EquipPopup:Hide() end
+		if ZGV.NotificationCenter then ZGV.NotificationCenter:RemoveEntry("ZygorItemPopup") end
+		return false
+	end
 	if not (item.bagnum and item.bagslot) then -- we didn't get item location. shouldn't be possible
 		Upgrades:ScoreEquippedItems()
 		return false
@@ -2634,6 +2645,43 @@ function Upgrades:Equip(item,retry)
 				return equippedLink or true
 			end
 			return nil
+		end
+
+		-- A name/link equip can select the wrong copy when identical items occupy
+		-- multiple bag slots. For BoE items, use the exact scored bag location and
+		-- target slot once, then leave the pending confirmation entirely to FrameXML.
+		if isBoE and not frombank then
+			ClearCursor()
+			PickupContainerItem(bagnum, bagslot)
+			if not CursorHasItem() then return false end
+
+			if slot then
+				if PickupInventoryItem then
+					PickupInventoryItem(slot)
+				else
+					EquipCursorItem(slot)
+				end
+			elseif AutoEquipCursorItem then
+				AutoEquipCursorItem()
+			end
+
+			if is_boe_confirm_visible() then
+				debug_equip(("waiting for exact-slot BoE confirmation slot=%s bag=%s/%s item=%s"):format(
+					tostring(slot), tostring(bagnum), tostring(bagslot), tostring(link)))
+				return "pending_boe"
+			end
+
+			local exactEquipped = equipped_now()
+			if CursorHasItem() then ClearCursor() end
+			if exactEquipped then
+				debug_equip(("equipped exact-slot BoE item slot=%s bag=%s/%s item=%s"):format(
+					tostring(slot), tostring(bagnum), tostring(bagslot), tostring(link)))
+				return true
+			end
+
+			debug_equip(("exact-slot BoE attempt produced no confirmation slot=%s bag=%s/%s item=%s"):format(
+				tostring(slot), tostring(bagnum), tostring(bagslot), tostring(link)), true)
+			return false
 		end
 
 		if not frombank and EquipItemByName then

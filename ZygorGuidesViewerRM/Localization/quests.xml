@@ -9,5 +9,6 @@
 <Script file="Quests_ruRU.lua"/>
 <Script file="Quests_zhCN.lua"/>
 <Script file="Quests_zhTW.lua"/>
+<Script file="Quests_custom.lua"/>
 
 </Ui>

@@ -9459,5 +9459,4 @@ ZygorGuidesViewer_L("Quests", "enUS", function() return {
 	[26012]="Trouble at Wyrmrest",
 	[26013]="Assault on the Sanctum",
 	[26034]="The Twilight Destroyer",
-    [99002]="Die Kobold-Plage und Magie",	
 } end)

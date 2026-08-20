@@ -141,6 +141,7 @@ Localization was largely AI-assisted and should be treated as needing community 
 ### Community Credits
 
 - [`mikki33`](https://github.com/mikki33) for providing Russian localization changes and review updates.
+- [`yad`](https://github.com/yad) for the localized quest databases, integration work, and reproducible AzerothCore data generator contributed in pull request #88.
 
 ## Support Wanted (Localization QA)
 
@@ -163,6 +164,14 @@ This addon is fully open source and can be inspected before use.
 - A VirusTotal scan of the download link is provided for transparency.
 
 ## Changelog
+
+### Revision 213 - 3.0.213
+
+- Added localized quest-name databases for deDE, esES, esMX, frFR, ruRU, zhCN, and zhTW with enUS fallback, based on the contribution from @yad in pull request #88.
+- Kept custom private-server quest names in a separate maintained override so regenerated AzerothCore data cannot erase them.
+- Fixed intermittent BoE equip attempts by targeting the exact scored bag copy instead of an ambiguous identical item name, preserving the pending bind confirmation, and deferring the comparison until combat ends.
+- Skipped pure travel steps when every sequential task before the next destination is already complete or would be skipped, with conservative guards for remaining work, guide jumps, and unfinished repeat conditions. Credit @opicron for the feature report and initial design in issue #95.
+- Updated addon version metadata to 3.0.213.
 
 ### Revision 212 - 3.0.212
 
@@ -198,13 +207,6 @@ This addon is fully open source and can be inspected before use.
 - Added the missing Wrath weapon proficiencies for Druid polearms and Rogue one-handed axes across their Gear Advisor builds.
 - Kept spec-specific weapon preferences layered beneath the class proficiency guard so scoring cannot override hard class restrictions.
 - Updated addon version metadata to 3.0.208.
-
-### Revision 207 - 3.0.207
-
-- Added HD/WDM map compatibility for 53 phased starting-area, cave, mine, and dungeon-entrance map identifiers used by common 3.3.5a map patches.
-- Added localized subzone lookups for guide conditions and diagnostic reports while preserving the addon's existing zone library and stock-client behavior.
-- Integrated the focused compatibility work from community pull request #84 without its duplicate library loaders, replacement zone library, or unrelated formatting changes.
-- Updated addon version metadata to 3.0.207.
 
 ## Notes
 

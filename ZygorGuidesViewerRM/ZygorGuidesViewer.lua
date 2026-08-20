@@ -4610,6 +4610,7 @@ function me:TryToCompleteStep(force)
 	-- smart skipping: treat impossible or skippable as completed
 	if (self.db.profile.skipimpossible and not steppossible and not stepmanual)
 	or (self.db.profile.skipobsolete and self.CurrentStep:IsObsolete())
+	or (self.db.profile.skipobsolete and self.CurrentStep:IsPointlessTravel())
 	or (self.db.profile.skipauxsteps and self.CurrentStep:IsAuxiliarySkippable()) then
 		completing=true
 		--self.pause=nil
