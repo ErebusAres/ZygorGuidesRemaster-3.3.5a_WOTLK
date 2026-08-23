@@ -30,6 +30,10 @@ local function GetQuestBoundGoalCount(goal, questGoalData)
 	return current, needed
 end
 
+local function IsWorldMapVisible()
+	return WorldMapFrame and WorldMapFrame.IsVisible and WorldMapFrame:IsVisible()
+end
+
 local function RecentTaxiMapMatchesFPath(goal)
 	if not ZGV.recentTaxiMapOpenedAt or not GetTime then return false end
 	if GetTime() - ZGV.recentTaxiMapOpenedAt > 3 then return false end
@@ -45,8 +49,11 @@ local function RecentTaxiMapMatchesFPath(goal)
 	end
 	if not gx or not gy then return false end
 
-	if SetMapToCurrentZone then SetMapToCurrentZone() end
 	local px,py = GetPlayerMapPosition("player")
+	if (not px or not py or (px==0 and py==0)) and SetMapToCurrentZone and not IsWorldMapVisible() then
+		SetMapToCurrentZone()
+		px,py = GetPlayerMapPosition("player")
+	end
 	if not px or not py or (px==0 and py==0) then return false end
 
 	local targetx,targety = gx/100,gy/100
@@ -335,7 +342,7 @@ function Goal:IsComplete()
 			local px,py = GetPlayerMapPosition("player")
 			-- WotLK map coords can be stale (0,0) until the map context is refreshed.
 			-- Refresh once so chained goto/path points can complete and advance.
-			if (not px or not py or (px==0 and py==0)) and SetMapToCurrentZone then
+			if (not px or not py or (px==0 and py==0)) and SetMapToCurrentZone and not IsWorldMapVisible() then
 				SetMapToCurrentZone()
 				px,py = GetPlayerMapPosition("player")
 			end

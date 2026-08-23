@@ -1962,10 +1962,14 @@ local lastturntime=lastbeeptime
 local laststoptime=lastbeeptime
 local lastmovetime=lastbeeptime
 
+local function IsWorldMapVisible()
+	return WorldMapFrame and WorldMapFrame.IsVisible and WorldMapFrame:IsVisible()
+end
+
 local function GetLocalWaypointMetrics(waypoint)
 	if not waypoint then return nil end
 	local px, py = GetPlayerMapPosition("player")
-	if (not px or not py or (px==0 and py==0)) and SetMapToCurrentZone then
+	if (not px or not py or (px==0 and py==0)) and SetMapToCurrentZone and not IsWorldMapVisible() then
 		SetMapToCurrentZone()
 		px, py = GetPlayerMapPosition("player")
 	end

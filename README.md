@@ -165,6 +165,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 214 - 3.0.214
+
+- Prevented guide progress checks and the built-in waypoint arrow from resetting a visible compact world map to the player's current zone when Mapster, ElvUI, or another addon displays the map in a window.
+- Preserved the stale-coordinate refresh used by local route points whenever the world map is closed.
+- Updated addon version metadata to 3.0.214.
+
 ### Revision 213 - 3.0.213
 
 - Added localized quest-name databases for deDE, esES, esMX, frFR, ruRU, zhCN, and zhTW with enUS fallback, based on the contribution from @yad in pull request #88.
@@ -200,13 +206,6 @@ This addon is fully open source and can be inspected before use.
 - Prioritized the corpse waypoint while the player is dead, including clearing external quest arrows when the death event fires and preventing later guide updates from replacing the corpse arrow.
 - Cleaned up confirmed invalid or obsolete XML, texture, font, binding-header, and TOC declarations reported in issue #89 while preserving optional custom guide and talent-build slots.
 - Updated addon version metadata to 3.0.209.
-
-### Revision 208 - 3.0.208
-
-- Added a class-wide Wrath 3.3.5a weapon proficiency matrix so Gear Advisor consistently rejects weapons the current class cannot equip, including swords on Druids and shields on Death Knights.
-- Added the missing Wrath weapon proficiencies for Druid polearms and Rogue one-handed axes across their Gear Advisor builds.
-- Kept spec-specific weapon preferences layered beneath the class proficiency guard so scoring cannot override hard class restrictions.
-- Updated addon version metadata to 3.0.208.
 
 ## Notes
 
