@@ -165,6 +165,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 215 - 3.0.215
+
+- Added 63 verified WotLK 3.3.5 Russian quest-name corrections contributed by @mikki33 in pull request #96.
+- Kept the corrections in the maintained locale override layer so future AzerothCore database regeneration cannot erase them.
+- Updated addon version metadata to 3.0.215.
+
 ### Revision 214 - 3.0.214
 
 - Prevented guide progress checks and the built-in waypoint arrow from resetting a visible compact world map to the player's current zone when Mapster, ElvUI, or another addon displays the map in a window.
@@ -198,14 +204,6 @@ This addon is fully open source and can be inspected before use.
 - Fixed the route-calculation budget option calling LibRover without the required active profile, which caused a nil-profile error when changing the dropdown.
 - Made the dropdown check indicators use a bundled addon texture instead of depending on a stock UI texture that can be absent from GlueXML-modified clients.
 - Updated addon version metadata to 3.0.210.
-
-### Revision 209 - 3.0.209
-
-- Changed fallback armor scoring so it remains useful for early statless equipment but cannot outweigh an item's other attributes; tank profiles that explicitly value armor are unchanged.
-- Expanded the extreme armor-downgrade safeguard to reject candidates more than 40 item levels below uncommon-or-better equipped gear, covering the level-72 Elemental Shaman example reported in issue #79.
-- Prioritized the corpse waypoint while the player is dead, including clearing external quest arrows when the death event fires and preventing later guide updates from replacing the corpse arrow.
-- Cleaned up confirmed invalid or obsolete XML, texture, font, binding-header, and TOC declarations reported in issue #89 while preserving optional custom guide and talent-build slots.
-- Updated addon version metadata to 3.0.209.
 
 ## Notes
 
