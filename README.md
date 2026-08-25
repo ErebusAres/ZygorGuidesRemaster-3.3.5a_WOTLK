@@ -165,6 +165,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 216 - 3.0.216
+
+- Limited future Gear Finder items to the same five-level look-ahead window used for future dungeons.
+- Prevented low-level characters from being directed to a nearby-entry-level dungeon for drops requiring dozens of additional levels.
+- Updated addon version metadata to 3.0.216.
+
 ### Revision 215 - 3.0.215
 
 - Added 63 verified WotLK 3.3.5 Russian quest-name corrections contributed by @mikki33 in pull request #96.
@@ -198,12 +204,6 @@ This addon is fully open source and can be inspected before use.
 - Kept native cascading guide menus and custom settings dropdowns clamped to the screen, including submenu frames created on demand.
 - Reviewed and adapted the initial guide-menu patch supplied by @Polypheides in issue #92.
 - Updated addon version metadata to 3.0.211.
-
-### Revision 210 - 3.0.210
-
-- Fixed the route-calculation budget option calling LibRover without the required active profile, which caused a nil-profile error when changing the dropdown.
-- Made the dropdown check indicators use a bundled addon texture instead of depending on a stock UI texture that can be absent from GlueXML-modified clients.
-- Updated addon version metadata to 3.0.210.
 
 ## Notes
 

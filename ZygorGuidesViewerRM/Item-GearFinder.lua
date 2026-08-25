@@ -290,7 +290,22 @@ end
 local function GF_ShouldIncludeCandidate(itemlink, future)
 	if not itemlink then return false end
 	local verdict = ItemScore:GetItemValidity(itemlink, future)
-	return verdict and verdict.valid and true or false
+	if not (verdict and verdict.valid) then return false end
+
+	-- Future dungeons are limited to a small look-ahead window, so their drops
+	-- must be usable in that same window. Generic future validity intentionally
+	-- ignores required level and otherwise lets low-level characters see the
+	-- highest-level drops from an only-slightly-future dungeon.
+	if future then
+		local item = verdict.item
+		local requiredLevel = tonumber(item and item.minlevel) or 0
+		local playerLevel = tonumber(ItemScore.playerlevel) or 0
+		if requiredLevel > playerLevel + GearFinder.FUTURE_DUNGEONS_LIMIT then
+			return false
+		end
+	end
+
+	return true
 end
 
 local function GF_IsCuratedSourceKey(dungeonKey)
