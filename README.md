@@ -142,6 +142,7 @@ Localization was largely AI-assisted and should be treated as needing community 
 
 - [`mikki33`](https://github.com/mikki33) for providing Russian localization changes and review updates.
 - [`yad`](https://github.com/yad) for the localized quest databases, integration work, and reproducible AzerothCore data generator contributed in pull request #88.
+- [`SnaxxNZ`](https://github.com/SnaxxNZ) for researching and contributing the Classic Tailoring Gear Finder dataset added in 3.0.217.
 
 ## Support Wanted (Localization QA)
 
@@ -164,6 +165,13 @@ This addon is fully open source and can be inspected before use.
 - A VirusTotal scan of the download link is provided for transparency.
 
 ## Changelog
+
+### Revision 217 - 3.0.217
+
+- Added 163 Classic Tailoring items spanning character levels 5-60 to Gear Finder's crafted leveling source, based on the dataset contributed by @SnaxxNZ.
+- Preserved each recipe's required Tailoring skill, recipe spell ID, item level requirement, and binding; BoP crafts remain restricted to characters with the required Tailoring skill.
+- Cross-checked every contributed row against the addon item database and AtlasLoot 3.3.5 crafting data.
+- Updated addon version metadata to 3.0.217.
 
 ### Revision 216 - 3.0.216
 
@@ -196,14 +204,6 @@ This addon is fully open source and can be inspected before use.
 - Wrapped legacy quick-guide pagination ranges in brackets so structural submenu entries are visually distinct from guide level ranges.
 - Kept the labels locale-neutral without adding untranslated UI text.
 - Updated addon version metadata to 3.0.212.
-
-### Revision 211 - 3.0.211
-
-- Fixed zhCN startup failing because the locale loaded before the main viewer object existed, and hardened the same initialization path for koKR and zhTW.
-- Paginated oversized legacy quick-guide folders into groups of 25 so every guide remains reachable on smaller displays or larger UI scales.
-- Kept native cascading guide menus and custom settings dropdowns clamped to the screen, including submenu frames created on demand.
-- Reviewed and adapted the initial guide-menu patch supplied by @Polypheides in issue #92.
-- Updated addon version metadata to 3.0.211.
 
 ## Notes
 
