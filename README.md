@@ -73,9 +73,10 @@ Core 3.3.5a-era behavior is preserved:
   - Settings left-click opens quick settings.
   - Settings right-click opens Guide Manager options.
 - Gear Advisor role shortcuts:
-  - `/zygortank` selects the matching tank profile for the active Death Knight or Feral Druid talent group.
-  - `/zygordps` selects the matching damage profile for that talent group.
-  - `/zygorrole auto` returns the active talent group to automatic talent-tree detection.
+  - `/zygortank` or `/ztank` selects the class's tank profile for the active talent group.
+  - `/zygordps` or `/zdps` selects a matching damage profile.
+  - `/zygorheal` or `/zheal` selects a healing profile; `/zygorsupport`, `/zsupport`, `/zygorsup`, and `/zsup` use the same healing-role profile because WotLK has no separate support stat set.
+  - `/zygorrole auto` or `/zrole auto` returns only the active talent group to automatic talent-tree detection.
 
 ## Quick Install
 
@@ -170,6 +171,13 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 219 - 3.0.219
+
+- Expanded Gear Advisor role commands across supported tank, DPS, and healer classes while retaining the active talent group's independent override.
+- Added short aliases `/ztank`, `/zdps`, `/zheal`, `/zsupport`, `/zsup`, and `/zrole auto` alongside the full `/zygor...` commands.
+- Mapped support commands to the appropriate healing profile because WotLK support effects do not use a separate gear-stat role.
+- Updated addon version metadata to 3.0.219.
+
 ### Revision 218 - 3.0.218
 
 - Split Death Knight Gear Advisor profiles into Blood, Frost, and Unholy DPS and tank variants instead of treating every detected tree as a DPS build.
@@ -202,14 +210,6 @@ This addon is fully open source and can be inspected before use.
 - Prevented guide progress checks and the built-in waypoint arrow from resetting a visible compact world map to the player's current zone when Mapster, ElvUI, or another addon displays the map in a window.
 - Preserved the stale-coordinate refresh used by local route points whenever the world map is closed.
 - Updated addon version metadata to 3.0.214.
-
-### Revision 213 - 3.0.213
-
-- Added localized quest-name databases for deDE, esES, esMX, frFR, ruRU, zhCN, and zhTW with enUS fallback, based on the contribution from @yad in pull request #88.
-- Kept custom private-server quest names in a separate maintained override so regenerated AzerothCore data cannot erase them.
-- Fixed intermittent BoE equip attempts by targeting the exact scored bag copy instead of an ambiguous identical item name, preserving the pending bind confirmation, and deferring the comparison until combat ends.
-- Skipped pure travel steps when every sequential task before the next destination is already complete or would be skipped, with conservative guards for remaining work, guide jumps, and unfinished repeat conditions. Credit @opicron for the feature report and initial design in issue #95.
-- Updated addon version metadata to 3.0.213.
 
 ## Notes
 

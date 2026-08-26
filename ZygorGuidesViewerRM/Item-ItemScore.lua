@@ -1129,25 +1129,42 @@ end
 function ItemScore:RegisterRoleSlashCommands()
 	if self.RoleSlashRegistered then return end
 	SLASH_ZYGORTANK1 = "/zygortank"
+	SLASH_ZYGORTANK2 = "/ztank"
 	SLASH_ZYGORDPS1 = "/zygordps"
+	SLASH_ZYGORDPS2 = "/zdps"
+	SLASH_ZYGORHEAL1 = "/zygorheal"
+	SLASH_ZYGORHEAL2 = "/zheal"
+	SLASH_ZYGORHEAL3 = "/zygorhealer"
+	SLASH_ZYGORHEAL4 = "/zhealer"
+	SLASH_ZYGORSUPPORT1 = "/zygorsupport"
+	SLASH_ZYGORSUPPORT2 = "/zsupport"
+	SLASH_ZYGORSUPPORT3 = "/zygorsup"
+	SLASH_ZYGORSUPPORT4 = "/zsup"
 	SLASH_ZYGORROLE1 = "/zygorrole"
+	SLASH_ZYGORROLE2 = "/zrole"
 	SlashCmdList["ZYGORTANK"] = function()
 		if ZGV and ZGV.ItemScore then ZGV.ItemScore:SetGearRole("tank") end
 	end
 	SlashCmdList["ZYGORDPS"] = function()
 		if ZGV and ZGV.ItemScore then ZGV.ItemScore:SetGearRole("dps") end
 	end
+	SlashCmdList["ZYGORHEAL"] = function()
+		if ZGV and ZGV.ItemScore then ZGV.ItemScore:SetGearRole("heal") end
+	end
+	SlashCmdList["ZYGORSUPPORT"] = function()
+		if ZGV and ZGV.ItemScore then ZGV.ItemScore:SetGearRole("support") end
+	end
 	SlashCmdList["ZYGORROLE"] = function(msg)
 		if not (ZGV and ZGV.ItemScore) then return end
 		msg = tostring(msg or ""):lower():match("^%s*(.-)%s*$")
-		if msg == "tank" or msg == "dps" or msg == "auto" then
+		if msg == "tank" or msg == "dps" or msg == "heal" or msg == "healer" or msg == "support" or msg == "sup" or msg == "auto" then
 			ZGV.ItemScore:SetGearRole(msg)
 		else
 			local groupKey = ZGV.ItemScore:GetActiveTalentGroupKey()
 			local override = ZGV.ItemScore:GetActiveBuildOverrideBuild(ZGV.ItemScore.playerclass, groupKey)
 			local activeBuild = override or (ZGV.db and ZGV.db.char and ZGV.db.char.gear_active_build)
 			local activeName = ZGV.ItemScore:GetBuildName(ZGV.ItemScore.playerclass, activeBuild, ZGV.ItemScore.playerlevel)
-			ZGV:Print(("Gear Advisor: talent group %d uses %s. Commands: /zygortank, /zygordps, or /zygorrole auto."):format(groupKey, activeName))
+			ZGV:Print(("Gear Advisor: talent group %d uses %s. Commands: /ztank, /zdps, /zheal, /zsupport, or /zrole auto."):format(groupKey, activeName))
 		end
 	end
 	self.RoleSlashRegistered = true
@@ -1514,21 +1531,47 @@ end
 
 function ItemScore:GetGearRoleBuild(role)
 	role = tostring(role or ""):lower()
+	if role == "healer" or role == "support" or role == "sup" then role = "heal" end
 	local classToken = self.playerclass or select(2, UnitClass("player"))
 	local state = self:GetTalentState(classToken, self.playerlevel or UnitLevel("player"))
 	local tree = tonumber(state and state.bestTree)
 
 	if classToken == "DEATHKNIGHT" and tree and tree >= 1 and tree <= 3 then
-		return role == "tank" and (tree + 3) or tree
+		if role == "tank" then return tree + 3 end
+		if role == "dps" then return tree end
+		return nil, "Death Knights do not have a healing Gear Advisor profile."
 	end
-	if classToken == "DRUID" and tree == 2 then
-		return role == "tank" and 3 or 2
+	if classToken == "DRUID" then
+		if role == "tank" then return 3 end
+		if role == "heal" then return 4 end
+		if role == "dps" then return tree == 1 and 1 or 2 end
 	end
-	return nil, "This role shortcut is only needed for Death Knights and Feral Druids; other supported classes use separate talent trees for tank and damage roles."
+	if classToken == "PALADIN" then
+		if role == "tank" then return 2 end
+		if role == "heal" then return 1 end
+		if role == "dps" then return 3 end
+	end
+	if classToken == "WARRIOR" then
+		if role == "tank" then return 3 end
+		if role == "dps" then return tree == 1 and 1 or 2 end
+	end
+	if classToken == "PRIEST" then
+		if role == "heal" then return (tree == 1 or tree == 2) and tree or 2 end
+		if role == "dps" then return 3 end
+	end
+	if classToken == "SHAMAN" then
+		if role == "heal" then return 3 end
+		if role == "dps" then return (tree == 1 or tree == 2) and tree or 2 end
+	end
+	if role == "dps" and (classToken == "HUNTER" or classToken == "ROGUE" or classToken == "MAGE" or classToken == "WARLOCK") then
+		return (tree and tree >= 1 and tree <= 3) and tree or self:GetFallbackBuildForClass(classToken)
+	end
+	return nil, ("No %s Gear Advisor profile is available for %s."):format(role, tostring(self.playerclassName or classToken or "this class"))
 end
 
 function ItemScore:SetGearRole(role)
 	role = tostring(role or ""):lower()
+	if role == "healer" or role == "support" or role == "sup" then role = "heal" end
 	local groupKey = self:GetActiveTalentGroupKey()
 	if role == "auto" then
 		self:ClearActiveBuildOverride(groupKey)
@@ -1538,7 +1581,7 @@ function ItemScore:SetGearRole(role)
 		ZGV:Print(("Gear Advisor: talent group %d returned to automatic build detection."):format(groupKey))
 		return true
 	end
-	if role ~= "tank" and role ~= "dps" then return false end
+	if role ~= "tank" and role ~= "dps" and role ~= "heal" then return false end
 
 	local buildNum, reason = self:GetGearRoleBuild(role)
 	local classRules = self.rules and self.rules[self.playerclass]
