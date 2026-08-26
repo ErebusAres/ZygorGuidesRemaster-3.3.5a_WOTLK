@@ -72,6 +72,10 @@ Core 3.3.5a-era behavior is preserved:
   - Guides right-click opens the Guide Manager.
   - Settings left-click opens quick settings.
   - Settings right-click opens Guide Manager options.
+- Gear Advisor role shortcuts:
+  - `/zygortank` selects the matching tank profile for the active Death Knight or Feral Druid talent group.
+  - `/zygordps` selects the matching damage profile for that talent group.
+  - `/zygorrole auto` returns the active talent group to automatic talent-tree detection.
 
 ## Quick Install
 
@@ -166,6 +170,14 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 218 - 3.0.218
+
+- Split Death Knight Gear Advisor profiles into Blood, Frost, and Unholy DPS and tank variants instead of treating every detected tree as a DPS build.
+- Added a prominent per-talent-group Active Gear Profile selector and `/zygortank`, `/zygordps`, and `/zygorrole auto` shortcuts.
+- Added verified tank-oriented weights prioritizing the defense cap, Stamina, Armor, and avoidance while retaining lower threat values for hit, expertise, Strength, and weapon damage.
+- Confirmed Feral Druid was already split into DPS and tank profiles; other supported tank/healer hybrids use distinct talent trees and do not need an additional same-tree role variant.
+- Updated addon version metadata to 3.0.218.
+
 ### Revision 217 - 3.0.217
 
 - Added 163 Classic Tailoring items spanning character levels 5-60 to Gear Finder's crafted leveling source, based on the dataset contributed by @SnaxxNZ.
@@ -198,12 +210,6 @@ This addon is fully open source and can be inspected before use.
 - Fixed intermittent BoE equip attempts by targeting the exact scored bag copy instead of an ambiguous identical item name, preserving the pending bind confirmation, and deferring the comparison until combat ends.
 - Skipped pure travel steps when every sequential task before the next destination is already complete or would be skipped, with conservative guards for remaining work, guide jumps, and unfinished repeat conditions. Credit @opicron for the feature report and initial design in issue #95.
 - Updated addon version metadata to 3.0.213.
-
-### Revision 212 - 3.0.212
-
-- Wrapped legacy quick-guide pagination ranges in brackets so structural submenu entries are visually distinct from guide level ranges.
-- Kept the labels locale-neutral without adding untranslated UI text.
-- Updated addon version metadata to 3.0.212.
 
 ## Notes
 

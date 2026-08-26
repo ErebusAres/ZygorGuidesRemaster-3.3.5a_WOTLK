@@ -3,22 +3,40 @@ local ItemScore = ZGV.ItemScore
 ItemScore.rules = {
 	["DEATHKNIGHT"] = { -- cloth/leather/mail only till 40, plate from 40
 		[1] = {
-			name="Blood", 
+			name="Blood DPS",
 			itemtypes = {CLOTH=-40, LEATHER=-40, MAIL=-40, PLATE=40, AXE=1, TH_AXE=1, MACE=1, TH_MACE=1, TH_POLE=1, SWORD=1, TH_SWORD=1},
 			stats = {CRIT=0.57, HASTE=0.55, STAMINA=0.001, ARMOR=0.01, DAMAGE_PER_SECOND=3.6, ARMOR_PENETRATION=1, STRENGTH=0.99, HIT=0.91, EXPERTISE=0.9, ATTACK_POWER=0.36},
 			caps = { HIT=17, EXPERTISE=26, },
 		},
 		[2] = {
-			name="Frost", 
+			name="Frost DPS",
 			itemtypes = {CLOTH=-40, LEATHER=-40, MAIL=-40, PLATE=40, AXE=1, TH_AXE=1, MACE=1, TH_MACE=1, TH_POLE=1, SWORD=1, TH_SWORD=1},
 			stats = {STRENGTH=0.97, DAMAGE_PER_SECOND=3.37, ATTACK_POWER=0.35, HIT=1, EXPERTISE=0.81, CRIT=0.45, HASTE=0.28, ARMOR_PENETRATION=0.61, STAMINA=0.001, ARMOR=0.01},
 			caps = { HIT=17, EXPERTISE=26, },
 		},
 		[3] = { 
-			name="Unholy", 
+			name="Unholy DPS",
 			itemtypes = {CLOTH=-40, LEATHER=-40, MAIL=-40, PLATE=40, AXE=1, TH_AXE=1, MACE=1, TH_MACE=1, TH_POLE=1, SWORD=1, TH_SWORD=1},
 			stats = {STRENGTH=1, DAMAGE_PER_SECOND=2.09, ATTACK_POWER=0.34, HIT=0.66, EXPERTISE=0.51, CRIT=0.45, HASTE=0.48, ARMOR_PENETRATION=0.32, STAMINA=0.001, ARMOR=0.01},
 			caps = { HIT=17, EXPERTISE=26 },
+		},
+		[4] = {
+			name="Blood Tank",
+			itemtypes = {CLOTH=-40, LEATHER=-40, MAIL=-40, PLATE=40, AXE=1, TH_AXE=1, MACE=1, TH_MACE=1, TH_POLE=1, SWORD=1, TH_SWORD=1},
+			stats = {DEFENSE_SKILL=1, STAMINA=0.95, ARMOR=0.08, DODGE=0.7, PARRY=0.55, AGILITY=0.35, EXPERTISE=0.45, HIT=0.4, STRENGTH=0.2, DAMAGE_PER_SECOND=0.75, ATTACK_POWER=0.08, CRIT=0.05, HASTE=0.05, ARMOR_PENETRATION=0.03},
+			caps = { DEFENSE_SKILL=689, HIT=263, EXPERTISE=164 },
+		},
+		[5] = {
+			name="Frost Tank",
+			itemtypes = {CLOTH=-40, LEATHER=-40, MAIL=-40, PLATE=40, AXE=1, TH_AXE=1, MACE=1, TH_MACE=1, TH_POLE=1, SWORD=1, TH_SWORD=1},
+			stats = {DEFENSE_SKILL=1, STAMINA=0.95, ARMOR=0.08, DODGE=0.7, PARRY=0.55, AGILITY=0.35, EXPERTISE=0.45, HIT=0.4, STRENGTH=0.2, DAMAGE_PER_SECOND=0.75, ATTACK_POWER=0.08, CRIT=0.05, HASTE=0.05, ARMOR_PENETRATION=0.03},
+			caps = { DEFENSE_SKILL=689, HIT=263, EXPERTISE=214 },
+		},
+		[6] = {
+			name="Unholy Tank",
+			itemtypes = {CLOTH=-40, LEATHER=-40, MAIL=-40, PLATE=40, AXE=1, TH_AXE=1, MACE=1, TH_MACE=1, TH_POLE=1, SWORD=1, TH_SWORD=1},
+			stats = {DEFENSE_SKILL=1, STAMINA=0.95, ARMOR=0.08, DODGE=0.7, PARRY=0.55, AGILITY=0.35, EXPERTISE=0.45, HIT=0.4, STRENGTH=0.2, DAMAGE_PER_SECOND=0.75, ATTACK_POWER=0.08, CRIT=0.05, HASTE=0.05, ARMOR_PENETRATION=0.03},
+			caps = { DEFENSE_SKILL=689, HIT=263, EXPERTISE=214 },
 		}
 	},
 	["DRUID"] = {
@@ -233,14 +251,17 @@ ItemScore.rules = {
 ItemScore.Defaults = ItemScore.Defaults or ItemScore.rules
 
 -- Source metadata for shipped defaults.
--- These weights are curated local numeric baselines normalized from Wowhead's
--- Wrath of the Lich King Classic class overview/stat-priority guidance.
--- Reviewed: 2026-04-20.
+-- These weights are curated local numeric baselines normalized from WotLK
+-- Classic class overview/stat-priority guidance. Individual source review
+-- dates are recorded below; Death Knight role variants were reviewed 2026-08-26.
 ItemScore.RuleSources = {
 	DEATHKNIGHT = {
-		[1] = {label="Wowhead WotLK Classic Blood DK Overview", url="https://www.wowhead.com/wotlk/guide/classes/death-knight/overview", reviewed="2026-04-20", mode="normalized_priority"},
-		[2] = {label="Wowhead WotLK Classic Frost DK Overview", url="https://www.wowhead.com/wotlk/guide/classes/death-knight/overview", reviewed="2026-04-20", mode="normalized_priority"},
-		[3] = {label="Wowhead WotLK Classic Unholy DK Overview", url="https://www.wowhead.com/wotlk/guide/classes/death-knight/overview", reviewed="2026-04-20", mode="normalized_priority"},
+		[1] = {label="Wowhead WotLK Classic Blood DK DPS/overview guidance", url="https://www.wowhead.com/wotlk/guide/classes/death-knight/overview", reviewed="2026-08-26", mode="normalized_priority"},
+		[2] = {label="Wowhead WotLK Classic Frost DK DPS guidance", url="https://www.wowhead.com/wotlk/guide/classes/death-knight/frost/dps-stat-priority-attributes-pve", reviewed="2026-08-26", mode="normalized_priority"},
+		[3] = {label="Wowhead WotLK Classic Unholy DK DPS guidance", url="https://www.wowhead.com/wotlk/guide/classes/death-knight/unholy/dps-stat-priority-attributes-pve", reviewed="2026-08-26", mode="normalized_priority"},
+		[4] = {label="Wowhead and Icy Veins WotLK Blood DK tank priorities", url="https://www.wowhead.com/wotlk/guide/classes/death-knight/blood/tank-stat-priority-attributes-pve", reviewed="2026-08-26", mode="normalized_priority"},
+		[5] = {label="Wowhead WotLK Frost DK tank guidance", url="https://www.wowhead.com/wotlk/guide/frost-death-knight-tank-overview-best-races-professions", reviewed="2026-08-26", mode="normalized_priority"},
+		[6] = {label="WotLK Death Knight tank survival baseline", url="https://www.wowhead.com/wotlk/guide/classes/death-knight/blood/tank-stat-priority-attributes-pve", reviewed="2026-08-26", mode="normalized_priority"},
 	},
 	DRUID = {
 		[1] = {label="Wowhead WotLK Classic Balance Druid Overview", url="https://www.wowhead.com/wotlk/guide/classes/druid/overview", reviewed="2026-04-20", mode="normalized_priority"},

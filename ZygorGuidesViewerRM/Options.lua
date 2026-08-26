@@ -2640,10 +2640,55 @@ function me:Options_DefineOptions()
 			itemscore_tooltips_allbuilds = {
 				order = 3.1,
 				name = "Show All Builds on Tooltips",
-				desc = "Show upgrade or downgrade lines for all specs of your class on item tooltips. Active-build suggestions and equip prompts still use only your detected active build.",
+				desc = "Show upgrade or downgrade lines for all build and role profiles of your class on item tooltips. Suggestions and equip prompts still use only the active profile.",
 				type = "toggle",
 				width = "full",
 				disabled = function() return not self.db.profile.autogear or not self.db.profile.itemscore_tooltips end,
+			},
+			active_gear_profile = {
+				order = 2.1,
+				name = "Active Gear Profile",
+				desc = "Choose the build and role Gear Advisor uses for this talent group. Automatic follows the dominant talent tree; a manual choice is remembered separately for each dual-talent group.",
+				type = "select",
+				values = function()
+					local values = {}
+					if not ZGV.ItemScore then return values end
+					local classToken = ZGV.ItemScore.playerclass or select(2, UnitClass("player"))
+					local classNum = ZGV.ClassToNumber and ZGV.ClassToNumber[classToken]
+					local detectedBuild, usesFallback = ZGV.ItemScore:DetectActiveBuild(classToken, ZGV.ItemScore.playerlevel or UnitLevel("player"))
+					values[0] = "Automatic (" .. ZGV.ItemScore:GetBuildName(classToken, detectedBuild, ZGV.ItemScore.playerlevel, usesFallback) .. ")"
+					for buildNum, buildName in pairs((ZGV.ItemScore.Builds and classNum and ZGV.ItemScore.Builds[classNum]) or {}) do
+						values[buildNum] = buildName
+					end
+					return values
+				end,
+				get = function()
+					if not ZGV.ItemScore then return 0 end
+					return ZGV.ItemScore:GetActiveBuildOverrideBuild(ZGV.ItemScore.playerclass, ZGV.ItemScore:GetActiveTalentGroupKey()) or 0
+				end,
+				set = function(_, value)
+					if not ZGV.ItemScore then return end
+					value = tonumber(value) or 0
+					local groupKey = ZGV.ItemScore:GetActiveTalentGroupKey()
+					if value == 0 then
+						ZGV.ItemScore:ClearActiveBuildOverride(groupKey)
+						if ZGV.ItemScore.GearFinder and ZGV.ItemScore.GearFinder.ClearResults then ZGV.ItemScore.GearFinder:ClearResults() end
+						ZGV.ItemScore:DelayedRefreshUserData()
+					else
+						local classRules = ZGV.ItemScore.rules and ZGV.ItemScore.rules[ZGV.ItemScore.playerclass]
+						if not (classRules and classRules[value]) then return end
+						ZGV.ItemScore:SetActiveBuildOverride(value, groupKey)
+						ZGV.db.char.gear_active_build = value
+						ZGV.db.char.gear_selected_class = ZGV.ItemScore.playerclassNum
+						ZGV.db.char.gear_selected_build = value
+						ZGV.db.char.gear_weights_initialized = true
+						ZGV.db.char.gear_weights_manual_class = true
+						ZGV.ItemScore:RefreshAfterWeightChange(ZGV.ItemScore.playerclass, value)
+					end
+					if ZGV.ItemScore.NotifyStatWeightsOptionsChanged then ZGV.ItemScore:NotifyStatWeightsOptionsChanged() end
+				end,
+				width = "double",
+				disabled = function() return not self.db.profile.autogear end,
 			},
 			itemscore_tooltip_value_mode = {
 				order = 3.2,
@@ -3041,7 +3086,7 @@ function me:Options_DefineOptions()
 		IS_args.gear_selected_build = {
 			order = 5,
 			type = "select",
-			name = "Spec",
+			name = "Build / Role",
 			values = WrapStatWeightsCallback("values", "gear_selected_build", {}, function()
 				if not ZGV.ItemScore or not ZGV.ItemScore.Builds then return {} end
 				local classId = ZGV.db.char.gear_selected_class or 1
@@ -3086,8 +3131,8 @@ function me:Options_DefineOptions()
 		IS_args.activebuildoverride = {
 			order = 5.5,
 			type = "toggle",
-			name = "Override Active Build",
-			desc = "Use the selected spec from this panel as your live active build for tooltips and gear recommendations until disabled.",
+			name = "Override Automatic Detection",
+			desc = "Use the selected build and role from this panel for tooltips and gear recommendations in the current talent group until disabled.",
 			get = WrapStatWeightsCallback("get", "activebuildoverride", false, function()
 				if not ZGV.ItemScore then return false end
 				return ZGV.ItemScore:GetActiveBuildOverrideBuild(ZGV.ItemScore.playerclass, ZGV.ItemScore:GetActiveTalentGroupKey()) and true or false
