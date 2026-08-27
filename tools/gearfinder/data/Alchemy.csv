@@ -1,0 +1,11 @@
+﻿itemID,name,slot,subType,quality,itemLevel,requiredLevel,requiredSkill,expansion,source,profession,specialization,skill,classes,binding,recipeSpellID,itemURL,recipeURL
+13503,Alchemist's Stone,Trinket,Trinkets,Epic,90,,Alchemy (350),The Burning Crusade,Vendor,Alchemy,,350,,BoP,17632,https://www.wowhead.com/wotlk/item=13503,https://www.wowhead.com/wotlk/spell=17632
+35751,Assassin's Alchemist Stone,Trinket,Trinkets,Epic,125,,Alchemy (350),The Burning Crusade,Vendor,Alchemy,,375,,BoP,47050,https://www.wowhead.com/wotlk/item=35751,https://www.wowhead.com/wotlk/spell=47050
+35748,Guardian's Alchemist Stone,Trinket,Trinkets,Epic,125,,Alchemy (350),The Burning Crusade,Vendor,Alchemy,,375,,BoP,47046,https://www.wowhead.com/wotlk/item=35748,https://www.wowhead.com/wotlk/spell=47046
+35750,Redeemer's Alchemist Stone,Trinket,Trinkets,Epic,125,,Alchemy (350),The Burning Crusade,Vendor,Alchemy,,375,,BoP,47049,https://www.wowhead.com/wotlk/item=35750,https://www.wowhead.com/wotlk/spell=47049
+35749,Sorcerer's Alchemist Stone,Trinket,Trinkets,Epic,125,,Alchemy (350),The Burning Crusade,Vendor,Alchemy,,375,,BoP,47048,https://www.wowhead.com/wotlk/item=35749,https://www.wowhead.com/wotlk/spell=47048
+9149,Philosopher's Stone,Trinket,Trinkets,Uncommon,45,35,Alchemy (200),Classic,Vendor,Alchemy,,225,,BoP,11459,https://www.wowhead.com/wotlk/item=9149,https://www.wowhead.com/wotlk/spell=11459
+31080,Mercurial Stone,Trinket,Trinkets,Uncommon,105,65,,The Burning Crusade,Trainer,Alchemy,,325,,BoE,38070,https://www.wowhead.com/wotlk/item=31080,https://www.wowhead.com/wotlk/spell=38070
+44323,Indestructible Alchemist's Stone,Trinket,Trinkets,Rare,200,75,Alchemy (400),Wrath of the Lich King,Trainer,Alchemy,,400,,BoP,60403,https://www.wowhead.com/wotlk/item=44323,https://www.wowhead.com/wotlk/spell=60403
+44322,Mercurial Alchemist Stone,Trinket,Trinkets,Rare,200,75,Alchemy (400),Wrath of the Lich King,Trainer,Alchemy,,400,,BoP,60396,https://www.wowhead.com/wotlk/item=44322,https://www.wowhead.com/wotlk/spell=60396
+44324,Mighty Alchemist's Stone,Trinket,Trinkets,Rare,200,75,Alchemy (400),Wrath of the Lich King,Trainer,Alchemy,,400,,BoP,60405,https://www.wowhead.com/wotlk/item=44324,https://www.wowhead.com/wotlk/spell=60405

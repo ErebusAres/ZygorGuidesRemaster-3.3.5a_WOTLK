@@ -1,0 +1,435 @@
+﻿itemID,name,slot,subType,quality,itemLevel,requiredLevel,requiredSkill,expansion,source,profession,specialization,skill,classes,binding,recipeSpellID,itemURL,recipeURL
+3471,Copper Chain Vest,Chest,Mail Armor,Uncommon,10,5,,Classic,World Drop,Blacksmithing,,35,,BoE,3321,https://www.wowhead.com/wotlk/item=3471,https://www.wowhead.com/wotlk/spell=3321
+33791,Heavy Copper Longsword,One-Hand,One-Handed Swords,Uncommon,11,6,,The Burning Crusade,Quest,Blacksmithing,,35,,BoE,43549,https://www.wowhead.com/wotlk/item=33791,https://www.wowhead.com/wotlk/spell=43549
+3472,Runed Copper Gauntlets,Hands,Mail Armor,Uncommon,12,7,,Classic,Trainer,Blacksmithing,,40,,BoE,3323,https://www.wowhead.com/wotlk/item=3472,https://www.wowhead.com/wotlk/spell=3323
+3488,Copper Battle Axe,Two-Hand,Two-Handed Axes,Uncommon,13,8,,Classic,Trainer,Blacksmithing,,35,,BoE,3293,https://www.wowhead.com/wotlk/item=3488,https://www.wowhead.com/wotlk/spell=3293
+3473,Runed Copper Pants,Legs,Mail Armor,Uncommon,13,8,,Classic,Trainer,Blacksmithing,,45,,BoE,3324,https://www.wowhead.com/wotlk/item=3473,https://www.wowhead.com/wotlk/spell=3324
+3474,Gemmed Copper Gauntlets,Hands,Mail Armor,Uncommon,15,10,,Classic,World Drop,Blacksmithing,,60,,BoE,3325,https://www.wowhead.com/wotlk/item=3474,https://www.wowhead.com/wotlk/spell=3325
+6214,Heavy Copper Maul,Two-Hand,Two-Handed Maces,Uncommon,16,11,,Classic,Trainer,Blacksmithing,,65,,BoE,7408,https://www.wowhead.com/wotlk/item=6214,https://www.wowhead.com/wotlk/spell=7408
+3489,Thick War Axe,One-Hand,One-Handed Axes,Uncommon,17,12,,Classic,Trainer,Blacksmithing,,70,,BoE,3294,https://www.wowhead.com/wotlk/item=3489,https://www.wowhead.com/wotlk/spell=3294
+6350,Rough Bronze Boots,Feet,Mail Armor,Uncommon,18,13,,Classic,Trainer,Blacksmithing,,95,,BoE,7817,https://www.wowhead.com/wotlk/item=6350,https://www.wowhead.com/wotlk/spell=7817
+2857,Runed Copper Belt,Waist,Mail Armor,Uncommon,18,13,,Classic,Trainer,Blacksmithing,,70,,BoE,2666,https://www.wowhead.com/wotlk/item=2857,https://www.wowhead.com/wotlk/spell=2666
+2864,Runed Copper Breastplate,Chest,Mail Armor,Uncommon,18,13,,Classic,World Drop,Blacksmithing,,80,,BoE,2667,https://www.wowhead.com/wotlk/item=2864,https://www.wowhead.com/wotlk/spell=2667
+3487,Heavy Copper Broadsword,Two-Hand,Two-Handed Swords,Uncommon,19,14,,Classic,Trainer,Blacksmithing,,95,,BoE,3292,https://www.wowhead.com/wotlk/item=3487,https://www.wowhead.com/wotlk/spell=3292
+2854,Runed Copper Bracers,Wrist,Mail Armor,Uncommon,19,14,,Classic,Trainer,Blacksmithing,,90,,BoE,2664,https://www.wowhead.com/wotlk/item=2854,https://www.wowhead.com/wotlk/spell=2664
+3848,Big Bronze Knife,One-Hand,Daggers,Uncommon,20,15,,Classic,Trainer,Blacksmithing,,105,,BoE,3491,https://www.wowhead.com/wotlk/item=3848,https://www.wowhead.com/wotlk/spell=3491
+6731,Ironforge Breastplate,Chest,Mail Armor,Uncommon,20,15,,Classic,Quest,Blacksmithing,,100,,BoE,8367,https://www.wowhead.com/wotlk/item=6731,https://www.wowhead.com/wotlk/spell=8367
+29201,Thick Bronze Darts,Thrown,Thrown,Uncommon,20,15,,The Burning Crusade,Trainer,Blacksmithing,,100,,BoE,34979,https://www.wowhead.com/wotlk/item=29201,https://www.wowhead.com/wotlk/spell=34979
+2865,Rough Bronze Leggings,Legs,Mail Armor,Uncommon,21,16,,Classic,Trainer,Blacksmithing,,105,,BoE,2668,https://www.wowhead.com/wotlk/item=2865,https://www.wowhead.com/wotlk/spell=2668
+2848,Bronze Mace,Main Hand,One-Handed Maces,Uncommon,22,17,,Classic,Trainer,Blacksmithing,,110,,BoE,2740,https://www.wowhead.com/wotlk/item=2848,https://www.wowhead.com/wotlk/spell=2740
+3480,Rough Bronze Shoulders,Shoulder,Mail Armor,Uncommon,22,17,,Classic,Trainer,Blacksmithing,,110,,BoE,3328,https://www.wowhead.com/wotlk/item=3480,https://www.wowhead.com/wotlk/spell=3328
+2849,Bronze Axe,Main Hand,One-Handed Axes,Uncommon,23,18,,Classic,Trainer,Blacksmithing,,115,,BoE,2741,https://www.wowhead.com/wotlk/item=2849,https://www.wowhead.com/wotlk/spell=2741
+5540,Pearl-handled Dagger,One-Hand,Daggers,Uncommon,23,18,,Classic,Trainer,Blacksmithing,,110,,BoE,6517,https://www.wowhead.com/wotlk/item=5540,https://www.wowhead.com/wotlk/spell=6517
+2866,Rough Bronze Cuirass,Chest,Mail Armor,Uncommon,23,18,,Classic,Trainer,Blacksmithing,,105,,BoE,2670,https://www.wowhead.com/wotlk/item=2866,https://www.wowhead.com/wotlk/spell=2670
+2850,Bronze Shortsword,Main Hand,One-Handed Swords,Uncommon,24,19,,Classic,Trainer,Blacksmithing,,120,,BoE,2742,https://www.wowhead.com/wotlk/item=2850,https://www.wowhead.com/wotlk/spell=2742
+7956,Bronze Warhammer,Two-Hand,Two-Handed Maces,Uncommon,25,20,,Classic,Trainer,Blacksmithing,,125,,BoE,9985,https://www.wowhead.com/wotlk/item=7956,https://www.wowhead.com/wotlk/spell=9985
+3490,Deadly Bronze Poniard,One-Hand,Daggers,Uncommon,25,20,,Classic,World Drop,Blacksmithing,,125,,BoE,3295,https://www.wowhead.com/wotlk/item=3490,https://www.wowhead.com/wotlk/spell=3295
+3491,Heavy Bronze Mace,One-Hand,One-Handed Maces,Uncommon,25,20,,Classic,Trainer,Blacksmithing,,130,,BoE,3296,https://www.wowhead.com/wotlk/item=3491,https://www.wowhead.com/wotlk/spell=3296
+2868,Patterned Bronze Bracers,Wrist,Mail Armor,Uncommon,25,20,,Classic,Trainer,Blacksmithing,,120,,BoE,2672,https://www.wowhead.com/wotlk/item=2868,https://www.wowhead.com/wotlk/spell=2672
+3481,Silvered Bronze Shoulders,Shoulder,Mail Armor,Uncommon,25,20,,Classic,World Drop,Blacksmithing,,125,,BoE,3330,https://www.wowhead.com/wotlk/item=3481,https://www.wowhead.com/wotlk/spell=3330
+7957,Bronze Greatsword,Two-Hand,Two-Handed Swords,Uncommon,26,21,,Classic,Trainer,Blacksmithing,,130,,BoE,9986,https://www.wowhead.com/wotlk/item=7957,https://www.wowhead.com/wotlk/spell=9986
+3482,Silvered Bronze Boots,Feet,Mail Armor,Uncommon,26,21,,Classic,Trainer,Blacksmithing,,130,,BoE,3331,https://www.wowhead.com/wotlk/item=3482,https://www.wowhead.com/wotlk/spell=3331
+2869,Silvered Bronze Breastplate,Chest,Mail Armor,Uncommon,26,21,,Classic,World Drop,Blacksmithing,,130,,BoE,2673,https://www.wowhead.com/wotlk/item=2869,https://www.wowhead.com/wotlk/spell=2673
+7958,Bronze Battle Axe,Two-Hand,Two-Handed Axes,Uncommon,27,22,,Classic,Trainer,Blacksmithing,,135,,BoE,9987,https://www.wowhead.com/wotlk/item=7958,https://www.wowhead.com/wotlk/spell=9987
+3483,Silvered Bronze Gauntlets,Hands,Mail Armor,Uncommon,27,22,,Classic,Trainer,Blacksmithing,,135,,BoE,3333,https://www.wowhead.com/wotlk/item=3483,https://www.wowhead.com/wotlk/spell=3333
+5541,Iridescent Hammer,One-Hand,One-Handed Maces,Uncommon,28,23,,Classic,World Drop,Blacksmithing,,140,,BoE,6518,https://www.wowhead.com/wotlk/item=5541,https://www.wowhead.com/wotlk/spell=6518
+3484,Green Iron Boots,Feet,Mail Armor,Uncommon,29,24,,Classic,World Drop,Blacksmithing,,145,,BoE,3334,https://www.wowhead.com/wotlk/item=3484,https://www.wowhead.com/wotlk/spell=3334
+2870,Shining Silver Breastplate,Chest,Mail Armor,Rare,29,24,,Classic,Trainer,Blacksmithing,,145,,BoE,2675,https://www.wowhead.com/wotlk/item=2870,https://www.wowhead.com/wotlk/spell=2675
+3485,Green Iron Gauntlets,Hands,Mail Armor,Uncommon,30,25,,Classic,World Drop,Blacksmithing,,150,,BoE,3336,https://www.wowhead.com/wotlk/item=3485,https://www.wowhead.com/wotlk/spell=3336
+3492,Mighty Iron Hammer,One-Hand,One-Handed Maces,Uncommon,30,25,,Classic,World Drop,Blacksmithing,,145,,BoE,3297,https://www.wowhead.com/wotlk/item=3492,https://www.wowhead.com/wotlk/spell=3297
+3842,Green Iron Leggings,Legs,Mail Armor,Uncommon,31,26,,Classic,Trainer,Blacksmithing,,155,,BoE,3506,https://www.wowhead.com/wotlk/item=3842,https://www.wowhead.com/wotlk/spell=3506
+10423,Silvered Bronze Leggings,Legs,Mail Armor,Uncommon,31,26,,Classic,World Drop,Blacksmithing,,155,,BoE,12259,https://www.wowhead.com/wotlk/item=10423,https://www.wowhead.com/wotlk/spell=12259
+3851,Solid Iron Maul,Two-Hand,Two-Handed Maces,Uncommon,31,26,,Classic,Vendor,Blacksmithing,,155,,BoE,3494,https://www.wowhead.com/wotlk/item=3851,https://www.wowhead.com/wotlk/spell=3494
+7914,Barbaric Iron Breastplate,Chest,Mail Armor,Uncommon,32,27,,Classic,Quest,Blacksmithing,,160,,BoE,9813,https://www.wowhead.com/wotlk/item=7914,https://www.wowhead.com/wotlk/spell=9813
+7913,Barbaric Iron Shoulders,Shoulder,Mail Armor,Uncommon,32,27,,Classic,Quest,Blacksmithing,,160,,BoE,9811,https://www.wowhead.com/wotlk/item=7913,https://www.wowhead.com/wotlk/spell=9811
+3840,Green Iron Shoulders,Shoulder,Mail Armor,Uncommon,32,27,,Classic,World Drop,Blacksmithing,,160,,BoE,3504,https://www.wowhead.com/wotlk/item=3840,https://www.wowhead.com/wotlk/spell=3504
+3849,Hardened Iron Shortsword,One-Hand,One-Handed Swords,Uncommon,32,27,,Classic,Vendor,Blacksmithing,,160,,BoE,3492,https://www.wowhead.com/wotlk/item=3849,https://www.wowhead.com/wotlk/spell=3492
+3835,Green Iron Bracers,Wrist,Mail Armor,Uncommon,33,28,,Classic,Trainer,Blacksmithing,,165,,BoE,3501,https://www.wowhead.com/wotlk/item=3835,https://www.wowhead.com/wotlk/spell=3501
+3852,Golden Iron Destroyer,Two-Hand,Two-Handed Maces,Uncommon,34,29,,Classic,World Drop,Blacksmithing,,170,,BoE,3495,https://www.wowhead.com/wotlk/item=3852,https://www.wowhead.com/wotlk/spell=3495
+3843,Golden Scale Leggings,Legs,Mail Armor,Uncommon,34,29,,Classic,World Drop,Blacksmithing,,170,,BoE,3507,https://www.wowhead.com/wotlk/item=3843,https://www.wowhead.com/wotlk/spell=3507
+3836,Green Iron Helm,Head,Mail Armor,Uncommon,34,29,,Classic,Trainer,Blacksmithing,,170,,BoE,3502,https://www.wowhead.com/wotlk/item=3836,https://www.wowhead.com/wotlk/spell=3502
+7915,Barbaric Iron Helm,Head,Mail Armor,Uncommon,35,30,,Classic,Quest,Blacksmithing,,175,,BoE,9814,https://www.wowhead.com/wotlk/item=7915,https://www.wowhead.com/wotlk/spell=9814
+3841,Golden Scale Shoulders,Shoulder,Mail Armor,Uncommon,35,30,,Classic,World Drop,Blacksmithing,,175,,BoE,3505,https://www.wowhead.com/wotlk/item=3841,https://www.wowhead.com/wotlk/spell=3505
+3850,Jade Serpentblade,One-Hand,One-Handed Swords,Uncommon,35,30,,Classic,World Drop,Blacksmithing,,175,,BoE,3493,https://www.wowhead.com/wotlk/item=3850,https://www.wowhead.com/wotlk/spell=3493
+7916,Barbaric Iron Boots,Feet,Mail Armor,Uncommon,36,31,,Classic,Quest,Blacksmithing,,180,,BoE,9818,https://www.wowhead.com/wotlk/item=7916,https://www.wowhead.com/wotlk/spell=9818
+12259,Glinting Steel Dagger,One-Hand,Daggers,Uncommon,36,31,,Classic,Trainer,Blacksmithing,,180,,BoE,15972,https://www.wowhead.com/wotlk/item=12259,https://www.wowhead.com/wotlk/spell=15972
+3844,Green Iron Hauberk,Chest,Mail Armor,Rare,36,31,,Classic,Trainer,Blacksmithing,,180,,BoE,3508,https://www.wowhead.com/wotlk/item=3844,https://www.wowhead.com/wotlk/spell=3508
+3853,Moonsteel Broadsword,Two-Hand,Two-Handed Swords,Uncommon,36,31,,Classic,Vendor,Blacksmithing,,180,,BoE,3496,https://www.wowhead.com/wotlk/item=3853,https://www.wowhead.com/wotlk/spell=3496
+7917,Barbaric Iron Gloves,Hands,Mail Armor,Uncommon,37,32,,Classic,Quest,Blacksmithing,,185,,BoE,9820,https://www.wowhead.com/wotlk/item=7917,https://www.wowhead.com/wotlk/spell=9820
+6040,Golden Scale Bracers,Wrist,Mail Armor,Uncommon,37,32,,Classic,Trainer,Blacksmithing,,185,,BoE,7223,https://www.wowhead.com/wotlk/item=6040,https://www.wowhead.com/wotlk/spell=7223
+3855,Massive Iron Axe,Two-Hand,Two-Handed Axes,Uncommon,37,32,,Classic,Vendor,Blacksmithing,,185,,BoE,3498,https://www.wowhead.com/wotlk/item=3855,https://www.wowhead.com/wotlk/spell=3498
+3846,Polished Steel Boots,Feet,Mail Armor,Uncommon,37,32,,Classic,World Drop,Blacksmithing,,185,,BoE,3513,https://www.wowhead.com/wotlk/item=3846,https://www.wowhead.com/wotlk/spell=3513
+17704,Edge of Winter,One-Hand,One-Handed Axes,Uncommon,38,33,,Classic,Seasonal Event,Blacksmithing,,190,,BoE,21913,https://www.wowhead.com/wotlk/item=17704,https://www.wowhead.com/wotlk/spell=21913
+3837,Golden Scale Coif,Head,Mail Armor,Uncommon,38,33,,Classic,Vendor,Blacksmithing,,190,,BoE,3503,https://www.wowhead.com/wotlk/item=3837,https://www.wowhead.com/wotlk/spell=3503
+12260,Searing Golden Blade,Main Hand,Daggers,Uncommon,39,34,,Classic,World Drop,Blacksmithing,,190,,BoE,15973,https://www.wowhead.com/wotlk/item=12260,https://www.wowhead.com/wotlk/spell=15973
+3854,Frost Tiger Blade,Two-Hand,Two-Handed Swords,Uncommon,40,35,,Classic,World Drop,Blacksmithing,,200,,BoE,3497,https://www.wowhead.com/wotlk/item=3854,https://www.wowhead.com/wotlk/spell=3497
+3847,Golden Scale Boots,Feet,Mail Armor,Uncommon,40,35,,Classic,World Drop,Blacksmithing,,200,,BoE,3515,https://www.wowhead.com/wotlk/item=3847,https://www.wowhead.com/wotlk/spell=3515
+3845,Golden Scale Cuirass,Chest,Mail Armor,Uncommon,40,35,,Classic,World Drop,Blacksmithing,,195,,BoE,3511,https://www.wowhead.com/wotlk/item=3845,https://www.wowhead.com/wotlk/spell=3511
+3856,Shadow Crescent Axe,Two-Hand,Two-Handed Axes,Uncommon,40,35,,Classic,World Drop,Blacksmithing,,200,,BoE,3500,https://www.wowhead.com/wotlk/item=3856,https://www.wowhead.com/wotlk/spell=3500
+7963,Steel Breastplate,Chest,Mail Armor,Uncommon,40,35,,Classic,Trainer,Blacksmithing,,200,,BoE,9916,https://www.wowhead.com/wotlk/item=7963,https://www.wowhead.com/wotlk/spell=9916
+29202,Whirling Steel Axes,Thrown,Thrown,Uncommon,40,35,,The Burning Crusade,Trainer,Blacksmithing,,200,,BoE,34981,https://www.wowhead.com/wotlk/item=29202,https://www.wowhead.com/wotlk/spell=34981
+9366,Golden Scale Gauntlets,Hands,Mail Armor,Uncommon,41,36,,Classic,Quest,Blacksmithing,,205,,BoE,11643,https://www.wowhead.com/wotlk/item=9366,https://www.wowhead.com/wotlk/spell=11643
+7941,Heavy Mithril Axe,One-Hand,One-Handed Axes,Uncommon,42,37,,Classic,Trainer,Blacksmithing,,210,,BoE,9993,https://www.wowhead.com/wotlk/item=7941,https://www.wowhead.com/wotlk/spell=9993
+7920,Mithril Scale Pants,Legs,Mail Armor,Uncommon,42,37,,Classic,Trainer,Blacksmithing,,210,,BoE,9931,https://www.wowhead.com/wotlk/item=7920,https://www.wowhead.com/wotlk/spell=9931
+7929,Orcish War Leggings,Legs,Mail Armor,Uncommon,42,37,,Classic,Quest,Blacksmithing,,250,,BoE,9957,https://www.wowhead.com/wotlk/item=7929,https://www.wowhead.com/wotlk/spell=9957
+7924,Mithril Scale Bracers,Wrist,Mail Armor,Uncommon,43,38,,Classic,Vendor,Blacksmithing,,215,,BoE,9937,https://www.wowhead.com/wotlk/item=7924,https://www.wowhead.com/wotlk/spell=9937
+7942,Blue Glittering Axe,One-Hand,One-Handed Axes,Uncommon,44,39,,Classic,World Drop,Blacksmithing,,220,,BoE,9995,https://www.wowhead.com/wotlk/item=7942,https://www.wowhead.com/wotlk/spell=9995
+7922,Steel Plate Helm,Head,Plate Armor,Rare,43,40,,Classic,Trainer,Blacksmithing,,215,,BoE,9935,https://www.wowhead.com/wotlk/item=7922,https://www.wowhead.com/wotlk/spell=9935
+7919,Heavy Mithril Gauntlet,Hands,Plate Armor,Uncommon,45,40,,Classic,Trainer,Blacksmithing,,205,,BoE,9928,https://www.wowhead.com/wotlk/item=7919,https://www.wowhead.com/wotlk/spell=9928
+7921,Heavy Mithril Pants,Legs,Plate Armor,Uncommon,45,40,,Classic,World Drop,Blacksmithing,,210,,BoE,9933,https://www.wowhead.com/wotlk/item=7921,https://www.wowhead.com/wotlk/spell=9933
+7918,Heavy Mithril Shoulder,Shoulder,Plate Armor,Uncommon,45,40,,Classic,Trainer,Blacksmithing,,205,,BoE,9926,https://www.wowhead.com/wotlk/item=7918,https://www.wowhead.com/wotlk/spell=9926
+7927,Ornate Mithril Gloves,Hands,Plate Armor,Uncommon,45,40,,Classic,Quest,Blacksmithing,,220,,BoE,9950,https://www.wowhead.com/wotlk/item=7927,https://www.wowhead.com/wotlk/spell=9950
+7926,Ornate Mithril Pants,Legs,Plate Armor,Uncommon,45,40,,Classic,Quest,Blacksmithing,,220,,BoE,9945,https://www.wowhead.com/wotlk/item=7926,https://www.wowhead.com/wotlk/spell=9945
+7928,Ornate Mithril Shoulder,Shoulder,Plate Armor,Uncommon,45,40,,Classic,Quest,Blacksmithing,,225,,BoE,9952,https://www.wowhead.com/wotlk/item=7928,https://www.wowhead.com/wotlk/spell=9952
+7938,Truesilver Gauntlets,Hands,Plate Armor,Rare,45,40,,Classic,Trainer,Blacksmithing,,225,,BoE,9954,https://www.wowhead.com/wotlk/item=7938,https://www.wowhead.com/wotlk/spell=9954
+7943,Wicked Mithril Blade,One-Hand,One-Handed Swords,Uncommon,45,40,,Classic,World Drop,Blacksmithing,,225,,BoE,9997,https://www.wowhead.com/wotlk/item=7943,https://www.wowhead.com/wotlk/spell=9997
+7945,Big Black Mace,One-Hand,One-Handed Maces,Uncommon,46,41,,Classic,Trainer,Blacksmithing,,230,,BoE,10001,https://www.wowhead.com/wotlk/item=7945,https://www.wowhead.com/wotlk/spell=10001
+7930,Heavy Mithril Breastplate,Chest,Plate Armor,Uncommon,46,41,,Classic,Trainer,Blacksmithing,,230,,BoE,9959,https://www.wowhead.com/wotlk/item=7930,https://www.wowhead.com/wotlk/spell=9959
+7931,Mithril Coif,Head,Mail Armor,Uncommon,46,41,,Classic,Trainer,Blacksmithing,,230,,BoE,9961,https://www.wowhead.com/wotlk/item=7931,https://www.wowhead.com/wotlk/spell=9961
+7933,Heavy Mithril Boots,Feet,Plate Armor,Uncommon,47,42,,Classic,Trainer,Blacksmithing,,235,,BoE,9968,https://www.wowhead.com/wotlk/item=7933,https://www.wowhead.com/wotlk/spell=9968
+7934,Heavy Mithril Helm,Head,Plate Armor,Uncommon,47,42,,Classic,World Drop,Blacksmithing,,245,,BoE,9970,https://www.wowhead.com/wotlk/item=7934,https://www.wowhead.com/wotlk/spell=9970
+7932,Mithril Scale Shoulders,Shoulder,Mail Armor,Uncommon,47,42,,Classic,World Drop,Blacksmithing,,235,,BoE,9966,https://www.wowhead.com/wotlk/item=7932,https://www.wowhead.com/wotlk/spell=9966
+7954,The Shatterer,One-Hand,One-Handed Maces,Rare,47,42,,Classic,Trainer,Blacksmithing,,235,,BoE,10003,https://www.wowhead.com/wotlk/item=7954,https://www.wowhead.com/wotlk/spell=10003
+7944,Dazzling Mithril Rapier,One-Hand,One-Handed Swords,Uncommon,48,43,,Classic,World Drop,Blacksmithing,,240,,BoE,10005,https://www.wowhead.com/wotlk/item=7944,https://www.wowhead.com/wotlk/spell=10005
+7935,Ornate Mithril Breastplate,Chest,Plate Armor,Uncommon,48,43,,Classic,Quest,Blacksmithing,,260,,BoE,9972,https://www.wowhead.com/wotlk/item=7935,https://www.wowhead.com/wotlk/spell=9972
+7936,Ornate Mithril Boots,Feet,Plate Armor,Uncommon,49,44,,Classic,Quest,Blacksmithing,,265,,BoE,9979,https://www.wowhead.com/wotlk/item=7936,https://www.wowhead.com/wotlk/spell=9979
+7937,Ornate Mithril Helm,Head,Plate Armor,Uncommon,49,44,,Classic,Quest,Blacksmithing,,265,,BoE,9980,https://www.wowhead.com/wotlk/item=7937,https://www.wowhead.com/wotlk/spell=9980
+7961,Phantom Blade,One-Hand,One-Handed Swords,Rare,49,44,,Classic,Trainer,Blacksmithing,,245,,BoE,10007,https://www.wowhead.com/wotlk/item=7961,https://www.wowhead.com/wotlk/spell=10007
+7946,Runed Mithril Hammer,One-Hand,One-Handed Maces,Uncommon,49,44,,Classic,World Drop,Blacksmithing,,245,,BoE,10009,https://www.wowhead.com/wotlk/item=7946,https://www.wowhead.com/wotlk/spell=10009
+7939,Truesilver Breastplate,Chest,Plate Armor,Rare,49,44,,Classic,Trainer,Blacksmithing,,245,,BoE,9974,https://www.wowhead.com/wotlk/item=7939,https://www.wowhead.com/wotlk/spell=9974
+7959,Blight,Two-Hand,Polearms,Rare,50,45,,Classic,Trainer,Blacksmithing,,250,,BoE,10011,https://www.wowhead.com/wotlk/item=7959,https://www.wowhead.com/wotlk/spell=10011
+12405,Thorium Armor,Chest,Plate Armor,Uncommon,50,45,,Classic,"Trainer, World Drop",Blacksmithing,,250,,BoE,16642,https://www.wowhead.com/wotlk/item=12405,https://www.wowhead.com/wotlk/spell=16642
+12406,Thorium Belt,Waist,Plate Armor,Uncommon,50,45,,Classic,"Trainer, World Drop",Blacksmithing,,250,,BoE,16643,https://www.wowhead.com/wotlk/item=12406,https://www.wowhead.com/wotlk/spell=16643
+7947,Ebon Shiv,One-Hand,Daggers,Uncommon,51,46,,Classic,Vendor,Blacksmithing,,255,,BoE,10013,https://www.wowhead.com/wotlk/item=7947,https://www.wowhead.com/wotlk/spell=10013
+12408,Thorium Bracers,Wrist,Plate Armor,Uncommon,51,46,,Classic,"Trainer, World Drop",Blacksmithing,,255,,BoE,16644,https://www.wowhead.com/wotlk/item=12408,https://www.wowhead.com/wotlk/spell=16644
+30069,Earthforged Leggings,Legs,Plate Armor,Rare,52,47,,The Burning Crusade,Trainer,Blacksmithing,Armorsmith,260,,BoP,36122,https://www.wowhead.com/wotlk/item=30069,https://www.wowhead.com/wotlk/spell=36122
+30071,Light Earthforged Blade,One-Hand,One-Handed Swords,Rare,52,47,,The Burning Crusade,Trainer,Blacksmithing,Weaponsmith,260,,BoP,36125,https://www.wowhead.com/wotlk/item=30071,https://www.wowhead.com/wotlk/spell=36125
+30073,Light Emberforged Hammer,One-Hand,One-Handed Maces,Rare,52,47,,The Burning Crusade,Trainer,Blacksmithing,Weaponsmith,260,,BoP,36128,https://www.wowhead.com/wotlk/item=30073,https://www.wowhead.com/wotlk/spell=36128
+30072,Light Skyforged Axe,One-Hand,One-Handed Axes,Rare,52,47,,The Burning Crusade,Trainer,Blacksmithing,Weaponsmith,260,,BoP,36126,https://www.wowhead.com/wotlk/item=30072,https://www.wowhead.com/wotlk/spell=36126
+12416,Radiant Belt,Waist,Mail Armor,Uncommon,52,47,,Classic,World Drop,Blacksmithing,,260,,BoE,16645,https://www.wowhead.com/wotlk/item=12416,https://www.wowhead.com/wotlk/spell=16645
+7960,Truesilver Champion,Two-Hand,Two-Handed Swords,Rare,52,47,,Classic,Trainer,Blacksmithing,,260,,BoE,10015,https://www.wowhead.com/wotlk/item=7960,https://www.wowhead.com/wotlk/spell=10015
+30070,Windforged Leggings,Legs,Mail Armor,Rare,52,47,,The Burning Crusade,Trainer,Blacksmithing,Armorsmith,260,,BoP,36124,https://www.wowhead.com/wotlk/item=30070,https://www.wowhead.com/wotlk/spell=36124
+12424,Imperial Plate Belt,Waist,Plate Armor,Uncommon,53,47,,Classic,Quest,Blacksmithing,,265,,BoE,16647,https://www.wowhead.com/wotlk/item=12424,https://www.wowhead.com/wotlk/spell=16647
+12428,Imperial Plate Shoulders,Shoulder,Plate Armor,Uncommon,53,47,,Classic,Quest,Blacksmithing,,265,,BoE,16646,https://www.wowhead.com/wotlk/item=12428,https://www.wowhead.com/wotlk/spell=16646
+12425,Imperial Plate Bracers,Wrist,Plate Armor,Uncommon,54,49,,Classic,Quest,Blacksmithing,,270,,BoE,16649,https://www.wowhead.com/wotlk/item=12425,https://www.wowhead.com/wotlk/spell=16649
+12415,Radiant Breastplate,Chest,Mail Armor,Uncommon,54,49,,Classic,World Drop,Blacksmithing,,270,,BoE,16648,https://www.wowhead.com/wotlk/item=12415,https://www.wowhead.com/wotlk/spell=16648
+12624,Wildthorn Mail,Chest,Mail Armor,Rare,54,49,,Classic,World Drop,Blacksmithing,,270,,BoE,16650,https://www.wowhead.com/wotlk/item=12624,https://www.wowhead.com/wotlk/spell=16650
+11608,Dark Iron Pulverizer,Two-Hand,Two-Handed Maces,Rare,55,50,,Classic,"Mob Drop, Dungeon Drop",Blacksmithing,,265,,BoE,15292,https://www.wowhead.com/wotlk/item=11608,https://www.wowhead.com/wotlk/spell=15292
+12774,Dawn's Edge,One-Hand,One-Handed Axes,Rare,55,50,,Classic,Quest,Blacksmithing,,275,,BoE,16970,https://www.wowhead.com/wotlk/item=12774,https://www.wowhead.com/wotlk/spell=16970
+12773,Ornate Thorium Handaxe,One-Hand,One-Handed Axes,Uncommon,55,50,,Classic,"Trainer, Vendor",Blacksmithing,,275,,BoP,16969,https://www.wowhead.com/wotlk/item=12773,https://www.wowhead.com/wotlk/spell=16969
+12777,Blazing Rapier,One-Hand,One-Handed Swords,Rare,56,51,,Classic,Quest,Blacksmithing,,280,,BoE,16978,https://www.wowhead.com/wotlk/item=12777,https://www.wowhead.com/wotlk/spell=16978
+11606,Dark Iron Mail,Chest,Mail Armor,Uncommon,56,51,,Classic,Dungeon Drop,Blacksmithing,,270,,BoE,15293,https://www.wowhead.com/wotlk/item=11606,https://www.wowhead.com/wotlk/spell=15293
+12776,Enchanted Battlehammer,Two-Hand,Two-Handed Maces,Rare,56,51,,Classic,Quest,Blacksmithing,,280,,BoE,16973,https://www.wowhead.com/wotlk/item=12776,https://www.wowhead.com/wotlk/spell=16973
+12775,Huge Thorium Battleaxe,Two-Hand,Two-Handed Axes,Uncommon,56,51,,Classic,"Trainer, Vendor",Blacksmithing,,280,,BoE,16971,https://www.wowhead.com/wotlk/item=12775,https://www.wowhead.com/wotlk/spell=16971
+12409,Thorium Boots,Feet,Plate Armor,Uncommon,56,51,,Classic,"Trainer, World Drop",Blacksmithing,,280,,BoE,16652,https://www.wowhead.com/wotlk/item=12409,https://www.wowhead.com/wotlk/spell=16652
+12410,Thorium Helm,Head,Plate Armor,Uncommon,56,51,,Classic,"Trainer, World Drop",Blacksmithing,,280,,BoE,16653,https://www.wowhead.com/wotlk/item=12410,https://www.wowhead.com/wotlk/spell=16653
+11607,Dark Iron Sunderer,Two-Hand,Two-Handed Axes,Rare,57,52,,Classic,"Mob Drop, Dungeon Drop",Blacksmithing,,275,,BoE,15294,https://www.wowhead.com/wotlk/item=11607,https://www.wowhead.com/wotlk/spell=15294
+12628,Demon Forged Breastplate,Chest,Plate Armor,Rare,57,52,,Classic,Quest,Blacksmithing,,285,,BoE,16667,https://www.wowhead.com/wotlk/item=12628,https://www.wowhead.com/wotlk/spell=16667
+12418,Radiant Gloves,Hands,Mail Armor,Uncommon,57,52,,Classic,World Drop,Blacksmithing,,285,,BoE,16654,https://www.wowhead.com/wotlk/item=12418,https://www.wowhead.com/wotlk/spell=16654
+12781,Serenity,One-Hand,One-Handed Maces,Rare,57,52,,Classic,Dungeon Drop,Blacksmithing,,285,,BoE,16983,https://www.wowhead.com/wotlk/item=12781,https://www.wowhead.com/wotlk/spell=16983
+12782,Corruption,Two-Hand,Two-Handed Swords,Rare,58,53,,Classic,Dungeon Drop,Blacksmithing,,290,,BoP,16985,https://www.wowhead.com/wotlk/item=12782,https://www.wowhead.com/wotlk/spell=16985
+11605,Dark Iron Shoulders,Shoulder,Plate Armor,Uncommon,58,53,,Classic,Dungeon Drop,Blacksmithing,,280,,BoE,15295,https://www.wowhead.com/wotlk/item=11605,https://www.wowhead.com/wotlk/spell=15295
+12625,Dawnbringer Shoulders,Shoulder,Plate Armor,Rare,58,53,,Classic,World Drop,Blacksmithing,,290,,BoE,16660,https://www.wowhead.com/wotlk/item=12625,https://www.wowhead.com/wotlk/spell=16660
+12631,Fiery Plate Gauntlets,Hands,Plate Armor,Rare,58,53,,Classic,Quest,Blacksmithing,,290,,BoE,16655,https://www.wowhead.com/wotlk/item=12631,https://www.wowhead.com/wotlk/spell=16655
+19051,Girdle of the Dawn,Waist,Plate Armor,Rare,58,53,,Classic,Vendor,Blacksmithing,,290,,BoE,23632,https://www.wowhead.com/wotlk/item=19051,https://www.wowhead.com/wotlk/spell=23632
+19043,Heavy Timbermaw Belt,Waist,Mail Armor,Rare,58,53,,Classic,Vendor,Blacksmithing,,290,,BoE,23628,https://www.wowhead.com/wotlk/item=19043,https://www.wowhead.com/wotlk/spell=23628
+12419,Radiant Boots,Feet,Mail Armor,Uncommon,58,53,,Classic,World Drop,Blacksmithing,,290,,BoE,16656,https://www.wowhead.com/wotlk/item=12419,https://www.wowhead.com/wotlk/spell=16656
+12792,Volcanic Hammer,One-Hand,One-Handed Maces,Uncommon,58,53,,Classic,Mob Drop,Blacksmithing,,290,,BoE,16984,https://www.wowhead.com/wotlk/item=12792,https://www.wowhead.com/wotlk/spell=16984
+17014,Dark Iron Bracers,Wrist,Plate Armor,Epic,59,54,,Classic,Vendor,Blacksmithing,,295,,BoE,20874,https://www.wowhead.com/wotlk/item=17014,https://www.wowhead.com/wotlk/spell=20874
+11604,Dark Iron Plate,Chest,Plate Armor,Rare,59,54,,Classic,"Mob Drop, Dungeon Drop",Blacksmithing,,285,,BoP,15296,https://www.wowhead.com/wotlk/item=11604,https://www.wowhead.com/wotlk/spell=15296
+16989,Fiery Chain Girdle,Waist,Mail Armor,Epic,59,54,,Classic,Vendor,Blacksmithing,,295,,BoE,20872,https://www.wowhead.com/wotlk/item=16989,https://www.wowhead.com/wotlk/spell=20872
+12426,Imperial Plate Boots,Feet,Plate Armor,Uncommon,59,54,,Classic,Quest,Blacksmithing,,295,,BoE,16657,https://www.wowhead.com/wotlk/item=12426,https://www.wowhead.com/wotlk/spell=16657
+12427,Imperial Plate Helm,Head,Plate Armor,Uncommon,59,54,,Classic,Quest,Blacksmithing,,295,,BoE,16658,https://www.wowhead.com/wotlk/item=12427,https://www.wowhead.com/wotlk/spell=16658
+12417,Radiant Circlet,Head,Mail Armor,Uncommon,59,54,,Classic,World Drop,Blacksmithing,,295,,BoE,16659,https://www.wowhead.com/wotlk/item=12417,https://www.wowhead.com/wotlk/spell=16659
+12632,Storm Gauntlets,Hands,Mail Armor,Rare,59,54,,Classic,"Vendor, World Drop",Blacksmithing,,295,,BoE,16661,https://www.wowhead.com/wotlk/item=12632,https://www.wowhead.com/wotlk/spell=16661
+17013,Dark Iron Leggings,Legs,Plate Armor,Epic,60,55,,Classic,Vendor,Blacksmithing,,300,,BoE,20876,https://www.wowhead.com/wotlk/item=17013,https://www.wowhead.com/wotlk/spell=20876
+29203,Enchanted Thorium Blades,Thrown,Thrown,Uncommon,60,55,,The Burning Crusade,Trainer,Blacksmithing,,300,,BoE,34982,https://www.wowhead.com/wotlk/item=29203,https://www.wowhead.com/wotlk/spell=34982
+12422,Imperial Plate Chest,Chest,Plate Armor,Uncommon,60,55,,Classic,Quest,Blacksmithing,,300,,BoE,16663,https://www.wowhead.com/wotlk/item=12422,https://www.wowhead.com/wotlk/spell=16663
+12611,Runic Plate Boots,Feet,Plate Armor,Uncommon,60,55,,Classic,Mob Drop,Blacksmithing,,300,,BoE,16665,https://www.wowhead.com/wotlk/item=12611,https://www.wowhead.com/wotlk/spell=16665
+12610,Runic Plate Shoulders,Shoulder,Plate Armor,Uncommon,60,55,,Classic,Mob Drop,Blacksmithing,,300,,BoE,16664,https://www.wowhead.com/wotlk/item=12610,https://www.wowhead.com/wotlk/spell=16664
+12414,Thorium Leggings,Legs,Plate Armor,Uncommon,60,55,,Classic,"Trainer, World Drop",Blacksmithing,,300,,BoE,16662,https://www.wowhead.com/wotlk/item=12414,https://www.wowhead.com/wotlk/spell=16662
+22385,Titanic Leggings,Legs,Plate Armor,Epic,60,55,,Classic,World Drop,Blacksmithing,,300,,BoE,27829,https://www.wowhead.com/wotlk/item=22385,https://www.wowhead.com/wotlk/spell=27829
+12633,Whitesoul Helm,Head,Plate Armor,Rare,60,55,,Classic,World Drop,Blacksmithing,,300,,BoE,16724,https://www.wowhead.com/wotlk/item=12633,https://www.wowhead.com/wotlk/spell=16724
+12636,Helm of the Great Chief,Head,Mail Armor,Rare,61,56,,Classic,World Drop,Blacksmithing,,300,,BoE,16728,https://www.wowhead.com/wotlk/item=12636,https://www.wowhead.com/wotlk/spell=16728
+12429,Imperial Plate Leggings,Legs,Plate Armor,Uncommon,61,56,,Classic,Quest,Blacksmithing,,300,,BoE,16730,https://www.wowhead.com/wotlk/item=12429,https://www.wowhead.com/wotlk/spell=16730
+12640,Lionheart Helm,Head,Plate Armor,Epic,61,56,,Classic,World Drop,Blacksmithing,,300,,BoE,16729,https://www.wowhead.com/wotlk/item=12640,https://www.wowhead.com/wotlk/spell=16729
+12420,Radiant Leggings,Legs,Mail Armor,Uncommon,61,56,,Classic,World Drop,Blacksmithing,,300,,BoE,16725,https://www.wowhead.com/wotlk/item=12420,https://www.wowhead.com/wotlk/spell=16725
+12612,Runic Plate Helm,Head,Plate Armor,Uncommon,61,56,,Classic,Mob Drop,Blacksmithing,,300,,BoE,16726,https://www.wowhead.com/wotlk/item=12612,https://www.wowhead.com/wotlk/spell=16726
+12620,Enchanted Thorium Helm,Head,Plate Armor,Rare,62,57,,Classic,Quest,Blacksmithing,,300,,BoE,16742,https://www.wowhead.com/wotlk/item=12620,https://www.wowhead.com/wotlk/spell=16742
+16988,Fiery Chain Shoulders,Shoulder,Mail Armor,Epic,62,57,,Classic,Vendor,Blacksmithing,,300,,BoE,20873,https://www.wowhead.com/wotlk/item=16988,https://www.wowhead.com/wotlk/spell=20873
+12613,Runic Breastplate,Chest,Plate Armor,Uncommon,62,57,,Classic,Mob Drop,Blacksmithing,,300,,BoE,16731,https://www.wowhead.com/wotlk/item=12613,https://www.wowhead.com/wotlk/spell=16731
+12614,Runic Plate Leggings,Legs,Plate Armor,Uncommon,62,57,,Classic,Mob Drop,Blacksmithing,,300,,BoE,16732,https://www.wowhead.com/wotlk/item=12614,https://www.wowhead.com/wotlk/spell=16732
+12639,Stronghold Gauntlets,Hands,Plate Armor,Epic,62,57,,Classic,World Drop,Blacksmithing,,300,,BoE,16741,https://www.wowhead.com/wotlk/item=12639,https://www.wowhead.com/wotlk/spell=16741
+12641,Invulnerable Mail,Chest,Mail Armor,Epic,63,57,,Classic,World Drop,Blacksmithing,,300,,BoE,16746,https://www.wowhead.com/wotlk/item=12641,https://www.wowhead.com/wotlk/spell=16746
+12794,Masterwork Stormhammer,One-Hand,One-Handed Maces,Rare,63,57,,Classic,"Mob Drop, Dungeon Drop",Blacksmithing,,300,,BoE,16993,https://www.wowhead.com/wotlk/item=12794,https://www.wowhead.com/wotlk/spell=16993
+12798,Annihilator,One-Hand,One-Handed Axes,Rare,63,58,,Classic,"Mob Drop, Dungeon Drop",Blacksmithing,,300,,BoE,16991,https://www.wowhead.com/wotlk/item=12798,https://www.wowhead.com/wotlk/spell=16991
+12790,Arcanite Champion,Two-Hand,Two-Handed Swords,Rare,63,58,,Classic,"Mob Drop, Dungeon Drop",Blacksmithing,,300,,BoE,16990,https://www.wowhead.com/wotlk/item=12790,https://www.wowhead.com/wotlk/spell=16990
+12784,Arcanite Reaper,Two-Hand,Two-Handed Axes,Rare,63,58,,Classic,"Mob Drop, Dungeon Drop",Blacksmithing,,300,,BoE,16994,https://www.wowhead.com/wotlk/item=12784,https://www.wowhead.com/wotlk/spell=16994
+20550,Darkrune Breastplate,Chest,Plate Armor,Rare,63,58,,Classic,Quest,Blacksmithing,,300,,BoE,24914,https://www.wowhead.com/wotlk/item=20550,https://www.wowhead.com/wotlk/spell=24914
+20549,Darkrune Gauntlets,Hands,Plate Armor,Rare,63,58,,Classic,Quest,Blacksmithing,,300,,BoE,24912,https://www.wowhead.com/wotlk/item=20549,https://www.wowhead.com/wotlk/spell=24912
+20551,Darkrune Helm,Head,Plate Armor,Rare,63,58,,Classic,Quest,Blacksmithing,,300,,BoE,24913,https://www.wowhead.com/wotlk/item=20551,https://www.wowhead.com/wotlk/spell=24913
+12618,Enchanted Thorium Breastplate,Chest,Plate Armor,Rare,63,58,,Classic,Quest,Blacksmithing,,300,,BoE,16745,https://www.wowhead.com/wotlk/item=12618,https://www.wowhead.com/wotlk/spell=16745
+12619,Enchanted Thorium Leggings,Legs,Plate Armor,Rare,63,58,,Classic,Quest,Blacksmithing,,300,,BoE,16744,https://www.wowhead.com/wotlk/item=12619,https://www.wowhead.com/wotlk/spell=16744
+12797,Frostguard,One-Hand,One-Handed Swords,Rare,63,58,,Classic,Mob Drop,Blacksmithing,,300,,BoE,16992,https://www.wowhead.com/wotlk/item=12797,https://www.wowhead.com/wotlk/spell=16992
+12796,Hammer of the Titans,Two-Hand,Two-Handed Maces,Rare,63,58,,Classic,"Mob Drop, Dungeon Drop",Blacksmithing,,300,,BoE,16988,https://www.wowhead.com/wotlk/item=12796,https://www.wowhead.com/wotlk/spell=16988
+12783,Heartseeker,One-Hand,Daggers,Rare,63,58,,Classic,"Mob Drop, Dungeon Drop",Blacksmithing,,300,,BoE,16995,https://www.wowhead.com/wotlk/item=12783,https://www.wowhead.com/wotlk/spell=16995
+22384,Persuader,One-Hand,One-Handed Maces,Epic,63,58,,Classic,World Drop,Blacksmithing,,300,,BoE,27830,https://www.wowhead.com/wotlk/item=22384,https://www.wowhead.com/wotlk/spell=27830
+19057,Gloves of the Dawn,Hands,Plate Armor,Rare,64,59,,Classic,Vendor,Blacksmithing,,300,,BoE,23633,https://www.wowhead.com/wotlk/item=19057,https://www.wowhead.com/wotlk/spell=23633
+19048,Heavy Timbermaw Boots,Feet,Mail Armor,Rare,64,59,,Classic,Vendor,Blacksmithing,,300,,BoE,23629,https://www.wowhead.com/wotlk/item=19048,https://www.wowhead.com/wotlk/spell=23629
+22383,Sageblade,Main Hand,One-Handed Swords,Epic,64,59,,Classic,World Drop,Blacksmithing,,300,,BoE,27832,https://www.wowhead.com/wotlk/item=22383,https://www.wowhead.com/wotlk/spell=27832
+19690,Bloodsoul Breastplate,Chest,Mail Armor,Rare,65,60,,Classic,Vendor,Blacksmithing,,300,,BoE,24136,https://www.wowhead.com/wotlk/item=19690,https://www.wowhead.com/wotlk/spell=24136
+19692,Bloodsoul Gauntlets,Hands,Mail Armor,Rare,65,60,,Classic,Vendor,Blacksmithing,,300,,BoE,24138,https://www.wowhead.com/wotlk/item=19692,https://www.wowhead.com/wotlk/spell=24138
+19691,Bloodsoul Shoulders,Shoulder,Mail Armor,Rare,65,60,,Classic,Vendor,Blacksmithing,,300,,BoE,24137,https://www.wowhead.com/wotlk/item=19691,https://www.wowhead.com/wotlk/spell=24137
+17016,Dark Iron Destroyer,One-Hand,One-Handed Axes,Rare,65,60,,Classic,Vendor,Blacksmithing,,300,,BoE,20897,https://www.wowhead.com/wotlk/item=17016,https://www.wowhead.com/wotlk/spell=20897
+17015,Dark Iron Reaver,One-Hand,One-Handed Swords,Rare,65,60,,Classic,Vendor,Blacksmithing,,300,,BoE,20890,https://www.wowhead.com/wotlk/item=17015,https://www.wowhead.com/wotlk/spell=20890
+19693,Darksoul Breastplate,Chest,Plate Armor,Rare,65,60,,Classic,Vendor,Blacksmithing,,300,,BoE,24139,https://www.wowhead.com/wotlk/item=19693,https://www.wowhead.com/wotlk/spell=24139
+19694,Darksoul Leggings,Legs,Plate Armor,Rare,65,60,,Classic,Vendor,Blacksmithing,,300,,BoE,24140,https://www.wowhead.com/wotlk/item=19694,https://www.wowhead.com/wotlk/spell=24140
+19695,Darksoul Shoulders,Shoulder,Plate Armor,Rare,65,60,,Classic,Vendor,Blacksmithing,,300,,BoE,24141,https://www.wowhead.com/wotlk/item=19695,https://www.wowhead.com/wotlk/spell=24141
+19166,Black Amnesty,One-Hand,Daggers,Epic,66,60,,Classic,Vendor,Blacksmithing,,300,,BoE,23638,https://www.wowhead.com/wotlk/item=19166,https://www.wowhead.com/wotlk/spell=23638
+19167,Blackfury,Two-Hand,Polearms,Epic,66,60,,Classic,Vendor,Blacksmithing,,300,,BoE,23639,https://www.wowhead.com/wotlk/item=19167,https://www.wowhead.com/wotlk/spell=23639
+19148,Dark Iron Helm,Head,Plate Armor,Epic,66,60,,Classic,Vendor,Blacksmithing,,300,,BoE,23636,https://www.wowhead.com/wotlk/item=19148,https://www.wowhead.com/wotlk/spell=23636
+17193,Sulfuron Hammer,Two-Hand,Two-Handed Maces,Epic,67,60,,Classic,Quest,Blacksmithing,,300,,BoE,21161,https://www.wowhead.com/wotlk/item=17193,https://www.wowhead.com/wotlk/spell=21161
+22197,Heavy Obsidian Belt,Waist,Plate Armor,Rare,68,60,,Classic,Vendor,Blacksmithing,,300,,BoE,27585,https://www.wowhead.com/wotlk/item=22197,https://www.wowhead.com/wotlk/spell=27585
+22195,Light Obsidian Belt,Waist,Mail Armor,Rare,68,60,,Classic,Vendor,Blacksmithing,,300,,BoE,27588,https://www.wowhead.com/wotlk/item=22195,https://www.wowhead.com/wotlk/spell=27588
+22194,Black Grasp of the Destroyer,Hands,Mail Armor,Epic,70,60,,Classic,"Mob Drop, Raid Drop",Blacksmithing,,300,,BoE,27589,https://www.wowhead.com/wotlk/item=22194,https://www.wowhead.com/wotlk/spell=27589
+19168,Blackguard,One-Hand,One-Handed Swords,Epic,70,60,,Classic,Vendor,Blacksmithing,,300,,BoE,23652,https://www.wowhead.com/wotlk/item=19168,https://www.wowhead.com/wotlk/spell=23652
+20039,Dark Iron Boots,Feet,Plate Armor,Epic,70,60,,Classic,Vendor,Blacksmithing,,300,,BoE,24399,https://www.wowhead.com/wotlk/item=20039,https://www.wowhead.com/wotlk/spell=24399
+19164,Dark Iron Gauntlets,Hands,Plate Armor,Epic,70,60,,Classic,Vendor,Blacksmithing,,300,,BoE,23637,https://www.wowhead.com/wotlk/item=19164,https://www.wowhead.com/wotlk/spell=23637
+19170,Ebon Hand,One-Hand,One-Handed Maces,Epic,70,60,,Classic,Vendor,Blacksmithing,,300,,BoE,23650,https://www.wowhead.com/wotlk/item=19170,https://www.wowhead.com/wotlk/spell=23650
+22764,Ironvine Belt,Waist,Plate Armor,Rare,70,60,,Classic,Vendor,Blacksmithing,,300,,BoE,28463,https://www.wowhead.com/wotlk/item=22764,https://www.wowhead.com/wotlk/spell=28463
+22762,Ironvine Breastplate,Chest,Plate Armor,Rare,70,60,,Classic,Vendor,Blacksmithing,,300,,BoE,28461,https://www.wowhead.com/wotlk/item=22762,https://www.wowhead.com/wotlk/spell=28461
+22763,Ironvine Gloves,Hands,Plate Armor,Rare,70,60,,Classic,Vendor,Blacksmithing,,300,,BoE,28462,https://www.wowhead.com/wotlk/item=22763,https://www.wowhead.com/wotlk/spell=28462
+22198,Jagged Obsidian Shield,Off Hand,Shields,Epic,70,60,,Classic,Vendor,Blacksmithing,,300,,BoE,27586,https://www.wowhead.com/wotlk/item=22198,https://www.wowhead.com/wotlk/spell=27586
+19169,Nightfall,Two-Hand,Two-Handed Axes,Epic,70,60,,Classic,Vendor,Blacksmithing,,300,,BoE,23653,https://www.wowhead.com/wotlk/item=19169,https://www.wowhead.com/wotlk/spell=23653
+22191,Obsidian Mail Tunic,Chest,Mail Armor,Epic,72,60,,Classic,Vendor,Blacksmithing,,300,,BoE,27590,https://www.wowhead.com/wotlk/item=22191,https://www.wowhead.com/wotlk/spell=27590
+22196,Thick Obsidian Breastplate,Chest,Plate Armor,Epic,72,60,,Classic,"Mob Drop, Raid Drop",Blacksmithing,,300,,BoE,27587,https://www.wowhead.com/wotlk/item=22196,https://www.wowhead.com/wotlk/spell=27587
+22671,Icebane Bracers,Wrist,Plate Armor,Epic,80,60,,Classic,"Trainer, Removed / Retired",Blacksmithing,,300,,BoE,28244,https://www.wowhead.com/wotlk/item=22671,https://www.wowhead.com/wotlk/spell=28244
+22669,Icebane Breastplate,Chest,Plate Armor,Epic,80,60,,Classic,"Trainer, Removed / Retired",Blacksmithing,,300,,BoE,28242,https://www.wowhead.com/wotlk/item=22669,https://www.wowhead.com/wotlk/spell=28242
+22670,Icebane Gauntlets,Hands,Plate Armor,Epic,80,60,,Classic,"Trainer, Removed / Retired",Blacksmithing,,300,,BoE,28243,https://www.wowhead.com/wotlk/item=22670,https://www.wowhead.com/wotlk/spell=28243
+23493,Fel Iron Chain Coif,Head,Mail Armor,Uncommon,90,60,,The Burning Crusade,Trainer,Blacksmithing,,300,,BoE,29551,https://www.wowhead.com/wotlk/item=23493,https://www.wowhead.com/wotlk/spell=29551
+23484,Fel Iron Plate Belt,Waist,Plate Armor,Uncommon,90,61,,The Burning Crusade,Trainer,Blacksmithing,,305,,BoE,29547,https://www.wowhead.com/wotlk/item=23484,https://www.wowhead.com/wotlk/spell=29547
+23482,Fel Iron Plate Gloves,Hands,Plate Armor,Uncommon,90,61,,The Burning Crusade,Trainer,Blacksmithing,,300,,BoE,29545,https://www.wowhead.com/wotlk/item=23482,https://www.wowhead.com/wotlk/spell=29545
+23491,Fel Iron Chain Gloves,Hands,Mail Armor,Uncommon,93,61,,The Burning Crusade,Trainer,Blacksmithing,,310,,BoE,29552,https://www.wowhead.com/wotlk/item=23491,https://www.wowhead.com/wotlk/spell=29552
+23497,Fel Iron Hatchet,One-Hand,One-Handed Axes,Uncommon,93,61,,The Burning Crusade,Trainer,Blacksmithing,,310,,BoE,29557,https://www.wowhead.com/wotlk/item=23497,https://www.wowhead.com/wotlk/spell=29557
+23494,Fel Iron Chain Bracers,Wrist,Mail Armor,Uncommon,96,62,,The Burning Crusade,Trainer,Blacksmithing,,315,,BoE,29553,https://www.wowhead.com/wotlk/item=23494,https://www.wowhead.com/wotlk/spell=29553
+23498,Fel Iron Hammer,One-Hand,One-Handed Maces,Uncommon,96,62,,The Burning Crusade,Trainer,Blacksmithing,,315,,BoE,29558,https://www.wowhead.com/wotlk/item=23498,https://www.wowhead.com/wotlk/spell=29558
+23487,Fel Iron Plate Boots,Feet,Plate Armor,Uncommon,96,62,,The Burning Crusade,Trainer,Blacksmithing,,315,,BoE,29548,https://www.wowhead.com/wotlk/item=23487,https://www.wowhead.com/wotlk/spell=29548
+23488,Fel Iron Plate Pants,Legs,Plate Armor,Uncommon,96,62,,The Burning Crusade,Trainer,Blacksmithing,,315,,BoE,29549,https://www.wowhead.com/wotlk/item=23488,https://www.wowhead.com/wotlk/spell=29549
+23490,Fel Iron Chain Tunic,Chest,Mail Armor,Uncommon,99,63,,The Burning Crusade,Trainer,Blacksmithing,,320,,BoE,29556,https://www.wowhead.com/wotlk/item=23490,https://www.wowhead.com/wotlk/spell=29556
+23499,Fel Iron Greatsword,Two-Hand,Two-Handed Swords,Uncommon,99,63,,The Burning Crusade,Trainer,Blacksmithing,,320,,BoE,29565,https://www.wowhead.com/wotlk/item=23499,https://www.wowhead.com/wotlk/spell=29565
+23502,Adamantite Maul,Two-Hand,Two-Handed Maces,Uncommon,102,64,,The Burning Crusade,Vendor,Blacksmithing,,325,,BoE,29566,https://www.wowhead.com/wotlk/item=23502,https://www.wowhead.com/wotlk/spell=29566
+23489,Fel Iron Breastplate,Chest,Plate Armor,Uncommon,102,64,,The Burning Crusade,Trainer,Blacksmithing,,325,,BoE,29550,https://www.wowhead.com/wotlk/item=23489,https://www.wowhead.com/wotlk/spell=29550
+30093,Great Earthforged Hammer,Two-Hand,Two-Handed Maces,Rare,100,65,,The Burning Crusade,Trainer,Blacksmithing,Master Axesmith,330,,BoP,36137,https://www.wowhead.com/wotlk/item=30093,https://www.wowhead.com/wotlk/spell=36137
+30074,Heavy Earthforged Breastplate,Chest,Plate Armor,Rare,100,65,,The Burning Crusade,Trainer,Blacksmithing,Armorsmith,330,,BoP,36129,https://www.wowhead.com/wotlk/item=30074,https://www.wowhead.com/wotlk/spell=36129
+30089,Lavaforged Warhammer,One-Hand,One-Handed Maces,Rare,100,65,,The Burning Crusade,Trainer,Blacksmithing,Master Axesmith,330,,BoP,36136,https://www.wowhead.com/wotlk/item=30089,https://www.wowhead.com/wotlk/spell=36136
+30088,Skyforged Great Axe,Two-Hand,Two-Handed Axes,Rare,100,65,,The Burning Crusade,Trainer,Blacksmithing,Master Hammersmith,330,,BoP,36135,https://www.wowhead.com/wotlk/item=30088,https://www.wowhead.com/wotlk/spell=36135
+30086,Stoneforged Claymore,Two-Hand,Two-Handed Swords,Rare,100,65,,The Burning Crusade,Trainer,Blacksmithing,Master Swordsmith,330,,BoP,36133,https://www.wowhead.com/wotlk/item=30086,https://www.wowhead.com/wotlk/spell=36133
+30087,Stormforged Axe,One-Hand,One-Handed Axes,Rare,100,65,,The Burning Crusade,Trainer,Blacksmithing,Master Hammersmith,330,,BoP,36134,https://www.wowhead.com/wotlk/item=30087,https://www.wowhead.com/wotlk/spell=36134
+30076,Stormforged Hauberk,Chest,Mail Armor,Rare,100,65,,The Burning Crusade,Trainer,Blacksmithing,Armorsmith,330,,BoP,36130,https://www.wowhead.com/wotlk/item=30076,https://www.wowhead.com/wotlk/spell=36130
+30077,Windforged Rapier,One-Hand,One-Handed Swords,Rare,100,65,,The Burning Crusade,Trainer,Blacksmithing,Master Swordsmith,330,,BoP,36131,https://www.wowhead.com/wotlk/item=30077,https://www.wowhead.com/wotlk/spell=36131
+23503,Adamantite Cleaver,Two-Hand,Two-Handed Axes,Uncommon,105,65,,The Burning Crusade,Vendor,Blacksmithing,,330,,BoE,29568,https://www.wowhead.com/wotlk/item=23503,https://www.wowhead.com/wotlk/spell=29568
+23504,Adamantite Dagger,One-Hand,Daggers,Uncommon,105,65,,The Burning Crusade,Vendor,Blacksmithing,,330,,BoE,29569,https://www.wowhead.com/wotlk/item=23504,https://www.wowhead.com/wotlk/spell=29569
+23506,Adamantite Plate Bracers,Wrist,Plate Armor,Rare,103,66,,The Burning Crusade,Vendor,Blacksmithing,,335,,BoE,29603,https://www.wowhead.com/wotlk/item=23506,https://www.wowhead.com/wotlk/spell=29603
+23508,Adamantite Plate Gloves,Hands,Plate Armor,Rare,103,66,,The Burning Crusade,Vendor,Blacksmithing,,335,,BoE,29605,https://www.wowhead.com/wotlk/item=23508,https://www.wowhead.com/wotlk/spell=29605
+23505,Adamantite Rapier,One-Hand,One-Handed Swords,Uncommon,108,66,,The Burning Crusade,Vendor,Blacksmithing,,335,,BoE,29571,https://www.wowhead.com/wotlk/item=23505,https://www.wowhead.com/wotlk/spell=29571
+23507,Adamantite Breastplate,Chest,Plate Armor,Rare,106,67,,The Burning Crusade,Vendor,Blacksmithing,,340,,BoE,29606,https://www.wowhead.com/wotlk/item=23507,https://www.wowhead.com/wotlk/spell=29606
+40942,Spiked Cobalt Helm,Head,Plate Armor,Uncommon,142,68,,Wrath of the Lich King,Trainer,Blacksmithing,,375,,BoE,54917,https://www.wowhead.com/wotlk/item=40942,https://www.wowhead.com/wotlk/spell=54917
+23515,Flamebane Bracers,Wrist,Plate Armor,Rare,112,69,,The Burning Crusade,Vendor,Blacksmithing,,350,,BoE,29614,https://www.wowhead.com/wotlk/item=23515,https://www.wowhead.com/wotlk/spell=29614
+31371,Iceguard Helm,Head,Plate Armor,Epic,100,70,,The Burning Crusade,Vendor,Blacksmithing,,375,,BoE,38479,https://www.wowhead.com/wotlk/item=31371,https://www.wowhead.com/wotlk/spell=38479
+31370,Iceguard Leggings,Legs,Plate Armor,Epic,100,70,,The Burning Crusade,Vendor,Blacksmithing,,375,,BoE,38478,https://www.wowhead.com/wotlk/item=31370,https://www.wowhead.com/wotlk/spell=38478
+23537,Black Felsteel Bracers,Wrist,Plate Armor,Epic,105,70,,The Burning Crusade,World Drop,Blacksmithing,,365,,BoE,29669,https://www.wowhead.com/wotlk/item=23537,https://www.wowhead.com/wotlk/spell=29669
+23539,Blessed Bracers,Wrist,Plate Armor,Epic,105,70,,The Burning Crusade,World Drop,Blacksmithing,,365,,BoE,29672,https://www.wowhead.com/wotlk/item=23539,https://www.wowhead.com/wotlk/spell=29672
+23538,Bracers of the Green Fortress,Wrist,Plate Armor,Epic,105,70,,The Burning Crusade,World Drop,Blacksmithing,,365,,BoE,29671,https://www.wowhead.com/wotlk/item=23538,https://www.wowhead.com/wotlk/spell=29671
+23555,Dirge,One-Hand,Daggers,Epic,105,70,,The Burning Crusade,World Drop,Blacksmithing,,365,,BoE,29699,https://www.wowhead.com/wotlk/item=23555,https://www.wowhead.com/wotlk/spell=29699
+23554,Eternium Runed Blade,Main Hand,Daggers,Epic,105,70,,The Burning Crusade,World Drop,Blacksmithing,,365,,BoE,29698,https://www.wowhead.com/wotlk/item=23554,https://www.wowhead.com/wotlk/spell=29698
+23542,Fel Edged Battleaxe,One-Hand,One-Handed Axes,Epic,105,70,,The Burning Crusade,World Drop,Blacksmithing,,365,,BoE,29694,https://www.wowhead.com/wotlk/item=23542,https://www.wowhead.com/wotlk/spell=29694
+23546,Fel Hardened Maul,Two-Hand,Two-Handed Maces,Epic,105,70,,The Burning Crusade,World Drop,Blacksmithing,,365,,BoE,29697,https://www.wowhead.com/wotlk/item=23546,https://www.wowhead.com/wotlk/spell=29697
+23531,Felfury Gauntlets,Hands,Mail Armor,Epic,105,70,,The Burning Crusade,World Drop,Blacksmithing,,365,,BoE,29658,https://www.wowhead.com/wotlk/item=23531,https://www.wowhead.com/wotlk/spell=29658
+23540,Felsteel Longblade,One-Hand,One-Handed Swords,Epic,105,70,,The Burning Crusade,World Drop,Blacksmithing,,365,,BoE,29692,https://www.wowhead.com/wotlk/item=23540,https://www.wowhead.com/wotlk/spell=29692
+23543,Felsteel Reaper,Two-Hand,Two-Handed Axes,Epic,105,70,,The Burning Crusade,World Drop,Blacksmithing,,365,,BoE,29695,https://www.wowhead.com/wotlk/item=23543,https://www.wowhead.com/wotlk/spell=29695
+23532,Gauntlets of the Iron Tower,Hands,Plate Armor,Epic,105,70,,The Burning Crusade,World Drop,Blacksmithing,,365,,BoE,29622,https://www.wowhead.com/wotlk/item=23532,https://www.wowhead.com/wotlk/spell=29622
+32854,Hammer of Righteous Might,Two-Hand,Two-Handed Maces,Epic,105,70,,The Burning Crusade,World Drop,Blacksmithing,,365,,BoE,43846,https://www.wowhead.com/wotlk/item=32854,https://www.wowhead.com/wotlk/spell=43846
+23556,Hand of Eternity,Main Hand,One-Handed Maces,Epic,105,70,,The Burning Crusade,World Drop,Blacksmithing,,365,,BoE,29700,https://www.wowhead.com/wotlk/item=23556,https://www.wowhead.com/wotlk/spell=29700
+23535,Helm of the Stalwart Defender,Head,Plate Armor,Epic,105,70,,The Burning Crusade,World Drop,Blacksmithing,,365,,BoE,29664,https://www.wowhead.com/wotlk/item=23535,https://www.wowhead.com/wotlk/spell=29664
+23541,Khorium Champion,Two-Hand,Two-Handed Swords,Epic,105,70,,The Burning Crusade,World Drop,Blacksmithing,,365,,BoE,29693,https://www.wowhead.com/wotlk/item=23541,https://www.wowhead.com/wotlk/spell=29693
+23536,Oathkeeper's Helm,Head,Plate Armor,Epic,105,70,,The Burning Crusade,World Drop,Blacksmithing,,365,,BoE,29668,https://www.wowhead.com/wotlk/item=23536,https://www.wowhead.com/wotlk/spell=29668
+23544,Runic Hammer,One-Hand,One-Handed Maces,Epic,105,70,,The Burning Crusade,World Drop,Blacksmithing,,365,,BoE,29696,https://www.wowhead.com/wotlk/item=23544,https://www.wowhead.com/wotlk/spell=29696
+23533,Steelgrip Gauntlets,Hands,Plate Armor,Epic,105,70,,The Burning Crusade,World Drop,Blacksmithing,,365,,BoE,29662,https://www.wowhead.com/wotlk/item=23533,https://www.wowhead.com/wotlk/spell=29662
+23534,Storm Helm,Head,Mail Armor,Epic,105,70,,The Burning Crusade,World Drop,Blacksmithing,,365,,BoE,29663,https://www.wowhead.com/wotlk/item=23534,https://www.wowhead.com/wotlk/spell=29663
+28483,Breastplate of Kings,Chest,Plate Armor,Epic,107,70,,The Burning Crusade,Trainer,Blacksmithing,Armorsmith,350,,BoP,34533,https://www.wowhead.com/wotlk/item=28483,https://www.wowhead.com/wotlk/spell=34533
+28437,Drakefist Hammer,One-Hand,One-Handed Maces,Epic,107,70,,The Burning Crusade,Trainer,Blacksmithing,Master Axesmith,350,,BoP,34545,https://www.wowhead.com/wotlk/item=28437,https://www.wowhead.com/wotlk/spell=34545
+28425,Fireguard,One-Hand,One-Handed Swords,Epic,107,70,,The Burning Crusade,Trainer,Blacksmithing,Master Swordsmith,350,,BoP,34535,https://www.wowhead.com/wotlk/item=28425,https://www.wowhead.com/wotlk/spell=34535
+28428,Lionheart Blade,Two-Hand,Two-Handed Swords,Epic,107,70,,The Burning Crusade,Trainer,Blacksmithing,Master Swordsmith,350,,BoP,34538,https://www.wowhead.com/wotlk/item=28428,https://www.wowhead.com/wotlk/spell=34538
+28434,Lunar Crescent,Two-Hand,Two-Handed Axes,Epic,107,70,,The Burning Crusade,Trainer,Blacksmithing,Master Hammersmith,350,,BoP,34543,https://www.wowhead.com/wotlk/item=28434,https://www.wowhead.com/wotlk/spell=34543
+23563,Nether Chain Shirt,Chest,Mail Armor,Epic,107,70,,The Burning Crusade,Trainer,Blacksmithing,Armorsmith,350,,BoP,34529,https://www.wowhead.com/wotlk/item=23563,https://www.wowhead.com/wotlk/spell=34529
+28431,The Planar Edge,One-Hand,One-Handed Axes,Epic,107,70,,The Burning Crusade,Trainer,Blacksmithing,Master Hammersmith,350,,BoP,34541,https://www.wowhead.com/wotlk/item=28431,https://www.wowhead.com/wotlk/spell=34541
+28440,Thunder,Two-Hand,Two-Handed Maces,Epic,107,70,,The Burning Crusade,Trainer,Blacksmithing,Master Axesmith,350,,BoP,34547,https://www.wowhead.com/wotlk/item=28440,https://www.wowhead.com/wotlk/spell=34547
+29204,Felsteel Whisper Knives,Thrown,Thrown,Rare,110,70,,The Burning Crusade,Trainer,Blacksmithing,,350,,BoE,34983,https://www.wowhead.com/wotlk/item=29204,https://www.wowhead.com/wotlk/spell=34983
+23510,Enchanted Adamantite Belt,Waist,Plate Armor,Rare,113,70,,The Burning Crusade,Vendor,Blacksmithing,,355,,BoE,29608,https://www.wowhead.com/wotlk/item=23510,https://www.wowhead.com/wotlk/spell=29608
+23511,Enchanted Adamantite Boots,Feet,Plate Armor,Rare,113,70,,The Burning Crusade,Vendor,Blacksmithing,,355,,BoE,29611,https://www.wowhead.com/wotlk/item=23511,https://www.wowhead.com/wotlk/spell=29611
+23516,Flamebane Helm,Head,Plate Armor,Rare,113,70,,The Burning Crusade,Vendor,Blacksmithing,,355,,BoE,29615,https://www.wowhead.com/wotlk/item=23516,https://www.wowhead.com/wotlk/spell=29615
+23509,Enchanted Adamantite Breastplate,Chest,Plate Armor,Rare,114,70,,The Burning Crusade,Vendor,Blacksmithing,,360,,BoE,29610,https://www.wowhead.com/wotlk/item=23509,https://www.wowhead.com/wotlk/spell=29610
+23517,Felsteel Gloves,Hands,Plate Armor,Rare,114,70,,The Burning Crusade,"Mob Drop, Dungeon Drop",Blacksmithing,,360,,BoE,29619,https://www.wowhead.com/wotlk/item=23517,https://www.wowhead.com/wotlk/spell=29619
+23518,Felsteel Leggings,Legs,Plate Armor,Rare,114,70,,The Burning Crusade,"Mob Drop, Dungeon Drop",Blacksmithing,,360,,BoE,29620,https://www.wowhead.com/wotlk/item=23518,https://www.wowhead.com/wotlk/spell=29620
+23514,Flamebane Gloves,Hands,Plate Armor,Rare,114,70,,The Burning Crusade,Vendor,Blacksmithing,,360,,BoE,29616,https://www.wowhead.com/wotlk/item=23514,https://www.wowhead.com/wotlk/spell=29616
+23524,Khorium Belt,Waist,Plate Armor,Rare,114,70,,The Burning Crusade,Mob Drop,Blacksmithing,,360,,BoE,29628,https://www.wowhead.com/wotlk/item=23524,https://www.wowhead.com/wotlk/spell=29628
+23523,Khorium Pants,Legs,Plate Armor,Rare,114,70,,The Burning Crusade,Mob Drop,Blacksmithing,,360,,BoE,29629,https://www.wowhead.com/wotlk/item=23523,https://www.wowhead.com/wotlk/spell=29629
+23527,Earthpeace Breastplate,Chest,Mail Armor,Rare,115,70,,The Burning Crusade,"Mob Drop, Dungeon Drop",Blacksmithing,,370,,BoE,29649,https://www.wowhead.com/wotlk/item=23527,https://www.wowhead.com/wotlk/spell=29649
+23512,Enchanted Adamantite Leggings,Legs,Plate Armor,Rare,115,70,,The Burning Crusade,Vendor,Blacksmithing,,365,,BoE,29613,https://www.wowhead.com/wotlk/item=23512,https://www.wowhead.com/wotlk/spell=29613
+23519,Felsteel Helm,Head,Plate Armor,Rare,115,70,,The Burning Crusade,"Mob Drop, Dungeon Drop",Blacksmithing,,365,,BoE,29621,https://www.wowhead.com/wotlk/item=23519,https://www.wowhead.com/wotlk/spell=29621
+23513,Flamebane Breastplate,Chest,Plate Armor,Rare,115,70,,The Burning Crusade,Vendor,Blacksmithing,,365,,BoE,29617,https://www.wowhead.com/wotlk/item=23513,https://www.wowhead.com/wotlk/spell=29617
+31369,Iceguard Breastplate,Chest,Plate Armor,Epic,115,70,,The Burning Crusade,Vendor,Blacksmithing,,375,,BoE,38477,https://www.wowhead.com/wotlk/item=31369,https://www.wowhead.com/wotlk/spell=38477
+23525,Khorium Boots,Feet,Plate Armor,Rare,115,70,,The Burning Crusade,Mob Drop,Blacksmithing,,365,,BoE,29630,https://www.wowhead.com/wotlk/item=23525,https://www.wowhead.com/wotlk/spell=29630
+23522,Ragesteel Breastplate,Chest,Plate Armor,Rare,115,70,,The Burning Crusade,Mob Drop,Blacksmithing,,370,,BoE,29645,https://www.wowhead.com/wotlk/item=23522,https://www.wowhead.com/wotlk/spell=29645
+23520,Ragesteel Gloves,Hands,Plate Armor,Rare,115,70,,The Burning Crusade,Mob Drop,Blacksmithing,,365,,BoE,29642,https://www.wowhead.com/wotlk/item=23520,https://www.wowhead.com/wotlk/spell=29642
+23521,Ragesteel Helm,Head,Plate Armor,Rare,115,70,,The Burning Crusade,Mob Drop,Blacksmithing,,365,,BoE,29643,https://www.wowhead.com/wotlk/item=23521,https://www.wowhead.com/wotlk/spell=29643
+33173,Ragesteel Shoulders,Shoulder,Plate Armor,Rare,115,70,,The Burning Crusade,Mob Drop,Blacksmithing,,365,,BoE,42662,https://www.wowhead.com/wotlk/item=33173,https://www.wowhead.com/wotlk/spell=42662
+23526,Swiftsteel Gloves,Hands,Mail Armor,Rare,115,70,,The Burning Crusade,"Mob Drop, Dungeon Drop",Blacksmithing,,370,,BoE,29648,https://www.wowhead.com/wotlk/item=23526,https://www.wowhead.com/wotlk/spell=29648
+31364,Wildguard Breastplate,Chest,Plate Armor,Epic,115,70,,The Burning Crusade,Vendor,Blacksmithing,,375,,BoE,38473,https://www.wowhead.com/wotlk/item=31364,https://www.wowhead.com/wotlk/spell=38473
+31368,Wildguard Helm,Head,Plate Armor,Epic,115,70,,The Burning Crusade,Vendor,Blacksmithing,,375,,BoE,38476,https://www.wowhead.com/wotlk/item=31368,https://www.wowhead.com/wotlk/spell=38476
+31367,Wildguard Leggings,Legs,Plate Armor,Epic,115,70,,The Burning Crusade,Vendor,Blacksmithing,,375,,BoE,38475,https://www.wowhead.com/wotlk/item=31367,https://www.wowhead.com/wotlk/spell=38475
+28432,Black Planar Edge,One-Hand,One-Handed Axes,Epic,123,70,,The Burning Crusade,Trainer,Blacksmithing,Master Hammersmith,375,,BoP,34542,https://www.wowhead.com/wotlk/item=28432,https://www.wowhead.com/wotlk/spell=34542
+28426,Blazeguard,One-Hand,One-Handed Swords,Epic,123,70,,The Burning Crusade,Trainer,Blacksmithing,Master Swordsmith,375,,BoP,34537,https://www.wowhead.com/wotlk/item=28426,https://www.wowhead.com/wotlk/spell=34537
+28441,Deep Thunder,Two-Hand,Two-Handed Maces,Epic,123,70,,The Burning Crusade,Trainer,Blacksmithing,Master Axesmith,375,,BoP,34548,https://www.wowhead.com/wotlk/item=28441,https://www.wowhead.com/wotlk/spell=34548
+28438,Dragonmaw,One-Hand,One-Handed Maces,Epic,123,70,,The Burning Crusade,Trainer,Blacksmithing,Master Axesmith,375,,BoP,34546,https://www.wowhead.com/wotlk/item=28438,https://www.wowhead.com/wotlk/spell=34546
+28429,Lionheart Champion,Two-Hand,Two-Handed Swords,Epic,123,70,,The Burning Crusade,Trainer,Blacksmithing,Master Swordsmith,375,,BoP,34540,https://www.wowhead.com/wotlk/item=28429,https://www.wowhead.com/wotlk/spell=34540
+28435,Mooncleaver,Two-Hand,Two-Handed Axes,Epic,123,70,,The Burning Crusade,Trainer,Blacksmithing,Master Hammersmith,375,,BoP,34544,https://www.wowhead.com/wotlk/item=28435,https://www.wowhead.com/wotlk/spell=34544
+28484,Bulwark of Kings,Chest,Plate Armor,Epic,127,70,,The Burning Crusade,Trainer,Blacksmithing,Armorsmith,375,,BoP,34534,https://www.wowhead.com/wotlk/item=28484,https://www.wowhead.com/wotlk/spell=34534
+23564,Twisting Nether Chain Shirt,Chest,Mail Armor,Epic,127,70,,The Burning Crusade,Trainer,Blacksmithing,Armorsmith,375,,BoP,34530,https://www.wowhead.com/wotlk/item=23564,https://www.wowhead.com/wotlk/spell=34530
+30034,Belt of the Guardian,Waist,Plate Armor,Epic,128,70,,The Burning Crusade,Raid Drop,Blacksmithing,,375,,BoE,36389,https://www.wowhead.com/wotlk/item=30034,https://www.wowhead.com/wotlk/spell=36389
+30033,Boots of the Protector,Feet,Plate Armor,Epic,128,70,,The Burning Crusade,Raid Drop,Blacksmithing,,375,,BoP,36391,https://www.wowhead.com/wotlk/item=30033,https://www.wowhead.com/wotlk/spell=36391
+30032,Red Belt of Battle,Waist,Plate Armor,Epic,128,70,,The Burning Crusade,Raid Drop,Blacksmithing,,375,,BoE,36390,https://www.wowhead.com/wotlk/item=30032,https://www.wowhead.com/wotlk/spell=36390
+30031,Red Havoc Boots,Feet,Plate Armor,Epic,128,70,,The Burning Crusade,Raid Drop,Blacksmithing,,375,,BoP,36392,https://www.wowhead.com/wotlk/item=30031,https://www.wowhead.com/wotlk/spell=36392
+32403,Shadesteel Bracers,Wrist,Plate Armor,Epic,130,70,,The Burning Crusade,Vendor,Blacksmithing,,375,,BoE,40034,https://www.wowhead.com/wotlk/item=32403,https://www.wowhead.com/wotlk/spell=40034
+32401,Shadesteel Girdle,Waist,Plate Armor,Epic,130,70,,The Burning Crusade,Vendor,Blacksmithing,,375,,BoE,40036,https://www.wowhead.com/wotlk/item=32401,https://www.wowhead.com/wotlk/spell=40036
+32404,Shadesteel Greaves,Legs,Plate Armor,Epic,130,70,,The Burning Crusade,Vendor,Blacksmithing,,375,,BoE,40035,https://www.wowhead.com/wotlk/item=32404,https://www.wowhead.com/wotlk/spell=40035
+32402,Shadesteel Sabots,Feet,Plate Armor,Epic,130,70,,The Burning Crusade,Vendor,Blacksmithing,,375,,BoE,40033,https://www.wowhead.com/wotlk/item=32402,https://www.wowhead.com/wotlk/spell=40033
+28427,Blazefury,One-Hand,One-Handed Swords,Epic,136,70,,The Burning Crusade,Trainer,Blacksmithing,Master Swordsmith,375,,BoP,36258,https://www.wowhead.com/wotlk/item=28427,https://www.wowhead.com/wotlk/spell=36258
+28436,Bloodmoon,Two-Hand,Two-Handed Axes,Epic,136,70,,The Burning Crusade,Trainer,Blacksmithing,Master Hammersmith,375,,BoP,36261,https://www.wowhead.com/wotlk/item=28436,https://www.wowhead.com/wotlk/spell=36261
+28439,Dragonstrike,One-Hand,One-Handed Maces,Epic,136,70,,The Burning Crusade,Trainer,Blacksmithing,Master Axesmith,375,,BoP,36262,https://www.wowhead.com/wotlk/item=28439,https://www.wowhead.com/wotlk/spell=36262
+28430,Lionheart Executioner,Two-Hand,Two-Handed Swords,Epic,136,70,,The Burning Crusade,Trainer,Blacksmithing,Master Swordsmith,375,,BoP,36259,https://www.wowhead.com/wotlk/item=28430,https://www.wowhead.com/wotlk/spell=36259
+28442,Stormherald,Two-Hand,Two-Handed Maces,Epic,136,70,,The Burning Crusade,Trainer,Blacksmithing,Master Axesmith,375,,BoP,36263,https://www.wowhead.com/wotlk/item=28442,https://www.wowhead.com/wotlk/spell=36263
+28433,Wicked Edge of the Planes,One-Hand,One-Handed Axes,Epic,136,70,,The Burning Crusade,Trainer,Blacksmithing,Master Hammersmith,375,,BoP,36260,https://www.wowhead.com/wotlk/item=28433,https://www.wowhead.com/wotlk/spell=36260
+32571,Dawnsteel Bracers,Wrist,Plate Armor,Epic,141,70,,The Burning Crusade,Raid Drop,Blacksmithing,,375,,BoE,41134,https://www.wowhead.com/wotlk/item=32571,https://www.wowhead.com/wotlk/spell=41134
+32573,Dawnsteel Shoulders,Shoulder,Plate Armor,Epic,141,70,,The Burning Crusade,Raid Drop,Blacksmithing,,375,,BoP,41135,https://www.wowhead.com/wotlk/item=32573,https://www.wowhead.com/wotlk/spell=41135
+32568,Swiftsteel Bracers,Wrist,Plate Armor,Epic,141,70,,The Burning Crusade,Raid Drop,Blacksmithing,,375,,BoE,41132,https://www.wowhead.com/wotlk/item=32568,https://www.wowhead.com/wotlk/spell=41132
+32570,Swiftsteel Shoulders,Shoulder,Plate Armor,Epic,141,70,,The Burning Crusade,Raid Drop,Blacksmithing,,375,,BoP,41133,https://www.wowhead.com/wotlk/item=32570,https://www.wowhead.com/wotlk/spell=41133
+39087,Cobalt Belt,Waist,Plate Armor,Uncommon,142,70,,Wrath of the Lich King,Trainer,Blacksmithing,,350,,BoE,52568,https://www.wowhead.com/wotlk/item=39087,https://www.wowhead.com/wotlk/spell=52568
+39088,Cobalt Boots,Feet,Plate Armor,Uncommon,142,70,,Wrath of the Lich King,Trainer,Blacksmithing,,350,,BoE,52569,https://www.wowhead.com/wotlk/item=39088,https://www.wowhead.com/wotlk/spell=52569
+41974,Cobalt Bracers,Wrist,Plate Armor,Uncommon,142,70,,Wrath of the Lich King,Trainer,Blacksmithing,,360,,BoE,55834,https://www.wowhead.com/wotlk/item=41974,https://www.wowhead.com/wotlk/spell=55834
+39085,Cobalt Chestpiece,Chest,Plate Armor,Uncommon,142,70,,Wrath of the Lich King,Trainer,Blacksmithing,,375,,BoE,52570,https://www.wowhead.com/wotlk/item=39085,https://www.wowhead.com/wotlk/spell=52570
+41975,Cobalt Gauntlets,Hands,Plate Armor,Uncommon,142,70,,Wrath of the Lich King,Trainer,Blacksmithing,,370,,BoE,55835,https://www.wowhead.com/wotlk/item=41975,https://www.wowhead.com/wotlk/spell=55835
+39084,Cobalt Helm,Head,Plate Armor,Uncommon,142,70,,Wrath of the Lich King,Trainer,Blacksmithing,,370,,BoE,52571,https://www.wowhead.com/wotlk/item=39084,https://www.wowhead.com/wotlk/spell=52571
+39086,Cobalt Legplates,Legs,Plate Armor,Uncommon,142,70,,Wrath of the Lich King,Trainer,Blacksmithing,,370,,BoE,52567,https://www.wowhead.com/wotlk/item=39086,https://www.wowhead.com/wotlk/spell=52567
+39083,Cobalt Shoulders,Shoulder,Plate Armor,Uncommon,142,70,,Wrath of the Lich King,Trainer,Blacksmithing,,360,,BoE,52572,https://www.wowhead.com/wotlk/item=39083,https://www.wowhead.com/wotlk/spell=52572
+40668,Cobalt Triangle Shield,Off Hand,Shields,Uncommon,142,70,,Wrath of the Lich King,Trainer,Blacksmithing,,360,,BoE,54550,https://www.wowhead.com/wotlk/item=40668,https://www.wowhead.com/wotlk/spell=54550
+28485,Bulwark of the Ancient Kings,Chest,Plate Armor,Epic,146,70,,The Burning Crusade,Trainer,Blacksmithing,Armorsmith,375,,BoP,36257,https://www.wowhead.com/wotlk/item=28485,https://www.wowhead.com/wotlk/spell=36257
+23565,Embrace of the Twisting Nether,Chest,Mail Armor,Epic,146,70,,The Burning Crusade,Trainer,Blacksmithing,Armorsmith,375,,BoP,36256,https://www.wowhead.com/wotlk/item=23565,https://www.wowhead.com/wotlk/spell=36256
+34378,Hard Khorium Battlefists,Hands,Plate Armor,Epic,159,70,,The Burning Crusade,Raid Drop,Blacksmithing,,365,,BoE,46141,https://www.wowhead.com/wotlk/item=34378,https://www.wowhead.com/wotlk/spell=46141
+34377,Hard Khorium Battleplate,Chest,Plate Armor,Epic,159,70,Blacksmithing (350),The Burning Crusade,Raid Drop,Blacksmithing,,365,,BoP,46144,https://www.wowhead.com/wotlk/item=34377,https://www.wowhead.com/wotlk/spell=46144
+34379,Sunblessed Breastplate,Chest,Plate Armor,Epic,159,70,Blacksmithing (350),The Burning Crusade,Raid Drop,Blacksmithing,,365,,BoP,46142,https://www.wowhead.com/wotlk/item=34379,https://www.wowhead.com/wotlk/spell=46142
+34380,Sunblessed Gauntlets,Hands,Plate Armor,Epic,159,70,,The Burning Crusade,Raid Drop,Blacksmithing,,365,,BoE,46140,https://www.wowhead.com/wotlk/item=34380,https://www.wowhead.com/wotlk/spell=46140
+41240,Cobalt Tenderizer,One-Hand,One-Handed Maces,Uncommon,146,71,,Wrath of the Lich King,Trainer,Blacksmithing,,380,,BoE,55201,https://www.wowhead.com/wotlk/item=41240,https://www.wowhead.com/wotlk/spell=55201
+40949,Spiked Cobalt Boots,Feet,Plate Armor,Uncommon,146,71,,Wrath of the Lich King,Trainer,Blacksmithing,,380,,BoE,54918,https://www.wowhead.com/wotlk/item=40949,https://www.wowhead.com/wotlk/spell=54918
+41239,Sturdy Cobalt Quickblade,One-Hand,One-Handed Swords,Uncommon,146,71,,Wrath of the Lich King,Trainer,Blacksmithing,,380,,BoE,55200,https://www.wowhead.com/wotlk/item=41239,https://www.wowhead.com/wotlk/spell=55200
+41242,Forged Cobalt Claymore,Two-Hand,Two-Handed Swords,Uncommon,150,72,,Wrath of the Lich King,Trainer,Blacksmithing,,385,,BoE,55203,https://www.wowhead.com/wotlk/item=41242,https://www.wowhead.com/wotlk/spell=55203
+40951,Spiked Cobalt Chestpiece,Chest,Plate Armor,Uncommon,150,72,,Wrath of the Lich King,Trainer,Blacksmithing,,385,,BoE,54944,https://www.wowhead.com/wotlk/item=40951,https://www.wowhead.com/wotlk/spell=54944
+40950,Spiked Cobalt Shoulders,Shoulder,Plate Armor,Uncommon,150,72,,Wrath of the Lich King,Trainer,Blacksmithing,,385,,BoE,54941,https://www.wowhead.com/wotlk/item=40950,https://www.wowhead.com/wotlk/spell=54941
+41241,Sure-fire Shuriken,Thrown,Thrown,Uncommon,150,72,,Wrath of the Lich King,Trainer,Blacksmithing,,385,,BoE,55202,https://www.wowhead.com/wotlk/item=41241,https://www.wowhead.com/wotlk/spell=55202
+41243,Notched Cobalt War Axe,One-Hand,One-Handed Axes,Uncommon,154,73,,Wrath of the Lich King,Trainer,Blacksmithing,,390,,BoE,55204,https://www.wowhead.com/wotlk/item=41243,https://www.wowhead.com/wotlk/spell=55204
+40956,Reinforced Cobalt Shoulders,Shoulder,Plate Armor,Uncommon,154,73,,Wrath of the Lich King,Mob Drop,Blacksmithing,,375,,BoE,54978,https://www.wowhead.com/wotlk/item=40956,https://www.wowhead.com/wotlk/spell=54978
+40952,Spiked Cobalt Gauntlets,Hands,Plate Armor,Uncommon,154,73,,Wrath of the Lich King,Trainer,Blacksmithing,,390,,BoE,54945,https://www.wowhead.com/wotlk/item=40952,https://www.wowhead.com/wotlk/spell=54945
+41181,Honed Cobalt Cleaver,Two-Hand,Two-Handed Axes,Rare,159,73,,Wrath of the Lich King,Trainer,Blacksmithing,,390,,BoE,55174,https://www.wowhead.com/wotlk/item=41181,https://www.wowhead.com/wotlk/spell=55174
+40670,Saronite Defender,Off Hand,Shields,Rare,159,73,,Wrath of the Lich King,Trainer,Blacksmithing,,390,,BoE,54557,https://www.wowhead.com/wotlk/item=40670,https://www.wowhead.com/wotlk/spell=54557
+41117,Saronite Protector,Off Hand,Shields,Rare,159,73,,Wrath of the Lich King,Trainer,Blacksmithing,,390,,BoE,55013,https://www.wowhead.com/wotlk/item=41117,https://www.wowhead.com/wotlk/spell=55013
+40953,Spiked Cobalt Belt,Waist,Plate Armor,Uncommon,158,74,,Wrath of the Lich King,Trainer,Blacksmithing,,395,,BoE,54946,https://www.wowhead.com/wotlk/item=40953,https://www.wowhead.com/wotlk/spell=54946
+40943,Spiked Cobalt Legplates,Legs,Plate Armor,Uncommon,158,74,,Wrath of the Lich King,Trainer,Blacksmithing,,395,,BoE,54947,https://www.wowhead.com/wotlk/item=40943,https://www.wowhead.com/wotlk/spell=54947
+41126,Brilliant Saronite Legplates,Legs,Plate Armor,Rare,163,74,,Wrath of the Lich King,Trainer,Blacksmithing,,395,,BoE,55055,https://www.wowhead.com/wotlk/item=41126,https://www.wowhead.com/wotlk/spell=55055
+41182,Savage Cobalt Slicer,One-Hand,One-Handed Swords,Rare,163,74,,Wrath of the Lich King,Trainer,Blacksmithing,,395,,BoE,55177,https://www.wowhead.com/wotlk/item=41182,https://www.wowhead.com/wotlk/spell=55177
+40669,Tempered Saronite Belt,Waist,Plate Armor,Rare,163,74,,Wrath of the Lich King,Trainer,Blacksmithing,,395,,BoE,54551,https://www.wowhead.com/wotlk/item=40669,https://www.wowhead.com/wotlk/spell=54551
+40674,Tempered Saronite Legplates,Legs,Plate Armor,Rare,163,74,,Wrath of the Lich King,Trainer,Blacksmithing,,395,,BoE,54554,https://www.wowhead.com/wotlk/item=40674,https://www.wowhead.com/wotlk/spell=54554
+40955,Horned Cobalt Helm,Head,Plate Armor,Uncommon,162,75,,Wrath of the Lich King,Trainer,Blacksmithing,,400,,BoE,54949,https://www.wowhead.com/wotlk/item=40955,https://www.wowhead.com/wotlk/spell=54949
+40957,Reinforced Cobalt Helm,Head,Plate Armor,Uncommon,162,75,,Wrath of the Lich King,Mob Drop,Blacksmithing,,375,,BoE,54979,https://www.wowhead.com/wotlk/item=40957,https://www.wowhead.com/wotlk/spell=54979
+40954,Spiked Cobalt Bracers,Wrist,Plate Armor,Uncommon,162,75,,Wrath of the Lich King,Trainer,Blacksmithing,,400,,BoE,54948,https://www.wowhead.com/wotlk/item=40954,https://www.wowhead.com/wotlk/spell=54948
+41127,Brilliant Saronite Gauntlets,Hands,Plate Armor,Rare,167,75,,Wrath of the Lich King,Trainer,Blacksmithing,,400,,BoE,55056,https://www.wowhead.com/wotlk/item=41127,https://www.wowhead.com/wotlk/spell=55056
+41183,Saronite Ambusher,One-Hand,Daggers,Rare,167,75,,Wrath of the Lich King,Trainer,Blacksmithing,,400,,BoE,55179,https://www.wowhead.com/wotlk/item=41183,https://www.wowhead.com/wotlk/spell=55179
+40671,Tempered Saronite Boots,Feet,Plate Armor,Rare,167,75,,Wrath of the Lich King,Trainer,Blacksmithing,,400,,BoE,54552,https://www.wowhead.com/wotlk/item=40671,https://www.wowhead.com/wotlk/spell=54552
+40672,Tempered Saronite Breastplate,Chest,Plate Armor,Rare,167,75,,Wrath of the Lich King,Trainer,Blacksmithing,,400,,BoE,54553,https://www.wowhead.com/wotlk/item=40672,https://www.wowhead.com/wotlk/spell=54553
+40958,Reinforced Cobalt Legplates,Legs,Plate Armor,Uncommon,166,76,,Wrath of the Lich King,Mob Drop,Blacksmithing,,375,,BoE,54980,https://www.wowhead.com/wotlk/item=40958,https://www.wowhead.com/wotlk/spell=54980
+43860,Brilliant Saronite Belt,Waist,Plate Armor,Rare,171,76,,Wrath of the Lich King,Trainer,Blacksmithing,,395,,BoE,59436,https://www.wowhead.com/wotlk/item=43860,https://www.wowhead.com/wotlk/spell=59436
+41128,Brilliant Saronite Boots,Feet,Plate Armor,Rare,171,76,,Wrath of the Lich King,Trainer,Blacksmithing,,405,,BoE,55057,https://www.wowhead.com/wotlk/item=41128,https://www.wowhead.com/wotlk/spell=55057
+43864,Brilliant Saronite Bracers,Wrist,Plate Armor,Rare,171,76,,Wrath of the Lich King,Trainer,Blacksmithing,,400,,BoE,59438,https://www.wowhead.com/wotlk/item=43864,https://www.wowhead.com/wotlk/spell=59438
+43865,Brilliant Saronite Pauldrons,Shoulder,Plate Armor,Rare,171,76,,Wrath of the Lich King,Trainer,Blacksmithing,,405,,BoE,59440,https://www.wowhead.com/wotlk/item=43865,https://www.wowhead.com/wotlk/spell=59440
+41245,Deadly Saronite Dirk,Thrown,Thrown,Rare,171,76,,Wrath of the Lich King,Trainer,Blacksmithing,,405,,BoE,55206,https://www.wowhead.com/wotlk/item=41245,https://www.wowhead.com/wotlk/spell=55206
+41184,Saronite Shiv,One-Hand,Daggers,Rare,171,76,,Wrath of the Lich King,Trainer,Blacksmithing,,405,,BoE,55181,https://www.wowhead.com/wotlk/item=41184,https://www.wowhead.com/wotlk/spell=55181
+40673,Tempered Saronite Helm,Head,Plate Armor,Rare,171,76,,Wrath of the Lich King,Trainer,Blacksmithing,,405,,BoE,54555,https://www.wowhead.com/wotlk/item=40673,https://www.wowhead.com/wotlk/spell=54555
+40675,Tempered Saronite Shoulders,Shoulder,Plate Armor,Rare,171,76,,Wrath of the Lich King,Trainer,Blacksmithing,,405,,BoE,54556,https://www.wowhead.com/wotlk/item=40675,https://www.wowhead.com/wotlk/spell=54556
+40959,Reinforced Cobalt Chestpiece,Chest,Plate Armor,Uncommon,170,77,,Wrath of the Lich King,Mob Drop,Blacksmithing,,375,,BoE,54981,https://www.wowhead.com/wotlk/item=40959,https://www.wowhead.com/wotlk/spell=54981
+42443,Cudgel of Saronite Justice,Main Hand,One-Handed Maces,Rare,175,77,,Wrath of the Lich King,Trainer,Blacksmithing,,410,,BoE,56280,https://www.wowhead.com/wotlk/item=42443,https://www.wowhead.com/wotlk/spell=56280
+41185,Furious Saronite Beatstick,One-Hand,One-Handed Maces,Rare,175,77,,Wrath of the Lich King,Trainer,Blacksmithing,,410,,BoE,55182,https://www.wowhead.com/wotlk/item=41185,https://www.wowhead.com/wotlk/spell=55182
+41113,Saronite Bulwark,Off Hand,Shields,Rare,175,77,,Wrath of the Lich King,Trainer,Blacksmithing,,410,,BoE,55014,https://www.wowhead.com/wotlk/item=41113,https://www.wowhead.com/wotlk/spell=55014
+43871,Saronite Spellblade,Main Hand,One-Handed Swords,Rare,175,77,,Wrath of the Lich King,Trainer,Blacksmithing,,410,,BoE,59442,https://www.wowhead.com/wotlk/item=43871,https://www.wowhead.com/wotlk/spell=59442
+41116,Tempered Saronite Bracers,Wrist,Plate Armor,Rare,175,77,,Wrath of the Lich King,Trainer,Blacksmithing,,410,,BoE,55017,https://www.wowhead.com/wotlk/item=41116,https://www.wowhead.com/wotlk/spell=55017
+41190,Legplates of Conquest,Legs,Plate Armor,Rare,166,78,,Wrath of the Lich King,Trainer,Blacksmithing,Armorsmith,415,,BoP,55187,https://www.wowhead.com/wotlk/item=41190,https://www.wowhead.com/wotlk/spell=55187
+41129,Brilliant Saronite Breastplate,Chest,Plate Armor,Rare,179,78,,Wrath of the Lich King,Trainer,Blacksmithing,,415,,BoE,55058,https://www.wowhead.com/wotlk/item=41129,https://www.wowhead.com/wotlk/spell=55058
+43870,Brilliant Saronite Helm,Head,Plate Armor,Rare,179,78,,Wrath of the Lich King,Trainer,Blacksmithing,,415,,BoE,59441,https://www.wowhead.com/wotlk/item=43870,https://www.wowhead.com/wotlk/spell=59441
+41189,Chestplate of Conquest,Chest,Plate Armor,Rare,179,78,,Wrath of the Lich King,Trainer,Blacksmithing,Armorsmith,415,,BoP,55186,https://www.wowhead.com/wotlk/item=41189,https://www.wowhead.com/wotlk/spell=55186
+41186,Corroded Saronite Edge,One-Hand,One-Handed Swords,Rare,179,78,,Wrath of the Lich King,Trainer,Blacksmithing,Weaponsmith,415,,BoP,55183,https://www.wowhead.com/wotlk/item=41186,https://www.wowhead.com/wotlk/spell=55183
+41187,Corroded Saronite Woundbringer,One-Hand,One-Handed Swords,Rare,179,78,,Wrath of the Lich King,Trainer,Blacksmithing,Weaponsmith,415,,BoP,55184,https://www.wowhead.com/wotlk/item=41187,https://www.wowhead.com/wotlk/spell=55184
+41188,Saronite Mindcrusher,Two-Hand,Two-Handed Maces,Rare,179,78,,Wrath of the Lich King,Trainer,Blacksmithing,Weaponsmith,415,,BoP,55185,https://www.wowhead.com/wotlk/item=41188,https://www.wowhead.com/wotlk/spell=55185
+41114,Tempered Saronite Gauntlets,Hands,Plate Armor,Rare,179,78,,Wrath of the Lich King,Trainer,Blacksmithing,,415,,BoE,55015,https://www.wowhead.com/wotlk/item=41114,https://www.wowhead.com/wotlk/spell=55015
+41357,Daunting Handguards,Hands,Plate Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Blacksmithing,,420,,BoE,55301,https://www.wowhead.com/wotlk/item=41357,https://www.wowhead.com/wotlk/spell=55301
+41345,Daunting Legplates,Legs,Plate Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Blacksmithing,,425,,BoE,55303,https://www.wowhead.com/wotlk/item=41345,https://www.wowhead.com/wotlk/spell=55303
+41344,Helm of Command,Head,Plate Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Blacksmithing,,425,,BoE,55302,https://www.wowhead.com/wotlk/item=41344,https://www.wowhead.com/wotlk/spell=55302
+42723,Ornate Saronite Bracers,Wrist,Plate Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Blacksmithing,,420,,BoE,56549,https://www.wowhead.com/wotlk/item=42723,https://www.wowhead.com/wotlk/spell=56549
+42724,Ornate Saronite Gauntlets,Hands,Plate Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Blacksmithing,,420,,BoE,56553,https://www.wowhead.com/wotlk/item=42724,https://www.wowhead.com/wotlk/spell=56553
+42725,Ornate Saronite Hauberk,Chest,Plate Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Blacksmithing,,425,,BoE,56555,https://www.wowhead.com/wotlk/item=42725,https://www.wowhead.com/wotlk/spell=56555
+42726,Ornate Saronite Legplates,Legs,Plate Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Blacksmithing,,425,,BoE,56554,https://www.wowhead.com/wotlk/item=42726,https://www.wowhead.com/wotlk/spell=56554
+42727,Ornate Saronite Pauldrons,Shoulder,Plate Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Blacksmithing,,420,,BoE,56550,https://www.wowhead.com/wotlk/item=42727,https://www.wowhead.com/wotlk/spell=56550
+42728,Ornate Saronite Skullshield,Head,Plate Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Blacksmithing,,425,,BoE,56556,https://www.wowhead.com/wotlk/item=42728,https://www.wowhead.com/wotlk/spell=56556
+42729,Ornate Saronite Waistguard,Waist,Plate Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Blacksmithing,,420,,BoE,56551,https://www.wowhead.com/wotlk/item=42729,https://www.wowhead.com/wotlk/spell=56551
+42730,Ornate Saronite Walkers,Feet,Plate Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Blacksmithing,,420,,BoE,56552,https://www.wowhead.com/wotlk/item=42730,https://www.wowhead.com/wotlk/spell=56552
+41356,Righteous Gauntlets,Hands,Plate Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Blacksmithing,,420,,BoE,55300,https://www.wowhead.com/wotlk/item=41356,https://www.wowhead.com/wotlk/spell=55300
+41346,Righteous Greaves,Legs,Plate Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Blacksmithing,,425,,BoE,55304,https://www.wowhead.com/wotlk/item=41346,https://www.wowhead.com/wotlk/spell=55304
+41354,Savage Saronite Bracers,Wrist,Plate Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Blacksmithing,,420,,BoE,55305,https://www.wowhead.com/wotlk/item=41354,https://www.wowhead.com/wotlk/spell=55305
+41349,Savage Saronite Gauntlets,Hands,Plate Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Blacksmithing,,420,,BoE,55309,https://www.wowhead.com/wotlk/item=41349,https://www.wowhead.com/wotlk/spell=55309
+41353,Savage Saronite Hauberk,Chest,Plate Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Blacksmithing,,425,,BoE,55311,https://www.wowhead.com/wotlk/item=41353,https://www.wowhead.com/wotlk/spell=55311
+41347,Savage Saronite Legplates,Legs,Plate Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Blacksmithing,,425,,BoE,55310,https://www.wowhead.com/wotlk/item=41347,https://www.wowhead.com/wotlk/spell=55310
+41351,Savage Saronite Pauldrons,Shoulder,Plate Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Blacksmithing,,420,,BoE,55306,https://www.wowhead.com/wotlk/item=41351,https://www.wowhead.com/wotlk/spell=55306
+41350,Savage Saronite Skullshield,Head,Plate Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Blacksmithing,,425,,BoE,55312,https://www.wowhead.com/wotlk/item=41350,https://www.wowhead.com/wotlk/spell=55312
+41352,Savage Saronite Waistguard,Waist,Plate Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Blacksmithing,,420,,BoE,55307,https://www.wowhead.com/wotlk/item=41352,https://www.wowhead.com/wotlk/spell=55307
+41348,Savage Saronite Walkers,Feet,Plate Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Blacksmithing,,420,,BoE,55308,https://www.wowhead.com/wotlk/item=41348,https://www.wowhead.com/wotlk/spell=55308
+41355,Vengeance Bindings,Wrist,Plate Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Blacksmithing,,420,,BoE,55298,https://www.wowhead.com/wotlk/item=41355,https://www.wowhead.com/wotlk/spell=55298
+41388,Brilliant Titansteel Helm,Head,Plate Armor,Epic,200,80,,Wrath of the Lich King,Trainer,Blacksmithing,,440,,BoE,55374,https://www.wowhead.com/wotlk/item=41388,https://www.wowhead.com/wotlk/spell=55374
+41394,Brilliant Titansteel Treads,Feet,Plate Armor,Epic,200,80,,Wrath of the Lich King,Trainer,Blacksmithing,,440,,BoE,55377,https://www.wowhead.com/wotlk/item=41394,https://www.wowhead.com/wotlk/spell=55377
+41386,Spiked Titansteel Helm,Head,Plate Armor,Epic,200,80,,Wrath of the Lich King,Trainer,Blacksmithing,,440,,BoE,55372,https://www.wowhead.com/wotlk/item=41386,https://www.wowhead.com/wotlk/spell=55372
+41391,Spiked Titansteel Treads,Feet,Plate Armor,Epic,200,80,,Wrath of the Lich King,Trainer,Blacksmithing,,440,,BoE,55375,https://www.wowhead.com/wotlk/item=41391,https://www.wowhead.com/wotlk/spell=55375
+41387,Tempered Titansteel Helm,Head,Plate Armor,Epic,200,80,,Wrath of the Lich King,Trainer,Blacksmithing,,440,,BoE,55373,https://www.wowhead.com/wotlk/item=41387,https://www.wowhead.com/wotlk/spell=55373
+41392,Tempered Titansteel Treads,Feet,Plate Armor,Epic,200,80,,Wrath of the Lich King,Trainer,Blacksmithing,,440,,BoE,55376,https://www.wowhead.com/wotlk/item=41392,https://www.wowhead.com/wotlk/spell=55376
+41383,Titansteel Bonecrusher,Main Hand,One-Handed Maces,Epic,200,80,,Wrath of the Lich King,Trainer,Blacksmithing,,440,,BoE,55370,https://www.wowhead.com/wotlk/item=41383,https://www.wowhead.com/wotlk/spell=55370
+41257,Titansteel Destroyer,Two-Hand,Two-Handed Maces,Epic,200,80,,Wrath of the Lich King,Trainer,Blacksmithing,,440,,BoE,55369,https://www.wowhead.com/wotlk/item=41257,https://www.wowhead.com/wotlk/spell=55369
+41384,Titansteel Guardian,Main Hand,One-Handed Maces,Epic,200,80,,Wrath of the Lich King,Trainer,Blacksmithing,,440,,BoE,55371,https://www.wowhead.com/wotlk/item=41384,https://www.wowhead.com/wotlk/spell=55371
+42435,Titansteel Shanker,One-Hand,Daggers,Epic,200,80,,Wrath of the Lich King,Trainer,Blacksmithing,,440,,BoE,56234,https://www.wowhead.com/wotlk/item=42435,https://www.wowhead.com/wotlk/spell=56234
+42508,Titansteel Shield Wall,Off Hand,Shields,Epic,200,80,,Wrath of the Lich King,Trainer,Blacksmithing,,440,,BoE,56400,https://www.wowhead.com/wotlk/item=42508,https://www.wowhead.com/wotlk/spell=56400
+45085,Titansteel Spellblade,Main Hand,Daggers,Epic,200,80,,Wrath of the Lich King,Trainer,Blacksmithing,,440,,BoE,63182,https://www.wowhead.com/wotlk/item=45085,https://www.wowhead.com/wotlk/spell=63182
+43586,Icebane Chestguard,Chest,Plate Armor,Epic,213,80,,Wrath of the Lich King,Trainer,Blacksmithing,,425,,BoE,61008,https://www.wowhead.com/wotlk/item=43586,https://www.wowhead.com/wotlk/spell=61008
+43587,Icebane Girdle,Waist,Plate Armor,Epic,213,80,,Wrath of the Lich King,Trainer,Blacksmithing,,420,,BoE,61009,https://www.wowhead.com/wotlk/item=43587,https://www.wowhead.com/wotlk/spell=61009
+43588,Icebane Treads,Feet,Plate Armor,Epic,213,80,,Wrath of the Lich King,Trainer,Blacksmithing,,420,,BoE,61010,https://www.wowhead.com/wotlk/item=43588,https://www.wowhead.com/wotlk/spell=61010
+47591,Breastplate of the White Knight,Chest,Plate Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Blacksmithing,,450,,BoE,67091,https://www.wowhead.com/wotlk/item=47591,https://www.wowhead.com/wotlk/spell=67091
+47592,Breastplate of the White Knight,Chest,Plate Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Blacksmithing,,450,,BoE,67130,https://www.wowhead.com/wotlk/item=47592,https://www.wowhead.com/wotlk/spell=67130
+47570,Saronite Swordbreakers,Wrist,Plate Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Blacksmithing,,450,,BoE,67092,https://www.wowhead.com/wotlk/item=47570,https://www.wowhead.com/wotlk/spell=67092
+47571,Saronite Swordbreakers,Wrist,Plate Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Blacksmithing,,450,,BoE,67131,https://www.wowhead.com/wotlk/item=47571,https://www.wowhead.com/wotlk/spell=67131
+47574,Sunforged Bracers,Wrist,Plate Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Blacksmithing,,450,,BoE,67096,https://www.wowhead.com/wotlk/item=47574,https://www.wowhead.com/wotlk/spell=67096
+47575,Sunforged Bracers,Wrist,Plate Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Blacksmithing,,450,,BoE,67135,https://www.wowhead.com/wotlk/item=47575,https://www.wowhead.com/wotlk/spell=67135
+47593,Sunforged Breastplate,Chest,Plate Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Blacksmithing,,450,,BoE,67095,https://www.wowhead.com/wotlk/item=47593,https://www.wowhead.com/wotlk/spell=67095
+47594,Sunforged Breastplate,Chest,Plate Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Blacksmithing,,450,,BoE,67134,https://www.wowhead.com/wotlk/item=47594,https://www.wowhead.com/wotlk/spell=67134
+47589,Titanium Razorplate,Chest,Plate Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Blacksmithing,,450,,BoE,67093,https://www.wowhead.com/wotlk/item=47589,https://www.wowhead.com/wotlk/spell=67093
+47590,Titanium Razorplate,Chest,Plate Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Blacksmithing,,450,,BoE,67132,https://www.wowhead.com/wotlk/item=47590,https://www.wowhead.com/wotlk/spell=67132
+47572,Titanium Spikeguards,Wrist,Plate Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Blacksmithing,,450,,BoE,67094,https://www.wowhead.com/wotlk/item=47572,https://www.wowhead.com/wotlk/spell=67094
+47573,Titanium Spikeguards,Wrist,Plate Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Blacksmithing,,450,,BoE,67133,https://www.wowhead.com/wotlk/item=47573,https://www.wowhead.com/wotlk/spell=67133
+49907,Boots of Kingly Upheaval,Feet,Plate Armor,Epic,264,80,,Wrath of the Lich King,Vendor,Blacksmithing,,450,,BoE,70568,https://www.wowhead.com/wotlk/item=49907,https://www.wowhead.com/wotlk/spell=70568
+49906,Hellfrozen Bonegrinders,Feet,Plate Armor,Epic,264,80,,Wrath of the Lich King,Vendor,Blacksmithing,,450,,BoE,70566,https://www.wowhead.com/wotlk/item=49906,https://www.wowhead.com/wotlk/spell=70566
+49903,Legplates of Painful Death,Legs,Plate Armor,Epic,264,80,,Wrath of the Lich King,Vendor,Blacksmithing,,450,,BoE,70565,https://www.wowhead.com/wotlk/item=49903,https://www.wowhead.com/wotlk/spell=70565
+49904,Pillars of Might,Legs,Plate Armor,Epic,264,80,,Wrath of the Lich King,Vendor,Blacksmithing,,450,,BoE,70567,https://www.wowhead.com/wotlk/item=49904,https://www.wowhead.com/wotlk/spell=70567
+49905,Protectors of Life,Feet,Plate Armor,Epic,264,80,,Wrath of the Lich King,Vendor,Blacksmithing,,450,,BoE,70563,https://www.wowhead.com/wotlk/item=49905,https://www.wowhead.com/wotlk/spell=70563
+49902,Puresteel Legplates,Legs,Plate Armor,Epic,264,80,,Wrath of the Lich King,Vendor,Blacksmithing,,450,,BoE,70562,https://www.wowhead.com/wotlk/item=49902,https://www.wowhead.com/wotlk/spell=70562

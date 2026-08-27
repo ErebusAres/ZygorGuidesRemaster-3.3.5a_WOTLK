@@ -28,6 +28,7 @@
 	<Script file="Data-WOTLK\GearFinderItemMeta.lua"/>
 	<Script file="Data-WOTLK\GearFinderVendorSources.lua"/>
 	<Script file="Data-WOTLK\GearFinderCraftedSources.lua"/>
+	<Script file="Data-WOTLK\GearFinderCraftedExpanded.lua"/>
 	<Script file="Item-ItemScore.lua"/>
 	<Script file="Code-WOTLK\Item-ItemScore.lua"/>
 	<Script file="Data-WOTLK\GearBIS.lua"/>

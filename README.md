@@ -147,7 +147,7 @@ Localization was largely AI-assisted and should be treated as needing community 
 
 - [`mikki33`](https://github.com/mikki33) for providing Russian localization changes and review updates.
 - [`yad`](https://github.com/yad) for the localized quest databases, integration work, and reproducible AzerothCore data generator contributed in pull request #88.
-- [`SnaxxNZ`](https://github.com/SnaxxNZ) for researching and contributing the Classic Tailoring Gear Finder dataset added in 3.0.217.
+- [`SnaxxNZ`](https://github.com/SnaxxNZ) for researching the Classic Tailoring dataset and the six-profession crafted Gear Finder expansion, including recipe sources and profession requirements.
 
 ## Support Wanted (Localization QA)
 
@@ -170,6 +170,14 @@ This addon is fully open source and can be inspected before use.
 - A VirusTotal scan of the download link is provided for transparency.
 
 ## Changelog
+
+### Revision 220 - 3.0.220
+
+- Added 1,089 distinct crafted items across Alchemy, Blacksmithing, Engineering, Jewelcrafting, Leatherworking, and Tailoring from @SnaxxNZ's researched contribution.
+- Separated crafting skill and specialization requirements from those needed to equip the finished item; ordinary tradable crafts remain available to non-crafters.
+- Added recipe-source and crafting/equip information to crafted tooltips, localized profession recognition, and six previously missing Alchemy trinket records.
+- Preserved existing source/progression filters, excluded unverified recipe variants, and documented legacy recipe availability.
+- Added a pinned, reproducible offline data importer and regression tests. Updated addon version metadata to 3.0.220.
 
 ### Revision 219 - 3.0.219
 
@@ -204,12 +212,6 @@ This addon is fully open source and can be inspected before use.
 - Added 63 verified WotLK 3.3.5 Russian quest-name corrections contributed by @mikki33 in pull request #96.
 - Kept the corrections in the maintained locale override layer so future AzerothCore database regeneration cannot erase them.
 - Updated addon version metadata to 3.0.215.
-
-### Revision 214 - 3.0.214
-
-- Prevented guide progress checks and the built-in waypoint arrow from resetting a visible compact world map to the player's current zone when Mapster, ElvUI, or another addon displays the map in a window.
-- Preserved the stale-coordinate refresh used by local route points whenever the world map is closed.
-- Updated addon version metadata to 3.0.214.
 
 ## Notes
 

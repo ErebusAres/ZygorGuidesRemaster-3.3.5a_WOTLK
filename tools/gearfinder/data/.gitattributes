@@ -1,0 +1,2 @@
+# Preserve the contributor's original bytes so source hashes are portable.
+*.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

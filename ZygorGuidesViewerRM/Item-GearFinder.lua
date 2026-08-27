@@ -345,7 +345,16 @@ end
 
 local function GF_NormalizeProfessionName(name)
 	if not name then return nil end
-	return tostring(name):lower():gsub("[^a-z]", "")
+	-- 3.3.5 skill-line names are localized; source data uses canonical names.
+	if not GearFinder.ProfessionAliases then
+		GearFinder.ProfessionAliases = {}
+		for profession, spellID in pairs({ Alchemy=2259, Blacksmithing=2018, Engineering=4036, Jewelcrafting=25229, Leatherworking=2108, Tailoring=3908 }) do
+			local localized = GetSpellInfo and GetSpellInfo(spellID)
+			if localized then GearFinder.ProfessionAliases[localized] = profession:lower() end
+		end
+	end
+	local canonical = GearFinder.ProfessionAliases[tostring(name)] or tostring(name):lower():gsub("[^a-z]", "")
+	return canonical ~= "" and canonical or nil
 end
 
 local function GF_GetPlayerProfessionSkills()
@@ -416,8 +425,11 @@ local function GF_GetPlayerProfessionSpecializations()
 end
 
 local function GF_HasPlayerProfessionSpecialization(specialization)
-	if not specialization then return true end
+	if not specialization or specialization == 0 then return true end
 	GearFinder.PlayerProfessionSpecializations = GearFinder.PlayerProfessionSpecializations or GF_GetPlayerProfessionSpecializations()
+	if type(specialization) == "number" and GearFinder.PlayerProfessionSpecializations[specialization] == nil then
+		GearFinder.PlayerProfessionSpecializations[specialization] = GF_PlayerKnowsSpell(specialization) and true or false
+	end
 	return GearFinder.PlayerProfessionSpecializations[specialization] and true or false
 end
 
@@ -500,7 +512,31 @@ local function GF_IsValidCraftedItem(source, itemSource)
 	local professionOnly = itemSource.professionOnly
 	if professionOnly == nil then professionOnly = source.professionOnly end
 	local bind = itemSource.bind or source.bind
-	if professionOnly or bind == "bop" then
+	if itemSource.requirementsVersion == 2 then
+		local profession = itemSource.profession or source.profession
+		local craftSkill = tonumber(itemSource.minSkill or source.minSkill) or 0
+		local equipSkill = tonumber(itemSource.equipSkill) or 0
+		-- BoP crafts must be made by this character. Tradeable crafts only
+		-- require the profession/skill actually needed to wear the result.
+		local requiredSkill = bind == "bop" and math.max(craftSkill, equipSkill, 1) or equipSkill
+		if requiredSkill > 0 and GF_GetPlayerProfessionSkill(profession) < requiredSkill then
+			return false, ("need %s %d%s"):format(tostring(profession), requiredSkill, bind == "bop" and " to craft" or " to equip")
+		end
+		local equipSpell = tonumber(itemSource.equipSpellID) or 0
+		if not GF_HasPlayerProfessionSpecialization(equipSpell) then
+			return false, "need equip specialization " .. tostring(equipSpell)
+		end
+		local craftSpell = tonumber(itemSource.recipeSpecializationSpellID) or 0
+		if bind == "bop" and not GF_HasPlayerProfessionSpecialization(craftSpell) then
+			return false, "need crafting specialization " .. tostring(craftSpell)
+		end
+		local mask = tonumber(itemSource.allowableClassMask) or -1
+		if mask > 0 then
+			local bits = { WARRIOR=1, PALADIN=2, HUNTER=4, ROGUE=8, PRIEST=16, DEATHKNIGHT=32, SHAMAN=64, MAGE=128, WARLOCK=256, DRUID=1024 }
+			local classBit = bits[ItemScore.playerclass or (UnitClass and select(2, UnitClass("player")))]
+			if classBit and math.floor(mask / classBit) % 2 == 0 then return false, "wrong class" end
+		end
+	elseif professionOnly or bind == "bop" then
 		local profession = itemSource.profession or source.profession
 		local minSkill = tonumber(itemSource.minSkill or source.minSkill) or 0
 		local playerSkill = GF_GetPlayerProfessionSkill(profession)
@@ -508,7 +544,9 @@ local function GF_IsValidCraftedItem(source, itemSource)
 			return false, ("need %s %d"):format(tostring(profession or "profession"), minSkill)
 		end
 	end
-	local specialization = itemSource.specialization or source.specialization
+	-- Preserve legacy sources' existing restriction semantics. Version 2
+	-- records use independently verified numeric equip/craft spell IDs above.
+	local specialization = itemSource.requirementsVersion ~= 2 and (itemSource.specialization or source.specialization)
 	if specialization and not GF_HasPlayerProfessionSpecialization(specialization) then
 		return false, ("need %s"):format(tostring(specialization))
 	end
@@ -552,6 +590,12 @@ local function GF_AddVendorFields(item, itemdata)
 	item.sourceNote = itemdata.sourceNote
 	item.craftedCategory = itemdata.craftedCategory
 	item.professionSpecialization = itemdata.professionSpecialization
+	item.requirementsVersion = itemdata.requirementsVersion
+	item.equipSkill = itemdata.equipSkill
+	item.equipSpellID = itemdata.equipSpellID
+	item.recipeSpecializationSpellID = itemdata.recipeSpecializationSpellID
+	item.recipeSpellID = itemdata.recipeSpellID
+	item.recipeSource = itemdata.recipeSource
 	return item
 end
 
@@ -597,6 +641,14 @@ local function GF_FormatCraftedLine(upgrade)
 	elseif upgrade.craftedCategory == "leveling" then
 		suffix = " - leveling craft"
 	end
+	if upgrade.requirementsVersion == 2 then
+		local equipSkill = tonumber(upgrade.equipSkill) or 0
+		if bind == "bop" then return ("Craft yourself: %s %d%s"):format(profession, skill, suffix) end
+		if equipSkill > 0 then return ("Requires %s %d to equip%s"):format(profession, equipSkill, suffix) end
+		local equipSpell = tonumber(upgrade.equipSpellID) or 0
+		if equipSpell > 0 then return ("Requires %s to equip%s"):format((GetSpellInfo and GetSpellInfo(equipSpell)) or ("spell " .. equipSpell), suffix) end
+		return ("Made by %s %d%s"):format(profession, skill, suffix)
+	end
 	if professionOnly then
 		if specialization and skill > 0 then return ("Requires %s %d (%s)%s"):format(profession, skill, specialization, suffix) end
 		if specialization then return ("Requires %s (%s)%s"):format(profession, specialization, suffix) end
@@ -636,10 +688,29 @@ local function GF_GetSourceTooltipLines(upgrade)
 	elseif upgrade.sourceType == "crafted" then
 		lines[#lines + 1] = "Source: Crafted item"
 		lines[#lines + 1] = GF_FormatCraftedLine(upgrade)
-		if upgrade.professionSpecialization then
+		if upgrade.requirementsVersion == 2 then
+			lines[#lines + 1] = ("To craft: %s %d"):format(upgrade.profession or "profession", tonumber(upgrade.minProfessionSkill) or 0)
+			local craftSpell = tonumber(upgrade.recipeSpecializationSpellID) or 0
+			if craftSpell > 0 then lines[#lines + 1] = "Crafter specialization: " .. ((GetSpellInfo and GetSpellInfo(craftSpell)) or ("spell " .. craftSpell)) end
+			local equipSkill = tonumber(upgrade.equipSkill) or 0
+			if equipSkill > 0 then lines[#lines + 1] = ("To equip: %s %d"):format(upgrade.profession or "profession", equipSkill) end
+			local equipSpell = tonumber(upgrade.equipSpellID) or 0
+			if equipSpell > 0 then lines[#lines + 1] = "Equip specialization: " .. ((GetSpellInfo and GetSpellInfo(equipSpell)) or ("spell " .. equipSpell)) end
+		elseif upgrade.professionSpecialization then
 			lines[#lines + 1] = "Specialization: " .. upgrade.professionSpecialization
 		end
-		if upgrade.bind == "bop" or upgrade.professionOnly then
+		if upgrade.recipeSource and upgrade.recipeSource ~= "" then lines[#lines + 1] = "Recipe source: " .. upgrade.recipeSource end
+		if upgrade.requirementsVersion == 2 then
+			if upgrade.bind == "bop" then
+				lines[#lines + 1] = "Bind: On pickup - craft it yourself"
+			elseif upgrade.bind == "boe" then
+				lines[#lines + 1] = "Bind: On equip - buy/trade or find a crafter"
+			elseif upgrade.bind == "bou" then
+				lines[#lines + 1] = "Bind: On use - tradeable before use"
+			else
+				lines[#lines + 1] = "Bind: None - tradeable craft"
+			end
+		elseif upgrade.bind == "bop" or upgrade.professionOnly then
 			lines[#lines + 1] = "Bind: Profession-only"
 		elseif upgrade.bind == "boe" then
 			lines[#lines + 1] = "Bind: Tradeable craft"
@@ -2393,6 +2464,12 @@ function GearFinder:ScoreDungeonItems(force)
 							sourceNote = itemSource.sourceNote or source.sourceNote,
 							craftedCategory = itemSource.category or source.category,
 							professionSpecialization = itemSource.specializationName or source.specializationName,
+							requirementsVersion = itemSource.requirementsVersion,
+							equipSkill = itemSource.equipSkill,
+							equipSpellID = itemSource.equipSpellID,
+							recipeSpecializationSpellID = itemSource.recipeSpecializationSpellID,
+							recipeSpellID = itemSource.recipeSpellID,
+							recipeSource = itemSource.recipeSource,
 						})
 						vendorItems = vendorItems + 1
 						craftedItems = craftedItems + 1

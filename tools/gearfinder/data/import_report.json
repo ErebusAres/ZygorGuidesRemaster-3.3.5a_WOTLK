@@ -1,0 +1,122 @@
+{
+  "excludedRecipes": [
+    {
+      "itemID": 10577,
+      "reason": "Goblin Mortar reload, not a second new item",
+      "recipeSpellID": 13240
+    },
+    {
+      "itemID": 22654,
+      "reason": "Legacy/retired learning source: not newly added; existing curated entry, if any, is preserved",
+      "recipeSpellID": 28205
+    },
+    {
+      "itemID": 22652,
+      "reason": "Legacy/retired learning source: not newly added; existing curated entry, if any, is preserved",
+      "recipeSpellID": 28207
+    },
+    {
+      "itemID": 22658,
+      "reason": "Legacy/retired learning source: not newly added; existing curated entry, if any, is preserved",
+      "recipeSpellID": 28208
+    },
+    {
+      "itemID": 22655,
+      "reason": "Legacy/retired learning source: not newly added; existing curated entry, if any, is preserved",
+      "recipeSpellID": 28209
+    },
+    {
+      "itemID": 22661,
+      "reason": "Legacy/retired learning source: not newly added; existing curated entry, if any, is preserved",
+      "recipeSpellID": 28219
+    },
+    {
+      "itemID": 22662,
+      "reason": "Legacy/retired learning source: not newly added; existing curated entry, if any, is preserved",
+      "recipeSpellID": 28220
+    },
+    {
+      "itemID": 22663,
+      "reason": "Legacy/retired learning source: not newly added; existing curated entry, if any, is preserved",
+      "recipeSpellID": 28221
+    },
+    {
+      "itemID": 22664,
+      "reason": "Legacy/retired learning source: not newly added; existing curated entry, if any, is preserved",
+      "recipeSpellID": 28222
+    },
+    {
+      "itemID": 22666,
+      "reason": "Legacy/retired learning source: not newly added; existing curated entry, if any, is preserved",
+      "recipeSpellID": 28223
+    },
+    {
+      "itemID": 22665,
+      "reason": "Legacy/retired learning source: not newly added; existing curated entry, if any, is preserved",
+      "recipeSpellID": 28224
+    },
+    {
+      "itemID": 22669,
+      "reason": "Legacy/retired learning source: not newly added; existing curated entry, if any, is preserved",
+      "recipeSpellID": 28242
+    },
+    {
+      "itemID": 22670,
+      "reason": "Legacy/retired learning source: not newly added; existing curated entry, if any, is preserved",
+      "recipeSpellID": 28243
+    },
+    {
+      "itemID": 22671,
+      "reason": "Legacy/retired learning source: not newly added; existing curated entry, if any, is preserved",
+      "recipeSpellID": 28244
+    },
+    {
+      "itemID": 44742,
+      "reason": "ARL repeats plate item 44742 for a leather recipe; output needs independent verification",
+      "recipeSpellID": 61481
+    },
+    {
+      "itemID": 44742,
+      "reason": "ARL repeats plate item 44742 for a mail recipe; output needs independent verification",
+      "recipeSpellID": 61482
+    }
+  ],
+  "importedItems": 1421,
+  "inputRows": 1437,
+  "inputSHA256": {
+    "Alchemy.csv": "d116f9711546c7dc66be8e745a0cbd6228eaf61183d745dea9338505c94d83d2",
+    "Blacksmithing.csv": "707ed331c9d487eabf194f60a8a7f4bf814ad7cae22f4397cc9176029b49e8f9",
+    "Engineering.csv": "6059bf80a63f97d75959c30d32d5a53ba22cdd2d9ba6ab876460d196f87cb19a",
+    "Jewelcrafting.csv": "e5a33e8d1d5fce2b48de7cfc598b24728048b41fdc4f02c0635a01a4d26b15aa",
+    "Leatherworking.csv": "61225a6e43f9c10381a5f1515bf39008b120e88dbc8ea52169cefccb227ceb7a",
+    "Tailoring.csv": "b1f2224fa075b16bf629fd72f6829686249e4a9ae97ffde78747fc584dbcb509"
+  },
+  "inputUniqueItems": 1434,
+  "newGroups": 40,
+  "newItems": 1089,
+  "newItemsByProfession": {
+    "Alchemy": 10,
+    "Blacksmithing": 385,
+    "Engineering": 102,
+    "Jewelcrafting": 147,
+    "Leatherworking": 358,
+    "Tailoring": 87
+  },
+  "preservedLegacyItems": [
+    22652,
+    22654,
+    22655,
+    22658
+  ],
+  "supplementalItemRecords": [
+    13503,
+    35748,
+    35749,
+    35750,
+    35751,
+    44324
+  ],
+  "totalCraftedItems": 1437,
+  "updatedExistingItems": 332,
+  "verificationSQLSHA256": "bd4859be01946ca1521f7896f558f665e1e1d98890757a3df30e717b62768cc6"
+}

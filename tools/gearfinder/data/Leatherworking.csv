@@ -1,0 +1,443 @@
+﻿itemID,name,slot,subType,quality,itemLevel,requiredLevel,requiredSkill,expansion,source,profession,specialization,skill,classes,binding,recipeSpellID,itemURL,recipeURL
+7280,Rugged Leather Pants,Legs,Leather Armor,Uncommon,11,6,,Classic,World Drop,Leatherworking,,35,,BoE,9064,https://www.wowhead.com/wotlk/item=7280,https://www.wowhead.com/wotlk/spell=9064
+2300,Embossed Leather Vest,Chest,Leather Armor,Uncommon,12,7,,Classic,Trainer,Leatherworking,,40,,BoE,2160,https://www.wowhead.com/wotlk/item=2300,https://www.wowhead.com/wotlk/spell=2160
+2310,Embossed Leather Cloak,Back,Cloaks,Uncommon,13,8,,Classic,Trainer,Leatherworking,,60,,BoE,2162,https://www.wowhead.com/wotlk/item=2310,https://www.wowhead.com/wotlk/spell=2162
+4239,Embossed Leather Gloves,Hands,Leather Armor,Uncommon,13,8,,Classic,Trainer,Leatherworking,,55,,BoE,3756,https://www.wowhead.com/wotlk/item=4239,https://www.wowhead.com/wotlk/spell=3756
+2311,White Leather Jerkin,Chest,Leather Armor,Uncommon,13,8,,Classic,World Drop,Leatherworking,,60,,BoE,2163,https://www.wowhead.com/wotlk/item=2311,https://www.wowhead.com/wotlk/spell=2163
+7281,Light Leather Bracers,Wrist,Leather Armor,Uncommon,14,9,,Classic,Trainer,Leatherworking,,70,,BoE,9065,https://www.wowhead.com/wotlk/item=7281,https://www.wowhead.com/wotlk/spell=9065
+2309,Embossed Leather Boots,Feet,Leather Armor,Uncommon,15,10,,Classic,Trainer,Leatherworking,,55,,BoE,2161,https://www.wowhead.com/wotlk/item=2309,https://www.wowhead.com/wotlk/spell=2161
+4242,Embossed Leather Pants,Legs,Leather Armor,Uncommon,15,10,,Classic,Trainer,Leatherworking,,75,,BoE,3759,https://www.wowhead.com/wotlk/item=4242,https://www.wowhead.com/wotlk/spell=3759
+2308,Fine Leather Cloak,Back,Cloaks,Uncommon,15,10,,Classic,Trainer,Leatherworking,,85,,BoE,2159,https://www.wowhead.com/wotlk/item=2308,https://www.wowhead.com/wotlk/spell=2159
+2312,Fine Leather Gloves,Hands,Leather Armor,Uncommon,15,10,,Classic,World Drop,Leatherworking,,75,,BoE,2164,https://www.wowhead.com/wotlk/item=2312,https://www.wowhead.com/wotlk/spell=2164
+4246,Fine Leather Belt,Waist,Leather Armor,Uncommon,16,11,,Classic,Trainer,Leatherworking,,80,,BoE,3763,https://www.wowhead.com/wotlk/item=4246,https://www.wowhead.com/wotlk/spell=3763
+4243,Fine Leather Tunic,Chest,Leather Armor,Uncommon,17,12,,Classic,Trainer,Leatherworking,,85,,BoE,3761,https://www.wowhead.com/wotlk/item=4243,https://www.wowhead.com/wotlk/spell=3761
+6466,Deviate Scale Cloak,Back,Cloaks,Uncommon,18,13,,Classic,Vendor,Leatherworking,,90,,BoE,7953,https://www.wowhead.com/wotlk/item=6466,https://www.wowhead.com/wotlk/spell=7953
+2307,Fine Leather Boots,Feet,Leather Armor,Uncommon,18,13,,Classic,World Drop,Leatherworking,,90,,BoE,2158,https://www.wowhead.com/wotlk/item=2307,https://www.wowhead.com/wotlk/spell=2158
+6709,Moonglow Vest,Chest,Leather Armor,Uncommon,18,13,,Classic,Quest,Leatherworking,,90,,BoE,8322,https://www.wowhead.com/wotlk/item=6709,https://www.wowhead.com/wotlk/spell=8322
+5780,Murloc Scale Belt,Waist,Leather Armor,Uncommon,18,13,,Classic,"Vendor, Mob Drop, Dungeon Drop",Leatherworking,,90,,BoE,6702,https://www.wowhead.com/wotlk/item=5780,https://www.wowhead.com/wotlk/spell=6702
+7282,Light Leather Pants,Legs,Leather Armor,Uncommon,19,14,,Classic,Trainer,Leatherworking,,95,,BoE,9068,https://www.wowhead.com/wotlk/item=7282,https://www.wowhead.com/wotlk/spell=9068
+5781,Murloc Scale Breastplate,Chest,Leather Armor,Uncommon,19,14,,Classic,"Vendor, Mob Drop, Dungeon Drop",Leatherworking,,95,,BoE,6703,https://www.wowhead.com/wotlk/item=5781,https://www.wowhead.com/wotlk/spell=6703
+7283,Black Whelp Cloak,Back,Cloaks,Uncommon,20,15,,Classic,Vendor,Leatherworking,,100,,BoE,9070,https://www.wowhead.com/wotlk/item=7283,https://www.wowhead.com/wotlk/spell=9070
+20575,Black Whelp Tunic,Chest,Leather Armor,Uncommon,20,15,,Classic,Vendor,Leatherworking,,100,,BoE,24940,https://www.wowhead.com/wotlk/item=20575,https://www.wowhead.com/wotlk/spell=24940
+2315,Dark Leather Boots,Feet,Leather Armor,Uncommon,20,15,,Classic,Trainer,Leatherworking,,100,,BoE,2167,https://www.wowhead.com/wotlk/item=2315,https://www.wowhead.com/wotlk/spell=2167
+2317,Dark Leather Tunic,Chest,Leather Armor,Uncommon,20,15,,Classic,World Drop,Leatherworking,,100,,BoE,2169,https://www.wowhead.com/wotlk/item=2317,https://www.wowhead.com/wotlk/spell=2169
+4244,Hillman's Leather Vest,Chest,Leather Armor,Uncommon,20,15,,Classic,World Drop,Leatherworking,,100,,BoE,3762,https://www.wowhead.com/wotlk/item=4244,https://www.wowhead.com/wotlk/spell=3762
+6467,Deviate Scale Gloves,Hands,Leather Armor,Uncommon,21,16,,Classic,Vendor,Leatherworking,,105,,BoE,7954,https://www.wowhead.com/wotlk/item=6467,https://www.wowhead.com/wotlk/spell=7954
+5958,Fine Leather Pants,Legs,Leather Armor,Uncommon,21,16,,Classic,World Drop,Leatherworking,,105,,BoE,7133,https://www.wowhead.com/wotlk/item=5958,https://www.wowhead.com/wotlk/spell=7133
+2316,Dark Leather Cloak,Back,Cloaks,Uncommon,22,17,,Classic,Trainer,Leatherworking,,110,,BoE,2168,https://www.wowhead.com/wotlk/item=2316,https://www.wowhead.com/wotlk/spell=2168
+5961,Dark Leather Pants,Legs,Leather Armor,Uncommon,23,18,,Classic,Trainer,Leatherworking,,115,,BoE,7135,https://www.wowhead.com/wotlk/item=5961,https://www.wowhead.com/wotlk/spell=7135
+6468,Deviate Scale Belt,Waist,Leather Armor,Rare,23,18,,Classic,Quest,Leatherworking,,115,,BoE,7955,https://www.wowhead.com/wotlk/item=6468,https://www.wowhead.com/wotlk/spell=7955
+7285,Nimble Leather Gloves,Hands,Leather Armor,Uncommon,24,19,,Classic,Trainer,Leatherworking,,120,,BoE,9074,https://www.wowhead.com/wotlk/item=7285,https://www.wowhead.com/wotlk/spell=9074
+7284,Red Whelp Gloves,Hands,Leather Armor,Uncommon,24,19,,Classic,Vendor,Leatherworking,,120,,BoE,9072,https://www.wowhead.com/wotlk/item=7284,https://www.wowhead.com/wotlk/spell=9072
+2314,Toughened Leather Armor,Chest,Leather Armor,Rare,24,19,,Classic,Trainer,Leatherworking,,120,,BoE,2166,https://www.wowhead.com/wotlk/item=2314,https://www.wowhead.com/wotlk/spell=2166
+4249,Dark Leather Belt,Waist,Leather Armor,Uncommon,25,20,,Classic,Trainer,Leatherworking,,125,,BoE,3766,https://www.wowhead.com/wotlk/item=4249,https://www.wowhead.com/wotlk/spell=3766
+7348,Fletcher's Gloves,Hands,Leather Armor,Rare,25,20,,Classic,Trainer,Leatherworking,,125,,BoE,9145,https://www.wowhead.com/wotlk/item=7348,https://www.wowhead.com/wotlk/spell=9145
+4250,Hillman's Belt,Waist,Leather Armor,Uncommon,25,20,,Classic,World Drop,Leatherworking,,120,,BoE,3767,https://www.wowhead.com/wotlk/item=4250,https://www.wowhead.com/wotlk/spell=3767
+4248,Dark Leather Gloves,Hands,Leather Armor,Uncommon,26,21,,Classic,World Drop,Leatherworking,,120,,BoE,3765,https://www.wowhead.com/wotlk/item=4248,https://www.wowhead.com/wotlk/spell=3765
+4251,Hillman's Shoulders,Shoulder,Leather Armor,Uncommon,26,21,,Classic,Trainer,Leatherworking,,130,,BoE,3768,https://www.wowhead.com/wotlk/item=4251,https://www.wowhead.com/wotlk/spell=3768
+7352,Earthen Leather Shoulders,Shoulder,Leather Armor,Uncommon,27,22,,Classic,Vendor,Leatherworking,,135,,BoE,9147,https://www.wowhead.com/wotlk/item=7352,https://www.wowhead.com/wotlk/spell=9147
+7349,Herbalist's Gloves,Hands,Leather Armor,Uncommon,27,22,,Classic,Vendor,Leatherworking,,135,,BoE,9146,https://www.wowhead.com/wotlk/item=7349,https://www.wowhead.com/wotlk/spell=9146
+4253,Toughened Leather Gloves,Hands,Leather Armor,Rare,27,22,,Classic,Trainer,Leatherworking,,135,,BoE,3770,https://www.wowhead.com/wotlk/item=4253,https://www.wowhead.com/wotlk/spell=3770
+4252,Dark Leather Shoulders,Shoulder,Leather Armor,Uncommon,28,23,,Classic,World Drop,Leatherworking,,140,,BoE,3769,https://www.wowhead.com/wotlk/item=4252,https://www.wowhead.com/wotlk/spell=3769
+7358,Pilferer's Gloves,Hands,Leather Armor,Uncommon,28,23,,Classic,World Drop,Leatherworking,,140,,BoE,9148,https://www.wowhead.com/wotlk/item=7358,https://www.wowhead.com/wotlk/spell=9148
+7359,Heavy Earthen Gloves,Hands,Leather Armor,Uncommon,29,24,,Classic,World Drop,Leatherworking,,145,,BoE,9149,https://www.wowhead.com/wotlk/item=7359,https://www.wowhead.com/wotlk/spell=9149
+4247,Hillman's Leather Gloves,Hands,Leather Armor,Uncommon,29,24,,Classic,Trainer,Leatherworking,,145,,BoE,3764,https://www.wowhead.com/wotlk/item=4247,https://www.wowhead.com/wotlk/spell=3764
+4254,Barbaric Gloves,Hands,Leather Armor,Uncommon,30,25,,Classic,World Drop,Leatherworking,,150,,BoE,3771,https://www.wowhead.com/wotlk/item=4254,https://www.wowhead.com/wotlk/spell=3771
+3719,Hillman's Cloak,Back,Cloaks,Uncommon,30,25,,Classic,Trainer,Leatherworking,,150,,BoE,3760,https://www.wowhead.com/wotlk/item=3719,https://www.wowhead.com/wotlk/spell=3760
+4255,Green Leather Armor,Chest,Leather Armor,Uncommon,31,26,,Classic,Vendor,Leatherworking,,155,,BoE,3772,https://www.wowhead.com/wotlk/item=4255,https://www.wowhead.com/wotlk/spell=3772
+18948,Barbaric Bracers,Wrist,Leather Armor,Rare,32,27,,Classic,Vendor,Leatherworking,,155,,BoE,23399,https://www.wowhead.com/wotlk/item=18948,https://www.wowhead.com/wotlk/spell=23399
+4257,Green Leather Belt,Waist,Leather Armor,Uncommon,32,27,,Classic,Trainer,Leatherworking,,160,,BoE,3774,https://www.wowhead.com/wotlk/item=4257,https://www.wowhead.com/wotlk/spell=3774
+5962,Guardian Pants,Legs,Leather Armor,Uncommon,32,27,,Classic,Trainer,Leatherworking,,160,,BoE,7147,https://www.wowhead.com/wotlk/item=5962,https://www.wowhead.com/wotlk/spell=7147
+7373,Dusky Leather Leggings,Legs,Leather Armor,Uncommon,33,28,,Classic,World Drop,Leatherworking,,165,,BoE,9195,https://www.wowhead.com/wotlk/item=7373,https://www.wowhead.com/wotlk/spell=9195
+4456,Raptor Hide Belt,Waist,Leather Armor,Uncommon,33,28,,Classic,Vendor,Leatherworking,,165,,BoE,4097,https://www.wowhead.com/wotlk/item=4456,https://www.wowhead.com/wotlk/spell=4097
+4455,Raptor Hide Harness,Chest,Leather Armor,Uncommon,33,28,,Wrath of the Lich King,Vendor,Leatherworking,,165,,BoE,4096,https://www.wowhead.com/wotlk/item=4455,https://www.wowhead.com/wotlk/spell=4096
+5963,Barbaric Leggings,Legs,Leather Armor,Uncommon,34,29,,Classic,Vendor,Leatherworking,,170,,BoE,7149,https://www.wowhead.com/wotlk/item=5963,https://www.wowhead.com/wotlk/spell=7149
+4258,Guardian Belt,Waist,Leather Armor,Uncommon,34,29,,Classic,World Drop,Leatherworking,,170,,BoE,3775,https://www.wowhead.com/wotlk/item=4258,https://www.wowhead.com/wotlk/spell=3775
+5782,Thick Murloc Armor,Chest,Leather Armor,Uncommon,34,29,,Classic,"Vendor, Mob Drop",Leatherworking,,170,,BoE,6704,https://www.wowhead.com/wotlk/item=5782,https://www.wowhead.com/wotlk/spell=6704
+5964,Barbaric Shoulders,Shoulder,Leather Armor,Uncommon,35,30,,Classic,Trainer,Leatherworking,,175,,BoE,7151,https://www.wowhead.com/wotlk/item=5964,https://www.wowhead.com/wotlk/spell=7151
+7374,Dusky Leather Armor,Chest,Leather Armor,Uncommon,35,30,,Classic,Trainer,Leatherworking,,175,,BoE,9196,https://www.wowhead.com/wotlk/item=7374,https://www.wowhead.com/wotlk/spell=9196
+7375,Green Whelp Armor,Chest,Leather Armor,Uncommon,35,30,,Classic,World Drop,Leatherworking,,175,,BoE,9197,https://www.wowhead.com/wotlk/item=7375,https://www.wowhead.com/wotlk/spell=9197
+4256,Guardian Armor,Chest,Leather Armor,Uncommon,35,30,,Classic,World Drop,Leatherworking,,175,,BoE,3773,https://www.wowhead.com/wotlk/item=4256,https://www.wowhead.com/wotlk/spell=3773
+7377,Frost Leather Cloak,Back,Cloaks,Uncommon,36,31,,Classic,Trainer,Leatherworking,,180,,BoE,9198,https://www.wowhead.com/wotlk/item=7377,https://www.wowhead.com/wotlk/spell=9198
+4259,Green Leather Bracers,Wrist,Leather Armor,Uncommon,36,31,,Classic,Trainer,Leatherworking,,180,,BoE,3776,https://www.wowhead.com/wotlk/item=4259,https://www.wowhead.com/wotlk/spell=3776
+7378,Dusky Bracers,Wrist,Leather Armor,Uncommon,37,32,,Classic,Trainer,Leatherworking,,185,,BoE,9201,https://www.wowhead.com/wotlk/item=7378,https://www.wowhead.com/wotlk/spell=9201
+4262,Gem-studded Leather Belt,Waist,Leather Armor,Rare,37,32,,Classic,Vendor,Leatherworking,,185,,BoE,3778,https://www.wowhead.com/wotlk/item=4262,https://www.wowhead.com/wotlk/spell=3778
+5965,Guardian Cloak,Back,Cloaks,Uncommon,37,32,,Classic,World Drop,Leatherworking,,185,,BoE,7153,https://www.wowhead.com/wotlk/item=5965,https://www.wowhead.com/wotlk/spell=7153
+5739,Barbaric Harness,Chest,Leather Armor,Uncommon,38,33,,Classic,Trainer,Leatherworking,,190,,BoE,6661,https://www.wowhead.com/wotlk/item=5739,https://www.wowhead.com/wotlk/spell=6661
+17721,Gloves of the Greatfather,Hands,Leather Armor,Uncommon,38,33,,Classic,Seasonal Event,Leatherworking,,190,,BoE,21943,https://www.wowhead.com/wotlk/item=17721,https://www.wowhead.com/wotlk/spell=21943
+7386,Green Whelp Bracers,Wrist,Leather Armor,Uncommon,38,33,,Classic,Vendor,Leatherworking,,190,,BoE,9202,https://www.wowhead.com/wotlk/item=7386,https://www.wowhead.com/wotlk/spell=9202
+5966,Guardian Gloves,Hands,Leather Armor,Uncommon,38,33,,Classic,Trainer,Leatherworking,,190,,BoE,7156,https://www.wowhead.com/wotlk/item=5966,https://www.wowhead.com/wotlk/spell=7156
+5783,Murloc Scale Bracers,Wrist,Leather Armor,Uncommon,38,33,,Classic,"Vendor, Mob Drop",Leatherworking,,190,,BoE,6705,https://www.wowhead.com/wotlk/item=5783,https://www.wowhead.com/wotlk/spell=6705
+7387,Dusky Belt,Waist,Leather Armor,Uncommon,39,34,,Classic,Trainer,Leatherworking,,195,,BoE,9206,https://www.wowhead.com/wotlk/item=7387,https://www.wowhead.com/wotlk/spell=9206
+4260,Guardian Leather Bracers,Wrist,Leather Armor,Uncommon,39,34,,Classic,World Drop,Leatherworking,,195,,BoE,3777,https://www.wowhead.com/wotlk/item=4260,https://www.wowhead.com/wotlk/spell=3777
+4264,Barbaric Belt,Waist,Leather Armor,Uncommon,40,35,,Classic,World Drop,Leatherworking,,200,,BoE,3779,https://www.wowhead.com/wotlk/item=4264,https://www.wowhead.com/wotlk/spell=3779
+8174,Comfortable Leather Hat,Head,Leather Armor,Rare,40,35,,Classic,World Drop,Leatherworking,,200,,BoE,10490,https://www.wowhead.com/wotlk/item=8174,https://www.wowhead.com/wotlk/spell=10490
+7390,Dusky Boots,Feet,Leather Armor,Uncommon,40,35,,Classic,World Drop,Leatherworking,,200,,BoE,9207,https://www.wowhead.com/wotlk/item=7390,https://www.wowhead.com/wotlk/spell=9207
+18238,Shadowskin Gloves,Hands,Leather Armor,Rare,40,35,,Classic,Vendor,Leatherworking,,200,,BoE,22711,https://www.wowhead.com/wotlk/item=18238,https://www.wowhead.com/wotlk/spell=22711
+7391,Swift Boots,Feet,Leather Armor,Uncommon,40,35,,Classic,World Drop,Leatherworking,,200,,BoE,9208,https://www.wowhead.com/wotlk/item=7391,https://www.wowhead.com/wotlk/spell=9208
+8176,Nightscape Headband,Head,Leather Armor,Uncommon,41,36,,Classic,Trainer,Leatherworking,,205,,BoE,10507,https://www.wowhead.com/wotlk/item=8176,https://www.wowhead.com/wotlk/spell=10507
+8175,Nightscape Tunic,Chest,Leather Armor,Uncommon,41,36,,Classic,Trainer,Leatherworking,,205,,BoE,10499,https://www.wowhead.com/wotlk/item=8175,https://www.wowhead.com/wotlk/spell=10499
+8187,Turtle Scale Gloves,Hands,Mail Armor,Uncommon,41,36,,Classic,Vendor,Leatherworking,,205,,BoE,10509,https://www.wowhead.com/wotlk/item=8187,https://www.wowhead.com/wotlk/spell=10509
+8192,Nightscape Shoulders,Shoulder,Leather Armor,Uncommon,42,37,,Classic,Vendor,Leatherworking,,210,,BoE,10516,https://www.wowhead.com/wotlk/item=8192,https://www.wowhead.com/wotlk/spell=10516
+8198,Turtle Scale Bracers,Wrist,Mail Armor,Uncommon,42,37,,Classic,Trainer,Leatherworking,,210,,BoE,10518,https://www.wowhead.com/wotlk/item=8198,https://www.wowhead.com/wotlk/spell=10518
+8189,Turtle Scale Breastplate,Chest,Mail Armor,Uncommon,42,37,,Classic,Trainer,Leatherworking,,210,,BoE,10511,https://www.wowhead.com/wotlk/item=8189,https://www.wowhead.com/wotlk/spell=10511
+8200,Big Voodoo Robe,Chest,Leather Armor,Uncommon,43,38,,Classic,World Drop,Leatherworking,,215,,BoE,10520,https://www.wowhead.com/wotlk/item=8200,https://www.wowhead.com/wotlk/spell=10520
+8201,Big Voodoo Mask,Head,Leather Armor,Uncommon,44,39,,Classic,World Drop,Leatherworking,,220,,BoE,10531,https://www.wowhead.com/wotlk/item=8201,https://www.wowhead.com/wotlk/spell=10531
+8205,Tough Scorpid Bracers,Wrist,Mail Armor,Uncommon,44,39,,Classic,Mob Drop,Leatherworking,,220,,BoE,10533,https://www.wowhead.com/wotlk/item=8205,https://www.wowhead.com/wotlk/spell=10533
+8203,Tough Scorpid Breastplate,Chest,Mail Armor,Uncommon,44,39,,Classic,Mob Drop,Leatherworking,,220,,BoE,10525,https://www.wowhead.com/wotlk/item=8203,https://www.wowhead.com/wotlk/spell=10525
+8210,Wild Leather Shoulders,Shoulder,Leather Armor,Uncommon,44,39,,Classic,Quest,Leatherworking,,220,,BoE,10529,https://www.wowhead.com/wotlk/item=8210,https://www.wowhead.com/wotlk/spell=10529
+8347,Dragonscale Gauntlets,Hands,Mail Armor,Rare,45,40,,Classic,Trainer,Leatherworking,,225,,BoE,10619,https://www.wowhead.com/wotlk/item=8347,https://www.wowhead.com/wotlk/spell=10619
+8204,Tough Scorpid Gloves,Hands,Mail Armor,Uncommon,45,40,,Classic,Mob Drop,Leatherworking,,225,,BoE,10542,https://www.wowhead.com/wotlk/item=8204,https://www.wowhead.com/wotlk/spell=10542
+8214,Wild Leather Helmet,Head,Leather Armor,Uncommon,45,40,,Classic,Quest,Leatherworking,,225,,BoE,10546,https://www.wowhead.com/wotlk/item=8214,https://www.wowhead.com/wotlk/spell=10546
+8211,Wild Leather Vest,Chest,Leather Armor,Uncommon,45,40,,Classic,Quest,Leatherworking,,225,,BoE,10544,https://www.wowhead.com/wotlk/item=8211,https://www.wowhead.com/wotlk/spell=10544
+8345,Wolfshead Helm,Head,Leather Armor,Rare,45,40,,Classic,Trainer,Leatherworking,,225,Druid,BoE,10621,https://www.wowhead.com/wotlk/item=8345,https://www.wowhead.com/wotlk/spell=10621
+8346,Gauntlets of the Sea,Hands,Leather Armor,Rare,46,41,,Classic,Trainer,Leatherworking,,230,,BoE,10630,https://www.wowhead.com/wotlk/item=8346,https://www.wowhead.com/wotlk/spell=10630
+8193,Nightscape Pants,Legs,Leather Armor,Uncommon,46,41,,Classic,Trainer,Leatherworking,,230,,BoE,10548,https://www.wowhead.com/wotlk/item=8193,https://www.wowhead.com/wotlk/spell=10548
+8191,Turtle Scale Helm,Head,Mail Armor,Uncommon,46,41,,Classic,Trainer,Leatherworking,,230,,BoE,10552,https://www.wowhead.com/wotlk/item=8191,https://www.wowhead.com/wotlk/spell=10552
+8202,Big Voodoo Pants,Legs,Leather Armor,Uncommon,47,42,,Classic,World Drop,Leatherworking,,240,,BoE,10560,https://www.wowhead.com/wotlk/item=8202,https://www.wowhead.com/wotlk/spell=10560
+8197,Nightscape Boots,Feet,Leather Armor,Uncommon,47,42,,Classic,Trainer,Leatherworking,,235,,BoE,10558,https://www.wowhead.com/wotlk/item=8197,https://www.wowhead.com/wotlk/spell=10558
+8209,Tough Scorpid Boots,Feet,Mail Armor,Uncommon,47,42,,Classic,Mob Drop,Leatherworking,,235,,BoE,10554,https://www.wowhead.com/wotlk/item=8209,https://www.wowhead.com/wotlk/spell=10554
+8185,Turtle Scale Leggings,Legs,Mail Armor,Uncommon,47,42,,Classic,Trainer,Leatherworking,,235,,BoE,10556,https://www.wowhead.com/wotlk/item=8185,https://www.wowhead.com/wotlk/spell=10556
+8216,Big Voodoo Cloak,Back,Cloaks,Uncommon,48,43,,Classic,World Drop,Leatherworking,,240,,BoE,10562,https://www.wowhead.com/wotlk/item=8216,https://www.wowhead.com/wotlk/spell=10562
+8207,Tough Scorpid Shoulders,Shoulder,Mail Armor,Uncommon,48,43,,Classic,Mob Drop,Leatherworking,,240,,BoE,10564,https://www.wowhead.com/wotlk/item=8207,https://www.wowhead.com/wotlk/spell=10564
+8206,Tough Scorpid Leggings,Legs,Mail Armor,Uncommon,49,44,,Classic,Mob Drop,Leatherworking,,245,,BoE,10568,https://www.wowhead.com/wotlk/item=8206,https://www.wowhead.com/wotlk/spell=10568
+8213,Wild Leather Boots,Feet,Leather Armor,Uncommon,49,44,,Classic,Quest,Leatherworking,,245,,BoE,10566,https://www.wowhead.com/wotlk/item=8213,https://www.wowhead.com/wotlk/spell=10566
+8349,Feathered Breastplate,Chest,Leather Armor,Rare,50,45,,Classic,Trainer,Leatherworking,,250,,BoE,10647,https://www.wowhead.com/wotlk/item=8349,https://www.wowhead.com/wotlk/spell=10647
+8348,Helm of Fire,Head,Leather Armor,Rare,50,45,,Classic,Trainer,Leatherworking,,250,,BoE,10632,https://www.wowhead.com/wotlk/item=8348,https://www.wowhead.com/wotlk/spell=10632
+8208,Tough Scorpid Helm,Head,Mail Armor,Uncommon,50,45,,Classic,Mob Drop,Leatherworking,,250,,BoE,10570,https://www.wowhead.com/wotlk/item=8208,https://www.wowhead.com/wotlk/spell=10570
+8215,Wild Leather Cloak,Back,Cloaks,Uncommon,50,45,,Classic,Quest,Leatherworking,,250,,BoE,10574,https://www.wowhead.com/wotlk/item=8215,https://www.wowhead.com/wotlk/spell=10574
+8212,Wild Leather Leggings,Legs,Leather Armor,Uncommon,50,45,,Classic,Quest,Leatherworking,,250,,BoE,10572,https://www.wowhead.com/wotlk/item=8212,https://www.wowhead.com/wotlk/spell=10572
+29964,Blackstorm Leggings,Legs,Leather Armor,Rare,52,45,,The Burning Crusade,Trainer,Leatherworking,Specialty 10659,260,,BoP,36074,https://www.wowhead.com/wotlk/item=29964,https://www.wowhead.com/wotlk/spell=36074
+29971,Dragonstrike Leggings,Legs,Mail Armor,Rare,52,45,,The Burning Crusade,Trainer,Leatherworking,Specialty 10657,260,,BoP,36076,https://www.wowhead.com/wotlk/item=29971,https://www.wowhead.com/wotlk/spell=36076
+29970,Wildfeather Leggings,Legs,Leather Armor,Rare,52,45,,The Burning Crusade,Trainer,Leatherworking,Specialty 10661,260,,BoP,36075,https://www.wowhead.com/wotlk/item=29970,https://www.wowhead.com/wotlk/spell=36075
+8367,Dragonscale Breastplate,Chest,Mail Armor,Rare,51,46,,Classic,Trainer,Leatherworking,,255,,BoE,10650,https://www.wowhead.com/wotlk/item=8367,https://www.wowhead.com/wotlk/spell=10650
+15077,Heavy Scorpid Bracers,Wrist,Mail Armor,Uncommon,51,46,,Classic,Vendor,Leatherworking,,255,,BoE,19048,https://www.wowhead.com/wotlk/item=15077,https://www.wowhead.com/wotlk/spell=19048
+15045,Green Dragonscale Breastplate,Chest,Mail Armor,Rare,52,47,,Classic,Vendor,Leatherworking,,260,,BoE,19050,https://www.wowhead.com/wotlk/item=15045,https://www.wowhead.com/wotlk/spell=19050
+15083,Wicked Leather Gauntlets,Hands,Leather Armor,Uncommon,52,47,,Classic,Vendor,Leatherworking,,260,,BoE,19049,https://www.wowhead.com/wotlk/item=15083,https://www.wowhead.com/wotlk/spell=19049
+15074,Chimeric Gloves,Hands,Leather Armor,Uncommon,53,48,,Classic,Vendor,Leatherworking,,265,,BoE,19053,https://www.wowhead.com/wotlk/item=15074,https://www.wowhead.com/wotlk/spell=19053
+15076,Heavy Scorpid Vest,Chest,Mail Armor,Uncommon,53,48,,Classic,Mob Drop,Leatherworking,,265,,BoE,19051,https://www.wowhead.com/wotlk/item=15076,https://www.wowhead.com/wotlk/spell=19051
+15084,Wicked Leather Bracers,Wrist,Leather Armor,Uncommon,53,48,,Classic,Trainer,Leatherworking,,265,,BoE,19052,https://www.wowhead.com/wotlk/item=15084,https://www.wowhead.com/wotlk/spell=19052
+20296,Green Dragonscale Gauntlets,Hands,Mail Armor,Rare,54,49,,Classic,Trainer,Leatherworking,,260,,BoE,24655,https://www.wowhead.com/wotlk/item=20296,https://www.wowhead.com/wotlk/spell=24655
+15046,Green Dragonscale Leggings,Legs,Mail Armor,Rare,54,49,,Classic,"Mob Drop, Dungeon Drop",Leatherworking,,270,,BoE,19060,https://www.wowhead.com/wotlk/item=15046,https://www.wowhead.com/wotlk/spell=19060
+15067,Ironfeather Shoulders,Shoulder,Leather Armor,Rare,54,49,,Classic,Vendor,Leatherworking,,270,,BoE,19062,https://www.wowhead.com/wotlk/item=15067,https://www.wowhead.com/wotlk/spell=19062
+15061,Living Shoulders,Shoulder,Leather Armor,Rare,54,49,,Classic,Vendor,Leatherworking,,270,,BoE,19061,https://www.wowhead.com/wotlk/item=15061,https://www.wowhead.com/wotlk/spell=19061
+15091,Runic Leather Gauntlets,Hands,Leather Armor,Uncommon,54,49,,Classic,"Trainer, World Drop",Leatherworking,,270,,BoE,19055,https://www.wowhead.com/wotlk/item=15091,https://www.wowhead.com/wotlk/spell=19055
+15054,Volcanic Leggings,Legs,Leather Armor,Uncommon,54,49,,Classic,Mob Drop,Leatherworking,,270,,BoE,19059,https://www.wowhead.com/wotlk/item=15054,https://www.wowhead.com/wotlk/spell=19059
+15073,Chimeric Boots,Feet,Leather Armor,Uncommon,55,50,,Classic,World Drop,Leatherworking,,275,,BoE,19063,https://www.wowhead.com/wotlk/item=15073,https://www.wowhead.com/wotlk/spell=19063
+15071,Frostsaber Boots,Feet,Leather Armor,Uncommon,55,50,,Classic,Vendor,Leatherworking,,275,,BoE,19066,https://www.wowhead.com/wotlk/item=15071,https://www.wowhead.com/wotlk/spell=19066
+15078,Heavy Scorpid Gauntlets,Hands,Mail Armor,Uncommon,55,50,,Classic,Mob Drop,Leatherworking,,275,,BoE,19064,https://www.wowhead.com/wotlk/item=15078,https://www.wowhead.com/wotlk/spell=19064
+15092,Runic Leather Bracers,Wrist,Leather Armor,Uncommon,55,50,,Classic,Trainer,Leatherworking,,275,,BoE,19065,https://www.wowhead.com/wotlk/item=15092,https://www.wowhead.com/wotlk/spell=19065
+21278,Stormshroud Gloves,Hands,Leather Armor,Rare,55,50,,Classic,Mob Drop,Leatherworking,,300,,BoE,26279,https://www.wowhead.com/wotlk/item=21278,https://www.wowhead.com/wotlk/spell=26279
+15057,Stormshroud Pants,Legs,Leather Armor,Rare,55,50,,Classic,Vendor,Leatherworking,,275,,BoE,19067,https://www.wowhead.com/wotlk/item=15057,https://www.wowhead.com/wotlk/spell=19067
+15064,Warbear Harness,Chest,Leather Armor,Rare,55,50,,Classic,"Vendor, World Drop, Mob Drop",Leatherworking,,275,,BoE,19068,https://www.wowhead.com/wotlk/item=15064,https://www.wowhead.com/wotlk/spell=19068
+15072,Chimeric Leggings,Legs,Leather Armor,Uncommon,56,51,,Classic,World Drop,Leatherworking,,280,,BoE,19073,https://www.wowhead.com/wotlk/item=15072,https://www.wowhead.com/wotlk/spell=19073
+15082,Heavy Scorpid Belt,Waist,Mail Armor,Uncommon,56,51,,Classic,World Drop,Leatherworking,,280,,BoE,19070,https://www.wowhead.com/wotlk/item=15082,https://www.wowhead.com/wotlk/spell=19070
+15093,Runic Leather Belt,Waist,Leather Armor,Uncommon,56,51,,Classic,Trainer,Leatherworking,,280,,BoE,19072,https://www.wowhead.com/wotlk/item=15093,https://www.wowhead.com/wotlk/spell=19072
+15086,Wicked Leather Headband,Head,Leather Armor,Uncommon,56,51,,Classic,Trainer,Leatherworking,,280,,BoE,19071,https://www.wowhead.com/wotlk/item=15086,https://www.wowhead.com/wotlk/spell=19071
+15048,Blue Dragonscale Breastplate,Chest,Mail Armor,Rare,57,52,,Classic,Vendor,Leatherworking,,285,,BoE,19077,https://www.wowhead.com/wotlk/item=15048,https://www.wowhead.com/wotlk/spell=19077
+15069,Frostsaber Leggings,Legs,Leather Armor,Uncommon,57,52,,Classic,Mob Drop,Leatherworking,,285,,BoE,19074,https://www.wowhead.com/wotlk/item=15069,https://www.wowhead.com/wotlk/spell=19074
+15079,Heavy Scorpid Leggings,Legs,Mail Armor,Uncommon,57,52,,Classic,Mob Drop,Leatherworking,,285,,BoE,19075,https://www.wowhead.com/wotlk/item=15079,https://www.wowhead.com/wotlk/spell=19075
+15060,Living Leggings,Legs,Leather Armor,Rare,57,52,,Classic,Mob Drop,Leatherworking,,285,,BoE,19078,https://www.wowhead.com/wotlk/item=15060,https://www.wowhead.com/wotlk/spell=19078
+15056,Stormshroud Armor,Chest,Leather Armor,Rare,57,52,,Classic,Mob Drop,Leatherworking,,285,,BoE,19079,https://www.wowhead.com/wotlk/item=15056,https://www.wowhead.com/wotlk/spell=19079
+15053,Volcanic Breastplate,Chest,Leather Armor,Uncommon,57,52,,Classic,"Mob Drop, Dungeon Drop",Leatherworking,,285,,BoE,19076,https://www.wowhead.com/wotlk/item=15053,https://www.wowhead.com/wotlk/spell=19076
+15065,Warbear Woolies,Legs,Leather Armor,Rare,57,52,,Classic,Vendor,Leatherworking,,285,,BoE,19080,https://www.wowhead.com/wotlk/item=15065,https://www.wowhead.com/wotlk/spell=19080
+15050,Black Dragonscale Breastplate,Chest,Mail Armor,Rare,58,53,,Classic,"Vendor, Dungeon Drop",Leatherworking,,290,,BoE,19085,https://www.wowhead.com/wotlk/item=15050,https://www.wowhead.com/wotlk/spell=19085
+15075,Chimeric Vest,Chest,Leather Armor,Uncommon,58,53,,Classic,World Drop,Leatherworking,,290,,BoE,19081,https://www.wowhead.com/wotlk/item=15075,https://www.wowhead.com/wotlk/spell=19081
+19052,Dawn Treaders,Feet,Leather Armor,Rare,58,53,,Classic,Vendor,Leatherworking,,290,,BoE,23705,https://www.wowhead.com/wotlk/item=19052,https://www.wowhead.com/wotlk/spell=23705
+15063,Devilsaur Gauntlets,Hands,Leather Armor,Rare,58,53,,Classic,Vendor,Leatherworking,,290,,BoE,19084,https://www.wowhead.com/wotlk/item=15063,https://www.wowhead.com/wotlk/spell=19084
+15066,Ironfeather Breastplate,Chest,Leather Armor,Rare,58,53,,Classic,Mob Drop,Leatherworking,,290,,BoE,19086,https://www.wowhead.com/wotlk/item=15066,https://www.wowhead.com/wotlk/spell=19086
+19044,Might of the Timbermaw,Waist,Leather Armor,Rare,58,53,,Classic,Vendor,Leatherworking,,290,,BoE,23703,https://www.wowhead.com/wotlk/item=19044,https://www.wowhead.com/wotlk/spell=23703
+15094,Runic Leather Headband,Head,Leather Armor,Uncommon,58,53,,Classic,Trainer,Leatherworking,,290,,BoE,19082,https://www.wowhead.com/wotlk/item=15094,https://www.wowhead.com/wotlk/spell=19082
+15087,Wicked Leather Pants,Legs,Leather Armor,Uncommon,58,53,,Classic,Trainer,Leatherworking,,290,,BoE,19083,https://www.wowhead.com/wotlk/item=15087,https://www.wowhead.com/wotlk/spell=19083
+15049,Blue Dragonscale Shoulders,Shoulder,Mail Armor,Rare,59,54,,Classic,Mob Drop,Leatherworking,,295,,BoE,19089,https://www.wowhead.com/wotlk/item=15049,https://www.wowhead.com/wotlk/spell=19089
+16982,Corehound Boots,Feet,Leather Armor,Epic,59,54,,Classic,Vendor,Leatherworking,,295,,BoE,20853,https://www.wowhead.com/wotlk/item=16982,https://www.wowhead.com/wotlk/spell=20853
+15070,Frostsaber Gloves,Hands,Leather Armor,Uncommon,59,54,,Classic,Mob Drop,Leatherworking,,295,,BoE,19087,https://www.wowhead.com/wotlk/item=15070,https://www.wowhead.com/wotlk/spell=19087
+15080,Heavy Scorpid Helm,Head,Mail Armor,Uncommon,59,54,,Classic,Vendor,Leatherworking,,295,,BoE,19088,https://www.wowhead.com/wotlk/item=15080,https://www.wowhead.com/wotlk/spell=19088
+15058,Stormshroud Shoulders,Shoulder,Leather Armor,Rare,59,54,,Classic,Mob Drop,Leatherworking,,295,,BoE,19090,https://www.wowhead.com/wotlk/item=15058,https://www.wowhead.com/wotlk/spell=19090
+15052,Black Dragonscale Leggings,Legs,Mail Armor,Rare,60,55,,Classic,"Mob Drop, Dungeon Drop",Leatherworking,,300,,BoE,19107,https://www.wowhead.com/wotlk/item=15052,https://www.wowhead.com/wotlk/spell=19107
+15051,Black Dragonscale Shoulders,Shoulder,Mail Armor,Rare,60,55,,Classic,"Mob Drop, Dungeon Drop",Leatherworking,,300,,BoE,19094,https://www.wowhead.com/wotlk/item=15051,https://www.wowhead.com/wotlk/spell=19094
+20295,Blue Dragonscale Leggings,Legs,Mail Armor,Rare,60,55,,Classic,Trainer,Leatherworking,,300,,BoE,24654,https://www.wowhead.com/wotlk/item=20295,https://www.wowhead.com/wotlk/spell=24654
+15062,Devilsaur Leggings,Legs,Leather Armor,Rare,60,55,,Classic,Mob Drop,Leatherworking,,300,,BoE,19097,https://www.wowhead.com/wotlk/item=15062,https://www.wowhead.com/wotlk/spell=19097
+15059,Living Breastplate,Chest,Leather Armor,Rare,60,55,,Classic,Mob Drop,Leatherworking,,300,,BoE,19095,https://www.wowhead.com/wotlk/item=15059,https://www.wowhead.com/wotlk/spell=19095
+16983,Molten Helm,Head,Leather Armor,Epic,60,55,,Classic,Vendor,Leatherworking,,300,,BoE,20854,https://www.wowhead.com/wotlk/item=16983,https://www.wowhead.com/wotlk/spell=20854
+15138,Onyxia Scale Cloak,Back,Cloaks,Rare,60,55,,Classic,"Quest, Raid Drop",Leatherworking,,300,,BoE,19093,https://www.wowhead.com/wotlk/item=15138,https://www.wowhead.com/wotlk/spell=19093
+15095,Runic Leather Pants,Legs,Leather Armor,Uncommon,60,55,,Classic,Trainer,Leatherworking,,300,,BoE,19091,https://www.wowhead.com/wotlk/item=15095,https://www.wowhead.com/wotlk/spell=19091
+15088,Wicked Leather Belt,Waist,Leather Armor,Uncommon,60,55,,Classic,Trainer,Leatherworking,,300,,BoE,19092,https://www.wowhead.com/wotlk/item=15088,https://www.wowhead.com/wotlk/spell=19092
+16984,Black Dragonscale Boots,Feet,Mail Armor,Epic,61,56,,Classic,Vendor,Leatherworking,,300,,BoE,20855,https://www.wowhead.com/wotlk/item=16984,https://www.wowhead.com/wotlk/spell=20855
+15081,Heavy Scorpid Shoulders,Shoulder,Mail Armor,Uncommon,61,56,,Classic,Mob Drop,Leatherworking,,300,,BoE,19100,https://www.wowhead.com/wotlk/item=15081,https://www.wowhead.com/wotlk/spell=19100
+15047,Red Dragonscale Breastplate,Chest,Mail Armor,Rare,61,56,,Classic,"Mob Drop, Dungeon Drop",Leatherworking,,300,,BoE,19054,https://www.wowhead.com/wotlk/item=15047,https://www.wowhead.com/wotlk/spell=19054
+15055,Volcanic Shoulders,Shoulder,Leather Armor,Uncommon,61,56,,Classic,"Mob Drop, Dungeon Drop",Leatherworking,,300,,BoE,19101,https://www.wowhead.com/wotlk/item=15055,https://www.wowhead.com/wotlk/spell=19101
+15085,Wicked Leather Armor,Chest,Leather Armor,Uncommon,61,56,,Classic,Trainer,Leatherworking,,300,,BoE,19098,https://www.wowhead.com/wotlk/item=15085,https://www.wowhead.com/wotlk/spell=19098
+18509,Chromatic Cloak,Back,Cloaks,Epic,62,57,,Classic,Dungeon Drop,Leatherworking,,300,,BoE,22926,https://www.wowhead.com/wotlk/item=18509,https://www.wowhead.com/wotlk/spell=22926
+15068,Frostsaber Tunic,Chest,Leather Armor,Uncommon,62,57,,Classic,Mob Drop,Leatherworking,,300,,BoE,19104,https://www.wowhead.com/wotlk/item=15068,https://www.wowhead.com/wotlk/spell=19104
+18504,Girdle of Insight,Waist,Leather Armor,Rare,62,57,,Classic,Dungeon Drop,Leatherworking,,300,,BoE,22921,https://www.wowhead.com/wotlk/item=18504,https://www.wowhead.com/wotlk/spell=22921
+18510,Hide of the Wild,Back,Cloaks,Epic,62,57,,Classic,Dungeon Drop,Leatherworking,,300,,BoE,22927,https://www.wowhead.com/wotlk/item=18510,https://www.wowhead.com/wotlk/spell=22927
+18506,Mongoose Boots,Feet,Leather Armor,Rare,62,57,,Classic,Dungeon Drop,Leatherworking,,300,,BoE,22922,https://www.wowhead.com/wotlk/item=18506,https://www.wowhead.com/wotlk/spell=22922
+15090,Runic Leather Armor,Chest,Leather Armor,Uncommon,62,57,,Classic,Trainer,Leatherworking,,300,,BoE,19102,https://www.wowhead.com/wotlk/item=15090,https://www.wowhead.com/wotlk/spell=19102
+15096,Runic Leather Shoulders,Shoulder,Leather Armor,Uncommon,62,57,,Classic,Trainer,Leatherworking,,300,,BoE,19103,https://www.wowhead.com/wotlk/item=15096,https://www.wowhead.com/wotlk/spell=19103
+20476,Sandstalker Bracers,Wrist,Mail Armor,Rare,62,57,,Classic,Vendor,Leatherworking,,300,,BoE,24849,https://www.wowhead.com/wotlk/item=20476,https://www.wowhead.com/wotlk/spell=24849
+20478,Sandstalker Breastplate,Chest,Mail Armor,Rare,62,57,,Classic,Vendor,Leatherworking,,300,,BoE,24851,https://www.wowhead.com/wotlk/item=20478,https://www.wowhead.com/wotlk/spell=24851
+20477,Sandstalker Gauntlets,Hands,Mail Armor,Rare,62,57,,Classic,Vendor,Leatherworking,,300,,BoE,24850,https://www.wowhead.com/wotlk/item=20477,https://www.wowhead.com/wotlk/spell=24850
+18511,Shifting Cloak,Back,Cloaks,Epic,62,57,,Classic,Dungeon Drop,Leatherworking,,300,,BoE,22928,https://www.wowhead.com/wotlk/item=18511,https://www.wowhead.com/wotlk/spell=22928
+20481,Spitfire Bracers,Wrist,Mail Armor,Rare,62,57,,Classic,Vendor,Leatherworking,,300,,BoE,24846,https://www.wowhead.com/wotlk/item=20481,https://www.wowhead.com/wotlk/spell=24846
+20479,Spitfire Breastplate,Chest,Mail Armor,Rare,62,57,,Classic,Vendor,Leatherworking,,300,,BoE,24848,https://www.wowhead.com/wotlk/item=20479,https://www.wowhead.com/wotlk/spell=24848
+20480,Spitfire Gauntlets,Hands,Mail Armor,Rare,62,57,,Classic,Vendor,Leatherworking,,300,,BoE,24847,https://www.wowhead.com/wotlk/item=20480,https://www.wowhead.com/wotlk/spell=24847
+18508,Swift Flight Bracers,Wrist,Mail Armor,Rare,62,57,,Classic,Dungeon Drop,Leatherworking,,300,,BoE,22923,https://www.wowhead.com/wotlk/item=18508,https://www.wowhead.com/wotlk/spell=22923
+25654,Felscale Gloves,Hands,Mail Armor,Uncommon,84,57,,The Burning Crusade,Trainer,Leatherworking,,300,,BoE,32462,https://www.wowhead.com/wotlk/item=25654,https://www.wowhead.com/wotlk/spell=32462
+25662,Scaled Draenic Pants,Legs,Mail Armor,Uncommon,84,57,,The Burning Crusade,Trainer,Leatherworking,,300,,BoE,32466,https://www.wowhead.com/wotlk/item=25662,https://www.wowhead.com/wotlk/spell=32466
+25669,Thick Draenic Gloves,Hands,Leather Armor,Uncommon,84,57,,The Burning Crusade,Trainer,Leatherworking,,300,,BoE,32470,https://www.wowhead.com/wotlk/item=25669,https://www.wowhead.com/wotlk/spell=32470
+25673,Wild Draenish Boots,Feet,Leather Armor,Uncommon,84,57,,The Burning Crusade,Trainer,Leatherworking,,300,,BoE,32478,https://www.wowhead.com/wotlk/item=25673,https://www.wowhead.com/wotlk/spell=32478
+19058,Golden Mantle of the Dawn,Shoulder,Leather Armor,Rare,64,59,,Classic,Vendor,Leatherworking,,300,,BoE,23706,https://www.wowhead.com/wotlk/item=19058,https://www.wowhead.com/wotlk/spell=23706
+19049,Timbermaw Brawlers,Hands,Leather Armor,Rare,64,59,,Classic,Vendor,Leatherworking,,300,,BoE,23704,https://www.wowhead.com/wotlk/item=19049,https://www.wowhead.com/wotlk/spell=23704
+19688,Blood Tiger Breastplate,Chest,Leather Armor,Rare,65,60,,Classic,Vendor,Leatherworking,,300,,BoE,24124,https://www.wowhead.com/wotlk/item=19688,https://www.wowhead.com/wotlk/spell=24124
+19689,Blood Tiger Shoulders,Shoulder,Leather Armor,Rare,65,60,,Classic,Vendor,Leatherworking,,300,,BoE,24125,https://www.wowhead.com/wotlk/item=19689,https://www.wowhead.com/wotlk/spell=24125
+19687,Primal Batskin Bracers,Wrist,Leather Armor,Rare,65,60,,Classic,Vendor,Leatherworking,,300,,BoE,24123,https://www.wowhead.com/wotlk/item=19687,https://www.wowhead.com/wotlk/spell=24123
+19686,Primal Batskin Gloves,Hands,Leather Armor,Rare,65,60,,Classic,Vendor,Leatherworking,,300,,BoE,24122,https://www.wowhead.com/wotlk/item=19686,https://www.wowhead.com/wotlk/spell=24122
+19685,Primal Batskin Jerkin,Chest,Leather Armor,Rare,65,60,,Classic,Vendor,Leatherworking,,300,,BoE,24121,https://www.wowhead.com/wotlk/item=19685,https://www.wowhead.com/wotlk/spell=24121
+19149,Lava Belt,Waist,Leather Armor,Epic,66,60,,Classic,Vendor,Leatherworking,,300,,BoE,23707,https://www.wowhead.com/wotlk/item=19149,https://www.wowhead.com/wotlk/spell=23707
+20380,Dreamscale Breastplate,Chest,Mail Armor,Epic,68,60,,Classic,Vendor,Leatherworking,,300,,BoE,24703,https://www.wowhead.com/wotlk/item=20380,https://www.wowhead.com/wotlk/spell=24703
+22761,Bramblewood Belt,Waist,Leather Armor,Rare,70,60,,Classic,Vendor,Leatherworking,,300,,BoE,28474,https://www.wowhead.com/wotlk/item=22761,https://www.wowhead.com/wotlk/spell=28474
+22760,Bramblewood Boots,Feet,Leather Armor,Rare,70,60,,Classic,Vendor,Leatherworking,,300,,BoE,28473,https://www.wowhead.com/wotlk/item=22760,https://www.wowhead.com/wotlk/spell=28473
+22759,Bramblewood Helm,Head,Leather Armor,Rare,70,60,,Classic,Vendor,Leatherworking,,300,,BoE,28472,https://www.wowhead.com/wotlk/item=22759,https://www.wowhead.com/wotlk/spell=28472
+19157,Chromatic Gauntlets,Hands,Mail Armor,Epic,70,60,,Classic,Vendor,Leatherworking,,300,,BoE,23708,https://www.wowhead.com/wotlk/item=19157,https://www.wowhead.com/wotlk/spell=23708
+19162,Corehound Belt,Waist,Leather Armor,Epic,70,60,,Classic,Vendor,Leatherworking,,300,,BoE,23709,https://www.wowhead.com/wotlk/item=19162,https://www.wowhead.com/wotlk/spell=23709
+19163,Molten Belt,Waist,Leather Armor,Epic,70,60,,Classic,Vendor,Leatherworking,,300,,BoE,23710,https://www.wowhead.com/wotlk/item=19163,https://www.wowhead.com/wotlk/spell=23710
+22665,Icy Scale Bracers,Wrist,Mail Armor,Epic,80,60,,Classic,"Vendor, Raid Drop, Removed / Retired",Leatherworking,,300,,BoE,28224,https://www.wowhead.com/wotlk/item=22665,https://www.wowhead.com/wotlk/spell=28224
+22664,Icy Scale Breastplate,Chest,Mail Armor,Epic,80,60,,Classic,"Vendor, Raid Drop, Removed / Retired",Leatherworking,,300,,BoE,28222,https://www.wowhead.com/wotlk/item=22664,https://www.wowhead.com/wotlk/spell=28222
+22666,Icy Scale Gauntlets,Hands,Mail Armor,Epic,80,60,,Classic,"Vendor, Raid Drop, Removed / Retired",Leatherworking,,300,,BoE,28223,https://www.wowhead.com/wotlk/item=22666,https://www.wowhead.com/wotlk/spell=28223
+22663,Polar Bracers,Wrist,Leather Armor,Epic,80,60,,Classic,"Vendor, Raid Drop, Removed / Retired",Leatherworking,,300,,BoE,28221,https://www.wowhead.com/wotlk/item=22663,https://www.wowhead.com/wotlk/spell=28221
+22662,Polar Gloves,Hands,Leather Armor,Epic,80,60,,Classic,"Vendor, Raid Drop, Removed / Retired",Leatherworking,,300,,BoE,28220,https://www.wowhead.com/wotlk/item=22662,https://www.wowhead.com/wotlk/spell=28220
+22661,Polar Tunic,Chest,Leather Armor,Epic,80,60,,Classic,"Vendor, Raid Drop, Removed / Retired",Leatherworking,,300,,BoE,28219,https://www.wowhead.com/wotlk/item=22661,https://www.wowhead.com/wotlk/spell=28219
+25655,Felscale Boots,Feet,Mail Armor,Uncommon,93,61,,The Burning Crusade,Trainer,Leatherworking,,310,,BoE,32463,https://www.wowhead.com/wotlk/item=25655,https://www.wowhead.com/wotlk/spell=32463
+25661,Scaled Draenic Gloves,Hands,Mail Armor,Uncommon,93,61,,The Burning Crusade,Trainer,Leatherworking,,310,,BoE,32467,https://www.wowhead.com/wotlk/item=25661,https://www.wowhead.com/wotlk/spell=32467
+25674,Wild Draenish Gloves,Hands,Leather Armor,Uncommon,93,61,,The Burning Crusade,Trainer,Leatherworking,,310,,BoE,32479,https://www.wowhead.com/wotlk/item=25674,https://www.wowhead.com/wotlk/spell=32479
+25670,Thick Draenic Pants,Legs,Leather Armor,Uncommon,96,62,,The Burning Crusade,Trainer,Leatherworking,,315,,BoE,32471,https://www.wowhead.com/wotlk/item=25670,https://www.wowhead.com/wotlk/spell=32471
+25656,Felscale Pants,Legs,Mail Armor,Uncommon,99,63,,The Burning Crusade,Trainer,Leatherworking,,320,,BoE,32464,https://www.wowhead.com/wotlk/item=25656,https://www.wowhead.com/wotlk/spell=32464
+25668,Thick Draenic Boots,Feet,Leather Armor,Uncommon,99,63,,The Burning Crusade,Trainer,Leatherworking,,320,,BoE,32472,https://www.wowhead.com/wotlk/item=25668,https://www.wowhead.com/wotlk/spell=32472
+25675,Wild Draenish Leggings,Legs,Leather Armor,Uncommon,99,63,,The Burning Crusade,Trainer,Leatherworking,,320,,BoE,32480,https://www.wowhead.com/wotlk/item=25675,https://www.wowhead.com/wotlk/spell=32480
+25660,Scaled Draenic Vest,Chest,Mail Armor,Uncommon,102,64,,The Burning Crusade,Trainer,Leatherworking,,325,,BoE,32468,https://www.wowhead.com/wotlk/item=25660,https://www.wowhead.com/wotlk/spell=32468
+29975,Golden Dragonstrike Breastplate,Chest,Mail Armor,Rare,100,65,,The Burning Crusade,Trainer,Leatherworking,Specialty 10657,330,,BoP,36079,https://www.wowhead.com/wotlk/item=29975,https://www.wowhead.com/wotlk/spell=36079
+29974,Living Crystal Breastplate,Chest,Leather Armor,Rare,100,65,,The Burning Crusade,Trainer,Leatherworking,Specialty 10661,330,,BoP,36078,https://www.wowhead.com/wotlk/item=29974,https://www.wowhead.com/wotlk/spell=36078
+29973,Primalstorm Breastplate,Chest,Leather Armor,Rare,100,65,,The Burning Crusade,Trainer,Leatherworking,Specialty 10659,330,,BoP,36077,https://www.wowhead.com/wotlk/item=29973,https://www.wowhead.com/wotlk/spell=36077
+25671,Thick Draenic Vest,Chest,Leather Armor,Uncommon,105,65,,The Burning Crusade,Trainer,Leatherworking,,330,,BoE,32473,https://www.wowhead.com/wotlk/item=25671,https://www.wowhead.com/wotlk/spell=32473
+25676,Wild Draenish Vest,Chest,Leather Armor,Uncommon,105,65,,The Burning Crusade,Trainer,Leatherworking,,330,,BoE,32481,https://www.wowhead.com/wotlk/item=25676,https://www.wowhead.com/wotlk/spell=32481
+25657,Felscale Breastplate,Chest,Mail Armor,Uncommon,108,66,,The Burning Crusade,Trainer,Leatherworking,,335,,BoE,32465,https://www.wowhead.com/wotlk/item=25657,https://www.wowhead.com/wotlk/spell=32465
+25659,Scaled Draenic Boots,Feet,Mail Armor,Uncommon,108,66,,The Burning Crusade,Trainer,Leatherworking,,335,,BoE,32469,https://www.wowhead.com/wotlk/item=25659,https://www.wowhead.com/wotlk/spell=32469
+25685,Fel Leather Gloves,Hands,Leather Armor,Rare,106,67,,The Burning Crusade,Vendor,Leatherworking,,340,,BoE,32490,https://www.wowhead.com/wotlk/item=25685,https://www.wowhead.com/wotlk/spell=32490
+25694,Netherfury Belt,Waist,Mail Armor,Rare,106,67,,The Burning Crusade,Vendor,Leatherworking,,340,,BoE,32501,https://www.wowhead.com/wotlk/item=25694,https://www.wowhead.com/wotlk/spell=32501
+25692,Netherfury Leggings,Legs,Mail Armor,Rare,106,67,,The Burning Crusade,Vendor,Leatherworking,,340,,BoE,32502,https://www.wowhead.com/wotlk/item=25692,https://www.wowhead.com/wotlk/spell=32502
+38412,Frostscale Belt,Waist,Mail Armor,Uncommon,138,68,,Wrath of the Lich King,Trainer,Leatherworking,,370,,BoE,50955,https://www.wowhead.com/wotlk/item=38412,https://www.wowhead.com/wotlk/spell=50955
+38414,Frostscale Chestguard,Chest,Mail Armor,Uncommon,138,68,,Wrath of the Lich King,Trainer,Leatherworking,,375,,BoE,50950,https://www.wowhead.com/wotlk/item=38414,https://www.wowhead.com/wotlk/spell=50950
+38418,Nerubian Belt,Waist,Mail Armor,Uncommon,138,68,,Wrath of the Lich King,Trainer,Leatherworking,,375,,BoE,50961,https://www.wowhead.com/wotlk/item=38418,https://www.wowhead.com/wotlk/spell=50961
+38420,Nerubian Chestguard,Chest,Mail Armor,Uncommon,138,68,,Wrath of the Lich King,Trainer,Leatherworking,,375,,BoE,50956,https://www.wowhead.com/wotlk/item=38420,https://www.wowhead.com/wotlk/spell=50956
+38422,Nerubian Legguards,Legs,Mail Armor,Uncommon,138,68,,Wrath of the Lich King,Trainer,Leatherworking,,370,,BoE,50957,https://www.wowhead.com/wotlk/item=38422,https://www.wowhead.com/wotlk/spell=50957
+25653,Riding Crop,Trinket,Trinkets,Rare,70,69,,The Burning Crusade,Vendor,Leatherworking,,350,,BoE,32461,https://www.wowhead.com/wotlk/item=25653,https://www.wowhead.com/wotlk/spell=32461
+25693,Netherfury Boots,Feet,Mail Armor,Rare,100,69,,The Burning Crusade,Vendor,Leatherworking,,350,,BoE,32503,https://www.wowhead.com/wotlk/item=25693,https://www.wowhead.com/wotlk/spell=32503
+29500,Blastguard Belt,Waist,Leather Armor,Rare,112,69,,The Burning Crusade,Vendor,Leatherworking,,350,,BoE,35537,https://www.wowhead.com/wotlk/item=29500,https://www.wowhead.com/wotlk/spell=35537
+29499,Blastguard Boots,Feet,Leather Armor,Rare,112,69,,The Burning Crusade,Vendor,Leatherworking,,350,,BoE,35536,https://www.wowhead.com/wotlk/item=29499,https://www.wowhead.com/wotlk/spell=35536
+29498,Blastguard Pants,Legs,Leather Armor,Rare,112,69,,The Burning Crusade,Vendor,Leatherworking,,350,,BoE,35535,https://www.wowhead.com/wotlk/item=29498,https://www.wowhead.com/wotlk/spell=35535
+29497,Enchanted Clefthoof Boots,Feet,Leather Armor,Rare,112,69,,The Burning Crusade,Vendor,Leatherworking,,350,,BoE,35534,https://www.wowhead.com/wotlk/item=29497,https://www.wowhead.com/wotlk/spell=35534
+29496,Enchanted Clefthoof Gloves,Hands,Leather Armor,Rare,112,69,,The Burning Crusade,Vendor,Leatherworking,,350,,BoE,35533,https://www.wowhead.com/wotlk/item=29496,https://www.wowhead.com/wotlk/spell=35533
+29495,Enchanted Clefthoof Leggings,Legs,Leather Armor,Rare,112,69,,The Burning Crusade,Vendor,Leatherworking,,350,,BoE,35532,https://www.wowhead.com/wotlk/item=29495,https://www.wowhead.com/wotlk/spell=35532
+29491,Enchanted Felscale Boots,Feet,Mail Armor,Rare,112,69,,The Burning Crusade,Vendor,Leatherworking,,350,,BoE,35527,https://www.wowhead.com/wotlk/item=29491,https://www.wowhead.com/wotlk/spell=35527
+29490,Enchanted Felscale Gloves,Hands,Mail Armor,Rare,112,69,,The Burning Crusade,Vendor,Leatherworking,,350,,BoE,35526,https://www.wowhead.com/wotlk/item=29490,https://www.wowhead.com/wotlk/spell=35526
+29489,Enchanted Felscale Leggings,Legs,Mail Armor,Rare,112,69,,The Burning Crusade,Vendor,Leatherworking,,350,,BoE,35525,https://www.wowhead.com/wotlk/item=29489,https://www.wowhead.com/wotlk/spell=35525
+25686,Fel Leather Boots,Feet,Leather Armor,Rare,112,69,,The Burning Crusade,Vendor,Leatherworking,,350,,BoE,32493,https://www.wowhead.com/wotlk/item=25686,https://www.wowhead.com/wotlk/spell=32493
+25687,Fel Leather Leggings,Legs,Leather Armor,Rare,112,69,,The Burning Crusade,Vendor,Leatherworking,,350,,BoE,32494,https://www.wowhead.com/wotlk/item=25687,https://www.wowhead.com/wotlk/spell=32494
+25695,Felstalker Belt,Waist,Mail Armor,Rare,112,69,,The Burning Crusade,Vendor,Leatherworking,,350,,BoE,32498,https://www.wowhead.com/wotlk/item=25695,https://www.wowhead.com/wotlk/spell=32498
+29494,Flamescale Belt,Waist,Mail Armor,Rare,112,69,,The Burning Crusade,Vendor,Leatherworking,,350,,BoE,35531,https://www.wowhead.com/wotlk/item=29494,https://www.wowhead.com/wotlk/spell=35531
+29493,Flamescale Boots,Feet,Mail Armor,Rare,112,69,,The Burning Crusade,Vendor,Leatherworking,,350,,BoE,35528,https://www.wowhead.com/wotlk/item=29493,https://www.wowhead.com/wotlk/spell=35528
+29492,Flamescale Leggings,Legs,Mail Armor,Rare,112,69,,The Burning Crusade,Vendor,Leatherworking,,350,,BoE,35529,https://www.wowhead.com/wotlk/item=29492,https://www.wowhead.com/wotlk/spell=35529
+25681,Stylin' Adventure Hat,Head,Mail Armor,Rare,112,69,,The Burning Crusade,"Mob Drop, Dungeon Drop",Leatherworking,,350,,BoE,32487,https://www.wowhead.com/wotlk/item=25681,https://www.wowhead.com/wotlk/spell=32487
+25683,Stylin' Crimson Hat,Head,Mail Armor,Rare,112,69,,The Burning Crusade,"Mob Drop, Dungeon Drop",Leatherworking,,350,,BoE,32488,https://www.wowhead.com/wotlk/item=25683,https://www.wowhead.com/wotlk/spell=32488
+25682,Stylin' Jungle Hat,Head,Leather Armor,Rare,112,69,,The Burning Crusade,"Mob Drop, Dungeon Drop",Leatherworking,,350,,BoE,32489,https://www.wowhead.com/wotlk/item=25682,https://www.wowhead.com/wotlk/spell=32489
+25680,Stylin' Purple Hat,Head,Leather Armor,Rare,112,69,,The Burning Crusade,"Mob Drop, Dungeon Drop",Leatherworking,,350,,BoE,32485,https://www.wowhead.com/wotlk/item=25680,https://www.wowhead.com/wotlk/spell=32485
+25691,Heavy Clefthoof Boots,Feet,Leather Armor,Rare,113,69,,The Burning Crusade,Vendor,Leatherworking,,355,,BoE,32497,https://www.wowhead.com/wotlk/item=25691,https://www.wowhead.com/wotlk/spell=32497
+29503,Cobrascale Gloves,Hands,Leather Armor,Epic,105,70,,The Burning Crusade,World Drop,Leatherworking,,365,,BoE,35559,https://www.wowhead.com/wotlk/item=29503,https://www.wowhead.com/wotlk/spell=35559
+29502,Cobrascale Hood,Head,Leather Armor,Epic,105,70,,The Burning Crusade,World Drop,Leatherworking,,365,,BoE,35558,https://www.wowhead.com/wotlk/item=29502,https://www.wowhead.com/wotlk/spell=35558
+29512,Earthen Netherscale Boots,Feet,Mail Armor,Epic,105,70,,The Burning Crusade,World Drop,Leatherworking,,365,,BoE,35567,https://www.wowhead.com/wotlk/item=29512,https://www.wowhead.com/wotlk/spell=35567
+29517,Ebon Netherscale Bracers,Wrist,Mail Armor,Epic,105,70,,The Burning Crusade,Trainer,Leatherworking,Specialty 10657,375,,BoP,35577,https://www.wowhead.com/wotlk/item=29517,https://www.wowhead.com/wotlk/spell=35577
+29506,Gloves of the Living Touch,Hands,Leather Armor,Epic,105,70,,The Burning Crusade,Mob Drop,Leatherworking,,365,,BoE,35562,https://www.wowhead.com/wotlk/item=29506,https://www.wowhead.com/wotlk/spell=35562
+29505,Hood of Primal Life,Head,Leather Armor,Epic,105,70,,The Burning Crusade,World Drop,Leatherworking,,365,,BoE,35561,https://www.wowhead.com/wotlk/item=29505,https://www.wowhead.com/wotlk/spell=35561
+29508,Living Dragonscale Helm,Head,Mail Armor,Epic,105,70,,The Burning Crusade,World Drop,Leatherworking,,365,,BoE,35564,https://www.wowhead.com/wotlk/item=29508,https://www.wowhead.com/wotlk/spell=35564
+29511,Netherdrake Gloves,Hands,Mail Armor,Epic,105,70,,The Burning Crusade,Mob Drop,Leatherworking,,365,,BoE,35573,https://www.wowhead.com/wotlk/item=29511,https://www.wowhead.com/wotlk/spell=35573
+29510,Netherdrake Helm,Head,Mail Armor,Epic,105,70,,The Burning Crusade,World Drop,Leatherworking,,365,,BoE,35572,https://www.wowhead.com/wotlk/item=29510,https://www.wowhead.com/wotlk/spell=35572
+33204,Shadowprowler's Chestguard,Chest,Leather Armor,Epic,105,70,,The Burning Crusade,Vendor,Leatherworking,,365,,BoE,42731,https://www.wowhead.com/wotlk/item=33204,https://www.wowhead.com/wotlk/spell=42731
+29514,Thick Netherscale Breastplate,Chest,Mail Armor,Epic,105,70,,The Burning Crusade,World Drop,Leatherworking,,365,,BoE,35574,https://www.wowhead.com/wotlk/item=29514,https://www.wowhead.com/wotlk/spell=35574
+29504,Windscale Hood,Head,Leather Armor,Epic,105,70,,The Burning Crusade,World Drop,Leatherworking,,365,,BoE,35560,https://www.wowhead.com/wotlk/item=29504,https://www.wowhead.com/wotlk/spell=35560
+29507,Windslayer Wraps,Hands,Leather Armor,Epic,105,70,,The Burning Crusade,World Drop,Leatherworking,,365,,BoE,35563,https://www.wowhead.com/wotlk/item=29507,https://www.wowhead.com/wotlk/spell=35563
+29509,Windstrike Gloves,Hands,Mail Armor,Epic,105,70,,The Burning Crusade,Mob Drop,Leatherworking,,365,,BoE,35568,https://www.wowhead.com/wotlk/item=29509,https://www.wowhead.com/wotlk/spell=35568
+25690,Heavy Clefthoof Leggings,Legs,Leather Armor,Rare,113,70,,The Burning Crusade,Vendor,Leatherworking,,355,,BoE,32496,https://www.wowhead.com/wotlk/item=25690,https://www.wowhead.com/wotlk/spell=32496
+25697,Felstalker Bracers,Wrist,Mail Armor,Rare,114,70,,The Burning Crusade,Vendor,Leatherworking,,360,,BoE,32499,https://www.wowhead.com/wotlk/item=25697,https://www.wowhead.com/wotlk/spell=32499
+25696,Felstalker Breastplate,Chest,Mail Armor,Rare,114,70,,The Burning Crusade,Vendor,Leatherworking,,360,,BoE,32500,https://www.wowhead.com/wotlk/item=25696,https://www.wowhead.com/wotlk/spell=32500
+25689,Heavy Clefthoof Vest,Chest,Leather Armor,Rare,114,70,,The Burning Crusade,Vendor,Leatherworking,,360,,BoE,32495,https://www.wowhead.com/wotlk/item=25689,https://www.wowhead.com/wotlk/spell=32495
+29516,Ebon Netherscale Belt,Waist,Mail Armor,Epic,115,70,,The Burning Crusade,Trainer,Leatherworking,Specialty 10657,375,,BoP,35576,https://www.wowhead.com/wotlk/item=29516,https://www.wowhead.com/wotlk/spell=35576
+29520,Netherstrike Belt,Waist,Mail Armor,Epic,115,70,,The Burning Crusade,Trainer,Leatherworking,Specialty 10657,375,,BoP,35582,https://www.wowhead.com/wotlk/item=29520,https://www.wowhead.com/wotlk/spell=35582
+29521,Netherstrike Bracers,Wrist,Mail Armor,Epic,115,70,,The Burning Crusade,Trainer,Leatherworking,Specialty 10657,375,,BoP,35584,https://www.wowhead.com/wotlk/item=29521,https://www.wowhead.com/wotlk/spell=35584
+29526,Primalstrike Belt,Waist,Leather Armor,Epic,115,70,,The Burning Crusade,Trainer,Leatherworking,Specialty 10659,375,,BoP,35590,https://www.wowhead.com/wotlk/item=29526,https://www.wowhead.com/wotlk/spell=35590
+29527,Primalstrike Bracers,Wrist,Leather Armor,Epic,115,70,,The Burning Crusade,Trainer,Leatherworking,Specialty 10659,375,,BoP,35591,https://www.wowhead.com/wotlk/item=29527,https://www.wowhead.com/wotlk/spell=35591
+29524,Windhawk Belt,Waist,Leather Armor,Epic,115,70,,The Burning Crusade,Trainer,Leatherworking,Specialty 10661,375,,BoP,35587,https://www.wowhead.com/wotlk/item=29524,https://www.wowhead.com/wotlk/spell=35587
+29523,Windhawk Bracers,Wrist,Leather Armor,Epic,115,70,,The Burning Crusade,Trainer,Leatherworking,Specialty 10661,375,,BoP,35588,https://www.wowhead.com/wotlk/item=29523,https://www.wowhead.com/wotlk/spell=35588
+33122,Cloak of Darkness,Back,Cloaks,Epic,120,70,,The Burning Crusade,Vendor,Leatherworking,,360,,BoE,42546,https://www.wowhead.com/wotlk/item=33122,https://www.wowhead.com/wotlk/spell=42546
+29515,Ebon Netherscale Breastplate,Chest,Mail Armor,Epic,120,70,,The Burning Crusade,Trainer,Leatherworking,Specialty 10657,375,,BoP,35575,https://www.wowhead.com/wotlk/item=29515,https://www.wowhead.com/wotlk/spell=35575
+29519,Netherstrike Breastplate,Chest,Mail Armor,Epic,120,70,,The Burning Crusade,Trainer,Leatherworking,Specialty 10657,375,,BoP,35580,https://www.wowhead.com/wotlk/item=29519,https://www.wowhead.com/wotlk/spell=35580
+29525,Primalstrike Vest,Chest,Leather Armor,Epic,120,70,,The Burning Crusade,Trainer,Leatherworking,Specialty 10659,375,,BoP,35589,https://www.wowhead.com/wotlk/item=29525,https://www.wowhead.com/wotlk/spell=35589
+29522,Windhawk Hauberk,Chest,Leather Armor,Epic,120,70,,The Burning Crusade,Trainer,Leatherworking,Specialty 10661,375,,BoP,35585,https://www.wowhead.com/wotlk/item=29522,https://www.wowhead.com/wotlk/spell=35585
+30040,Belt of Deep Shadow,Waist,Leather Armor,Epic,128,70,,The Burning Crusade,Raid Drop,Leatherworking,,375,,BoE,36351,https://www.wowhead.com/wotlk/item=30040,https://www.wowhead.com/wotlk/spell=36351
+30042,Belt of Natural Power,Waist,Leather Armor,Epic,128,70,,The Burning Crusade,Raid Drop,Leatherworking,,375,,BoE,36349,https://www.wowhead.com/wotlk/item=30042,https://www.wowhead.com/wotlk/spell=36349
+30046,Belt of the Black Eagle,Waist,Mail Armor,Epic,128,70,,The Burning Crusade,Raid Drop,Leatherworking,,375,,BoE,36352,https://www.wowhead.com/wotlk/item=30046,https://www.wowhead.com/wotlk/spell=36352
+30041,Boots of Natural Grace,Feet,Leather Armor,Epic,128,70,,The Burning Crusade,Raid Drop,Leatherworking,,375,,BoP,36355,https://www.wowhead.com/wotlk/item=30041,https://www.wowhead.com/wotlk/spell=36355
+30039,Boots of Utter Darkness,Feet,Leather Armor,Epic,128,70,,The Burning Crusade,Raid Drop,Leatherworking,,375,,BoP,36357,https://www.wowhead.com/wotlk/item=30039,https://www.wowhead.com/wotlk/spell=36357
+30045,Boots of the Crimson Hawk,Feet,Mail Armor,Epic,128,70,,The Burning Crusade,Raid Drop,Leatherworking,,375,,BoP,36358,https://www.wowhead.com/wotlk/item=30045,https://www.wowhead.com/wotlk/spell=36358
+30043,Hurricane Boots,Feet,Mail Armor,Epic,128,70,,The Burning Crusade,Raid Drop,Leatherworking,,375,,BoP,36359,https://www.wowhead.com/wotlk/item=30043,https://www.wowhead.com/wotlk/spell=36359
+30044,Monsoon Belt,Waist,Mail Armor,Epic,128,70,,The Burning Crusade,Raid Drop,Leatherworking,,375,,BoE,36353,https://www.wowhead.com/wotlk/item=30044,https://www.wowhead.com/wotlk/spell=36353
+32398,Boots of Shackled Souls,Feet,Mail Armor,Epic,130,70,,The Burning Crusade,Vendor,Leatherworking,,375,,BoE,39997,https://www.wowhead.com/wotlk/item=32398,https://www.wowhead.com/wotlk/spell=39997
+32399,Bracers of Shackled Souls,Wrist,Mail Armor,Epic,130,70,,Wrath of the Lich King,Vendor,Leatherworking,,375,,BoE,52733,https://www.wowhead.com/wotlk/item=32399,https://www.wowhead.com/wotlk/spell=52733
+32400,Greaves of Shackled Souls,Legs,Mail Armor,Epic,130,70,,The Burning Crusade,Vendor,Leatherworking,,375,,BoE,40001,https://www.wowhead.com/wotlk/item=32400,https://www.wowhead.com/wotlk/spell=40001
+32393,Redeemed Soul Cinch,Waist,Leather Armor,Epic,130,70,,The Burning Crusade,Vendor,Leatherworking,,375,,BoE,40006,https://www.wowhead.com/wotlk/item=32393,https://www.wowhead.com/wotlk/spell=40006
+32396,Redeemed Soul Legguards,Legs,Leather Armor,Epic,130,70,,The Burning Crusade,Vendor,Leatherworking,,375,,BoE,40005,https://www.wowhead.com/wotlk/item=32396,https://www.wowhead.com/wotlk/spell=40005
+32394,Redeemed Soul Moccasins,Feet,Leather Armor,Epic,130,70,,The Burning Crusade,Vendor,Leatherworking,,375,,BoE,40003,https://www.wowhead.com/wotlk/item=32394,https://www.wowhead.com/wotlk/spell=40003
+32395,Redeemed Soul Wristguards,Wrist,Leather Armor,Epic,130,70,,The Burning Crusade,Vendor,Leatherworking,,375,,BoE,40004,https://www.wowhead.com/wotlk/item=32395,https://www.wowhead.com/wotlk/spell=40004
+32397,Waistguard of Shackled Souls,Waist,Mail Armor,Epic,130,70,,The Burning Crusade,Vendor,Leatherworking,,375,,BoE,40002,https://www.wowhead.com/wotlk/item=32397,https://www.wowhead.com/wotlk/spell=40002
+38421,Nerubian Gloves,Hands,Mail Armor,Uncommon,134,70,,Wrath of the Lich King,Trainer,Leatherworking,,370,,BoE,50959,https://www.wowhead.com/wotlk/item=38421,https://www.wowhead.com/wotlk/spell=50959
+38407,Iceborne Boots,Feet,Leather Armor,Uncommon,138,70,,Wrath of the Lich King,Trainer,Leatherworking,,375,,BoE,50942,https://www.wowhead.com/wotlk/item=38407,https://www.wowhead.com/wotlk/spell=50942
+38408,Iceborne Chestguard,Chest,Leather Armor,Uncommon,138,70,,Wrath of the Lich King,Trainer,Leatherworking,,375,,BoE,50938,https://www.wowhead.com/wotlk/item=38408,https://www.wowhead.com/wotlk/spell=50938
+32574,Bindings of Lightning Reflexes,Wrist,Mail Armor,Epic,141,70,,The Burning Crusade,Raid Drop,Leatherworking,,375,,BoE,41161,https://www.wowhead.com/wotlk/item=32574,https://www.wowhead.com/wotlk/spell=41161
+32582,Bracers of Renewed Life,Wrist,Leather Armor,Epic,141,70,,The Burning Crusade,Raid Drop,Leatherworking,,375,,BoE,41156,https://www.wowhead.com/wotlk/item=32582,https://www.wowhead.com/wotlk/spell=41156
+32577,Living Earth Bindings,Wrist,Mail Armor,Epic,141,70,,The Burning Crusade,Raid Drop,Leatherworking,,375,,BoE,41163,https://www.wowhead.com/wotlk/item=32577,https://www.wowhead.com/wotlk/spell=41163
+32579,Living Earth Shoulders,Shoulder,Mail Armor,Epic,141,70,,The Burning Crusade,Raid Drop,Leatherworking,,375,,BoP,41164,https://www.wowhead.com/wotlk/item=32579,https://www.wowhead.com/wotlk/spell=41164
+32583,Shoulderpads of Renewed Life,Shoulder,Leather Armor,Epic,141,70,,The Burning Crusade,Raid Drop,Leatherworking,,375,,BoP,41157,https://www.wowhead.com/wotlk/item=32583,https://www.wowhead.com/wotlk/spell=41157
+32575,Shoulders of Lightning Reflexes,Shoulder,Mail Armor,Epic,141,70,,The Burning Crusade,Raid Drop,Leatherworking,,375,,BoP,41162,https://www.wowhead.com/wotlk/item=32575,https://www.wowhead.com/wotlk/spell=41162
+32580,Swiftstrike Bracers,Wrist,Leather Armor,Epic,141,70,,The Burning Crusade,Raid Drop,Leatherworking,,375,,BoE,41158,https://www.wowhead.com/wotlk/item=32580,https://www.wowhead.com/wotlk/spell=41158
+32581,Swiftstrike Shoulders,Shoulder,Leather Armor,Epic,141,70,,The Burning Crusade,Raid Drop,Leatherworking,,375,,BoP,41160,https://www.wowhead.com/wotlk/item=32581,https://www.wowhead.com/wotlk/spell=41160
+38404,Arctic Boots,Feet,Leather Armor,Uncommon,142,70,,Wrath of the Lich King,Trainer,Leatherworking,,370,,BoE,50948,https://www.wowhead.com/wotlk/item=38404,https://www.wowhead.com/wotlk/spell=50948
+38400,Arctic Chestpiece,Chest,Leather Armor,Uncommon,142,70,,Wrath of the Lich King,Trainer,Leatherworking,,370,,BoE,50944,https://www.wowhead.com/wotlk/item=38400,https://www.wowhead.com/wotlk/spell=50944
+38416,Frostscale Leggings,Legs,Mail Armor,Uncommon,142,70,,Wrath of the Lich King,Trainer,Leatherworking,,370,,BoE,50951,https://www.wowhead.com/wotlk/item=38416,https://www.wowhead.com/wotlk/spell=50951
+38424,Frostscale Shoulders,Shoulder,Mail Armor,Uncommon,142,70,,Wrath of the Lich King,Trainer,Leatherworking,,375,,BoE,50952,https://www.wowhead.com/wotlk/item=38424,https://www.wowhead.com/wotlk/spell=50952
+38409,Iceborne Gloves,Hands,Leather Armor,Uncommon,142,70,,Wrath of the Lich King,Trainer,Leatherworking,,370,,BoE,50941,https://www.wowhead.com/wotlk/item=38409,https://www.wowhead.com/wotlk/spell=50941
+38410,Iceborne Leggings,Legs,Leather Armor,Uncommon,142,70,,Wrath of the Lich King,Trainer,Leatherworking,,370,,BoE,50939,https://www.wowhead.com/wotlk/item=38410,https://www.wowhead.com/wotlk/spell=50939
+34369,Carapace of Sun and Shadow,Chest,Leather Armor,Epic,159,70,Leatherworking (350),The Burning Crusade,Raid Drop,Leatherworking,,365,,BoP,46138,https://www.wowhead.com/wotlk/item=34369,https://www.wowhead.com/wotlk/spell=46138
+34373,Embrace of the Phoenix,Chest,Mail Armor,Epic,159,70,Leatherworking (350),The Burning Crusade,Raid Drop,Leatherworking,,365,,BoP,46137,https://www.wowhead.com/wotlk/item=34373,https://www.wowhead.com/wotlk/spell=46137
+34374,Fletcher's Gloves of the Phoenix,Hands,Mail Armor,Epic,159,70,,The Burning Crusade,Raid Drop,Leatherworking,,365,,BoE,46133,https://www.wowhead.com/wotlk/item=34374,https://www.wowhead.com/wotlk/spell=46133
+34370,Gloves of Immortal Dusk,Hands,Leather Armor,Epic,159,70,,The Burning Crusade,Raid Drop,Leatherworking,,365,,BoE,46134,https://www.wowhead.com/wotlk/item=34370,https://www.wowhead.com/wotlk/spell=46134
+34371,Leather Chestguard of the Sun,Chest,Leather Armor,Epic,159,70,Leatherworking (350),The Burning Crusade,Raid Drop,Leatherworking,,365,,BoP,46136,https://www.wowhead.com/wotlk/item=34371,https://www.wowhead.com/wotlk/spell=46136
+34372,Leather Gauntlets of the Sun,Hands,Leather Armor,Epic,159,70,,The Burning Crusade,Raid Drop,Leatherworking,,365,,BoE,46132,https://www.wowhead.com/wotlk/item=34372,https://www.wowhead.com/wotlk/spell=46132
+34375,Sun-Drenched Scale Chestguard,Chest,Mail Armor,Epic,159,70,Leatherworking (350),The Burning Crusade,Raid Drop,Leatherworking,,365,,BoP,46139,https://www.wowhead.com/wotlk/item=34375,https://www.wowhead.com/wotlk/spell=46139
+34376,Sun-Drenched Scale Gloves,Hands,Mail Armor,Epic,159,70,,The Burning Crusade,Raid Drop,Leatherworking,,365,,BoE,46135,https://www.wowhead.com/wotlk/item=34376,https://www.wowhead.com/wotlk/spell=46135
+38403,Arctic Gloves,Hands,Leather Armor,Uncommon,146,71,,Wrath of the Lich King,Trainer,Leatherworking,,375,,BoE,50947,https://www.wowhead.com/wotlk/item=38403,https://www.wowhead.com/wotlk/spell=50947
+38401,Arctic Leggings,Legs,Leather Armor,Uncommon,146,71,,Wrath of the Lich King,Trainer,Leatherworking,,375,,BoE,50945,https://www.wowhead.com/wotlk/item=38401,https://www.wowhead.com/wotlk/spell=50945
+38402,Arctic Shoulderpads,Shoulder,Leather Armor,Uncommon,142,72,,Wrath of the Lich King,Trainer,Leatherworking,,380,,BoE,50946,https://www.wowhead.com/wotlk/item=38402,https://www.wowhead.com/wotlk/spell=50946
+38415,Frostscale Gloves,Hands,Mail Armor,Uncommon,142,72,,Wrath of the Lich King,Trainer,Leatherworking,,380,,BoE,50953,https://www.wowhead.com/wotlk/item=38415,https://www.wowhead.com/wotlk/spell=50953
+38406,Iceborne Belt,Waist,Leather Armor,Uncommon,142,72,,Wrath of the Lich King,Trainer,Leatherworking,,380,,BoE,50943,https://www.wowhead.com/wotlk/item=38406,https://www.wowhead.com/wotlk/spell=50943
+38419,Nerubian Boots,Feet,Mail Armor,Uncommon,142,72,,Wrath of the Lich King,Trainer,Leatherworking,,380,,BoE,50960,https://www.wowhead.com/wotlk/item=38419,https://www.wowhead.com/wotlk/spell=50960
+38405,Arctic Belt,Waist,Leather Armor,Uncommon,146,73,,Wrath of the Lich King,Trainer,Leatherworking,,380,,BoE,50949,https://www.wowhead.com/wotlk/item=38405,https://www.wowhead.com/wotlk/spell=50949
+38413,Frostscale Boots,Feet,Mail Armor,Uncommon,146,73,,Wrath of the Lich King,Trainer,Leatherworking,,380,,BoE,50954,https://www.wowhead.com/wotlk/item=38413,https://www.wowhead.com/wotlk/spell=50954
+38411,Iceborne Shoulderpads,Shoulder,Leather Armor,Uncommon,146,73,,Wrath of the Lich King,Trainer,Leatherworking,,380,,BoE,50940,https://www.wowhead.com/wotlk/item=38411,https://www.wowhead.com/wotlk/spell=50940
+38417,Nerubian Shoulders,Shoulder,Mail Armor,Uncommon,146,73,,Wrath of the Lich King,Trainer,Leatherworking,,380,,BoE,50958,https://www.wowhead.com/wotlk/item=38417,https://www.wowhead.com/wotlk/spell=50958
+38441,Cloak of Harsh Winds,Back,Cloaks,Rare,159,73,,Wrath of the Lich King,Trainer,Leatherworking,,380,,BoE,60631,https://www.wowhead.com/wotlk/item=38441,https://www.wowhead.com/wotlk/spell=60631
+38437,Arctic Helm,Head,Leather Armor,Uncommon,150,74,,Wrath of the Lich King,Trainer,Leatherworking,,385,,BoE,51572,https://www.wowhead.com/wotlk/item=38437,https://www.wowhead.com/wotlk/spell=51572
+38433,Arctic Wristguards,Wrist,Leather Armor,Uncommon,150,74,,Wrath of the Lich King,Trainer,Leatherworking,,385,,BoE,51571,https://www.wowhead.com/wotlk/item=38433,https://www.wowhead.com/wotlk/spell=51571
+38436,Frostscale Bracers,Wrist,Mail Armor,Uncommon,150,74,,Wrath of the Lich King,Trainer,Leatherworking,,385,,BoE,60599,https://www.wowhead.com/wotlk/item=38436,https://www.wowhead.com/wotlk/spell=60599
+38440,Frostscale Helm,Head,Mail Armor,Uncommon,150,74,,Wrath of the Lich King,Trainer,Leatherworking,,385,,BoE,60600,https://www.wowhead.com/wotlk/item=38440,https://www.wowhead.com/wotlk/spell=60600
+38438,Iceborne Helm,Head,Leather Armor,Uncommon,150,74,,Wrath of the Lich King,Trainer,Leatherworking,,385,,BoE,60608,https://www.wowhead.com/wotlk/item=38438,https://www.wowhead.com/wotlk/spell=60608
+38434,Iceborne Wristguards,Wrist,Leather Armor,Uncommon,150,74,,Wrath of the Lich King,Trainer,Leatherworking,,385,,BoE,60607,https://www.wowhead.com/wotlk/item=38434,https://www.wowhead.com/wotlk/spell=60607
+38435,Nerubian Bracers,Wrist,Mail Armor,Uncommon,150,74,,Wrath of the Lich King,Trainer,Leatherworking,,385,,BoE,60622,https://www.wowhead.com/wotlk/item=38435,https://www.wowhead.com/wotlk/spell=60622
+38439,Nerubian Helm,Head,Mail Armor,Uncommon,150,74,,Wrath of the Lich King,Trainer,Leatherworking,,385,,BoE,60624,https://www.wowhead.com/wotlk/item=38439,https://www.wowhead.com/wotlk/spell=60624
+41238,Cloak of Tormented Skies,Back,Cloaks,Rare,167,75,,Wrath of the Lich King,Trainer,Leatherworking,,395,,BoE,55199,https://www.wowhead.com/wotlk/item=41238,https://www.wowhead.com/wotlk/spell=55199
+44436,Dark Frostscale Leggings,Legs,Mail Armor,Rare,167,75,,Wrath of the Lich King,Trainer,Leatherworking,,395,,BoE,60601,https://www.wowhead.com/wotlk/item=44436,https://www.wowhead.com/wotlk/spell=60601
+44440,Dark Iceborne Leggings,Legs,Leather Armor,Rare,167,75,,Wrath of the Lich King,Trainer,Leatherworking,,395,,BoE,60611,https://www.wowhead.com/wotlk/item=44440,https://www.wowhead.com/wotlk/spell=60611
+44443,Dark Nerubian Leggings,Legs,Mail Armor,Rare,167,75,,Wrath of the Lich King,Trainer,Leatherworking,,395,,BoE,60627,https://www.wowhead.com/wotlk/item=44443,https://www.wowhead.com/wotlk/spell=60627
+38591,Dark Arctic Leggings,Legs,Leather Armor,Rare,171,76,,Wrath of the Lich King,Trainer,Leatherworking,,395,,BoE,51569,https://www.wowhead.com/wotlk/item=38591,https://www.wowhead.com/wotlk/spell=51569
+44437,Dark Frostscale Breastplate,Chest,Mail Armor,Rare,171,76,,Wrath of the Lich King,Trainer,Leatherworking,,395,,BoE,60604,https://www.wowhead.com/wotlk/item=44437,https://www.wowhead.com/wotlk/spell=60604
+44441,Dark Iceborne Chestguard,Chest,Leather Armor,Rare,171,76,,Wrath of the Lich King,Trainer,Leatherworking,,395,,BoE,60613,https://www.wowhead.com/wotlk/item=44441,https://www.wowhead.com/wotlk/spell=60613
+44444,Dark Nerubian Chestpiece,Chest,Mail Armor,Rare,171,76,,Wrath of the Lich King,Trainer,Leatherworking,,395,,BoE,60629,https://www.wowhead.com/wotlk/item=44444,https://www.wowhead.com/wotlk/spell=60629
+38590,Black Chitinguard Boots,Feet,Leather Armor,Rare,175,77,,Wrath of the Lich King,Trainer,Leatherworking,,400,,BoE,51568,https://www.wowhead.com/wotlk/item=38590,https://www.wowhead.com/wotlk/spell=51568
+44442,Bugsquashers,Feet,Leather Armor,Rare,175,77,,Wrath of the Lich King,Trainer,Leatherworking,,400,,BoE,60620,https://www.wowhead.com/wotlk/item=44442,https://www.wowhead.com/wotlk/spell=60620
+38592,Dark Arctic Chestpiece,Chest,Leather Armor,Rare,175,77,,Wrath of the Lich King,Trainer,Leatherworking,,395,,BoE,51570,https://www.wowhead.com/wotlk/item=38592,https://www.wowhead.com/wotlk/spell=51570
+44438,Dragonstompers,Feet,Mail Armor,Rare,175,77,,Wrath of the Lich King,Trainer,Leatherworking,,400,,BoE,60605,https://www.wowhead.com/wotlk/item=44438,https://www.wowhead.com/wotlk/spell=60605
+44445,Scaled Icewalkers,Feet,Mail Armor,Rare,175,77,,Wrath of the Lich King,Trainer,Leatherworking,,400,,BoE,60630,https://www.wowhead.com/wotlk/item=44445,https://www.wowhead.com/wotlk/spell=60630
+43131,Eaglebane Bracers,Wrist,Mail Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Leatherworking,,420,,BoE,60652,https://www.wowhead.com/wotlk/item=43131,https://www.wowhead.com/wotlk/spell=60652
+43435,Eviscerator's Bindings,Wrist,Leather Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,420,,BoE,60704,https://www.wowhead.com/wotlk/item=43435,https://www.wowhead.com/wotlk/spell=60704
+43434,Eviscerator's Chestguard,Chest,Leather Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,420,,BoE,60703,https://www.wowhead.com/wotlk/item=43434,https://www.wowhead.com/wotlk/spell=60703
+43260,Eviscerator's Facemask,Head,Leather Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,420,,BoE,60697,https://www.wowhead.com/wotlk/item=43260,https://www.wowhead.com/wotlk/spell=60697
+43436,Eviscerator's Gauntlets,Hands,Leather Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,425,,BoE,60705,https://www.wowhead.com/wotlk/item=43436,https://www.wowhead.com/wotlk/spell=60705
+43438,Eviscerator's Legguards,Legs,Leather Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,425,,BoE,60711,https://www.wowhead.com/wotlk/item=43438,https://www.wowhead.com/wotlk/spell=60711
+43433,Eviscerator's Shoulderpads,Shoulder,Leather Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,420,,BoE,60702,https://www.wowhead.com/wotlk/item=43433,https://www.wowhead.com/wotlk/spell=60702
+43439,Eviscerator's Treads,Feet,Leather Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,425,,BoE,60712,https://www.wowhead.com/wotlk/item=43439,https://www.wowhead.com/wotlk/spell=60712
+43437,Eviscerator's Waistguard,Waist,Leather Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,425,,BoE,60706,https://www.wowhead.com/wotlk/item=43437,https://www.wowhead.com/wotlk/spell=60706
+43256,Jormscale Footpads,Feet,Leather Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Leatherworking,,420,,BoE,60666,https://www.wowhead.com/wotlk/item=43256,https://www.wowhead.com/wotlk/spell=60666
+42731,Leggings of Visceral Strikes,Legs,Leather Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Leatherworking,,425,,BoE,60660,https://www.wowhead.com/wotlk/item=42731,https://www.wowhead.com/wotlk/spell=60660
+43133,Nightshock Girdle,Waist,Mail Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Leatherworking,,420,,BoE,60658,https://www.wowhead.com/wotlk/item=43133,https://www.wowhead.com/wotlk/spell=60658
+43132,Nightshock Hood,Head,Mail Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Leatherworking,,425,,BoE,60655,https://www.wowhead.com/wotlk/item=43132,https://www.wowhead.com/wotlk/spell=60655
+43266,Overcast Belt,Waist,Leather Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,425,,BoE,60723,https://www.wowhead.com/wotlk/item=43266,https://www.wowhead.com/wotlk/spell=60723
+43273,Overcast Boots,Feet,Leather Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,425,,BoE,60727,https://www.wowhead.com/wotlk/item=43273,https://www.wowhead.com/wotlk/spell=60727
+43264,Overcast Bracers,Wrist,Leather Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,420,,BoE,60720,https://www.wowhead.com/wotlk/item=43264,https://www.wowhead.com/wotlk/spell=60720
+43263,Overcast Chestguard,Chest,Leather Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,420,,BoE,60718,https://www.wowhead.com/wotlk/item=43263,https://www.wowhead.com/wotlk/spell=60718
+43265,Overcast Handwraps,Hands,Leather Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,425,,BoE,60721,https://www.wowhead.com/wotlk/item=43265,https://www.wowhead.com/wotlk/spell=60721
+43261,Overcast Headguard,Head,Leather Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,420,,BoE,60715,https://www.wowhead.com/wotlk/item=43261,https://www.wowhead.com/wotlk/spell=60715
+43271,Overcast Leggings,Legs,Leather Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,425,,BoE,60725,https://www.wowhead.com/wotlk/item=43271,https://www.wowhead.com/wotlk/spell=60725
+43262,Overcast Spaulders,Shoulder,Leather Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,420,,BoE,60716,https://www.wowhead.com/wotlk/item=43262,https://www.wowhead.com/wotlk/spell=60716
+43258,Purehorn Spaulders,Shoulder,Leather Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Leatherworking,,420,,BoE,60671,https://www.wowhead.com/wotlk/item=43258,https://www.wowhead.com/wotlk/spell=60671
+43129,Razorstrike Breastplate,Chest,Mail Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Leatherworking,,425,,BoE,60649,https://www.wowhead.com/wotlk/item=43129,https://www.wowhead.com/wotlk/spell=60649
+43255,Seafoam Gauntlets,Hands,Leather Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Leatherworking,,420,,BoE,60665,https://www.wowhead.com/wotlk/item=43255,https://www.wowhead.com/wotlk/spell=60665
+43450,Stormhide Belt,Waist,Mail Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,425,,BoE,60750,https://www.wowhead.com/wotlk/item=43450,https://www.wowhead.com/wotlk/spell=60750
+43455,Stormhide Crown,Head,Mail Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,420,,BoE,60743,https://www.wowhead.com/wotlk/item=43455,https://www.wowhead.com/wotlk/spell=60743
+43454,Stormhide Grips,Hands,Mail Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,425,,BoE,60749,https://www.wowhead.com/wotlk/item=43454,https://www.wowhead.com/wotlk/spell=60749
+43453,Stormhide Hauberk,Chest,Mail Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,420,,BoE,60747,https://www.wowhead.com/wotlk/item=43453,https://www.wowhead.com/wotlk/spell=60747
+43456,Stormhide Legguards,Legs,Mail Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,425,,BoE,60751,https://www.wowhead.com/wotlk/item=43456,https://www.wowhead.com/wotlk/spell=60751
+43457,Stormhide Shoulders,Shoulder,Mail Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,420,,BoE,60746,https://www.wowhead.com/wotlk/item=43457,https://www.wowhead.com/wotlk/spell=60746
+43451,Stormhide Stompers,Feet,Mail Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,425,,BoE,60752,https://www.wowhead.com/wotlk/item=43451,https://www.wowhead.com/wotlk/spell=60752
+43452,Stormhide Wristguards,Wrist,Mail Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,420,,BoE,60748,https://www.wowhead.com/wotlk/item=43452,https://www.wowhead.com/wotlk/spell=60748
+43442,Swiftarrow Belt,Waist,Mail Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,425,,BoE,60734,https://www.wowhead.com/wotlk/item=43442,https://www.wowhead.com/wotlk/spell=60734
+43443,Swiftarrow Boots,Feet,Mail Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,425,,BoE,60737,https://www.wowhead.com/wotlk/item=43443,https://www.wowhead.com/wotlk/spell=60737
+43444,Swiftarrow Bracers,Wrist,Mail Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,420,,BoE,60731,https://www.wowhead.com/wotlk/item=43444,https://www.wowhead.com/wotlk/spell=60731
+43446,Swiftarrow Gauntlets,Hands,Mail Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,425,,BoE,60732,https://www.wowhead.com/wotlk/item=43446,https://www.wowhead.com/wotlk/spell=60732
+43445,Swiftarrow Hauberk,Chest,Mail Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,420,,BoE,60730,https://www.wowhead.com/wotlk/item=43445,https://www.wowhead.com/wotlk/spell=60730
+43447,Swiftarrow Helm,Head,Mail Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,420,,BoE,60728,https://www.wowhead.com/wotlk/item=43447,https://www.wowhead.com/wotlk/spell=60728
+43448,Swiftarrow Leggings,Legs,Mail Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,425,,BoE,60735,https://www.wowhead.com/wotlk/item=43448,https://www.wowhead.com/wotlk/spell=60735
+43449,Swiftarrow Shoulderguards,Shoulder,Mail Armor,Rare,187,78,,Wrath of the Lich King,Vendor,Leatherworking,,420,,BoE,60729,https://www.wowhead.com/wotlk/item=43449,https://www.wowhead.com/wotlk/spell=60729
+43130,Virulent Spaulders,Shoulder,Mail Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Leatherworking,,420,,BoE,60651,https://www.wowhead.com/wotlk/item=43130,https://www.wowhead.com/wotlk/spell=60651
+43257,Wildscale Breastplate,Chest,Leather Armor,Rare,187,78,,Wrath of the Lich King,Trainer,Leatherworking,,425,,BoE,60669,https://www.wowhead.com/wotlk/item=43257,https://www.wowhead.com/wotlk/spell=60669
+43565,Durable Nerubhide Cape,Back,Cloaks,Epic,200,80,,Wrath of the Lich King,Trainer,Leatherworking,,440,,BoE,60640,https://www.wowhead.com/wotlk/item=43565,https://www.wowhead.com/wotlk/spell=60640
+43502,Earthgiving Boots,Feet,Leather Armor,Epic,200,80,,Wrath of the Lich King,Vendor,Leatherworking,,440,,BoE,60761,https://www.wowhead.com/wotlk/item=43502,https://www.wowhead.com/wotlk/spell=60761
+43495,Earthgiving Legguards,Legs,Leather Armor,Epic,200,80,,Wrath of the Lich King,Vendor,Leatherworking,,440,,BoE,60760,https://www.wowhead.com/wotlk/item=43495,https://www.wowhead.com/wotlk/spell=60760
+43459,Giantmaim Bracers,Wrist,Mail Armor,Epic,200,80,,Wrath of the Lich King,Vendor,Leatherworking,,440,,BoE,60755,https://www.wowhead.com/wotlk/item=43459,https://www.wowhead.com/wotlk/spell=60755
+43458,Giantmaim Legguards,Legs,Mail Armor,Epic,200,80,,Wrath of the Lich King,Vendor,Leatherworking,,440,,BoE,60754,https://www.wowhead.com/wotlk/item=43458,https://www.wowhead.com/wotlk/spell=60754
+43566,Ice Striker's Cloak,Back,Cloaks,Epic,200,80,,Wrath of the Lich King,Trainer,Leatherworking,,440,,BoE,60637,https://www.wowhead.com/wotlk/item=43566,https://www.wowhead.com/wotlk/spell=60637
+43461,Revenant's Breastplate,Chest,Mail Armor,Epic,200,80,,Wrath of the Lich King,Vendor,Leatherworking,,440,,BoE,60756,https://www.wowhead.com/wotlk/item=43461,https://www.wowhead.com/wotlk/spell=60756
+43469,Revenant's Treads,Feet,Mail Armor,Epic,200,80,,Wrath of the Lich King,Vendor,Leatherworking,,440,,BoE,60757,https://www.wowhead.com/wotlk/item=43469,https://www.wowhead.com/wotlk/spell=60757
+43484,Trollwoven Girdle,Waist,Leather Armor,Epic,200,80,,Wrath of the Lich King,Vendor,Leatherworking,,440,,BoE,60759,https://www.wowhead.com/wotlk/item=43484,https://www.wowhead.com/wotlk/spell=60759
+43481,Trollwoven Spaulders,Shoulder,Leather Armor,Epic,200,80,,Wrath of the Lich King,Vendor,Leatherworking,,440,,BoE,60758,https://www.wowhead.com/wotlk/item=43481,https://www.wowhead.com/wotlk/spell=60758
+44930,Windripper Boots,Feet,Leather Armor,Epic,200,80,,Wrath of the Lich King,Vendor,Leatherworking,,440,,BoE,62176,https://www.wowhead.com/wotlk/item=44930,https://www.wowhead.com/wotlk/spell=62176
+44931,Windripper Leggings,Legs,Leather Armor,Epic,200,80,,Wrath of the Lich King,Vendor,Leatherworking,,440,,BoE,62177,https://www.wowhead.com/wotlk/item=44931,https://www.wowhead.com/wotlk/spell=62177
+43594,Icy Scale Belt,Waist,Mail Armor,Epic,213,80,,Wrath of the Lich King,Vendor,Leatherworking,,420,,BoE,61000,https://www.wowhead.com/wotlk/item=43594,https://www.wowhead.com/wotlk/spell=61000
+43595,Icy Scale Boots,Feet,Mail Armor,Epic,213,80,,Wrath of the Lich King,Vendor,Leatherworking,,420,,BoE,61002,https://www.wowhead.com/wotlk/item=43595,https://www.wowhead.com/wotlk/spell=61002
+43593,Icy Scale Chestguard,Chest,Mail Armor,Epic,213,80,,Wrath of the Lich King,Vendor,Leatherworking,,425,,BoE,60999,https://www.wowhead.com/wotlk/item=43593,https://www.wowhead.com/wotlk/spell=60999
+43592,Polar Boots,Feet,Leather Armor,Epic,213,80,,Wrath of the Lich King,Vendor,Leatherworking,,420,,BoE,60998,https://www.wowhead.com/wotlk/item=43592,https://www.wowhead.com/wotlk/spell=60998
+43591,Polar Cord,Waist,Leather Armor,Epic,213,80,,Wrath of the Lich King,Vendor,Leatherworking,,420,,BoE,60997,https://www.wowhead.com/wotlk/item=43591,https://www.wowhead.com/wotlk/spell=60997
+43590,Polar Vest,Chest,Leather Armor,Epic,213,80,,Wrath of the Lich King,Vendor,Leatherworking,,425,,BoE,60996,https://www.wowhead.com/wotlk/item=43590,https://www.wowhead.com/wotlk/spell=60996
+45553,Belt of Dragons,Waist,Mail Armor,Epic,226,80,,Wrath of the Lich King,Raid Drop,Leatherworking,,450,,BoE,63194,https://www.wowhead.com/wotlk/item=45553,https://www.wowhead.com/wotlk/spell=63194
+47579,Black Chitin Bracers,Wrist,Mail Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Leatherworking,,450,,,67081,https://www.wowhead.com/wotlk/item=47579,https://www.wowhead.com/wotlk/spell=67081
+47580,Black Chitin Bracers,Wrist,Mail Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Leatherworking,,450,,BoE,67137,https://www.wowhead.com/wotlk/item=47580,https://www.wowhead.com/wotlk/spell=67137
+47581,Bracers of Swift Death,Wrist,Leather Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Leatherworking,,450,,,67087,https://www.wowhead.com/wotlk/item=47581,https://www.wowhead.com/wotlk/spell=67087
+47582,Bracers of Swift Death,Wrist,Leather Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Leatherworking,,450,,BoE,67139,https://www.wowhead.com/wotlk/item=47582,https://www.wowhead.com/wotlk/spell=67139
+47576,Crusader's Dragonscale Bracers,Wrist,Mail Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Leatherworking,,450,,BoE,67083,https://www.wowhead.com/wotlk/item=47576,https://www.wowhead.com/wotlk/spell=67083
+47577,Crusader's Dragonscale Bracers,Wrist,Mail Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Leatherworking,,450,,BoE,67143,https://www.wowhead.com/wotlk/item=47577,https://www.wowhead.com/wotlk/spell=67143
+47595,Crusader's Dragonscale Breastplate,Chest,Mail Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Leatherworking,,450,,,67082,https://www.wowhead.com/wotlk/item=47595,https://www.wowhead.com/wotlk/spell=67082
+47596,Crusader's Dragonscale Breastplate,Chest,Mail Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Leatherworking,,450,,BoE,67138,https://www.wowhead.com/wotlk/item=47596,https://www.wowhead.com/wotlk/spell=67138
+47597,Ensorcelled Nerubian Breastplate,Chest,Mail Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Leatherworking,,450,,BoE,67080,https://www.wowhead.com/wotlk/item=47597,https://www.wowhead.com/wotlk/spell=67080
+47598,Ensorcelled Nerubian Breastplate,Chest,Mail Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Leatherworking,,450,,BoE,67136,https://www.wowhead.com/wotlk/item=47598,https://www.wowhead.com/wotlk/spell=67136
+47599,Knightbane Carapace,Chest,Leather Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Leatherworking,,450,,,67086,https://www.wowhead.com/wotlk/item=47599,https://www.wowhead.com/wotlk/spell=67086
+47600,Knightbane Carapace,Chest,Leather Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Leatherworking,,450,,BoE,67142,https://www.wowhead.com/wotlk/item=47600,https://www.wowhead.com/wotlk/spell=67142
+47602,Lunar Eclipse Robes,Chest,Leather Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Leatherworking,,450,,,67084,https://www.wowhead.com/wotlk/item=47602,https://www.wowhead.com/wotlk/spell=67084
+47601,Lunar Eclipse Robes,Chest,Leather Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Leatherworking,,450,,BoE,67140,https://www.wowhead.com/wotlk/item=47601,https://www.wowhead.com/wotlk/spell=67140
+47583,Moonshadow Armguards,Wrist,Leather Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Leatherworking,,450,,,67085,https://www.wowhead.com/wotlk/item=47583,https://www.wowhead.com/wotlk/spell=67085
+47584,Moonshadow Armguards,Wrist,Leather Armor,Epic,245,80,,Wrath of the Lich King,Raid Drop,Leatherworking,,450,,BoE,67141,https://www.wowhead.com/wotlk/item=47584,https://www.wowhead.com/wotlk/spell=67141
+49899,Bladeborn Leggings,Legs,Leather Armor,Epic,264,80,,Wrath of the Lich King,Vendor,Leatherworking,,450,,BoE,70556,https://www.wowhead.com/wotlk/item=49899,https://www.wowhead.com/wotlk/spell=70556
+49894,Blessed Cenarion Boots,Feet,Leather Armor,Epic,264,80,,Wrath of the Lich King,Vendor,Leatherworking,,450,,BoE,70555,https://www.wowhead.com/wotlk/item=49894,https://www.wowhead.com/wotlk/spell=70555
+49901,Draconic Bonesplinter Legguards,Legs,Mail Armor,Epic,264,80,,Wrath of the Lich King,Vendor,Leatherworking,,450,,BoE,70560,https://www.wowhead.com/wotlk/item=49901,https://www.wowhead.com/wotlk/spell=70560
+49896,Earthsoul Boots,Feet,Mail Armor,Epic,264,80,,Wrath of the Lich King,Vendor,Leatherworking,,450,,BoE,70559,https://www.wowhead.com/wotlk/item=49896,https://www.wowhead.com/wotlk/spell=70559
+49895,Footpads of Impending Death,Feet,Leather Armor,Epic,264,80,,Wrath of the Lich King,Vendor,Leatherworking,,450,,BoE,70557,https://www.wowhead.com/wotlk/item=49895,https://www.wowhead.com/wotlk/spell=70557
+49898,Legwraps of Unleashed Nature,Legs,Leather Armor,Epic,264,80,,Wrath of the Lich King,Vendor,Leatherworking,,450,,BoE,70554,https://www.wowhead.com/wotlk/item=49898,https://www.wowhead.com/wotlk/spell=70554
+49900,Lightning-Infused Leggings,Legs,Mail Armor,Epic,264,80,,Wrath of the Lich King,Vendor,Leatherworking,,450,,BoE,70558,https://www.wowhead.com/wotlk/item=49900,https://www.wowhead.com/wotlk/spell=70558
+49897,Rock-Steady Treads,Feet,Mail Armor,Epic,264,80,,Wrath of the Lich King,Vendor,Leatherworking,,450,,BoE,70561,https://www.wowhead.com/wotlk/item=49897,https://www.wowhead.com/wotlk/spell=70561
