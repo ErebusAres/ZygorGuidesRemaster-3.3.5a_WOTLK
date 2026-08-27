@@ -79,6 +79,14 @@ their equip skill, while a BoP target still requires the character to be able to
 craft it. Tooltips distinguish these requirements and show recipe acquisition
 context. Rare recipe sources do not automatically exclude a tradable result.
 
+The optional `Only My Professions` setting (`gear_crafted_my_professions`, off by
+default) also checks crafting skill and crafting specialization for tradable
+items. It is an acquisition preference only: it does not change item scoring,
+auto-equipping, or non-crafted sources. It does not check learned recipes,
+materials, or cooldowns. Disable `Crafted Items` altogether when looking for
+alternatives from the other enabled sources. Changing either filter clears
+cached results and rescans immediately if Gear Finder is visible.
+
 New groups retain expansion provenance separately from character-level bands.
 Sub-80 items are leveling sources unless they are Wrath profession-gated gear
 with skill 400+ and item level 187+. Eligible Wrath endgame crafts are raid sources

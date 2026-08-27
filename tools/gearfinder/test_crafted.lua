@@ -144,6 +144,60 @@ ZGV.db.profile.gear_crafted_pvp_items=nil
 player(80,"MAGE"); assert(not api.valid({profession="Tailoring",minSkill=300,bind="bop"},{}))
 assert(api.valid({profession="Tailoring",minSkill=300,bind="boe"},{}))
 env.GetNumSpellTabs=false; env.GetSpellTabInfo=false; env.GetSpellName=false
+
+-- The reported BoE examples remain eligible by default, but respect the opt-in
+-- crafting preference. Knowing a recipe/material availability is not inferred.
+player(30,"MAGE"); expect(25438,true); expect(20828,true)
+ZGV.db.profile.gear_crafted_my_professions=true
+expect(25438,false); expect(20828,false)
+player(30,"MAGE","Tailoring",450); expect(25438,false); expect(20828,false)
+player(30,"MAGE","Jewelcrafting",19); expect(25438,false)
+player(30,"MAGE","Jewelcrafting",20); expect(25438,true); expect(20828,false)
+player(30,"MAGE","Jewelcrafting",99); expect(20828,false)
+player(30,"MAGE","Jewelcrafting",100); expect(20828,true)
+player(80,"WARRIOR","Engineering",400); expect(44742,false)
+player(80,"WARRIOR","Engineering",420); expect(44742,true)
+locale="ruRU"; env.GearFinder.ProfessionAliases=nil
+player(20,"MAGE","Инженерное дело",99); expect(4368,false)
+player(20,"MAGE","Инженерное дело",100); expect(4368,true)
+locale="enUS"; env.GearFinder.ProfessionAliases=nil
+player(80,"MAGE"); assert(not api.valid({profession="Tailoring",minSkill=0,bind="boe"},{}))
+player(80,"MAGE","Tailoring",300)
+assert(api.valid({profession="Tailoring",minSkill=300,bind="boe"},{}))
+assert(not api.valid({profession="Tailoring",minSkill=301,bind="boe"},{}))
+assert(not api.valid({profession="Tailoring",minSkill=300,bind="boe",specialization="spellfire_tailoring"},{}))
+player(80,"MAGE","Tailoring",300,{[26797]=true})
+assert(api.valid({profession="Tailoring",minSkill=300,bind="boe",specialization="spellfire_tailoring"},{}))
+-- Per-item overrides still win over the containing source.
+assert(api.valid({profession="Blacksmithing",minSkill=450,bind="boe"},{profession="Tailoring",minSkill=300}))
+ZGV.db.profile.gear_crafted_my_professions=false
+player(30,"MAGE"); expect(25438,true); expect(20828,true)
+ZGV.db.profile.gear_crafted_my_professions=nil
+
+-- Exercise the actual option callback and refresh method, not a mock setter.
+local options=read(addon.."/Options.lua")
+assert(options:find("gear_crafted_my_professions = false",1,true))
+local optionStart=assert(options:find("gear_crafted_my_professions = {",1,true))
+local optionEnd=assert(options:find("gear_crafted_leveling_items = {",optionStart,true))
+local optionBlock=options:sub(optionStart,optionEnd-1):gsub(",%s*$", "")
+local refresh=section("function GearFinder:RefreshAfterSourceSettingChange()", "local function GF_TraceBool")
+compile(refresh,"source refresh",env)()
+env.self=ZGV
+env.Setter_Simple=function(_,value) ZGV.db.profile.gear_crafted_my_professions=value end
+ZGV.ItemScore.GearFinder=env.GearFinder
+local visible,cleared,scanned=false,0,0
+env.GearFinder.MainFrame={IsVisible=function() return visible end}
+env.GearFinder.ClearResults=function() cleared=cleared+1 end
+env.GearFinder.ScoreDungeonItems=function() scanned=scanned+1 end
+local option=compile("return {"..optionBlock.."}","profession filter option",env)().gear_crafted_my_professions
+ZGV.db.profile.autogear=true
+assert(not option.disabled())
+option.set({},true); assert(cleared==1 and scanned==0 and ZGV.db.profile.gear_crafted_my_professions)
+visible=true
+option.set({},false); assert(cleared==2 and scanned==1 and not ZGV.db.profile.gear_crafted_my_professions)
+ZGV.db.profile.gear_crafted_items=false; assert(option.disabled()); ZGV.db.profile.gear_crafted_items=nil
+ZGV.db.profile.autogear=false; assert(option.disabled()); ZGV.db.profile.autogear=true
+
 local classBits = {WARRIOR=1,PALADIN=2,HUNTER=4,ROGUE=8,PRIEST=16,DEATHKNIGHT=32,SHAMAN=64,MAGE=128,WARLOCK=256,DRUID=1024}
 local swept=0
 for id, data in pairs(index) do
@@ -172,8 +226,20 @@ for id, data in pairs(index) do
       spells[x.equipSpellID]=nil
       player(x.minLevel,class,x.profession,450,spells); expect(id,false)
     end
+    -- Sweep the opt-in crafting boundary for every imported record too.
+    ZGV.db.profile.gear_crafted_my_professions=true
+    if x.equipSpellID > 0 then spells[x.equipSpellID]=true end
+    local craftRank=math.max(x.minSkill,x.equipSkill,1)
+    player(x.minLevel,class,x.profession,craftRank,spells); expect(id,true)
+    player(x.minLevel,class,x.profession,craftRank-1,spells); expect(id,false)
+    player(x.minLevel,class,nil,nil,spells); expect(id,false)
+    if x.recipeSpecializationSpellID > 0 then
+      spells[x.recipeSpecializationSpellID]=nil
+      player(x.minLevel,class,x.profession,craftRank,spells); expect(id,false)
+    end
+    ZGV.db.profile.gear_crafted_my_professions=nil
     swept=swept+1
   end
 end
 assert(swept == 1421)
-print("PASS: 1437 unique crafted items, 1089 additions, 1421 requirement records; "..assertions.." eligibility cases, locale/spellbook fallback, tooltips, and source policies")
+print("PASS: 1437 unique crafted items, 1089 additions, 1421 requirement records; "..assertions.." eligibility cases, locale/spellbook fallback, tooltips, source policies, profession filter and refresh")

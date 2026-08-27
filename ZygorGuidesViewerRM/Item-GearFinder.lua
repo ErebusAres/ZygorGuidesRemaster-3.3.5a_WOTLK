@@ -509,6 +509,23 @@ end
 local function GF_IsValidCraftedItem(source, itemSource)
 	if type(source) ~= "table" then return false, "missing crafted source" end
 	itemSource = itemSource or {}
+	-- Optional acquisition preference, not an equip restriction or recipe-known check.
+	if ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_crafted_my_professions == true then
+		local profession = itemSource.profession or source.profession
+		local craftSkill = math.max(tonumber(itemSource.minSkill or source.minSkill) or 0, 1)
+		if GF_GetPlayerProfessionSkill(profession) < craftSkill then
+			return false, ("crafting filter: need %s %d"):format(tostring(profession or "profession"), craftSkill)
+		end
+		local specialization
+		if itemSource.requirementsVersion == 2 then
+			specialization = tonumber(itemSource.recipeSpecializationSpellID) or 0
+		else
+			specialization = itemSource.specialization or source.specialization
+		end
+		if not GF_HasPlayerProfessionSpecialization(specialization) then
+			return false, "crafting filter: need specialization " .. tostring(specialization)
+		end
+	end
 	local professionOnly = itemSource.professionOnly
 	if professionOnly == nil then professionOnly = source.professionOnly end
 	local bind = itemSource.bind or source.bind
@@ -2503,6 +2520,7 @@ function GearFinder:ScoreDungeonItems(force)
 	GearFinder.DebugSummary.gear3 = ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_3 and true or false
 	GearFinder.DebugSummary.gear4 = ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_4 and true or false
 	GearFinder.DebugSummary.gearCraftedItems = ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_crafted_items ~= false
+	GearFinder.DebugSummary.gearCraftedMyProfessions = ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_crafted_my_professions == true
 	GearFinder.DebugSummary.gearCraftedLevelingItems = ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_crafted_leveling_items ~= false
 	GearFinder.DebugSummary.gearCraftedPvpItems = ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_crafted_pvp_items ~= false
 	GearFinder.DebugSummary.professionSkills = GF_CompactMapKeys(GearFinder.PlayerProfessionSkills)

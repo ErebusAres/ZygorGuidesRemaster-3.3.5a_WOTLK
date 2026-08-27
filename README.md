@@ -171,6 +171,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 221 - 3.0.221
+
+- Added an optional `Only My Professions` Gear Finder filter based on @SnaxxNZ's testing feedback. It checks crafting profession, skill, and specialization without changing default BoE eligibility or gear scores.
+- Clarified that the filter does not verify learned recipes or materials, and that disabling `Crafted Items` shows recommendations from the remaining enabled sources.
+- Added regression coverage for the filter and its default-off behavior. Updated addon version metadata to 3.0.221.
+
 ### Revision 220 - 3.0.220
 
 - Added 1,089 distinct crafted items across Alchemy, Blacksmithing, Engineering, Jewelcrafting, Leatherworking, and Tailoring from @SnaxxNZ's researched contribution.
@@ -206,12 +212,6 @@ This addon is fully open source and can be inspected before use.
 - Limited future Gear Finder items to the same five-level look-ahead window used for future dungeons.
 - Prevented low-level characters from being directed to a nearby-entry-level dungeon for drops requiring dozens of additional levels.
 - Updated addon version metadata to 3.0.216.
-
-### Revision 215 - 3.0.215
-
-- Added 63 verified WotLK 3.3.5 Russian quest-name corrections contributed by @mikki33 in pull request #96.
-- Kept the corrections in the maintained locale override layer so future AzerothCore database regeneration cannot erase them.
-- Updated addon version metadata to 3.0.215.
 
 ## Notes
 
