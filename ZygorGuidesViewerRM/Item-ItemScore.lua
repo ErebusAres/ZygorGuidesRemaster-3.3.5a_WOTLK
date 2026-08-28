@@ -3101,15 +3101,21 @@ function ItemScore:GetItemDetailsQueued(itemlink,force)
 			if dbitem then
 				bump_db_counter("live", itemID)
 			end
+			-- DB keys are canonical (ARMOR), while GetItemStats uses aliases
+			-- (RESISTANCE0_NAME). Merge by canonical name to avoid double scoring.
+			-- Live totals replace stale DB values, including lower/zero values;
+			-- retain fallbacks only for stats the API omits.
+			local liveStats = {}
 			for i,v in pairs(blizzstats) do
 				if type(v) == "number" then
-					if stats[i] == nil then
-						add_stat(stats, i, v)
-					else
-						stats[i] = math.max(stats[i], v)
-					end
-					blizz_present_normalized[ItemScore:NormaliseStatName(i)] = true
+					local name = ItemScore:NormaliseStatName(i)
+					-- Some clients expose two aliases for the same total.
+					liveStats[name] = math.max(liveStats[name] or v, v)
 				end
+			end
+			for name,value in pairs(liveStats) do
+				stats[name] = value
+				blizz_present_normalized[name] = true
 			end
 		end
 

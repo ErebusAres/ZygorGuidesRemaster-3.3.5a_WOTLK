@@ -171,6 +171,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 222 - 3.0.222
+
+- Fixed armor being counted twice when the item database and game API supplied different names for the same stat, inflating tank upgrade recommendations.
+- Canonicalized live stat names before merging and made live values replace database fallbacks, including lower values. Preserved tooltip-only contributions and unavailable-stat fallbacks.
+- Added regression coverage reproducing the inflated Dalaran Sentry Wristbraces Blood Tank score and checking active/alternate-profile scoring consistency. Updated addon version metadata to 3.0.222.
+
 ### Revision 221 - 3.0.221
 
 - Added an optional `Only My Professions` Gear Finder filter based on @SnaxxNZ's testing feedback. It checks crafting profession, skill, and specialization without changing default BoE eligibility or gear scores.
@@ -206,12 +212,6 @@ This addon is fully open source and can be inspected before use.
 - Preserved each recipe's required Tailoring skill, recipe spell ID, item level requirement, and binding; BoP crafts remain restricted to characters with the required Tailoring skill.
 - Cross-checked every contributed row against the addon item database and AtlasLoot 3.3.5 crafting data.
 - Updated addon version metadata to 3.0.217.
-
-### Revision 216 - 3.0.216
-
-- Limited future Gear Finder items to the same five-level look-ahead window used for future dungeons.
-- Prevented low-level characters from being directed to a nearby-entry-level dungeon for drops requiring dozens of additional levels.
-- Updated addon version metadata to 3.0.216.
 
 ## Notes
 
