@@ -1477,7 +1477,7 @@ for _, source in pairs(sources) do
     local extra = imported[itemid]
     if extra then
       for key, value in pairs(extra) do
-        if key ~= "sourceGroup" and key ~= "expansionLevel" then entry[key] = value end
+        if key ~= "sourceGroup" then entry[key] = value end
       end
       seen[itemid] = true
     end

@@ -171,6 +171,13 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 223 - 3.0.223
+
+- Added default-on Classic, TBC, and WotLK crafted-item filters to Gear Finder, based on @SnaxxNZ's progression-realm feedback. The filters use introduction expansion rather than character-level bands and do not claim automatic server-module detection.
+- Kept low-level later-expansion recipes correctly gated when their expansion is disabled, including Thick Bronze Darts (TBC) and Spidersilk Drape (WotLK).
+- Reused completed Gear Finder scores on unchanged reopen instead of rebuilding stat weights, rescoring equipment, and scanning all crafted candidates every time. Inventory, equipment, build, weight, level, and source changes retain their existing invalidation paths.
+- Added expansion-boundary, option-refresh, and repeated-open cache regressions. Updated addon version metadata to 3.0.223.
+
 ### Revision 222 - 3.0.222
 
 - Fixed armor being counted twice when the item database and game API supplied different names for the same stat, inflating tank upgrade recommendations.
@@ -205,13 +212,6 @@ This addon is fully open source and can be inspected before use.
 - Added verified tank-oriented weights prioritizing the defense cap, Stamina, Armor, and avoidance while retaining lower threat values for hit, expertise, Strength, and weapon damage.
 - Confirmed Feral Druid was already split into DPS and tank profiles; other supported tank/healer hybrids use distinct talent trees and do not need an additional same-tree role variant.
 - Updated addon version metadata to 3.0.218.
-
-### Revision 217 - 3.0.217
-
-- Added 163 Classic Tailoring items spanning character levels 5-60 to Gear Finder's crafted leveling source, based on the dataset contributed by @SnaxxNZ.
-- Preserved each recipe's required Tailoring skill, recipe spell ID, item level requirement, and binding; BoP crafts remain restricted to characters with the required Tailoring skill.
-- Cross-checked every contributed row against the addon item database and AtlasLoot 3.3.5 crafting data.
-- Updated addon version metadata to 3.0.217.
 
 ## Notes
 

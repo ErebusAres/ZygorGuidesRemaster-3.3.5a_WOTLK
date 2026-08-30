@@ -66,7 +66,7 @@ local function section(first, last)
   local a = assert(finder:find(first, 1, true)); local b=assert(finder:find(last,a+1,true)); return finder:sub(a,b-1)
 end
 local helpers = section("local function GF_NormalizeProfessionName", "local function GF_CompactMapKeys")
-  ..section("local function GF_IsValidCraftedSource", "local function GF_HasAnySourceEnabled")
+  ..section("local CRAFTED_EXPANSION_SETTING", "local function GF_HasAnySourceEnabled")
   ..section("local function GF_AddVendorFields", "local function GF_FormatSpecialSource")
   ..section("local function GF_GetSourceTooltipLines", "local function GF_GetDungeonLeafName")
   .."\nreturn {valid=GF_IsValidCraftedItem, source=GF_IsValidCraftedSource, copy=GF_AddVendorFields, line=GF_FormatCraftedLine, tooltip=GF_GetSourceTooltipLines}"
@@ -90,6 +90,25 @@ player(20,"MAGE","Engineering",100); expect(4368,true)
 player(10,"MAGE"); assert(api.source(index[20906].source)); expect(20906,true)
 assert(index[20906].source.expansionLevel == 1)
 player(9,"MAGE"); expect(20906,false)
+
+-- Player-controlled expansion preferences follow introduction expansion,
+-- independently of the item's much lower character-level requirement.
+player(20,"MAGE")
+assert(index[29201].item.expansionLevel == 1 and index[29201].item.minLevel == 15)
+assert(index[45626].item.expansionLevel == 2 and index[45626].item.minLevel == 19)
+expect(29201,true); expect(45626,true)
+ZGV.db.profile.gear_crafted_tbc_items=false
+assert(api.source(index[29201].source)); expect(29201,false); expect(45626,true)
+ZGV.db.profile.gear_crafted_tbc_items=nil
+ZGV.db.profile.gear_crafted_wotlk_items=false
+assert(api.source(index[45626].source), "containing source remains Classic")
+expect(29201,true); expect(45626,false)
+assert(not api.valid({expansionLevel=0,minLevel=1},{expansionLevel=2,minLevel=1}), "item expansion override must win")
+ZGV.db.profile.gear_crafted_wotlk_items=nil
+ZGV.db.profile.gear_crafted_classic_items=false
+assert(api.source({expansionLevel=0,category="leveling",minLevel=1}))
+assert(not api.valid({expansionLevel=0,minLevel=1},{}))
+ZGV.db.profile.gear_crafted_classic_items=nil
 player(80,"WARRIOR","Engineering",399); expect(44742,false)
 player(80,"WARRIOR","Engineering",400); expect(44742,true)
 player(80,"WARRIOR","Engineering",419); expect(44742,true)
@@ -176,6 +195,10 @@ ZGV.db.profile.gear_crafted_my_professions=nil
 
 -- Exercise the actual option callback and refresh method, not a mock setter.
 local options=read(addon.."/Options.lua")
+for _, setting in ipairs({"gear_crafted_classic_items", "gear_crafted_tbc_items", "gear_crafted_wotlk_items"}) do
+  assert(options:find(setting.." = true",1,true), setting.." default")
+  assert(options:find(setting.." = {",1,true), setting.." option")
+end
 assert(options:find("gear_crafted_my_professions = false",1,true))
 local optionStart=assert(options:find("gear_crafted_my_professions = {",1,true))
 local optionEnd=assert(options:find("gear_crafted_leveling_items = {",optionStart,true))
@@ -197,6 +220,20 @@ visible=true
 option.set({},false); assert(cleared==2 and scanned==1 and not ZGV.db.profile.gear_crafted_my_professions)
 ZGV.db.profile.gear_crafted_items=false; assert(option.disabled()); ZGV.db.profile.gear_crafted_items=nil
 ZGV.db.profile.autogear=false; assert(option.disabled()); ZGV.db.profile.autogear=true
+
+-- Expansion options use the same immediate-refresh callback and are disabled
+-- only when Gear Advisor or all crafted sources are disabled.
+local classicStart=assert(options:find("gear_crafted_classic_items = {",1,true))
+local classicEnd=assert(options:find("gear_crafted_tbc_items = {",classicStart,true))
+local classicBlock=options:sub(classicStart,classicEnd-1):gsub(",%s*$", "")
+env.Setter_Simple=function(_,value) ZGV.db.profile.gear_crafted_classic_items=value end
+cleared,scanned=0,0; visible=false
+local classicOption=compile("return {"..classicBlock.."}","classic craft option",env)().gear_crafted_classic_items
+assert(not classicOption.disabled())
+classicOption.set({},false); assert(cleared==1 and scanned==0 and ZGV.db.profile.gear_crafted_classic_items==false)
+visible=true
+classicOption.set({},true); assert(cleared==2 and scanned==1 and ZGV.db.profile.gear_crafted_classic_items==true)
+ZGV.db.profile.gear_crafted_items=false; assert(classicOption.disabled()); ZGV.db.profile.gear_crafted_items=nil
 
 local classBits = {WARRIOR=1,PALADIN=2,HUNTER=4,ROGUE=8,PRIEST=16,DEATHKNIGHT=32,SHAMAN=64,MAGE=128,WARLOCK=256,DRUID=1024}
 local swept=0
@@ -242,4 +279,4 @@ for id, data in pairs(index) do
   end
 end
 assert(swept == 1421)
-print("PASS: 1437 unique crafted items, 1089 additions, 1421 requirement records; "..assertions.." eligibility cases, locale/spellbook fallback, tooltips, source policies, profession filter and refresh")
+print("PASS: 1437 unique crafted items, 1089 additions, 1421 requirement records; "..assertions.." eligibility cases, locale/spellbook fallback, tooltips, source policies, profession/expansion filters and refresh")

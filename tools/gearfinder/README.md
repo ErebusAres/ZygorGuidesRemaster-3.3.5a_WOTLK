@@ -38,6 +38,7 @@ From the repository root (Python 3.10+):
 py -3 -B tools/gearfinder/import_crafted.py
 py -3 -B tools/gearfinder/import_crafted.py --check
 lua tools/gearfinder/test_crafted.lua ZygorGuidesViewerRM
+lua tools/gearfinder/test_open_cache.lua ZygorGuidesViewerRM
 ```
 
 For exact Lua 5.1 validation, `test_lua51.py` uses the optional `lupa.lua51`
@@ -55,8 +56,10 @@ performs network requests or executes the downloaded SQL.
 `Data-WOTLK/GearFinderCraftedExpanded.lua` is generated and loads immediately after
 the existing curated source table. It adds 1,089 distinct items and updates the
 requirements on 332 existing entries. The combined finder has 1,437 distinct
-crafted items. Existing group membership, category, expansion, and source-level
-minimum levels remain unchanged; the import never duplicates an existing item.
+crafted items. Existing group membership, category, and source-level minimum
+levels remain unchanged; verified per-item introduction expansions are retained
+for filtering even when an older curated group used a different expansion tag.
+The import never duplicates an existing item.
 
 Version-2 item records separate these fields:
 
@@ -86,6 +89,19 @@ auto-equipping, or non-crafted sources. It does not check learned recipes,
 materials, or cooldowns. Disable `Crafted Items` altogether when looking for
 alternatives from the other enabled sources. Changing either filter clears
 cached results and rescans immediately if Gear Finder is visible.
+
+The `Classic Crafts`, `TBC Crafts`, and `WotLK Crafts` preferences are enabled by
+default. They filter by the expansion in which the recipe/item was introduced,
+not by the item's required character level. This lets progression-realm players
+manually exclude later-expansion crafts without claiming automatic server-module
+detection. For example, Thick Bronze Darts remain tagged TBC and Spidersilk
+Drape remains tagged WotLK despite their level-15/19 requirements.
+
+Repeatedly opening Gear Finder reuses completed item scores and equipped-item
+state. Inventory, equipment, level, specialization, stat-weight, and source-option
+changes still invalidate the relevant results through their existing refresh
+paths. `test_open_cache.lua` protects this boundary so an unchanged reopen does
+not regress into a full crafted-item rescan.
 
 New groups retain expansion provenance separately from character-level bands.
 Sub-80 items are leveling sources unless they are Wrath profession-gated gear
@@ -117,4 +133,5 @@ The regression suite loads the actual generated data and extracts the actual
 finder helpers. It checks every version-2 record's skill and level boundaries,
 equip specializations, class restrictions, non-crafter BoEs, BoP acquisition,
 Russian skill names, the 3.3.5 spellbook fallback, metadata propagation, tooltips,
-and unchanged source/progression behavior. In-client testing is still required.
+unchanged source/progression behavior, expansion preferences, and repeated-open
+result reuse. In-client testing is still required.

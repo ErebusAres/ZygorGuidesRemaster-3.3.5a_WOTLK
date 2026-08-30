@@ -156,7 +156,7 @@ def generate(rows):
     lines += ["}", "local legacy = " + legacy_lua, "local seen = {}", "for _, source in pairs(sources) do",
         "  for itemid, entry in pairs(source.items or {}) do", "    local extra = imported[itemid]",
         "    if extra then", "      for key, value in pairs(extra) do",
-        '        if key ~= "sourceGroup" and key ~= "expansionLevel" then entry[key] = value end',
+        '        if key ~= "sourceGroup" then entry[key] = value end',
         "      end", "      seen[itemid] = true", "    end", "    if legacy[itemid] then",
         '      entry.recipeSource = "Legacy/retired recipe - check for an established crafter or server availability"',
         "    end", "  end", "end",

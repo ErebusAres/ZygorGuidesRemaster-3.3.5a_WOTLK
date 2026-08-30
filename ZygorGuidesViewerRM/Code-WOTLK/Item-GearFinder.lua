@@ -159,10 +159,14 @@ function GearFinder:ShowFinder()
 	end
 
 	if ItemScore and ItemScore.Upgrades and ItemScore.Upgrades.ScoreEquippedItems then
-		if ItemScore.SetStatWeights then
+		if ItemScore.EnsureActiveRuleSet then
+			ItemScore:EnsureActiveRuleSet()
+		elseif not ItemScore.ActiveRuleSet and ItemScore.SetStatWeights then
 			ItemScore:SetStatWeights()
 		end
-		ItemScore.Upgrades:ScoreEquippedItems()
+		if not ItemScore.Upgrades.ScoredEquippedItems then
+			ItemScore.Upgrades:ScoreEquippedItems()
+		end
 	end
 
 	ZygorGearFinder:Show()

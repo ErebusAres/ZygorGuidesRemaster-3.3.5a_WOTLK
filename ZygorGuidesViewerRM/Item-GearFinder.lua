@@ -467,6 +467,19 @@ local function GF_IsValidVendorSource(source)
 	return true
 end
 
+local CRAFTED_EXPANSION_SETTING = {
+	[0] = "gear_crafted_classic_items",
+	[1] = "gear_crafted_tbc_items",
+	[2] = "gear_crafted_wotlk_items",
+}
+
+local function GF_IsCraftedExpansionEnabled(expansionLevel)
+	local setting = CRAFTED_EXPANSION_SETTING[tonumber(expansionLevel)]
+	if not setting then return true end
+	local profile = ZGV.db and ZGV.db.profile
+	return not profile or profile[setting] ~= false
+end
+
 local function GF_IsValidCraftedSource(source)
 	if not source then return false, "missing crafted source" end
 	if ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_crafted_items == false then
@@ -509,6 +522,11 @@ end
 local function GF_IsValidCraftedItem(source, itemSource)
 	if type(source) ~= "table" then return false, "missing crafted source" end
 	itemSource = itemSource or {}
+	local expansionLevel = itemSource.expansionLevel
+	if expansionLevel == nil then expansionLevel = source.expansionLevel end
+	if not GF_IsCraftedExpansionEnabled(expansionLevel) then
+		return false, "crafted expansion filtered out " .. tostring(expansionLevel)
+	end
 	-- Optional acquisition preference, not an equip restriction or recipe-known check.
 	if ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_crafted_my_professions == true then
 		local profession = itemSource.profession or source.profession
@@ -2520,6 +2538,9 @@ function GearFinder:ScoreDungeonItems(force)
 	GearFinder.DebugSummary.gear3 = ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_3 and true or false
 	GearFinder.DebugSummary.gear4 = ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_4 and true or false
 	GearFinder.DebugSummary.gearCraftedItems = ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_crafted_items ~= false
+	GearFinder.DebugSummary.gearCraftedClassicItems = ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_crafted_classic_items ~= false
+	GearFinder.DebugSummary.gearCraftedTbcItems = ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_crafted_tbc_items ~= false
+	GearFinder.DebugSummary.gearCraftedWotlkItems = ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_crafted_wotlk_items ~= false
 	GearFinder.DebugSummary.gearCraftedMyProfessions = ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_crafted_my_professions == true
 	GearFinder.DebugSummary.gearCraftedLevelingItems = ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_crafted_leveling_items ~= false
 	GearFinder.DebugSummary.gearCraftedPvpItems = ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_crafted_pvp_items ~= false
@@ -3741,13 +3762,16 @@ function GearFinder:GetTraceLines(input)
 		GF_TraceBool(GearFinder.ResultsReady),
 		GF_TraceBool(GearFinder.DungeonItemsScored)
 	)
-	lines[#lines + 1] = ("ZGFT settings normal=%s heroic=%s raid10=%s raid25=%s tierProgression=%s crafted=%s currency=%s"):format(
+	lines[#lines + 1] = ("ZGFT settings normal=%s heroic=%s raid10=%s raid25=%s tierProgression=%s crafted=%s craftedExp=%s/%s/%s currency=%s"):format(
 		GF_TraceBool(ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_1),
 		GF_TraceBool(ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_2),
 		GF_TraceBool(ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_3),
 		GF_TraceBool(ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_4),
 		GF_TraceBool(ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_tier_progression_mode),
 		GF_TraceBool(not (ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_crafted_items == false)),
+		GF_TraceBool(not (ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_crafted_classic_items == false)),
+		GF_TraceBool(not (ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_crafted_tbc_items == false)),
+		GF_TraceBool(not (ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_crafted_wotlk_items == false)),
 		GF_TraceBool(not (ZGV.db and ZGV.db.profile and ZGV.db.profile.gear_currency_rewards == false))
 	)
 
