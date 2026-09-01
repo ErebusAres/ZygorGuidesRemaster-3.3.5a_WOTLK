@@ -105,6 +105,7 @@
 	<Script file="Achievements\A-Loremaster-EasternKingdoms.lua"/>
 	<Script file="Achievements\A-Loremaster-Kalimdor.lua"/>
 	<Script file="Achievements\A-Loremaster-Northrend.lua"/>
+	<Script file="Achievements\H-Loremaster-Northrend.lua"/>
 	<Script file="Leveling\BloodmystIsleTBC.lua"/>
 	<Script file="Dungeons\DanatonQuestInstancesA.lua"/>
 	<Script file="Dungeons\DanatonQuestInstancesH.lua"/>

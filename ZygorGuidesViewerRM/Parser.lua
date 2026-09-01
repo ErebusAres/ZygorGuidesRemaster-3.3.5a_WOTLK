@@ -589,6 +589,46 @@ function me:ParseEntry(text)
 	local dailyquests = ZGV.dailyQuests
 
 	local function COLOR_LOC(s) return "|cffffee77"..s.."|r" end
+	local function CloneLeechedStep(sourceStep)
+		local clonedStep = { goals = {} }
+		setmetatable(clonedStep,ZGV.StepProto_mt)
+
+		for key,value in pairs(sourceStep) do
+			if key~="goals" and key~="parentGuide" and key~="num" then
+				if type(value)~="function" or key=="condition_visible" or key=="condition_until" then
+					clonedStep[key]=value
+				end
+			end
+		end
+
+		clonedStep.parentGuide=guide
+		clonedStep.num=#guide.steps+1
+
+		for _,sourceGoal in ipairs(sourceStep.goals or {}) do
+			local clonedGoal = {}
+			setmetatable(clonedGoal,ZGV.GoalProto_mt)
+			for key,value in pairs(sourceGoal) do
+				if key~="parentStep" and key~="num" then
+					if type(value)~="function" or key=="condition_visible" or key=="condition_complete" then
+						clonedGoal[key]=value
+					end
+				end
+			end
+			clonedGoal.parentStep=clonedStep
+			clonedGoal.num=#clonedStep.goals+1
+			clonedStep.goals[#clonedStep.goals+1]=clonedGoal
+			if clonedGoal.questid then
+				guide.quests[clonedGoal.questid]=clonedStep.level
+			end
+		end
+
+		guide.steps[#guide.steps+1]=clonedStep
+		if clonedStep.label then
+			guide.labels=guide.labels or {}
+			guide.labels[clonedStep.label]=clonedStep.num
+		end
+		return clonedStep
+	end
 
 	local _
 
@@ -693,8 +733,47 @@ function me:ParseEntry(text)
 				cmd = cmd:gsub("^%.+","")
 			end
 
+			-- guide composition (legacy retail guide syntax)
+			if cmd=="leechsteps" then
+				local sourceTitle,fromStep,toStep = params:match('^"(.-)"%s+(%d+)%s*%-%s*(%d+)%s*$')
+				if not sourceTitle then sourceTitle=params:match('^"(.-)"%s*$') end
+				if not sourceTitle then
+					return nil,"Invalid leechsteps syntax",linecount,line
+				end
+				sourceTitle=sourceTitle:gsub("\\\\","\\")
+				fromStep=tonumber(fromStep) or 1
+				toStep=tonumber(toStep) or 999999
+				if fromStep<1 or toStep<fromStep then
+					return nil,"Invalid leechsteps range",linecount,line
+				end
+
+				local sourceGuide=ZGV:GetGuideByTitle(sourceTitle)
+				if not sourceGuide then
+					return nil,"Cannot leech missing guide: "..sourceTitle,linecount,line
+				end
+				if sourceGuide._parsing then
+					return nil,"Recursive leechsteps dependency: "..sourceTitle,linecount,line
+				end
+				local parsedGuide,parsedOK=ZGV:EnsureGuideParsed(sourceGuide,true)
+				if not parsedOK or not parsedGuide or not parsedGuide.steps then
+					return nil,"Cannot parse leeched guide: "..sourceTitle,linecount,line
+				end
+
+				local cloned=0
+				for sourceIndex=fromStep,toStep do
+					local sourceStep=parsedGuide.steps[sourceIndex]
+					if not sourceStep then break end
+					step=CloneLeechedStep(sourceStep)
+					cloned=cloned+1
+				end
+				if cloned==0 then
+					return nil,"leechsteps range contains no steps: "..sourceTitle,linecount,line
+				end
+				prevmap=step.map or prevmap
+				prevlevel=tonumber(step.level) or prevlevel
+
 			-- guide parameters
-			if cmd=="defaultfor" then
+			elseif cmd=="defaultfor" then
 				guide[cmd]=params
 			elseif cmd=="next" and chunkcount==1 and not step then
 				local gnext = params:gsub('^"(.-)"$',"%1")
@@ -1321,7 +1400,7 @@ function me:ParseEntry(text)
 			or cmd=="pet" or cmd=="spec" or cmd=="class" or cmd=="grouprole" or cmd=="region" or cmd=="minizone"
 			or cmd=="model" or cmd=="modelnpc" or cmd=="modeldisplay" or cmd=="indoors" or cmd=="outdoors" or cmd=="sugGroup"
 			or cmd=="completion" or cmd=="achieveid" or cmd=="blockstart" or cmd=="blockend" or cmd=="override" or cmd=="more"
-			or cmd=="leechsteps" or cmd=="shared_origin" or cmd=="getquestonmap" or cmd=="showtext" then
+			or cmd=="shared_origin" or cmd=="getquestonmap" or cmd=="showtext" then
 				-- Retail-only parser tags not yet fully supported by this runtime.
 				-- Parsed as no-op to avoid polluting the goal text list.
 			elseif cmd=="instant" then  -- when we HAVE to use the title, for instant-complete quests.

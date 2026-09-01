@@ -171,6 +171,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 224 - 3.0.224
+
+- Added Horde Northrend Loremaster guides for all eight zone achievements, based on @aleloh's request and composed from the full-zone Horde routes already included with the addon.
+- Restored `leechsteps` guide composition with lazy source parsing, cloned steps and goals, range validation, and useful errors for missing or recursive sources.
+- Verified that each reused route contains at least the Horde achievement's required number of unique quest turn-ins. No external guide text was imported; Classic and incomplete Outland coverage remain follow-up work.
+
 ### Revision 223 - 3.0.223
 
 - Added default-on Classic, TBC, and WotLK crafted-item filters to Gear Finder, based on @SnaxxNZ's progression-realm feedback. The filters use introduction expansion rather than character-level bands and do not claim automatic server-module detection.
@@ -204,14 +210,6 @@ This addon is fully open source and can be inspected before use.
 - Added short aliases `/ztank`, `/zdps`, `/zheal`, `/zsupport`, `/zsup`, and `/zrole auto` alongside the full `/zygor...` commands.
 - Mapped support commands to the appropriate healing profile because WotLK support effects do not use a separate gear-stat role.
 - Updated addon version metadata to 3.0.219.
-
-### Revision 218 - 3.0.218
-
-- Split Death Knight Gear Advisor profiles into Blood, Frost, and Unholy DPS and tank variants instead of treating every detected tree as a DPS build.
-- Added a prominent per-talent-group Active Gear Profile selector and `/zygortank`, `/zygordps`, and `/zygorrole auto` shortcuts.
-- Added verified tank-oriented weights prioritizing the defense cap, Stamina, Armor, and avoidance while retaining lower threat values for hit, expertise, Strength, and weapon damage.
-- Confirmed Feral Druid was already split into DPS and tank profiles; other supported tank/healer hybrids use distinct talent trees and do not need an additional same-tree role variant.
-- Updated addon version metadata to 3.0.218.
 
 ## Notes
 
