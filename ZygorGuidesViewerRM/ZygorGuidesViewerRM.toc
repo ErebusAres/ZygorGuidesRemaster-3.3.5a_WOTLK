@@ -15,9 +15,33 @@
 ## X-eMail: zygor@zygorguides.com
 ## X-Website: http://zygorguides.com/
 ## X-License: GPL
-## Version: 3.0.225
+## Version: 3.0.226
 
-embeds.xml
+# Load bundled libraries directly from the TOC. Some 3.3.5a clients do not
+# reliably process the extra nested Include layer in embeds.xml.
+libs\LibStub\LibStub.lua
+Libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
+Libs\AceAddon-3.0\AceAddon-3.0.xml
+Libs\AceGUI-3.0\AceGUI-3.0.xml
+Libs\AceConfig-3.0\AceConfig-3.0.xml
+Libs\AceEvent-3.0\AceEvent-3.0.xml
+Libs\AceDB-3.0\AceDB-3.0.xml
+Libs\AceDBOptions-3.0\AceDBOptions-3.0.xml
+Libs\AceHook-3.0\AceHook-3.0.xml
+Libs\AceLocale-3.0\AceLocale-3.0.xml
+Libs\AceConsole-3.0\AceConsole-3.0.xml
+Libs\AceTimer-3.0\AceTimer-3.0.xml
+Libs\LibBabble-Zone-3.0\lib.xml
+Libs\LibBabble-SubZone-3.0\lib.xml
+Libs\LibBabble-Faction-3.0\lib.xml
+Libs\LibBetterBlizzOptions-1.0\lib.xml
+Libs\LibGratuity-3.0\lib.xml
+Libs\LibCamera-1.0\lib.xml
+Libs\LibTaxi-1.0\lib.xml
+Libs\LibRover-1.0\lib.xml
+Libs\Astrolabe\load.xml
+Libs\UIDropDownFork.xml
+Libs\EasyFork.lua
 
 Localization\load.xml
 Localization\names.xml

@@ -171,6 +171,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 226 - 3.0.226
+
+- Fixed a startup failure where a 3.3.5a client could reach the main addon files without registering the bundled Ace3 libraries, causing `Cannot find a library instance of "AceAddon-3.0"` followed by many misleading Gold UI and guide errors.
+- Changed the TOC to load the same bundled library manifests directly instead of relying on an additional nested `embeds.xml` layer. No separate Ace3 installation is required.
+- Preserved the existing library order and verified every direct TOC path, the changed Lua syntax, and the maintained guide, ItemScore, and Gear Finder regressions.
+
 ### Revision 225 - 3.0.225
 
 - Added a repeatable Necklace Repair guide under `Profession Guides → Jewelcrafting`, based on Advocaite's contributed route and credited in the guide metadata.
@@ -201,14 +207,6 @@ This addon is fully open source and can be inspected before use.
 - Added an optional `Only My Professions` Gear Finder filter based on @SnaxxNZ's testing feedback. It checks crafting profession, skill, and specialization without changing default BoE eligibility or gear scores.
 - Clarified that the filter does not verify learned recipes or materials, and that disabling `Crafted Items` shows recommendations from the remaining enabled sources.
 - Added regression coverage for the filter and its default-off behavior. Updated addon version metadata to 3.0.221.
-
-### Revision 220 - 3.0.220
-
-- Added 1,089 distinct crafted items across Alchemy, Blacksmithing, Engineering, Jewelcrafting, Leatherworking, and Tailoring from @SnaxxNZ's researched contribution.
-- Separated crafting skill and specialization requirements from those needed to equip the finished item; ordinary tradable crafts remain available to non-crafters.
-- Added recipe-source and crafting/equip information to crafted tooltips, localized profession recognition, and six previously missing Alchemy trinket records.
-- Preserved existing source/progression filters, excluded unverified recipe variants, and documented legacy recipe availability.
-- Added a pinned, reproducible offline data importer and regression tests. Updated addon version metadata to 3.0.220.
 
 ## Notes
 
