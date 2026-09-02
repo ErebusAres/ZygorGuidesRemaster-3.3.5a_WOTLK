@@ -171,6 +171,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 225 - 3.0.225
+
+- Added a repeatable Necklace Repair guide under `Profession Guides → Jewelcrafting`, based on Advocaite's contributed route and credited in the guide metadata.
+- Corrected the requirements to level 77 and Jewelcrafting 375, and clearly distinguished the dropped starter Damaged Necklace (43297) from the quest-provided repair item with the same name (43299).
+- Preserved in-progress repairs, looped automatically while another starter necklace remains, and added parser/state regressions for level, profession, quest, repaired-item, and repeat/stop behavior.
+
 ### Revision 224 - 3.0.224
 
 - Added Horde Northrend Loremaster guides for all eight zone achievements, based on @aleloh's request and composed from the full-zone Horde routes already included with the addon.
@@ -203,13 +209,6 @@ This addon is fully open source and can be inspected before use.
 - Added recipe-source and crafting/equip information to crafted tooltips, localized profession recognition, and six previously missing Alchemy trinket records.
 - Preserved existing source/progression filters, excluded unverified recipe variants, and documented legacy recipe availability.
 - Added a pinned, reproducible offline data importer and regression tests. Updated addon version metadata to 3.0.220.
-
-### Revision 219 - 3.0.219
-
-- Expanded Gear Advisor role commands across supported tank, DPS, and healer classes while retaining the active talent group's independent override.
-- Added short aliases `/ztank`, `/zdps`, `/zheal`, `/zsupport`, `/zsup`, and `/zrole auto` alongside the full `/zygor...` commands.
-- Mapped support commands to the appropriate healing profile because WotLK support effects do not use a separate gear-stat role.
-- Updated addon version metadata to 3.0.219.
 
 ## Notes
 
