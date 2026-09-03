@@ -171,6 +171,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 227 - 3.0.227
+
+- Fixed the active Alliance and Horde Icecrown leveling routes for `Hope Within the Emerald Nightmare` and `The Boon of Remulos` so they no longer send the player directly from Moonglade to Crusader Bridenbrad.
+- Added the missing instruction to speak to Keeper Remulos again, choose the return dialogue, and use the Moonglade Return Portal before continuing in Icecrown.
+- Retained the existing Fitful Dream buff-removal instruction and verified Emerald Acorn item ID `43006`. Added regression coverage for the complete sequence in both routes.
+
 ### Revision 226 - 3.0.226
 
 - Fixed a startup failure where a 3.3.5a client could reach the main addon files without registering the bundled Ace3 libraries, causing `Cannot find a library instance of "AceAddon-3.0"` followed by many misleading Gold UI and guide errors.
@@ -201,12 +207,6 @@ This addon is fully open source and can be inspected before use.
 - Fixed armor being counted twice when the item database and game API supplied different names for the same stat, inflating tank upgrade recommendations.
 - Canonicalized live stat names before merging and made live values replace database fallbacks, including lower values. Preserved tooltip-only contributions and unavailable-stat fallbacks.
 - Added regression coverage reproducing the inflated Dalaran Sentry Wristbraces Blood Tank score and checking active/alternate-profile scoring consistency. Updated addon version metadata to 3.0.222.
-
-### Revision 221 - 3.0.221
-
-- Added an optional `Only My Professions` Gear Finder filter based on @SnaxxNZ's testing feedback. It checks crafting profession, skill, and specialization without changing default BoE eligibility or gear scores.
-- Clarified that the filter does not verify learned recipes or materials, and that disabling `Crafted Items` shows recommendations from the remaining enabled sources.
-- Added regression coverage for the filter and its default-off behavior. Updated addon version metadata to 3.0.221.
 
 ## Notes
 

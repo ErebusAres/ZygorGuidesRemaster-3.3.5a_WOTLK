@@ -12179,6 +12179,11 @@ talk Keeper Remulos##11832
 turnin Hope Within the Emerald Nightmare##13074 |goto 36.20,41.81
 accept The Boon of Remulos##13075 |goto 36.20,41.81
 step
+talk Keeper Remulos##11832
+Tell him _"I wish to return to Arch Druid Lilliandra."_
+Click the Moonglade Return Portal that appears nearby
+Return to Icecrown |complete zone("Icecrown") |goto 36.20,41.81 |q 13075
+step
 talk Crusader Bridenbrad##30562
 turnin The Boon of Remulos##13075 |goto Icecrown 79.85,30.82
 accept Time Yet Remains##13076 |goto Icecrown 79.85,30.82

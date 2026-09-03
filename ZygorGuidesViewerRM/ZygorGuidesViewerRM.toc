@@ -15,7 +15,7 @@
 ## X-eMail: zygor@zygorguides.com
 ## X-Website: http://zygorguides.com/
 ## X-License: GPL
-## Version: 3.0.226
+## Version: 3.0.227
 
 # Load bundled libraries directly from the TOC. Some 3.3.5a clients do not
 # reliably process the extra nested Include layer in embeds.xml.
