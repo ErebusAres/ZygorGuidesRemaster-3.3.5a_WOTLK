@@ -9,7 +9,9 @@ function timer:Hide() self.shown=false end
 function timer:Show() self.shown=true end
 function timer:SetScript(name,func) self.scripts[name]=func end
 
-UIParent={}
+UIParent={left=0,right=1000}
+function UIParent:GetLeft() return self.left end
+function UIParent:GetRight() return self.right end
 CreateFrame=function() return timer end
 
 local list={id=1,numButtons=1,name="DropDownList1"}
@@ -74,5 +76,27 @@ hover:AttachRoot(rootFrame)
 hover:SetActive(true)
 rootFrame.OnHide()
 if hover.active then fail("closing the guide menu did not disable delayed-hover mode") end
+
+local parentList={left=760,right=960}
+function parentList:GetLeft() return self.left end
+function parentList:GetRight() return self.right end
+local childList={shown=true,width=180,top=500}
+function childList:IsShown() return self.shown end
+function childList:GetWidth() return self.width end
+function childList:GetTop() return self.top end
+function childList:ClearAllPoints() self.cleared=true end
+function childList:SetPoint(...) self.point={...} end
+function childList:SetClampedToScreen(value) self.clamped=value end
+_G.DropDownList1=parentList
+_G.DropDownList2=childList
+hover:RepositionLevel(2)
+if not childList.cleared or childList.point[1]~="TOPLEFT" then fail("edge submenu was not repositioned") end
+if childList.point[4]~=578 then fail("edge submenu did not open on the parent's left side") end
+if childList.point[5]~=500 or not childList.clamped then fail("submenu vertical position or clamping changed") end
+
+parentList.left,parentList.right=100,300
+childList.cleared=nil
+hover:RepositionLevel(2)
+if childList.point[4]~=302 then fail("submenu with right-side room did not open on the parent's right side") end
 
 print("Guide-menu hover-intent regression passed")

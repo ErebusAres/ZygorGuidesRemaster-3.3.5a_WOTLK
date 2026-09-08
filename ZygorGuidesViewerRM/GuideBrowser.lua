@@ -444,7 +444,10 @@ function me:OpenGuideBrowser()
 		f:Hide()
 	end)
 	f.legacyButton:SetScript("OnClick", function()
-		InterfaceOptionsFrame_OpenToCategory(self.options and self.options.name or LT("gb_addon_title"))
+		if self.EnsureBlizConfig then self:EnsureBlizConfig() end
+		local panel = self.blizRootPanel or (self.options and self.options.name) or LT("gb_addon_title")
+		InterfaceOptionsFrame_OpenToCategory(panel)
+		InterfaceOptionsFrame_OpenToCategory(panel)
 	end)
 	f:SetScript("OnHide", function()
 		if self.db and self.db.profile then
@@ -1006,7 +1009,10 @@ function me:OpenGuideManagerOptions()
 		frame:SetSection("options")
 		return
 	end
-	InterfaceOptionsFrame_OpenToCategory((self.options and self.options.name) or LT("gb_addon_title"))
+	if self.EnsureBlizConfig then self:EnsureBlizConfig() end
+	local panel = self.blizRootPanel or (self.options and self.options.name) or LT("gb_addon_title")
+	InterfaceOptionsFrame_OpenToCategory(panel)
+	InterfaceOptionsFrame_OpenToCategory(panel)
 end
 
 local GUIDE_MANAGER_TOP_TABS = {

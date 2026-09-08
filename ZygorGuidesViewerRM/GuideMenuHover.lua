@@ -50,7 +50,10 @@ function Hover:OnUpdate(elapsed)
 	if original then original(button) end
 	local parent = button.GetParent and button:GetParent() or nil
 	local level = parent and parent.GetID and parent:GetID() or nil
-	if level then self:ApplyLevel(level + 1) end
+	if level then
+		self:ApplyLevel(level + 1)
+		self:RepositionLevel(level + 1)
+	end
 end
 
 timer:SetScript("OnUpdate", function(_, elapsed) Hover:OnUpdate(elapsed) end)
@@ -113,6 +116,38 @@ function Hover:ApplyLevel(level)
 	for index=1,count do
 		self:WrapButton(_G[listName.."Button"..index])
 	end
+end
+
+function Hover:RepositionLevel(level)
+	level = tonumber(level)
+	if not level or level <= 1 then return end
+	local list = _G["DropDownList"..level]
+	local parent = _G["DropDownList"..(level - 1)]
+	if not list or not parent or not list.IsShown or not list:IsShown() then return end
+	if not (list.GetWidth and list.GetTop and parent.GetLeft and parent.GetRight) then return end
+
+	local width = list:GetWidth()
+	local top = list:GetTop()
+	local parentLeft, parentRight = parent:GetLeft(), parent:GetRight()
+	if not width or width <= 0 or not top or not parentLeft or not parentRight then return end
+
+	local uiLeft = (UIParent.GetLeft and UIParent:GetLeft()) or 0
+	local uiRight = (UIParent.GetRight and UIParent:GetRight()) or (GetScreenWidth and GetScreenWidth())
+	if not uiRight then return end
+
+	local gap, pad = 2, 6
+	local rightSpace = uiRight - parentRight - pad
+	local leftSpace = parentLeft - uiLeft - pad
+	local x
+	if rightSpace >= width + gap or rightSpace >= leftSpace then
+		x = math.min(parentRight + gap, uiRight - width - pad)
+	else
+		x = math.max(uiLeft + pad, parentLeft - width - gap)
+	end
+
+	list:ClearAllPoints()
+	list:SetPoint("TOPLEFT", UIParent, "BOTTOMLEFT", x, top)
+	if list.SetClampedToScreen then list:SetClampedToScreen(true) end
 end
 
 function Hover:AttachRoot(root)

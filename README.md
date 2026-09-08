@@ -171,6 +171,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 234 - 3.0.234
+
+- Restored the classic Blizzard Interface Options fallback by creating the addon's deferred option panels before opening them. This keeps the main Zygor category and its subcategories available instead of falling through to the separately registered Talent Advisor panel.
+- Improved legacy guide-menu placement near screen edges. Nested menus now open on the side with enough room instead of screen clamping them over the parent menu.
+- Added focused regression coverage for both classic options entry points and left/right submenu placement.
+
 ### Revision 233 - 3.0.233
 
 - Refreshed hidden map context before corpse lookup so logging in or reloading while already dead can recover from a map left on the selected guide's zone; delayed coordinates retain the existing retry behavior.
@@ -199,12 +205,6 @@ This addon is fully open source and can be inspected before use.
 - Fixed the active Alliance and Horde Icecrown leveling routes for `Hope Within the Emerald Nightmare` and `The Boon of Remulos` so they no longer send the player directly from Moonglade to Crusader Bridenbrad.
 - Added the missing instruction to speak to Keeper Remulos again, choose the return dialogue, and use the Moonglade Return Portal before continuing in Icecrown.
 - Retained the existing Fitful Dream buff-removal instruction and verified Emerald Acorn item ID `43006`. Added regression coverage for the complete sequence in both routes.
-
-### Revision 228 - 3.0.228
-
-- Fixed a startup failure where a 3.3.5a client could reach the main addon files without registering the bundled Ace3 libraries, causing `Cannot find a library instance of "AceAddon-3.0"` followed by many misleading Gold UI and guide errors.
-- Changed the TOC to load the same bundled library manifests directly instead of relying on an additional nested `embeds.xml` layer. No separate Ace3 installation is required.
-- Preserved the existing library order and verified every direct TOC path, the changed Lua syntax, and the maintained guide, ItemScore, and Gear Finder regressions.
 
 ## Notes
 
