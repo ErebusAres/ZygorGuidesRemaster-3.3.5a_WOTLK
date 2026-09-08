@@ -171,41 +171,40 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
-### Revision 229 - 3.0.229
+### Revision 232 - 3.0.232
+
+- Fixed corpse waypoints displaying the active guide destination as their title even when the corpse arrow itself pointed to the correct location.
+- Adjusted the guide picker hover-intent delay from 0.4 to 0.15 seconds based on confirmed in-game feedback, retaining accidental-hover protection without feeling sluggish.
+
+### Revision 231 - 3.0.231
 
 - Added proper support for guide-coordinate distance comparators such as `|goto 60.18,68.79 > 50`, based on Tntdruid's parser report.
 - Preserved the comparator direction so departure steps complete only after moving farther than the requested distance, while existing `<` arrival steps retain their current behavior.
 - Added regression coverage for both comparator directions and the affected Razaan's Landing flight step.
 
-### Revision 228 - 3.0.228
+### Revision 230 - 3.0.230
 
 - Fixed corpse-arrow priority when a server does not expose corpse coordinates during the initial death event. The addon now retries while the player remains dead and restores the corpse arrow if a normal guide waypoint replaces it.
 - Added a short 0.4-second hover-intent delay to expandable rows in the legacy guide picker, preventing accidental category changes while moving toward the currently open submenu.
 - Kept quick-settings and other dropdowns immediate. Added focused regressions for delayed corpse availability, later waypoint replacement, battleground exclusion, sustained submenu hover, canceled hover, and ordinary dropdown behavior.
 
-### Revision 227 - 3.0.227
+### Revision 229 - 3.0.229
 
 - Fixed the active Alliance and Horde Icecrown leveling routes for `Hope Within the Emerald Nightmare` and `The Boon of Remulos` so they no longer send the player directly from Moonglade to Crusader Bridenbrad.
 - Added the missing instruction to speak to Keeper Remulos again, choose the return dialogue, and use the Moonglade Return Portal before continuing in Icecrown.
 - Retained the existing Fitful Dream buff-removal instruction and verified Emerald Acorn item ID `43006`. Added regression coverage for the complete sequence in both routes.
 
-### Revision 226 - 3.0.226
+### Revision 228 - 3.0.228
 
 - Fixed a startup failure where a 3.3.5a client could reach the main addon files without registering the bundled Ace3 libraries, causing `Cannot find a library instance of "AceAddon-3.0"` followed by many misleading Gold UI and guide errors.
 - Changed the TOC to load the same bundled library manifests directly instead of relying on an additional nested `embeds.xml` layer. No separate Ace3 installation is required.
 - Preserved the existing library order and verified every direct TOC path, the changed Lua syntax, and the maintained guide, ItemScore, and Gear Finder regressions.
 
-### Revision 225 - 3.0.225
+### Revision 227 - 3.0.227
 
 - Added a repeatable Necklace Repair guide under `Profession Guides → Jewelcrafting`, based on Advocaite's contributed route and credited in the guide metadata.
 - Corrected the requirements to level 77 and Jewelcrafting 375, and clearly distinguished the dropped starter Damaged Necklace (43297) from the quest-provided repair item with the same name (43299).
 - Preserved in-progress repairs, looped automatically while another starter necklace remains, and added parser/state regressions for level, profession, quest, repaired-item, and repeat/stop behavior.
-
-### Revision 224 - 3.0.224
-
-- Added Horde Northrend Loremaster guides for all eight zone achievements, based on @aleloh's request and composed from the full-zone Horde routes already included with the addon.
-- Restored `leechsteps` guide composition with lazy source parsing, cloned steps and goals, range validation, and useful errors for missing or recursive sources.
-- Verified that each reused route contains at least the Horde achievement's required number of unique quest turn-ins. No external guide text was imported; Classic and incomplete Outland coverage remain follow-up work.
 
 ## Notes
 

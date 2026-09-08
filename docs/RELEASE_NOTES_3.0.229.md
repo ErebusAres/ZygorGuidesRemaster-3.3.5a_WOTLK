@@ -1,7 +1,8 @@
-# ZygorGuidesViewerRM 3.0.229
+# Zygor Guides Viewer Remaster 3.0.229
 
-- Supports both arrival (`< distance`) and departure (`> distance`) coordinate conditions in maintained guide syntax.
-- Keeps the comparison direction through parsing and goal completion instead of treating `>` as an ordinary arrival radius.
-- Includes regression coverage for both forms and the Razaan's Landing flight departure step.
+This guide-correction release fixes the Moonglade return portion of the Icecrown leveling route.
 
-Thanks to Tntdruid for identifying and supplying the parser example that led to this fix.
+- Both active Alliance and Horde routes now instruct the player to remove the Fitful Dream buff before turning in `Hope Within the Emerald Nightmare`.
+- After accepting `The Boon of Remulos`, the routes now direct the player to speak to Keeper Remulos again, request the return, and use the Moonglade Return Portal before continuing with Crusader Bridenbrad in Icecrown.
+- Emerald Acorn remains item ID `43006`, matching the WotLK quest item.
+- A focused regression verifies the full sequence and item ID in both routes.

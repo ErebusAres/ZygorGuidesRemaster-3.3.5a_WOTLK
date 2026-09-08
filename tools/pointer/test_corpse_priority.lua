@@ -12,6 +12,9 @@ local function fail(message)
 end
 
 local source=read(root.."/Pointer.lua")
+if not source:find('waypoint.type=="corpse"',1,true) then
+	fail("corpse title must bypass active guide-goal formatting")
+end
 local first=assert(source:find("local arrowctrl_elapsed=0",1,true))
 local last=assert(source:find("function Pointer:GetArrowRefreshRate",first,true))
 local block=source:sub(first,last-1)

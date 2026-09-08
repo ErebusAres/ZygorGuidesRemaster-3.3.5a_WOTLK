@@ -2,7 +2,7 @@ local ZGV = ZygorGuidesViewer
 if not ZGV then return end
 
 local Hover = {
-	delay = 0.4,
+	delay = 0.15,
 	active = false,
 	pending = nil,
 	elapsed = 0,

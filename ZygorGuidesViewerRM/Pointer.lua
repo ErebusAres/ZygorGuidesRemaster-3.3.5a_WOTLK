@@ -471,6 +471,8 @@ local function RemasterFormatTitle(title,waypoint)
 	if not title then return nil end
 	-- Preserve existing explicit color formatting from guide text if present.
 	if title:find("|c%x%x%x%x%x%x%x%x") then return title end
+	-- Corpse waypoints carry their own label and must not inherit the active guide goal.
+	if waypoint and waypoint.type=="corpse" then return "|cffffffff"..title.."|r" end
 	if waypoint and waypoint.travelTitle then
 		local prefix,place = title:match("^(Fly to%s+)(.+)$")
 		if prefix and place then
