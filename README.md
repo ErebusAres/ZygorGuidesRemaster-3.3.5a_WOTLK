@@ -171,6 +171,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 228 - 3.0.228
+
+- Fixed corpse-arrow priority when a server does not expose corpse coordinates during the initial death event. The addon now retries while the player remains dead and restores the corpse arrow if a normal guide waypoint replaces it.
+- Added a short 0.4-second hover-intent delay to expandable rows in the legacy guide picker, preventing accidental category changes while moving toward the currently open submenu.
+- Kept quick-settings and other dropdowns immediate. Added focused regressions for delayed corpse availability, later waypoint replacement, battleground exclusion, sustained submenu hover, canceled hover, and ordinary dropdown behavior.
+
 ### Revision 227 - 3.0.227
 
 - Fixed the active Alliance and Horde Icecrown leveling routes for `Hope Within the Emerald Nightmare` and `The Boon of Remulos` so they no longer send the player directly from Moonglade to Crusader Bridenbrad.
@@ -201,12 +207,6 @@ This addon is fully open source and can be inspected before use.
 - Kept low-level later-expansion recipes correctly gated when their expansion is disabled, including Thick Bronze Darts (TBC) and Spidersilk Drape (WotLK).
 - Reused completed Gear Finder scores on unchanged reopen instead of rebuilding stat weights, rescoring equipment, and scanning all crafted candidates every time. Inventory, equipment, build, weight, level, and source changes retain their existing invalidation paths.
 - Added expansion-boundary, option-refresh, and repeated-open cache regressions. Updated addon version metadata to 3.0.223.
-
-### Revision 222 - 3.0.222
-
-- Fixed armor being counted twice when the item database and game API supplied different names for the same stat, inflating tank upgrade recommendations.
-- Canonicalized live stat names before merging and made live values replace database fallbacks, including lower values. Preserved tooltip-only contributions and unavailable-stat fallbacks.
-- Added regression coverage reproducing the inflated Dalaran Sentry Wristbraces Blood Tank score and checking active/alternate-profile scoring consistency. Updated addon version metadata to 3.0.222.
 
 ## Notes
 

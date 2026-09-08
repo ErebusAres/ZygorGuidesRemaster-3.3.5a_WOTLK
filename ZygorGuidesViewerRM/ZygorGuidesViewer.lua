@@ -8490,6 +8490,8 @@ function me:OpenGuideMenu()
 	--Dewdrop:Register(ZygorGuidesViewerFrame_Border_TitleBar, 'children', BuildDropDown_GuideMenu, 'point', "TOPRIGHT", 'relativePoint', "RIGHT", 'dontHook', true)
 	--Dewdrop:Open(ZygorGuidesViewerFrame_Border_TitleBar)
 
+	if self.GuideMenuHover then self.GuideMenuHover:SetActive(true) end
+
 	-- basic guides
 	local menu = group_to_array(self.registered_groups)
 
@@ -8503,6 +8505,10 @@ function me:OpenGuideMenu()
 	--backdrop.edgeSize=16
 	--DropDownList1:SetBackdrop(backdrop)
 	EasyMenu(menu,ZGVFMenu,nil,30,10,"MENU",3)
+	if self.GuideMenuHover then
+		self.GuideMenuHover:ApplyLevel(1)
+		self.GuideMenuHover:AttachRoot(_G.DropDownList1)
+	end
 	UIDropDownMenu_SetWidth(ZGVFMenu, 300)
 	-- Clamp every guide-menu tier, including deeper frames the legacy dropdown
 	-- code creates lazily after the player opens a submenu.
@@ -8602,6 +8608,7 @@ function me:ToggleHideInCombat()
 end
 
 function me:OpenQuickMenu(anchor)
+	if self.GuideMenuHover then self.GuideMenuHover:SetActive(false) end
 	local menu = {
 		--[[
 		{
@@ -8712,6 +8719,7 @@ function me:OpenQuickMenu(anchor)
 end
 
 function me:OpenQuickSteps()
+	if self.GuideMenuHover then self.GuideMenuHover:SetActive(false) end
 	local menu = {
 		{
 			text=L["opt_showcountsteps"],

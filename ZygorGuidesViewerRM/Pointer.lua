@@ -1908,6 +1908,30 @@ local oldangle = 0
 
 
 local arrowctrl_elapsed=0
+local corpse_retry_elapsed=0
+
+function Pointer:UpdateCorpseArrowPriority(elapsed)
+	local _,instanceType = IsInInstance()
+	local shouldShow = UnitIsDeadOrGhost("player")
+		and instanceType ~= "pvp"
+		and not IsActiveBattlefieldArena()
+	if not shouldShow then
+		corpse_retry_elapsed = 0
+		return
+	end
+
+	local corpse = self.corpsearrow
+	local validCorpse = type(corpse)=="table" and self.waypoints[corpse]
+	if validCorpse and self.ArrowFrame and self.ArrowFrame.waypoint==corpse then
+		corpse_retry_elapsed = 0
+		return corpse
+	end
+
+	corpse_retry_elapsed = corpse_retry_elapsed + (elapsed or 0)
+	if corpse_retry_elapsed < 0.5 then return end
+	corpse_retry_elapsed = 0
+	return self:SetCorpseArrow()
+end
 
 function Pointer:GetArrowRefreshRate()
 	local profile = ZGV and ZGV.db and ZGV.db.profile
@@ -1934,6 +1958,7 @@ function Pointer:ResetArrowRefreshThrottle()
 end
 
 function Pointer.ArrowFrameControl_OnUpdate(self,elapsed)
+	Pointer:UpdateCorpseArrowPriority(elapsed)
 	local interval = Pointer:GetArrowRefreshInterval()
 	if interval <= 0 then
 		Pointer.ArrowFrame_OnUpdate(Pointer.ArrowFrame,elapsed)
