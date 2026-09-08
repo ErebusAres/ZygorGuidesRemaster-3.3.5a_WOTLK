@@ -42,10 +42,16 @@ local function split(str,sep)
 end
 
 function me:ParseMapXYDist(text)
-	local map,x,y,dist,_
-	-- Strip retail "< distance" suffix: "Zone x,y < 60" -> "Zone x,y,60"
-	local ltDist
-	text, ltDist = text:gsub("%s*<%s*([0-9%.]+)%s*$",",%1")
+	local map,x,y,dist,_,distmode
+	-- Normalize retail distance suffixes while preserving which comparison was requested.
+	local matches
+	text, matches = text:gsub("%s*<%s*([0-9%.]+)%s*$",",%1")
+	if matches>0 then
+		distmode = "lt"
+	else
+		text, matches = text:gsub("%s*>%s*([0-9%.]+)%s*$",",%1")
+		if matches>0 then distmode = "gt" end
+	end
 	-- Strip floor suffix: "Zone/0 x,y" -> "Zone x,y" or "Zone/0" -> "Zone"
 	text = text:gsub("/%d+(%s)","%1"):gsub("/%d+$","")
 	-- space-separated retail form must be tested before generic comma-map parsing,
@@ -68,7 +74,7 @@ function me:ParseMapXYDist(text)
 	if not dist then dist=0.2 end
 	if map and #map<5 then map=nil end
 
-	return map,x,y,dist
+	return map,x,y,dist,distmode
 end
 
 local function ParsePathPoints(params)
@@ -882,7 +888,7 @@ function me:ParseEntry(text)
 				if not goal.npc then return nil,"no npc",linecount,chunk end
 			elseif cmd=="goto" or cmd=="at" or cmd=="gotoontaxi" or cmd=="gotonpc" or cmd=="direct" then
 				goal.action = goal.action or "goto"
-				local map,x,y,dist = self:ParseMapXYDist(params)
+				local map,x,y,dist,distmode = self:ParseMapXYDist(params)
 
 				if BZL[map] then map=BZL[map] end
 
@@ -893,6 +899,7 @@ function me:ParseEntry(text)
 				goal.x = x or goal.x
 				goal.y = y or goal.y
 				goal.dist = dist or goal.dist
+				goal.distmode = distmode or goal.distmode
 
 				if (goal.action=="accept" or goal.action=="turnin" 	or goal.action=="kill" 	or goal.action=="get" 	or goal.action=="talk" 	or goal.action=="goal" 	or goal.action=="use") then
 					goal.autotitle = goal.param or goal.target or goal.quest
@@ -1099,24 +1106,26 @@ function me:ParseEntry(text)
 				goal.action = goal.action or "goto"
 				goal.ontaxi = true
 				if params and params~="" then
-					local map,x,y,dist = self:ParseMapXYDist(params)
+					local map,x,y,dist,distmode = self:ParseMapXYDist(params)
 					if BZL[map] then map=BZL[map] end
 					goal.map = map or goal.map or step.map or prevmap
 					goal.x = x or goal.x
 					goal.y = y or goal.y
 					goal.dist = dist or goal.dist
+					goal.distmode = distmode or goal.distmode
 					if goal.map then step.map = goal.map  prevmap = goal.map end
 				end
 			elseif cmd=="offtaxi" then
 				goal.action = goal.action or "goto"
 				goal.offtaxi = true
 				if params and params~="" then
-					local map,x,y,dist = self:ParseMapXYDist(params)
+					local map,x,y,dist,distmode = self:ParseMapXYDist(params)
 					if BZL[map] then map=BZL[map] end
 					goal.map = map or goal.map or step.map or prevmap
 					goal.x = x or goal.x
 					goal.y = y or goal.y
 					goal.dist = dist or goal.dist
+					goal.distmode = distmode or goal.distmode
 					if goal.map then step.map = goal.map  prevmap = goal.map end
 				end
 			elseif cmd=="click" then

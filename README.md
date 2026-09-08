@@ -171,6 +171,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 229 - 3.0.229
+
+- Added proper support for guide-coordinate distance comparators such as `|goto 60.18,68.79 > 50`, based on Tntdruid's parser report.
+- Preserved the comparator direction so departure steps complete only after moving farther than the requested distance, while existing `<` arrival steps retain their current behavior.
+- Added regression coverage for both comparator directions and the affected Razaan's Landing flight step.
+
 ### Revision 228 - 3.0.228
 
 - Fixed corpse-arrow priority when a server does not expose corpse coordinates during the initial death event. The addon now retries while the player remains dead and restores the corpse arrow if a normal guide waypoint replaces it.
@@ -200,13 +206,6 @@ This addon is fully open source and can be inspected before use.
 - Added Horde Northrend Loremaster guides for all eight zone achievements, based on @aleloh's request and composed from the full-zone Horde routes already included with the addon.
 - Restored `leechsteps` guide composition with lazy source parsing, cloned steps and goals, range validation, and useful errors for missing or recursive sources.
 - Verified that each reused route contains at least the Horde achievement's required number of unique quest turn-ins. No external guide text was imported; Classic and incomplete Outland coverage remain follow-up work.
-
-### Revision 223 - 3.0.223
-
-- Added default-on Classic, TBC, and WotLK crafted-item filters to Gear Finder, based on @SnaxxNZ's progression-realm feedback. The filters use introduction expansion rather than character-level bands and do not claim automatic server-module detection.
-- Kept low-level later-expansion recipes correctly gated when their expansion is disabled, including Thick Bronze Darts (TBC) and Spidersilk Drape (WotLK).
-- Reused completed Gear Finder scores on unchanged reopen instead of rebuilding stat weights, rescoring equipment, and scanning all crafted candidates every time. Inventory, equipment, build, weight, level, and source changes retain their existing invalidation paths.
-- Added expansion-boundary, option-refresh, and repeated-open cache regressions. Updated addon version metadata to 3.0.223.
 
 ## Notes
 

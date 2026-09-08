@@ -351,7 +351,8 @@ function Goal:IsComplete()
 			end
 			local gx,gy,dist = self.x/100,self.y/100,self.dist/100
 			local realdist2 = (px-gx)*(px-gx) + (py-gy)*(py-gy)
-			if realdist2<=dist*dist then
+			local reached = self.distmode=="gt" and realdist2>=dist*dist or self.distmode~="gt" and realdist2<=dist*dist
+			if reached then
 				ZGV.recentlyVisitedCoords[self] = true
 				if step and self_is_firstgoto then
 					ZGV.stepFirstGotoReached[step] = true
@@ -361,7 +362,12 @@ function Goal:IsComplete()
 				end
 				return true, true
 			else
-				local prog = 1-((realdist2-dist*dist)*500)
+				local prog
+				if self.distmode=="gt" then
+					prog = dist>0 and math.sqrt(realdist2)/dist or 0
+				else
+					prog = 1-((realdist2-dist*dist)*500)
+				end
 				if prog<0 then prog=0 end
 				if prog>1 then prog=1 end
 				return false, true, prog
