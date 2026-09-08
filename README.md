@@ -171,6 +171,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 233 - 3.0.233
+
+- Refreshed hidden map context before corpse lookup so logging in or reloading while already dead can recover from a map left on the selected guide's zone; delayed coordinates retain the existing retry behavior.
+- Replaced randomized joke text with a clear localized corpse label by default. Added an opt-in **Use humorous corpse-arrow messages** setting for the five legacy messages.
+- Added focused coverage for startup map refresh, the clear default label, and the legacy-message preference.
+
 ### Revision 232 - 3.0.232
 
 - Fixed corpse waypoints displaying the active guide destination as their title even when the corpse arrow itself pointed to the correct location.
@@ -199,12 +205,6 @@ This addon is fully open source and can be inspected before use.
 - Fixed a startup failure where a 3.3.5a client could reach the main addon files without registering the bundled Ace3 libraries, causing `Cannot find a library instance of "AceAddon-3.0"` followed by many misleading Gold UI and guide errors.
 - Changed the TOC to load the same bundled library manifests directly instead of relying on an additional nested `embeds.xml` layer. No separate Ace3 installation is required.
 - Preserved the existing library order and verified every direct TOC path, the changed Lua syntax, and the maintained guide, ItemScore, and Gear Finder regressions.
-
-### Revision 227 - 3.0.227
-
-- Added a repeatable Necklace Repair guide under `Profession Guides → Jewelcrafting`, based on Advocaite's contributed route and credited in the guide metadata.
-- Corrected the requirements to level 77 and Jewelcrafting 375, and clearly distinguished the dropped starter Damaged Necklace (43297) from the quest-provided repair item with the same name (43299).
-- Preserved in-progress repairs, looped automatically while another starter necklace remains, and added parser/state regressions for level, profession, quest, repaired-item, and repeat/stop behavior.
 
 ## Notes
 

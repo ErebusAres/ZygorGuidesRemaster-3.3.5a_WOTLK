@@ -186,6 +186,7 @@ function me:Options_RegisterDefaults()
 			arrow_refresh_rate = 20,
 			arrow_text_refresh_rate = 1.0,
 			arrowpulse = true,
+			corpsejokes = false,
 			simplifyarrownouncolors = false,
 			remasterpointeronlegacy = false,
 			arrowscale = 1.0,
@@ -1477,6 +1478,13 @@ function me:Options_DefineOptions()
 								end
 							end
 						end,
+					},
+					corpsejokes = {
+						name = L["opt_corpsejokes"],
+						desc = L["opt_corpsejokes_desc"],
+						type = "toggle",
+						width = "full",
+						order = 10.06,
 					},
 					arrowfreeze = {
 						name = L["opt_arrowfreeze"],

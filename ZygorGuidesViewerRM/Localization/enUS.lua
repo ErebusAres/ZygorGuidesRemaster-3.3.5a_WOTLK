@@ -290,6 +290,7 @@ ZygorGuidesViewer_L("Main", "enUS", function() return {
 	["waypointaddon_fail"] = "|cffffddddFailed to connect|r to |cffddeeff%s|r.",
 	['waypoint_step'] = "Step %s",
 
+	['pointer_corpselabel'] = "Your Corpse",
 	['pointer_corpselabel1'] = "Ex you",
 	['pointer_corpselabel2'] = "He who learns to run away...",
 	['pointer_corpselabel3'] = "Bitten off more than you could chew, eh.",
@@ -625,6 +626,8 @@ ZygorGuidesViewer_L("Main", "enUS", function() return {
 	["opt_iconsize_desc"] = "Size of the icons on the map",
 	["opt_arrowshow"] = "Show Arrow",
 	["opt_arrowshow_desc"] = "Show or hide the internal waypoint arrow.",
+	["opt_corpsejokes"] = "Use humorous corpse-arrow messages",
+	["opt_corpsejokes_desc"] = "Show a random legacy joke instead of the clear, localized corpse label.",
 	["opt_arrowcolormode_direction"] = "Direction",
 	["opt_arrowcolormode_distance"] = "Distance",
 	["opt_arrowtextoutline"] = "Arrow Text Outline",

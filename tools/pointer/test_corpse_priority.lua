@@ -15,6 +15,16 @@ local source=read(root.."/Pointer.lua")
 if not source:find('waypoint.type=="corpse"',1,true) then
 	fail("corpse title must bypass active guide-goal formatting")
 end
+if not source:find("if SetMapToCurrentZone and not IsWorldMapVisible() then SetMapToCurrentZone() end",1,true) then
+	fail("corpse lookup must refresh stale hidden map context after login/reload")
+end
+if not source:find('profile and profile.corpsejokes',1,true) or not source:find('_G.CORPSE or L["pointer_corpselabel"]',1,true) then
+	fail("clear corpse title must be default with legacy jokes opt-in")
+end
+local options=read(root.."/Options.lua")
+if not options:find("corpsejokes = false",1,true) or not options:find('name = L["opt_corpsejokes"]',1,true) then
+	fail("corpse joke preference must exist and default off")
+end
 local first=assert(source:find("local arrowctrl_elapsed=0",1,true))
 local last=assert(source:find("function Pointer:GetArrowRefreshRate",first,true))
 local block=source:sub(first,last-1)

@@ -2501,6 +2501,9 @@ function Pointer:SetCorpseArrow()
 	local x=0
 	local y=0
 
+	-- Login/reload can retain the selected guide's map while the player is already dead.
+	-- Refresh hidden map context before asking the client for corpse coordinates.
+	if SetMapToCurrentZone and not IsWorldMapVisible() then SetMapToCurrentZone() end
 	local mc,mz=GetCurrentMapContinent(),GetCurrentMapZone()
 	-- some magic here...
 	local c,z=0,0
@@ -2547,7 +2550,13 @@ function Pointer:SetCorpseArrow()
 
 	if x>0 and y>0 and c>0 and z>0 then
 		self:ClearWaypoints("corpse")
-		self.corpsearrow = self:SetWaypoint(c,z,x,y,{title=L["pointer_corpselabel"..math.random(5)],type="corpse"})
+		local corpseTitle
+		if profile and profile.corpsejokes then
+			corpseTitle = L["pointer_corpselabel"..math.random(5)]
+		else
+			corpseTitle = _G.CORPSE or L["pointer_corpselabel"] or "Your Corpse"
+		end
+		self.corpsearrow = self:SetWaypoint(c,z,x,y,{title=corpseTitle,type="corpse"})
 	end
 	return self.corpsearrow
 end
