@@ -15,6 +15,28 @@ local openPosition=assert(guideMenuSource:find("EasyMenu(menu,ZGVFMenu,nil,30,10
 if widthPosition>openPosition then
 	fail("guide menu width must be established before the first EasyMenu layout")
 end
+if not viewerSource:find('group.name=="Classic (12-58)" and "Classic (12-60)" or group.name',1,true) then
+	fail("stale Horde Classic folder range is still exposed in the guide menu")
+end
+if not viewerSource:find("guide_page_text(guides,first,last,groupName)",1,true) then
+	fail("paginated guide menus are not using semantic range labels")
+end
+
+local classicFile=assert(io.open(root.."/Guides/Retail/Leveling/ZygorLevelingHordeCLASSIC.lua","rb"))
+local classicSource=classicFile:read("*a")
+classicFile:close()
+local classicGuides={}
+for title in classicSource:gmatch('RegisterGuide%("Leveling Guides\\\\Classic %(12%-58%)\\\\([^"]+)"') do
+	classicGuides[#classicGuides+1]=title
+end
+if #classicGuides~=50 then fail("unexpected Horde Classic guide count: "..tostring(#classicGuides)) end
+local firstStart=tonumber(classicGuides[1]:match("%((%d+)%s*%-%s*%d+%)"))
+local firstEnd=tonumber(classicGuides[25]:match("%(%d+%s*%-%s*(%d+)%)"))
+local secondStart=tonumber(classicGuides[26]:match("%((%d+)%s*%-%s*%d+%)"))
+local secondEnd=tonumber(classicGuides[50]:match("%(%d+%s*%-%s*(%d+)%)"))
+if firstStart~=12 or firstEnd~=40 or secondStart~=41 or secondEnd~=60 then
+	fail("Horde Classic menu pages do not span levels 12-40 and 41-60")
+end
 
 local timer={shown=false,scripts={}}
 function timer:Hide() self.shown=false end

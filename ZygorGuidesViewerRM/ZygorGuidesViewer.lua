@@ -8434,7 +8434,23 @@ local function guide_to_menu_item(guide)
 	}
 end
 
-local function insert_guides(arr,guides)
+local function guide_page_text(guides,first,last,groupName)
+	-- The Horde Classic route's old folder name ended at 58 even though the
+	-- maintained sequence continues through level 60. Its pagination numbers
+	-- were guide indexes, which looked like incorrect level ranges in the UI.
+	if groupName=="Classic (12-58)" then
+		local firstTitle = guides[first] and guides[first].short or ""
+		local lastTitle = guides[last] and guides[last].short or ""
+		local firstLevel = tonumber(firstTitle:match("%((%d+)%s*%-%s*%d+%)"))
+		local lastLevel = tonumber(lastTitle:match("%(%d+%s*%-%s*(%d+)%)"))
+		if firstLevel and lastLevel then
+			return ("[ Levels %d - %d ]"):format(firstLevel,lastLevel)
+		end
+	end
+	return ("[ %d - %d ]"):format(first,last)
+end
+
+local function insert_guides(arr,guides,groupName)
 	if #guides <= GUIDE_MENU_PAGE_SIZE then
 		for _,guide in ipairs(guides) do
 			tinsert(arr,guide_to_menu_item(guide))
@@ -8449,7 +8465,7 @@ local function insert_guides(arr,guides)
 			tinsert(page,guide_to_menu_item(guides[index]))
 		end
 		tinsert(arr,{
-			text = ("[ %d - %d ]"):format(first,last),
+			text = guide_page_text(guides,first,last,groupName),
 			hasArrow = true,
 			menuList = page,
 			keepShownOnClick = true,
@@ -8462,7 +8478,7 @@ local function group_to_array(group)
 	local arr = {}
 	for i,group in ipairs(group.groups) do
 		local item = {
-			text = group.name,
+			text = group.name=="Classic (12-58)" and "Classic (12-60)" or group.name,
 			hasArrow = true,
 			menuList = group_to_array(group),
 			keepShownOnClick = true,
@@ -8473,7 +8489,7 @@ local function group_to_array(group)
 			tinsert(arr,item)
 		--end
 	end
-	insert_guides(arr,group.guides)
+	insert_guides(arr,group.guides,group.name)
 	return arr
 end
 

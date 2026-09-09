@@ -171,6 +171,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 238 - 3.0.238
+
+- Corrected the displayed Horde Classic leveling folder range from `12-58` to `12-60`, matching the route's actual final Winterspring guide.
+- Replaced that folder's confusing guide-index pagination with the actual character-level spans: `Levels 12-40` and `Levels 41-60`.
+- Kept the internal guide paths unchanged so existing saved selections, history, and next-guide links remain compatible.
+
 ### Revision 237 - 3.0.237
 
 - Fixed the legacy guide dropdown opening at an incorrect screen position immediately after login or `/reload` and only correcting itself on the second click.
@@ -200,11 +206,6 @@ This addon is fully open source and can be inspected before use.
 - Refreshed hidden map context before corpse lookup so logging in or reloading while already dead can recover from a map left on the selected guide's zone; delayed coordinates retain the existing retry behavior.
 - Replaced randomized joke text with a clear localized corpse label by default. Added an opt-in **Use humorous corpse-arrow messages** setting for the five legacy messages.
 - Added focused coverage for startup map refresh, the clear default label, and the legacy-message preference.
-
-### Revision 232 - 3.0.232
-
-- Fixed corpse waypoints displaying the active guide destination as their title even when the corpse arrow itself pointed to the correct location.
-- Adjusted the guide picker hover-intent delay from 0.4 to 0.15 seconds based on confirmed in-game feedback, retaining accidental-hover protection without feeling sluggish.
 
 ## Notes
 
