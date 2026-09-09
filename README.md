@@ -171,6 +171,11 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 239 - 3.0.239
+
+- Fixed flight-path goals raising `attempt to index field 'taxis' (a nil value)` when auxiliary or auto-skip checks ran before deferred world startup initialized saved taxi data.
+- Treats that brief startup state as an unknown flight path, then resumes normal completion checks once taxi data is available.
+
 ### Revision 238 - 3.0.238
 
 - Corrected the displayed Horde Classic leveling folder range from `12-58` to `12-60`, matching the route's actual final Winterspring guide.
@@ -200,12 +205,6 @@ This addon is fully open source and can be inspected before use.
 - Restored the classic Blizzard Interface Options fallback by creating the addon's deferred option panels before opening them. This keeps the main Zygor category and its subcategories available instead of falling through to the separately registered Talent Advisor panel.
 - Improved legacy guide-menu placement near screen edges. Nested menus now open on the side with enough room instead of screen clamping them over the parent menu.
 - Added focused regression coverage for both classic options entry points and left/right submenu placement.
-
-### Revision 233 - 3.0.233
-
-- Refreshed hidden map context before corpse lookup so logging in or reloading while already dead can recover from a map left on the selected guide's zone; delayed coordinates retain the existing retry behavior.
-- Replaced randomized joke text with a clear localized corpse label by default. Added an opt-in **Use humorous corpse-arrow messages** setting for the five legacy messages.
-- Added focused coverage for startup map refresh, the clear default label, and the legacy-message preference.
 
 ## Notes
 

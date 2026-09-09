@@ -385,7 +385,11 @@ function Goal:IsComplete()
 		return ZGV.recentlyHomeChanged, true
 	elseif self.action=="fpath" then
 		local taxi = ZGV.LibTaxi and ZGV.LibTaxi.TaxiNames_English and ZGV.LibTaxi.TaxiNames_English[self.param] or self.param
-		return (ZGV.db.char.taxis[taxi] or ZGV.recentlyDiscoveredFlightpath or RecentTaxiMapMatchesFPath(self)), true
+		-- Step auxiliary/auto-skip checks can run before deferred world startup
+		-- creates the saved taxi table. Treat that brief state as unknown rather
+		-- than aborting every subsequent goal evaluation.
+		local taxis = ZGV.db and ZGV.db.char and ZGV.db.char.taxis
+		return ((taxis and taxis[taxi]) or ZGV.recentlyDiscoveredFlightpath or RecentTaxiMapMatchesFPath(self)), true
 	elseif self.action=="collect" or self.action=="goldcollect" or self.action=="buy" then
 		local got = GetItemCount(self.target)
 		local progress = got/self.count
