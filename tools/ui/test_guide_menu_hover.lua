@@ -42,16 +42,16 @@ GetMouseFocus=function() return focus end
 ZygorGuidesViewer={}
 assert(loadfile(root.."/GuideMenuHover.lua"))()
 local hover=assert(ZygorGuidesViewer.GuideMenuHover)
-if hover.delay~=0.15 then fail("guide submenu hover delay must match confirmed 0.15-second timing") end
+if hover.delay~=0.075 then fail("guide submenu hover delay must match confirmed 0.075-second timing") end
 
 hover:SetActive(true)
 hover:ApplyLevel(1)
 button:GetScript("OnEnter")(button)
 if entered~=0 then fail("guide submenu opened immediately instead of waiting") end
 if highlighted~=1 or stopped~=1 then fail("delayed row did not retain immediate hover feedback") end
-hover:OnUpdate(0.14)
+hover:OnUpdate(0.07)
 if entered~=0 then fail("guide submenu opened before the configured delay") end
-hover:OnUpdate(0.01)
+hover:OnUpdate(0.005)
 if entered~=1 then fail("guide submenu did not open after sustained hover") end
 
 button:GetScript("OnEnter")(button)

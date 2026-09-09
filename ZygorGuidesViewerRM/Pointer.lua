@@ -2497,6 +2497,10 @@ function Pointer:SetCorpseArrow()
 	end
 	self.corpsearrow = nil
 	if not UnitIsDeadOrGhost("player") then ZGV:Debug("Pointer.SetCorpseArrow: not dead!") return end
+	if not self.ready or not self.OverlayFrame or not self.ArrowFrame then
+		ZGV:Debug("Pointer.SetCorpseArrow: pointer UI not ready yet")
+		return
+	end
 
 	local x=0
 	local y=0

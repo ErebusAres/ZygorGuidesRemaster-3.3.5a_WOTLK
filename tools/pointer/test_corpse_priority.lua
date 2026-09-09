@@ -38,7 +38,8 @@ function Pointer:SetWaypoint(c,z,x,y,data)
 	self.waypoints[self.created]=true
 	return self.created
 end
-ZGV={Debug=function() end}
+local debugMessages={}
+ZGV={Debug=function(_,message) debugMessages[#debugMessages+1]=message end}
 profile={corpsejokes=false}
 L={pointer_corpselabel="Your Corpse"}
 UnitIsDeadOrGhost=function() return true end
@@ -60,6 +61,14 @@ end
 _G.CORPSE="Corpse"
 
 assert((loadstring or load)(corpseBlock))()
+Pointer:SetCorpseArrow()
+if Pointer.created then fail("corpse marker was created before pointer UI startup") end
+if debugMessages[#debugMessages]~="Pointer.SetCorpseArrow: pointer UI not ready yet" then
+	fail("pre-startup corpse attempt did not report the deferred state")
+end
+Pointer.ready=true
+Pointer.OverlayFrame={}
+Pointer.ArrowFrame={}
 Pointer:SetCorpseArrow()
 if not Pointer.created or Pointer.created.c~=2 or Pointer.created.z~=25 then
 	fail("continent coordinates with current zone 0 were not resolved to the corpse zone")

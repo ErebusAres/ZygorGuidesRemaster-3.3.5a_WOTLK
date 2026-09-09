@@ -171,6 +171,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 236 - 3.0.236
+
+- Fixed the 3.0.235 dead-on-login startup regression that could create a corpse marker before the pointer overlay existed, producing repeated `OverlayFrame` nil errors.
+- Deferred only the premature marker attempt; the normal post-startup waypoint selection and corpse retry create the arrow once all pointer frames are ready.
+- Reduced the confirmed guide submenu hover-intent delay from 0.15 to 0.075 seconds for faster category navigation.
+
 ### Revision 235 - 3.0.235
 
 - Fixed corpse-arrow startup on clients that return valid corpse coordinates while the current map zone is still `0`; the addon now resolves the actual corpse zone before creating the waypoint.
@@ -200,12 +206,6 @@ This addon is fully open source and can be inspected before use.
 - Added proper support for guide-coordinate distance comparators such as `|goto 60.18,68.79 > 50`, based on Tntdruid's parser report.
 - Preserved the comparator direction so departure steps complete only after moving farther than the requested distance, while existing `<` arrival steps retain their current behavior.
 - Added regression coverage for both comparator directions and the affected Razaan's Landing flight step.
-
-### Revision 230 - 3.0.230
-
-- Fixed corpse-arrow priority when a server does not expose corpse coordinates during the initial death event. The addon now retries while the player remains dead and restores the corpse arrow if a normal guide waypoint replaces it.
-- Added a short 0.4-second hover-intent delay to expandable rows in the legacy guide picker, preventing accidental category changes while moving toward the currently open submenu.
-- Kept quick-settings and other dropdowns immediate. Added focused regressions for delayed corpse availability, later waypoint replacement, battleground exclusion, sustained submenu hover, canceled hover, and ordinary dropdown behavior.
 
 ## Notes
 
