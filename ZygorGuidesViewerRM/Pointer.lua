@@ -2511,11 +2511,14 @@ function Pointer:SetCorpseArrow()
 	ZGV:Debug("SetCorpseArrow, mc/mz="..mc.."/"..mz)
 
 	x,y = GetCorpseMapPosition()
-	if x>0 and y>0 then
+	if x>0 and y>0 and mc>0 and mz>0 then
 		c=mc
 		z=mz
 	else
-		-- different zone, let's search
+		-- Different zone, or the client has not initialized the current zone yet.
+		-- A dead-on-login client can return continent-level corpse coordinates
+		-- while GetCurrentMapZone() is still 0, so resolve the actual zone before
+		-- trying to create a waypoint.
 		ZGV:Debug("SetCorpseArrow, seeking corpse")
 
 		for i=1,select("#",GetMapContinents()) do
@@ -2529,7 +2532,7 @@ function Pointer:SetCorpseArrow()
 
 		ZGV:Debug("SetCorpseArrow, corpse on cont "..tostring(c))
 
-		if c then
+		if c>0 then
 			for oz=1,select("#",GetMapZones(c)) do
 				SetMapZoom(c,oz)
 				x,y = GetCorpseMapPosition()

@@ -3940,6 +3940,7 @@ function me:OnInitialize()
 
 	self:Options_SetupConfig()
 	self.blizConfigPending = true
+	if self.Options_EnableBlizConfigOnOpen then self:Options_EnableBlizConfigOnOpen() end
 
 --	self:Echo(L["initialized"])
 	self:Debug ("Initialized.")

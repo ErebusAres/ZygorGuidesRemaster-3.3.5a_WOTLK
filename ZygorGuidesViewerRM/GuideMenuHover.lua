@@ -138,8 +138,19 @@ function Hover:RepositionLevel(level)
 	local gap, pad = 2, 6
 	local rightSpace = uiRight - parentRight - pad
 	local leftSpace = parentLeft - uiLeft - pad
+	local side = parent._zgvGuideMenuSide
+	if side == "right" and rightSpace < width + gap then side = nil end
+	if side == "left" and leftSpace < width + gap then side = nil end
+	if not side then
+		if rightSpace >= width + gap or rightSpace >= leftSpace then
+			side = "right"
+		else
+			side = "left"
+		end
+	end
+
 	local x
-	if rightSpace >= width + gap or rightSpace >= leftSpace then
+	if side == "right" then
 		x = math.min(parentRight + gap, uiRight - width - pad)
 	else
 		x = math.max(uiLeft + pad, parentLeft - width - gap)
@@ -147,6 +158,7 @@ function Hover:RepositionLevel(level)
 
 	list:ClearAllPoints()
 	list:SetPoint("TOPLEFT", UIParent, "BOTTOMLEFT", x, top)
+	list._zgvGuideMenuSide = side
 	if list.SetClampedToScreen then list:SetClampedToScreen(true) end
 end
 

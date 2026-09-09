@@ -6023,7 +6023,17 @@ function me:SelectGuideManagerSection(section)
 				self.db.profile.guidebrowserhomeall = true
 			end
 		end
-		frame:SetSection(section)
+		if frame:IsShown() then
+			frame:SetSection(section)
+		else
+			-- OnShow applies the saved section once the frame has real dimensions.
+			-- Avoid building and immediately releasing the embedded Ace options page
+			-- while the Guide Manager is still hidden.
+			frame.currentSection = section or "home"
+			if self.db and self.db.profile then
+				self.db.profile.guidebrowsersection = frame.currentSection
+			end
+		end
 	end
 end
 
@@ -6040,10 +6050,10 @@ function me:OpenGuideManagerStepDisplay()
 	if frame then
 		frame.currentOptionsApp = "ZygorGuidesViewer-StepDisplay"
 	end
+	self:SelectGuideManagerSection("options")
 	if frame and not frame:IsShown() then
 		frame:Show()
 	end
-	self:SelectGuideManagerSection("options")
 	self:SelectGuideManagerCategory("stepdisplay")
 end
 

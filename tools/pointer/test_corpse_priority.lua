@@ -25,6 +25,47 @@ local options=read(root.."/Options.lua")
 if not options:find("corpsejokes = false",1,true) or not options:find('name = L["opt_corpsejokes"]',1,true) then
 	fail("corpse joke preference must exist and default off")
 end
+
+local corpseStart=assert(source:find("function Pointer:SetCorpseArrow()",1,true))
+local corpseEnd=assert(source:find("-- ===== ANT TRAIL SYSTEM =====",corpseStart,true))
+local corpseBlock=source:sub(corpseStart,corpseEnd-1)
+
+Pointer={waypoints={}}
+function Pointer:ShowArrow() end
+function Pointer:ClearWaypoints() end
+function Pointer:SetWaypoint(c,z,x,y,data)
+	self.created={c=c,z=z,x=x,y=y,data=data}
+	self.waypoints[self.created]=true
+	return self.created
+end
+ZGV={Debug=function() end}
+profile={corpsejokes=false}
+L={pointer_corpselabel="Your Corpse"}
+UnitIsDeadOrGhost=function() return true end
+IsWorldMapVisible=function() return false end
+SetMapToCurrentZone=function() end
+local mapC,mapZ=2,0
+GetCurrentMapContinent=function() return mapC end
+GetCurrentMapZone=function() return mapZ end
+GetMapContinents=function() return "Kalimdor","Eastern Kingdoms" end
+local zones={}
+for i=1,25 do zones[i]="Zone"..i end
+GetMapZones=function() return (table.unpack or unpack)(zones) end
+SetMapZoom=function(c,z) mapC,mapZ=c,z or 0 end
+GetCorpseMapPosition=function()
+	if mapC==2 and mapZ==0 then return 0.46459048986435,0.30595099925995 end
+	if mapC==2 and mapZ==25 then return 0.83857882022858,0.32120504975319 end
+	return 0,0
+end
+_G.CORPSE="Corpse"
+
+assert((loadstring or load)(corpseBlock))()
+Pointer:SetCorpseArrow()
+if not Pointer.created or Pointer.created.c~=2 or Pointer.created.z~=25 then
+	fail("continent coordinates with current zone 0 were not resolved to the corpse zone")
+end
+if mapC~=2 or mapZ~=0 then fail("corpse zone search did not restore the original map context") end
+
 local first=assert(source:find("local arrowctrl_elapsed=0",1,true))
 local last=assert(source:find("function Pointer:GetArrowRefreshRate",first,true))
 local block=source:sub(first,last-1)

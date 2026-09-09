@@ -171,6 +171,13 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 235 - 3.0.235
+
+- Fixed corpse-arrow startup on clients that return valid corpse coordinates while the current map zone is still `0`; the addon now resolves the actual corpse zone before creating the waypoint.
+- Made the main Zygor category and subcategories initialize when Blizzard Interface Options is opened, retaining deferred startup while keeping the classic settings path available after every login.
+- Removed a redundant hidden-frame options render/release cycle when opening the remastered Guide Manager, reducing unnecessary old-client UI work without disabling the remastered options.
+- Made third-level and deeper guide submenus continue in their established cascade direction while room remains, preventing them from folding back over earlier menus.
+
 ### Revision 234 - 3.0.234
 
 - Restored the classic Blizzard Interface Options fallback by creating the addon's deferred option panels before opening them. This keeps the main Zygor category and its subcategories available instead of falling through to the separately registered Talent Advisor panel.
@@ -199,12 +206,6 @@ This addon is fully open source and can be inspected before use.
 - Fixed corpse-arrow priority when a server does not expose corpse coordinates during the initial death event. The addon now retries while the player remains dead and restores the corpse arrow if a normal guide waypoint replaces it.
 - Added a short 0.4-second hover-intent delay to expandable rows in the legacy guide picker, preventing accidental category changes while moving toward the currently open submenu.
 - Kept quick-settings and other dropdowns immediate. Added focused regressions for delayed corpse availability, later waypoint replacement, battleground exclusion, sustained submenu hover, canceled hover, and ordinary dropdown behavior.
-
-### Revision 229 - 3.0.229
-
-- Fixed the active Alliance and Horde Icecrown leveling routes for `Hope Within the Emerald Nightmare` and `The Boon of Remulos` so they no longer send the player directly from Moonglade to Crusader Bridenbrad.
-- Added the missing instruction to speak to Keeper Remulos again, choose the return dialogue, and use the Moonglade Return Portal before continuing in Icecrown.
-- Retained the existing Fitful Dream buff-removal instruction and verified Emerald Acorn item ID `43006`. Added regression coverage for the complete sequence in both routes.
 
 ## Notes
 

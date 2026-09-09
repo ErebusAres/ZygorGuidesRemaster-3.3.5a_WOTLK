@@ -99,4 +99,27 @@ childList.cleared=nil
 hover:RepositionLevel(2)
 if childList.point[4]~=302 then fail("submenu with right-side room did not open on the parent's right side") end
 
+local levelTwo={left=578,right=758,_zgvGuideMenuSide="left"}
+function levelTwo:GetLeft() return self.left end
+function levelTwo:GetRight() return self.right end
+local levelThree={shown=true,width=180,top=480}
+function levelThree:IsShown() return self.shown end
+function levelThree:GetWidth() return self.width end
+function levelThree:GetTop() return self.top end
+function levelThree:ClearAllPoints() self.cleared=true end
+function levelThree:SetPoint(...) self.point={...} end
+function levelThree:SetClampedToScreen(value) self.clamped=value end
+_G.DropDownList2=levelTwo
+_G.DropDownList3=levelThree
+hover:RepositionLevel(3)
+if levelThree.point[4]~=396 or levelThree._zgvGuideMenuSide~="left" then
+	fail("deeper submenu folded back over its ancestors instead of continuing left")
+end
+
+levelTwo.left,levelTwo.right=100,280
+hover:RepositionLevel(3)
+if levelThree.point[4]~=282 or levelThree._zgvGuideMenuSide~="right" then
+	fail("deeper submenu did not change sides when its cascade direction ran out of room")
+end
+
 print("Guide-menu hover-intent regression passed")

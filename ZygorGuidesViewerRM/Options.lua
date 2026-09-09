@@ -3503,6 +3503,16 @@ function me:EnsureBlizConfig()
 	self.blizConfigPending = nil
 end
 
+function me:Options_EnableBlizConfigOnOpen()
+	if self.blizConfigOnOpenHooked or not InterfaceOptionsFrame or not InterfaceOptionsFrame.HookScript then return end
+	self.blizConfigOnOpenHooked = true
+	InterfaceOptionsFrame:HookScript("OnShow", function()
+		if not ZGV or not ZGV.EnsureBlizConfig or ZGV.blizRootPanel then return end
+		ZGV:EnsureBlizConfig()
+		if InterfaceOptionsFrame_UpdateCategories then InterfaceOptionsFrame_UpdateCategories() end
+	end)
+end
+
 function me:OpenStepDisplayOptions()
 	if self.EnsureBlizConfig then self:EnsureBlizConfig() end
 	local panel = self.blizStepDisplayPanel
