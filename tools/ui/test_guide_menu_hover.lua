@@ -4,6 +4,18 @@ local function fail(message)
 	error(message,2)
 end
 
+local viewerFile=assert(io.open(root.."/ZygorGuidesViewer.lua","rb"))
+local viewerSource=viewerFile:read("*a")
+viewerFile:close()
+local guideMenuStart=assert(viewerSource:find("function me:OpenGuideMenu()",1,true))
+local guideMenuEnd=assert(viewerSource:find("function me:ToggleWindowLock()",guideMenuStart,true))
+local guideMenuSource=viewerSource:sub(guideMenuStart,guideMenuEnd-1)
+local widthPosition=assert(guideMenuSource:find("UIDropDownMenu_SetWidth(ZGVFMenu, 300)",1,true))
+local openPosition=assert(guideMenuSource:find("EasyMenu(menu,ZGVFMenu,nil,30,10,\"MENU\",3)",1,true))
+if widthPosition>openPosition then
+	fail("guide menu width must be established before the first EasyMenu layout")
+end
+
 local timer={shown=false,scripts={}}
 function timer:Hide() self.shown=false end
 function timer:Show() self.shown=true end

@@ -171,6 +171,11 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 237 - 3.0.237
+
+- Fixed the legacy guide dropdown opening at an incorrect screen position immediately after login or `/reload` and only correcting itself on the second click.
+- Established the guide menu's intended width before the first `EasyMenu` layout pass, so the root menu and nested submenu anchors start with the same geometry used on later openings.
+
 ### Revision 236 - 3.0.236
 
 - Fixed the 3.0.235 dead-on-login startup regression that could create a corpse marker before the pointer overlay existed, producing repeated `OverlayFrame` nil errors.
@@ -200,12 +205,6 @@ This addon is fully open source and can be inspected before use.
 
 - Fixed corpse waypoints displaying the active guide destination as their title even when the corpse arrow itself pointed to the correct location.
 - Adjusted the guide picker hover-intent delay from 0.4 to 0.15 seconds based on confirmed in-game feedback, retaining accidental-hover protection without feeling sluggish.
-
-### Revision 231 - 3.0.231
-
-- Added proper support for guide-coordinate distance comparators such as `|goto 60.18,68.79 > 50`, based on Tntdruid's parser report.
-- Preserved the comparator direction so departure steps complete only after moving farther than the requested distance, while existing `<` arrival steps retain their current behavior.
-- Added regression coverage for both comparator directions and the affected Razaan's Landing flight step.
 
 ## Notes
 

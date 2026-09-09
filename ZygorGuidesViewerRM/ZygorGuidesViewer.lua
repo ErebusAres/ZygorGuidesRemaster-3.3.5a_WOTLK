@@ -8502,6 +8502,11 @@ function me:OpenGuideMenu()
 
 	-- display!
 	UIDropDownMenu_SetAnchor(ZGVFMenu, -50, 15, "TOPRIGHT", ZygorGuidesViewerFrame_Border_TitleBar, "BOTTOMRIGHT")
+	-- The dropdown width must be established before EasyMenu positions the
+	-- first list. Setting it afterwards leaves the first opening anchored with
+	-- the legacy default width; later openings only look correct because that
+	-- width has then been cached on ZGVFMenu.
+	UIDropDownMenu_SetWidth(ZGVFMenu, 300)
 	--local backdrop = DropDownList1:GetBackdrop()
 	--backdrop.edgeSize=16
 	--DropDownList1:SetBackdrop(backdrop)
@@ -8510,7 +8515,6 @@ function me:OpenGuideMenu()
 		self.GuideMenuHover:ApplyLevel(1)
 		self.GuideMenuHover:AttachRoot(_G.DropDownList1)
 	end
-	UIDropDownMenu_SetWidth(ZGVFMenu, 300)
 	-- Clamp every guide-menu tier, including deeper frames the legacy dropdown
 	-- code creates lazily after the player opens a submenu.
 	if not guideMenuClampHooked and type(UIDropDownMenu_CreateFrames)=="function" then
