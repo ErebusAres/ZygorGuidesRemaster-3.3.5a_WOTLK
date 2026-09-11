@@ -171,6 +171,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 240 - 3.0.240
+
+- Fixed the movable Zygor Auction House launcher saving its dragged position relative to one corner but restoring it relative to another, which could make it disappear after `/reload`.
+- Isolated launcher dragging from addons that move the Blizzard Auction House frame, so moving the parent frame no longer makes the Zygor button follow the cursor independently.
+- Added a default-on `Show Zygor Auction House button` setting that hides only the button and applies immediately without disabling Auction Tools.
+
 ### Revision 239 - 3.0.239
 
 - Fixed flight-path goals raising `attempt to index field 'taxis' (a nil value)` when auxiliary or auto-skip checks ran before deferred world startup initialized saved taxi data.
@@ -199,12 +205,6 @@ This addon is fully open source and can be inspected before use.
 - Made the main Zygor category and subcategories initialize when Blizzard Interface Options is opened, retaining deferred startup while keeping the classic settings path available after every login.
 - Removed a redundant hidden-frame options render/release cycle when opening the remastered Guide Manager, reducing unnecessary old-client UI work without disabling the remastered options.
 - Made third-level and deeper guide submenus continue in their established cascade direction while room remains, preventing them from folding back over earlier menus.
-
-### Revision 234 - 3.0.234
-
-- Restored the classic Blizzard Interface Options fallback by creating the addon's deferred option panels before opening them. This keeps the main Zygor category and its subcategories available instead of falling through to the separately registered Talent Advisor panel.
-- Improved legacy guide-menu placement near screen edges. Nested menus now open on the side with enough room instead of screen clamping them over the parent menu.
-- Added focused regression coverage for both classic options entry points and left/right submenu placement.
 
 ## Notes
 

@@ -247,6 +247,7 @@ function me:Options_RegisterDefaults()
 			questitemcache = {},
 
 			-- Gold Guide tooltips
+			auction_button_show = true,
 			gold_tooltips_show = true,
 			gold_tooltips_ah = 2,
 			gold_tooltips_out = 1,
@@ -1134,6 +1135,21 @@ function me:Options_DefineOptions()
 				set = function(i,v) Setter_Simple(i,v)  end,
 				width = "full",
 				order = 3.8,
+			},
+			auction_button_show = {
+				name = "Show Zygor Auction House button",
+				desc = "Show the movable Zygor button on the Auction House frame.",
+				type = "toggle",
+				get = Getter_Simple,
+				set = function(i,v)
+					Setter_Simple(i,v)
+					local appraiser = self.Gold and self.Gold.Appraiser
+					if appraiser and appraiser.UpdateAuctionButtonVisibility then
+						appraiser:UpdateAuctionButtonVisibility()
+					end
+				end,
+				width = "full",
+				order = 3.85,
 			},
 			gold_tooltips = {
 				name = L["opt_gold_tooltips_header"],

@@ -255,24 +255,56 @@ function Appraiser:CreateMainFrame()
 	Appraiser:ApplySkin()
 end
 
+function Appraiser:UpdateAuctionButtonVisibility()
+	if not ZGV.AuctionButtonFrame then return end
+	if ZGV.db.profile.auction_button_show == false then
+		ZGV.AuctionButtonFrame:Hide()
+	else
+		ZGV.AuctionButtonFrame:Show()
+	end
+end
+
 function Appraiser:MakeOptionsButton()
-	if ZGV.AuctionButtonFrame then return end
+	if ZGV.AuctionButtonFrame then
+		self:UpdateAuctionButtonVisibility()
+		return
+	end
 	local AuctionButtonsize=20
 	local AuctionButtonradius=AuctionButtonsize/2
 
-	ZGV.db.profile.AuctionFrame_offset = ZGV.db.profile.AuctionFrame_offset or {-40,-40}
+	local offset = ZGV.db.profile.AuctionFrame_offset
+	local dx,dy
+	if type(offset)=="table" and tonumber(offset[1]) and tonumber(offset[2]) then
+		local oldx,oldy=tonumber(offset[1]),tonumber(offset[2])
+		if oldx>=AuctionButtonradius then
+			-- Dragged positions were already saved relative to BOTTOMLEFT, even though
+			-- startup previously restored every value relative to TOPRIGHT.
+			dx,dy=oldx,oldy
+		else
+			-- Migrate the old default/top-right coordinate format.
+			dx=AuctionFrame:GetWidth()+oldx
+			dy=AuctionFrame:GetHeight()+oldy
+		end
+	else
+		dx=AuctionFrame:GetWidth()-40
+		dy=AuctionFrame:GetHeight()-40
+	end
+	dx=min(max(dx,AuctionButtonradius),AuctionFrame:GetWidth()+AuctionButtonradius)
+	dy=min(max(dy,-AuctionButtonradius),AuctionFrame:GetHeight()-AuctionButtonradius)
+	ZGV.db.profile.AuctionFrame_offset={dx,dy}
 	ZGV.AuctionButtonFrame = ZGV.ChainCall(ZGV.CreateFrameWithBG("FRAME",nil,AuctionFrame))
-		:SetPoint("CENTER",AuctionFrame,"TOPRIGHT",unpack(ZGV.db.profile.AuctionFrame_offset))
+		:SetPoint("CENTER",AuctionFrame,"BOTTOMLEFT",dx,dy)
 		:SetSize(50,50)
 		:SetBackdrop({bgFile="Interface\\Minimap\\MiniMap-TrackingBorder"})--,tile=true, tileSize=50})
 		:SetFrameLevel(610)
 		:SetScript("OnUpdate",function(self)
-			if (ZGV.AuctionButton:IsDragging()) then  -- yes, it's the inside button that's dragging the parent.
+			if self.buttonDragging then
 				local parent = self:GetParent()
 				local scale = self:GetEffectiveScale()
 				local mx,my = GetCursorPosition()
 				mx=mx/scale my=my/scale
 				local px,py = parent:GetRect()
+				if not px or not py then return end
 				self:ClearAllPoints()
 				local dx,dy=min(max(mx-px+10,AuctionButtonradius),parent:GetWidth()+AuctionButtonradius),min(max(my-py-10,-AuctionButtonradius),parent:GetHeight()-AuctionButtonradius)
 				self:SetPoint("CENTER",parent,"BOTTOMLEFT",dx,dy)
@@ -296,8 +328,8 @@ function Appraiser:MakeOptionsButton()
 				Appraiser:HideWindow()
 			end		
 		end)
-		:SetScript("OnDragStart", function(self) self:GetParent():SetMovable(true) self:GetParent():StartMoving() end)  -- yes, this frame's drag initiates its parent's drag.
-		:SetScript("OnDragStop", function(self) self:GetParent():StopMovingOrSizing() end)
+		:SetScript("OnDragStart", function(self) self:GetParent().buttonDragging=true end)
+		:SetScript("OnDragStop", function(self) self:GetParent().buttonDragging=false end)
 		:SetScript("OnEnter",function(self) 
 			CHAIN(GameTooltip):SetOwner(self, "ANCHOR_TOP") 
 			:SetText("Toggle Auction Tools") 
@@ -308,6 +340,7 @@ function Appraiser:MakeOptionsButton()
 		:Show()
 	.__END
 	ZGV.AuctionButton:GetNormalTexture():SetTexCoord(0,0,0,1/4 , 1,0,1,1/4)
+	self:UpdateAuctionButtonVisibility()
 end
 
 function Appraiser:MakeInventoryTable()
