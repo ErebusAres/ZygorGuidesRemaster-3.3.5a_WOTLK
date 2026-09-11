@@ -22,6 +22,16 @@ if not viewerSource:find("guide_page_text(guides,first,last,groupName)",1,true) 
 	fail("paginated guide menus are not using semantic range labels")
 end
 
+local browserFile=assert(io.open(root.."/GuideBrowser.lua","rb"))
+local browserSource=browserFile:read("*a")
+browserFile:close()
+if not browserSource:find('label = LT("opt_group_convenience"), app = "ZygorGuidesViewer-Conv", desc = LT("opt_group_convenience_desc")',1,true) then
+	fail("remastered options must expose the legacy Extra Features table under its established name")
+end
+if not browserSource:find('elseif appName=="ZygorGuidesViewer-Conv" then src=self.optionsconv',1,true) then
+	fail("remastered Extra Features search must include the complete legacy option table")
+end
+
 local classicFile=assert(io.open(root.."/Guides/Retail/Leveling/ZygorLevelingHordeCLASSIC.lua","rb"))
 local classicSource=classicFile:read("*a")
 classicFile:close()

@@ -1048,7 +1048,7 @@ local GUIDE_MANAGER_OPTIONS_APPS = {
 	{ id = "optimization", label = LT("gb_opt_optimization"), app = "ZygorGuidesViewer-Optimization", desc = LT("gb_opt_desc_optimization") },
 	{ id = "notifications", label = LT("gb_opt_notifications"), app = "ZygorGuidesViewer-Notifications", desc = LT("gb_opt_desc_notifications") },
 	{ id = "actionbuttons", label = LT("gb_opt_actionbuttons"), app = "ZygorGuidesViewer-ActionButtons", desc = LT("gb_opt_desc_actionbuttons") },
-	{ id = "convenience", label = LT("gb_opt_convenience"), app = "ZygorGuidesViewer-Conv", desc = LT("gb_opt_desc_convenience") },
+	{ id = "convenience", label = LT("opt_group_convenience"), app = "ZygorGuidesViewer-Conv", desc = LT("opt_group_convenience_desc") },
 	{ id = "accessibility", label = LT("gb_opt_accessibility"), app = "ZygorGuidesViewer-Accessibility", desc = LT("gb_opt_desc_accessibility") },
 	{ id = "gear", label = "Gear Advisor", app = "ZygorGuidesViewer-Gear", desc = "Configure gear scoring, upgrade popups, auto-sell, and auto-repair." },
 	{ id = "itemscore", label = "Stat Weights", app = "ZygorGuidesViewer-ItemScore", desc = "Edit stat weights per class and spec for item scoring." },

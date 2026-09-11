@@ -171,6 +171,11 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 241 - 3.0.241
+
+- Renamed the remastered options window's misleading `Questing` page to its established localized `Extra features` name.
+- Exposed the complete Extra Features option table—including `Show Zygor Auction House button`—directly in the main Zygor options window while retaining the Blizzard Interface Options fallback.
+
 ### Revision 240 - 3.0.240
 
 - Fixed the movable Zygor Auction House launcher saving its dragged position relative to one corner but restoring it relative to another, which could make it disappear after `/reload`.
@@ -198,13 +203,6 @@ This addon is fully open source and can be inspected before use.
 - Fixed the 3.0.235 dead-on-login startup regression that could create a corpse marker before the pointer overlay existed, producing repeated `OverlayFrame` nil errors.
 - Deferred only the premature marker attempt; the normal post-startup waypoint selection and corpse retry create the arrow once all pointer frames are ready.
 - Reduced the confirmed guide submenu hover-intent delay from 0.15 to 0.075 seconds for faster category navigation.
-
-### Revision 235 - 3.0.235
-
-- Fixed corpse-arrow startup on clients that return valid corpse coordinates while the current map zone is still `0`; the addon now resolves the actual corpse zone before creating the waypoint.
-- Made the main Zygor category and subcategories initialize when Blizzard Interface Options is opened, retaining deferred startup while keeping the classic settings path available after every login.
-- Removed a redundant hidden-frame options render/release cycle when opening the remastered Guide Manager, reducing unnecessary old-client UI work without disabling the remastered options.
-- Made third-level and deeper guide submenus continue in their established cascade direction while room remains, preventing them from folding back over earlier menus.
 
 ## Notes
 
