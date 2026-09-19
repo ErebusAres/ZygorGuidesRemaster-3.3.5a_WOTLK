@@ -22,6 +22,44 @@ if not viewerSource:find("guide_page_text(guides,first,last,groupName)",1,true) 
 	fail("paginated guide menus are not using semantic range labels")
 end
 
+-- Exercise the guide-menu builder without loading the full WoW addon.
+local menuBuilderStart=assert(viewerSource:find("local GUIDE_MENU_PAGE_SIZE = 25",1,true))
+local menuBuilderEnd=assert(viewerSource:find("local function BuildDropDown_GuideMenu",menuBuilderStart,true))
+local menuBuilderSource=viewerSource:sub(menuBuilderStart,menuBuilderEnd-1).."\nreturn group_to_array"
+ZGV={CurrentGuideName="Event\\Random Event\\Dailies\\Guide 26"}
+function ZGV:GetGuideByTitle() return {} end
+L={menu_last_entry="%s step %d"}
+tinsert=table.insert
+local buildMenu=assert((loadstring or load)(menuBuilderSource))()
+local guides={}
+for i=1,26 do
+	guides[i]={full="Event\\Random Event\\Dailies\\Guide "..i,short="Guide "..i}
+end
+local tree={groups={{name="Event",groups={{name="Random Event",groups={{name="Dailies",groups={},guides=guides}},guides={}}},guides={}},
+	{name="Other",groups={},guides={{full="Other\\Guide",short="Other Guide"}}}},guides={}}
+local activeColor="|cff8bcf9b"
+local menu=buildMenu(tree)
+local event=menu[1]
+local random=event.menuList[1]
+local dailies=random.menuList[1]
+local firstPage=dailies.menuList[1]
+local activePage=dailies.menuList[2]
+if not event.text:find(activeColor,1,true) or not random.text:find(activeColor,1,true)
+	or not dailies.text:find(activeColor,1,true) or not activePage.text:find(activeColor,1,true) then
+	fail("active guide ancestor or pagination row is not highlighted")
+end
+if firstPage.text:find(activeColor,1,true) or menu[2].text:find(activeColor,1,true) then
+	fail("unrelated guide path is highlighted")
+end
+if not activePage.menuList[1].text:find(activeColor,1,true) or not activePage.menuList[1].checked() then
+	fail("active guide leaf lost its highlight or existing checkmark")
+end
+ZGV.CurrentGuideName="Other\\Guide"
+menu=buildMenu(tree)
+if menu[1].text:find(activeColor,1,true) or not menu[2].text:find(activeColor,1,true) then
+	fail("guide path highlight did not move with the active guide")
+end
+
 local browserFile=assert(io.open(root.."/GuideBrowser.lua","rb"))
 local browserSource=browserFile:read("*a")
 browserFile:close()

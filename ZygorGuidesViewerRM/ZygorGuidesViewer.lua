@@ -8412,7 +8412,12 @@ end
 
 
 local GUIDE_MENU_PAGE_SIZE = 25
+local ACTIVE_GUIDE_PATH_COLOR = "|cff8bcf9b"
 local guideMenuClampHooked
+
+local function active_guide_path_text(text)
+	return ACTIVE_GUIDE_PATH_COLOR..text.."|r"
+end
 
 local function clamp_guide_menu_lists(maxLevel)
 	maxLevel = tonumber(maxLevel) or 4
@@ -8424,8 +8429,10 @@ end
 
 local function guide_to_menu_item(guide)
 	local data = ZGV:GetGuideByTitle(guide.full)
+	local active = ZGV.CurrentGuideName==guide.full
+	local text = guide.step and L['menu_last_entry']:format(guide.short or "?",guide.step) or (guide.short or "?")
 	return {
-		text = guide.step and L['menu_last_entry']:format(guide.short or "?",guide.step) or (guide.short or "?"),
+		text = active and active_guide_path_text(text) or text,
 		checked = function() return ZGV.CurrentGuideName==guide.full end,
 		func = function()  CloseDropDownMenus()  ZGV:SetGuide(guide.full,guide.step) end,
 		tooltipTitle = data and data.description and guide.short,
@@ -8451,36 +8458,47 @@ local function guide_page_text(guides,first,last,groupName)
 end
 
 local function insert_guides(arr,guides,groupName)
+	local containsActive = false
 	if #guides <= GUIDE_MENU_PAGE_SIZE then
 		for _,guide in ipairs(guides) do
+			if guide.full==ZGV.CurrentGuideName then containsActive = true end
 			tinsert(arr,guide_to_menu_item(guide))
 		end
-		return
+		return containsActive
 	end
 
 	for first=1,#guides,GUIDE_MENU_PAGE_SIZE do
 		local last = math.min(first + GUIDE_MENU_PAGE_SIZE - 1,#guides)
 		local page = {}
+		local pageActive = false
 		for index=first,last do
+			if guides[index].full==ZGV.CurrentGuideName then pageActive = true end
 			tinsert(page,guide_to_menu_item(guides[index]))
 		end
+		if pageActive then containsActive = true end
+		local pageText = guide_page_text(guides,first,last,groupName)
 		tinsert(arr,{
-			text = guide_page_text(guides,first,last,groupName),
+			text = pageActive and active_guide_path_text(pageText) or pageText,
 			hasArrow = true,
 			menuList = page,
 			keepShownOnClick = true,
 			func = function(self) _G[self:GetName().."Check"]:Hide() end,
 		})
 	end
+	return containsActive
 end
 
 local function group_to_array(group)
 	local arr = {}
+	local containsActive = false
 	for i,group in ipairs(group.groups) do
+		local submenu, submenuActive = group_to_array(group)
+		if submenuActive then containsActive = true end
+		local groupText = group.name=="Classic (12-58)" and "Classic (12-60)" or group.name
 		local item = {
-			text = group.name=="Classic (12-58)" and "Classic (12-60)" or group.name,
+			text = submenuActive and active_guide_path_text(groupText) or groupText,
 			hasArrow = true,
-			menuList = group_to_array(group),
+			menuList = submenu,
 			keepShownOnClick = true,
 			func = function(self) _G[self:GetName().."Check"]:Hide() end,
 			--notCheckable = true
@@ -8489,8 +8507,8 @@ local function group_to_array(group)
 			tinsert(arr,item)
 		--end
 	end
-	insert_guides(arr,group.guides,group.name)
-	return arr
+	if insert_guides(arr,group.guides,group.name) then containsActive = true end
+	return arr, containsActive
 end
 
 local function BuildDropDown_GuideMenu(level,value)

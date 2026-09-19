@@ -171,6 +171,11 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 242 - 3.0.242
+
+- Highlights the active guide's folder path and pagination row in the legacy guide picker with a subtle green text color.
+- Keeps the existing active-guide checkmark, submenu arrows, and guide selection behavior unchanged.
+
 ### Revision 241 - 3.0.241
 
 - Renamed the remastered options window's misleading `Questing` page to its established localized `Extra features` name.
@@ -197,12 +202,6 @@ This addon is fully open source and can be inspected before use.
 
 - Fixed the legacy guide dropdown opening at an incorrect screen position immediately after login or `/reload` and only correcting itself on the second click.
 - Established the guide menu's intended width before the first `EasyMenu` layout pass, so the root menu and nested submenu anchors start with the same geometry used on later openings.
-
-### Revision 236 - 3.0.236
-
-- Fixed the 3.0.235 dead-on-login startup regression that could create a corpse marker before the pointer overlay existed, producing repeated `OverlayFrame` nil errors.
-- Deferred only the premature marker attempt; the normal post-startup waypoint selection and corpse retry create the arrow once all pointer frames are ready.
-- Reduced the confirmed guide submenu hover-intent delay from 0.15 to 0.075 seconds for faster category navigation.
 
 ## Notes
 
