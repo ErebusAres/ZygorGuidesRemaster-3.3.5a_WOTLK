@@ -171,6 +171,11 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 245 - 3.0.245
+
+- Added a default-off **Use classic settings panels** compatibility option under Interface > AddOns > Zygor for clients that crash when opening the remastered settings view.
+- When enabled, settings buttons and the Guide Manager options tab open the classic panels while the Guide Manager remains available for browsing guides.
+
 ### Revision 244 - 3.0.244
 
 - Recalculates a LibRover guide route when the player enters its destination zone, instead of leaving the previous cross-zone waypoint active until the guide is reselected.
@@ -196,11 +201,6 @@ This addon is fully open source and can be inspected before use.
 - Fixed the movable Zygor Auction House launcher saving its dragged position relative to one corner but restoring it relative to another, which could make it disappear after `/reload`.
 - Isolated launcher dragging from addons that move the Blizzard Auction House frame, so moving the parent frame no longer makes the Zygor button follow the cursor independently.
 - Added a default-on `Show Zygor Auction House button` setting that hides only the button and applies immediately without disabling Auction Tools.
-
-### Revision 239 - 3.0.239
-
-- Fixed flight-path goals raising `attempt to index field 'taxis' (a nil value)` when auxiliary or auto-skip checks ran before deferred world startup initialized saved taxi data.
-- Treats that brief startup state as an unknown flight path, then resumes normal completion checks once taxi data is available.
 
 ## Notes
 

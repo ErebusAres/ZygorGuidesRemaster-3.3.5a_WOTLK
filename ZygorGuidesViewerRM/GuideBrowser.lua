@@ -1005,6 +1005,11 @@ end
 
 function me:OpenGuideManagerOptions()
 	local frame = self.GuideManagerStandaloneFrame
+	if self.db and self.db.profile and self.db.profile.classicoptionsonly then
+		if frame and frame:IsShown() then frame:Hide() end
+		self:OpenOptions()
+		return
+	end
 	if frame and frame.SetSection then
 		frame:SetSection("options")
 		return
@@ -5862,6 +5867,9 @@ local function EnsureGuideManagerStandaloneFrame(self)
 		if optionsSearch then optionsSearch:SetText("") end
 		frame.currentCategory = self.db.profile.guidebrowsercategory or frame.currentCategory or "leveling"
 		frame.currentSection = self.db.profile.guidebrowsersection or frame.currentSection or "home"
+		if self.db.profile.classicoptionsonly and frame.currentSection == "options" then
+			frame.currentSection = "home"
+		end
 		frame.homeShowAll = (self.db and self.db.profile and self.db.profile.guidebrowserhomeall) and true or false
 		treePanel.browsePath = (self.db and self.db.profile and self.db.profile.guidebrowserpath) or ""
 		treePanel.selectedFolderPath = treePanel.browsePath
@@ -6015,6 +6023,12 @@ local function EnsureGuideManagerStandaloneFrame(self)
 end
 
 function me:SelectGuideManagerSection(section)
+	if section == "options" and self.db and self.db.profile and self.db.profile.classicoptionsonly then
+		local frame = self.GuideManagerStandaloneFrame
+		if frame and frame:IsShown() then frame:Hide() end
+		self:OpenOptions()
+		return
+	end
 	local frame = EnsureGuideManagerStandaloneFrame(self)
 	if frame and frame.SetSection then
 		if section == "home" then
@@ -6043,6 +6057,10 @@ function me:SelectGuideManagerCategory(category)
 end
 
 function me:OpenGuideManagerStepDisplay()
+	if self.db and self.db.profile and self.db.profile.classicoptionsonly then
+		self:OpenStepDisplayOptions()
+		return
+	end
 	local frame = EnsureGuideManagerStandaloneFrame(self)
 	if self.db and self.db.profile then
 		self.db.profile.guidebrowseroptionsapp = "ZygorGuidesViewer-StepDisplay"
@@ -6058,6 +6076,12 @@ function me:OpenGuideManagerStepDisplay()
 end
 
 function me:ToggleGuideManagerFrame(section)
+	if section == "options" and self.db and self.db.profile and self.db.profile.classicoptionsonly then
+		local frame = self.GuideManagerStandaloneFrame
+		if frame and frame:IsShown() then frame:Hide() end
+		self:OpenOptions()
+		return
+	end
 	local frame = EnsureGuideManagerStandaloneFrame(self)
 	if frame:IsShown() then
 		frame:Hide()

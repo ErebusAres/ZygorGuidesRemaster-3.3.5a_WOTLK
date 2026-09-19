@@ -155,6 +155,7 @@ function me:Options_RegisterDefaults()
 			guidebrowserpath = "",
 			guidebrowsersearch = "",
 			guidebrowseroptionsapp = "ZygorGuidesViewer",
+			classicoptionsonly = false,
 			guidebrowserselectedguide = nil,
 			guidebrowserfolderpage = 1,
 			guidebrowserguidepage = 1,
@@ -348,6 +349,13 @@ function me:Options_DefineOptions()
 				type = "description",
 				name = "The legacy guide dropdown was removed from Options because it does not scale well with the full guide library. Use Guide Browser to browse and switch guides.",
 				width = "double",
+			},
+			classicoptionsonly = {
+				order = 2.27,
+				type = "toggle",
+				name = "Use classic settings panels",
+				desc = "Open Zygor settings buttons in Interface > AddOns > Zygor instead of the remastered settings view. Use this if the remastered settings view crashes your client. Guide browsing stays available.",
+				width = "full",
 			},
 			openguidebrowser = {
 				order = 2.3,
@@ -3654,7 +3662,7 @@ end
 
 function me:OpenOptions(section)
 	-- Prefer guide manager UI if available
-	if self.ToggleGuideManagerFrame and (section == "gear" or section == "itemscore") then
+	if self.ToggleGuideManagerFrame and not (self.db and self.db.profile and self.db.profile.classicoptionsonly) and (section == "gear" or section == "itemscore") then
 		if self.db and self.db.profile then
 			self.db.profile.guidebrowseroptionsapp = section == "gear" and "ZygorGuidesViewer-Gear" or "ZygorGuidesViewer-ItemScore"
 		end
