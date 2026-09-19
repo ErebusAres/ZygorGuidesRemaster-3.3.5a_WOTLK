@@ -171,6 +171,11 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 243 - 3.0.243
+
+- Prevented the active guide path from appearing green twice when the same guide is listed in recent history or registered more than once.
+- Preserved the existing guide-selection checkmark and menu navigation behavior.
+
 ### Revision 242 - 3.0.242
 
 - Highlights the active guide's folder path and pagination row in the legacy guide picker with a subtle green text color.
@@ -197,11 +202,6 @@ This addon is fully open source and can be inspected before use.
 - Corrected the displayed Horde Classic leveling folder range from `12-58` to `12-60`, matching the route's actual final Winterspring guide.
 - Replaced that folder's confusing guide-index pagination with the actual character-level spans: `Levels 12-40` and `Levels 41-60`.
 - Kept the internal guide paths unchanged so existing saved selections, history, and next-guide links remain compatible.
-
-### Revision 237 - 3.0.237
-
-- Fixed the legacy guide dropdown opening at an incorrect screen position immediately after login or `/reload` and only correcting itself on the second click.
-- Established the guide menu's intended width before the first `EasyMenu` layout pass, so the root menu and nested submenu anchors start with the same geometry used on later openings.
 
 ## Notes
 

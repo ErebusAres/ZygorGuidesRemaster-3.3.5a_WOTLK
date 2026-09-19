@@ -8427,13 +8427,23 @@ local function clamp_guide_menu_lists(maxLevel)
 	end
 end
 
-local function guide_to_menu_item(guide)
+local function is_active_guide_menu_entry(guide)
+	if guide.num and ZGV.CurrentGuide and ZGV.registeredguides then
+		return ZGV.registeredguides[guide.num] == ZGV.CurrentGuide
+	end
+	return guide.full == ZGV.CurrentGuideName
+end
+
+local function guide_to_menu_item(guide, highlightActive)
 	local data = ZGV:GetGuideByTitle(guide.full)
-	local active = ZGV.CurrentGuideName==guide.full
+	local active = highlightActive ~= false and is_active_guide_menu_entry(guide)
 	local text = guide.step and L['menu_last_entry']:format(guide.short or "?",guide.step) or (guide.short or "?")
 	return {
 		text = active and active_guide_path_text(text) or text,
-		checked = function() return ZGV.CurrentGuideName==guide.full end,
+		checked = function()
+			if guide.num then return is_active_guide_menu_entry(guide) end
+			return ZGV.CurrentGuideName==guide.full
+		end,
 		func = function()  CloseDropDownMenus()  ZGV:SetGuide(guide.full,guide.step) end,
 		tooltipTitle = data and data.description and guide.short,
 		tooltipText = data and data.description,
@@ -8457,12 +8467,12 @@ local function guide_page_text(guides,first,last,groupName)
 	return ("[ %d - %d ]"):format(first,last)
 end
 
-local function insert_guides(arr,guides,groupName)
+local function insert_guides(arr,guides,groupName,highlightActive)
 	local containsActive = false
 	if #guides <= GUIDE_MENU_PAGE_SIZE then
 		for _,guide in ipairs(guides) do
-			if guide.full==ZGV.CurrentGuideName then containsActive = true end
-			tinsert(arr,guide_to_menu_item(guide))
+			if highlightActive ~= false and is_active_guide_menu_entry(guide) then containsActive = true end
+			tinsert(arr,guide_to_menu_item(guide,highlightActive))
 		end
 		return containsActive
 	end
@@ -8472,8 +8482,8 @@ local function insert_guides(arr,guides,groupName)
 		local page = {}
 		local pageActive = false
 		for index=first,last do
-			if guides[index].full==ZGV.CurrentGuideName then pageActive = true end
-			tinsert(page,guide_to_menu_item(guides[index]))
+			if highlightActive ~= false and is_active_guide_menu_entry(guides[index]) then pageActive = true end
+			tinsert(page,guide_to_menu_item(guides[index],highlightActive))
 		end
 		if pageActive then containsActive = true end
 		local pageText = guide_page_text(guides,first,last,groupName)
@@ -8532,7 +8542,7 @@ function me:OpenGuideMenu()
 
 	-- history
 	tinsert(menu,{ text=L['menu_last'],isTitle=true })
-	insert_guides(menu,self.db.char.guides_history)
+	insert_guides(menu,self.db.char.guides_history,nil,false)
 
 	-- display!
 	UIDropDownMenu_SetAnchor(ZGVFMenu, -50, 15, "TOPRIGHT", ZygorGuidesViewerFrame_Border_TitleBar, "BOTTOMRIGHT")
