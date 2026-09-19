@@ -171,6 +171,11 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 246 - 3.0.246
+
+- Refreshes the active guide waypoint after entering a new zone, including direct fallback arrows that were not covered by the prior route-only arrival check.
+- Coalesces zone-change refreshes and preserves manual and corpse waypoints.
+
 ### Revision 245 - 3.0.245
 
 - Added a default-off **Use classic settings panels** compatibility option under Interface > AddOns > Zygor for clients that crash when opening the remastered settings view.
@@ -178,7 +183,7 @@ This addon is fully open source and can be inspected before use.
 
 ### Revision 244 - 3.0.244
 
-- Recalculates a LibRover guide route when the player enters its destination zone, instead of leaving the previous cross-zone waypoint active until the guide is reselected.
+- Marks successful cross-zone LibRover route nodes for recalculation on destination-zone arrival; direct fallback arrows are handled separately in revision 246.
 - Keeps same-zone route waypoints from repeatedly recalculating.
 
 ### Revision 243 - 3.0.243
@@ -195,12 +200,6 @@ This addon is fully open source and can be inspected before use.
 
 - Renamed the remastered options window's misleading `Questing` page to its established localized `Extra features` name.
 - Exposed the complete Extra Features option table—including `Show Zygor Auction House button`—directly in the main Zygor options window while retaining the Blizzard Interface Options fallback.
-
-### Revision 240 - 3.0.240
-
-- Fixed the movable Zygor Auction House launcher saving its dragged position relative to one corner but restoring it relative to another, which could make it disappear after `/reload`.
-- Isolated launcher dragging from addons that move the Blizzard Auction House frame, so moving the parent frame no longer makes the Zygor button follow the cursor independently.
-- Added a default-on `Show Zygor Auction House button` setting that hides only the button and applies immediately without disabling Auction Tools.
 
 ## Notes
 

@@ -1819,6 +1819,24 @@ local dungeons = {
 	},
 }
 
+function Pointer:QueueGuideWaypointZoneRefresh()
+	if self.zoneWaypointRefreshPending or not ZGV or not ZGV.CurrentGuide or not ZGV.CurrentStep
+		or not ZGV.ScheduleTimer or UnitIsDeadOrGhost("player") then return end
+	local waypoint = self.ArrowFrame and self.ArrowFrame.waypoint
+	if not waypoint or waypoint.type=="manual" or waypoint.type=="corpse"
+		or not (waypoint.goal or waypoint.travelDestZone) then return end
+	self.zoneWaypointRefreshPending = true
+	ZGV:ScheduleTimer(function()
+		self.zoneWaypointRefreshPending = nil
+		local active = self.ArrowFrame and self.ArrowFrame.waypoint
+		if ZGV.CurrentGuide and ZGV.CurrentStep and not UnitIsDeadOrGhost("player")
+			and active and active.type~="manual" and active.type~="corpse"
+			and (active.goal or active.travelDestZone) then
+			ZGV:SetWaypoint()
+		end
+	end, 0.2)
+end
+
 function Pointer.Overlay_OnEvent(self,event,...)
 	if event == "WORLD_MAP_UPDATE" then
 		if not WorldMapFrame:IsVisible() then
@@ -1878,6 +1896,9 @@ function Pointer.Overlay_OnEvent(self,event,...)
 			ZGV.Pointer.corpsearrow = nil
 			local n=ZGV.Pointer:ClearWaypoints("corpse")
 			if n>0 then ZGV:SetWaypoint() end
+			if event=="ZONE_CHANGED_NEW_AREA" and n==0 then
+				ZGV.Pointer:QueueGuideWaypointZoneRefresh()
+			end
 		end
 
 		--[[
