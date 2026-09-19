@@ -171,6 +171,11 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 244 - 3.0.244
+
+- Recalculates a LibRover guide route when the player enters its destination zone, instead of leaving the previous cross-zone waypoint active until the guide is reselected.
+- Keeps same-zone route waypoints from repeatedly recalculating.
+
 ### Revision 243 - 3.0.243
 
 - Prevented the active guide path from appearing green twice when the same guide is listed in recent history or registered more than once.
@@ -196,12 +201,6 @@ This addon is fully open source and can be inspected before use.
 
 - Fixed flight-path goals raising `attempt to index field 'taxis' (a nil value)` when auxiliary or auto-skip checks ran before deferred world startup initialized saved taxi data.
 - Treats that brief startup state as an unknown flight path, then resumes normal completion checks once taxi data is available.
-
-### Revision 238 - 3.0.238
-
-- Corrected the displayed Horde Classic leveling folder range from `12-58` to `12-60`, matching the route's actual final Winterspring guide.
-- Replaced that folder's confusing guide-index pagination with the actual character-level spans: `Levels 12-40` and `Levels 41-60`.
-- Kept the internal guide paths unchanged so existing saved selections, history, and next-guide links remain compatible.
 
 ## Notes
 

@@ -416,6 +416,10 @@ local function StartLibRoverPath(finalWaypoint)
 		x = x / 100
 		y = y / 100
 	end
+	-- LibRover route nodes need the same arrival marker as Travel Advisor nodes.
+	-- The arrow refreshes the guide waypoint when this destination zone is reached.
+	-- Capture it at request time so routes started inside the zone never loop.
+	local crossZoneDest = finalWaypoint.map ~= GetRealZoneText() and finalWaypoint.map or nil
 
 	local token = {}
 	ZGV.activeLibRoverWaypointToken = token
@@ -450,6 +454,7 @@ local function StartLibRoverPath(finalWaypoint)
 		local routeWaypoint = ZGV.Pointer:SetWaypoint(c, z, node.x, node.y, {
 			title = title,
 			type = "route",
+			travelDestZone = crossZoneDest,
 			onminimap = "always",
 			overworld = true,
 			pathnode = node,
