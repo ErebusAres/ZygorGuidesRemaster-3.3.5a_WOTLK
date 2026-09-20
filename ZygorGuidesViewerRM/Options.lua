@@ -62,6 +62,9 @@ function me:Options_RegisterDefaults()
 
 			skipimpossible = false,
 
+			areaguide_enabled = true,
+			areaguide_autoprogress = true,
+
 			showmapbutton = true,
 			mapbuttonangle = 225,
 			hideincombat = false,
@@ -1004,6 +1007,20 @@ function me:Options_DefineOptions()
 				order = 1,
 				type = "description",
 				name = L['opt_group_progress_desc'],
+			},
+			areaguide_enabled = {
+				name = "Suggest the guide of the area you enter",
+				desc = "Ask whether to load the matching guide when you enter a zone or dungeon (also when entering through the Dungeon Finder). Nothing is asked while flying, on a taxi or in combat.",
+				type = 'toggle',
+				width = "full",
+				order = 3.1,
+			},
+			areaguide_autoprogress = {
+				name = "Skip to current progress when loading a guide",
+				desc = "When a guide is loaded, check what you have already done (quests, level, dungeon bosses killed) and start at the matching step instead of step 1.",
+				type = 'toggle',
+				width = "full",
+				order = 3.2,
 			},
 			skipimpossible = {
 				name = L["opt_skipimpossible"],

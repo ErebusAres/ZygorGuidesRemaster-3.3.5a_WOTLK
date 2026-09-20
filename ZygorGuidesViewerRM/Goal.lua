@@ -468,6 +468,9 @@ function Goal:IsComplete()
 	elseif self.action=="kill" and self.usekillcount then --killcount version
 		local count = ZGV.recentKills[self.target]
 		return count and count>=self.count, true
+	elseif self.action=="kill" and ZGV.AreaGuide and ZGV.AreaGuide:IsKillGoalDone(self) then
+		-- dungeon guides: boss/mob already killed during the current run
+		return true,true
 	end
 
 	return false,false
