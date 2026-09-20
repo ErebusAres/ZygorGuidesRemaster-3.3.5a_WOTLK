@@ -1,0 +1,19 @@
+# Skins.lua (legacy guide-menu button labels; Leveling/Loremaster/Gold/Quests/Macros are kept)
+171.1 = Eventos
+172.1 = Diárias
+175.1 = Profissões
+176.1 = Pets e Montarias
+177.1 = Conquistas
+178.1 = Títulos
+179.1 = Reputações
+181.1 = Masmorras
+182.1 = Equipamento
+183.1 = Compartilhados
+185.1 = Favoritos
+186.1 = Assistente de Guia Inicial
+220.1 = Depuração: configurações
+221.1 = Depuração: dados simulados
+222.1 = Depuração: exploração de dados
+223.1 = Depuração: opções removidas
+224.1 = Depuração: compartilhar
+225.1 = Depuração: variantes

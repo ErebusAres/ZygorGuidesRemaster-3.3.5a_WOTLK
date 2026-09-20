@@ -1,0 +1,6 @@
+# Item-GearFinder part 2
+660.1 = Produzido: %s
+720.1 = Custo: 
+721.1 = Vendedor: 
+722.1 = Local: 
+735.1 = Especialização: 

@@ -1,0 +1,39 @@
+# GoldUI/Goldguide-Core.lua -- tab/category keys, DSL/patterns, validators and debug stay English
+18.2 = Investimento ruim
+19.2 = Investimento ruim
+20.2 = Investimento arriscado
+21.2 = Investimento arriscado
+22.2 = Investimento arriscado
+23.2 = Investimento seguro
+24.2 = Investimento seguro
+25.2 = Investimento seguro
+26.2 = Investimento seguro
+27.2 = Investimento seguro
+28.2 = Bom investimento
+29.2 = Desconhecido
+221.1 = Esta é uma rota de farm em loop.
+222.1 = |tip A seta de waypoint apenas leva você até a rota. Depois disso, siga a trilha de formiguinhas e o caminho em loop mostrados no mapa.
+266.1 = 'Siga esta rota de farm.
+272.1 = |tip Os pontos da rota devem avançar automaticamente conforme você percorre a rota.
+278.3 = recursos próximos
+279.1 = 'Colete %s ao longo da rota.
+281.1 = 'Pesque enquanto segue esta rota em loop.
+289.1 = Você concluiu um loop da rota de farm.
+290.1 = |tip Recarregue a rota pelo Guia de Gold se quiser começar outro loop guiado imediatamente.
+850.1 = Resultados: 
+1326.1 = %d %s (%s cada = %s no total); demanda: %d  %s%s
+1330.1 =  |cffff0000DEMANDA BAIXA, máx. %d por dia!|r
+1331.1 =  |cff88ff00ABUSIVO: %s > %s|r
+1342.1 = %d %s (%s cada = %s no total); |cffff0000mercado estagnado ou saturado|r
+1351.1 = %d %s (%s cada = %s no total); %s|cffaa0000sem histórico de dados|r
+1354.1 = útil, mas 
+1366.1 = %d %s (%s cada = %s no total) |cff888888<- vendedor|r
+1395.1 =  - obter (por hora):\n%s\n
+1452.1 =  /un
+1453.1 =  /h
+1478.1 = Preço abusivo; preço elevado.
+1480.1 = Mercado vazio; preço elevado.
+1510.1 = Sem dados de tendência.
+1512.1 = Não é útil.
+1515.1 = Mercado estagnado, vendedor.
+1534.1 = |cff9100ffUm nível baixo de habilidade de coleta resultará em menos itens.|r

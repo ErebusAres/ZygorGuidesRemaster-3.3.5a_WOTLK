@@ -1,0 +1,16 @@
+# GoldUI/ServerTrends.lua (dump/paste dev tool and "100000 lines" stay English)
+33.1 = IMPORTAR
+72.1 = A importação das Tendências do Servidor falhou..? Sem definições de colunas
+99.1 = Tendências do Servidor de %s importadas, %s%d horas de idade.
+100.1 = - Status: atualizado.
+100.2 = - Status: desatualizado, use o Zygor Client para atualizar.
+104.1 = A importação das Tendências do Servidor falhou..? Nenhum item encontrado...
+185.1 = Tendências do Servidor de %s importadas, %s%d horas de idade.
+186.1 = - Status: atualizado.
+186.2 = - Status: desatualizado, use o Zygor Client para atualizar.
+190.1 = A importação das Tendências do Servidor falhou..? Nenhum item encontrado...
+266.1 = Tendências do Servidor de %s criadas. Qualidade das tendências: %s.
+272.1 = |cffff0000Ausente|r
+273.1 = |cffff7700Baixa|r
+274.1 = |cffffff00Razoável|r
+275.1 = |cff00ff00Boa|r

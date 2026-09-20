@@ -1,0 +1,5 @@
+# ZygorTalentAdvisor/Popout.xml
+GameTooltip:SetText("Build status:") ==> GameTooltip:SetText("Status da build:")
+text="PREVIEW" ==> text="PRÉVIA"
+text="ACCEPT" ==> text="ACEITAR"
+text="Configure" ==> text="Configurar"

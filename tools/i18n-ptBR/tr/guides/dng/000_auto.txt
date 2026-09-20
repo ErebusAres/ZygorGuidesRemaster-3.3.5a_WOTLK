@@ -1,0 +1,6 @@
+1840 = Interagir com o objeto: Lonebrow's Journal
+1842 = Interagir com o objeto: Matrix Punchograph 3005-A
+1850 = Usar Amulet of Spirits em Spirit of Gelk
+1855 = Usar Amulet of Spirits em Spirit of Kolk
+1858 = Usar Amulet of Spirits em Spirit of Magra
+1889 = Interagir com o objeto: Crumpled Map

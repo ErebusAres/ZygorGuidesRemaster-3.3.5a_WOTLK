@@ -1,0 +1,7 @@
+# GoldUI/Auctiontools-Buy.lua
+80.2 = Mercado estagnado.
+141.1 = Lista de compras
+177.1 = Remover este item
+178.1 = Remove o item selecionado desta lista
+187.1 = Remover todos os itens
+188.1 = Remove todos os itens desta lista

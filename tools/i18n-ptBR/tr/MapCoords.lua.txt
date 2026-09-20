@@ -1,0 +1,3 @@
+# MapCoords.lua (world map coordinate labels)
+102.1 = Jogador: ---
+104.1 = Jogador: %s

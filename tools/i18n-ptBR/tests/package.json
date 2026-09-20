@@ -1,0 +1,9 @@
+{
+  "name": "zgv-ptbr-tests",
+  "private": true,
+  "description": "npm install, then: node check.js / runtime.js / keycheck.js / coverage.js",
+  "dependencies": {
+    "fengari": "^0.1.4",
+    "luaparse": "^0.3.1"
+  }
+}

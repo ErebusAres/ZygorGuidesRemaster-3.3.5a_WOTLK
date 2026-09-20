@@ -1,0 +1,4 @@
+# ZygorTalentAdvisor/Popout.lua
+268.1 = Notas:
+323.1 = A build está definida como Nenhuma (advisor desativado).
+341.1 = Sem pontos de talento não gastos.

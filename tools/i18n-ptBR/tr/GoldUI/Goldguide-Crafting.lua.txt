@@ -1,0 +1,12 @@
+# GoldUI/Goldguide-Crafting.lua -- DSL lines (step/buy/create/|confirm/|next) stay; only note text is translated
+323.1 = '_Este é um guia de produção dinâmico._
+324.1 = 'Vamos produzir 
+326.1 = 'Reagentes necessários:
+457.1 = Demanda diária do item: %s
+457.2 = desconhecida
+463.1 = |cffffff77Você não conhece a receita para produzir este item. A fonte dela é conhecida.
+465.1 = |cffffff77Você não conhece a receita para produzir este item.
+469.1 =  Você precisa ter nível de habilidade 
+469.2 = desconhecido
+469.3 =  para aprendê-la.
+483.1 = Reagente de vendedor

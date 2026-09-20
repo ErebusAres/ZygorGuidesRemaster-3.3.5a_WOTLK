@@ -1,0 +1,26 @@
+# GoldUI/Gold.lua -- price status descriptions (statusName keys stay)
+18.1 = Sem dados de tendência para o item
+30.1 = Preços abusivos
+31.1 = Talvez seja melhor esperar
+32.1 = Venda agora.
+42.1 = Preços em alta
+43.1 = Talvez seja melhor esperar
+44.1 = Venda agora.
+54.1 = Preços subindo
+55.1 = Talvez seja melhor esperar
+56.1 = Considere vender.
+66.1 = Preços normais
+78.1 = Preços caindo
+79.1 = Considere comprar.
+80.1 = Talvez seja melhor esperar
+90.1 = Preços em baixa
+91.1 = Compre agora!
+92.1 = Talvez seja melhor esperar
+102.1 = Preços despencaram
+103.1 = Compre agora!
+104.1 = Talvez seja melhor esperar
+114.1 = Mercado vazio
+116.1 = Venda agora!
+127.1 = Oferta do Guia de Gold
+128.1 = Compre os leilões sugeridos.
+129.1 = Venda agora!

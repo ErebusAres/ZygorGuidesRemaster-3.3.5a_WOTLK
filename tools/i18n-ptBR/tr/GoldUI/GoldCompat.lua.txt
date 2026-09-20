@@ -1,0 +1,4 @@
+# GoldUI/GoldCompat.lua
+222.1 = |cffff8800Zygor Gold Guide|r: Ativado! Digite /reload e abra o Guia de Gold novamente.
+228.1 = |cffff8800Zygor Gold Guide|r: Não inicializado. Tente /reload primeiro.
+237.1 = |cffff8800Zygor Gold Guide|r: Não inicializado. Tente /reload primeiro.

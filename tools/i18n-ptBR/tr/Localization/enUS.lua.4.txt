@@ -1,0 +1,2 @@
+# enUS.lua -> ptBR.lua : chunk 5 (Faction namespace)
+992.2 = %d%% para %s

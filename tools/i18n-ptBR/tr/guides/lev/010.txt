@@ -1,0 +1,10 @@
+2894 = Administrar o Antidote
+3028 = Observar o Object no Surge Needle
+3077 = Desestabilizar o Azure Dragonshrine
+3143 = Oferecer a Peace Offering ao Shaman Vekjik
+3164 = Disciplinar 6 Exhausted Vrykul
+3223 = Descobrir o destino de Krolmir
+3227 = Testemunhar o Reckoning
+3243 = Reunir 7 Hidden Data
+3258 = Acompanhar Brann Bronzebeard até Frosthold
+3262 = Curar 8 Fallen Earthen Defenders

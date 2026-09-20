@@ -1,0 +1,3 @@
+# ZygorGuidesViewer.lua part 2
+3599.1 = Clique|r 
+3602.1 = Clique direito|r 

@@ -1,0 +1,10 @@
+31.1 = Bem-vindo ao tutorial do Guia de Gold e Leilões da Zygor
+32.1 = Sobre qual seção você quer saber mais?
+34.1 = Noções Básicas de Gold
+36.1 = Coleta
+37.1 = Produção
+38.1 = Leilões
+52.1 = Próximo
+53.1 = Sair
+54.1 = Voltar
+236.1 = Fechar

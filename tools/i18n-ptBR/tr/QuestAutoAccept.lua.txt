@@ -1,0 +1,9 @@
+# QuestAutoAccept.lua (chat feedback while auto-questing)
+89.1 = Ativando quest
+100.1 = Abrindo quest
+120.1 = Ativando quest
+132.1 = Abrindo quest
+151.1 = Aceitando quest
+172.1 = Concluindo quest
+195.1 = Escolhendo a melhor recompensa da quest
+204.1 = Entregando quest

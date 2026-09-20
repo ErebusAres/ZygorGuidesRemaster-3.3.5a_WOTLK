@@ -1,0 +1,7 @@
+# GoldUI/Auctiontools-Sell.lua
+132.2 = Mercado estagnado.
+138.1 = Não foi possível adicionar o item
+138.2 = às ferramentas de leilão.
+206.2 = Mercado estagnado.
+318.1 = Ocultar este item
+319.1 = Não mostrar mais este item nas listas de venda

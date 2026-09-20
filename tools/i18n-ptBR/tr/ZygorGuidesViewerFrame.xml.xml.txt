@@ -1,0 +1,13 @@
+# ZygorGuidesViewerFrame.xml : maintenance-mode frame (L-based tooltips are translated through Localization/ptBR.lua)
+text="Zygor Guides Maintenance" ==> text="Manutenção do Zygor Guides"
+SetText("load guides") ==> SetText("carregar guias")
+SetText("Checks if the addon's capable of loading the guides at all.") ==> SetText("Verifica se o addon consegue carregar os guias.")
+SetText("query completed quests") ==> SetText("consultar quests concluídas")
+SetText("Checks if the addon can query the server-side completed quest list.") ==> SetText("Verifica se o addon consegue consultar a lista de quests concluídas no servidor.")
+SetText("fetch quest details") ==> SetText("obter detalhes das quests")
+SetText("Checks if the addon can query the server for quest titles and details.") ==> SetText("Verifica se o addon consegue consultar o servidor para obter títulos e detalhes de quests.")
+SetText("fetch item details") ==> SetText("obter detalhes dos itens")
+SetText("Checks if the addon can query the server for item names.") ==> SetText("Verifica se o addon consegue consultar o servidor para obter nomes de itens.")
+text="Reload" ==> text="Recarregar"
+text="Bug Report" ==> text="Relatório de Bug"
+SetText("Try to enable the above options one by one.\nIf the game disconnects or crashes right after enabling one of the options, please start the game again, enter Maintenance Mode again, and submit a Bug Report using the button below - and be sure to report which options were enabled properly, and which caused the disconnection or crash.") ==> SetText("Tente ativar as opções acima uma por uma.\nSe o jogo desconectar ou travar logo após ativar uma das opções, inicie o jogo novamente, entre no Modo de Manutenção outra vez e envie um Relatório de Bug usando o botão abaixo - e não deixe de informar quais opções foram ativadas normalmente e qual delas causou a desconexão ou a falha.")

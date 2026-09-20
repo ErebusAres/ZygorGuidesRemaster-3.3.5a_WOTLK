@@ -1,0 +1,16 @@
+# Item-Upgrades.lua (auto-equip popup); debug_equip/report text stays English
+903.1 = %sBônus de XP\n
+905.1 = %sBônus de XP\n
+1703.1 = Equipar
+2151.1 = Equipar
+2394.1 = %s\n|cff88ccffDisponível no Banco|r
+2428.1 = Equipar
+2434.1 = Equipar
+2438.1 = Comparar Itens
+2438.2 = Comparar Item
+2439.2 = Equipar este item?
+2483.1 = Item Novo
+2484.2 = Equipar este item?
+2500.1 = |cff88ccffItem de quest|r
+2504.1 = Este item será vinculado a você se for equipado.
+2512.1 = |cff88ccffFonte: Banco|r\n

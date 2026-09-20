@@ -1,0 +1,2 @@
+# Pointer part 2
+1466.1 = Distância: %s

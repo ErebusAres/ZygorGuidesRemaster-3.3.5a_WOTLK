@@ -1,0 +1,2 @@
+# Goal.lua
+677.2 = Farmar %s

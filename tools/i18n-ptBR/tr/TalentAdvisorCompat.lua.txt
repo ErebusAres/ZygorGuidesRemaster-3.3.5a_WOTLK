@@ -1,0 +1,3 @@
+# TalentAdvisorCompat.lua
+10.1 = |cff88ff88ZygorTalentAdvisor carregado.|r O Talent Advisor está integrado a este addon.
+100.1 = |cffff8844Aviso do Talent Advisor:|r o addon independente |cffffff00ZygorTalentAdvisor|r está ativado. Desative a pasta independente para evitar comportamento duplicado/sobreposto.
