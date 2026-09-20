@@ -59,6 +59,20 @@ function _G.ZGV_T(s, n)
 	return s
 end
 
+-- Notes and tips of the GUIDES (free text inside Guides/): ZGV_GT("English text") -> Portuguese (if any) or the text itself.
+-- Called by Parser.lua; dictionaries in Localization/GuideNotes_ptBR_*.lua (registered in Portuguese mode only).
+local gdict = {}
+function _G.ZGV_GT_Register(d)
+	for k, v in pairs(d) do gdict[k] = v end
+end
+function _G.ZGV_GT(s)
+	if _G.ZGV_LANG_PT then
+		local v = gdict[s]
+		if v then return v end
+	end
+	return s
+end
+
 function _G.ZygorGuidesViewer_L(name, locale, translations)
 	if locale == "enUS" then
 		data[name] = translations()
