@@ -555,8 +555,109 @@ lib:SetBaseTranslations {
 	["Plaguelands: The Scarlet Enclave"] = true,
 }
 
-if GAME_LOCALE == "enUS" then
-	lib:SetCurrentTranslations(true)
+-- Portuguese (ptBR) zone names. A translated client can report these even when the locale is enUS,
+-- so they are used whenever GetMapZones() returns Portuguese names (see the enUS/ptBR branch below).
+local PT_ZONES = {
+	-- Kalimdor
+	["Ashenvale"] = "Vale Gris",
+	["Azshara"] = "Azshara",
+	["Azuremyst Isle"] = "Ilha N\195\169voa Laz\195\186li",
+	["Bloodmyst Isle"] = "Ilha N\195\169voa Rubra",
+	["Darkshore"] = "Costa Negra",
+	["Darnassus"] = "Darnassus",
+	["Desolace"] = "Desola\195\167\195\163o",
+	["Durotar"] = "Durotar",
+	["Dustwallow Marsh"] = "P\195\162ntano Vadeoso",
+	["Felwood"] = "Selva Maleva",
+	["Feralas"] = "Feralas",
+	["Moonglade"] = "Clareira da Lua",
+	["Mulgore"] = "Mulgore",
+	["Orgrimmar"] = "Orgrimmar",
+	["Silithus"] = "Silithus",
+	["Stonetalon Mountains"] = "Cordilheira das Torres de Pedra",
+	["Tanaris"] = "Tanaris",
+	["Teldrassil"] = "Teldrassil",
+	["The Barrens"] = "Sert\195\181es",
+	["The Exodar"] = "Exodar",
+	["Thousand Needles"] = "Mil Agulhas",
+	["Thunder Bluff"] = "Penhasco do Trov\195\163o",
+	["Un'Goro Crater"] = "Cratera Un'Goro",
+	["Winterspring"] = "Hib\195\169rnia",
+	-- Eastern Kingdoms
+	["Alterac Mountains"] = "Montanhas de Alterac",
+	["Arathi Highlands"] = "Planalto Arathi",
+	["Badlands"] = "Ermos",
+	["Blasted Lands"] = "Barreira do Inferno",
+	["Burning Steppes"] = "Estepes Ardentes",
+	["Deadwind Pass"] = "Trilha do Vento Morto",
+	["Dun Morogh"] = "Dun Morogh",
+	["Duskwood"] = "Floresta do Crep\195\186sculo",
+	["Eastern Plaguelands"] = "Terras Pestilentas Orientais",
+	["Elwynn Forest"] = "Floresta de Elwynn",
+	["Eversong Woods"] = "Floresta do Canto Eterno",
+	["Ghostlands"] = "Terra Fantasma",
+	["Hillsbrad Foothills"] = "Contraforte de Eira dos Montes",
+	["Ironforge"] = "Altaforja",
+	["Isle of Quel'Danas"] = "Ilha de Quel'Danas",
+	["Loch Modan"] = "Loch Modan",
+	["Redridge Mountains"] = "Montanhas Cristarrubra",
+	["Searing Gorge"] = "Garganta Abrasadora",
+	["Silvermoon City"] = "Luaprata",
+	["Silverpine Forest"] = "Floresta de Pinhaprata",
+	["Stormwind City"] = "Ventobravo",
+	["Stranglethorn Vale"] = "Selva do Espinha\195\167o",
+	["Swamp of Sorrows"] = "P\195\162ntano das M\195\161goas",
+	["The Hinterlands"] = "Terras Agrestes",
+	["Tirisfal Glades"] = "Clareiras de Tirisfal",
+	["Undercity"] = "Cidade Baixa",
+	["Western Plaguelands"] = "Terras Pestilentas Ocidentais",
+	["Westfall"] = "Cerro Oeste",
+	["Wetlands"] = "Pantanal",
+	-- Outland
+	["Blade's Edge Mountains"] = "Montanhas da L\195\162mina Afiada",
+	["Hellfire Peninsula"] = "Pen\195\173nsula Fogo do Inferno",
+	["Nagrand"] = "Nagrand",
+	["Netherstorm"] = "Etern\195\169voa",
+	["Shadowmoon Valley"] = "Vale da Lua Negra",
+	["Shattrath City"] = "Shattrath",
+	["Terokkar Forest"] = "Mata Terokkar",
+	["Zangarmarsh"] = "P\195\162ntano Z\195\173ngaro",
+	-- Northrend
+	["Borean Tundra"] = "Tundra Boreana",
+	["Crystalsong Forest"] = "Floresta do Canto Cristalino",
+	["Dalaran"] = "Dalaran",
+	["Dragonblight"] = "Ermo das Serpes",
+	["Grizzly Hills"] = "Serra Gris",
+	["Howling Fjord"] = "Fiorde Uivante",
+	["Hrothgar's Landing"] = "Porto de Hrothgar",
+	["Icecrown"] = "Coroa de Gelo",
+	["Sholazar Basin"] = "Bacia Sholazar",
+	["The Storm Peaks"] = "Picos Tempestuosos",
+	["Wintergrasp"] = "Inv\195\169rnia",
+	["Zul'Drak"] = "Zul'Drak",
+}
+
+local function ClientReportsPortugueseZones()
+	if GAME_LOCALE == "ptBR" then return true end
+	local ok, zones = pcall(function() return { GetMapZones(1) } end)
+	if ok and type(zones) == "table" then
+		for _, name in ipairs(zones) do
+			if name == "Clareira da Lua" then return true end
+		end
+	end
+	return false
+end
+
+if GAME_LOCALE == "enUS" or GAME_LOCALE == "ptBR" then
+	if ClientReportsPortugueseZones() then
+		-- Start from the English base so untranslated entries (instances, etc.) keep working, then overlay Portuguese.
+		local current = {}
+		for k, v in pairs(lib:GetBaseLookupTable()) do current[k] = v end
+		for k, v in pairs(PT_ZONES) do current[k] = v end
+		lib:SetCurrentTranslations(current)
+	else
+		lib:SetCurrentTranslations(true)
+	end
 elseif GAME_LOCALE == "deDE" then
 	lib:SetCurrentTranslations {
 		["Azeroth"] = "Azeroth",

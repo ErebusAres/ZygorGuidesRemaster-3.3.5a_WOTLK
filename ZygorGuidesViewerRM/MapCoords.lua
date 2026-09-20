@@ -184,7 +184,8 @@ function MapCoords:InitializeMapInfo()
 	for cont = 1, 4 do
 		local zones = {GetMapZones(cont)}
 		for zoneIdx, zoneName in ipairs(zones) do
-			local mapData = MapIDsByName[zoneName]
+			-- MapIDsByName is keyed by English names; the client may report localized ones (e.g. Portuguese).
+			local mapData = MapIDsByName[zoneName] or (ZGV.BZR and ZGV.BZR[zoneName] and MapIDsByName[ZGV.BZR[zoneName]])
 			if mapData and mapData[0] then
 				local mapID = mapData[0]
 				mapID_to_cz[mapID] = {cont, zoneIdx}
