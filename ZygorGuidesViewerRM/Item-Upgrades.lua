@@ -529,7 +529,7 @@ function Upgrades:FormatUpgradeSummary(slot, newitem, change, secondnewitem, del
 	end
 	local scoreParts = {}
 	if scoreLineValue ~= nil then
-		scoreParts[#scoreParts + 1] = ("Score: %.1f"):format(scoreLineValue)
+		scoreParts[#scoreParts + 1] = (ZGV_T("Score: %.1f")):format(scoreLineValue)
 	end
 	local displayPercent = clamp_display_percent(percent)
 	if displayPercent and not comparison.armorFallback and math.abs(displayPercent) >= 0.05 then
@@ -900,9 +900,9 @@ function Upgrades:GetStatChange(item1,item2,item3,mode_new,mode_old)
 		local heirloom_protected1 = ItemScore:GetHeirloomInfo(item1)
 		local heirloom_protected2 = ItemScore:GetHeirloomInfo(item2)
 		if heirloom_protected1 and not heirloom_protected2 then
-			changes = changes..("%sExp bonus\n"):format(GREEN)
+			changes = changes..(ZGV_T("%sExp bonus\n")):format(GREEN)
 		elseif not heirloom_protected1 and heirloom_protected2 then
-			changes = changes..("%sExp bonus\n"):format(RED)
+			changes = changes..(ZGV_T("%sExp bonus\n")):format(RED)
 		end
 	end
 
@@ -1700,7 +1700,7 @@ function Upgrades:CreatePopup()
 
 	F.secureacceptbutton = CreateFrame("Button", nil, F, "SecureActionButtonTemplate,UIPanelButtonTemplate")
 	F.secureacceptbutton:SetSize(100, 22)
-	F.secureacceptbutton:SetText("Equip")
+	F.secureacceptbutton:SetText(ZGV_T("Equip"))
 	F.secureacceptbutton:SetPoint("BOTTOMLEFT", F, "BOTTOMLEFT", 10, 10)
 	F.secureacceptbutton:Hide()
 	F.secureacceptbutton:SetScript("PostClick", function(self)
@@ -2148,7 +2148,7 @@ function Upgrades:CreatePopup()
 		self.manualvisible = true
 	end)
 
-	F.acceptbutton:SetText("Equip")
+	F.acceptbutton:SetText(ZGV_T("Equip"))
 	F.declinebutton:SetText(L['itemscore_ae_decline'])
 
 	local function style_popup_button(button)
@@ -2391,7 +2391,7 @@ function Upgrades:ShowEquipmentChangePopup(slot)
 	local bindState = get_item_bind_state(new_item.itemlinkfull or new_item.itemlink, n_item.bagnum, n_item.bagslot)
 	local function get_popup_prompt(baseText)
 		if n_item.frombank then
-			return ("%s\n|cff88ccffAvailable in Bank|r"):format(baseText)
+			return (ZGV_T("%s\n|cff88ccffAvailable in Bank|r")):format(baseText)
 		end
 		return baseText
 	end
@@ -2425,18 +2425,18 @@ function Upgrades:ShowEquipmentChangePopup(slot)
 	F.bindwarning:Hide()
 	F.acceptbutton:Hide()
 	F.secureacceptbutton:Show()
-	F.secureacceptbutton:SetText("Equip")
+	F.secureacceptbutton:SetText(ZGV_T("Equip"))
 	F.secureacceptbutton:SetAttribute("type", "macro")
 	F.secureacceptbutton:SetAttribute("macrotext", build_equip_macro())
 	if n_item.frombank or bindState == "boe" then
 		F.secureacceptbutton:Hide()
 		F.acceptbutton:Show()
-		F.acceptbutton:SetText("Equip")
+		F.acceptbutton:SetText(ZGV_T("Equip"))
 	end
 	local changes, delta, summary
 	if current_item then
-		if F.headerMeta then F.headerMeta:SetText(pair_item and "Compare Items" or "Compare Item") end
-		F:SetText(get_popup_prompt(L['itemscore_ae_equip1'] or "Equip this item?"))
+		if F.headerMeta then F.headerMeta:SetText(pair_item and ZGV_T("Compare Items") or ZGV_T("Compare Item")) end
+		F:SetText(get_popup_prompt(L['itemscore_ae_equip1'] or ZGV_T("Equip this item?")))
 
 		F.string_with:Show()	
 	F.stattext:Show()
@@ -2480,8 +2480,8 @@ function Upgrades:ShowEquipmentChangePopup(slot)
 		end
 	else
 		F.layoutMode = "new_only"
-		if F.headerMeta then F.headerMeta:SetText("New Item") end
-		F:SetText(get_popup_prompt(L['itemscore_ae_equip2'] or "Equip this item?"))
+		if F.headerMeta then F.headerMeta:SetText(ZGV_T("New Item")) end
+		F:SetText(get_popup_prompt(L['itemscore_ae_equip2'] or ZGV_T("Equip this item?")))
 
 		F.item1:SetItem(new_item)
 		F.stattext:Show()		
@@ -2497,11 +2497,11 @@ function Upgrades:ShowEquipmentChangePopup(slot)
 	-- 3.3.5a: no player ilvl system to worry about
 
 	if n_item.quest then
-		summary = "|cff88ccffQuest item|r"
+		summary = ZGV_T("|cff88ccffQuest item|r")
 	end
 
 	if bindState == "boe" then
-		F.bindwarning:SetText("This item will bind to you if equipped.")
+		F.bindwarning:SetText(ZGV_T("This item will bind to you if equipped."))
 		F.bindwarning:Show()
 	else
 		F.bindwarning:SetText("")
@@ -2509,7 +2509,7 @@ function Upgrades:ShowEquipmentChangePopup(slot)
 	end
 
 	local stattext = changes
-	local sourceLine = n_item.frombank and "|cff88ccffSource: Bank|r\n" or ""
+	local sourceLine = n_item.frombank and ZGV_T("|cff88ccffSource: Bank|r\n") or ""
 	if summary and summary ~= "" then
 		stattext = ("%s|cffcccccc%s: %s|r\n%s\n\n%s"):format(sourceLine, L["itemscore_ae_build"] or "Build", Upgrades:GetActiveBuildName(), summary, changes)
 	else

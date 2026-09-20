@@ -66,70 +66,70 @@ local ENTRIES_DATA = {
 }
 
 local FARMING_COLUMNS = {
-	{ title="NO", width=25, headerwidth=40, titlej="LEFT", textj="LEFT", name="no"},
+	{ title=ZGV_T("NO"), width=25, headerwidth=40, titlej="LEFT", textj="LEFT", name="no"},
 	{ title="", width=15, headerwidth=0, titlej="LEFT", textj="LEFT", name="icon", type="icon" },
 	{ title="ITEM", width=230, titlej="LEFT", textj="LEFT", name="title", padding=20 },
-	{ title="ZONE", width=140, titlej="LEFT", textj="LEFT", name="zone" },
-	{ title="RATE", width=130, titlej="RIGHT", textj="RIGHT", name="rate", sortable=true, sortfunction=Goldguide.UpdateSorting },
-	{ title="TIME", width=60, titlej="RIGHT", textj="RIGHT", name="disptime", sortable=true, sortfunction=Goldguide.UpdateSorting },
-	{ title="EST. GOLD", width=110, titlej="RIGHT", textj="RIGHT", name="dispgold", sortable=true, sortfunction=Goldguide.UpdateSorting },
+	{ title=ZGV_T("ZONE"), width=140, titlej="LEFT", textj="LEFT", name="zone" },
+	{ title=ZGV_T("RATE"), width=130, titlej="RIGHT", textj="RIGHT", name="rate", sortable=true, sortfunction=Goldguide.UpdateSorting },
+	{ title=ZGV_T("TIME"), width=60, titlej="RIGHT", textj="RIGHT", name="disptime", sortable=true, sortfunction=Goldguide.UpdateSorting },
+	{ title=ZGV_T("EST. GOLD"), width=110, titlej="RIGHT", textj="RIGHT", name="dispgold", sortable=true, sortfunction=Goldguide.UpdateSorting },
 	{ title="", width=23, titlej="RIGHT", textj="RIGHT", name="loadbutton", type="button", iconheight=18, iconwidth=18,padding=15, iconset = "TitleButtons", iconkey="LOADGUIDE"}
 }
 
 local FARMING_TYPES = {
-	{"All","all"},
-	{"Cloths","cloth"},
-	{"Elementals","elemental"},
-	{"Food","food"},
-	{"Gems","gem"},
-	{"Misc","misc"},
+	{ZGV_T("All"),"all"},
+	{ZGV_T("Cloths"),"cloth"},
+	{ZGV_T("Elementals"),"elemental"},
+	{ZGV_T("Food"),"food"},
+	{ZGV_T("Gems"),"gem"},
+	{ZGV_T("Misc"),"misc"},
 }
 
 local FARMING_TOOLTIP = {
 	{ title="Item", width=200, titlej="LEFT", textj="LEFT", name="item"},
-	{ title="Price", width=100, titlej="RIGHT", textj="RIGHT", name="price"},
+	{ title=ZGV_T("Price"), width=100, titlej="RIGHT", textj="RIGHT", name="price"},
 	{ title="Drops", width=50, titlej="RIGHT", textj="RIGHT", name="drops"},
-	{ title="Profit", width=100, titlej="RIGHT", textj="RIGHT", name="profit"},
-	{ title="Demand", width=60, titlej="RIGHT", textj="RIGHT", name="demand"},
+	{ title=ZGV_T("Profit"), width=100, titlej="RIGHT", textj="RIGHT", name="profit"},
+	{ title=ZGV_T("Demand"), width=60, titlej="RIGHT", textj="RIGHT", name="demand"},
 	{ title="Status", width=200, titlej="RIGHT", textj="RIGHT", name="status"},
 }
 
 
 local GATHERING_COLUMNS = {
-	{ title="NO", width=25, headerwidth=40, titlej="LEFT", textj="LEFT", name="no"},
+	{ title=ZGV_T("NO"), width=25, headerwidth=40, titlej="LEFT", textj="LEFT", name="no"},
 	{ title="", width=15, headerwidth=0, titlej="LEFT", textj="LEFT", name="icon", type="icon" },
 	{ title="ITEM", width=230, titlej="LEFT", textj="LEFT", name="title", padding=20 },
-	{ title="ZONE", width=140, titlej="LEFT", textj="LEFT", name="zone" },
-	{ title="RATE", width=130, titlej="RIGHT", textj="RIGHT", name="rate", sortable=true, sortfunction=Goldguide.UpdateSorting },
-	{ title="TIME", width=60, titlej="RIGHT", textj="RIGHT", name="disptime", sortable=true, sortfunction=Goldguide.UpdateSorting },
-	{ title="EST. GOLD", width=110, titlej="RIGHT", textj="RIGHT", name="dispgold", sortable=true, sortfunction=Goldguide.UpdateSorting },
+	{ title=ZGV_T("ZONE"), width=140, titlej="LEFT", textj="LEFT", name="zone" },
+	{ title=ZGV_T("RATE"), width=130, titlej="RIGHT", textj="RIGHT", name="rate", sortable=true, sortfunction=Goldguide.UpdateSorting },
+	{ title=ZGV_T("TIME"), width=60, titlej="RIGHT", textj="RIGHT", name="disptime", sortable=true, sortfunction=Goldguide.UpdateSorting },
+	{ title=ZGV_T("EST. GOLD"), width=110, titlej="RIGHT", textj="RIGHT", name="dispgold", sortable=true, sortfunction=Goldguide.UpdateSorting },
 	{ title="", width=23, titlej="RIGHT", textj="RIGHT", name="loadbutton", type="button", iconheight=18, iconwidth=18,padding=15, iconset = "TitleButtons", iconkey="LOADGUIDE"}
 }
 
 local GATHERING_TOOLTIP = {
 	{ title="Item", width=200, titlej="LEFT", textj="LEFT", name="item"},
-	{ title="Price", width=100, titlej="RIGHT", textj="RIGHT", name="price"},
+	{ title=ZGV_T("Price"), width=100, titlej="RIGHT", textj="RIGHT", name="price"},
 	{ title="Drops", width=50, titlej="RIGHT", textj="RIGHT", name="drops"},
-	{ title="Profit", width=100, titlej="RIGHT", textj="RIGHT", name="profit"},
-	{ title="Demand", width=60, titlej="RIGHT", textj="RIGHT", name="demand"},
+	{ title=ZGV_T("Profit"), width=100, titlej="RIGHT", textj="RIGHT", name="profit"},
+	{ title=ZGV_T("Demand"), width=60, titlej="RIGHT", textj="RIGHT", name="demand"},
 	{ title="Status", width=200, titlej="RIGHT", textj="RIGHT", name="status"},
 }
 
 
 local CRAFTING_COLUMNS = {
-	{ title="NO", width=25, headerwidth=40, titlej="LEFT", textj="LEFT", name="no"},
+	{ title=ZGV_T("NO"), width=25, headerwidth=40, titlej="LEFT", textj="LEFT", name="no"},
 	{ title="", width=15, headerwidth=0, titlej="LEFT", textj="LEFT", name="icon", type="icon" },
-	{ title="RECIPE", width=412, titlej="LEFT", textj="LEFT", name="name", sortable=true, sortfunction=Goldguide.UpdateSorting },
+	{ title=ZGV_T("RECIPE"), width=412, titlej="LEFT", textj="LEFT", name="name", sortable=true, sortfunction=Goldguide.UpdateSorting },
 	{ title="STATUS", width=60, titlej="CENTER", textj="CENTER", name="status", font=FONTSTATUS},
-	{ title="MATERIALS", width=110, titlej="RIGHT", textj="RIGHT", name="materials", sortable=true, sortfunction=Goldguide.UpdateSorting },
-	{ title="PROFIT", width=110, titlej="RIGHT", textj="RIGHT", name="profit", sortable=true, sortfunction=Goldguide.UpdateSorting },
+	{ title=ZGV_T("MATERIALS"), width=110, titlej="RIGHT", textj="RIGHT", name="materials", sortable=true, sortfunction=Goldguide.UpdateSorting },
+	{ title=ZGV_T("PROFIT"), width=110, titlej="RIGHT", textj="RIGHT", name="profit", sortable=true, sortfunction=Goldguide.UpdateSorting },
 	{ title="", width=23, titlej="RIGHT", textj="RIGHT", name="loadbutton", type="button", iconheight=18, iconwidth=18,padding=15, iconset = "TitleButtons", iconkey="LOADGUIDE"}
 }
 
 local CRAFTING_TOOLTIP = {
 	{ title="", width=30, titlej="LEFT", textj="RIGHT", name="count" },
 	{ title="Item", width=310, titlej="LEFT", textj="LEFT", name="item" },
-	{ title="Each", width=100, titlej="RIGHT", textj="RIGHT", name="each" },
+	{ title=ZGV_T("Each"), width=100, titlej="RIGHT", textj="RIGHT", name="each" },
 	{ title="Total", width=100, titlej="RIGHT", textj="RIGHT", name="total" },
 	{ title="Status", width=200, titlej="RIGHT", textj="RIGHT", name="status" },
 }
@@ -137,20 +137,20 @@ local CRAFTING_TOOLTIP = {
 local CRAFTING_SKILLS={"All","Mining","Jewelcrafting","Enchanting","Inscription","Blacksmithing","Engineering","Alchemy","Tailoring","Leatherworking","Cooking"}
 
 local CRAFTING_MODES = {
-	{"Easy",     0, "Show only items that are in demand, material cost is lower than the price of the product, and you know the recipe."},
-	{"Advanced", 1, "Show only items that are in demand, material cost is lower than the price of the product, but you do not know the recipe."},
-	{"Expert",   2, "Browse all known crafts your professions can currently make, even when demand or profit data is missing."}
+	{ZGV_T("Easy"),     0, ZGV_T("Show only items that are in demand, material cost is lower than the price of the product, and you know the recipe.")},
+	{ZGV_T("Advanced"), 1, ZGV_T("Show only items that are in demand, material cost is lower than the price of the product, but you do not know the recipe.")},
+	{ZGV_T("Expert"),   2, ZGV_T("Browse all known crafts your professions can currently make, even when demand or profit data is missing.")}
 }
 
 local AUCTION_COLUMNS = {
-	{ title="NO", width=25, headerwidth=40, titlej="LEFT", textj="LEFT", name="no"},
+	{ title=ZGV_T("NO"), width=25, headerwidth=40, titlej="LEFT", textj="LEFT", name="no"},
 	{ title="", width=15, headerwidth=0, titlej="LEFT", textj="LEFT", name="icon", type="icon" },
 	{ title="ITEM", width=300, titlej="LEFT", textj="LEFT", name="title", sortable=true, sortfunction=Goldguide.UpdateSorting },
 	{ title="STATUS", width=60, titlej="CENTER", textj="CENTER", name="status", font=FONTSTATUS },
-	{ title="AMT", width=50, titlej="CENTER", textj="CENTER", name="count", sortable=true, sortfunction=Goldguide.UpdateSorting },
-	{ title="COST", width=105, titlej="RIGHT", textj="RIGHT", name="cost", sortable=true, sortfunction=Goldguide.UpdateSorting },
-	{ title="PROFIT", width=105, titlej="RIGHT", textj="RIGHT", name="profit", sortable=true, sortfunction=Goldguide.UpdateSorting },
-	{ title="GAIN", width=60, titlej="RIGHT", textj="RIGHT", name="gain", sortable=true, sortfunction=Goldguide.UpdateSorting },
+	{ title=ZGV_T("AMT"), width=50, titlej="CENTER", textj="CENTER", name="count", sortable=true, sortfunction=Goldguide.UpdateSorting },
+	{ title=ZGV_T("COST"), width=105, titlej="RIGHT", textj="RIGHT", name="cost", sortable=true, sortfunction=Goldguide.UpdateSorting },
+	{ title=ZGV_T("PROFIT"), width=105, titlej="RIGHT", textj="RIGHT", name="profit", sortable=true, sortfunction=Goldguide.UpdateSorting },
+	{ title=ZGV_T("GAIN"), width=60, titlej="RIGHT", textj="RIGHT", name="gain", sortable=true, sortfunction=Goldguide.UpdateSorting },
 	{ title="", width=23, titlej="RIGHT", textj="RIGHT", name="loadbutton", type="button", iconheight=18, iconwidth=18,padding=15, iconset = "TitleButtons", iconkey="LOADGUIDE"}
 }
 
@@ -158,27 +158,27 @@ local AUCTION_TOOLTIP = {
 	{ title="", width=30, titlej="LEFT", textj="RIGHT", name="count" },
 	{ title="ITEM", width=150, titlej="LEFT", textj="LEFT", name="title" },
 	--{ title="WORTH", width=100, titlej="RIGHT", textj="RIGHT", name="worth" },
-	{ title="CUR PRICE", width=105, titlej="RIGHT", textj="RIGHT", name="curpri" },
-	{ title="BUY (ALL)", width=110, titlej="RIGHT", textj="RIGHT", name="buyall" },
-	{ title="SELL (ALL)", width=110, titlej="RIGHT", textj="RIGHT", name="sellall" },
-	{ title="AH CUT", width=105, titlej="RIGHT", textj="RIGHT", name="ahcut" },
-	{ title="PROFIT", width=110, titlej="RIGHT", textj="RIGHT", name="profit" },
+	{ title=ZGV_T("CUR PRICE"), width=105, titlej="RIGHT", textj="RIGHT", name="curpri" },
+	{ title=ZGV_T("BUY (ALL)"), width=110, titlej="RIGHT", textj="RIGHT", name="buyall" },
+	{ title=ZGV_T("SELL (ALL)"), width=110, titlej="RIGHT", textj="RIGHT", name="sellall" },
+	{ title=ZGV_T("AH CUT"), width=105, titlej="RIGHT", textj="RIGHT", name="ahcut" },
+	{ title=ZGV_T("PROFIT"), width=110, titlej="RIGHT", textj="RIGHT", name="profit" },
 }
 
 local AUCTION_TYPES = {
-	{"All", 0,"Show all items."},
-	{"Equipment", 1,"Show rquipment."},
-	{"Trade Goods", 2,"Show trade goods."},
-	{"Consumables", 3,"Show consumables."},
-	{"Pets", 4,"Show pets."},
-	{"Others", 5,"Show other items."},
+	{ZGV_T("All"), 0,ZGV_T("Show all items.")},
+	{ZGV_T("Equipment"), 1,ZGV_T("Show rquipment.")},
+	{"Trade Goods", 2,ZGV_T("Show trade goods.")},
+	{ZGV_T("Consumables"), 3,ZGV_T("Show consumables.")},
+	{"Pets", 4,ZGV_T("Show pets.")},
+	{ZGV_T("Others"), 5,ZGV_T("Show other items.")},
 }
 
 
 local AUCTION_MODES = {
-	{"Easy", 10,"Show best investments."},
-	{"Advanced", 5,"Show good investments."},
-	{"Expert", 0,"Show all investments."}
+	{ZGV_T("Easy"), 10,ZGV_T("Show best investments.")},
+	{ZGV_T("Advanced"), 5,ZGV_T("Show good investments.")},
+	{ZGV_T("Expert"), 0,ZGV_T("Show all investments.")}
 }
 
 local function MakeImgButton(name,seticon,caption)
@@ -270,7 +270,7 @@ function Goldguide:CreateMainFrame()
 				ZGV.GuideMenu:Show("Home") 
 				Goldguide:HideWindow() 
 			end)
-			:SetScript("OnEnter", function() Goldguide:ShowMenuTooltip(MF.HeaderFrame.menu,"Go back to main menu") end)
+			:SetScript("OnEnter", function() Goldguide:ShowMenuTooltip(MF.HeaderFrame.menu,ZGV_T("Go back to main menu")) end)
 			:SetScript("OnLeave", function() Goldguide:HideMenuTooltip() end)
 			.__END
 
@@ -308,21 +308,21 @@ function Goldguide:CreateMainFrame()
 
 		MF.HeaderFrame.Tabs[2] = CHAIN(MakeImgButton("Tab2",ZGV.IconSets.GoldGuideIcons.GATHER,nil))
 			:SetPoint("LEFT",MF.HeaderFrame.Tabs[1],"RIGHT",TAB_SPACE,0)
-			:SetText("Gathering")
+			:SetText(ZGV_T("Gathering"))
 			:SetScript("OnClick",function(tab) Goldguide:SetCurrentTab("Gathering") end)
 		.__END
 		MF.HeaderFrame.Tabs[2].tabname = "Gathering"
 		
 		MF.HeaderFrame.Tabs[3] = CHAIN(MakeImgButton("Tab3",ZGV.IconSets.GoldGuideIcons.CRAFT,nil))
 			:SetPoint("LEFT",MF.HeaderFrame.Tabs[2],"RIGHT",TAB_SPACE,0)
-			:SetText("Crafting")
+			:SetText(ZGV_T("Crafting"))
 			:SetScript("OnClick",function(tab) Goldguide:SetCurrentTab("Crafting") end)
 		.__END
 		MF.HeaderFrame.Tabs[3].tabname = "Crafting"
 
 		MF.HeaderFrame.Tabs[4] = CHAIN(MakeImgButton("Tab4",ZGV.IconSets.GoldGuideIcons.AUCTION,nil))
 			:SetPoint("LEFT",MF.HeaderFrame.Tabs[3],"RIGHT",TAB_SPACE,0)
-			:SetText("Auctions")
+			:SetText(ZGV_T("Auctions"))
 			:SetScript("OnClick",function(tab) Goldguide:SetCurrentTab("Auctions") end)
 		.__END
 		MF.HeaderFrame.Tabs[4].tabname = "Auctions"
@@ -375,7 +375,7 @@ function Goldguide:CreateMainFrame()
 			:SetJustifyH("LEFT")
 			:SetJustifyV("CENTER")
 			:SetSize(140,16)
-			:SetText("Results: 0")
+			:SetText(ZGV_T("Results: 0"))
 		.__END
 
 	MF.ContentFrame = CHAIN(CreateFrame("Frame", "ZygorGoldguideContent", MF))
@@ -399,7 +399,7 @@ function Goldguide:CreateMainFrame()
 		:SetJustifyH("CENTER")
 		:SetJustifyV("MIDDLE")
 		:SetSize(818,431)
-		:SetText("Results: 0")
+		:SetText(ZGV_T("Results: 0"))
 		:Show()
 	.__END
 
@@ -418,13 +418,13 @@ function Goldguide:CreateMainFrame()
 		MF.FooterUpdated = CHAIN(MF.FooterFrame:CreateFontString())
 			:SetPoint("BOTTOMLEFT",5,5)
 			:SetFont(FONTBOLD,12)
-			:SetText("LAST UPDATED:")
+			:SetText(ZGV_T("LAST UPDATED:"))
 		.__END
 
 		MF.FooterUpdatedTime = CHAIN(MF.FooterFrame:CreateFontString())
 			:SetPoint("LEFT",MF.FooterUpdated ,"RIGHT",5,0)
 			:SetFont(FONT,12)
-			:SetText("no time")
+			:SetText(ZGV_T("no time"))
 		.__END
 
 		MF.FooterSettingsButton = CHAIN(CreateFrame("Button",nil,MF.FooterFrame))
@@ -510,7 +510,7 @@ function Goldguide:MakeTable_Farming()
 				ZGV:SetGuide(ZGV.Goldguide:GetRouteGuideLoadTitle(title))
 			end
 		end)
-		row.loadbutton:SetScript("OnEnter",function() if row.chore then Goldguide:ShowLoadbuttonTooltip(row.loadbutton,"Load guide",row.chore.display_name) end end)
+		row.loadbutton:SetScript("OnEnter",function() if row.chore then Goldguide:ShowLoadbuttonTooltip(row.loadbutton,ZGV_T("Load guide"),row.chore.display_name) end end)
 		row.loadbutton:SetScript("OnLeave",function() Goldguide:HideLoadbuttonTooltip(row) end)
 
 		row:SetScript("OnEnter",function(self) ZGV.Goldguide.FarmingTooltip:DisplayData(row) end)
@@ -533,7 +533,7 @@ function Goldguide:MakeTable_Farming()
 	container.TypeDropdown = CHAIN(ui:Create("DropDown",container,DROPDOWN_STYLE,Goldguide.MainFrame.MenuFrame.decor1:GetFrameLevel()+2))
 		:SetPoint("BOTTOMRIGHT",Goldguide.MainFrame.MenuFrame.SearchEdit,"BOTTOMLEFT",-122,1)
 		:SetSize(DROPDOWN_WIDTH,DROPDOWN_HEIGHT)
-		:AddTooltip("ANCHOR_TOPLEFT","Filter what sort of items are shown.")
+		:AddTooltip("ANCHOR_TOPLEFT",ZGV_T("Filter what sort of items are shown."))
 	.__END
 
 	for optnum,opt in ipairs(FARMING_TYPES) do
@@ -571,7 +571,7 @@ function Goldguide:MakeTable_Gathering()
 			end
 		end)
 
-		row.loadbutton:SetScript("OnEnter",function() if row.chore then Goldguide:ShowLoadbuttonTooltip(row.loadbutton,"Load guide",row.chore.display_name) end end)
+		row.loadbutton:SetScript("OnEnter",function() if row.chore then Goldguide:ShowLoadbuttonTooltip(row.loadbutton,ZGV_T("Load guide"),row.chore.display_name) end end)
 		row.loadbutton:SetScript("OnLeave",function() Goldguide:HideLoadbuttonTooltip(row) end)
 
 		row:SetScript("OnEnter",function(self) ZGV.Goldguide.GatheringTooltip:DisplayData(row) end)
@@ -594,7 +594,7 @@ function Goldguide:MakeTable_Gathering()
 	container.TypeDropdown = CHAIN(ui:Create("DropDown",container,DROPDOWN_STYLE,Goldguide.MainFrame.MenuFrame.decor1:GetFrameLevel()+2))
 		:SetPoint("BOTTOMRIGHT",Goldguide.MainFrame.MenuFrame.SearchEdit,"BOTTOMLEFT",-122,1)
 		:SetSize(DROPDOWN_WIDTH,DROPDOWN_HEIGHT)
-		:AddTooltip("ANCHOR_TOPLEFT","Filter what sort of items are shown.")
+		:AddTooltip("ANCHOR_TOPLEFT",ZGV_T("Filter what sort of items are shown."))
 	.__END
 
 	for optnum,opt in ipairs(Goldguide.GATHERING_TYPES) do
@@ -629,7 +629,7 @@ function Goldguide:MakeTable_Crafting()
 			if row.chore then row.chore:GenerateGuide() end
 		end)
 
-		row.loadbutton:SetScript("OnEnter",function() if row.chore then Goldguide:ShowLoadbuttonTooltip(row.loadbutton,"Load guide",row.chore.display_name) end end)
+		row.loadbutton:SetScript("OnEnter",function() if row.chore then Goldguide:ShowLoadbuttonTooltip(row.loadbutton,ZGV_T("Load guide"),row.chore.display_name) end end)
 		row.loadbutton:SetScript("OnLeave",function() Goldguide:HideLoadbuttonTooltip(row) end)
 
 		row:SetScript("OnEnter",function(self) ZGV.Goldguide.CraftingTooltip:DisplayData(row) end)
@@ -653,7 +653,7 @@ function Goldguide:MakeTable_Crafting()
 	container.TypeDropdown = CHAIN(ui:Create("DropDown",container,DROPDOWN_STYLE,Goldguide.MainFrame.MenuFrame.decor1:GetFrameLevel()+2))
 		:SetPoint("BOTTOMRIGHT",Goldguide.MainFrame.MenuFrame.SearchEdit,"BOTTOMLEFT",-122,1)
 		:SetSize(DROPDOWN_WIDTH,DROPDOWN_HEIGHT)
-		:AddTooltip("ANCHOR_TOPLEFT","Filter what sort of items are shown.")
+		:AddTooltip("ANCHOR_TOPLEFT",ZGV_T("Filter what sort of items are shown."))
 	.__END
 		
 	for _,skillname in ipairs(CRAFTING_SKILLS) do
@@ -695,7 +695,7 @@ function Goldguide:MakeTable_Auctions()
 			end
 		end)
 
-		row.loadbutton:SetScript("OnEnter",function() if row.chore then Goldguide:ShowLoadbuttonTooltip(row.loadbutton,ZGV.db.char.CurrentDeals and ZGV.db.char.CurrentDeals[row.chore.id] and "Item already on Shopping List" or "Add to Shopping List",row.chore.name) end end)
+		row.loadbutton:SetScript("OnEnter",function() if row.chore then Goldguide:ShowLoadbuttonTooltip(row.loadbutton,ZGV.db.char.CurrentDeals and ZGV.db.char.CurrentDeals[row.chore.id] and ZGV_T("Item already on Shopping List") or ZGV_T("Add to Shopping List"),row.chore.name) end end)
 		row.loadbutton:SetScript("OnLeave",function() Goldguide:HideLoadbuttonTooltip(row) end)
 
 		row:SetScript("OnEnter",function(self) ZGV.Goldguide.AuctionTooltip:DisplayData(row) end)
@@ -718,7 +718,7 @@ function Goldguide:MakeTable_Auctions()
 	container.TypeDropdown = CHAIN(ui:Create("DropDown",container,DROPDOWN_STYLE,Goldguide.MainFrame.MenuFrame.decor1:GetFrameLevel()+2))
 		:SetPoint("BOTTOMRIGHT",Goldguide.MainFrame.MenuFrame.SearchEdit,"BOTTOMLEFT",-122,1)
 		:SetSize(DROPDOWN_WIDTH,DROPDOWN_HEIGHT)
-		:AddTooltip("ANCHOR_TOPLEFT","Filter what sort of items are shown.")
+		:AddTooltip("ANCHOR_TOPLEFT",ZGV_T("Filter what sort of items are shown."))
 	.__END
 		
 	for optnum,opt in ipairs(AUCTION_TYPES) do
@@ -744,7 +744,7 @@ end
 function Goldguide:SetCurrentTab(title)
 	local available, reason = Goldguide:GetTabAvailability(title)
 	if not available and Goldguide.ActiveTab then
-		Goldguide.MainFrame.MessageFrame.ResultsMessage:SetText(reason or (title .. " is not ready yet."))
+		Goldguide.MainFrame.MessageFrame.ResultsMessage:SetText(reason or (title .. ZGV_T(" is not ready yet.")))
 		Goldguide.MainFrame.MessageFrame:Show()
 		Goldguide:UpdateTabAvailability()
 		for _,tabobj in ipairs(Goldguide.MainFrame.HeaderFrame.Tabs) do
@@ -810,7 +810,7 @@ function Goldguide:SetCurrentTab(title)
 end
 
 StaticPopupDialogs["ZYGOR_GOLD_WARNED_LEGION_CRAP"] = {
-	text = "Zygor Gold Guide is not working properly due to recent changes in Auction House access mechanisms. For this reason we have temporarily disabled the Gold Guide while we work on a solution. We apologize for the inconvenience.",
+	text = ZGV_T("Zygor Gold Guide is not working properly due to recent changes in Auction House access mechanisms. For this reason we have temporarily disabled the Gold Guide while we work on a solution. We apologize for the inconvenience."),
 	button1 = OKAY,
 	button2 = nil,
 	timeout = 0,
@@ -884,27 +884,27 @@ function Goldguide:UpdateTimeStamp()
 
 
 	if ScanDatabase.LastScan then
-		updateTitletext = "LAST UPDATED:"
+		updateTitletext = ZGV_T("LAST UPDATED:")
 		timestamptext = ("|c%s%s|r"):format(OldColor(ScanDatabase.LastScan,3600*2,60*10), ui.GetTimeStamp(ScanDatabase.LastScan))
 		if time()-ScanDatabase.LastScan > 3600*2 then
 			timestamptext = timestamptext .. "|r - " .. L["gold_app_old_scan_data"]
 		end
 	else
-		updateTitletext = "|cffff0000ALERT:|r"
+		updateTitletext = ZGV_T("|cffff0000ALERT:|r")
 		timestamptext = L["gold_app_no_scan_data"]
 	end
 
 	if not ZGV.Gold.guides_loaded then
-		updateTitletext = "|cffff0000ALERT:|r"
+		updateTitletext = ZGV_T("|cffff0000ALERT:|r")
 		timestamptext = L["gold_app_no_goldguide"]
 	elseif not (ZGV.Gold.servertrends and ZGV.Gold.servertrends.date) then
-		updateTitletext = "|cffff0000ALERT:|r"
+		updateTitletext = ZGV_T("|cffff0000ALERT:|r")
 		timestamptext = L["gold_app_no_servertrends"]
 	elseif ZGV.Gold.servertrends.date then
 		local timeSinceLast = time() -  ZGV.Gold.servertrends.date
 
 		if timeSinceLast > TRENDS_OLD * 3600 then	-- Data is old
-			updateTitletext = "|cffff0000ALERT:|r"
+			updateTitletext = ZGV_T("|cffff0000ALERT:|r")
 			timestamptext = L["gold_app_old_servertrends"]:format(ui.GetTimeStamp(tonumber(ZGV.Gold.servertrends.date)))
 		end
 	end
@@ -920,7 +920,7 @@ function Goldguide:UpdateTimeStamp()
 		progress_dots = "..."
 	end
 
-	local data_text = "auctions"
+	local data_text = ZGV_T("auctions")
 
 	if Goldguide.oldstate ~= ZGV.Gold.Scan.state then
 		Goldguide.oldstate = ZGV.Gold.Scan.state
@@ -931,7 +931,7 @@ function Goldguide:UpdateTimeStamp()
 
 	local page_text = ""
 	if Goldguide.pagenum then
-		page_text = "page "..Goldguide.pagenum.." of "
+		page_text = ZGV_T("page ")..Goldguide.pagenum..ZGV_T(" of ")
 	end
 
 	if Goldguide.manualScanning then
@@ -947,21 +947,21 @@ function Goldguide:UpdateTimeStamp()
 
 
 	if ZGV.Gold.Scan.state == "SS_QUERYING" then
-		updateTitletext = "|cffff0000SCANNING:|r"
-		timestamptext = "Querying "..data_text.." data" .. progress_dots
+		updateTitletext = ZGV_T("|cffff0000SCANNING:|r")
+		timestamptext = ZGV_T("Querying ")..data_text..ZGV_T(" data") .. progress_dots
 	elseif ZGV.Gold.Scan.state =="SS_RECEIVING" then
-		updateTitletext = "|cffff0000SCANNING:|r"
-		timestamptext = "Receiving "..data_text.." data" .. progress_dots
+		updateTitletext = ZGV_T("|cffff0000SCANNING:|r")
+		timestamptext = ZGV_T("Receiving ")..data_text..ZGV_T(" data") .. progress_dots
 	elseif ZGV.Gold.Scan.state =="SS_SCANNING" then
-		updateTitletext = "|cffff0000SCANNING:|r"
-		timestamptext = "Scanning "..data_text.." data" .. progress_dots
+		updateTitletext = ZGV_T("|cffff0000SCANNING:|r")
+		timestamptext = ZGV_T("Scanning ")..data_text..ZGV_T(" data") .. progress_dots
 	elseif ZGV.Gold.Scan.state =="SS_ANALYZING" then
-		updateTitletext = "|cffff0000SCANNING:|r"
-		timestamptext = "Analyzing "..data_text.." data" .. progress_dots
+		updateTitletext = ZGV_T("|cffff0000SCANNING:|r")
+		timestamptext = ZGV_T("Analyzing ")..data_text..ZGV_T(" data") .. progress_dots
 	elseif Goldguide.ScanIsRunning or Goldguide.ActiveShoppingAddItem or Goldguide.ScanItems and next(Goldguide.ScanItems) then
 		-- show Analyzing to avoid idle flashes
-		updateTitletext = "|cffff0000SCANNING:|r"
-		timestamptext = "Analyzing "..data_text.." data" .. progress_dots
+		updateTitletext = ZGV_T("|cffff0000SCANNING:|r")
+		timestamptext = ZGV_T("Analyzing ")..data_text..ZGV_T(" data") .. progress_dots
 	elseif ZGV.Gold.Scan.state =="SS_IDLE" then
 		Goldguide.pagenum = nil
 	end

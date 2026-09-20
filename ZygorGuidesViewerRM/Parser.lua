@@ -1051,7 +1051,7 @@ function me:ParseEntry(text)
 				if not slotid or not item or item=="" then
 					-- Don't abort entire guide on malformed legacy "equipped" lines.
 					goal.action = nil
-					goal.text = "Equip " .. (params or "")
+					goal.text = ZGV_T("Equip ") .. (params or "")
 				else
 					goal.slot=slotid
 					goal.item=item

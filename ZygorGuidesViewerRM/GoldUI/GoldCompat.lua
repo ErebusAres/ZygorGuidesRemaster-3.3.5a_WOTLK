@@ -219,13 +219,13 @@ if not ZGV.OpenGoldGuide then
 	function ZGV:OpenGoldGuide(tabname)
 		if self.db and self.db.profile and not self.db.profile.load_gold then
 			self.db.profile.load_gold = true
-			print("|cffff8800Zygor Gold Guide|r: Enabled! Type /reload then open Gold Guide again.")
+			print(ZGV_T("|cffff8800Zygor Gold Guide|r: Enabled! Type /reload then open Gold Guide again."))
 			return
 		end
 
 		local goldguide = self.Goldguide or (self.Gold and self.Gold.Goldguide)
 		if not goldguide then
-			print("|cffff8800Zygor Gold Guide|r: Not initialized. Try /reload first.")
+			print(ZGV_T("|cffff8800Zygor Gold Guide|r: Not initialized. Try /reload first."))
 			return
 		end
 
@@ -234,7 +234,7 @@ if not ZGV.OpenGoldGuide then
 		elseif goldguide.ShowWindow then
 			goldguide:ShowWindow()
 		else
-			print("|cffff8800Zygor Gold Guide|r: Not initialized. Try /reload first.")
+			print(ZGV_T("|cffff8800Zygor Gold Guide|r: Not initialized. Try /reload first."))
 			return
 		end
 

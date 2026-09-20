@@ -332,7 +332,7 @@ local function RemasterProgressSuffix(goal)
 	local mid = (dgrad and dgrad.mid) or {1.0,0.9,0.5}
 	local good = (dgrad and dgrad.good) or {0.7,1.0,0.6}
 	local r,g,b = ZGV.gradient3(perc, bad[1],bad[2],bad[3], mid[1],mid[2],mid[3], good[1],good[2],good[3], 0.7)
-	return (" |cff%02x%02x%02x(%d left)|r"):format(r*255,g*255,b*255,left)
+	return (ZGV_T(" |cff%02x%02x%02x(%d left)|r")):format(r*255,g*255,b*255,left)
 end
 
 local function RemasterPickDisplayGoal(baseGoal,step)
@@ -372,20 +372,20 @@ local function RemasterFormatGoTo(goal,title)
 	local y = goal and goal.y
 
 	if map and x and y then
-		return ("|cffffffffGo to |r%s%s%s %s%.1f,%.1f%s"):format(
+		return (ZGV_T("|cffffffffGo to |r%s%s%s %s%.1f,%.1f%s")):format(
 			locColor,map,reset,coordColor,x,y,reset
 		)
 	end
 	if x and y then
-		return ("|cffffffffGo to |r%s%.1f,%.1f%s"):format(coordColor,x,y,reset)
+		return (ZGV_T("|cffffffffGo to |r%s%.1f,%.1f%s")):format(coordColor,x,y,reset)
 	end
 	if map then
-		return ("|cffffffffGo to |r%s%s%s"):format(locColor,map,reset)
+		return (ZGV_T("|cffffffffGo to |r%s%s%s")):format(locColor,map,reset)
 	end
 
 	-- Fallback: parse a raw title like "Go to Terokkar Forest 30.1,42.5".
 	if title then
-		local prefix,rest = title:match("^(Go to%s+)(.+)$")
+		local prefix,rest = title:match(ZGV_T("^(Go to%s+)(.+)$"))
 		if prefix and rest then
 			local base,cx,cy,tail = rest:match("^(.-)(%d+%.?%d*)[,; ]+(%d+%.?%d*)(.-)$")
 			if cx and cy then
@@ -431,15 +431,15 @@ local function RemasterFormatGoToColored(goal,title)
 	local y = goal and goal.y
 
 	if map and x and y then
-		return ("|cffffffffGo to |r%s%s%s %s%.1f,%.1f%s"):format(
+		return (ZGV_T("|cffffffffGo to |r%s%s%s %s%.1f,%.1f%s")):format(
 			locColor,map,reset,coordColor,x,y,reset
 		)
 	end
 	if x and y then
-		return ("|cffffffffGo to |r%s%.1f,%.1f%s"):format(coordColor,x,y,reset)
+		return (ZGV_T("|cffffffffGo to |r%s%.1f,%.1f%s")):format(coordColor,x,y,reset)
 	end
 	if map then
-		return ("|cffffffffGo to |r%s%s%s"):format(locColor,map,reset)
+		return (ZGV_T("|cffffffffGo to |r%s%s%s")):format(locColor,map,reset)
 	end
 	return RemasterFormatGoTo(goal,title)
 end
@@ -452,18 +452,18 @@ local function RemasterFormatFromGoalText(goal)
 	raw = raw:gsub("|c%x%x%x%x%x%x%x%x",""):gsub("|r","")
 	raw = raw:gsub("%s+%(%d+/%d+%)$","")
 	raw = raw:gsub("%s+%d+%%$","")
-	local p,s = raw:match("^(Kill%s+)(.+)$")
-	if p and s then return "|cffffffffKill |r"..RemasterNounColor("enemy")..s.."|r"..RemasterProgressSuffix(goal) end
-	p,s = raw:match("^(Get%s+)(.+)$")
-	if p and s then return "|cffffffffCollect |r"..RemasterNounColor("quest")..s.."|r"..RemasterProgressSuffix(goal) end
-	p,s = raw:match("^(Collect%s+)(.+)$")
-	if p and s then return "|cffffffffCollect |r"..RemasterNounColor("quest")..s.."|r"..RemasterProgressSuffix(goal) end
-	p,s = raw:match("^(Talk to%s+)(.+)$")
-	if p and s then return "|cffffffffTalk to |r"..RemasterNounColor("npc")..s.."|r" end
-	p,s = raw:match("^(Turn in%s+)(.+)$")
-	if p and s then return "|cffffffffTurn in |r"..RemasterNounColor("quest")..s.."|r" end
-	p,s = raw:match("^(Accept%s+)(.+)$")
-	if p and s then return "|cffffffffAccept |r"..RemasterNounColor("quest")..s.."|r" end
+	local p,s = raw:match(ZGV_T("^(Kill%s+)(.+)$"))
+	if p and s then return ZGV_T("|cffffffffKill |r")..RemasterNounColor("enemy")..s.."|r"..RemasterProgressSuffix(goal) end
+	p,s = raw:match(ZGV_T("^(Get%s+)(.+)$"))
+	if p and s then return ZGV_T("|cffffffffCollect |r")..RemasterNounColor("quest")..s.."|r"..RemasterProgressSuffix(goal) end
+	p,s = raw:match(ZGV_T("^(Collect%s+)(.+)$"))
+	if p and s then return ZGV_T("|cffffffffCollect |r")..RemasterNounColor("quest")..s.."|r"..RemasterProgressSuffix(goal) end
+	p,s = raw:match(ZGV_T("^(Talk to%s+)(.+)$"))
+	if p and s then return ZGV_T("|cffffffffTalk to |r")..RemasterNounColor("npc")..s.."|r" end
+	p,s = raw:match(ZGV_T("^(Turn in%s+)(.+)$"))
+	if p and s then return ZGV_T("|cffffffffTurn in |r")..RemasterNounColor("quest")..s.."|r" end
+	p,s = raw:match(ZGV_T("^(Accept%s+)(.+)$"))
+	if p and s then return ZGV_T("|cffffffffAccept |r")..RemasterNounColor("quest")..s.."|r" end
 	return nil
 end
 
@@ -474,11 +474,11 @@ local function RemasterFormatTitle(title,waypoint)
 	-- Corpse waypoints carry their own label and must not inherit the active guide goal.
 	if waypoint and waypoint.type=="corpse" then return "|cffffffff"..title.."|r" end
 	if waypoint and waypoint.travelTitle then
-		local prefix,place = title:match("^(Fly to%s+)(.+)$")
+		local prefix,place = title:match(ZGV_T("^(Fly to%s+)(.+)$"))
 		if prefix and place then
 			return "|cffffffff"..prefix.."|r"..RemasterNounColor("location")..place.."|r"
 		end
-		prefix,place = title:match("^(Travel to%s+)(.+)$")
+		prefix,place = title:match(ZGV_T("^(Travel to%s+)(.+)$"))
 		if prefix and place then
 			return "|cffffffff"..prefix.."|r"..RemasterNounColor("location")..place.."|r"
 		end
@@ -490,22 +490,22 @@ local function RemasterFormatTitle(title,waypoint)
 	goal = RemasterPickDisplayGoal(goal,step)
 	if goal and goal.action then
 		if goal.action=="accept" and goal.quest and (not title or title == goal.npc or title == goal.quest) then
-			return "|cffffffffAccept |r"..RemasterNounColor("quest").."'"..goal.quest.."'|r"
+			return ZGV_T("|cffffffffAccept |r")..RemasterNounColor("quest").."'"..goal.quest.."'|r"
 		end
 		if goal.action=="turnin" and goal.quest and (not title or title == goal.npc or title == goal.quest) then
-			return "|cffffffffTurn in |r"..RemasterNounColor("quest").."'"..goal.quest.."'|r"
+			return ZGV_T("|cffffffffTurn in |r")..RemasterNounColor("quest").."'"..goal.quest.."'|r"
 		end
 		if goal.action=="kill" and goal.target then
-			return "|cffffffffKill |r"..RemasterNounColor("enemy")..goal.target.."|r"..RemasterProgressSuffix(goal)
+			return ZGV_T("|cffffffffKill |r")..RemasterNounColor("enemy")..goal.target.."|r"..RemasterProgressSuffix(goal)
 		end
 		if (goal.action=="get" or goal.action=="collect") and goal.target then
-			return "|cffffffffCollect |r"..RemasterNounColor("quest")..goal.target.."|r"..RemasterProgressSuffix(goal)
+			return ZGV_T("|cffffffffCollect |r")..RemasterNounColor("quest")..goal.target.."|r"..RemasterProgressSuffix(goal)
 		end
 		if goal.action=="goto" and (goal.map or goal.x or goal.y) and not goal.npc then
-			return RemasterFormatGoToColored(goal,title) or "|cffffffffGo to|r"
+			return RemasterFormatGoToColored(goal,title) or ZGV_T("|cffffffffGo to|r")
 		end
 		if (goal.action=="talk" or goal.action=="goto") and goal.npc and (not title or title == goal.npc or title == goal.quest) then
-			return "|cffffffffTalk to |r"..RemasterNounColor("npc")..goal.npc.."|r"
+			return ZGV_T("|cffffffffTalk to |r")..RemasterNounColor("npc")..goal.npc.."|r"
 		end
 		local fromText = RemasterFormatFromGoalText(goal)
 		if fromText then return fromText end
@@ -516,114 +516,114 @@ local function RemasterFormatTitle(title,waypoint)
 		-- Prefer turnin/accept context over generic talk when both share the same NPC in a step.
 		for _,g in ipairs(step.goals) do
 			if g and g.action=="turnin" and g.quest and (title==g.quest or title==g.npc) then
-				return "|cffffffffTurn in |r"..RemasterNounColor("quest").."'"..g.quest.."'|r"
+				return ZGV_T("|cffffffffTurn in |r")..RemasterNounColor("quest").."'"..g.quest.."'|r"
 			end
 		end
 		for _,g in ipairs(step.goals) do
 			if g and g.action=="accept" and g.quest and (title==g.quest or title==g.npc) then
-				return "|cffffffffAccept |r"..RemasterNounColor("quest").."'"..g.quest.."'|r"
+				return ZGV_T("|cffffffffAccept |r")..RemasterNounColor("quest").."'"..g.quest.."'|r"
 			end
 		end
 		for _,g in ipairs(step.goals) do
 			if g and g.action=="kill" and g.target and (title==g.target or title==g.npc) then
-				return "|cffffffffKill |r"..RemasterNounColor("enemy")..g.target.."|r"..RemasterProgressSuffix(g)
+				return ZGV_T("|cffffffffKill |r")..RemasterNounColor("enemy")..g.target.."|r"..RemasterProgressSuffix(g)
 			end
 		end
 		for _,g in ipairs(step.goals) do
 			if g and g.action=="kill" and g.target and g.quest and title==g.quest then
-				return "|cffffffffKill |r"..RemasterNounColor("enemy")..g.target.."|r"..RemasterProgressSuffix(g)
+				return ZGV_T("|cffffffffKill |r")..RemasterNounColor("enemy")..g.target.."|r"..RemasterProgressSuffix(g)
 			end
 		end
 		for _,g in ipairs(step.goals) do
 			if g and (g.action=="get" or g.action=="collect") and g.target and (title==g.target or title==g.quest) then
-				return "|cffffffffCollect |r"..RemasterNounColor("quest")..g.target.."|r"..RemasterProgressSuffix(g)
+				return ZGV_T("|cffffffffCollect |r")..RemasterNounColor("quest")..g.target.."|r"..RemasterProgressSuffix(g)
 			end
 		end
 		for _,g in ipairs(step.goals) do
 			if g and g.action=="goto" and not g.npc and (title==g.map or title==g.autotitle or title==g.title or title==g.text or title==g.quest) then
-				return RemasterFormatGoToColored(g,title) or "|cffffffffGo to|r"
+				return RemasterFormatGoToColored(g,title) or ZGV_T("|cffffffffGo to|r")
 			end
 		end
 		for _,g in ipairs(step.goals) do
 			if g and (g.action=="talk" or g.action=="goto") and g.npc and title==g.npc then
-				return "|cffffffffTalk to |r"..RemasterNounColor("npc")..g.npc.."|r"
+				return ZGV_T("|cffffffffTalk to |r")..RemasterNounColor("npc")..g.npc.."|r"
 			end
 		end
 	end
 
-	local prefix,quest = title:match("^(Accept%s+)(.+)$")
+	local prefix,quest = title:match(ZGV_T("^(Accept%s+)(.+)$"))
 	if prefix and quest then
 		return "|cffffffff"..prefix.."|r"..RemasterNounColor("quest")..quest.."|r"
 	end
-	prefix,quest = title:match("^(Turn in%s+)(.+)$")
+	prefix,quest = title:match(ZGV_T("^(Turn in%s+)(.+)$"))
 	if prefix and quest then
 		return "|cffffffff"..prefix.."|r"..RemasterNounColor("quest")..quest.."|r"
 	end
-	prefix,quest = title:match("^(Talk to%s+)(.+)$")
+	prefix,quest = title:match(ZGV_T("^(Talk to%s+)(.+)$"))
 	if prefix and quest then
 		return "|cffffffff"..prefix.."|r"..RemasterNounColor("npc")..quest.."|r"
 	end
-	prefix,quest = title:match("^(Go to%s+)(.+)$")
+	prefix,quest = title:match(ZGV_T("^(Go to%s+)(.+)$"))
 	if prefix and quest then
 		local out = RemasterFormatGoToColored(goal,title)
 		if out then return out end
 		return "|cffffffff"..prefix.."|r"..RemasterNounColor("location")..quest.."|r"
 	end
-	prefix,quest = title:match("^(Kill%s+)(.+)$")
+	prefix,quest = title:match(ZGV_T("^(Kill%s+)(.+)$"))
 	if prefix and quest then
 		return "|cffffffff"..prefix.."|r"..RemasterNounColor("enemy")..quest.."|r"
 	end
-	prefix,quest = title:match("^(Get%s+)(.+)$")
+	prefix,quest = title:match(ZGV_T("^(Get%s+)(.+)$"))
 	if prefix and quest then
-		return "|cffffffffCollect |r"..RemasterNounColor("quest")..quest.."|r"
+		return ZGV_T("|cffffffffCollect |r")..RemasterNounColor("quest")..quest.."|r"
 	end
-	prefix,quest = title:match("^(Collect%s+)(.+)$")
+	prefix,quest = title:match(ZGV_T("^(Collect%s+)(.+)$"))
 	if prefix and quest then
 		return "|cffffffff"..prefix.."|r"..RemasterNounColor("quest")..quest.."|r"
 	end
 	prefix,quest = title:match("^(Gather%s+)(.+)$")
 	if prefix and quest then
-		return "|cffffffffCollect |r"..RemasterNounColor("quest")..quest.."|r"
+		return ZGV_T("|cffffffffCollect |r")..RemasterNounColor("quest")..quest.."|r"
 	end
 	prefix,quest = title:match("^(Loot%s+)(.+)$")
 	if prefix and quest then
-		return "|cffffffffCollect |r"..RemasterNounColor("quest")..quest.."|r"
+		return ZGV_T("|cffffffffCollect |r")..RemasterNounColor("quest")..quest.."|r"
 	end
 	prefix,quest = title:match("^(Obtain%s+)(.+)$")
 	if prefix and quest then
-		return "|cffffffffCollect |r"..RemasterNounColor("quest")..quest.."|r"
+		return ZGV_T("|cffffffffCollect |r")..RemasterNounColor("quest")..quest.."|r"
 	end
 	prefix,quest = title:match("^(Acquire%s+)(.+)$")
 	if prefix and quest then
-		return "|cffffffffCollect |r"..RemasterNounColor("quest")..quest.."|r"
+		return ZGV_T("|cffffffffCollect |r")..RemasterNounColor("quest")..quest.."|r"
 	end
 	prefix,quest = title:match("^(Recover%s+)(.+)$")
 	if prefix and quest then
-		return "|cffffffffCollect |r"..RemasterNounColor("quest")..quest.."|r"
+		return ZGV_T("|cffffffffCollect |r")..RemasterNounColor("quest")..quest.."|r"
 	end
 	prefix,quest = title:match("^(Defeat%s+)(.+)$")
 	if prefix and quest then
-		return "|cffffffffKill |r"..RemasterNounColor("enemy")..quest.."|r"
+		return ZGV_T("|cffffffffKill |r")..RemasterNounColor("enemy")..quest.."|r"
 	end
 	prefix,quest = title:match("^(Slay%s+)(.+)$")
 	if prefix and quest then
-		return "|cffffffffKill |r"..RemasterNounColor("enemy")..quest.."|r"
+		return ZGV_T("|cffffffffKill |r")..RemasterNounColor("enemy")..quest.."|r"
 	end
 	prefix,quest = title:match("^(Eliminate%s+)(.+)$")
 	if prefix and quest then
-		return "|cffffffffKill |r"..RemasterNounColor("enemy")..quest.."|r"
+		return ZGV_T("|cffffffffKill |r")..RemasterNounColor("enemy")..quest.."|r"
 	end
 	prefix,quest = title:match("^(Speak with%s+)(.+)$")
 	if prefix and quest then
-		return "|cffffffffTalk to |r"..RemasterNounColor("npc")..quest.."|r"
+		return ZGV_T("|cffffffffTalk to |r")..RemasterNounColor("npc")..quest.."|r"
 	end
-	prefix,quest = title:match("^(Buy%s+)(.+)$")
+	prefix,quest = title:match(ZGV_T("^(Buy%s+)(.+)$"))
 	if prefix and quest then
-		return "|cffffffffBuy |r"..RemasterNounColor("quest")..quest.."|r"
+		return ZGV_T("|cffffffffBuy |r")..RemasterNounColor("quest")..quest.."|r"
 	end
-	prefix,quest = title:match("^(Use%s+)(.+)$")
+	prefix,quest = title:match(ZGV_T("^(Use%s+)(.+)$"))
 	if prefix and quest then
-		return "|cffffffffUse |r"..RemasterNounColor("quest")..quest.."|r"
+		return ZGV_T("|cffffffffUse |r")..RemasterNounColor("quest")..quest.."|r"
 	end
 	-- Generic quoted quest title fallback.
 	local before,quoted,after = title:match("^(.-)('.*')(.-)$")
@@ -1463,7 +1463,7 @@ end
 function Pointer.MinimapButton_OnEnter(self,arg)
 	if self.waypoint and (self.icon:IsVisible() or self.arrow:IsVisible()) then
 		ShowTooltip(self,GameTooltip)
-		GameTooltip:AddLine(("Distance: %s"):format(FormatDistance(self.dist)))
+		GameTooltip:AddLine((ZGV_T("Distance: %s")):format(FormatDistance(self.dist)))
 		GameTooltip:Show()
 		self.hastooltip=true
 	end

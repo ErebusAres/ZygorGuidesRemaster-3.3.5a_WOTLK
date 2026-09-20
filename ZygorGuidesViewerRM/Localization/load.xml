@@ -2,6 +2,7 @@
 ..\FrameXML\UI.xsd">
 
 <Script file="Base.lua"/>
+<Script file="ptBR_dict.lua"/>
 <Script file="enUS.lua"/>
 <Script file="deDE.lua"/>
 <Script file="esES.lua"/>
@@ -11,5 +12,6 @@
 <Script file="zhCN.lua"/>
 <Script file="zhTW.lua"/>
 <Script file="ptBR.lua"/>
+<Script file="GuideFolders_ptBR.lua"/>
 
 </Ui>

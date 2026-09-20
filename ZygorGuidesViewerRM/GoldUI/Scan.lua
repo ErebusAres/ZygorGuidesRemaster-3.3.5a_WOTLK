@@ -259,11 +259,11 @@ end
 
 function Scan:GetScanFastTimeString(can,when) -- time remaining, in minutes
 	if not when then can,when=self:CanScanFast() end
-	if can then return("You can scan now.")
-	elseif (when > 1000) then return("Next scan: unknown")
-	elseif (when>1) then return(("Next scan: in ~%d minutes"):format(when))
-	elseif (when>=0) then return("Next scan: almost there!")
-	else return("Next scan unknown!")
+	if can then return(ZGV_T("You can scan now."))
+	elseif (when > 1000) then return(ZGV_T("Next scan: unknown"))
+	elseif (when>1) then return((ZGV_T("Next scan: in ~%d minutes")):format(when))
+	elseif (when>=0) then return(ZGV_T("Next scan: almost there!"))
+	else return(ZGV_T("Next scan unknown!"))
 	end
 end
 
@@ -496,7 +496,7 @@ function Scan:Work()
 				ZGV:Debug("&scan Query timeout but have %d results, trying to process...", batch)
 				self:SetState("SS_SCANNING")
 			else
-				self:SetState("SS_MESSAGE",{kind="error",msg="Auction query timed out. Click Scan to retry."})
+				self:SetState("SS_MESSAGE",{kind="error",msg=ZGV_T("Auction query timed out. Click Scan to retry.")})
 			end
 		end
 	elseif self.state=="SS_RECEIVING" then
@@ -504,7 +504,7 @@ function Scan:Work()
 		self.scan_pages = math.ceil(select(2,GetNumAuctionItems("list"))/NUM_AUCTION_ITEMS_PER_PAGE)
 		if self.scan_only_one_page then print("drop from",self.scan_pages) self.scan_pages=1 end
 		if self.last_AILU_time>0 and GetTime()-self.last_AILU_time > self.RECEIVING_TIMEOUT then
-			self:SetState("SS_MESSAGE",{kind="error",msg="Auction scan timed out. Click Scan to retry."})
+			self:SetState("SS_MESSAGE",{kind="error",msg=ZGV_T("Auction scan timed out. Click Scan to retry.")})
 		end
 
 		--[[
@@ -1260,8 +1260,8 @@ function Scan.UIFrameOnUpdate(frame,elapsed)
 	-- state
 	if Scan.state=="SS_IDLE" then s=Scan:GetScanFastTimeString(canMass,when)
  	elseif Scan.state=="SS_QUERYING" then  Scan.queryspin=(Scan.queryspin+1)%5  s="Querying" .. strrep(".",Scan.queryspin+1)
-	elseif Scan.state=="SS_ANALYZING" then  s=("Analyzing (%d%%)"):format((Scan.analysis_progress or 0)*100)
-	elseif Scan.state=="SS_SCANNING" then  s=("Scanning (%d%%)"):format((Scan.scan_progress  or 0)*100)
+	elseif Scan.state=="SS_ANALYZING" then  s=(ZGV_T("Analyzing (%d%%)")):format((Scan.analysis_progress or 0)*100)
+	elseif Scan.state=="SS_SCANNING" then  s=(ZGV_T("Scanning (%d%%)")):format((Scan.scan_progress  or 0)*100)
 	end
 	frame.ScanButton:SetText(s)
 
@@ -1398,7 +1398,7 @@ function Scan:ImportHourly()
 		ZGV.db.char.gold_new_data_used = ZGV_IMPORT_HOURLY_TIME
 	end
 
-	ZGV:Print("Imported 'hourly' data with timestamp "..ZGV.db.factionrealm.LastScan)
+	ZGV:Print(ZGV_T("Imported 'hourly' data with timestamp ")..ZGV.db.factionrealm.LastScan)
 end
 
 local hourly_intervals = {
@@ -1430,35 +1430,35 @@ function Scan:GetStatusTexts(short)
 	local updateTitletext,timestamptext,tooltiptext = "","",""
 
 	if Scan.db.factionrealm.LastScan then
-		updateTitletext = "LAST UPDATED:"
+		updateTitletext = ZGV_T("LAST UPDATED:")
 		timestamptext = ("|c%s%s|r."):format(OldColor(ZGV.db.factionrealm.LastScan,3600*2,60*10), ui.GetTimeStamp(ZGV.db.factionrealm.LastScan))
 	
 		if time()-ZGV.db.factionrealm.LastScan > 3600*2 then
 			timestamptext = timestamptext .. "|r " .. L["gold_app_old_scan_data"..short]
 			tooltiptext = L["gold_app_old_scan_data_tooltip"]
 		else
-			timestamptext = timestamptext .. (" Trends quality: %s."):format(ZGV.Gold.ServerTrends:GetHealth())
+			timestamptext = timestamptext .. (ZGV_T(" Trends quality: %s.")):format(ZGV.Gold.ServerTrends:GetHealth())
 			tooltiptext = L["gold_app_trend_tooltip"]
 		end
 	else
-		updateTitletext = "|cffff0000ALERT:|r"
+		updateTitletext = ZGV_T("|cffff0000ALERT:|r")
 		timestamptext = L["gold_app_no_scan_data"..short]
 		tooltiptext = L["gold_app_no_scan_data_tooltip"]
 	end
 
 	if not ZGV.Gold.guides_loaded then
-		updateTitletext = "|cffff0000ALERT:|r"
+		updateTitletext = ZGV_T("|cffff0000ALERT:|r")
 		timestamptext = L["gold_app_no_goldguide"..short]
 		tooltiptext = L["gold_app_no_goldguide_tooltip"]
 	elseif not (ZGV.Gold.servertrends and ZGV.Gold.servertrends.date) then
-		updateTitletext = "|cffff0000ALERT:|r"
+		updateTitletext = ZGV_T("|cffff0000ALERT:|r")
 		timestamptext = L["gold_app_no_servertrends"..short]
 		tooltiptext = L["gold_app_no_servertrends_tooltip"]
 	elseif ZGV.Gold.servertrends.date then
 		local timeSinceLast = time() -  ZGV.Gold.servertrends.date
 
 		if timeSinceLast > TRENDS_OLD * 3600 then	-- Data is old
-			updateTitletext = "|cffff0000ALERT:|r"
+			updateTitletext = ZGV_T("|cffff0000ALERT:|r")
 			timestamptext = L["gold_app_old_servertrends"..short]:format(ui.GetTimeStamp(tonumber(ZGV.Gold.servertrends.date)))
 			tooltiptext = L["gold_app_old_servertrends_tooltip"]
 		end

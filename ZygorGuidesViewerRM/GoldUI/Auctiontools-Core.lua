@@ -136,7 +136,7 @@ function Appraiser:Update()
 			local unit_price = ZGV.Gold.Scan:GetPrice(itemdata.itemid)
 			local priceStatus = ZGVG:GetPriceStatus(petItem_id or itemdata.itemid,unit_price)
 			itemdata.statusId = priceStatus.statusId
-			itemdata.statusText = priceStatus.name.."\n"..(priceStatus.stagnant and "Market stagnant." or priceStatus.buysuggestion)
+			itemdata.statusText = priceStatus.name.."\n"..(priceStatus.stagnant and ZGV_T("Market stagnant.") or priceStatus.buysuggestion)
 			itemdata.statusIcon = ZGV.IconSets.AuctionToolsPriceIcons[priceStatus.buyicon or priceStatus.icon].texcoord -- coords
 			itemdata.isStagnant = priceStatus.stagnant
 			itemdata.statusColor = isStagnant and priceStatus.stagcolor or priceStatus.buycolor
@@ -311,7 +311,7 @@ function Appraiser:Scan(mode)
 		Appraiser:GetInventoryItems()
 		Appraiser:StartNewItemScan()
 	else
-		ZGV:Print("Unable to start scanning.")
+		ZGV:Print(ZGV_T("Unable to start scanning."))
 	end
 	self:Update()
 end
@@ -568,18 +568,18 @@ local function Appraiser_SetTooltipData(tooltip, itemLink)
 
 		
 		tooltip:AddLine("|cffffffff |r")
-		tooltip:AddLine(branded_tooltip_header("Gold Data"))
+		tooltip:AddLine(branded_tooltip_header(ZGV_T("Gold Data")))
 		if isboundable then
-			tooltip:AddLine("  |cffeeeeeeItem is soulbound|r ")
+			tooltip:AddLine(ZGV_T("  |cffeeeeeeItem is soulbound|r "))
 		end
 
 		local _, _, _, _, _, _, _, itemStackCount, _, _, itemSellPrice = GetItemInfo(itemLink)
 		local focus = GetMouseFocus()
 		local count = focus and type(focus.count)=="number" and focus.count
 		if itemSellPrice then
-			SetTooltipMoney(tooltip,itemSellPrice,"STATIC","  |cffeeeeeeVendor price:|r")
+			SetTooltipMoney(tooltip,itemSellPrice,"STATIC",ZGV_T("  |cffeeeeeeVendor price:|r"))
 			if count and count>1 then
-				SetTooltipMoney(tooltip,count*itemSellPrice,"STATIC","  |cffeeeeeeVendor price (stack):|r")
+				SetTooltipMoney(tooltip,count*itemSellPrice,"STATIC",ZGV_T("  |cffeeeeeeVendor price (stack):|r"))
 			end
 		end
 
@@ -606,7 +606,7 @@ local function Appraiser_SetTooltipData(tooltip, itemLink)
 		end
 		
 		if minprice_g then
-			tooltip:AddDoubleLine("  |cffeeeeeeCurrent lowest price:|r ",minprice_g)
+			tooltip:AddDoubleLine(ZGV_T("  |cffeeeeeeCurrent lowest price:|r "),minprice_g)
 		end
 
 		if ZGV.db.profile.debug_display  then
@@ -615,7 +615,7 @@ local function Appraiser_SetTooltipData(tooltip, itemLink)
 		end
 
 		if price_g then
-			tooltip:AddDoubleLine("  |cffeeeeeeSuggested sell price:|r ",price_g)
+			tooltip:AddDoubleLine(ZGV_T("  |cffeeeeeeSuggested sell price:|r "),price_g)
 		end
 
 		if tooltip_detail==2 then -- dynamic
@@ -623,38 +623,38 @@ local function Appraiser_SetTooltipData(tooltip, itemLink)
 			local overpricemargin_perc = floor(ZGVG.OVERPRICE*100-100).."%"
 
 			if statusName=="PRICESTATUS_EMPTY" and trends_known then
-				tooltip:AddDoubleLine("    |cffeeeeeeHistorical high:|r ",p_hi)
-				tooltip:AddDoubleLine("    |cffeeeeeeGouging by:|r",overpricemargin_perc)
+				tooltip:AddDoubleLine(ZGV_T("    |cffeeeeeeHistorical high:|r "),p_hi)
+				tooltip:AddDoubleLine(ZGV_T("    |cffeeeeeeGouging by:|r"),overpricemargin_perc)
 			elseif trends_known and (statusName=="PRICESTATUS_GOUGED" or statusName=="PRICESTATUS_UP" or statusName=="PRICESTATUS_RISING") then
-				tooltip:AddDoubleLine("    |cffeeeeeeHistorical high:|r ",p_hi)
+				tooltip:AddDoubleLine(ZGV_T("    |cffeeeeeeHistorical high:|r "),p_hi)
 			elseif trends_known and (statusName=="PRICESTATUS_DOWN" or statusName=="PRICESTATUS_FALLING" or statusName=="PRICESTATUS_DUMPED") then
-				tooltip:AddDoubleLine("    |cffeeeeeeHistorical low:|r ",p_lo)
+				tooltip:AddDoubleLine(ZGV_T("    |cffeeeeeeHistorical low:|r "),p_lo)
 			elseif trends_known and statusName=="PRICESTATUS_NORMAL" then
-				if minprice<trend.p_md then  tooltip:AddDoubleLine("    |cffeeeeeeHistorical low:|r ",p_lo)  end
-				if minprice>=trend.p_lo and minprice<=trend.p_hi then  tooltip:AddDoubleLine("    |cffeeeeeeHistorical median:|r ",p_md)  end
-				if minprice>trend.p_md then  tooltip:AddDoubleLine("    |cffeeeeeeHistorical high:|r ",p_hi)  end
+				if minprice<trend.p_md then  tooltip:AddDoubleLine(ZGV_T("    |cffeeeeeeHistorical low:|r "),p_lo)  end
+				if minprice>=trend.p_lo and minprice<=trend.p_hi then  tooltip:AddDoubleLine(ZGV_T("    |cffeeeeeeHistorical median:|r "),p_md)  end
+				if minprice>trend.p_md then  tooltip:AddDoubleLine(ZGV_T("    |cffeeeeeeHistorical high:|r "),p_hi)  end
 			else
-				tooltip:AddDoubleLine("    |cffeeeeeeGlobal median:|r ",global_median or "n/a")
+				tooltip:AddDoubleLine(ZGV_T("    |cffeeeeeeGlobal median:|r "),global_median or "n/a")
 			end
 		end
 
 		if tooltip_detail==3 then -- full
-			addPriceLine("Historical low", p_lo)
-			addPriceLine("Historical median", p_md)
-			addPriceLine("Historical high", p_hi)
-			addPriceLine("Global low", global_low)
-			addPriceLine("Global median", global_median)
-			addPriceLine("Global high", global_high)
+			addPriceLine(ZGV_T("Historical low"), p_lo)
+			addPriceLine(ZGV_T("Historical median"), p_md)
+			addPriceLine(ZGV_T("Historical high"), p_hi)
+			addPriceLine(ZGV_T("Global low"), global_low)
+			addPriceLine(ZGV_T("Global median"), global_median)
+			addPriceLine(ZGV_T("Global high"), global_high)
 		end
 
 		if demand then
-			tooltip:AddDoubleLine("  |cffeeeeeeDemand (est. sold):|r ",trends_known and demand or "n/a")
+			tooltip:AddDoubleLine(ZGV_T("  |cffeeeeeeDemand (est. sold):|r "),trends_known and demand or "n/a")
 		end
 
 		tooltip:AddDoubleLine("  |cffeeeeeeStatus:|r ",ZGV.ArrayToStringColor(statusColor)..statusText)
 
 		if ZGV.Gold.Scan and ZGV.db.factionrealm.LastScan then
-			tooltip:AddDoubleLine("  |cffeeeeeeLast updated:|r ",("|c%s%s|r"):format(OldColor(ZGV.db.factionrealm.LastScan,3600*2,60*10), ZGV.UI.GetTimeStamp(ZGV.db.factionrealm.LastScan)))
+			tooltip:AddDoubleLine(ZGV_T("  |cffeeeeeeLast updated:|r "),("|c%s%s|r"):format(OldColor(ZGV.db.factionrealm.LastScan,3600*2,60*10), ZGV.UI.GetTimeStamp(ZGV.db.factionrealm.LastScan)))
 		end		
 		
 		tooltip:AddLine("|cffffffff |r")

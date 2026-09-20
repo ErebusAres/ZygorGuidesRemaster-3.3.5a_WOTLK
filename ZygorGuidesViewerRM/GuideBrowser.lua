@@ -49,6 +49,12 @@ local function PathIsRoot(path)
 	return not path or #path == 0
 end
 
+-- pt-BR: guide folder names are translated for display only (the real titles/paths stay in English)
+function me:GuideFolderLabel(name)
+	local names = ZygorGuidesViewer_L and ZygorGuidesViewer_L("GuideFolders")
+	return (names and names[name]) or name
+end
+
 local function NewNode(name)
 	return { name = name, children = {}, child_order = {}, guides = {} }
 end
@@ -327,13 +333,20 @@ local function UpdateGuideBrowser(self)
 		node = tree
 	end
 
-	local breadcrumb = (#path > 0) and table.concat(path, "  >  ") or LT("gb_root")
+	local breadcrumb
+	if #path > 0 then
+		local shown = {}
+		for i, p in ipairs(path) do shown[i] = self:GuideFolderLabel(p) end
+		breadcrumb = table.concat(shown, "  >  ")
+	else
+		breadcrumb = LT("gb_root")
+	end
 	f.breadcrumb:SetText(LT("gb_path_format", breadcrumb))
 
 	local folders = {}
 	if #path > 0 then tinsert(folders, { label = "..", isUp = true }) end
 	for _,name in ipairs(node.child_order or {}) do
-		tinsert(folders, { label = name })
+		tinsert(folders, { label = name, disp = self:GuideFolderLabel(name) })
 	end
 	f.folders = folders
 
@@ -364,7 +377,7 @@ local function UpdateGuideBrowser(self)
 		local data = folders[i + leftOff]
 		if data then
 			row.data = data
-			row.text:SetText(data.isUp and ".." or data.label)
+			row.text:SetText(data.isUp and ".." or (data.disp or data.label))
 			row:Show()
 		else
 			row.data = nil
@@ -668,7 +681,7 @@ function me:RefreshGuideManagerPanel(panel)
 			row.icon:ClearAllPoints()
 			row.icon:SetPoint("LEFT", row, "LEFT", baseX + 10, 0)
 			if data.kind == "folder" then
-				text = data.label
+				text = self:GuideFolderLabel(data.label)
 				if data.nodisc then
 					row.disclosure:Hide()
 				else
@@ -1023,7 +1036,7 @@ end
 local GUIDE_MANAGER_TOP_TABS = {
 	{ id = "home", label = LT("gb_tab_home") },
 	{ id = "featured", label = LT("gb_tab_featured") },
-	{ id = "whatsnew", label = "What's New" },
+	{ id = "whatsnew", label = ZGV_T("What's New") },
 	{ id = "current", label = LT("gb_tab_current") },
 	{ id = "recent", label = LT("gb_tab_recent") },
 }
@@ -1045,7 +1058,7 @@ local GUIDE_MANAGER_LEFT_MENU = {
 
 local GUIDE_MANAGER_OPTIONS_APPS = {
 	{ id = "general", label = LT("gb_opt_guides"), app = "ZygorGuidesViewer", desc = LT("gb_opt_desc_guides") },
-	{ id = "skin", label = "Skin", app = "ZygorGuidesViewer-Skin", desc = "Choose the visual theme for the guide viewer." },
+	{ id = "skin", label = ZGV_T("Skin"), app = "ZygorGuidesViewer-Skin", desc = ZGV_T("Choose the visual theme for the guide viewer.") },
 	{ id = "stepdisplay", label = LT("gb_opt_stepdisplay"), app = "ZygorGuidesViewer-StepDisplay", desc = LT("gb_opt_desc_stepdisplay") },
 	{ id = "progress", label = LT("gb_opt_progress"), app = "ZygorGuidesViewer-Progress", desc = LT("gb_opt_desc_progress") },
 	{ id = "travel", label = LT("gb_opt_travel"), app = "ZygorGuidesViewer-Travel", desc = LT("gb_opt_desc_travel") },
@@ -1055,8 +1068,8 @@ local GUIDE_MANAGER_OPTIONS_APPS = {
 	{ id = "actionbuttons", label = LT("gb_opt_actionbuttons"), app = "ZygorGuidesViewer-ActionButtons", desc = LT("gb_opt_desc_actionbuttons") },
 	{ id = "convenience", label = LT("opt_group_convenience"), app = "ZygorGuidesViewer-Conv", desc = LT("opt_group_convenience_desc") },
 	{ id = "accessibility", label = LT("gb_opt_accessibility"), app = "ZygorGuidesViewer-Accessibility", desc = LT("gb_opt_desc_accessibility") },
-	{ id = "gear", label = "Gear Advisor", app = "ZygorGuidesViewer-Gear", desc = "Configure gear scoring, upgrade popups, auto-sell, and auto-repair." },
-	{ id = "itemscore", label = "Stat Weights", app = "ZygorGuidesViewer-ItemScore", desc = "Edit stat weights per class and spec for item scoring." },
+	{ id = "gear", label = ZGV_T("Gear Advisor"), app = "ZygorGuidesViewer-Gear", desc = ZGV_T("Configure gear scoring, upgrade popups, auto-sell, and auto-repair.") },
+	{ id = "itemscore", label = ZGV_T("Stat Weights"), app = "ZygorGuidesViewer-ItemScore", desc = ZGV_T("Edit stat weights per class and spec for item scoring.") },
 	{ id = "profile", label = LT("gb_opt_profile"), app = "ZygorGuidesViewer-Profile", desc = LT("gb_opt_desc_profile") },
 	{ id = "about", label = LT("gb_opt_about"), app = "ZygorGuidesViewer-About", desc = LT("gb_opt_desc_about") },
 }
@@ -1474,7 +1487,7 @@ local function CountGuidesForCategory(self, categoryId, searchText)
 end
 
 local function GetGuideLastUsedText(self, title)
-	if not (self and self.db and self.db.char and self.db.char.guides_history and title) then return "Never" end
+	if not (self and self.db and self.db.char and self.db.char.guides_history and title) then return ZGV_T("Never") end
 	local hist = self.db.char.guides_history
 	local rank = 0
 	for i = #hist, 1, -1 do
@@ -1483,21 +1496,21 @@ local function GetGuideLastUsedText(self, title)
 			break
 		end
 	end
-	if rank == 0 then return "Never" end
-	if rank == 1 then return "Now" end
-	return ("Recent #%d"):format(rank)
+	if rank == 0 then return ZGV_T("Never") end
+	if rank == 1 then return ZGV_T("Now") end
+	return (ZGV_T("Recent #%d")):format(rank)
 end
 
 local function GetGuideTypeText(guide)
-	if not guide then return "Guide" end
+	if not guide then return ZGV_T("Guide") end
 	if guide.type and guide.type ~= "" then return tostring(guide.type) end
 	local t = strlower(guide.title or "")
-	if strfind(t, "dungeon", 1, true) then return "Dungeon" end
-	if strfind(t, "daily", 1, true) then return "Daily" end
-	if strfind(t, "achievement", 1, true) then return "Achievement" end
-	if strfind(t, "reputation", 1, true) then return "Reputation" end
-	if strfind(t, "profession", 1, true) then return "Profession" end
-	return "Guide"
+	if strfind(t, "dungeon", 1, true) then return ZGV_T("Dungeon") end
+	if strfind(t, "daily", 1, true) then return ZGV_T("Daily") end
+	if strfind(t, "achievement", 1, true) then return ZGV_T("Achievement") end
+	if strfind(t, "reputation", 1, true) then return ZGV_T("Reputation") end
+	if strfind(t, "profession", 1, true) then return ZGV_T("Profession") end
+	return ZGV_T("Guide")
 end
 
 function me:IsGuideFavorite(title)
@@ -1783,19 +1796,19 @@ local function BuildSpecialSectionRows(self, section, searchText)
 		local candidates = {}
 		local function InferGuideGain(cat, title)
 			local t = strlower(title or "")
-			if strfind(t, "unlock", 1, true) or strfind(t, "attun", 1, true) then return "Unlock progression" end
-			if cat == "leveling" then return "XP progression" end
-			if cat == "dungeons" then return "Dungeon progression" end
-			if cat == "daily" then return "Daily rewards" end
-			if cat == "reputations" then return "Reputation gains" end
-			if cat == "professions" then return "Profession progression" end
-			if cat == "achievements" then return "Achievement progress" end
-			if strfind(t, "dungeon", 1, true) then return "Dungeon progression" end
-			if strfind(t, "daily", 1, true) then return "Daily rewards" end
-			if strfind(t, "reputation", 1, true) or strfind(t, " rep", 1, true) then return "Reputation gains" end
-			if strfind(t, "profession", 1, true) then return "Profession progression" end
-			if strfind(t, "achievement", 1, true) then return "Achievement progress" end
-			return "XP progression"
+			if strfind(t, "unlock", 1, true) or strfind(t, "attun", 1, true) then return ZGV_T("Unlock progression") end
+			if cat == "leveling" then return ZGV_T("XP progression") end
+			if cat == "dungeons" then return ZGV_T("Dungeon progression") end
+			if cat == "daily" then return ZGV_T("Daily rewards") end
+			if cat == "reputations" then return ZGV_T("Reputation gains") end
+			if cat == "professions" then return ZGV_T("Profession progression") end
+			if cat == "achievements" then return ZGV_T("Achievement progress") end
+			if strfind(t, "dungeon", 1, true) then return ZGV_T("Dungeon progression") end
+			if strfind(t, "daily", 1, true) then return ZGV_T("Daily rewards") end
+			if strfind(t, "reputation", 1, true) or strfind(t, " rep", 1, true) then return ZGV_T("Reputation gains") end
+			if strfind(t, "profession", 1, true) then return ZGV_T("Profession progression") end
+			if strfind(t, "achievement", 1, true) then return ZGV_T("Achievement progress") end
+			return ZGV_T("XP progression")
 		end
 		local function AddReason(reasons, reason)
 			if not reason or reason == "" then return end
@@ -1853,12 +1866,12 @@ local function BuildSpecialSectionRows(self, section, searchText)
 		end
 		local function OrdinalLabel(n)
 			n = tonumber(n or 1) or 1
-			if n % 100 >= 11 and n % 100 <= 13 then return tostring(n) .. "th Next" end
+			if n % 100 >= 11 and n % 100 <= 13 then return tostring(n) .. ZGV_T("th Next") end
 			local d = n % 10
-			if d == 1 then return tostring(n) .. "st Next" end
-			if d == 2 then return tostring(n) .. "nd Next" end
-			if d == 3 then return tostring(n) .. "rd Next" end
-			return tostring(n) .. "th Next"
+			if d == 1 then return tostring(n) .. ZGV_T("st Next") end
+			if d == 2 then return tostring(n) .. ZGV_T("nd Next") end
+			if d == 3 then return tostring(n) .. ZGV_T("rd Next") end
+			return tostring(n) .. ZGV_T("th Next")
 		end
 
 		local keptCounts = { next = 0, progress = 0, level = 0, featured = 0 }
@@ -2032,18 +2045,18 @@ local function BuildSpecialSectionRows(self, section, searchText)
 						end
 						if #reasons == 0 then AddReason(reasons, LT("gb_meta_recommended")) end
 						local reasonRank = {
-							["current chain"] = 1,
-							["inferred continuation"] = 2,
-							["chapter continuation"] = 3,
-							["your level range"] = 4,
-							["near your level"] = 5,
-							["your class"] = 6,
-							["your race"] = 7,
-							["your profession"] = 8,
-							["favorite"] = 9,
-							["recently used"] = 10,
-							["incomplete"] = 11,
-							["recommended"] = 12,
+							[ZGV_T("current chain")] = 1,
+							[ZGV_T("inferred continuation")] = 2,
+							[ZGV_T("chapter continuation")] = 3,
+							[ZGV_T("your level range")] = 4,
+							[ZGV_T("near your level")] = 5,
+							[ZGV_T("your class")] = 6,
+							[ZGV_T("your race")] = 7,
+							[ZGV_T("your profession")] = 8,
+							[ZGV_T("favorite")] = 9,
+							[ZGV_T("recently used")] = 10,
+							[ZGV_T("incomplete")] = 11,
+							[ZGV_T("recommended")] = 12,
 						}
 						local ranked = {}
 						for _,r in ipairs(reasons) do
@@ -2579,14 +2592,14 @@ title="Wrath of the Lich King", group="wotlk",
 {"section", text=[[LEVELING]]},
 	{"banner", image=ZGV.IMAGESDIR.."\\WOTLKLeveling",showcaseonly=true},
 
-	{"content", text=[[Complete Your Starter Guide or Boosted Character Guide]]},
-	{"text", text=[[If you are creating a new character in WotLK, use the appropriate starter or boosted guide for your character.]]},
+	{"content", text=ZGV_T([[Complete Your Starter Guide or Boosted Character Guide]])},
+	{"text", text=ZGV_T([[If you are creating a new character in WotLK, use the appropriate starter or boosted guide for your character.]])},
 	{"columns",
-	{"item", text="**Death Knight Starter (55-58)**", guide="Leveling Guides\\Starter Guides (1-12) & Death Knight (55-58)\\Death Knight Starter (55-58)"},
+	{"item", text=ZGV_T("**Death Knight Starter (55-58)**"), guide="Leveling Guides\\Starter Guides (1-12) & Death Knight (55-58)\\Death Knight Starter (55-58)"},
 	},
 
-	{"content", text=[[Go to Northrend and Level to 80]]},
-	{"text", text=[[Once you've reached level 69 you're ready to go to Northrend. We recommend going at 69 and not 68 so you won't encounter much grinding (if at all).]]},
+	{"content", text=ZGV_T([[Go to Northrend and Level to 80]])},
+	{"text", text=ZGV_T([[Once you've reached level 69 you're ready to go to Northrend. We recommend going at 69 and not 68 so you won't encounter much grinding (if at all).]])},
 	{"item", text="**Howling Fjord (69-71)**", guide="Leveling Guides\\Northrend (69-80)\\Howling Fjord (69-71)"},
 	{"item", text="**Borean Tundra (70-72)**", guide="Leveling Guides\\Northrend (69-80)\\Borean Tundra (70-72)"},
 	{"item", text="**Dragonblight (72-74)**", guide="Leveling Guides\\Northrend (69-80)\\Dragonblight (72-74)"},
@@ -2596,11 +2609,11 @@ title="Wrath of the Lich King", group="wotlk",
 	{"item", text="**The Storm Peaks (78-79)**", guide="Leveling Guides\\Northrend (69-80)\\The Storm Peaks (78-79)"},
 	{"item", text="**Icecrown (79-80)**", guide="Leveling Guides\\Northrend (69-80)\\Icecrown (79-80)"},
 
-	{"section", text=[[DUNGEONS]]},
+	{"section", text=ZGV_T([[DUNGEONS]])},
 	{"banner", image=ZGV.IMAGESDIR.."\\WOTLKDungeons",showcaseonly=true},
 
-	{"content", text=[[Dungeon Boss Strategy Guides]]},
-	{"text", text=[[These guides will walk you through defeating the bosses in the Northrend dungeons.]]},
+	{"content", text=ZGV_T([[Dungeon Boss Strategy Guides]])},
+	{"text", text=ZGV_T([[These guides will walk you through defeating the bosses in the Northrend dungeons.]])},
 	{"item", text="**Ahn'kahet: The Old Kingdom (73-75)**", guide="Dungeon Guides\\Wrath of the Lich King\\Ahn'kahet: The Old Kingdom (73-75)"},
 	{"item", text="**Azjol-Nerub (72-74)**", guide="Dungeon Guides\\Wrath of the Lich King\\Azjol-Nerub (72-74)"},
 	{"item", text="**The Culling of Stratholme (78-80)**", guide="Dungeon Guides\\Wrath of the Lich King\\The Culling of Stratholme (78-80)"},
@@ -2612,8 +2625,8 @@ title="Wrath of the Lich King", group="wotlk",
 	{"item", text="**Utgarde Keep (69-72)**", guide="Dungeon Guides\\Wrath of the Lich King\\Utgarde Keep (69-72)"},
 	{"item", text="**Utgarde Pinnacle (79-80)**", guide="Dungeon Guides\\Wrath of the Lich King\\Utgarde Pinnacle (79-80)"},
 
-	{"content", text=[[Dungeon Quest Guides (BETA)]]},
-	{"text", text=[[These guides will walk you through completing the Northrend dungeon quests.]]},
+	{"content", text=ZGV_T([[Dungeon Quest Guides (BETA)]])},
+	{"text", text=ZGV_T([[These guides will walk you through completing the Northrend dungeon quests.]])},
 	{"item", text="**Ahn'kahet: The Old Kingdom Quests**", guide="Dungeon Guides\\Wrath of the Lich King\\Ahn'kahet: The Old Kingdom Quests"},
 	{"item", text="**Azjol-Nerub Quests**", guide="Dungeon Guides\\Wrath of the Lich King\\Azjol-Nerub Quests"},
 	{"item", text="**The Culling of Stratholme Quests**", guide="Dungeon Guides\\Wrath of the Lich King\\The Culling of Stratholme Quests"},
@@ -2626,24 +2639,24 @@ title="Wrath of the Lich King", group="wotlk",
 	{"item", text="**Utgarde Pinnacle Quests**", guide="Dungeon Guides\\Wrath of the Lich King\\Utgarde Pinnacle Quests"},
 	{"item", text="**The Violet Hold Quests**", guide="Dungeon Guides\\Wrath of the Lich King\\The Violet Hold Quests"},
 
-	{"section", text=[[DAILIES]]},
+	{"section", text=ZGV_T([[DAILIES]])},
 	{"banner", image=ZGV.IMAGESDIR.."\\WOTLKDailies",showcaseonly=true},
 
-	{"content", text=[[Daily Quest Guides]]},
-	{"item", text="**Dalaran Fishing Dailies**", guide="Dailies Guides\\Wrath of the Lich King\\Dalaran Fishing Dailies"},
-	{"item", text="**Dalaran Cooking Dailies**", guide="Dailies Guides\\Wrath of the Lich King\\Dalaran Cooking Dailies"},
-	{"item", text="**Frenzyheart Tribe Dailies**", guide="Dailies Guides\\Wrath of the Lich King\\The Oracles/Frenzyheart Dailies\\Frenzyheart Tribe Dailies"},
-	{"item", text="**Jewelcrafting Dailies**", guide="Dailies Guides\\Wrath of the Lich King\\Jewelcrafting Dailies"},
-	{"item", text="**The Kalu'ak Dailies**", guide="Dailies Guides\\Wrath of the Lich King\\The Kalu'ak Dailies"},
-	{"item", text="**The Oracles Dailies**", guide="Dailies Guides\\Wrath of the Lich King\\The Oracles/Frenzyheart Dailies\\The Oracles Dailies"},
-	{"item", text="**The Sons of Hodir Dailies**", guide="Dailies Guides\\Wrath of the Lich King\\The Sons of Hodir\\The Sons of Hodir Dailies"},
-	{"item", text="**Wyrmrest Accord Dailies**", guide="Dailies Guides\\Wrath of the Lich King\\Wyrmrest Accord Dailies"},
+	{"content", text=ZGV_T([[Daily Quest Guides]])},
+	{"item", text=ZGV_T("**Dalaran Fishing Dailies**"), guide="Dailies Guides\\Wrath of the Lich King\\Dalaran Fishing Dailies"},
+	{"item", text=ZGV_T("**Dalaran Cooking Dailies**"), guide="Dailies Guides\\Wrath of the Lich King\\Dalaran Cooking Dailies"},
+	{"item", text=ZGV_T("**Frenzyheart Tribe Dailies**"), guide="Dailies Guides\\Wrath of the Lich King\\The Oracles/Frenzyheart Dailies\\Frenzyheart Tribe Dailies"},
+	{"item", text=ZGV_T("**Jewelcrafting Dailies**"), guide="Dailies Guides\\Wrath of the Lich King\\Jewelcrafting Dailies"},
+	{"item", text=ZGV_T("**The Kalu'ak Dailies**"), guide="Dailies Guides\\Wrath of the Lich King\\The Kalu'ak Dailies"},
+	{"item", text=ZGV_T("**The Oracles Dailies**"), guide="Dailies Guides\\Wrath of the Lich King\\The Oracles/Frenzyheart Dailies\\The Oracles Dailies"},
+	{"item", text=ZGV_T("**The Sons of Hodir Dailies**"), guide="Dailies Guides\\Wrath of the Lich King\\The Sons of Hodir\\The Sons of Hodir Dailies"},
+	{"item", text=ZGV_T("**Wyrmrest Accord Dailies**"), guide="Dailies Guides\\Wrath of the Lich King\\Wyrmrest Accord Dailies"},
 
-	{"section", text=[[PROFESSIONS]]},
+	{"section", text=ZGV_T([[PROFESSIONS]])},
 	{"banner", image=ZGV.IMAGESDIR.."\\WOTLKProfessions",showcaseonly=true},
 
-	{"content", text=[[Profession Leveling Guides]]},
-	{"text", text=[[These guides will walk you through leveling up your professions to the new max skill level of 450.]]},
+	{"content", text=ZGV_T([[Profession Leveling Guides]])},
+	{"text", text=ZGV_T([[These guides will walk you through leveling up your professions to the new max skill level of 450.]])},
 	{"item", text=[[**Inscription (1-350)**]], guide="PROFESSIONS\\Inscription\\Inscription (1-350)"},
 	{"item", text=[[**Alchemy (1-450)**]], guide="PROFESSIONS\\Alchemy\\Alchemy (1-450)"},
 	{"item", text=[[**Blacksmithing (1-450)**]], guide="PROFESSIONS\\Blacksmithing\\Blacksmithing (1-450)"},
@@ -2658,7 +2671,7 @@ title="Wrath of the Lich King", group="wotlk",
 	{"item", text=[[**Skinning (1-450)**]], guide="PROFESSIONS\\Skinning\\Skinning (1-450)"},
 	{"item", text=[[**Tailoring (1-450)**]], guide="PROFESSIONS\\Tailoring\\Tailoring (1-450)"},
 
-	{"content", text=[[Fishing Farming Guides]]},
+	{"content", text=ZGV_T([[Fishing Farming Guides]])},
 	{"columns",
 	{"item", text=[[**Barrelhead Goby**]], guide="PROFESSIONS\\Fishing\\Farming Guides\\Barrelhead Goby"},
 	{"item", text=[[**Bonescale Snapper**]], guide="PROFESSIONS\\Fishing\\Farming Guides\\Bonescale Snapper"},
@@ -2671,7 +2684,7 @@ title="Wrath of the Lich King", group="wotlk",
 	{"item", text=[[**Imperial Manta Ray**]], guide="PROFESSIONS\\Fishing\\Farming Guides\\Imperial Manta Ray"},
 	},
 
-	{"content", text=[[Herbalism Farming Guides]]},
+	{"content", text=ZGV_T([[Herbalism Farming Guides]])},
 	{"columns",
 	{"item", text=[[**Adder's Tongue**]], guide="PROFESSIONS\\Herbalism\\Farming Guides\\Adder's Tongue"},
 	{"item", text=[[**Deadnettle**]], guide="PROFESSIONS\\Herbalism\\Farming Guides\\Deadnettle"},
@@ -2682,20 +2695,20 @@ title="Wrath of the Lich King", group="wotlk",
 	{"item", text=[[**Tiger Lily**]], guide="PROFESSIONS\\Herbalism\\Farming Guides\\Tiger Lily"},
 	},
 
-	{"content", text=[[Mining Farming Guides]]},
+	{"content", text=ZGV_T([[Mining Farming Guides]])},
 	{"columns",
 	{"item", text=[[**Cobalt Ore**]], guide="PROFESSIONS\\Mining\\Farming Guides\\Cobalt Ore"},
 	{"item", text=[[**Saronite Ore**]], guide="PROFESSIONS\\Mining\\Farming Guides\\Saronite Ore"},
 	{"item", text=[[**Titanium Ore**]], guide="PROFESSIONS\\Mining\\Farming Guides\\Titanium Ore"},
 	},
 
-	{"content", text=[[Skinning and Tailoring Farming Guides]]},
+	{"content", text=ZGV_T([[Skinning and Tailoring Farming Guides]])},
 	{"columns",
 	{"item", text=[[**Borean Leather**]], guide="PROFESSIONS\\Skinning\\Farming Guides\\Borean Leather"},
 	{"item", text=[[**Frostweave Cloth**]], guide="PROFESSIONS\\Tailoring\\Farming Guides\\Frostweave Cloth"},
 	},
 
-	{"content", text=[[Cooking Farming Guides]]},
+	{"content", text=ZGV_T([[Cooking Farming Guides]])},
 	{"columns",
 	{"item", text=[[**Chilled Meat**]], guide="PROFESSIONS\\Cooking\\Farming Guides\\Chilled Meat"},
 	{"item", text=[[**Chunk o' Mammoth**]], guide="PROFESSIONS\\Cooking\\Farming Guides\\Chunk o' Mammoth"},
@@ -2705,7 +2718,7 @@ title="Wrath of the Lich King", group="wotlk",
 	{"item", text=[[**Worm Meat**]], guide="PROFESSIONS\\Cooking\\Farming Guides\\Worm Meat"},
 	},
 
-	{"content", text=[[Elements Farming Guides]]},
+	{"content", text=ZGV_T([[Elements Farming Guides]])},
 	{"columns",
 	{"item", text=[[**Crystallized Air**]], guide="PROFESSIONS\\Elements\\Farming Guides\\Crystallized Air"},
 	{"item", text=[[**Crystallized Earth**]], guide="PROFESSIONS\\Elements\\Farming Guides\\Crystallized Earth"},
@@ -2722,24 +2735,24 @@ title="The Burning Crusade", group="tbc",
 {"section", text=[[LEVELING]]},
 	{"banner", image=ZGV.IMAGESDIR.."\\TBCLeveling",showcaseonly=true},
 
-	{"content", text=[[Complete Your Starter or Boosted Character guide]]},
-	{"text", text=[[If you are creating a new character in TBC, use the appropriate starter or boosted guide for your character.]]},
+	{"content", text=ZGV_T([[Complete Your Starter or Boosted Character guide]])},
+	{"text", text=ZGV_T([[If you are creating a new character in TBC, use the appropriate starter or boosted guide for your character.]])},
 	{"columns",
-	{"item", text="**Human Starter (1-11)**", guide="LEVELING\\Starter Guides (1-11)\\Human Starter (1-11)",faction="A"},
+	{"item", text=ZGV_T("**Human Starter (1-11)**"), guide="LEVELING\\Starter Guides (1-11)\\Human Starter (1-11)",faction="A"},
 	{"item", text="**Dwarf & Gnome (1-11)**", guide="LEVELING\\Starter Guides (1-11)\\Dwarf & Gnome Starter (1-11)",faction="A"},
-	{"item", text="**Night Elf Starter (1-11)**", guide="LEVELING\\Starter Guides (1-11)\\Night Elf Starter (1-11)",faction="A"},
-	{"item", text="**Draenei Starter (1-11)**", guide="LEVELING\\Starter Guides (1-11)\\Draenei Starter (1-11)",faction="A"},
-	{"item", text="**Durotar (1-12) [Orc & Troll Starter]**", guide="LEVELING\\Starter Guides (1-12)\\Durotar (1-12) [Orc & Troll Starter]", faction="H"},
-	{"item", text="**Mulgore (1-12) [Tauren Starter]**", guide="LEVELING\\Starter Guides (1-12)\\Mulgore (1-12) [Tauren Starter]", faction="H"},
-	{"item", text="**Tirisfal Glades (1-12) [Undead Starter]**", guide="LEVELING\\Starter Guides (1-12)\\Tirisfal Glades (1-12) [Undead Starter]", faction="H"},
-	{"item", text="**Eversong Woods (1-13) [Blood Elf Starter]**", guide="LEVELING\\Starter Guides (1-12)\\Eversong Woods (1-13) [Blood Elf Starter]", faction="H"},
+	{"item", text=ZGV_T("**Night Elf Starter (1-11)**"), guide="LEVELING\\Starter Guides (1-11)\\Night Elf Starter (1-11)",faction="A"},
+	{"item", text=ZGV_T("**Draenei Starter (1-11)**"), guide="LEVELING\\Starter Guides (1-11)\\Draenei Starter (1-11)",faction="A"},
+	{"item", text=ZGV_T("**Durotar (1-12) [Orc & Troll Starter]**"), guide="LEVELING\\Starter Guides (1-12)\\Durotar (1-12) [Orc & Troll Starter]", faction="H"},
+	{"item", text=ZGV_T("**Mulgore (1-12) [Tauren Starter]**"), guide="LEVELING\\Starter Guides (1-12)\\Mulgore (1-12) [Tauren Starter]", faction="H"},
+	{"item", text=ZGV_T("**Tirisfal Glades (1-12) [Undead Starter]**"), guide="LEVELING\\Starter Guides (1-12)\\Tirisfal Glades (1-12) [Undead Starter]", faction="H"},
+	{"item", text=ZGV_T("**Eversong Woods (1-13) [Blood Elf Starter]**"), guide="LEVELING\\Starter Guides (1-12)\\Eversong Woods (1-13) [Blood Elf Starter]", faction="H"},
 	},
 
-	{"content", text=[[Reach Level 58 or Higher]]},
-	{"text", text=[[Use the main leveling guides to reach level 58 or higher in order to go to Outland.]]},
+	{"content", text=ZGV_T([[Reach Level 58 or Higher]])},
+	{"text", text=ZGV_T([[Use the main leveling guides to reach level 58 or higher in order to go to Outland.]])},
 
-	{"content", text=[[Reach Level 70]]},
-	{"text", text=[[Journey to Outland using the guides below and reach the max level of 70.]]},
+	{"content", text=ZGV_T([[Reach Level 70]])},
+	{"text", text=ZGV_T([[Journey to Outland using the guides below and reach the max level of 70.]])},
 	{"columns",
 	{"item", text=[[**Hellfire Peninsula (58-62)**]], guide="LEVELING\\The Burning Crusade (58-70)\\Hellfire Peninsula (58-62)"},
 	{"item", text=[[**Zangarmarsh (62-63)**]], guide="LEVELING\\The Burning Crusade (58-70)\\Zangarmarsh (62-63)"},
@@ -2750,11 +2763,11 @@ title="The Burning Crusade", group="tbc",
 	{"item", text=[[**Shadowmoon Valley (70-70)**]], guide="LEVELING\\The Burning Crusade (58-70)\\Shadowmoon Valley (70-70)"},
 	},
 
-	{"section", text=[[DUNGEONS]]},
+	{"section", text=ZGV_T([[DUNGEONS]])},
 	{"banner", image=ZGV.IMAGESDIR.."\\TBCDungeons",showcaseonly=true},
 
-	{"content", text=[[Dungeon Boss Strategy Guides]]},
-	{"text", text=[[These guides will walk you through defeating the bosses in the Outland dungeons.]]},
+	{"content", text=ZGV_T([[Dungeon Boss Strategy Guides]])},
+	{"text", text=ZGV_T([[These guides will walk you through defeating the bosses in the Outland dungeons.]])},
 	{"columns",
 	{"item", text=[[**Hellfire Ramparts (60-70)**]], guide="DUNGEONS\\The Burning Crusade\\Hellfire Ramparts (60-70)"},
 	{"item", text=[[**The Blood Furnace (61-70)**]], guide="DUNGEONS\\The Burning Crusade\\The Blood Furnace (61-70)"},
@@ -2770,8 +2783,8 @@ title="The Burning Crusade", group="tbc",
 	{"item", text=[[**The Steamvault (70)**]], guide="DUNGEONS\\The Burning Crusade\\The Steamvault (70)"},
 	},
 
-	{"content", text=[[Dungeon Quest Guides]]},
-	{"text", text=[[These guides will walk you through completing the Outland dungeon quests.]]},
+	{"content", text=ZGV_T([[Dungeon Quest Guides]])},
+	{"text", text=ZGV_T([[These guides will walk you through completing the Outland dungeon quests.]])},
 	{"columns",
 	{"item", text=[[**Hellfire Ramparts Quests**]], guide="DUNGEONS\\The Burning Crusade\\Hellfire Ramparts Quests"},
 	{"item", text=[[**The Slave Pens Quests**]], guide="DUNGEONS\\The Burning Crusade\\The Slave Pens Quests"},
@@ -2783,8 +2796,8 @@ title="The Burning Crusade", group="tbc",
 	{"item", text=[[**The Black Morass Quests**]], guide="DUNGEONS\\The Burning Crusade\\The Black Morass Quests"},
 	},
 
-	{"content", text=[[Dungeon Attunement Guides]]},
-	{"text", text=[[These guides will walk you through becoming attuned with the following dungeons.]]},
+	{"content", text=ZGV_T([[Dungeon Attunement Guides]])},
+	{"text", text=ZGV_T([[These guides will walk you through becoming attuned with the following dungeons.]])},
 	{"columns",
 	{"item", text=[[**Karazhan Attunement**]], guide="DUNGEONS\\The Burning Crusade\\Karazhan Attunement"},
 	{"item", text=[[**Hellfire Citadel Attunement**]], guide="DUNGEONS\\The Burning Crusade\\Hellfire Citadel Attunement"},
@@ -2792,20 +2805,20 @@ title="The Burning Crusade", group="tbc",
 	{"item", text=[[**Tempest Keep Attunement**]], guide="DUNGEONS\\The Burning Crusade\\Tempest Keep Attunement"},
 	},
 
-	{"section", text=[[DAILIES]]},
+	{"section", text=ZGV_T([[DAILIES]])},
 	{"banner", image=ZGV.IMAGESDIR.."\\TBCDailies",showcaseonly=true},
 
-	{"content", text=[[Daily Quest Guides]]},
+	{"content", text=ZGV_T([[Daily Quest Guides]])},
 	{"columns",
-	{"item", text=[[**Ogri'la Daily Quests**]], guide="DAILIES\\The Burning Crusade\\Ogri'la\\Ogri'la Daily Quests"},
-	{"item", text=[[**Sha'tari Skyguard Daily Quests**]], guide="DAILIES\\The Burning Crusade\\Sha'tari Skyguard\\Sha'tari Skyguard Daily Quests"},
+	{"item", text=ZGV_T([[**Ogri'la Daily Quests**]]), guide="DAILIES\\The Burning Crusade\\Ogri'la\\Ogri'la Daily Quests"},
+	{"item", text=ZGV_T([[**Sha'tari Skyguard Daily Quests**]]), guide="DAILIES\\The Burning Crusade\\Sha'tari Skyguard\\Sha'tari Skyguard Daily Quests"},
 	},
 
-	{"section", text=[[PROFESSIONS]]},
+	{"section", text=ZGV_T([[PROFESSIONS]])},
 	{"banner", image=ZGV.IMAGESDIR.."\\TBCProfessions",showcaseonly=true},
 
-	{"content", text=[[Profession Leveling Guides]]},
-	{"text", text=[[These guides will walk you through leveling up your professions to the new max skill level of 375.]]},
+	{"content", text=ZGV_T([[Profession Leveling Guides]])},
+	{"text", text=ZGV_T([[These guides will walk you through leveling up your professions to the new max skill level of 375.]])},
 	{"columns",
 	{"item", text=[[**Alchemy (1-375)**]], guide="PROFESSIONS\\Alchemy\\Alchemy (1-375)"},
 	{"item", text=[[**Blacksmithing (1-375)**]], guide="PROFESSIONS\\Blacksmithing\\Blacksmithing (1-375)"},
@@ -2821,11 +2834,11 @@ title="The Burning Crusade", group="tbc",
 	{"item", text=[[**Tailoring (1-375)**]], guide="PROFESSIONS\\Tailoring\\Tailoring (1-375)"},
 	},
 
-	{"section", text=[[REPUTATIONS]]},
+	{"section", text=ZGV_T([[REPUTATIONS]])},
 	{"banner", image=ZGV.IMAGESDIR.."\\TBCReputations",showcaseonly=true},
 
-	{"content", text=[[Reputation Guides]]},
-	{"text", text=[[These guides will walk you through reaching Exalted with various Outland factions.]]},
+	{"content", text=ZGV_T([[Reputation Guides]])},
+	{"text", text=ZGV_T([[These guides will walk you through reaching Exalted with various Outland factions.]])},
 	{"columns",
 	{"item", text=[[**Honor Hold**]], guide="REPUTATIONS\\The Burning Crusade\\Honor Hold",faction="A"},
 	{"item", text=[[**Cenarion Expedition**]], guide="REPUTATIONS\\The Burning Crusade\\Cenarion Expedition"},
@@ -3963,7 +3976,7 @@ local function EnsureGuideManagerStandaloneFrame(self)
 	local wnTitle = whatsnewPane:CreateFontString(nil, "ARTWORK", "GameFontNormal")
 	wnTitle:SetPoint("TOPLEFT", whatsnewPane, "TOPLEFT", 8, -6)
 	wnTitle:SetJustifyH("LEFT")
-	wnTitle:SetText("|cffdfe3ebFeatured Guides|r")
+	wnTitle:SetText(ZGV_T("|cffdfe3ebFeatured Guides|r"))
 	ApplyRetailFont(wnTitle, 16, "", true)
 	frame.whatsnewTitle = wnTitle
 
@@ -4023,7 +4036,7 @@ local function EnsureGuideManagerStandaloneFrame(self)
 		local data = WhatsNewData[dataIndex]
 		if not data then return end
 
-		frm.whatsnewTitle:SetText("|cffdfe3ebFeatured: " .. (data.title or "") .. "|r")
+		frm.whatsnewTitle:SetText(ZGV_T("|cffdfe3ebFeatured: ") .. (data.title or "") .. "|r")
 
 		local inner = frm.whatsnewInner
 		inner:SetWidth(wnScroll:GetWidth() > 0 and wnScroll:GetWidth() or 600)
@@ -5351,9 +5364,11 @@ local function EnsureGuideManagerStandaloneFrame(self)
 			local image = ResolveGuideHeroImageFromText(folderPath, frame.currentCategory, frame.currentSection)
 			if folderPath ~= "" then
 				local parts = SplitGuideTitle(folderPath)
-				local label = parts[#parts] or folderPath
+				local label = self:GuideFolderLabel(parts[#parts] or folderPath)
 				frame.detailTitle:SetText(label)
-				frame.detailMeta:SetText(LT("gb_folder_format", folderPath))
+				local shownParts = {}
+				for i, p in ipairs(parts) do shownParts[i] = self:GuideFolderLabel(p) end
+				frame.detailMeta:SetText(LT("gb_folder_format", table.concat(shownParts, "\\")))
 				frame.detailImage:SetTexture(image)
 			else
 				frame.detailTitle:SetText(LT("gb_no_guide_selected"))
@@ -5409,7 +5424,7 @@ local function EnsureGuideManagerStandaloneFrame(self)
 		frame.detailTitle:SetText(guide.title_short or guide.title or sel)
 		local detailMeta = LT("gb_detail_meta_format", steps, author, nextg)
 		if guide.headerdata then
-			detailMeta = detailMeta .. "\n|cff00ccffSource: Retail WOTLK Guide|r"
+			detailMeta = detailMeta .. ZGV_T("\n|cff00ccffSource: Retail WOTLK Guide|r")
 		end
 		if frame.currentSection == "featured" then
 			local featuredMeta = frame.featuredMetaByTitle and frame.featuredMetaByTitle[guide.title]
@@ -5536,18 +5551,18 @@ local function EnsureGuideManagerStandaloneFrame(self)
 		local title = LT("gb_select_guide")
 		if section == "home" then
 			if frame.homeShowAll then
-				title = (#parts > 0 and parts[#parts]) or LT("gb_all_guides")
+				title = (#parts > 0 and self:GuideFolderLabel(parts[#parts])) or LT("gb_all_guides")
 			else
-				title = (#parts > 0 and parts[#parts]) or GetCategoryLabel(category)
+				title = (#parts > 0 and self:GuideFolderLabel(parts[#parts])) or GetCategoryLabel(category)
 			end
 		elseif section == "current" then
-			title = (#parts > 0 and parts[#parts]) or LT("gb_tab_current")
+			title = (#parts > 0 and self:GuideFolderLabel(parts[#parts])) or LT("gb_tab_current")
 		elseif section == "recent" then
 			title = LT("gb_tab_recent")
 		elseif section == "featured" then
 			title = LT("gb_tab_featured")
 		elseif section == "whatsnew" then
-			title = "What's New"
+			title = ZGV_T("What's New")
 		elseif section == "options" then
 			title = LT("gb_tab_options")
 		end

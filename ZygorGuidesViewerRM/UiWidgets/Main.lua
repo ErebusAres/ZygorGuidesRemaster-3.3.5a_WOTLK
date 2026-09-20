@@ -144,15 +144,15 @@ function UI.GetTimeStamp(lasttime)
 
 	if time >= 3600*24 then
 		time = floor(time / (3600*24))
-		if time == 1 then s = "%d day ago" else s = "%d days ago" end
+		if time == 1 then s = ZGV_T("%d day ago") else s = ZGV_T("%d days ago") end
 	elseif time >= 3600 then
 		time = floor(time / 3600)
-		if time == 1 then s = "%d hour ago" else s = "%d hours ago" end
+		if time == 1 then s = ZGV_T("%d hour ago") else s = ZGV_T("%d hours ago") end
 	elseif time >= 60 then
 		time = floor(time / 60)
-		if time == 1 then s = "%d min ago" else s = "%d mins ago" end
+		if time == 1 then s = ZGV_T("%d min ago") else s = ZGV_T("%d mins ago") end
 	else
-		s = "less than a min ago"
+		s = ZGV_T("less than a min ago")
 		--if time == 1 then s = "%d sec ago" else s = "%d secs ago" end
 	end
 

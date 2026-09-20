@@ -86,7 +86,7 @@ function me:QUEST_GREETING()
 		for qnum=1,GetNumActiveQuests() do
 			for i,goal in ipairs(self.CurrentStep.goals) do
 				if goal.action=="turnin" and goal.quest==GetActiveTitle(qnum) and goal:GetStatus()=="incomplete" then
-					self:Print("Activating quest")
+					self:Print(ZGV_T("Activating quest"))
 					SelectActiveQuest(qnum)
 					return
 				end
@@ -97,7 +97,7 @@ function me:QUEST_GREETING()
 		for qnum=1,GetNumAvailableQuests() do
 			for i,goal in ipairs(self.CurrentStep.goals) do
 				if goal.action=="accept" and goal.quest==GetAvailableTitle(qnum) and goal:GetStatus()=="incomplete" then
-					self:Print("Opening quest")
+					self:Print(ZGV_T("Opening quest"))
 					SelectAvailableQuest(qnum)
 					return
 				end
@@ -117,7 +117,7 @@ function me:GOSSIP_SHOW()
 		for qnum=1,GetNumGossipActiveQuests() do
 			for i,goal in ipairs(self.CurrentStep.goals) do
 				if goal.action=="turnin" and goal.quest==quests[qnum*3-2] and goal:GetStatus()=="incomplete" then
-					self:Print("Activating quest")
+					self:Print(ZGV_T("Activating quest"))
 					SelectGossipActiveQuest(qnum)
 					return
 				end
@@ -129,7 +129,7 @@ function me:GOSSIP_SHOW()
 		for qnum=1,GetNumGossipAvailableQuests() do
 			for i,goal in ipairs(self.CurrentStep.goals) do
 				if goal.action=="accept" and goal.quest==quests[qnum*3-2] and goal:GetStatus()=="incomplete" then
-					self:Print("Opening quest")
+					self:Print(ZGV_T("Opening quest"))
 					SelectGossipAvailableQuest(qnum)
 					return
 				end
@@ -148,7 +148,7 @@ function me:QUEST_DETAIL()
 		local title = GetTitleText()
 		for i,goal in ipairs(self.CurrentStep.goals) do
 			if goal.action=="accept" and goal.quest==title and goal:IsCompleteable() and not goal:IsObsolete() then
-				self:Print("Accepting quest")
+				self:Print(ZGV_T("Accepting quest"))
 				QuestDetailAcceptButton_OnClick()
 				-- ASSUMING it runs after the builtin QuestFrame code.
 				-- But it seems to, if the title matches...
@@ -169,7 +169,7 @@ function me:QUEST_PROGRESS()
 		local title = GetTitleText()
 		for i,goal in ipairs(self.CurrentStep.goals) do
 			if goal.quest==title then
-				self:Print("Completing quest")
+				self:Print(ZGV_T("Completing quest"))
 				CompleteQuest()
 				return
 			end
@@ -192,7 +192,7 @@ function me:QUEST_COMPLETE()
 					local questItem = self.ItemScore and self.ItemScore.QuestItem
 					if questItem and questItem.ApplyRewardRecommendation then
 						if self.db.profile.autoquestreward then
-							self:Print("Choosing best quest reward")
+							self:Print(ZGV_T("Choosing best quest reward"))
 							self.questAutoAdvancePauseUntil = GetTime() + 0.45
 							questItem:ApplyRewardRecommendation(true)
 						else
@@ -201,7 +201,7 @@ function me:QUEST_COMPLETE()
 					end
 					return
 				end
-				self:Print("Turning in quest")
+				self:Print(ZGV_T("Turning in quest"))
 				self.questAutoAdvancePauseUntil = GetTime() + 0.35
 				GetQuestReward()
 				return

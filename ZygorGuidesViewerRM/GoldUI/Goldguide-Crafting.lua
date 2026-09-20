@@ -320,10 +320,10 @@ function Crafting:GenerateGuide()
 
 	-- Step 1 - intro
 	self:add_line("step")
-	self:add_line("'_This is a dynamic crafting guide._")
-	self:add_line("'We will make "..EscapeGuideText(productname))
+	self:add_line(ZGV_T("'_This is a dynamic crafting guide._"))
+	self:add_line(ZGV_T("'We will make ")..EscapeGuideText(productname))
 	self:add_line("'")
-	self:add_line("'Required reagents:")
+	self:add_line(ZGV_T("'Required reagents:"))
 	for _,entry in ipairs(reagentEntries) do
 		self:add_line("itemname "..entry.itemcount.." "..entry.itemid)
 	end
@@ -454,19 +454,19 @@ function Crafting:GetTooltipData(refresh)
 	-- Demand
 	local trends = ZGV.Gold.servertrends and ZGV.Gold.servertrends.items[self.productid]
 	local demand=trends and (trends.sold or trends.q_md or (trends.q_lo+trends.q_hi)/2) or 0
-	local demand_description = ("Daily demand for item: %s"):format(self.demand or "unknown");
+	local demand_description = (ZGV_T("Daily demand for item: %s")):format(self.demand or ZGV_T("unknown"));
 
 	-- Recipe
 	local recipe_description
 	if not (self.learned or ZGV.Gold.any_recipe) then
 		if self.source then
-			recipe_description = "|cffffff77You do not know the recipe to make this item. Source for it is known."
+			recipe_description = ZGV_T("|cffffff77You do not know the recipe to make this item. Source for it is known.")
 		else
-			recipe_description = "|cffffff77You do not know the recipe to make this item."
+			recipe_description = ZGV_T("|cffffff77You do not know the recipe to make this item.")
 		end
 
 		local valid_level = Goldguide.SkillLevels[self.skill] > (Goldguide.RecipeLevels[self.spell] or 999)
-		if not valid_level then recipe_description = recipe_description.." You need to have skill level "..(Goldguide.RecipeLevels[self.spell] or "unknown").." to learn it." end
+		if not valid_level then recipe_description = recipe_description..ZGV_T(" You need to have skill level ")..(Goldguide.RecipeLevels[self.spell] or ZGV_T("unknown", 2))..ZGV_T(" to learn it.") end
 	end
 
 	--tooltip.header = flags_description .. "\n" .. demand_description .. (recipe_description and "\n" .. recipe_description or "")
@@ -480,7 +480,7 @@ function Crafting:GetTooltipData(refresh)
 		if vendor_reagents[item] then
 			each=vendor_reagents[item]         -- special high priced vendor reagents
 			total=(vendor_reagents[item]*count) -- special high priced vendor reagents
-			status="Vendor reagent"
+			status=ZGV_T("Vendor reagent")
 		else
 			each=ZGVG:GetSellPrice(item,1)
 			total=ZGVG:GetSellPrice(item,count)

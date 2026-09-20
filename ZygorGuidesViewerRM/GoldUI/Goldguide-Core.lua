@@ -15,18 +15,18 @@ Goldguide.TIER_DEMAND_MEDIUM = 0.5
 Goldguide.TIER_DEMAND_HIGH = 1.0
 
 Goldguide.ITEM_AUCTION_STATUS = {
-	[0] = {"|cffff0000","Bad investment"}, -- 0-4
-	[1] = {"|cffff0000","Bad investment"}, -- 0-4
-	[2] = {"|cffff0000","Risky investment"}, -- 0-4
-	[3] = {"|cffff0000","Risky investment"}, -- 0-4
-	[4] = {"|cffff0000","Risky investment"}, -- 0-4
-	[5] = {"|cffffff00","Safe investment"}, -- 5-9
-	[6] = {"|cffffff00","Safe investment"}, -- 5-9
-	[7] = {"|cffffff00","Safe investment"}, -- 5-9
-	[8] = {"|cffffff00","Safe investment"}, -- 5-9
-	[9] = {"|cffffff00","Safe investment"}, -- 5-9
-	[10] = {"|cff00ff00","Good investment"}, -- 10+
-	unscored = {"|cff777777","Unknown"}
+	[0] = {"|cffff0000",ZGV_T("Bad investment")}, -- 0-4
+	[1] = {"|cffff0000",ZGV_T("Bad investment")}, -- 0-4
+	[2] = {"|cffff0000",ZGV_T("Risky investment")}, -- 0-4
+	[3] = {"|cffff0000",ZGV_T("Risky investment")}, -- 0-4
+	[4] = {"|cffff0000",ZGV_T("Risky investment")}, -- 0-4
+	[5] = {"|cffffff00",ZGV_T("Safe investment")}, -- 5-9
+	[6] = {"|cffffff00",ZGV_T("Safe investment")}, -- 5-9
+	[7] = {"|cffffff00",ZGV_T("Safe investment")}, -- 5-9
+	[8] = {"|cffffff00",ZGV_T("Safe investment")}, -- 5-9
+	[9] = {"|cffffff00",ZGV_T("Safe investment")}, -- 5-9
+	[10] = {"|cff00ff00",ZGV_T("Good investment")}, -- 10+
+	unscored = {"|cff777777",ZGV_T("Unknown")}
 }
 
 local CRAFTING_SKILLS={"All","Mining","Jewelcrafting","Enchanting","Inscription","Blacksmithing","Engineering","Alchemy","Tailoring","Leatherworking","Cooking"}
@@ -218,8 +218,8 @@ function Goldguide:GetRouteGuideLoadTitle(title)
 
 	local wrapperBody = {
 		"step",
-		"This is a farming loop route.",
-		"|tip The waypoint arrow only gets you onto the route. After that, follow the ant trail and loop path shown on the map.",
+		ZGV_T("This is a farming loop route."),
+		ZGV_T("|tip The waypoint arrow only gets you onto the route. After that, follow the ant trail and loop path shown on the map."),
 	}
 
 	local mapName
@@ -263,22 +263,22 @@ function Goldguide:GetRouteGuideLoadTitle(title)
 			table.insert(routeParts, ("%s,%s"):format(point.x, point.y))
 		end
 		table.insert(wrapperBody, "step")
-		table.insert(wrapperBody, "'Follow this farming route.")
+		table.insert(wrapperBody, ZGV_T("'Follow this farming route."))
 		if mapName then
 			table.insert(wrapperBody, ("..route %s,%s"):format(mapName, table.concat(routeParts, ";")))
 		else
 			table.insert(wrapperBody, ("..route %s"):format(table.concat(routeParts, ";")))
 		end
-		table.insert(wrapperBody, "|tip The route points should advance automatically as you move along the route.")
+		table.insert(wrapperBody, ZGV_T("|tip The route points should advance automatically as you move along the route."))
 		for _,line in ipairs(routeActionLines) do
 			if line:match("^[Kk]ill ") then
 				table.insert(wrapperBody, "'" .. line)
 			elseif line:match("^click ") then
 				local target = line:match("^click%s+(.+)$")
-				target = target and target:gsub("##%d+%+?", "") or "nearby nodes"
-				table.insert(wrapperBody, ("'Gather %s along the route."):format(target))
+				target = target and target:gsub("##%d+%+?", "") or ZGV_T("nearby nodes")
+				table.insert(wrapperBody, (ZGV_T("'Gather %s along the route.")):format(target))
 			elseif line:match("^cast Fishing##") then
-				table.insert(wrapperBody, "'Fish as you follow this loop route.")
+				table.insert(wrapperBody, ZGV_T("'Fish as you follow this loop route."))
 			elseif line:match("^|tip ") then
 				table.insert(wrapperBody, line)
 			elseif line ~= "step" and line ~= "" then
@@ -286,8 +286,8 @@ function Goldguide:GetRouteGuideLoadTitle(title)
 			end
 		end
 		table.insert(wrapperBody, "step")
-		table.insert(wrapperBody, "You finished one loop of the farming route.")
-		table.insert(wrapperBody, "|tip Reload the route from Gold Guide if you want to start another guided loop immediately.")
+		table.insert(wrapperBody, ZGV_T("You finished one loop of the farming route."))
+		table.insert(wrapperBody, ZGV_T("|tip Reload the route from Gold Guide if you want to start another guided loop immediately."))
 	else
 		for _,line in ipairs(bodyLines) do
 			table.insert(wrapperBody, line)
@@ -847,7 +847,7 @@ function Goldguide:Update()
 		end
 	end
 
-	Goldguide.MainFrame.MenuFrame.ResultCount:SetText("Results: "..results)
+	Goldguide.MainFrame.MenuFrame.ResultCount:SetText(ZGV_T("Results: ")..results)
 
 	if resultstatus then
 		Goldguide.MainFrame.MessageFrame.ResultsMessage:SetText(resultstatus)
@@ -1323,15 +1323,15 @@ function Goldguide.Common:CalculateDetails(refresh)
 						self.has_empty=true
 						itemdata.empty=true
 					end
-					local is = ("%d %s (%s each = %s total); demand: %d  %s%s"):format(
+					local is = (ZGV_T("%d %s (%s each = %s total); demand: %d  %s%s")):format(
 						count, itemlink or "#"..itemid,
 						ZGV.GetMoneyString(itemdata.price),ZGV.GetMoneyString(itemdata.price*count),
 						itemdata.demand,
-						itemdata.scale<1 and (" |cffff0000LOW DEMAND, %d daily max!|r"):format(itemdata.demand) or "",
-						itemdata.gouged and (" |cff88ff00GOUGED: %s > %s|r"):format(
+						itemdata.scale<1 and (ZGV_T(" |cffff0000LOW DEMAND, %d daily max!|r")):format(itemdata.demand) or "",
+						itemdata.gouged and (ZGV_T(" |cff88ff00GOUGED: %s > %s|r")):format(
 							ZGV.GetMoneyString(itemdata.price),
 							ZGV.GetMoneyString(trend.p_hi*ZGVG.OVERPRICE))
-							or (itemdata.empty and (" |cff00ff00EMPTY!|r") or "")
+							or (itemdata.empty and (ZGV_T(" |cff00ff00EMPTY!|r")) or "")
 						)
 					tinsert(good_items,{itemname,is,count=count,price=itemdata.price,profit=itemdata.price*count,is_lively=true,itemdata=itemdata})
 
@@ -1339,7 +1339,7 @@ function Goldguide.Common:CalculateDetails(refresh)
 					itemdata.price = trend.p_md or vendor or 0
 					self.has_stagnant=true
 				
-					local is = ("%d %s (%s each = %s total); |cffff0000market stagnant or saturated|r"):format(
+					local is = (ZGV_T("%d %s (%s each = %s total); |cffff0000market stagnant or saturated|r")):format(
 						count, itemlink or "#"..itemid,
 						ZGV.GetMoneyString(itemdata.price),ZGV.GetMoneyString(itemdata.price*count)
 					)
@@ -1348,10 +1348,10 @@ function Goldguide.Common:CalculateDetails(refresh)
 				elseif not trend then
 					itemdata.price = vendor or 0
 
-					local is = ("%d %s (%s each = %s total); %s|cffaa0000no history data|r"):format(
+					local is = (ZGV_T("%d %s (%s each = %s total); %s|cffaa0000no history data|r")):format(
 						count, itemlink or "#"..itemid,
 						ZGV.GetMoneyString(itemdata.price),ZGV.GetMoneyString(itemdata.price*count),
-						useful and "useful, but " or ""
+						useful and ZGV_T("useful, but ") or ""
 						)
 					tinsert(bad_items,{itemname,is,count=count,price=itemdata.price,profit=itemdata.price*count,is_lively=false,itemdata=itemdata,no_trend=true})
 
@@ -1363,7 +1363,7 @@ function Goldguide.Common:CalculateDetails(refresh)
 				itemdata.demand=0
 				itemdata.price = ZGVG:GetItemPrice(itemid) or vendor or 0
 
-				local is = ("%d %s (%s each = %s total) |cff888888<- vendor|r"):format(count,itemlink or "#"..itemid,ZGV.GetMoneyString(itemdata.price),ZGV.GetMoneyString(itemdata.price*count))
+				local is = (ZGV_T("%d %s (%s each = %s total) |cff888888<- vendor|r")):format(count,itemlink or "#"..itemid,ZGV.GetMoneyString(itemdata.price),ZGV.GetMoneyString(itemdata.price*count))
 				tinsert(bad_items,{itemname,is,count=count,price=itemdata.price,profit=itemdata.price*count,itemdata=itemdata,no_trend=true})
 
 			end
@@ -1392,7 +1392,7 @@ function Goldguide.Common:CalculateDetails(refresh)
 		end
 
 		--end
-		s = s .. (" - get (per hour):\n%s\n"):format(table.concat(itemstrings,"\n"))
+		s = s .. (ZGV_T(" - get (per hour):\n%s\n")):format(table.concat(itemstrings,"\n"))
 	end
 
 	local quality = nil
@@ -1449,8 +1449,8 @@ local TIER_DEMAND_MEDIUM = 0.5
 function Goldguide.Common:GetTooltipData(refresh)
 	if self.cached_tooltip and not refresh then return self.cached_tooltip end
 
-	local price_desc = " /ea"
-	local drops_desc = " /hr"
+	local price_desc = ZGV_T(" /ea")
+	local drops_desc = ZGV_T(" /hr")
 
 	local h = floor(self.scale)
 	local m = (self.scale-h)*60
@@ -1475,9 +1475,9 @@ function Goldguide.Common:GetTooltipData(refresh)
 		
 		local comment
 		if item.itemdata.gouged then
-			comment="Gouged; price raised."
+			comment=ZGV_T("Gouged; price raised.")
 		elseif item.itemdata.empty then
-			comment="Market empty; price raised."
+			comment=ZGV_T("Market empty; price raised.")
 		else
 			comment=""
 		end
@@ -1504,15 +1504,15 @@ function Goldguide.Common:GetTooltipData(refresh)
 			local itemname,itemlink = ZGV:GetItemInfo(item.itemdata[1])
 			local comment=""
 			if item.itemdata[3] then --crap
-				comment="Vendor."
+				comment=ZGV_T("Vendor.")
 			elseif item.no_trend then
 				if ZGV.IsClassic or ZGV.IsClassicTBC or ZGV.IsClassicWOTLK then
-					comment="No trend data."
+					comment=ZGV_T("No trend data.")
 				else
-					comment="Not useful."
+					comment=ZGV_T("Not useful.")
 				end
 			elseif not item.is_lively then
-				comment="Market stagnant, vendor."
+				comment=ZGV_T("Market stagnant, vendor.")
 			else
 				comment=""
 			end
@@ -1531,7 +1531,7 @@ function Goldguide.Common:GetTooltipData(refresh)
 	end
 
 	if self.crap_rate then
-		self.cached_tooltip.header = "|cff9100ffLow gathering skill level will result in lower amount of items.|r"
+		self.cached_tooltip.header = ZGV_T("|cff9100ffLow gathering skill level will result in lower amount of items.|r")
 	end
 
 	-- crop display to 30 entries
