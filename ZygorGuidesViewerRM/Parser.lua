@@ -220,6 +220,12 @@ function me:ParseHeader(text)
 	return header
 end
 
+-- Race, class and faction names are usable as plain words in conditions ("|only if Paladin", "|only if not Warrior and level > 20").
+-- They are refreshed by ConditionEnv._Update(), because a name that is missing from the environment is nil, which made
+-- such a condition false for everybody (and "not Paladin" true for everybody).
+local CONDITION_RACE_NAMES = { "Human", "Dwarf", "NightElf", "Gnome", "Draenei", "Orc", "Undead", "Scourge", "Tauren", "Troll", "BloodElf" }
+local CONDITION_CLASS_NAMES = { "Warrior", "Paladin", "Hunter", "Rogue", "Priest", "DeathKnight", "Shaman", "Mage", "Warlock", "Druid" }
+
 ZGV.ConditionEnv = {
 	_G = _G,
 	-- variables needing update
@@ -240,8 +246,17 @@ ZGV.ConditionEnv = {
 	end,
 
 	_Update = function()
-		ZGV.ConditionEnv.level = UnitLevel("player")
-		if ZGV.db.char.fakelevel and ZGV.db.char.fakelevel>0 then ZGV.ConditionEnv.level=ZGV.db.char.fakelevel end
+		local env = ZGV.ConditionEnv
+		env.level = UnitLevel("player")
+		if ZGV.db.char.fakelevel and ZGV.db.char.fakelevel>0 then env.level=ZGV.db.char.fakelevel end
+
+		local _,race = UnitRace("player")
+		local _,class = UnitClass("player")
+		local faction = UnitFactionGroup and UnitFactionGroup("player")
+		for _,name in ipairs(CONDITION_RACE_NAMES) do env[name] = (race==name) or (name=="Undead" and race=="Scourge") end
+		for _,name in ipairs(CONDITION_CLASS_NAMES) do env[name] = (class==name:upper()) end
+		env.Alliance = (faction=="Alliance")
+		env.Horde = (faction=="Horde")
 	end,
 
 	_Setup = function()
