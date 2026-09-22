@@ -171,6 +171,11 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 247 - 3.0.247
+
+- Fixed plain race, class, and faction `|only if` conditions so guides no longer hide or auto-skip valid steps such as `Paladin`, `Horde`, or `Alliance`.
+- Added regression coverage for combined, negated, level-gated, and goal-level conditions. Thanks to [fernandao17](https://github.com/fernandao17) for identifying the parser boundary and contributing the original fix and test coverage.
+
 ### Revision 246 - 3.0.246
 
 - Refreshes the active guide waypoint after entering a new zone, including direct fallback arrows that were not covered by the prior route-only arrival check.
@@ -195,11 +200,6 @@ This addon is fully open source and can be inspected before use.
 
 - Highlights the active guide's folder path and pagination row in the legacy guide picker with a subtle green text color.
 - Keeps the existing active-guide checkmark, submenu arrows, and guide selection behavior unchanged.
-
-### Revision 241 - 3.0.241
-
-- Renamed the remastered options window's misleading `Questing` page to its established localized `Extra features` name.
-- Exposed the complete Extra Features option table—including `Show Zygor Auction House button`—directly in the main Zygor options window while retaining the Blizzard Interface Options fallback.
 
 ## Notes
 
