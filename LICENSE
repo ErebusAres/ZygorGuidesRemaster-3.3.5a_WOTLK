@@ -1,0 +1,66 @@
+# Zygor Guides Viewer Remaster - Licensing Notice
+
+This repository is a remaster and maintenance project based on the classic
+Zygor Guides Viewer codebase. It also contains bundled third-party libraries,
+data, assets, and contributions from multiple authors. A more specific
+copyright or license notice attached to an individual file or component takes
+priority for that material.
+
+## Zygor-derived viewer code
+
+The classic Zygor Guides Viewer source used as the basis for this project
+identifies the viewer in its World of Warcraft addon metadata as:
+
+    ## X-License: GPL
+
+The upstream metadata available with this codebase does not identify a specific
+GNU General Public License version (for example, GPL-2.0-only,
+GPL-2.0-or-later, or GPL-3.0-only).
+
+To avoid selecting license terms on behalf of upstream copyright holders, this
+repository preserves the upstream designation as **GPL** without asserting a
+specific GPL version.
+
+Original Zygor viewer code remains copyright its respective copyright holders
+and is subject to the license terms applicable to that material.
+
+## Remaster contributions
+
+Unless a file or contribution states otherwise, original code changes and new
+code authored specifically for Zygor Guides Viewer Remaster are distributed
+under the GPL terms applicable to the Zygor-derived viewer work with which they
+are combined.
+
+This statement is intended to preserve the licensing status of the derived
+viewer work. It does not expand, narrow, replace, or reinterpret rights granted
+by upstream copyright holders.
+
+Contributions from other authors remain copyright their respective authors and
+are distributed under the project terms unless a contribution includes a
+different applicable license or notice.
+
+## Guide content, data, and other upstream material
+
+The viewer's `X-License: GPL` metadata should not automatically be read as a
+blanket relicensing of every guide, database, image, or other content file that
+may appear in this repository.
+
+Where guide content, data, artwork, or other material originated from Zygor or
+another third party, its original copyright and any specific license or usage
+terms continue to apply. This repository does not claim ownership of original
+Zygor content and does not grant rights that its maintainers do not possess.
+
+## Third-party components
+
+Bundled libraries and assets may carry their own licenses. Those component
+licenses and notices control for those components and are not replaced by this
+file.
+
+For example, the bundled Astrolabe library includes notices licensing it under
+the GNU Lesser General Public License version 2.1 or, at the recipient's
+option, a later version.
+
+When redistributing this repository or a modified version, preserve applicable
+copyright notices, this licensing notice, and component-specific license
+notices, and comply with the license terms that apply to the material you
+redistribute.
