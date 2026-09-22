@@ -231,6 +231,16 @@ Use the main repository download link in this README.
 
 Not always. Use other sites/downloads at your own risk.
 
+## License
+
+This repository contains Zygor-derived viewer code, remaster contributions, guide/data material, and bundled third-party components.
+
+The classic viewer metadata carried forward by this project declares `## X-License: GPL`, but the upstream material available with this codebase does not identify a specific GPL version. To avoid inventing GPLv2/GPLv3 terms on behalf of upstream copyright holders, this project preserves the upstream `GPL` designation without selecting a version.
+
+That viewer license metadata should not automatically be treated as a blanket license for every guide, database, image, or other third-party content file in the repository. Original Zygor material and bundled third-party components retain their applicable copyright and license terms.
+
+See [LICENSE](LICENSE) for the detailed licensing and attribution notice.
+
 ## Credits
 
 Original Zygor Guides concept and content belong to the original creators.
