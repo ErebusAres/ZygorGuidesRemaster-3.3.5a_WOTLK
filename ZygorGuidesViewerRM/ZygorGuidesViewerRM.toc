@@ -15,6 +15,7 @@
 ## X-eMail: zygor@zygorguides.com
 ## X-Website: http://zygorguides.com/
 ## X-License: GPL
+## X-License-Note: Upstream GPL version unspecified; see repository LICENSE.
 ## Version: 3.0.247
 
 # Load bundled libraries directly from the TOC. Some 3.3.5a clients do not
