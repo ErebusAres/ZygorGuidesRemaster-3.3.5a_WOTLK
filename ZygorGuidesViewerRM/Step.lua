@@ -16,6 +16,10 @@ function Step:IsComplete()
 	--if not self.CurrentStep then return false end
 	--if not self.CurrentStep.goals then return false end
 	if not self:AreRequirementsMet() then return true end
+	-- An |until condition is the exit for a repeating route. It may become true
+	-- just after the last waypoint reset the step, so let it end the new cycle
+	-- immediately instead of requiring another full lap.
+	if self.condition_until and self.condition_until() then return true,true,false end
 
 	local completeable = false
 	local complete = true

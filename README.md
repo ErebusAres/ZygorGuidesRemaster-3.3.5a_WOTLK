@@ -171,6 +171,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 251 - 3.0.251
+
+- Fixed item-name `|equipped` goals so Synthebrew Goggles and other imported equipment steps detect the item in any equipped slot.
+- Refreshes inline and standalone guide actions when bag or equipment contents change, and makes manual confirmation lines advance immediately.
+- Corrected the Horde Brewfest keg round trip, souvenir ordering, Tirisfal arrival, Dalaran portal shortcuts, and Thunder Bluff flight-master coordinates.
+
 ### Revision 250 - 3.0.250
 
 - Corrected the Horde Brewfest quest giver to Glodrak Huntsniper and added explicit sampler acquisition and S.T.O.U.T. targeting guidance for both factions.
@@ -197,11 +203,6 @@ This addon is fully open source and can be inspected before use.
 
 - Added a default-off **Use classic settings panels** compatibility option under Interface > AddOns > Zygor for clients that crash when opening the remastered settings view.
 - When enabled, settings buttons and the Guide Manager options tab open the classic panels while the Guide Manager remains available for browsing guides.
-
-### Revision 244 - 3.0.244
-
-- Marks successful cross-zone LibRover route nodes for recalculation on destination-zone arrival; direct fallback arrows are handled separately in revision 246.
-- Keeps same-zone route waypoints from repeatedly recalculating.
 
 ## Notes
 

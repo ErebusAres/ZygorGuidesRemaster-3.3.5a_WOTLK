@@ -44,9 +44,9 @@ turnin Now This is Ram Racing... Almost.##11409 |goto 46.31,15.00
 accept There and Back Again##11412 |goto 46.31,15.00
 step
 map Durotar/0
-path follow strictbounce; loop off; ants curved; dist 30
-path	46.27,14.85	46.37,17.99	46.64,20.20	46.88,22.05	47.63,22.79
-path	48.21,25.77	48.32,27.47	48.96,28.09
+path follow strict; loop on; ants curved; dist 30
+path	46.58,20.18	47.57,22.80	48.96,28.09
+path	47.57,22.80	46.58,20.18	46.32,15.27
 Follow the waypoint path:
 use the Ram Racing Reins##33306
 |tip Alternate between Canter and Gallop as needed to keep your fatigue below 100 between buckets.
@@ -54,8 +54,7 @@ use the Ram Racing Reins##33306
 Bok Dropcertain will throw you a keg when you get close
 Once you have a keg, run back and turn it in to Driz Tumblequick
 |tip Just get near him and you will throw the keg to him.
-Deliver #3# Kegs in Under 4 Minutes |q 11412/1 |or
-Click Here Once 3 Kegs Have Been Delivered |confirm |or
+Deliver #3# Kegs in Under 4 Minutes |q 11412/1 |n |until q(11412/1)
 |tip If you lose your ram, return to Ram Master Ray to acquire another.
 step
 Stop Riding the Ram |nobuff spell:43880 |q 11412
@@ -70,6 +69,11 @@ accept Say, There Wouldn't Happen to be a Souvenir This Year, Would There?##1219
 |tip This quest is not always available.
 Click Here if this Quest Is Not Offered |confirm |or
 step
+talk Blix Fixwidget##24495
+turnin Another Year, Another Souvenir.##13931 |goto 44.07,17.98 |or
+turnin Say, There Wouldn't Happen to be a Souvenir This Year, Would There?##12194 |goto 44.07,17.98 |or
+|only if haveq(13931) or completedq(13931) or haveq(12194) or completedq(12194)
+step
 talk Bizzle Quicklift##27216
 accept Chug and Chuck!##12191 |goto 45.25,17.33
 step
@@ -83,11 +87,6 @@ Hit the S.T.O.U.T. #5# Times |q 12191/1 |goto 45.22,17.49
 step
 talk Bizzle Quicklift##27216
 turnin Chug and Chuck!##12191 |goto 45.25,17.33
-step
-talk Blix Fixwidget##24495
-turnin Another Year, Another Souvenir.##13931 |goto 44.07,17.98 |or
-turnin Say, There Wouldn't Happen to be a Souvenir This Year, Would There?##12194 |goto 44.07,17.98 |or
-|only if haveq(13931) or completedq(13931) or haveq(12194) or completedq(12194)
 step
 talk Glodrak Huntsniper##24657
 accept Catch the Wild Wolpertinger!##11431 |goto 45.01,17.40
@@ -111,7 +110,9 @@ talk Glodrak Huntsniper##24657
 turnin Catch the Wild Wolpertinger!##11431 |goto 45.01,17.40
 accept Pink Elekks On Parade##11120 |goto 45.01,17.40
 step
-Go to Tirisfal Glades |goto Tirisfal Glades/0 66.12,13.46 < 50 |c |q 11120
+Arrive outside Undercity |goto Tirisfal Glades/0 61.87,64.99 < 100 |c |q 11120
+step
+Go to the Tirisfal Glades Brewfest Camp |goto Tirisfal Glades/0 66.12,13.46 < 50 |c |q 11120
 |tip Go to this spot before you equip the goggles.
 step
 Equip the Synthebrew Goggles |equipped Synthebrew Goggles##46735 |q 11120
@@ -142,6 +143,10 @@ kill 3 Eversong Pink Elekk##23531 |q 11120/1 |goto Eversong Woods/0 56.97,53.14
 step
 Remove the Synthebrew Goggles and Re-Equip your Helm |confirm |q 11120
 step
+Go to the Thunder Bluff Portal |goto Dalaran/1 57.25,22.37 < 10 |c |q 11120
+Take the Portal to Thunder Bluff |complete not zone("Dalaran") |next "Mulgore_Brewfest_Camp" |q 11120
+|only if zone("Dalaran")
+step
 Enter Silvermoon City |goto Silvermoon City/0 |noway |c |q 11120
 step
 click Orb of Translocation |goto Silvermoon City/0 49.50,14.80
@@ -158,6 +163,7 @@ step
 talk Doras##3310 |goto Orgrimmar/0 45.10,63.90
 Fly to Thunder Bluff |goto Thunder Bluff/0 46.60,49.90 < 10 |c |q 11120
 step
+label "Mulgore_Brewfest_Camp"
 Go to the Mulgore Brewfest Camp |goto Thunder Bluff/0 32.33,70.85 < 100 |c |q 11120
 |tip Go to this spot before you equip the goggles.
 step
@@ -169,9 +175,14 @@ kill 3 Mulgore Pink Elekk##23529 |q 11120/2 |goto Thunder Bluff/0 32.33,70.85
 step
 Remove the Synthebrew Goggles and Re-Equip your Helm |confirm |q 11120
 step
-talk Tal##2995 |goto Thunder Bluff/0 47.00,49.80
+Go to the Orgrimmar Portal |goto Dalaran/1 55.55,25.66 < 10 |c |q 11120
+Take the Portal to Orgrimmar |complete not zone("Dalaran") |next "Return_To_Durotar" |q 11120
+|only if zone("Dalaran")
+step
+talk Tal##2995 |goto Thunder Bluff/0 46.78,50.02
 Fly to Orgrimmar |goto Orgrimmar/0 45.30,63.80 < 10 |c |q 11120
 step
+label "Return_To_Durotar"
 Leave Orgrimmar |goto Durotar/0 |noway |c |q 11120
 step
 talk Glodrak Huntsniper##24657

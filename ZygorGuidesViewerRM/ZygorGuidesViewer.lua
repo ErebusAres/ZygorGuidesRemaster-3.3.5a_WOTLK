@@ -7939,13 +7939,36 @@ end
 function me:UNIT_INVENTORY_CHANGED(event,unit)
 	if unit=="player" then
 		self:TryToCompleteStep(true)
+		self:RefreshInventoryDrivenUI()
 	end
 end
 
-function me:LiveProgressEvent()
+function me:RefreshInventoryDrivenUI()
+	if not self.CurrentStep or not self.Frame or not self.Frame:IsVisible() then return end
+	if InCombatLockdown() then
+		self.pendingInlineCombatRefresh = true
+		self.actionButtonsRefreshPending = true
+		return
+	end
+	self:UpdateFrameCurrent()
+	if self.ScheduleTimer and not self.inventoryRefreshTimerPending then
+		self.inventoryRefreshTimerPending = true
+		self:ScheduleTimer(function()
+			if ZGV then ZGV.inventoryRefreshTimerPending = nil end
+			if ZGV and ZGV.CurrentStep and ZGV.Frame and ZGV.Frame:IsVisible() and not InCombatLockdown() then
+				ZGV:UpdateFrameCurrent()
+			end
+		end, 0.05)
+	end
+end
+
+function me:LiveProgressEvent(event)
 	if not self.CurrentStep then return end
 	if not self.Frame or not self.Frame:IsVisible() then return end
 	self:TryToCompleteStep(true)
+	if event=="BAG_UPDATE" then
+		self:RefreshInventoryDrivenUI()
+	end
 end
 
 function me:UI_INFO_MESSAGE(event,message)
@@ -8283,6 +8306,8 @@ function me:GoalOnClick(goalframe,button)
 				end
 			end
 			self:UpdateFrame()
+			self.questAutoAdvancePauseUntil = nil
+			self:TryToCompleteStep(true)
 		elseif goal.x and not goal.force_noway then
 			self:SetWaypoint(goal.num)
 		elseif goal.questid then

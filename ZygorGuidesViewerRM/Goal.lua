@@ -419,10 +419,25 @@ function Goal:IsComplete()
 	elseif self.action=="outvehicle" then
 		return not UnitInVehicle("player"),true
 	elseif self.action=="equipped" then
-		local link = GetInventoryItemLink("player",self.slot)
-		local name
-		if link then name = link:match("|Hitem:.-%[(.-)%]") end
-		return name and name==self.item , GetItemCount(self.item)>0
+		local function ItemMatches(link)
+			if not link then return false end
+			local id = tonumber(link:match("|Hitem:(%d+)"))
+			if self.itemid and id then return id==self.itemid end
+			local name = link:match("|Hitem:.-%[(.-)%]")
+			return name and name==self.item or false
+		end
+		local equipped = false
+		if self.slot then
+			equipped = ItemMatches(GetInventoryItemLink("player",self.slot))
+		else
+			for slot=0,19 do
+				if ItemMatches(GetInventoryItemLink("player",slot)) then
+					equipped = true
+					break
+				end
+			end
+		end
+		return equipped, GetItemCount(self.itemid or self.item)>0
 	elseif self.action=="rep" then
 		local rep = ZGV:GetReputation(self.faction)
 		if rep then

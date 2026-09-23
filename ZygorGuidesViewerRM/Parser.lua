@@ -1058,19 +1058,27 @@ function me:ParseEntry(text)
 				prevlevel = goal.level
 			elseif cmd=="equipped" then
 				goal.action = goal.action or cmd
-				local slot,item = params:match("^([a-zA-Z]+) (.*)")
-				local slotid
-				if slot then
-					local ok, sid = pcall(GetInventorySlotInfo, slot)
-					if ok then slotid = sid end
+				local first,rest = params:match("^([a-zA-Z]+)%s+(.+)$")
+				local slotid,item
+				if first then
+					local ok, sid = pcall(GetInventorySlotInfo, first)
+					if ok and sid then
+						slotid = sid
+						item = rest
+					end
 				end
-				if not slotid or not item or item=="" then
+				-- Retail-format guides normally omit the slot and use
+				-- "|equipped Item Name##id". In that form scan all equipped slots.
+				item = item or params
+				local itemname,itemid = self:ParseID(item)
+				if not itemname or itemname=="" then
 					-- Don't abort entire guide on malformed legacy "equipped" lines.
 					goal.action = nil
 					goal.text = "Equip " .. (params or "")
 				else
 					goal.slot=slotid
-					goal.item=item
+					goal.item=itemname
+					goal.itemid=itemid
 				end
 			elseif cmd=="hearth" then
 				goal.action = goal.action or cmd
