@@ -64,6 +64,7 @@ talk Ram Master Ray##24497
 turnin There and Back Again##11412 |goto 46.31,15.00
 step
 talk Driz Tumblequick##24510
+accept Another Year, Another Souvenir.##13931 |goto 46.29,14.84 |or
 accept Say, There Wouldn't Happen to be a Souvenir This Year, Would There?##12194 |goto 46.29,14.84 |or
 |tip This quest is not always available.
 Click Here if this Quest Is Not Offered |confirm |or
@@ -80,8 +81,9 @@ talk Bizzle Quicklift##27216
 turnin Chug and Chuck!##12191 |goto 45.25,17.33
 step
 talk Blix Fixwidget##24495
-turnin Say, There Wouldn't Happen to be a Souvenir This Year, Would There?##12194 |goto 44.07,17.98
-|only if haveq(12194) or completedq(12194)
+turnin Another Year, Another Souvenir.##13931 |goto 44.07,17.98 |or
+turnin Say, There Wouldn't Happen to be a Souvenir This Year, Would There?##12194 |goto 44.07,17.98 |or
+|only if haveq(13931) or completedq(13931) or haveq(12194) or completedq(12194)
 step
 talk Goldark Snipehunter##23486
 accept Catch the Wild Wolpertinger!##11431 |goto 45.01,17.40
@@ -99,8 +101,7 @@ use the Wolpertinger Net##32907
 collect 5 Stunned Wolpertinger##32906 |q 11431/1 |goto 44.22,17.33
 You can find more around here [goto 45.30,18.58]
 step
-Equip your Helm |complete not goaltype("equipped",{targetid=46735}) |q 11431
-|tip Remove the Synthebrew Goggles and re-equip your helm.
+Remove the Synthebrew Goggles and Re-Equip your Helm |confirm |q 11431
 step
 talk Goldark Snipehunter##23486
 turnin Catch the Wild Wolpertinger!##11431 |goto 45.01,17.40
@@ -116,8 +117,7 @@ use the Elekk Dispersion Ray##32960
 |tip They are found above Undercity, in Tirisfal Glades.
 kill 3 Tirisfal Pink Elekk##23530 |q 11120/3 |goto Tirisfal Glades/0 66.12,13.46
 step
-Equip your Helm |complete not goaltype("equipped",{targetid=46735}) |q 11120
-|tip Remove the Synthebrew Goggles and re-equip your helm.
+Remove the Synthebrew Goggles and Re-Equip your Helm |confirm |q 11120
 step
 Go to Eversong Woods |goto Eversong Woods/0 56.97,53.14 < 100 |c |q 11120
 |tip Go to this spot before you equip the goggles.
@@ -128,8 +128,7 @@ use Elekk Dispersion Ray##32960
 |tip Make sure you have the Synthebrew Goggles equipped.
 kill 3 Eversong Pink Elekk##23531 |q 11120/1 |goto Eversong Woods/0 56.97,53.14
 step
-Equip your Helm |complete not goaltype("equipped",{targetid=46735}) |q 11120
-|tip Remove the Synthebrew Goggles and re-equip your helm.
+Remove the Synthebrew Goggles and Re-Equip your Helm |confirm |q 11120
 step
 Go to Thunder Bluff |goto Thunder Bluff/0 32.33,70.85 < 100 |c |q 11120
 |tip Go to this spot before you equip the goggles.
@@ -140,8 +139,7 @@ use Elekk Dispersion Ray##32960
 |tip Make sure you have the Synthebrew Goggles equipped.
 kill 3 Mulgore Pink Elekk##23529 |q 11120/2 |goto Thunder Bluff/0 32.33,70.85
 step
-Equip your Helm |complete not goaltype("equipped",{targetid=46735}) |q 11120
-|tip Remove the Synthebrew Goggles and re-equip your helm.
+Remove the Synthebrew Goggles and Re-Equip your Helm |confirm |q 11120
 step
 talk Goldark Snipehunter##23486
 turnin Pink Elekks On Parade##11120 |goto Durotar/0 45.01,17.40
@@ -153,7 +151,7 @@ talk Slurpo Fizzykeg##28329
 accept Save Brewfest!##12318 |goto Durotar/0 48.27,27.65
 |tip This quest is elite and will require a group.
 step
-Enter the Blackrock Depths Dungeon with your Group |goto Blackrock Depths/0 0,0 |q 12062 |future
+Enter the Blackrock Depths Dungeon with your Group |complete zone("Blackrock Depths") |q 12062 |future
 step
 talk Brewfest Spy##26719
 |tip After defeating the Dark Iron ambush, interact with the Mole Machine Consoles at the beginning of the dungeon.
@@ -286,7 +284,7 @@ accept Save Brewfest!##12318 |goto Durotar/0 48.27,27.65 |or
 |tip This quest is elite and will require a group.
 '|complete not completedq(11408,11407,12020) |next "Begin_Dailies" |or
 step
-Enter the Blackrock Depths Dungeon with your Group |goto Blackrock Depths/0 0,0 |q 12062 |future |or
+Enter the Blackrock Depths Dungeon with your Group |complete zone("Blackrock Depths") |q 12062 |future |or
 '|complete not completedq(11408,11407,12020) |next "Begin_Dailies" |or
 step
 talk Brewfest Spy##26719
@@ -703,7 +701,7 @@ description="\nEat all 8 of the following Brewfest foods:\n\nSucculent Sausage\n
 },[[
 step
 Reach Level 65 |ding 65
-|tip You must be level 644
+|tip You must be level 65.
 step
 talk Bron##23605
 buy Succulent Sausage##34064 |goto Durotar/0 44.42,16.57 |achieve 1185

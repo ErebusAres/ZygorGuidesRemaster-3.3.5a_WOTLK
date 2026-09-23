@@ -77,13 +77,15 @@ talk Neill Ramstein##23558
 turnin There and Back Again##11122 |goto 46.57,40.30
 step
 talk Pol Amberstill##24468
+accept Another Year, Another Souvenir.##13932 |goto 46.43,40.31 |or
 accept Say, There Wouldn't Happen to be a Souvenir This Year, Would There?##12193 |goto 46.43,40.31 |or
 |tip This quest is not always available.
 Click Here if this Quest Is Not Offered |confirm |or
 step
 talk Belbi Quikswitch##23710
-turnin Say, There Wouldn't Happen to be a Souvenir This Year, Would There?##12193 |goto 49.27,39.59
-|only if haveq(12193) or completedq(12193)
+turnin Another Year, Another Souvenir.##13932 |goto 49.27,39.59 |or
+turnin Say, There Wouldn't Happen to be a Souvenir This Year, Would There?##12193 |goto 49.27,39.59 |or
+|only if haveq(13932) or completedq(13932) or haveq(12193) or completedq(12193)
 step
 talk Goldark Snipehunter##23486
 accept Catch the Wild Wolpertinger!##11117 |goto 48.01,39.47
@@ -101,8 +103,7 @@ use the Wolpertinger Net##32907
 |tip They look like small rabbits with antlers and wings running around on the ground around this area.
 collect 5 Stunned Wolpertinger##32906 |q 11117/1 |goto 47.64,40.14
 step
-Equip your Helm |complete not goaltype("equipped",{targetid=46735}) |q 11117
-|tip Remove the Synthebrew Goggles and re-equip your helm.
+Remove the Synthebrew Goggles and Re-Equip your Helm |confirm |q 11117
 step
 talk Goldark Snipehunter##23486
 turnin Catch the Wild Wolpertinger!##11117 |goto 48.01,39.47
@@ -118,8 +119,7 @@ use the Elekk Dispersion Ray##32960
 |tip They look like pink elephants with four horns around this area.
 kill 3 Elwynn Pink Elekk##23507 |q 11118/2 |goto 33.59,51.44
 step
-Equip your Helm |complete not goaltype("equipped",{targetid=46735}) |q 11118
-|tip Remove the Synthebrew Goggles and re-equip your helm.
+Remove the Synthebrew Goggles and Re-Equip your Helm |confirm |q 11118
 step
 Go to Darnassus |goto Darnassus/0 67.12,35.28 < 100 |c |q 11118
 |tip Go to this spot before you equip the goggles.
@@ -131,8 +131,7 @@ use the Elekk Dispersion Ray##32960
 |tip They look like pink elephants with four horns around this area.
 kill 3 Teldrassil Pink Elekk##23527 |q 11118/3 |goto Darnassus/0 67.12,35.28
 step
-Equip your Helm |complete not goaltype("equipped",{targetid=46735}) |q 11118
-|tip Remove the Synthebrew Goggles and re-equip your helm.
+Remove the Synthebrew Goggles and Re-Equip your Helm |confirm |q 11118
 step
 Go to The Exodar |goto The Exodar/0 79.18,57.47 < 100 |c |q 11118
 |tip Go to this spot at the entrance to The Exodar before you equip the goggles.
@@ -144,8 +143,7 @@ use the Elekk Dispersion Ray##32960
 |tip They look like pink elephants with four horns around this area.
 kill 3 Azuremyst Pink Elekk##23528 |q 11118/1 |goto The Exodar/0 79.18,57.47
 step
-Equip your Helm |complete not goaltype("equipped",{targetid=46735}) |q 11118
-|tip Remove the Synthebrew Goggles and re-equip your helm.
+Remove the Synthebrew Goggles and Re-Equip your Helm |confirm |q 11118
 step
 talk Goldark Snipehunter##23486
 turnin Pink Elekks On Parade##11118 |goto Dun Morogh/0 48.01,39.47
@@ -157,7 +155,7 @@ talk Darna Honeybock##27584
 accept Save Brewfest!##12318 |goto 45.86,52.69
 |tip This quest is elite and will require a group.
 step
-Enter the Blackrock Depths Dungeon with your Group |goto Blackrock Depths/0 0,0 |q 12062 |future
+Enter the Blackrock Depths Dungeon with your Group |complete zone("Blackrock Depths") |q 12062 |future
 step
 talk Brewfest Spy##26719
 |tip After defeating the Dark Iron ambush, interact with the Mole Machine Consoles at the beginning of the dungeon.
@@ -323,7 +321,7 @@ accept Save Brewfest!##12318 |goto 45.86,52.69 |or
 |tip This quest is elite and will require a group.
 '|complete not completedq(11293,11294,12020) |next "Begin_Dailies" |or
 step
-Enter the Blackrock Depths Dungeon with your Group |goto Blackrock Depths/0 0,0 |q 12062 |future |or
+Enter the Blackrock Depths Dungeon with your Group |complete zone("Blackrock Depths") |q 12062 |future |or
 '|complete not completedq(11293,11294,12020) |next "Begin_Dailies" |or
 step
 talk Brewfest Spy##26719

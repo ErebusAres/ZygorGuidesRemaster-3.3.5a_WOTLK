@@ -171,6 +171,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 249 - 3.0.249
+
+- Updated both faction Brewfest guides for the current WotLK souvenir quests while retaining older quest IDs for private-server compatibility.
+- Removed invalid Synthebrew Goggles helm checks and made Blackrock Depths entry advance after the player enters the dungeon.
+- Corrected the Horde Brewfest Diet level-tip typo and added focused Brewfest guide parsing coverage.
+
 ### Revision 247 - 3.0.247
 
 - Fixed plain race, class, and faction `|only if` conditions so guides no longer hide or auto-skip valid steps such as `Paladin`, `Horde`, or `Alliance`.
@@ -195,11 +201,6 @@ This addon is fully open source and can be inspected before use.
 
 - Prevented the active guide path from appearing green twice when the same guide is listed in recent history or registered more than once.
 - Preserved the existing guide-selection checkmark and menu navigation behavior.
-
-### Revision 242 - 3.0.242
-
-- Highlights the active guide's folder path and pagination row in the legacy guide picker with a subtle green text color.
-- Keeps the existing active-guide checkmark, submenu arrows, and guide selection behavior unchanged.
 
 ## Notes
 
