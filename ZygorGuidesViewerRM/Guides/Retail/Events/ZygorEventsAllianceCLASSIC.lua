@@ -18,8 +18,9 @@ step
 click Alcohol-Free Brewfest Sampler##186189+
 |tip They look like mugs of beer on the small tables inside this tent.
 collect Alcohol-Free Brewfest Sampler##33096 |n
+clicknpc Self-Turning and Oscillating Utility Target##24108
+|tip Use the target button, then face the S.T.O.U.T. before throwing each sampler.
 use the Alcohol-Free Brewfest Sampler##33096
-|tip Face yourself towards the Self-Turning and Oscillating Utility Target behind the tent.
 Hit the S.T.O.U.T. #5# Times |q 12022/1 |goto 47.62,39.66
 step
 talk Boxey Boltspinner##27215
@@ -67,7 +68,8 @@ use the Ram Racing Reins##33306
 Flynn Firebrew will throw you a keg when you get close
 Once you have a keg, run back and turn it in to Pol Amberstill
 |tip Just get near him and you will throw the keg to him.
-Deliver 3 Kegs in Under 4 Minutes |q 11122/1
+Deliver 3 Kegs in Under 4 Minutes |q 11122/1 |or
+Click Here Once 3 Kegs Have Been Delivered |confirm |or
 |tip If you lose your ram, return to Neill Ramstein to acquire another.
 step
 Stop Riding the Ram |nobuff spell:43880 |q 11122

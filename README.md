@@ -171,6 +171,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 250 - 3.0.250
+
+- Corrected the Horde Brewfest quest giver to Glodrak Huntsniper and added explicit sampler acquisition and S.T.O.U.T. targeting guidance for both factions.
+- Restored the Horde Pink Elekks travel sequence through the Undercity/Silvermoon orbs, zeppelin, and capital-city flight paths.
+- Added a manual ram-delivery fallback for servers that do not immediately refresh the three-keg quest objective.
+
 ### Revision 249 - 3.0.249
 
 - Updated both faction Brewfest guides for the current WotLK souvenir quests while retaining older quest IDs for private-server compatibility.
@@ -196,11 +202,6 @@ This addon is fully open source and can be inspected before use.
 
 - Marks successful cross-zone LibRover route nodes for recalculation on destination-zone arrival; direct fallback arrows are handled separately in revision 246.
 - Keeps same-zone route waypoints from repeatedly recalculating.
-
-### Revision 243 - 3.0.243
-
-- Prevented the active guide path from appearing green twice when the same guide is listed in recent history or registered more than once.
-- Preserved the existing guide-selection checkmark and menu navigation behavior.
 
 ## Notes
 

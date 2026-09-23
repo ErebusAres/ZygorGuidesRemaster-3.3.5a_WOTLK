@@ -31,6 +31,22 @@ for faction,guides in pairs(factionGuides) do
 end
 if not factionGuides.Horde.quest.rawdata:find("Another Year, Another Souvenir.##13931",1,true) then fail("Horde current souvenir quest missing") end
 if not factionGuides.Alliance.quest.rawdata:find("Another Year, Another Souvenir.##13932",1,true) then fail("Alliance current souvenir quest missing") end
+if factionGuides.Horde.quest.rawdata:find("Goldark Snipehunter##23486",1,true) then fail("Horde guide still uses the Alliance Brewfest NPC") end
+if not factionGuides.Horde.quest.rawdata:find("Glodrak Huntsniper##24657",1,true) then fail("Horde Brewfest NPC is missing") end
+for faction,guides in pairs(factionGuides) do
+	if not guides.quest.rawdata:find("Alcohol-Free Brewfest Sampler##33096 |n",1,true) then fail(faction.." sampler acquisition check is missing") end
+	if not guides.quest.rawdata:find("Self-Turning and Oscillating Utility Target##24108",1,true) then fail(faction.." S.T.O.U.T. target is missing") end
+	if not guides.quest.rawdata:find("Click Here Once 3 Kegs Have Been Delivered |confirm |or",1,true) then fail(faction.." ram-delivery fallback is missing") end
+end
+for _,route in ipairs({
+	"click Orb of Translocation |goto Undercity/0 54.90,11.30",
+	"click Orb of Translocation |goto Silvermoon City/0 49.50,14.80",
+	"Ride the Zeppelin to Durotar",
+	"Fly to Thunder Bluff",
+	"Fly to Orgrimmar",
+}) do
+	if not factionGuides.Horde.quest.rawdata:find(route,1,true) then fail("Horde travel route is missing: "..route) end
+end
 
 tinsert=table.insert
 loadstring=loadstring or load

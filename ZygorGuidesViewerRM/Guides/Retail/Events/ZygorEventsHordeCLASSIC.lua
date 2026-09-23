@@ -55,6 +55,7 @@ Bok Dropcertain will throw you a keg when you get close
 Once you have a keg, run back and turn it in to Driz Tumblequick
 |tip Just get near him and you will throw the keg to him.
 Deliver #3# Kegs in Under 4 Minutes |q 11412/1 |or
+Click Here Once 3 Kegs Have Been Delivered |confirm |or
 |tip If you lose your ram, return to Ram Master Ray to acquire another.
 step
 Stop Riding the Ram |nobuff spell:43880 |q 11412
@@ -72,8 +73,11 @@ step
 talk Bizzle Quicklift##27216
 accept Chug and Chuck!##12191 |goto 45.25,17.33
 step
-click Alcohol-Free Brewfest Sampler##186189
+click Alcohol-Free Brewfest Sampler##186189+
 |tip They looks like mugs of beer on the small tables on either side of you.
+collect Alcohol-Free Brewfest Sampler##33096 |n
+clicknpc Self-Turning and Oscillating Utility Target##24108
+|tip Use the target button, then face the S.T.O.U.T. before throwing each sampler.
 use the Alcohol-Free Brewfest Sampler##33096
 Hit the S.T.O.U.T. #5# Times |q 12191/1 |goto 45.22,17.49
 step
@@ -85,10 +89,10 @@ turnin Another Year, Another Souvenir.##13931 |goto 44.07,17.98 |or
 turnin Say, There Wouldn't Happen to be a Souvenir This Year, Would There?##12194 |goto 44.07,17.98 |or
 |only if haveq(13931) or completedq(13931) or haveq(12194) or completedq(12194)
 step
-talk Goldark Snipehunter##23486
+talk Glodrak Huntsniper##24657
 accept Catch the Wild Wolpertinger!##11431 |goto 45.01,17.40
 step
-talk Goldark Snipehunter##23486
+talk Glodrak Huntsniper##24657
 Ask him _"What if I don't like drinking... is there another way I can help out?"_
 Tell him _"I'd like a pair of Synthebrew Goggles."_
 collect Synthebrew Goggles##46735 |goto 45.01,17.40 |q 11431
@@ -103,7 +107,7 @@ You can find more around here [goto 45.30,18.58]
 step
 Remove the Synthebrew Goggles and Re-Equip your Helm |confirm |q 11431
 step
-talk Goldark Snipehunter##23486
+talk Glodrak Huntsniper##24657
 turnin Catch the Wild Wolpertinger!##11431 |goto 45.01,17.40
 accept Pink Elekks On Parade##11120 |goto 45.01,17.40
 step
@@ -119,7 +123,15 @@ kill 3 Tirisfal Pink Elekk##23530 |q 11120/3 |goto Tirisfal Glades/0 66.12,13.46
 step
 Remove the Synthebrew Goggles and Re-Equip your Helm |confirm |q 11120
 step
-Go to Eversong Woods |goto Eversong Woods/0 56.97,53.14 < 100 |c |q 11120
+Enter Undercity |goto Undercity/0 |noway |c |q 11120
+step
+click Orb of Translocation |goto Undercity/0 54.90,11.30
+|tip It looks like a red glowing orb in a gold spinning stand.
+Teleport to Silvermoon City |goto Silvermoon City/0 |noway |c |q 11120
+step
+Leave Silvermoon City |goto Eversong Woods/0 |noway |c |q 11120
+step
+Go to the Eversong Woods Brewfest Camp |goto Eversong Woods/0 56.97,53.14 < 100 |c |q 11120
 |tip Go to this spot before you equip the goggles.
 step
 Equip the Synthebrew Goggles |equipped Synthebrew Goggles##46735 |q 11120
@@ -130,7 +142,23 @@ kill 3 Eversong Pink Elekk##23531 |q 11120/1 |goto Eversong Woods/0 56.97,53.14
 step
 Remove the Synthebrew Goggles and Re-Equip your Helm |confirm |q 11120
 step
-Go to Thunder Bluff |goto Thunder Bluff/0 32.33,70.85 < 100 |c |q 11120
+Enter Silvermoon City |goto Silvermoon City/0 |noway |c |q 11120
+step
+click Orb of Translocation |goto Silvermoon City/0 49.50,14.80
+|tip It looks like a red glowing orb in a gold spinning stand.
+Teleport to Undercity |goto Undercity/0 |noway |c |q 11120
+step
+Leave Undercity |goto Tirisfal Glades/0 |noway |c |q 11120
+step
+Go to the Zeppelin Tower |goto Tirisfal Glades/0 60.70,58.70 < 20 |c |q 11120
+Ride the Zeppelin to Durotar |goto Durotar/0 |noway |c |q 11120
+step
+Enter Orgrimmar |goto Orgrimmar/0 |noway |c |q 11120
+step
+talk Doras##3310 |goto Orgrimmar/0 45.10,63.90
+Fly to Thunder Bluff |goto Thunder Bluff/0 46.60,49.90 < 10 |c |q 11120
+step
+Go to the Mulgore Brewfest Camp |goto Thunder Bluff/0 32.33,70.85 < 100 |c |q 11120
 |tip Go to this spot before you equip the goggles.
 step
 Equip the Synthebrew Goggles |equipped Synthebrew Goggles##46735 |q 11120
@@ -141,7 +169,12 @@ kill 3 Mulgore Pink Elekk##23529 |q 11120/2 |goto Thunder Bluff/0 32.33,70.85
 step
 Remove the Synthebrew Goggles and Re-Equip your Helm |confirm |q 11120
 step
-talk Goldark Snipehunter##23486
+talk Tal##2995 |goto Thunder Bluff/0 47.00,49.80
+Fly to Orgrimmar |goto Orgrimmar/0 45.30,63.80 < 10 |c |q 11120
+step
+Leave Orgrimmar |goto Durotar/0 |noway |c |q 11120
+step
+talk Glodrak Huntsniper##24657
 turnin Pink Elekks On Parade##11120 |goto Durotar/0 45.01,17.40
 step
 Reach Level 65 |ding 65
