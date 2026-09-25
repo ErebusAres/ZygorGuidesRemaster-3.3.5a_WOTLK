@@ -338,6 +338,20 @@ ZGV.ConditionEnv = {
 	haveq = function(id)
 		return ZGV.ConditionEnv.havequest(id)
 	end,
+	questobjective = function(id,objnum)
+		id,objnum = tonumber(id),tonumber(objnum)
+		if not id or not objnum then return false end
+		if ZGV.completedQuests and (ZGV.completedQuests[id] or ZGV.completedQuests[tostring(id)]) then return true end
+		local quest = ZGV.questsbyid and ZGV.questsbyid[id]
+		if not quest then return false end
+		if quest.complete then return true end
+		local objective = quest.goals and quest.goals[objnum]
+		if not objective then return false end
+		if objective.complete then return true end
+		local current = tonumber(objective.num) or 0
+		local needed = tonumber(objective.needed) or 1
+		return current>=needed
+	end,
 	itemcount = function(item)
 		if not item then return 0 end
 		return GetItemCount(item) or 0

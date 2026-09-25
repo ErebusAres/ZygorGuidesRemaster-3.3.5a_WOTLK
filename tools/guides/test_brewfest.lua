@@ -40,7 +40,7 @@ end
 local hordeQuest=factionGuides.Horde.quest.rawdata
 if not hordeQuest:find("path\t46.58,20.18\t47.57,22.80\t48.96,28.09",1,true) then fail("Horde outbound keg route is missing") end
 if not hordeQuest:find("path\t47.57,22.80\t46.58,20.18\t46.32,15.27",1,true) then fail("Horde return keg route is missing") end
-if not hordeQuest:find("|q 11412/1 |n |until q(11412/1)",1,true) then fail("Horde keg route does not repeat until delivery completion") end
+if not hordeQuest:find("|q 11412/1 |n |until questobjective(11412,1)",1,true) then fail("Horde keg route does not repeat until delivery completion") end
 if not factionGuides.Alliance.quest.rawdata:find("Click Here Once 3 Kegs Have Been Delivered |confirm |or",1,true) then fail("Alliance ram-delivery fallback is missing") end
 local souvenirAccept=assert(hordeQuest:find("accept Another Year, Another Souvenir.##13931",1,true))
 local souvenirTurnin=assert(hordeQuest:find("turnin Another Year, Another Souvenir.##13931",1,true))
@@ -101,10 +101,16 @@ GetNumQuestLogEntries=function() return 0 end
 GetItemCount=function() return 0 end
 
 assert(loadfile(root.."/Parser.lua"))()
+local hordeKegStep
 for faction,guides in pairs(factionGuides) do
 	for kind,guide in pairs(guides) do
 		local parsed,err,line,linedata=ZGV:ParseEntry(guide.rawdata)
 		if not parsed then fail(("%s %s guide parse failed: %s (line %s: %s)"):format(faction,kind,tostring(err),tostring(line),tostring(linedata))) end
+		if faction=="Horde" and kind=="quest" then
+			for _,step in ipairs(parsed.steps) do
+				if step.condition_until_raw=="questobjective(11412,1)" then hordeKegStep=step break end
+			end
+		end
 		if kind=="quest" then
 			local equipped
 			for _,step in ipairs(parsed.steps) do
@@ -119,5 +125,15 @@ for faction,guides in pairs(factionGuides) do
 		end
 	end
 end
+
+if not hordeKegStep or not hordeKegStep.condition_until then fail("Horde keg exit condition was not parsed") end
+ZGV.questsbyid={[11412]={complete=false,goals={{num=2,needed=3,complete=false}}}}
+local ok,result=pcall(hordeKegStep.condition_until)
+if not ok then fail("Horde keg exit condition failed at runtime: "..tostring(result)) end
+if result then fail("Horde keg route exited before 3/3") end
+ZGV.questsbyid[11412].goals[1].num=3
+ok,result=pcall(hordeKegStep.condition_until)
+if not ok then fail("Horde keg completed exit condition failed at runtime: "..tostring(result)) end
+if not result then fail("Horde keg route did not exit at 3/3") end
 
 print("Brewfest guide regression passed")

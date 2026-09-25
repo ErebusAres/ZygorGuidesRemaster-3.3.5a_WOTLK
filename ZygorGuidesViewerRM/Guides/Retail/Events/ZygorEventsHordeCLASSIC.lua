@@ -54,7 +54,7 @@ use the Ram Racing Reins##33306
 Bok Dropcertain will throw you a keg when you get close
 Once you have a keg, run back and turn it in to Driz Tumblequick
 |tip Just get near him and you will throw the keg to him.
-Deliver #3# Kegs in Under 4 Minutes |q 11412/1 |n |until q(11412/1)
+Deliver #3# Kegs in Under 4 Minutes |q 11412/1 |n |until questobjective(11412,1)
 |tip If you lose your ram, return to Ram Master Ray to acquire another.
 step
 Stop Riding the Ram |nobuff spell:43880 |q 11412

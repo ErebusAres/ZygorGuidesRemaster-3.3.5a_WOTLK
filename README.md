@@ -171,6 +171,11 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 252 - 3.0.252
+
+- Fixed the Horde Brewfest keg-loop exit condition so it reads the live quest objective without calling unavailable guide shorthand from the condition environment.
+- Added runtime regression coverage for both the incomplete 2/3 and completed 3/3 delivery states.
+
 ### Revision 251 - 3.0.251
 
 - Fixed item-name `|equipped` goals so Synthebrew Goggles and other imported equipment steps detect the item in any equipped slot.
@@ -198,11 +203,6 @@ This addon is fully open source and can be inspected before use.
 
 - Refreshes the active guide waypoint after entering a new zone, including direct fallback arrows that were not covered by the prior route-only arrival check.
 - Coalesces zone-change refreshes and preserves manual and corpse waypoints.
-
-### Revision 245 - 3.0.245
-
-- Added a default-off **Use classic settings panels** compatibility option under Interface > AddOns > Zygor for clients that crash when opening the remastered settings view.
-- When enabled, settings buttons and the Guide Manager options tab open the classic panels while the Guide Manager remains available for browsing guides.
 
 ## Notes
 
