@@ -45,6 +45,7 @@
 
 	<Script file="Step.lua"/>
 	<Script file="Goal.lua"/>
+	<Script file="AreaGuide.lua"/>
 	<Include file="Data\data.xml"/>
 
 	<Script file="Pointer.lua"/>

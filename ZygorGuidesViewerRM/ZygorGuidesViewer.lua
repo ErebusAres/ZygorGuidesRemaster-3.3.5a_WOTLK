@@ -4320,7 +4320,13 @@ function me:SetGuide(name,step,temp)
 		end
 
 		if not step then
-			step = self:GetRememberedGuideStep(name) or 1
+			local remembered = self:GetRememberedGuideStep(name)
+			if self.AreaGuide and not temp then
+				-- start at the step matching what the player has already done, not necessarily step 1
+				step = self.AreaGuide:ResolveStartStep(guide, remembered)
+			else
+				step = remembered or 1
+			end
 		end
 
 
@@ -7837,12 +7843,12 @@ function me:SkipStep(delta,fast)
 			--local default = self:FindDefaultGuide()
 
 			if self.CurrentGuide['prev'] then
-				self:SetGuide(self.CurrentGuide['prev'])
+				self:SetGuide(self.CurrentGuide['prev'],1)
 			else
 				local founddef = false
 				for i,v in ipairs(self.registeredguides) do
 					if v.next==self.CurrentGuideName and (not v.defaultfor or self:RaceClassMatch(v.defaultfor)) then
-						self:SetGuide(i)
+						self:SetGuide(i,1)
 						founddef=true
 						break
 					end
@@ -7862,7 +7868,7 @@ function me:SkipStep(delta,fast)
 		end
 		if i>#self.CurrentGuide["steps"] or (delta>0 and self.CurrentStep.finish) then
 			if self.CurrentGuide['next'] then
-				self:SetGuide(self.CurrentGuide['next'])
+				self:SetGuide(self.CurrentGuide['next'],1)
 				i=1
 			else
 				-- no next? capping
