@@ -952,14 +952,14 @@
 				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT"><Offset x="20" y="-27"/></Anchor></Anchors>
 				<Scripts>
 					<OnLoad>
-						_G[self:GetName().."Text"]:SetText("load guides");
+						_G[self:GetName().."Text"]:SetText(ZGV_T("load guides"));
 					</OnLoad>
 					<OnClick>
 						ZGV.db.char.maint_startguides = not not self:GetChecked()
 					</OnClick>
 					<OnEnter>
 						GameTooltip:SetOwner(self, "ANCHOR_TOP")
-						GameTooltip:SetText("Checks if the addon's capable of loading the guides at all.")
+						GameTooltip:SetText(ZGV_T("Checks if the addon's capable of loading the guides at all."))
 						GameTooltip:Show()
 					</OnEnter>
 					<OnLeave>
@@ -972,7 +972,7 @@
 				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="$parent_StartGuides"><Offset x="0" y="-27"/></Anchor></Anchors>
 				<Scripts>
 					<OnLoad>
-						_G[self:GetName().."Text"]:SetText("query completed quests");
+						_G[self:GetName().."Text"]:SetText(ZGV_T("query completed quests"));
 					</OnLoad>
 					<OnClick>
 						ZGV.db.char.maint_queryquests = not not self:GetChecked()
@@ -980,7 +980,7 @@
 					</OnClick>
 					<OnEnter>
 						GameTooltip:SetOwner(self, "ANCHOR_TOP")
-						GameTooltip:SetText("Checks if the addon can query the server-side completed quest list.")
+						GameTooltip:SetText(ZGV_T("Checks if the addon can query the server-side completed quest list."))
 						GameTooltip:Show()
 					</OnEnter>
 					<OnLeave>
@@ -993,14 +993,14 @@
 				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="$parent_QueryQuests"><Offset x="0" y="-27"/></Anchor></Anchors>
 				<Scripts>
 					<OnLoad>
-						_G[self:GetName().."Text"]:SetText("fetch quest details");
+						_G[self:GetName().."Text"]:SetText(ZGV_T("fetch quest details"));
 					</OnLoad>
 					<OnClick>
 						ZGV.db.char.maint_fetchquestdata = not not self:GetChecked()
 					</OnClick>
 					<OnEnter>
 						GameTooltip:SetOwner(self, "ANCHOR_TOP")
-						GameTooltip:SetText("Checks if the addon can query the server for quest titles and details.")
+						GameTooltip:SetText(ZGV_T("Checks if the addon can query the server for quest titles and details."))
 						GameTooltip:Show()
 					</OnEnter>
 					<OnLeave>
@@ -1013,14 +1013,14 @@
 				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="$parent_FetchQuestData"><Offset x="0" y="-27"/></Anchor></Anchors>
 				<Scripts>
 					<OnLoad>
-						_G[self:GetName().."Text"]:SetText("fetch item details");
+						_G[self:GetName().."Text"]:SetText(ZGV_T("fetch item details"));
 					</OnLoad>
 					<OnClick>
 						ZGV.db.char.maint_fetchitemdata = not not self:GetChecked()
 					</OnClick>
 					<OnEnter>
 						GameTooltip:SetOwner(self, "ANCHOR_TOP")
-						GameTooltip:SetText("Checks if the addon can query the server for item names.")
+						GameTooltip:SetText(ZGV_T("Checks if the addon can query the server for item names."))
 						GameTooltip:Show()
 					</OnEnter>
 					<OnLeave>
@@ -1065,7 +1065,7 @@
 		</Layers>
 		<Scripts>
 			<OnLoad>
-				_G[self:GetName().."Text"]:SetText("Try to enable the above options one by one.\nIf the game disconnects or crashes right after enabling one of the options, please start the game again, enter Maintenance Mode again, and submit a Bug Report using the button below - and be sure to report which options were enabled properly, and which caused the disconnection or crash.");
+				_G[self:GetName().."Text"]:SetText(ZGV_T("Try to enable the above options one by one.\nIf the game disconnects or crashes right after enabling one of the options, please start the game again, enter Maintenance Mode again, and submit a Bug Report using the button below - and be sure to report which options were enabled properly, and which caused the disconnection or crash."));
 			</OnLoad>
 		</Scripts>
 	</Frame>

@@ -1,0 +1,2 @@
+# Item-Upgrades part 2
+532.1 = Pontuação: %.1f

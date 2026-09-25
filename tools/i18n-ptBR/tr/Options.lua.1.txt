@@ -1,0 +1,11 @@
+# Options.lua part 2 (single-word strings found with --low)
+415.1 = Depuração:
+415.2 = |cff00ff88LIGADO|r
+415.3 = |cffff0055DESLIGADO|r
+2804.1 = Reparar Automaticamente
+2808.1 = Desligado
+3025.2 = Personalizado
+3041.2 = Personalizado
+3050.1 = Manual
+3050.2 = Detectado
+3119.1 = Personalizado

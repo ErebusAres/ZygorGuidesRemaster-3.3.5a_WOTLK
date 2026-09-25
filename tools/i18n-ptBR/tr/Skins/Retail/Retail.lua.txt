@@ -1,0 +1,3 @@
+# Skins/Retail/Retail.lua (skin variant labels)
+31.1 = |cff3388ffRetail Azul|r
+42.1 = |cff888888Retail Escuro|r

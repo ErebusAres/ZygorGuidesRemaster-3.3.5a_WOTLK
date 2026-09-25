@@ -77,7 +77,7 @@ function Appraiser:AddItemToBuy(itemid,count,source,priceMax,itemlink,sourcemode
 	local statusIcon, statusText, statusId, statusText,statusIcon,isStagnant,statusColor
 	local priceStatus = ZGVG:GetPriceStatus(petItem_id or itemid,unit_price)
 	statusId = priceStatus.statusId
-	statusText = priceStatus.name.."\n"..(priceStatus.stagnant and "Market stagnant." or priceStatus.buysuggestion)
+	statusText = priceStatus.name.."\n"..(priceStatus.stagnant and ZGV_T("Market stagnant.") or priceStatus.buysuggestion)
 	statusIcon = ZGV.IconSets.AuctionToolsPriceIcons[priceStatus.buyicon or priceStatus.icon].texcoord -- coords
 	isStagnant = priceStatus.stagnant
 	statusColor = isStagnant and priceStatus.stagcolor or priceStatus.buycolor
@@ -138,7 +138,7 @@ function Appraiser:AddItemToBuy(itemid,count,source,priceMax,itemlink,sourcemode
 	if name then
 		ZGV.NotificationCenter:AddEntry(
 		    "",
-		   "Shopping list",
+		   ZGV_T("Shopping list"),
 		    (count or "").." "..name..((count and count>1) and "s" or ""),
 		    ZGV.DIR.."\\Skins\\guideicons-big",
 		    {0, 0.25, 0.25, 0.50},
@@ -174,8 +174,8 @@ function Appraiser:ShoppingRowMenu(row)
 	local menu = {}
 
 	tinsert(menu,{
-			text = "Remove this item",
-			tooltipText = "Remove selected item from this list",
+			text = ZGV_T("Remove this item"),
+			tooltipText = ZGV_T("Remove selected item from this list"),
 			tooltipOnButton=1,
 			func = function() 
 				Appraiser:RemoveItemFromBuy(row)
@@ -184,8 +184,8 @@ function Appraiser:ShoppingRowMenu(row)
 			notCheckable=0,
 		})
 	tinsert(menu,{
-			text = "Remove all items",
-			tooltipText = "Remove all items from this list",
+			text = ZGV_T("Remove all items"),
+			tooltipText = ZGV_T("Remove all items from this list"),
 			tooltipOnButton=1,
 			func = function() 
 				Appraiser:RemoveAllItemsFromBuy(row)

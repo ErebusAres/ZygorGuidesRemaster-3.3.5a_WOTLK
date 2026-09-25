@@ -1,0 +1,8 @@
+# UiWidgets/Main.lua (relative time text used in "LAST UPDATED")
+147.1 = há %d dia
+147.2 = há %d dias
+150.1 = há %d hora
+150.2 = há %d horas
+153.1 = há %d min
+153.2 = há %d min
+155.1 = há menos de 1 min

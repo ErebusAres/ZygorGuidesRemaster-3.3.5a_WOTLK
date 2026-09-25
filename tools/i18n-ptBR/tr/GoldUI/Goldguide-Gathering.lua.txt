@@ -1,0 +1,2 @@
+# Goldguide-Gathering: dropdown label (value key stays)
+11.1 = Todos

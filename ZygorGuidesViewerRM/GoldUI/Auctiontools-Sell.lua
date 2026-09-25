@@ -129,13 +129,13 @@ function Appraiser:AddItemToInventory(bag,slot)
 
 	local priceStatus = ZGVG:GetPriceStatus(petItem_id or itemid,empty and 0 or unit_price,1,false,true) -- not using faked, include deals
 	statusId = priceStatus.statusId
-	statusText = priceStatus.name.."\n"..(priceStatus.stagnant and "Market stagnant." or priceStatus.sellsuggestion)
+	statusText = priceStatus.name.."\n"..(priceStatus.stagnant and ZGV_T("Market stagnant.") or priceStatus.sellsuggestion)
 	statusIcon = ZGV.IconSets.AuctionToolsPriceIcons[priceStatus.sellicon or priceStatus.icon].texcoord -- coords
 	isStagnant = priceStatus.stagnant
 	statusColor = isStagnant and priceStatus.stagcolor or priceStatus.sellcolor
 
 	if not (petItem_id or itemid) or not name or not price then
-		ZGV:Print("Unable to add item",itemid,"to auctiontools.")
+		ZGV:Print(ZGV_T("Unable to add item"),itemid,ZGV_T("to auctiontools."))
 		return
 	end
 
@@ -203,7 +203,7 @@ function Appraiser:UpdateItemInInventory(item)
 
 	local priceStatus = ZGVG:GetPriceStatus(item.itemid,empty and 0 or unit_price,1,false,true) -- not using faked, include deals
 	item.statusId = priceStatus.statusId
-	item.statusText = priceStatus.name.."\n"..(priceStatus.stagnant and "Market stagnant." or priceStatus.sellsuggestion)
+	item.statusText = priceStatus.name.."\n"..(priceStatus.stagnant and ZGV_T("Market stagnant.") or priceStatus.sellsuggestion)
 	item.statusIcon = ZGV.IconSets.AuctionToolsPriceIcons[priceStatus.sellicon or priceStatus.icon].texcoord -- coords
 	item.isStagnant = priceStatus.stagnant
 	item.statusColor = priceStatus.stagnant and priceStatus.stagcolor or priceStatus.sellcolor
@@ -315,8 +315,8 @@ function Appraiser:InventoryRowMenu(row)
 	local menu = {}
 
 	tinsert(menu,{
-			text = "Hide this item",
-			tooltipText = "No longer show this item in Selling lists",
+			text = ZGV_T("Hide this item"),
+			tooltipText = ZGV_T("No longer show this item in Selling lists"),
 			tooltipOnButton=1,
 			func = function() 
 				ZGV.db.char.AThiddenitems[row.item.itemid]=true

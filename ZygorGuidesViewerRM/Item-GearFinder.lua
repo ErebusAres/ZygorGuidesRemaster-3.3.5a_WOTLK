@@ -651,13 +651,13 @@ local function GF_FormatVendorLine(upgrade)
 end
 
 local function GF_FormatVendorLocation(upgrade)
-	local vendor = upgrade.vendorName or upgrade.vendorSourceName or "Vendor"
+	local vendor = upgrade.vendorName or upgrade.vendorSourceName or ZGV_T("Vendor")
 	return ("%s - Dalaran"):format(vendor)
 end
 
 local function GF_FormatCraftedLocation(upgrade)
-	local profession = upgrade.profession or upgrade.vendorSourceName or "Profession"
-	return ("Crafted: %s"):format(profession)
+	local profession = upgrade.profession or upgrade.vendorSourceName or ZGV_T("Profession")
+	return (ZGV_T("Crafted: %s")):format(profession)
 end
 
 local function GF_FormatCraftedLine(upgrade)
@@ -668,30 +668,30 @@ local function GF_FormatCraftedLine(upgrade)
 	local specialization = upgrade.professionSpecialization
 	local suffix = ""
 	if upgrade.craftedCategory == "pvp" then
-		suffix = " - PvP starter"
+		suffix = ZGV_T(" - PvP starter")
 	elseif upgrade.craftedCategory == "raid" then
-		suffix = " - raid craft"
+		suffix = ZGV_T(" - raid craft")
 	elseif upgrade.craftedCategory == "pre_raid" then
-		suffix = " - pre-raid craft"
+		suffix = ZGV_T(" - pre-raid craft")
 	elseif upgrade.craftedCategory == "leveling" then
-		suffix = " - leveling craft"
+		suffix = ZGV_T(" - leveling craft")
 	end
 	if upgrade.requirementsVersion == 2 then
 		local equipSkill = tonumber(upgrade.equipSkill) or 0
-		if bind == "bop" then return ("Craft yourself: %s %d%s"):format(profession, skill, suffix) end
-		if equipSkill > 0 then return ("Requires %s %d to equip%s"):format(profession, equipSkill, suffix) end
+		if bind == "bop" then return (ZGV_T("Craft yourself: %s %d%s")):format(profession, skill, suffix) end
+		if equipSkill > 0 then return (ZGV_T("Requires %s %d to equip%s")):format(profession, equipSkill, suffix) end
 		local equipSpell = tonumber(upgrade.equipSpellID) or 0
-		if equipSpell > 0 then return ("Requires %s to equip%s"):format((GetSpellInfo and GetSpellInfo(equipSpell)) or ("spell " .. equipSpell), suffix) end
-		return ("Made by %s %d%s"):format(profession, skill, suffix)
+		if equipSpell > 0 then return (ZGV_T("Requires %s to equip%s")):format((GetSpellInfo and GetSpellInfo(equipSpell)) or ("spell " .. equipSpell), suffix) end
+		return (ZGV_T("Made by %s %d%s")):format(profession, skill, suffix)
 	end
 	if professionOnly then
-		if specialization and skill > 0 then return ("Requires %s %d (%s)%s"):format(profession, skill, specialization, suffix) end
-		if specialization then return ("Requires %s (%s)%s"):format(profession, specialization, suffix) end
-		if skill > 0 then return ("Requires %s %d%s"):format(profession, skill, suffix) end
-		return ("Requires %s%s"):format(profession, suffix)
+		if specialization and skill > 0 then return (ZGV_T("Requires %s %d (%s)%s")):format(profession, skill, specialization, suffix) end
+		if specialization then return (ZGV_T("Requires %s (%s)%s")):format(profession, specialization, suffix) end
+		if skill > 0 then return (ZGV_T("Requires %s %d%s")):format(profession, skill, suffix) end
+		return (ZGV_T("Requires %s%s")):format(profession, suffix)
 	end
-	if skill > 0 then return ("Made by %s %d%s"):format(profession, skill, suffix) end
-	return ("Made by %s%s"):format(profession, suffix)
+	if skill > 0 then return (ZGV_T("Made by %s %d%s")):format(profession, skill, suffix) end
+	return (ZGV_T("Made by %s%s")):format(profession, suffix)
 end
 
 local function GF_FormatSpecialSource(upgrade)
@@ -716,39 +716,39 @@ local function GF_GetSourceTooltipLines(upgrade)
 	local lines = {}
 	if upgrade.sourceType == "currency" then
 		local costLine = GF_FormatVendorLine(upgrade)
-		lines[#lines + 1] = "Source: Currency reward"
-		lines[#lines + 1] = "Cost: " .. costLine
-		if upgrade.vendorName then lines[#lines + 1] = "Vendor: " .. upgrade.vendorName end
-		if upgrade.vendorLocation then lines[#lines + 1] = "Location: " .. upgrade.vendorLocation end
+		lines[#lines + 1] = ZGV_T("Source: Currency reward")
+		lines[#lines + 1] = ZGV_T("Cost: ") .. costLine
+		if upgrade.vendorName then lines[#lines + 1] = ZGV_T("Vendor: ") .. upgrade.vendorName end
+		if upgrade.vendorLocation then lines[#lines + 1] = ZGV_T("Location: ") .. upgrade.vendorLocation end
 	elseif upgrade.sourceType == "crafted" then
-		lines[#lines + 1] = "Source: Crafted item"
+		lines[#lines + 1] = ZGV_T("Source: Crafted item")
 		lines[#lines + 1] = GF_FormatCraftedLine(upgrade)
 		if upgrade.requirementsVersion == 2 then
-			lines[#lines + 1] = ("To craft: %s %d"):format(upgrade.profession or "profession", tonumber(upgrade.minProfessionSkill) or 0)
+			lines[#lines + 1] = (ZGV_T("To craft: %s %d")):format(upgrade.profession or "profession", tonumber(upgrade.minProfessionSkill) or 0)
 			local craftSpell = tonumber(upgrade.recipeSpecializationSpellID) or 0
-			if craftSpell > 0 then lines[#lines + 1] = "Crafter specialization: " .. ((GetSpellInfo and GetSpellInfo(craftSpell)) or ("spell " .. craftSpell)) end
+			if craftSpell > 0 then lines[#lines + 1] = ZGV_T("Crafter specialization: ") .. ((GetSpellInfo and GetSpellInfo(craftSpell)) or ("spell " .. craftSpell)) end
 			local equipSkill = tonumber(upgrade.equipSkill) or 0
-			if equipSkill > 0 then lines[#lines + 1] = ("To equip: %s %d"):format(upgrade.profession or "profession", equipSkill) end
+			if equipSkill > 0 then lines[#lines + 1] = (ZGV_T("To equip: %s %d")):format(upgrade.profession or "profession", equipSkill) end
 			local equipSpell = tonumber(upgrade.equipSpellID) or 0
-			if equipSpell > 0 then lines[#lines + 1] = "Equip specialization: " .. ((GetSpellInfo and GetSpellInfo(equipSpell)) or ("spell " .. equipSpell)) end
+			if equipSpell > 0 then lines[#lines + 1] = ZGV_T("Equip specialization: ") .. ((GetSpellInfo and GetSpellInfo(equipSpell)) or ("spell " .. equipSpell)) end
 		elseif upgrade.professionSpecialization then
-			lines[#lines + 1] = "Specialization: " .. upgrade.professionSpecialization
+			lines[#lines + 1] = ZGV_T("Specialization: ") .. upgrade.professionSpecialization
 		end
-		if upgrade.recipeSource and upgrade.recipeSource ~= "" then lines[#lines + 1] = "Recipe source: " .. upgrade.recipeSource end
+		if upgrade.recipeSource and upgrade.recipeSource ~= "" then lines[#lines + 1] = ZGV_T("Recipe source: ") .. upgrade.recipeSource end
 		if upgrade.requirementsVersion == 2 then
 			if upgrade.bind == "bop" then
-				lines[#lines + 1] = "Bind: On pickup - craft it yourself"
+				lines[#lines + 1] = ZGV_T("Bind: On pickup - craft it yourself")
 			elseif upgrade.bind == "boe" then
-				lines[#lines + 1] = "Bind: On equip - buy/trade or find a crafter"
+				lines[#lines + 1] = ZGV_T("Bind: On equip - buy/trade or find a crafter")
 			elseif upgrade.bind == "bou" then
-				lines[#lines + 1] = "Bind: On use - tradeable before use"
+				lines[#lines + 1] = ZGV_T("Bind: On use - tradeable before use")
 			else
-				lines[#lines + 1] = "Bind: None - tradeable craft"
+				lines[#lines + 1] = ZGV_T("Bind: None - tradeable craft")
 			end
 		elseif upgrade.bind == "bop" or upgrade.professionOnly then
-			lines[#lines + 1] = "Bind: Profession-only"
+			lines[#lines + 1] = ZGV_T("Bind: Profession-only")
 		elseif upgrade.bind == "boe" then
-			lines[#lines + 1] = "Bind: Tradeable craft"
+			lines[#lines + 1] = ZGV_T("Bind: Tradeable craft")
 		end
 	end
 	return lines[1] and lines or nil
@@ -1580,7 +1580,7 @@ local function prune_to_progression_band(slot, queue, cap)
 		end
 	end
 	if removed and not queue[1] then
-		set_slot_reject(slot, "No upgrade found in current progression tier")
+		set_slot_reject(slot, ZGV_T("No upgrade found in current progression tier"))
 	end
 end
 
@@ -2263,10 +2263,10 @@ function GearFinder:ShowItemInfoLoadingMessage()
 		MF.Progress:SetPercent(0, "noanim")
 		MF.Progress:Show()
 	end
-	if MF.DungeonMessage then MF.DungeonMessage:SetText("Gear Finder loading") end
-	if MF.DungeonName then MF.DungeonName:SetText("Waiting for item data") end
-	if MF.DungeonDesc then MF.DungeonDesc:SetText("Item information is still loading from the game server.") end
-	if MF.DungeonReason then MF.DungeonReason:SetText("Results will refresh automatically.") end
+	if MF.DungeonMessage then MF.DungeonMessage:SetText(ZGV_T("Gear Finder loading")) end
+	if MF.DungeonName then MF.DungeonName:SetText(ZGV_T("Waiting for item data")) end
+	if MF.DungeonDesc then MF.DungeonDesc:SetText(ZGV_T("Item information is still loading from the game server.")) end
+	if MF.DungeonReason then MF.DungeonReason:SetText(ZGV_T("Results will refresh automatically.")) end
 	if MF.AddButton then MF.AddButton:Hide() end
 	for _, button in pairs(MF.Buttons or {}) do
 		button.itemicon:SetTexture(button.slotTexture)
@@ -2276,7 +2276,7 @@ function GearFinder:ShowItemInfoLoadingMessage()
 		button.dungeonguide = nil
 		button.bisTooltipText = nil
 		if button.bisbadge then button.bisbadge:Hide() end
-		button.itemdungeon:SetText("Loading item data...")
+		button.itemdungeon:SetText(ZGV_T("Loading item data..."))
 		button.itemencounter:SetText(" ")
 		button.itemicon:SetDesaturated(false)
 		button:SetAlpha(0.5)
@@ -2810,13 +2810,13 @@ function GearFinder:CreateMainFrame()
 		:SetPoint("TOP",MF,"TOP",0,-8)
 		:SetFont(FONTBOLD,16)
 		:SetTextColor(0.96, 0.90, 0.74)
-		:SetText("|cffffff88Z|cffffee66y|cffffdd44g|cffffcc22o|cffffbb00r|r Guides Gear Finder")
+		:SetText(ZGV_T("|cffffff88Z|cffffee66y|cffffdd44g|cffffcc22o|cffffbb00r|r Guides Gear Finder"))
 	 .__END
 	MF.Subtitle = CHAIN(MF:CreateFontString())
 		:SetPoint("TOP", MF.Title, "BOTTOM", 0, -2)
 		:SetFont(FONT, 9)
 		:SetTextColor(0.82, 0.78, 0.68)
-		:SetText("Practical upgrade path with curated BIS markers")
+		:SetText(ZGV_T("Practical upgrade path with curated BIS markers"))
 		:SetJustifyH("CENTER")
 	.__END
 	MF.close = CHAIN(CreateFrame("Button",nil,MF,"UIPanelCloseButton"))
@@ -2929,7 +2929,7 @@ function GearFinder:CreateMainFrame()
 		:SetPoint("TOP", MF.NoSourcesFrame, "TOP", 0, -14)
 		:SetFont(FONTBOLD, 13)
 		:SetTextColor(0.96, 0.90, 0.74)
-		:SetText("Choose Gear Finder sources")
+		:SetText(ZGV_T("Choose Gear Finder sources"))
 	.__END
 	MF.NoSourcesFrame.Text = CHAIN(MF.NoSourcesFrame:CreateFontString(nil, "OVERLAY"))
 		:SetPoint("TOP", MF.NoSourcesFrame.Title, "BOTTOM", 0, -7)
@@ -2937,7 +2937,7 @@ function GearFinder:CreateMainFrame()
 		:SetFont(FONT, 9)
 		:SetJustifyH("CENTER")
 		:SetTextColor(0.80, 0.78, 0.70)
-		:SetText("No dungeon, raid, currency reward, or crafted item sources are enabled.")
+		:SetText(ZGV_T("No dungeon, raid, currency reward, or crafted item sources are enabled."))
 	.__END
 	MF.NoSourcesFrame.Button = CHAIN(ZGV.CreateFrameWithBG("Button", nil, MF.NoSourcesFrame))
 		:SetPoint("BOTTOM", MF.NoSourcesFrame, "BOTTOM", 0, 12)
@@ -2950,7 +2950,7 @@ function GearFinder:CreateMainFrame()
 		:SetPoint("CENTER", MF.NoSourcesFrame.Button, "CENTER", 0, 0)
 		:SetFont(FONTBOLD, 10)
 		:SetTextColor(0.98, 0.92, 0.72)
-		:SetText("Open Source Settings")
+		:SetText(ZGV_T("Open Source Settings"))
 	.__END
 
 	MF.FooterBar = CHAIN(ZGV.CreateFrameWithBG("Frame", nil, MF))
@@ -3167,9 +3167,9 @@ end
 local function GF_GetDungeonReasonText(bestCount, bestWeight)
 	if not bestCount or bestCount <= 0 then return nil end
 	if bestWeight and bestWeight > 0 then
-		return ("Why: +%.1f shown score here."):format(bestWeight)
+		return (ZGV_T("Why: +%.1f shown score here.")):format(bestWeight)
 	end
-	return ("Why: %d shown top upgrade%s here."):format(bestCount, bestCount == 1 and "" or "s")
+	return (ZGV_T("Why: %d shown top upgrade%s here.")):format(bestCount, bestCount == 1 and "" or "s")
 end
 
 local function find_dungeon_guide(ident)
@@ -3344,11 +3344,11 @@ function GearFinder:DisplayResults()
 				button:SetAlpha(0.5)
 				local playeritemlvl = ItemScore.playeritemlvl or 0
 				if upgrade.minlevel and upgrade.minlevel > ItemScore.playerlevel then
-					button.itemencounter:SetText("(requires level "..upgrade.minlevel..")")
+					button.itemencounter:SetText(ZGV_T("(requires level ")..upgrade.minlevel..")")
 				elseif dungeon and dungeon.minLevel and dungeon.minLevel > ItemScore.playerlevel then
-					button.itemencounter:SetText("(requires level "..dungeon.minLevel..")")
+					button.itemencounter:SetText(ZGV_T("(requires level ")..dungeon.minLevel..")")
 				elseif dungeon and dungeon.min_ilevel and dungeon.min_ilevel > playeritemlvl then
-					button.itemencounter:SetText("(requires item level "..dungeon.min_ilevel..")")
+					button.itemencounter:SetText(ZGV_T("(requires item level ")..dungeon.min_ilevel..")")
 				else
 					button.itemencounter:SetText(" ")
 				end
@@ -3369,7 +3369,7 @@ function GearFinder:DisplayResults()
 				elseif bossLabel then
 					button.itemencounter:SetText("Boss: "..bossLabel)
 				else
-					button.itemencounter:SetText(("Approximate upgrade by item level (%d)"):format(upgrade.itemlvl or 0))
+					button.itemencounter:SetText((ZGV_T("Approximate upgrade by item level (%d)")):format(upgrade.itemlvl or 0))
 				end
 			else
 				dungeons[upgrade.ident] = (dungeons[upgrade.ident] or 0) + 1
@@ -3405,14 +3405,14 @@ function GearFinder:DisplayResults()
 				equippedBIS, bisInfo = ItemScore:IsEquippedBIS(slotID)
 			end
 			if equippedBIS then
-				button.itemencounter:SetText("Best In Slot Equipped")
-				button.bisTooltipText = (bisInfo and bisInfo.label) or "Final BIS Equipped"
+				button.itemencounter:SetText(ZGV_T("Best In Slot Equipped"))
+				button.bisTooltipText = (bisInfo and bisInfo.label) or ZGV_T("Final BIS Equipped")
 				button.bisbadge:Show()
 				button.bisicon:SetVertexColor(1.0, 0.84, 0.15, 1.0)
 				button.bisicon:SetDesaturated(false)
 			else
 				local reason = get_slot_debug_reason(slotID)
-				if reason == "No upgrade found in current progression tier" then
+				if reason == ZGV_T("No upgrade found in current progression tier") then
 					button.itemdungeon:SetText(reason)
 					button.itemencounter:SetText(" ")
 				else
@@ -3490,10 +3490,10 @@ function GearFinder:DisplayResults()
 		MF.FooterArt:Show()
 		MF.DungeonImage:SetTexture(nil)
 		MF.DungeonImage:Hide()
-		MF.DungeonMessage:SetText(L["gearfinder_suggested_dungeon"] or "Suggested dungeon")
-		MF.DungeonName:SetText(L["gearfinder_no_upgrade"] or "No upgrade found")
+		MF.DungeonMessage:SetText(L["gearfinder_suggested_dungeon"] or ZGV_T("Suggested dungeon"))
+		MF.DungeonName:SetText(L["gearfinder_no_upgrade"] or ZGV_T("No upgrade found"))
 		MF.DungeonName:Show()
-		MF.DungeonDesc:SetText("No recommendation available yet.")
+		MF.DungeonDesc:SetText(ZGV_T("No recommendation available yet."))
 		MF.DungeonReason:SetText("")
 		MF.DungeonDesc:Show()
 		MF.DungeonReason:Hide()
@@ -3525,7 +3525,7 @@ function GearFinder:ShowNoSourcesMessage()
 		button.bisTooltipText = nil
 		if button.bisbadge then button.bisbadge:Hide() end
 		button.itemdungeon:SetText(L["gearfinder_no_upgrade"])
-		button.itemencounter:SetText("Choose sources in Gear Advisor options.")
+		button.itemencounter:SetText(ZGV_T("Choose sources in Gear Advisor options."))
 		button.itemicon:SetDesaturated(false)
 		button:SetAlpha(0.35)
 		if button.SetResultState then button:SetResultState(false, false) end
@@ -3538,10 +3538,10 @@ function GearFinder:ShowNoSourcesMessage()
 	end
 	MF.DungeonImage:SetTexture(nil)
 	MF.DungeonImage:Hide()
-	MF.DungeonMessage:SetText("Gear Finder sources")
-	MF.DungeonName:SetText("No sources enabled")
+	MF.DungeonMessage:SetText(ZGV_T("Gear Finder sources"))
+	MF.DungeonName:SetText(ZGV_T("No sources enabled"))
 	MF.DungeonName:Show()
-	MF.DungeonDesc:SetText("Choose dungeon, raid, currency reward, or crafted item sources.")
+	MF.DungeonDesc:SetText(ZGV_T("Choose dungeon, raid, currency reward, or crafted item sources."))
 	MF.DungeonDesc:Show()
 	MF.DungeonReason:SetText("")
 	MF.DungeonReason:Hide()
@@ -3591,7 +3591,7 @@ function GearFinder:ClearResults()
 		MF.FooterArt:SetTexture(nil)
 		MF.FooterArt:Hide()
 	end
-	MF.DungeonMessage:SetText(L["gearfinder_suggested_dungeon"] or "Suggested dungeon")
+	MF.DungeonMessage:SetText(L["gearfinder_suggested_dungeon"] or ZGV_T("Suggested dungeon"))
 	MF.DungeonName:SetText("")
 	MF.DungeonDesc:SetText("")
 	MF.DungeonReason:SetText("")

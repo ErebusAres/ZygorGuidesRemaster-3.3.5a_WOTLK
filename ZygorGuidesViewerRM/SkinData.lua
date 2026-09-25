@@ -36,12 +36,12 @@ ZGV:RegisterSkin("remaster", {
 
 	variants = {
 		dark = {
-			label = "|cffcfd6e8Remaster Dark|r",
+			label = ZGV_T("|cffcfd6e8Remaster Dark|r"),
 			text = { 0.90, 0.92, 0.98 },
 			back = { 0.08, 0.09, 0.12 },
 		},
 		goldaccent = {
-			label = "|cffebd199Remaster Gold Accent|r",
+			label = ZGV_T("|cffebd199Remaster Gold Accent|r"),
 			text = { 0.92, 0.80, 0.50 },
 			back = { 0.07, 0.08, 0.10 },
 			themeOverrides = {
@@ -61,22 +61,22 @@ ZGV:RegisterSkin("remaster", {
 			toolbarBgOverride = { 0, 0, 0, 0.42 },
 		},
 		blue = {
-			label = "|cff88b3ffRemaster Blue|r",
+			label = ZGV_T("|cff88b3ffRemaster Blue|r"),
 			text = { 0.70, 0.80, 1.00 },
 			back = { 0.08, 0.11, 0.24 },
 		},
 		green = {
-			label = "|cff88ff88Remaster Green|r",
+			label = ZGV_T("|cff88ff88Remaster Green|r"),
 			text = { 0.50, 1.00, 0.50 },
 			back = { 0.09, 0.20, 0.07 },
 		},
 		orange = {
-			label = "|cffffcc66Remaster Orange|r",
+			label = ZGV_T("|cffffcc66Remaster Orange|r"),
 			text = { 1.00, 0.80, 0.00 },
 			back = { 0.23, 0.11, 0.07 },
 		},
 		violet = {
-			label = "|cffff99ffRemaster Violet|r",
+			label = ZGV_T("|cffff99ffRemaster Violet|r"),
 			text = { 0.95, 0.65, 1.00 },
 			back = { 0.17, 0.07, 0.20 },
 		},

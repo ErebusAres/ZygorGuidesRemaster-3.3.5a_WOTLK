@@ -60,38 +60,38 @@ end
 -- Transit routes: {fromCont, toCont, faction, mode, instruction, zone, x, y, arrivalCont, arrivalZone}
 local TRANSIT_ROUTES = {
 	-- Alliance: EK <-> Kalimdor
-	{2, 1, "Alliance", "ship", "Take the boat from Menethil Harbor to Theramore", "Wetlands", 4.6, 57.3},
-	{1, 2, "Alliance", "ship", "Take the boat from Theramore to Menethil Harbor", "Dustwallow Marsh", 71.6, 56.2},
-	{2, 1, "Alliance", "ship", "Take the boat from Stormwind Harbor to Auberdine", "Stormwind City", 18.4, 25.6},
-	{1, 2, "Alliance", "ship", "Take the boat from Auberdine to Stormwind", "Darkshore", 32.4, 43.8},
+	{2, 1, "Alliance", "ship", ZGV_T("Take the boat from Menethil Harbor to Theramore"), "Wetlands", 4.6, 57.3},
+	{1, 2, "Alliance", "ship", ZGV_T("Take the boat from Theramore to Menethil Harbor"), "Dustwallow Marsh", 71.6, 56.2},
+	{2, 1, "Alliance", "ship", ZGV_T("Take the boat from Stormwind Harbor to Auberdine"), "Stormwind City", 18.4, 25.6},
+	{1, 2, "Alliance", "ship", ZGV_T("Take the boat from Auberdine to Stormwind"), "Darkshore", 32.4, 43.8},
 	-- Horde: EK <-> Kalimdor
-	{2, 1, "Horde", "zeppelin", "Take the zeppelin from Undercity to Orgrimmar", "Tirisfal Glades", 60.7, 58.8},
-	{1, 2, "Horde", "zeppelin", "Take the zeppelin from Orgrimmar to Undercity", "Durotar", 50.9, 13.8},
-	{2, 1, "Horde", "zeppelin", "Take the zeppelin from Grom'gol to Orgrimmar", "Stranglethorn Vale", 31.6, 29.2},
-	{1, 2, "Horde", "zeppelin", "Take the zeppelin from Orgrimmar to Grom'gol", "Durotar", 50.9, 13.8},
+	{2, 1, "Horde", "zeppelin", ZGV_T("Take the zeppelin from Undercity to Orgrimmar"), "Tirisfal Glades", 60.7, 58.8},
+	{1, 2, "Horde", "zeppelin", ZGV_T("Take the zeppelin from Orgrimmar to Undercity"), "Durotar", 50.9, 13.8},
+	{2, 1, "Horde", "zeppelin", ZGV_T("Take the zeppelin from Grom'gol to Orgrimmar"), "Stranglethorn Vale", 31.6, 29.2},
+	{1, 2, "Horde", "zeppelin", ZGV_T("Take the zeppelin from Orgrimmar to Grom'gol"), "Durotar", 50.9, 13.8},
 	-- Alliance: to Northrend
-	{2, 4, "Alliance", "ship", "Take the boat from Stormwind Harbor to Valiance Keep", "Stormwind City", 18.4, 25.6},
-	{1, 4, "Alliance", "ship", "Take the boat from Auberdine to Valiance Keep", "Darkshore", 32.4, 43.8},
+	{2, 4, "Alliance", "ship", ZGV_T("Take the boat from Stormwind Harbor to Valiance Keep"), "Stormwind City", 18.4, 25.6},
+	{1, 4, "Alliance", "ship", ZGV_T("Take the boat from Auberdine to Valiance Keep"), "Darkshore", 32.4, 43.8},
 	-- Horde: to Northrend
-	{2, 4, "Horde", "zeppelin", "Take the zeppelin from Undercity to Vengeance Landing", "Tirisfal Glades", 60.7, 58.8},
-	{1, 4, "Horde", "zeppelin", "Take the zeppelin from Orgrimmar to Warsong Hold", "Durotar", 50.9, 13.8},
+	{2, 4, "Horde", "zeppelin", ZGV_T("Take the zeppelin from Undercity to Vengeance Landing"), "Tirisfal Glades", 60.7, 58.8},
+	{1, 4, "Horde", "zeppelin", ZGV_T("Take the zeppelin from Orgrimmar to Warsong Hold"), "Durotar", 50.9, 13.8},
 	-- Northrend back
-	{4, 2, "Alliance", "ship", "Take the boat from Valiance Keep to Stormwind", "Borean Tundra", 59.7, 69.1},
-	{4, 1, "Horde", "zeppelin", "Take the zeppelin from Warsong Hold to Orgrimmar", "Borean Tundra", 41.6, 53.6},
-	{4, 2, "Horde", "zeppelin", "Take the zeppelin from Vengeance Landing to Undercity", "Howling Fjord", 77.6, 28.2},
+	{4, 2, "Alliance", "ship", ZGV_T("Take the boat from Valiance Keep to Stormwind"), "Borean Tundra", 59.7, 69.1},
+	{4, 1, "Horde", "zeppelin", ZGV_T("Take the zeppelin from Warsong Hold to Orgrimmar"), "Borean Tundra", 41.6, 53.6},
+	{4, 2, "Horde", "zeppelin", ZGV_T("Take the zeppelin from Vengeance Landing to Undercity"), "Howling Fjord", 77.6, 28.2},
 	-- Outland via Dark Portal
-	{2, 3, nil, "portal", "Go through the Dark Portal in Blasted Lands", "Blasted Lands", 58.0, 58.0},
-	{3, 2, nil, "portal", "Go through the Dark Portal in Hellfire Peninsula", "Hellfire Peninsula", 89.0, 50.0},
+	{2, 3, nil, "portal", ZGV_T("Go through the Dark Portal in Blasted Lands"), "Blasted Lands", 58.0, 58.0},
+	{3, 2, nil, "portal", ZGV_T("Go through the Dark Portal in Hellfire Peninsula"), "Hellfire Peninsula", 89.0, 50.0},
 	-- Dalaran portals (Northrend hub - instant, always prefer if player is in Dalaran)
-	{4, 2, "Alliance", "portal", "Use the Stormwind portal in Dalaran", "Dalaran", 40.1, 62.8},
-	{4, 2, "Horde", "portal", "Use the Undercity portal in Dalaran", "Dalaran", 55.4, 37.8},
-	{4, 1, "Alliance", "portal", "Use the Darnassus portal in Dalaran", "Dalaran", 37.6, 63.3},
-	{4, 1, "Horde", "portal", "Use the Orgrimmar portal in Dalaran", "Dalaran", 58.2, 38.5},
-	{4, 3, nil, "portal", "Use the Shattrath portal in Dalaran", "Dalaran", 46.1, 33.5},
+	{4, 2, "Alliance", "portal", ZGV_T("Use the Stormwind portal in Dalaran"), "Dalaran", 40.1, 62.8},
+	{4, 2, "Horde", "portal", ZGV_T("Use the Undercity portal in Dalaran"), "Dalaran", 55.4, 37.8},
+	{4, 1, "Alliance", "portal", ZGV_T("Use the Darnassus portal in Dalaran"), "Dalaran", 37.6, 63.3},
+	{4, 1, "Horde", "portal", ZGV_T("Use the Orgrimmar portal in Dalaran"), "Dalaran", 58.2, 38.5},
+	{4, 3, nil, "portal", ZGV_T("Use the Shattrath portal in Dalaran"), "Dalaran", 46.1, 33.5},
 	-- Shattrath portals (Outland hub)
-	{3, 2, "Alliance", "portal", "Use the Stormwind portal in Shattrath", "Shattrath City", 57.2, 48.2},
-	{3, 1, "Alliance", "portal", "Use the Darnassus portal in Shattrath", "Shattrath City", 56.8, 49.5},
-	{3, 1, "Horde", "portal", "Use the Orgrimmar portal in Shattrath", "Shattrath City", 56.8, 49.5},
+	{3, 2, "Alliance", "portal", ZGV_T("Use the Stormwind portal in Shattrath"), "Shattrath City", 57.2, 48.2},
+	{3, 1, "Alliance", "portal", ZGV_T("Use the Darnassus portal in Shattrath"), "Shattrath City", 56.8, 49.5},
+	{3, 1, "Horde", "portal", ZGV_T("Use the Orgrimmar portal in Shattrath"), "Shattrath City", 56.8, 49.5},
 }
 
 local TAXI_POINTS = {
@@ -251,7 +251,7 @@ local function GetTaxiAdvice(playerZone, destZone, playerCont)
 	if not source or not destination then return nil end
 	return {
 		mode = "taxi",
-		text = ("Fly to %s"):format(destination.name),
+		text = (ZGV_T("Fly to %s")):format(destination.name),
 		zone = sourceZone,
 		x = source.x,
 		y = source.y,
@@ -355,7 +355,7 @@ local function ShowDirectWaypoint(finalWaypoint, reason)
 	end
 	local goal = finalWaypoint.goal
 	local way = ZGV.Pointer:SetWaypoint(nil, finalWaypoint.map, finalWaypoint.x, finalWaypoint.y, {
-		title = finalWaypoint.t or "Destination",
+		title = finalWaypoint.t or ZGV_T("Destination"),
 		titleloc = finalWaypoint.titleloc,
 		goal = goal,
 		onminimap = "always",
@@ -450,7 +450,7 @@ local function StartLibRoverPath(finalWaypoint)
 			or (node.GetTextAsItinerary and node:GetTextAsItinerary())
 			or node.maplabel
 			or finalWaypoint.t
-			or "Travel"
+			or ZGV_T("Travel")
 		local routeWaypoint = ZGV.Pointer:SetWaypoint(c, z, node.x, node.y, {
 			title = title,
 			type = "route",
@@ -470,7 +470,7 @@ local function StartLibRoverPath(finalWaypoint)
 
 	if not ShowTravelAdviceWaypoint(finalWaypoint) then ShowDirectWaypoint(finalWaypoint) end
 	ZGV.LibRover:Abort("before guide waypoint path", "quiet")
-	ZGV.LibRover:QueueFindPath(0, 0, 0, mapID, x, y, LibRoverPathHandler, { title = finalWaypoint.t or "Destination", waypoint = finalWaypoint })
+	ZGV.LibRover:QueueFindPath(0, 0, 0, mapID, x, y, LibRoverPathHandler, { title = finalWaypoint.t or ZGV_T("Destination"), waypoint = finalWaypoint })
 	return true
 end
 
@@ -513,7 +513,7 @@ function GetTravelAdvice(destZone)
 	if best then
 		currentAdvice = { mode = best[4], text = best[5], zone = best[6], x = best[7], y = best[8] }
 	else
-		currentAdvice = { mode = "walk", text = "Travel to " .. destZone }
+		currentAdvice = { mode = "walk", text = ZGV_T("Travel to ") .. destZone }
 	end
 	return currentAdvice
 end
@@ -549,50 +549,50 @@ local function GetRemasterArrowTitle(self,goal,explicitTitle)
 	if not goal then return nil end
 
 	if goal.action=="accept" and goal.quest then
-		return ("Accept '%s'"):format(goal.quest)
+		return (ZGV_T("Accept '%s'")):format(goal.quest)
 	end
 	if goal.action=="turnin" and goal.quest then
-		return ("Turn in '%s'"):format(goal.quest)
+		return (ZGV_T("Turn in '%s'")):format(goal.quest)
 	end
 	if goal.action=="talk" and goal.npc then
-		return ("Talk to %s"):format(goal.npc)
+		return (ZGV_T("Talk to %s")):format(goal.npc)
 	end
 	if goal.action=="goto" and goal.npc then
-		return ("Talk to %s"):format(goal.npc)
+		return (ZGV_T("Talk to %s")):format(goal.npc)
 	end
 	if goal.action=="goto" and (goal.map or goal.x or goal.y) and not goal.npc then
 		if goal.map and goal.x and goal.y then
-			return ("Go to %s %.1f,%.1f"):format(goal.map,goal.x,goal.y)
+			return (ZGV_T("Go to %s %.1f,%.1f")):format(goal.map,goal.x,goal.y)
 		elseif goal.x and goal.y then
-			return ("Go to %.1f,%.1f"):format(goal.x,goal.y)
+			return (ZGV_T("Go to %.1f,%.1f")):format(goal.x,goal.y)
 		end
-		return "Go to destination"
+		return ZGV_T("Go to destination")
 	end
 	if goal.action=="kill" and goal.target then
-		return ("Kill %s"):format(goal.target)
+		return (ZGV_T("Kill %s")):format(goal.target)
 	end
 	if (goal.action=="get" or goal.action=="collect") and goal.target then
-		return ("Collect %s"):format(goal.target)
+		return (ZGV_T("Collect %s")):format(goal.target)
 	end
 	if goal.action=="goldcollect" and goal.target then
-		return ("Farm %s"):format(goal.target)
+		return (ZGV_T("Farm %s")):format(goal.target)
 	end
 	if goal.action=="fpath" and goal.param then
-		return ("Take flight to %s"):format(goal.param)
+		return (ZGV_T("Take flight to %s")):format(goal.param)
 	end
 	if goal.routegroup then
 		local step = goal.parentStep
 		if step then
 			for _,g in ipairs(step.goals) do
 				if g.action and g.action~="goto" and g.target then
-					if g.action=="goldcollect" then return ("Farm %s in this area"):format(g.target) end
-					if g.action=="kill" then return ("Kill %s in this area"):format(g.target) end
-					if g.action=="collect" or g.action=="get" then return ("Collect %s in this area"):format(g.target) end
+					if g.action=="goldcollect" then return (ZGV_T("Farm %s in this area")):format(g.target) end
+					if g.action=="kill" then return (ZGV_T("Kill %s in this area")):format(g.target) end
+					if g.action=="collect" or g.action=="get" then return (ZGV_T("Collect %s in this area")):format(g.target) end
 					break
 				end
 			end
 		end
-		return "Follow the path"
+		return ZGV_T("Follow the path")
 	end
 	if goal.GetText then
 		local raw = goal:GetText(true)
@@ -600,8 +600,8 @@ local function GetRemasterArrowTitle(self,goal,explicitTitle)
 			raw = raw:gsub("|c%x%x%x%x%x%x%x%x",""):gsub("|r","")
 			raw = raw:gsub("%s+%(%d+/%d+%)$","")
 			raw = raw:gsub("%s+%d+%%$","")
-			if raw:match("^(Accept%s+)") or raw:match("^(Turn in%s+)") or raw:match("^(Talk to%s+)") or raw:match("^(Kill%s+)") or raw:match("^(Get%s+)") or raw:match("^(Collect%s+)") then
-				return raw:gsub("^(Get%s+)","Collect ")
+			if raw:match(ZGV_T("^(Accept%s+)")) or raw:match(ZGV_T("^(Turn in%s+)")) or raw:match(ZGV_T("^(Talk to%s+)")) or raw:match(ZGV_T("^(Kill%s+)")) or raw:match(ZGV_T("^(Get%s+)")) or raw:match(ZGV_T("^(Collect%s+)")) then
+				return raw:gsub(ZGV_T("^(Get%s+)"),ZGV_T("Collect "))
 			end
 		end
 	end
@@ -760,7 +760,7 @@ me.WaypointFunctions['carbonite'] = {
 		if BZL[zone] then zone=BZL[zone] end
 		local carbZone = Nx.MNTI1[zone] --zone IDs
 		local fav = Nx.Fav:GNF(carbZone)
-		local s=Nx.Fav:CrI("N",0,(data and data.title or "Gold Spot") .. " (ZG)",3,carbZone,x,y)
+		local s=Nx.Fav:CrI("N",0,(data and data.title or ZGV_T("Gold Spot")) .. " (ZG)",3,carbZone,x,y)
 		Nx.Fav:AdI1(fav,nil,s)
 		-- ...
 		Nx.Fav:Upd()
@@ -976,7 +976,7 @@ me.WaypointFunctions['internal'] = {
 						lastpoint=way
 						table.insert(points,{goal=goal,way=way})
 					else
-						self:Print("Unable to create waypoint: "..tostring(gmap).." "..tostring(goal.x).." "..tostring(goal.y))
+						self:Print(ZGV_T("Unable to create waypoint: ")..tostring(gmap).." "..tostring(goal.x).." "..tostring(goal.y))
 					end
 				end
 			end
@@ -1103,7 +1103,7 @@ function me:SetWaypoint(...)
 		if self.WaypointFunctions and self.WaypointFunctions['internal'] and self.WaypointFunctions['internal'].isready(self) then
 			self.ConnectedWaypointer = self.WaypointFunctions['internal']
 		else
-			self:Print("Waypoint addon '"..self.db.profile.waypointaddon.."' failed.")
+			self:Print(ZGV_T("Waypoint addon '")..self.db.profile.waypointaddon..ZGV_T("' failed."))
 			return
 		end
 	end
@@ -1349,7 +1349,7 @@ function me:CreateTomTomWaypoints(goalnum)
 			local way = TomTom:AddZWaypoint(
 				contid, zoneid,
 				goal.x, goal.y,
-				goal.title or self.CurrentStep.title or goal.autotitle or self.CurrentStep:GetTitle() or "Step "..self.CurrentStepNum,
+				goal.title or self.CurrentStep.title or goal.autotitle or self.CurrentStep:GetTitle() or ZGV_T("Step ")..self.CurrentStepNum,
 				false, --persistent
 				true, --minimap
 				true, --world
@@ -1379,7 +1379,7 @@ function me:CreateTomTomWaypointCZXY(contid,zoneid,x,y,title,arrow)
 	local way = TomTom:AddZWaypoint(
 		contid, zoneid,
 		x, y,
-		title or self.CurrentStep.title or "Step "..self.CurrentStepNum,
+		title or self.CurrentStep.title or ZGV_T("Step ")..self.CurrentStepNum,
 		false, --persistent
 		true, --minimap
 		true, --world

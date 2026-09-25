@@ -1,0 +1,3 @@
+# Goldguide-Core part 2
+1334.1 =  |cff00ff00VAZIO!|r
+1507.1 = Vendedor.

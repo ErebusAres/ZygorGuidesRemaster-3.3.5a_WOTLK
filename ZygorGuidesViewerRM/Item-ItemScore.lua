@@ -1164,7 +1164,7 @@ function ItemScore:RegisterRoleSlashCommands()
 			local override = ZGV.ItemScore:GetActiveBuildOverrideBuild(ZGV.ItemScore.playerclass, groupKey)
 			local activeBuild = override or (ZGV.db and ZGV.db.char and ZGV.db.char.gear_active_build)
 			local activeName = ZGV.ItemScore:GetBuildName(ZGV.ItemScore.playerclass, activeBuild, ZGV.ItemScore.playerlevel)
-			ZGV:Print(("Gear Advisor: talent group %d uses %s. Commands: /ztank, /zdps, /zheal, /zsupport, or /zrole auto."):format(groupKey, activeName))
+			ZGV:Print((ZGV_T("Gear Advisor: talent group %d uses %s. Commands: /ztank, /zdps, /zheal, /zsupport, or /zrole auto.")):format(groupKey, activeName))
 		end
 	end
 	self.RoleSlashRegistered = true
@@ -1213,11 +1213,11 @@ function ItemScore:NotifyCustomWeightFallback(originalClass, originalBuild, reas
 	if ZGV.db.char.gear_custom_fallback_notices[noticeKey] then return end
 	ZGV.db.char.gear_custom_fallback_notices[noticeKey] = true
 
-	local message = ("Gear Advisor: Unknown class/spec detected (%s %s). Gear scoring has been set to Custom weights. You can adjust Custom weights in Gear Advisor > Stat Weights."):format(tostring(originalClass or "unknown"), tostring(originalBuild or "?"))
+	local message = (ZGV_T("Gear Advisor: Unknown class/spec detected (%s %s). Gear scoring has been set to Custom weights. You can adjust Custom weights in Gear Advisor > Stat Weights.")):format(tostring(originalClass or ZGV_T("unknown")), tostring(originalBuild or "?"))
 	if ZGV and ZGV.Print then
 		ZGV:Print(message)
 	else
-		print(branded_chat_prefix("Gear Advisor") .. " " .. message)
+		print(branded_chat_prefix(ZGV_T("Gear Advisor")) .. " " .. message)
 	end
 end
 	
@@ -1442,12 +1442,12 @@ end
 
 function ItemScore:GetActiveBuildSourceLabel()
 	if self.activeBuildUsesCustomFallback then
-		return "Custom weights"
+		return ZGV_T("Custom weights")
 	end
 	if self:GetActiveBuildOverrideBuild(self.playerclass, self:GetActiveTalentGroupKey()) then
-		return "Overridden build"
+		return ZGV_T("Overridden build")
 	end
-	return "Detected build"
+	return ZGV_T("Detected build")
 end
 
 function ItemScore:GetPreTalentOverrideBuild(classToken, level, talentState)
@@ -1539,7 +1539,7 @@ function ItemScore:GetGearRoleBuild(role)
 	if classToken == "DEATHKNIGHT" and tree and tree >= 1 and tree <= 3 then
 		if role == "tank" then return tree + 3 end
 		if role == "dps" then return tree end
-		return nil, "Death Knights do not have a healing Gear Advisor profile."
+		return nil, ZGV_T("Death Knights do not have a healing Gear Advisor profile.")
 	end
 	if classToken == "DRUID" then
 		if role == "tank" then return 3 end
@@ -1566,7 +1566,7 @@ function ItemScore:GetGearRoleBuild(role)
 	if role == "dps" and (classToken == "HUNTER" or classToken == "ROGUE" or classToken == "MAGE" or classToken == "WARLOCK") then
 		return (tree and tree >= 1 and tree <= 3) and tree or self:GetFallbackBuildForClass(classToken)
 	end
-	return nil, ("No %s Gear Advisor profile is available for %s."):format(role, tostring(self.playerclassName or classToken or "this class"))
+	return nil, (ZGV_T("No %s Gear Advisor profile is available for %s.")):format(role, tostring(self.playerclassName or classToken or ZGV_T("this class")))
 end
 
 function ItemScore:SetGearRole(role)
@@ -1578,7 +1578,7 @@ function ItemScore:SetGearRole(role)
 		if self.GearFinder and self.GearFinder.ClearResults then self.GearFinder:ClearResults() end
 		self:DelayedRefreshUserData()
 		self:NotifyStatWeightsOptionsChanged()
-		ZGV:Print(("Gear Advisor: talent group %d returned to automatic build detection."):format(groupKey))
+		ZGV:Print((ZGV_T("Gear Advisor: talent group %d returned to automatic build detection.")):format(groupKey))
 		return true
 	end
 	if role ~= "tank" and role ~= "dps" and role ~= "heal" then return false end
@@ -1586,7 +1586,7 @@ function ItemScore:SetGearRole(role)
 	local buildNum, reason = self:GetGearRoleBuild(role)
 	local classRules = self.rules and self.rules[self.playerclass]
 	if not buildNum or not (classRules and classRules[buildNum]) then
-		ZGV:Print("Gear Advisor: " .. tostring(reason or "No matching role profile is available for this build."))
+		ZGV:Print(ZGV_T("Gear Advisor: ") .. tostring(reason or ZGV_T("No matching role profile is available for this build.")))
 		return false
 	end
 
@@ -1598,7 +1598,7 @@ function ItemScore:SetGearRole(role)
 	ZGV.db.char.gear_weights_manual_class = true
 	self:RefreshAfterWeightChange(self.playerclass, buildNum)
 	self:NotifyStatWeightsOptionsChanged()
-	ZGV:Print(("Gear Advisor: talent group %d now uses %s."):format(groupKey, self:GetBuildName(self.playerclass, buildNum, self.playerlevel)))
+	ZGV:Print((ZGV_T("Gear Advisor: talent group %d now uses %s.")):format(groupKey, self:GetBuildName(self.playerclass, buildNum, self.playerlevel)))
 	return true
 end
 
@@ -1628,7 +1628,7 @@ function ItemScore:GetBuildName(classRef, buildNum, level, usesFallback)
 	end
 	buildLabel = buildLabel or ("Spec "..tostring(resolvedBuild or 1))
 	if usesFallback then
-		return buildLabel .. " (Leveling baseline)"
+		return buildLabel .. ZGV_T(" (Leveling baseline)")
 	end
 	return buildLabel
 end
@@ -1751,7 +1751,7 @@ function ItemScore:IsEquippedBIS(slot, buildNum, classToken)
 	if equippedID and bis_slot_list_contains(finalSlot, equippedID) then
 		return true, {
 			category = "final",
-			label = "Final BIS Equipped",
+			label = ZGV_T("Final BIS Equipped"),
 			filled = true,
 			future = false,
 			final = true,
@@ -1772,11 +1772,11 @@ end
 
 function ItemScore:GetRuleSourceLabel(classRef, buildNum)
 	local meta = self:GetRuleSourceInfo(classRef, buildNum)
-	if not meta then return "Unverified local baseline" end
+	if not meta then return ZGV_T("Unverified local baseline") end
 	if meta.mode == "normalized_priority" then
-		return ("%s (normalized stat-priority baseline)"):format(meta.label or "Curated baseline")
+		return (ZGV_T("%s (normalized stat-priority baseline)")):format(meta.label or ZGV_T("Curated baseline"))
 	end
-	return meta.label or "Curated baseline"
+	return meta.label or ZGV_T("Curated baseline")
 end
 
 local function copy_simple_table(source)
@@ -2440,7 +2440,7 @@ function ItemScore:FormatMasterLootNotice(itemlink, validity, comparison)
 	if roundedDelta <= 0 then return nil end
 
 	local parts = {
-		branded_chat_prefix("Gear Advisor"),
+		branded_chat_prefix(ZGV_T("Gear Advisor")),
 		itemlink,
 		("|cff44ff44%s|r"):format(roundedDelta == 0 and "0.0" or string.format("%+.1f", roundedDelta)),
 	}
@@ -3724,7 +3724,7 @@ local function ItemScore_SetTooltipData(tooltip, tooltipobj)
 							local verdict = ItemScore:GetItemValidityForContext(itemlink, nil, context)
 							local prefix = ("|cffcccccc%s:|r "):format(ItemScore:GetBuildName(classToken, buildNum, level, context.usesFallback))
 							if not verdict.valid then
-								tooltip:AddLine(prefix .. "|cffff3333x|r Unusable")
+								tooltip:AddLine(prefix .. ZGV_T("|cffff3333x|r Unusable"))
 							else
 								local comparison = nil
 								if verdict.slot then
@@ -3771,7 +3771,7 @@ local function ItemScore_SetTooltipData(tooltip, tooltipobj)
 						tostring(debugVerdict.code or "nil")
 					))
 				end
-				tooltip:AddLine("|cffff3333Unusable|r")
+				tooltip:AddLine(ZGV_T("|cffff3333Unusable|r"))
 			end
 		end
 
@@ -3850,7 +3850,7 @@ function ItemScore:ImportPawn(datastring)
 	local unknowns = false
 
 	if not datastring:find("Pawn: v1:") then 
-		ZGV:Print("Import: Incorrect pawn string") 
+		ZGV:Print(ZGV_T("Import: Incorrect pawn string")) 
 		return
 	end
 
@@ -3872,7 +3872,7 @@ function ItemScore:ImportPawn(datastring)
 	end
 
 	if unknowns then
-		ZGV:Print("Import: Some of Pawn stat names are not supported by Zygor, and have been skipped.") 
+		ZGV:Print(ZGV_T("Import: Some of Pawn stat names are not supported by Zygor, and have been skipped.")) 
 	end
 
 	local classNum = tonumber(ZGV.db.char.gear_selected_class) or self.playerclassNum or 1

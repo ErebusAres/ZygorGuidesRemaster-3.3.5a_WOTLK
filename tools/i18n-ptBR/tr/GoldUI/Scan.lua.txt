@@ -1,0 +1,17 @@
+# GoldUI/Scan.lua -- debug/state/reason strings stay English
+262.1 = Você já pode escanear.
+263.1 = Próximo escaneamento: desconhecido
+264.1 = Próximo escaneamento: em ~%d minutos
+265.1 = Próximo escaneamento: quase lá!
+266.1 = Próximo escaneamento desconhecido!
+499.3 = A consulta ao leilão expirou. Clique em Escanear para tentar novamente.
+507.3 = O escaneamento do leilão expirou. Clique em Escanear para tentar novamente.
+1263.2 = Analisando (%d%%)
+1264.2 = Escaneando (%d%%)
+1401.1 = Dados 'hourly' importados com carimbo de data/hora 
+1433.1 = ÚLTIMA ATUALIZAÇÃO:
+1440.1 =  Qualidade das tendências: %s.
+1444.1 = |cffff0000ALERTA:|r
+1450.1 = |cffff0000ALERTA:|r
+1454.1 = |cffff0000ALERTA:|r
+1461.1 = |cffff0000ALERTA:|r

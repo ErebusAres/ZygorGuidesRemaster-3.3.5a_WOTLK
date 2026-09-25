@@ -1,0 +1,3 @@
+384.1 = Demanda diária do item: %s
+384.2 = desconhecida
+387.1 = Valor do item: %s

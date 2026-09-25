@@ -1,0 +1,25 @@
+# GoldUI/Auctiontools-Core.lua (item tooltip "Gold Data" block)
+139.2 = Mercado estagnado.
+314.1 = Não foi possível iniciar o escaneamento.
+571.1 = Dados de Gold
+573.1 =   |cffeeeeeeItem é soulbound|r 
+580.2 =   |cffeeeeeePreço de vendedor:|r
+582.2 =   |cffeeeeeePreço de vendedor (pilha):|r
+609.1 =   |cffeeeeeeMenor preço atual:|r 
+618.1 =   |cffeeeeeePreço de venda sugerido:|r 
+626.1 =     |cffeeeeeeMáxima histórica:|r 
+627.1 =     |cffeeeeeeAbuso de preço em:|r
+629.1 =     |cffeeeeeeMáxima histórica:|r 
+631.1 =     |cffeeeeeeMínima histórica:|r 
+633.1 =     |cffeeeeeeMínima histórica:|r 
+634.1 =     |cffeeeeeeMediana histórica:|r 
+635.1 =     |cffeeeeeeMáxima histórica:|r 
+637.1 =     |cffeeeeeeMediana global:|r 
+642.1 = Mínima histórica
+643.1 = Mediana histórica
+644.1 = Máxima histórica
+645.1 = Mínima global
+646.1 = Mediana global
+647.1 = Máxima global
+651.1 =   |cffeeeeeeDemanda (vendas est.):|r 
+657.1 =   |cffeeeeeeÚltima atualização:|r 

@@ -1,0 +1,19 @@
+# enUS.lua -> ptBR.lua : chunk 6 (values built with COLOR_TIP_MOUSE.. concatenation; the color constants stay untouched)
+281.2 = Clique|r para alternar a janela de guias|n
+281.3 = Clique direito|r para abrir o Gerenciador de Guias|n
+281.4 = Shift + clique direito|r para abrir as Opções|n
+281.5 = Arraste|r para mover o ícone
+309.2 = Clique|r para destravar
+311.2 = Clique|r para travar
+313.2 = Clique|r para definir as opções básicas
+314.2 = Clique direito|r para entrar na configuração
+317.2 = Clique|r para mostrar apenas |cffffffff%d|r
+318.2 = Clique|r para mostrar todos
+319.2 = Clique direito|r para definir o número de passos
+321.2 = Clique|r para voltar
+322.2 = Clique direito|r para retroceder
+324.2 = Clique|r para pular
+325.2 = Clique direito|r para avançar rápido
+327.2 = Clique|r para selecionar
+331.2 = Clique|r
+331.3 =  para definir waypoint: |cffffaa00%s|r

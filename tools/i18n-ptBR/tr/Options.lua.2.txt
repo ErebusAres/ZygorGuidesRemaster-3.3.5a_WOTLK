@@ -1,0 +1,5 @@
+# Options part 3 (About panel)
+1370.1 = Versão: %s
+1370.2 = desconhecida
+1378.1 = Revisão: %s
+1378.2 = desconhecida

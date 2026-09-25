@@ -381,10 +381,10 @@ function Auctions:GetTooltipData(refresh)
 	if ZGV.IsClassic or ZGV.IsClassicTBC or ZGV.IsClassicWOTLK then
 		demand_description = ""
 	else
-		demand_description = ("Daily demand for item: %s"):format(self.demand or "unknown")
+		demand_description = (ZGV_T("Daily demand for item: %s")):format(self.demand or ZGV_T("unknown"))
 	end
 
-	local worth_description = ("Item worth: %s"):format(M(self.targetprice))
+	local worth_description = (ZGV_T("Item worth: %s")):format(M(self.targetprice))
 	self.cached_tooltip.header = flags_description .. "\n" .. demand_description .. "\n" .. worth_description
 
 	-- crop display to 30 entries

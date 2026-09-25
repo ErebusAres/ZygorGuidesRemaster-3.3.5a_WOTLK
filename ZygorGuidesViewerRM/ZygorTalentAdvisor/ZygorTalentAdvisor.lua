@@ -48,7 +48,7 @@ function me:AnnounceIntegratedLoad()
 	end
 	self._integratedLoadAnnounced = true
 	if ZGV then ZGV._taLoadedMessageShown = true end
-	local msg = "|cff88ff88ZygorTalentAdvisor loaded.|r Talent Advisor is integrated in this addon."
+	local msg = ZGV_T("|cff88ff88ZygorTalentAdvisor loaded.|r Talent Advisor is integrated in this addon.")
 	if ZGV and type(ZGV.Print) == "function" then
 		ZGV:Print(msg)
 	elseif ChatFrame1 and ChatFrame1.AddMessage then
@@ -351,7 +351,7 @@ function me:CHARACTER_POINTS_CHANGED(_,delta)
 			Old_LearnTalent(self.suggestion['player'][1].tab,self.suggestion['player'][1].talent,false,false)
 		else
 			self.bulklearning=nil
-			self:Print("Learned all.")
+			self:Print(ZGV_T("Learned all."))
 		end
 	end
 	self:UpdateSuggestions(false)
@@ -505,8 +505,8 @@ function me:SetupConfig()
 				order = 1.005,
 				type = "toggle",
 				width = "full",
-				name = "Enable Talent Advisor",
-				desc = "Show Talent Advisor suggestions, talent highlights, and the talent-tab button.",
+				name = ZGV_T("Enable Talent Advisor"),
+				desc = ZGV_T("Show Talent Advisor suggestions, talent highlights, and the talent-tab button."),
 				set = function(i,v)
 					Setter_Simple(i,v)
 					self:RefreshEnabledState()
@@ -774,10 +774,10 @@ function me.ShowGlyphTooltip(icon)
 	GameTooltip:SetOwner(icon, "ANCHOR_CURSOR")
 	if icon.glyphspell then
 		GameTooltip:SetSpellByID(icon.glyphspell)
-		GameTooltip:AddLine("|cffaaddffZygor suggests this glyph|r")
+		GameTooltip:AddLine(ZGV_T("|cffaaddffZygor suggests this glyph|r"))
 	elseif icon.glyphname then
 		GameTooltip:SetText(icon.glyphname)
-		GameTooltip:AddLine("|cffaaddffZygor suggests this glyph|r")
+		GameTooltip:AddLine(ZGV_T("|cffaaddffZygor suggests this glyph|r"))
 	end
 	GameTooltip:Show()
 end
@@ -1157,7 +1157,7 @@ function me:PreviewSuggestions(pet,quiet)
 			AddPreviewTalentPoints(tab,talent,sug,pet)
 			if pts==GetGroupPreviewTalentPointsSpent(pet) then
 				local name=GetTalentInfo(tab,talent,false,pet)
-				self:Print("|cffff0000Error!|r Talent "..name.." suggested but unavailable!")
+				self:Print(ZGV_T("|cffff0000Error!|r Talent ")..name..ZGV_T(" suggested but unavailable!"))
 			end
 		end
 	end
@@ -1555,7 +1555,7 @@ function me:Hint(tab,talent,pet)
 	local tabname = GetTalentTabInfo(tab,false,pet)
 	local name,_,_,_,rank = GetTalentInfo(tab,talent,false,pet)
 	
-	self:Print("Suggestion: Upgrade your "..(pet and "pet's " or "")..tabname.." talent '"..name.."'.")
+	self:Print(ZGV_T("Suggestion: Upgrade your ")..(pet and ZGV_T("pet's ") or ZGV_T(""))..tabname..ZGV_T(" talent '")..name.."'.")
 end
 
 function me:GetTalentsSpent(pet)
@@ -1590,7 +1590,7 @@ function me:SetCurrentBuild(num,pet)
 			end
 		end
 		if type(num)=="string" then
-			self:Print("no such build name: "..num)
+			self:Print(ZGV_T("no such build name: ")..num)
 			num=0
 		end
 	end

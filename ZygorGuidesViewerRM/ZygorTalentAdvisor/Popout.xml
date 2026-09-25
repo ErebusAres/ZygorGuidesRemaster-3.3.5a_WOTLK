@@ -246,7 +246,7 @@
 				<Scripts>
 					<OnEnter>
 						GameTooltip:SetOwner(self,"ANCHOR_BOTTOMRIGHT")
-						GameTooltip:SetText("Build status:")
+						GameTooltip:SetText(ZGV_T("Build status:"))
 						GameTooltip:AddLine(ZygorTalentAdvisor:GetStatusMessage(ZygorTalentAdvisorPopout.pet),1,1,1)
 						GameTooltipTextLeft1:SetWidth(300)
 						GameTooltipTextLeft2:SetWidth(300)

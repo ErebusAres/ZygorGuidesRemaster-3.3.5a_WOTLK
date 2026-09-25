@@ -8,52 +8,52 @@ local CHAIN = ZGV.ChainCall
 
 local HTMLColor=ZGV.HTMLColor
 
-local FARM_INFO_SUMMARY = "Make gold by farming and selling valuable items that drop off mobs (cloth, elementals, food, ect.). This is the best method for beginners without any profession skills."
+local FARM_INFO_SUMMARY = ZGV_T("Make gold by farming and selling valuable items that drop off mobs (cloth, elementals, food, ect.). This is the best method for beginners without any profession skills.")
 local FARM_INFO_PROS = {
-	"No profession skills required.",
-	"Low risk. Little to no gold required.",
-	"Earn XP while making gold (up to level 90).",
+	ZGV_T("No profession skills required."),
+	ZGV_T("Low risk. Little to no gold required."),
+	ZGV_T("Earn XP while making gold (up to level 90)."),
 }
 local FARM_INFO_CONS = {
-	"Can be slow, tedious and boring",
-	"Profit limits (can only farm items so fast)",
+	ZGV_T("Can be slow, tedious and boring"),
+	ZGV_T("Profit limits (can only farm items so fast)"),
 }
 local FARM_INFO_DIFF_PERCENT = 20
 
 
-local GATHER_INFO_SUMMARY = "Use gathering professions to make money by farming and selling raw materials (herbs, ores, skins). This is the best method players who want to make the most gold without getting into the more complex methods."
+local GATHER_INFO_SUMMARY = ZGV_T("Use gathering professions to make money by farming and selling raw materials (herbs, ores, skins). This is the best method players who want to make the most gold without getting into the more complex methods.")
 local GATHER_INFO_PROS = {
-	"Most profitable of the easy methods.",
-	"Low risk. Little to no gold required.",
+	ZGV_T("Most profitable of the easy methods."),
+	ZGV_T("Low risk. Little to no gold required."),
 }
 local GATHER_INFO_CONS = {
-	"Can be slow, tedious and boring",
-	"Requires profession skills (preferably maxed out)",
-	"Profit limits (can only farm items so fast)",
+	ZGV_T("Can be slow, tedious and boring"),
+	ZGV_T("Requires profession skills (preferably maxed out)"),
+	ZGV_T("Profit limits (can only farm items so fast)"),
 }
 local GATHER_INFO_DIFF_PERCENT = 40
 
 
-local AUCTION_INFO_SUMMARY = "Play the Auction House to make money. Buy low, sell high. The most profitable method to make gold but the hardest to master."
+local AUCTION_INFO_SUMMARY = ZGV_T("Play the Auction House to make money. Buy low, sell high. The most profitable method to make gold but the hardest to master.")
 local AUCTION_INFO_PROS = {
-	"Quick profit (except for long-term investments)",
-	"Almost unlimited profits",
+	ZGV_T("Quick profit (except for long-term investments)"),
+	ZGV_T("Almost unlimited profits"),
 }
 local AUCTION_INFO_CONS = {
-	"Startup capital required",
-	"High risk. Can (and often will) face losses.",
-	"Easy to mess up, difficult to master",
+	ZGV_T("Startup capital required"),
+	ZGV_T("High risk. Can (and often will) face losses."),
+	ZGV_T("Easy to mess up, difficult to master"),
 }
 local AUCTION_INFO_DIFF_PERCENT = 90
 
 
-local CRAFTING_INFO_SUMMARY = "Make gold by crafting profitable items and selling them on the auction house."
+local CRAFTING_INFO_SUMMARY = ZGV_T("Make gold by crafting profitable items and selling them on the auction house.")
 local CRAFTING_INFO_PROS = {
-	"Profit limited only by demand",
+	ZGV_T("Profit limited only by demand"),
 }
 local CRAFTING_INFO_CONS = {
-	"Medium risk.",
-	"Only really profitable at max skill level.",
+	ZGV_T("Medium risk."),
+	ZGV_T("Only really profitable at max skill level."),
 }
 local CRAFTING_INFO_DIFF_PERCENT = 60
 
@@ -100,7 +100,7 @@ local function GetInfoFrame(parentFrame)
 	infoframe.summaryheader = CHAIN(infoframe:CreateFontString())
 		:SetPoint("TOPLEFT",infoframe,"TOPLEFT",HORT_PADDING,-SECTION_VERT_PADDING)
 		:SetFont(FONTBOLD,HEADER_FONTSIZE)
-		:SetText("SUMMARY:")
+		:SetText(ZGV_T("SUMMARY:"))
 	.__END
 
 	infoframe.summary = CHAIN(infoframe:CreateFontString())
@@ -143,7 +143,7 @@ local function GetInfoFrame(parentFrame)
 	infoframe.proheader = CHAIN(infoframe:CreateFontString())
 		:SetPoint("TOPLEFT",infoframe.summary,"BOTTOMLEFT",0,-SECTION_VERT_PADDING)
 		:SetFont(FONTBOLD,HEADER_FONTSIZE)
-		:SetText("PROS")
+		:SetText(ZGV_T("PROS"))
 	.__END
 
 	infoframe.proframe = CHAIN(CreateFrame("Frame", name.."Pros", infoframe))
@@ -175,7 +175,7 @@ local function GetInfoFrame(parentFrame)
 	infoframe.conheader = CHAIN(infoframe:CreateFontString())
 		:SetPoint("TOPLEFT",infoframe.proframe,"BOTTOMLEFT",0,-SECTION_VERT_PADDING)
 		:SetFont(FONTBOLD,HEADER_FONTSIZE)
-		:SetText("CONS")
+		:SetText(ZGV_T("CONS"))
 	.__END
 
 	infoframe.conframe = CHAIN(CreateFrame("Frame", name.."Cons", infoframe))
@@ -207,7 +207,7 @@ local function GetInfoFrame(parentFrame)
 	infoframe.diffheader = CHAIN(infoframe:CreateFontString())
 		:SetPoint("TOPLEFT",infoframe.conframe,"BOTTOMLEFT",0,-SECTION_VERT_PADDING)
 		:SetFont(FONTBOLD,HEADER_FONTSIZE)
-		:SetText("DIFFICULTY:")
+		:SetText(ZGV_T("DIFFICULTY:"))
 	.__END
 
 	infoframe.diffbg = CHAIN(ui:Create("Frame",infoframe,name.."DiffBarBG"))

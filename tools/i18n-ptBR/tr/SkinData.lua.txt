@@ -1,0 +1,7 @@
+# SkinData.lua (must match ZygorGuidesViewer.lua skin labels)
+39.1 = |cffcfd6e8Remaster Escuro|r
+44.1 = |cffebd199Remaster Detalhe Dourado|r
+64.1 = |cff88b3ffRemaster Azul|r
+69.1 = |cff88ff88Remaster Verde|r
+74.1 = |cffffcc66Remaster Laranja|r
+79.1 = |cffff99ffRemaster Violeta|r

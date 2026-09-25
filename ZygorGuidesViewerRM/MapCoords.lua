@@ -99,9 +99,9 @@ local function WorldmapCoordFrame_OnUpdate(self, elapsed)
 	local c,z,x,y = Astrolabe:GetCurrentPlayerPosition()
 
 	if not x or not y then
-		self.Player:SetText("Player: ---")
+		self.Player:SetText(ZGV_T("Player: ---"))
 	else
-		self.Player:SetFormattedText("Player: %s", RoundCoords(x, y, opt.mapcoords.playeraccuracy))
+		self.Player:SetFormattedText(ZGV_T("Player: %s"), RoundCoords(x, y, opt.mapcoords.playeraccuracy))
 	end
 
 	local cX, cY = GetCurrentCursorPosition()

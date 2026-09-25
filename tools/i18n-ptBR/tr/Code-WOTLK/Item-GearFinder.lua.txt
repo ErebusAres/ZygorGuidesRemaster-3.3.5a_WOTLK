@@ -1,0 +1,2 @@
+# Code-WOTLK/Item-GearFinder.lua
+102.1 = Alternar Buscador de Equipamento Zygor

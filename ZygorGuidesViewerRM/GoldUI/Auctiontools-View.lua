@@ -34,7 +34,7 @@ local TAB_NAVIGATION_SEARCH = {"searchname", "pricegold", "pricesilver", "pricec
 local SELL_INVENTORY_COLUMS = {
 	{ title="", width=15, headerwidth=15, titlej="LEFT", textj="LEFT", name="icon", type="icon", onentertooltip=function(row) Appraiser:ShowItemTooltip(row.item) end},
 	{ title="ITEM", width=190, headerwidth=140, titlej="LEFT", textj="LEFT", name="name" },
-	{ title="UNIT PRICE", width=100, headerwidth=150, titlej="RIGHT", textj="RIGHT", name="price" },
+	{ title=ZGV_T("UNIT PRICE"), width=100, headerwidth=150, titlej="RIGHT", textj="RIGHT", name="price" },
 	{ title="", width=15, titlej="CENTER", textj="CENTER", name="status", type="icon", onentertooltip=function(row) GameTooltip:AddLine( row.item.statusText ) end },
 }
 
@@ -52,7 +52,7 @@ local SELL_INVENTORY_DATA = {
 local BUY_INVENTORY_COLUMS = {
 	{ title="", width=15, headerwidth=15, titlej="LEFT", textj="LEFT", name="icon", type="icon", onentertooltip=function(row) Appraiser:ShowItemTooltip(row.item) end},
 	{ title="ITEM", width=190, titlej="LEFT", textj="LEFT", name="name" },
-	{ title="MAX PRICE", width=100, titlej="RIGHT", textj="RIGHT", name="price" },
+	{ title=ZGV_T("MAX PRICE"), width=100, titlej="RIGHT", textj="RIGHT", name="price" },
 	{ title="", width=15, titlej="CENTER", textj="CENTER", name="status", type="icon", onentertooltip=function(row) if not row.item then return end GameTooltip:AddLine( row.item.statusText ) end },
 }
 
@@ -124,7 +124,7 @@ function Appraiser:CreateMainFrame()
 			:SetPoint("TOPLEFT",8,-8)
 			:SetFont(FONT,14) 
 			:SetTextColor(1,1,1,1)
-			:SetText("Zygor Inventory")
+			:SetText(ZGV_T("Zygor Inventory"))
 		 .__END
 
 		MF.HeaderFrame.close = CHAIN(CreateFrame("Button",nil,MF.HeaderFrame))
@@ -157,7 +157,7 @@ function Appraiser:CreateMainFrame()
 			end)
 			:SetScript("OnEnter",function()
 				GameTooltip:SetOwner(MF.HeaderFrame.goldguide, "ANCHOR_CURSOR")
-				GameTooltip:AddLine("Open Gold Guide")
+				GameTooltip:AddLine(ZGV_T("Open Gold Guide"))
 				GameTooltip:Show()
 			end)
 			:SetScript("OnLeave",function()
@@ -188,13 +188,13 @@ function Appraiser:CreateMainFrame()
 		MF.FooterUpdated = CHAIN(MF.FooterFrame:CreateFontString())
 			:SetPoint("BOTTOMLEFT",5,2)
 			:SetFont(FONTBOLD,12)
-			:SetText("LAST UPDATED:")
+			:SetText(ZGV_T("LAST UPDATED:"))
 		.__END
 
 		MF.FooterUpdatedTime = CHAIN(MF.FooterFrame:CreateFontString())
 			:SetPoint("LEFT",MF.FooterUpdated ,"RIGHT",5,0)
 			:SetFont(FONT,12)
-			:SetText("no time")
+			:SetText(ZGV_T("no time"))
 		.__END
 
 		MF.FooterUpdatedOverlay = CHAIN(CreateFrame("Frame", nil , MF.FooterFrame))
@@ -233,16 +233,16 @@ function Appraiser:CreateMainFrame()
 		:SetSize(95,20)
 		:SetPoint("BOTTOMRIGHT",MF.FooterFrame ,"TOPRIGHT", -10, 7)
 		:SetFont(FONT,12)
-		:SetText("Full Scan")
+		:SetText(ZGV_T("Full Scan"))
 		:SetScript("OnClick", function(self) Appraiser:ScanAll() end)
 		:SetScript("OnEnter",function(self) 
 			CHAIN(GameTooltip):SetOwner(self, "ANCHOR_TOP") 
-			:SetText(self.tooltip or "Scan the whole Auction House. May take some time.") 
+			:SetText(self.tooltip or ZGV_T("Scan the whole Auction House. May take some time.")) 
 			:Show() 
 			end)
 		:SetScript("OnLeave",function(self) GameTooltip:Hide() end)
 	.__END
-	MF.ScanButton.tooltip = "Scan the whole Auction House. May take some time."
+	MF.ScanButton.tooltip = ZGV_T("Scan the whole Auction House. May take some time.")
 
 	Appraiser.Inventory_Frame = self:MakeInventoryTable()
 	Appraiser.Buy_Frame = self:MakeBuyTable()
@@ -332,7 +332,7 @@ function Appraiser:MakeOptionsButton()
 		:SetScript("OnDragStop", function(self) self:GetParent().buttonDragging=false end)
 		:SetScript("OnEnter",function(self) 
 			CHAIN(GameTooltip):SetOwner(self, "ANCHOR_TOP") 
-			:SetText("Toggle Auction Tools") 
+			:SetText(ZGV_T("Toggle Auction Tools")) 
 			:Show() 
 			end)
 		:SetScript("OnLeave",function(self) GameTooltip:Hide() end)
@@ -428,7 +428,7 @@ function Appraiser:MakeBuyTable()
 		:SetHighlightBackdropColor(0,0,0,0)
 		:SetNormalBackdropColor(0,0,0,0)
 		:SetBackdropBorderColor(0,0,0,0)
-		:SetText("Use the Auctions section\nof the Gold Guide Menu\nto add items to this shopping list.")
+		:SetText(ZGV_T("Use the Auctions section\nof the Gold Guide Menu\nto add items to this shopping list."))
 		:Show()
 	.__END
 
@@ -469,7 +469,7 @@ function Appraiser:SetCurrentTab(tabname)
 		self.MainFrame:Show()
 	end
 
-	local windows = {Buy="Buy",Inventory="Sell"}
+	local windows = {Buy=ZGV_T("Buy"),Inventory=ZGV_T("Sell")}
 	for framename,framedispname in pairs(windows) do
 		self[framename.."_Frame"]:Hide()
 	end
@@ -519,11 +519,11 @@ local function OldColor(timestamp,red,yellow)
 end
 
 local message_type_labels = {
-	success="|cff00ff00SUCCESS:|r",
-	error="|cffff0000ERROR:|r",
-	alert="|cffff8800ALERT:|r",
-	scanning1="|cffbbaa00SCANNING:|r",
-	scanning2="|cff00aa00SCANNING:|r",
+	success=ZGV_T("|cff00ff00SUCCESS:|r"),
+	error=ZGV_T("|cffff0000ERROR:|r"),
+	alert=ZGV_T("|cffff8800ALERT:|r"),
+	scanning1=ZGV_T("|cffbbaa00SCANNING:|r"),
+	scanning2=ZGV_T("|cff00aa00SCANNING:|r"),
 }
 
 function Appraiser:UpdateTimeStamp()
@@ -548,11 +548,11 @@ function Appraiser:UpdateTimeStamp()
 	end
 	--]]
 	if (Scan.queried_by_name or Scan.queried_by_partial_name or Scan.queried_by_link) and Scan.scan_pages>1 then
-		page_text = (" - page %d of %d"):format(Scan.scan_page,Scan.scan_pages)
+		page_text = (ZGV_T(" - page %d of %d")):format(Scan.scan_page,Scan.scan_pages)
 	end
 	--page_text = Scan.scan_page
 
-	local data_text = "All auctions"
+	local data_text = ZGV_T("All auctions")
 	if (Scan.queried_by_name or Scan.queried_by_partial_name or Scan.queried_by_link) then
 		data_text = (Scan.queried_by_name or Scan.queried_by_partial_name or Scan.queried_by_link) or ""
 	elseif self.manualScanning then
@@ -589,17 +589,17 @@ function Appraiser:UpdateTimeStamp()
 		if (Scan.queried_by_name or Scan.queried_by_partial_name or Scan.queried_by_link) then
 			timestamptext = preprogress .. data_text .. page_text .. (ZGV.db.profile.debug_display and " [stage 1/3: querying]" or "") .. progress
 		else
-			timestamptext = preprogress .. data_text .. (ZGV.db.profile.debug_display and " [stage 1/3: querying]" or " - initiating...")
+			timestamptext = preprogress .. data_text .. (ZGV.db.profile.debug_display and " [stage 1/3: querying]" or ZGV_T(" - initiating..."))
 		end
 	elseif Scan.state =="SS_RECEIVING" then
 		updateTitletext = message_type_labels.scanning2
-		timestamptext = preprogress .. data_text .. page_text .. (ZGV.db.profile.debug_display and " [stage 1b/3: receiving]" or " - receiving...")
+		timestamptext = preprogress .. data_text .. page_text .. (ZGV.db.profile.debug_display and " [stage 1b/3: receiving]" or ZGV_T(" - receiving..."))
 	elseif Scan.state =="SS_SCANNING" or Scan.state =="SS_SCANSINGLE" then
 		updateTitletext = message_type_labels.scanning2
-		timestamptext = preprogress .. data_text .. page_text .. (ZGV.db.profile.debug_display and " [stage 2/3: scanning]" or " - processing:") .. progress
+		timestamptext = preprogress .. data_text .. page_text .. (ZGV.db.profile.debug_display and " [stage 2/3: scanning]" or ZGV_T(" - processing:")) .. progress
 	elseif Scan.state =="SS_ANALYZING" then
 		updateTitletext = message_type_labels.scanning2
-		timestamptext = preprogress .. data_text .. page_text .. (ZGV.db.profile.debug_display and " [stage 3/3: analyzing]" or " - analyzing:") .. progress
+		timestamptext = preprogress .. data_text .. page_text .. (ZGV.db.profile.debug_display and " [stage 3/3: analyzing]" or ZGV_T(" - analyzing:")) .. progress
 	elseif Scan.state =="SS_MESSAGE" then
 		updateTitletext = message_type_labels[(Scan.message_data and Scan.message_data.kind) or "error"]
 		timestamptext = Scan.message_data and Scan.message_data.msg or ""
@@ -640,24 +640,24 @@ function Appraiser:UpdateButtonStates()
 	scanButton:SetAlpha(busy and 0.7 or 1)
 
 	if Scan:BlockNeutral() then
-		scanButton.tooltip = "Scanning is disabled on neutral Auction House."
-		scanButton:SetText("Scan disabled")
+		scanButton.tooltip = ZGV_T("Scanning is disabled on neutral Auction House.")
+		scanButton:SetText(ZGV_T("Scan disabled"))
 		scanButton:SetTextColor(1,1,1,0.5)
 		setButtonEnabled(false)
 		scanButton:SetAlpha(0.7)
 	elseif busy then
-		scanButton.tooltip = "Auction scan already in progress."
-		scanButton:SetText("Scanning")
+		scanButton.tooltip = ZGV_T("Auction scan already in progress.")
+		scanButton:SetText(ZGV_T("Scanning"))
 	elseif canFast then
-		scanButton.tooltip = "Scan the whole Auction House. May take some time."
-		scanButton:SetText("Full Scan")
+		scanButton.tooltip = ZGV_T("Scan the whole Auction House. May take some time.")
+		scanButton:SetText(ZGV_T("Full Scan"))
 	else
 		if self.ActiveTab == "Inventory" then
-			scanButton.tooltip = "Run refresh scan for all visible inventory items."
-			scanButton:SetText("Appraise all")
+			scanButton.tooltip = ZGV_T("Run refresh scan for all visible inventory items.")
+			scanButton:SetText(ZGV_T("Appraise all"))
 		else
-			scanButton.tooltip = "Full scan is not possible at this time."
-			scanButton:SetText("Full Scan")
+			scanButton.tooltip = ZGV_T("Full scan is not possible at this time.")
+			scanButton:SetText(ZGV_T("Full Scan"))
 			scanButton:SetTextColor(1,1,1,0.5)
 			setButtonEnabled(false)
 			scanButton:SetAlpha(0.7)
@@ -726,7 +726,7 @@ end
 
 function Appraiser:ShowDisabledTooltip(object)
 	GameTooltip:SetOwner(object,"ANCHOR_RIGHT") 
-	GameTooltip:SetText("Due to a bug in Blizzard's in Auction House functionality,\npets and equipment can only be posted one by one.") 
+	GameTooltip:SetText(ZGV_T("Due to a bug in Blizzard's in Auction House functionality,\npets and equipment can only be posted one by one.")) 
 	GameTooltip:Show()
 end
 

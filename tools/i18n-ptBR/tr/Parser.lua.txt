@@ -1,0 +1,2 @@
+# Parser.lua: only the visible goal text; syntax patterns and author-facing errors stay in English
+1054.1 = Equipar 

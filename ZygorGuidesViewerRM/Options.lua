@@ -315,6 +315,16 @@ function me:Options_DefineOptions()
 			self.db.profile.anchor_arrow = { point="CENTER", relPoint="BOTTOMLEFT", x=x, y=y }
 		end
 	end
+	StaticPopupDialogs["ZGV_LANGUAGE_RELOAD"] = {
+		text = "Idioma / Language: %s\n\nRecarregar a interface agora para aplicar?\nReload the UI now to apply?",
+		button1 = YES,
+		button2 = NO,
+		OnAccept = function() ReloadUI() end,
+		timeout = 0,
+		whileDead = 1,
+		hideOnEscape = 1,
+	}
+
 	self.options = {
 		type='group',
 		name = settings_title,
@@ -339,28 +349,28 @@ function me:Options_DefineOptions()
 				order = 2.2,
 				type = "description",
 				name = function()
-					local title = ZGV.CurrentGuideName or "No guide selected"
-					return ("Current Guide: |cffffff88%s|r"):format(title)
+					local title = ZGV.CurrentGuideName or ZGV_T("No guide selected")
+					return (ZGV_T("Current Guide: |cffffff88%s|r")):format(title)
 				end,
 				width = "full",
 			},
 			guidenote = {
 				order = 2.25,
 				type = "description",
-				name = "The legacy guide dropdown was removed from Options because it does not scale well with the full guide library. Use Guide Browser to browse and switch guides.",
+				name = ZGV_T("The legacy guide dropdown was removed from Options because it does not scale well with the full guide library. Use Guide Browser to browse and switch guides."),
 				width = "double",
 			},
 			classicoptionsonly = {
 				order = 2.27,
 				type = "toggle",
-				name = "Use classic settings panels",
-				desc = "Open Zygor settings buttons in Interface > AddOns > Zygor instead of the remastered settings view. Use this if the remastered settings view crashes your client. Guide browsing stays available.",
+				name = ZGV_T("Use classic settings panels"),
+				desc = ZGV_T("Open Zygor settings buttons in Interface > AddOns > Zygor instead of the remastered settings view. Use this if the remastered settings view crashes your client. Guide browsing stays available."),
 				width = "full",
 			},
 			openguidebrowser = {
 				order = 2.3,
 				type = "execute",
-				name = "Open Guide Browser",
+				name = ZGV_T("Open Guide Browser"),
 				func = function()
 					local ACD = LibStub and LibStub("AceConfigDialog-3.0", true)
 					if ACD and ACD.OpenFrames then
@@ -381,6 +391,30 @@ function me:Options_DefineOptions()
 					end, 0)
 				end,
 				width = "normal",
+			},
+			language = {
+				order = 2.35,
+				type = "select",
+				name = "Idioma / Language",
+				desc = "Português (Brasil) ou English. A troca exige recarregar a interface.\nPortuguese (Brazil) or English. Changing it requires reloading the UI.",
+				values = { pt = "Português (Brasil)", en = "English" },
+				width = "double",
+				get = function()
+					local name, _, _, enabled = GetAddOnInfo("ZygorGuidesViewerRM_PTBR")
+					if not name then return ZGV_LANG_PT and "pt" or "en" end
+					return enabled and "pt" or "en"
+				end,
+				set = function(_, value)
+					local pack = "ZygorGuidesViewerRM_PTBR"
+					if not GetAddOnInfo(pack) then
+						self:Print("Language mini-addon not found (install the ZygorGuidesViewerRM_PTBR folder) / Mini-addon de idioma não encontrado: " .. pack)
+						return
+					end
+					if value == "pt" then EnableAddOn(pack) else DisableAddOn(pack) end
+					if (value == "pt") ~= (ZGV_LANG_PT and true or false) then
+						StaticPopup_Show("ZGV_LANGUAGE_RELOAD", value == "pt" and "Português (Brasil)" or "English")
+					end
+				end,
 			},
 			steps = {
 				order=3.1,
@@ -412,7 +446,7 @@ function me:Options_DefineOptions()
 				desc = L["opt_debug_desc"],
 				type = 'toggle',
 				get = function() return self.db.profile.debug end,
-				set = function() self.db.profile.debug = not self.db.profile.debug  ZGV:Print("Debugging: "..(self.db.profile.debug and "|cff00ff88ON|r" or "|cffff0055OFF|r")) end,
+				set = function() self.db.profile.debug = not self.db.profile.debug  ZGV:Print(ZGV_T("Debugging: ")..(self.db.profile.debug and ZGV_T("|cff00ff88ON|r") or ZGV_T("|cffff0055OFF|r"))) end,
 				order=-10,
 			},
 		}
@@ -1145,8 +1179,8 @@ function me:Options_DefineOptions()
 				order = 3.8,
 			},
 			auction_button_show = {
-				name = "Show Zygor Auction House button",
-				desc = "Show the movable Zygor button on the Auction House frame.",
+				name = ZGV_T("Show Zygor Auction House button"),
+				desc = ZGV_T("Show the movable Zygor button on the Auction House frame."),
 				type = "toggle",
 				get = Getter_Simple,
 				set = function(i,v)
@@ -1367,7 +1401,7 @@ function me:Options_DefineOptions()
 				order = 1.1,
 				type = "description",
 				name = function()
-					return ("Version: %s"):format(tostring(self.version or "unknown"))
+					return (ZGV_T("Version: %s")):format(tostring(self.version or ZGV_T("unknown")))
 				end,
 				width = "full",
 			},
@@ -1375,7 +1409,7 @@ function me:Options_DefineOptions()
 				order = 1.2,
 				type = "description",
 				name = function()
-					return ("Revision: %s"):format(tostring(self.revision or "unknown"))
+					return (ZGV_T("Revision: %s")):format(tostring(self.revision or ZGV_T("unknown")))
 				end,
 				width = "full",
 			},
@@ -2618,7 +2652,7 @@ function me:Options_DefineOptions()
 				order=21,
 			},
 			fakelevel = {
-				name = "Fake level (0=disable)",
+				name = ZGV_T("Fake level (0=disable)"),
 				type = 'range',
 				min = 0,
 				max = 80,
@@ -2634,8 +2668,8 @@ function me:Options_DefineOptions()
 
 	-- ===================== GEAR ADVISOR =====================
 	self.optionsgear = {
-		name = "Gear Advisor",
-		desc = "Gear scoring and upgrade detection",
+		name = ZGV_T("Gear Advisor"),
+		desc = ZGV_T("Gear scoring and upgrade detection"),
 		type = 'group',
 		order = 4.1,
 		handler = self,
@@ -2645,17 +2679,17 @@ function me:Options_DefineOptions()
 			desc = {
 				order = 1,
 				type = "description",
-				name = "Set how Zygor detects upgrades, how it prompts you, and which sources Gear Finder should search.",
+				name = ZGV_T("Set how Zygor detects upgrades, how it prompts you, and which sources Gear Finder should search."),
 			},
 			detection_header = {
 				order = 1.5,
 				type = "header",
-				name = "Detection",
+				name = ZGV_T("Detection"),
 			},
 			autogear = {
 				order = 2,
-				name = "Enable Gear Advisor",
-				desc = "Enable item scoring and upgrade detection",
+				name = ZGV_T("Enable Gear Advisor"),
+				desc = ZGV_T("Enable item scoring and upgrade detection"),
 				type = "toggle",
 				width = "full",
 				set = function(i,v)
@@ -2667,24 +2701,24 @@ function me:Options_DefineOptions()
 			},
 			itemscore_tooltips = {
 				order = 3,
-				name = "Show ItemScore on Tooltips",
-				desc = "Show upgrade percentage on item tooltips",
+				name = ZGV_T("Show ItemScore on Tooltips"),
+				desc = ZGV_T("Show upgrade percentage on item tooltips"),
 				type = "toggle",
 				width = "full",
 				disabled = function() return not self.db.profile.autogear end,
 			},
 			itemscore_tooltips_allbuilds = {
 				order = 3.1,
-				name = "Show All Builds on Tooltips",
-				desc = "Show upgrade or downgrade lines for all build and role profiles of your class on item tooltips. Suggestions and equip prompts still use only the active profile.",
+				name = ZGV_T("Show All Builds on Tooltips"),
+				desc = ZGV_T("Show upgrade or downgrade lines for all build and role profiles of your class on item tooltips. Suggestions and equip prompts still use only the active profile."),
 				type = "toggle",
 				width = "full",
 				disabled = function() return not self.db.profile.autogear or not self.db.profile.itemscore_tooltips end,
 			},
 			active_gear_profile = {
 				order = 2.1,
-				name = "Active Gear Profile",
-				desc = "Choose the build and role Gear Advisor uses for this talent group. Automatic follows the dominant talent tree; a manual choice is remembered separately for each dual-talent group.",
+				name = ZGV_T("Active Gear Profile"),
+				desc = ZGV_T("Choose the build and role Gear Advisor uses for this talent group. Automatic follows the dominant talent tree; a manual choice is remembered separately for each dual-talent group."),
 				type = "select",
 				values = function()
 					local values = {}
@@ -2692,7 +2726,7 @@ function me:Options_DefineOptions()
 					local classToken = ZGV.ItemScore.playerclass or select(2, UnitClass("player"))
 					local classNum = ZGV.ClassToNumber and ZGV.ClassToNumber[classToken]
 					local detectedBuild, usesFallback = ZGV.ItemScore:DetectActiveBuild(classToken, ZGV.ItemScore.playerlevel or UnitLevel("player"))
-					values[0] = "Automatic (" .. ZGV.ItemScore:GetBuildName(classToken, detectedBuild, ZGV.ItemScore.playerlevel, usesFallback) .. ")"
+					values[0] = ZGV_T("Automatic (") .. ZGV.ItemScore:GetBuildName(classToken, detectedBuild, ZGV.ItemScore.playerlevel, usesFallback) .. ")"
 					for buildNum, buildName in pairs((ZGV.ItemScore.Builds and classNum and ZGV.ItemScore.Builds[classNum]) or {}) do
 						values[buildNum] = buildName
 					end
@@ -2761,28 +2795,28 @@ function me:Options_DefineOptions()
 			prompting_header = {
 				order = 3.6,
 				type = "header",
-				name = "Prompting",
+				name = ZGV_T("Prompting"),
 			},
 			autogearauto = {
 				order = 4,
-				name = "Auto-equip Upgrades",
-				desc = "Automatically equip upgrades without asking (notification only)",
+				name = ZGV_T("Auto-equip Upgrades"),
+				desc = ZGV_T("Automatically equip upgrades without asking (notification only)"),
 				type = "toggle",
 				width = "full",
 				disabled = function() return not self.db.profile.autogear end,
 			},
 			masterloot_notices = {
 				order = 4.1,
-				name = "Show Master Loot Upgrade Notices",
-				desc = "Print a local Gear Advisor message when a visible master-loot item is a true upgrade for your active build.",
+				name = ZGV_T("Show Master Loot Upgrade Notices"),
+				desc = ZGV_T("Print a local Gear Advisor message when a visible master-loot item is a true upgrade for your active build."),
 				type = "toggle",
 				width = "full",
 				disabled = function() return not self.db.profile.autogear end,
 			},
 			masterloot_compare = {
 				order = 4.2,
-				name = "Include Compared Equipped Item in Master Loot Notices",
-				desc = "Include the equipped baseline item link in the local master-loot upgrade message when available.",
+				name = ZGV_T("Include Compared Equipped Item in Master Loot Notices"),
+				desc = ZGV_T("Include the equipped baseline item link in the local master-loot upgrade message when available."),
 				type = "toggle",
 				width = "full",
 				disabled = function() return not self.db.profile.autogear or not self.db.profile.masterloot_notices end,
@@ -2790,37 +2824,37 @@ function me:Options_DefineOptions()
 			vendorheader = {
 				order = 6,
 				type = "header",
-				name = "Vendor & Convenience",
+				name = ZGV_T("Vendor & Convenience"),
 			},
 			autosellgrey = {
 				order = 7,
-				name = "Auto-sell Grey Items",
-				desc = "Automatically sell grey (junk) items when visiting a vendor",
+				name = ZGV_T("Auto-sell Grey Items"),
+				desc = ZGV_T("Automatically sell grey (junk) items when visiting a vendor"),
 				type = "toggle",
 				width = "full",
 			},
 			autorepair = {
 				order = 8,
-				name = "Auto-repair",
-				desc = "Automatically repair gear when visiting a vendor",
+				name = ZGV_T("Auto-repair"),
+				desc = ZGV_T("Automatically repair gear when visiting a vendor"),
 				type = "select",
 				values = {
-					[1] = "Off",
-					[2] = "Use own gold",
-					[3] = "Guild bank first, then own",
-					[4] = "Own gold first, then guild",
+					[1] = ZGV_T("Off"),
+					[2] = ZGV_T("Use own gold"),
+					[3] = ZGV_T("Guild bank first, then own"),
+					[4] = ZGV_T("Own gold first, then guild"),
 				},
 				width = "double",
 			},
 			sources_desc = {
 				order = 9,
 				type = "description",
-				name = "Choose which dungeon and raid difficulties Gear Finder can suggest.",
+				name = ZGV_T("Choose which dungeon and raid difficulties Gear Finder can suggest."),
 			},
 			gear_tier_progression_mode = {
 				order = 9.5,
-				name = "Prefer tier progression",
-				desc = "Recommend upgrades from earlier accessible content tiers before higher catch-up tiers. Leave this off to keep the default best-path ranking.",
+				name = ZGV_T("Prefer tier progression"),
+				desc = ZGV_T("Recommend upgrades from earlier accessible content tiers before higher catch-up tiers. Leave this off to keep the default best-path ranking."),
 				type = "toggle",
 				width = "full",
 				set = function(i,v) Setter_Simple(i,v) if ZGV.ItemScore and ZGV.ItemScore.GearFinder then ZGV.ItemScore.GearFinder:RefreshAfterSourceSettingChange() end end,
@@ -2829,11 +2863,11 @@ function me:Options_DefineOptions()
 			dungeonheader = {
 				order = 10,
 				type = "header",
-				name = "Gear Finder Sources",
+				name = ZGV_T("Gear Finder Sources"),
 			},
 			gear_1 = {
 				order = 11,
-				name = "Normal Dungeons",
+				name = ZGV_T("Normal Dungeons"),
 				type = "toggle",
 				width = "double",
 				set = function(i,v) Setter_Simple(i,v) if ZGV.ItemScore and ZGV.ItemScore.GearFinder then ZGV.ItemScore.GearFinder:RefreshAfterSourceSettingChange() end end,
@@ -2841,7 +2875,7 @@ function me:Options_DefineOptions()
 			},
 			gear_2 = {
 				order = 12,
-				name = "Heroic Dungeons",
+				name = ZGV_T("Heroic Dungeons"),
 				type = "toggle",
 				width = "double",
 				set = function(i,v) Setter_Simple(i,v) if ZGV.ItemScore and ZGV.ItemScore.GearFinder then ZGV.ItemScore.GearFinder:RefreshAfterSourceSettingChange() end end,
@@ -2849,7 +2883,7 @@ function me:Options_DefineOptions()
 			},
 			gear_14 = {
 				order = 13,
-				name = "Normal Raids",
+				name = ZGV_T("Normal Raids"),
 				type = "toggle",
 				width = "double",
 				set = function(i,v) Setter_Simple(i,v) self.db.profile.gear_3=v self.db.profile.gear_4=v if ZGV.ItemScore and ZGV.ItemScore.GearFinder then ZGV.ItemScore.GearFinder:RefreshAfterSourceSettingChange() end end,
@@ -2857,7 +2891,7 @@ function me:Options_DefineOptions()
 			},
 			gear_15 = {
 				order = 14,
-				name = "Heroic Raids",
+				name = ZGV_T("Heroic Raids"),
 				type = "toggle",
 				width = "double",
 				set = function(i,v) Setter_Simple(i,v) self.db.profile.gear_5=v self.db.profile.gear_6=v if ZGV.ItemScore and ZGV.ItemScore.GearFinder then ZGV.ItemScore.GearFinder:RefreshAfterSourceSettingChange() end end,
@@ -2865,7 +2899,7 @@ function me:Options_DefineOptions()
 			},
 			gear_currency_rewards = {
 				order = 15,
-				name = "Currency Rewards",
+				name = ZGV_T("Currency Rewards"),
 				type = "toggle",
 				width = "double",
 				set = function(i,v) Setter_Simple(i,v) if ZGV.ItemScore and ZGV.ItemScore.GearFinder then ZGV.ItemScore.GearFinder:RefreshAfterSourceSettingChange() end end,
@@ -2873,8 +2907,8 @@ function me:Options_DefineOptions()
 			},
 			gear_crafted_items = {
 				order = 16,
-				name = "Crafted Items",
-				desc = "Include crafted gear, including tradable items made by other players. Disable this to look for upgrades from the remaining enabled sources.",
+				name = ZGV_T("Crafted Items"),
+				desc = ZGV_T("Include crafted gear, including tradable items made by other players. Disable this to look for upgrades from the remaining enabled sources."),
 				type = "toggle",
 				width = "double",
 				set = function(i,v) Setter_Simple(i,v) if ZGV.ItemScore and ZGV.ItemScore.GearFinder then ZGV.ItemScore.GearFinder:RefreshAfterSourceSettingChange() end end,
@@ -2882,8 +2916,8 @@ function me:Options_DefineOptions()
 			},
 			gear_crafted_classic_items = {
 				order = 16.1,
-				name = "Classic Crafts",
-				desc = "Include crafted items introduced in original World of Warcraft. Enabled by default. This is a manual availability preference for Gear Finder and does not detect server progression automatically.",
+				name = ZGV_T("Classic Crafts"),
+				desc = ZGV_T("Include crafted items introduced in original World of Warcraft. Enabled by default. This is a manual availability preference for Gear Finder and does not detect server progression automatically."),
 				type = "toggle",
 				width = "normal",
 				set = function(i,v) Setter_Simple(i,v) if ZGV.ItemScore and ZGV.ItemScore.GearFinder then ZGV.ItemScore.GearFinder:RefreshAfterSourceSettingChange() end end,
@@ -2891,8 +2925,8 @@ function me:Options_DefineOptions()
 			},
 			gear_crafted_tbc_items = {
 				order = 16.2,
-				name = "TBC Crafts",
-				desc = "Include crafted items introduced in The Burning Crusade, even when their required character level is lower. Disable this when that expansion is still locked on a progression realm.",
+				name = ZGV_T("TBC Crafts"),
+				desc = ZGV_T("Include crafted items introduced in The Burning Crusade, even when their required character level is lower. Disable this when that expansion is still locked on a progression realm."),
 				type = "toggle",
 				width = "normal",
 				set = function(i,v) Setter_Simple(i,v) if ZGV.ItemScore and ZGV.ItemScore.GearFinder then ZGV.ItemScore.GearFinder:RefreshAfterSourceSettingChange() end end,
@@ -2900,8 +2934,8 @@ function me:Options_DefineOptions()
 			},
 			gear_crafted_wotlk_items = {
 				order = 16.3,
-				name = "WotLK Crafts",
-				desc = "Include crafted items introduced in Wrath of the Lich King, even when their required character level is lower. Disable this until Wrath content is unlocked on a progression realm.",
+				name = ZGV_T("WotLK Crafts"),
+				desc = ZGV_T("Include crafted items introduced in Wrath of the Lich King, even when their required character level is lower. Disable this until Wrath content is unlocked on a progression realm."),
 				type = "toggle",
 				width = "normal",
 				set = function(i,v) Setter_Simple(i,v) if ZGV.ItemScore and ZGV.ItemScore.GearFinder then ZGV.ItemScore.GearFinder:RefreshAfterSourceSettingChange() end end,
@@ -2909,8 +2943,8 @@ function me:Options_DefineOptions()
 			},
 			gear_crafted_my_professions = {
 				order = 16.5,
-				name = "Only My Professions",
-				desc = "Limit crafted suggestions to your current professions, crafting skill, and specialization. Does not check whether you know the recipe or have the materials. Leave off to include eligible tradable crafts made by other players. This only filters Gear Finder; it does not change gear scores or auto-equipping.",
+				name = ZGV_T("Only My Professions"),
+				desc = ZGV_T("Limit crafted suggestions to your current professions, crafting skill, and specialization. Does not check whether you know the recipe or have the materials. Leave off to include eligible tradable crafts made by other players. This only filters Gear Finder; it does not change gear scores or auto-equipping."),
 				type = "toggle",
 				width = "double",
 				set = function(i,v) Setter_Simple(i,v) if ZGV.ItemScore and ZGV.ItemScore.GearFinder then ZGV.ItemScore.GearFinder:RefreshAfterSourceSettingChange() end end,
@@ -2918,8 +2952,8 @@ function me:Options_DefineOptions()
 			},
 			gear_crafted_leveling_items = {
 				order = 17,
-				name = "Crafted Leveling Gear",
-				desc = "Include crafted leveling gear from Classic, TBC, and WotLK, subject to your level and the other source filters.",
+				name = ZGV_T("Crafted Leveling Gear"),
+				desc = ZGV_T("Include crafted leveling gear from Classic, TBC, and WotLK, subject to your level and the other source filters."),
 				type = "toggle",
 				width = "double",
 				set = function(i,v) Setter_Simple(i,v) if ZGV.ItemScore and ZGV.ItemScore.GearFinder then ZGV.ItemScore.GearFinder:RefreshAfterSourceSettingChange() end end,
@@ -2927,8 +2961,8 @@ function me:Options_DefineOptions()
 			},
 			gear_crafted_pvp_items = {
 				order = 18,
-				name = "Crafted PvP Starter Sets",
-				desc = "Include level 78 crafted starter PvP sets such as Savage Saronite, Frostsavage, Eviscerator, Overcast, Swiftarrow, and Stormhide.",
+				name = ZGV_T("Crafted PvP Starter Sets"),
+				desc = ZGV_T("Include level 78 crafted starter PvP sets such as Savage Saronite, Frostsavage, Eviscerator, Overcast, Swiftarrow, and Stormhide."),
 				type = "toggle",
 				width = "double",
 				set = function(i,v) Setter_Simple(i,v) if ZGV.ItemScore and ZGV.ItemScore.GearFinder then ZGV.ItemScore.GearFinder:RefreshAfterSourceSettingChange() end end,
@@ -2937,18 +2971,18 @@ function me:Options_DefineOptions()
 			maintenance_header = {
 				order = 19,
 				type = "header",
-				name = "Maintenance",
+				name = ZGV_T("Maintenance"),
 			},
 			clearnotupgrades = {
 				order = 20,
-				name = "Reset Declined Upgrades",
-				desc = "Clear the list of items you previously declined",
+				name = ZGV_T("Reset Declined Upgrades"),
+				desc = ZGV_T("Clear the list of items you previously declined"),
 				type = "execute",
 				func = function()
 					if ZGV.db.char.badupgrade then
 						wipe(ZGV.db.char.badupgrade)
 					end
-					ZGV:Print("Declined upgrades list cleared.")
+					ZGV:Print(ZGV_T("Declined upgrades list cleared."))
 				end,
 				disabled = function() return not self.db.profile.autogear end,
 			},
@@ -3015,14 +3049,14 @@ function me:Options_DefineOptions()
 
 		local function GetSelectedBuildInfo()
 			MarkStatWeightsStage("shared", "GetSelectedBuildInfo")
-			if not ZGV.ItemScore then return "Unknown class", "Unknown spec", nil, nil end
+			if not ZGV.ItemScore then return ZGV_T("Unknown class"), ZGV_T("Unknown spec"), nil, nil end
 			if ZGV.ItemScore.EnsureSelectedWeightTarget then
 				ZGV.ItemScore:EnsureSelectedWeightTarget()
 			end
 			local classNum = SafeNumber(ZGV.db.char.gear_selected_class, ZGV.ItemScore.playerclassNum or 1) or 1
 			local buildNum = SafeNumber(ZGV.db.char.gear_selected_build, SafeNumber(ZGV.db.char.gear_active_build, 1)) or 1
 			local classToken = GetClassTagFromID(classNum)
-			local className = classToken == "CUSTOM" and "Custom" or (LOCALIZED_CLASS_NAMES_MALE and classToken and LOCALIZED_CLASS_NAMES_MALE[classToken]) or (LOCALIZED_CLASS_NAMES_FEMALE and classToken and LOCALIZED_CLASS_NAMES_FEMALE[classToken]) or classToken or "Unknown class"
+			local className = classToken == "CUSTOM" and ZGV_T("Custom") or (LOCALIZED_CLASS_NAMES_MALE and classToken and LOCALIZED_CLASS_NAMES_MALE[classToken]) or (LOCALIZED_CLASS_NAMES_FEMALE and classToken and LOCALIZED_CLASS_NAMES_FEMALE[classToken]) or classToken or ZGV_T("Unknown class")
 			local fakeLevel = SafeNumber(ZGV.db and ZGV.db.char and ZGV.db.char.fakelevel, 0) or 0
 			local level = (fakeLevel > 0 and fakeLevel) or UnitLevel("player")
 			local classRules = classToken and ZGV.ItemScore.rules and ZGV.ItemScore.rules[classToken]
@@ -3035,10 +3069,10 @@ function me:Options_DefineOptions()
 
 		local function GetActiveBuildInfo()
 			MarkStatWeightsStage("shared", "GetActiveBuildInfo")
-			if not ZGV.ItemScore then return "Unknown class", "Unknown spec", nil, nil end
+			if not ZGV.ItemScore then return ZGV_T("Unknown class"), ZGV_T("Unknown spec"), nil, nil end
 			local classNum = ZGV.ItemScore.playerclassNum or 1
 			local classToken = ZGV.ItemScore.playerclass or GetClassTagFromID(classNum)
-			local className = classToken == "CUSTOM" and "Custom" or (LOCALIZED_CLASS_NAMES_MALE and classToken and LOCALIZED_CLASS_NAMES_MALE[classToken]) or (LOCALIZED_CLASS_NAMES_FEMALE and classToken and LOCALIZED_CLASS_NAMES_FEMALE[classToken]) or classToken or "Unknown class"
+			local className = classToken == "CUSTOM" and ZGV_T("Custom") or (LOCALIZED_CLASS_NAMES_MALE and classToken and LOCALIZED_CLASS_NAMES_MALE[classToken]) or (LOCALIZED_CLASS_NAMES_FEMALE and classToken and LOCALIZED_CLASS_NAMES_FEMALE[classToken]) or classToken or ZGV_T("Unknown class")
 			local buildNum = SafeNumber(ZGV.db.char.gear_active_build, 1) or 1
 			local fakeLevel = SafeNumber(ZGV.db and ZGV.db.char and ZGV.db.char.fakelevel, 0) or 0
 			local level = (fakeLevel > 0 and fakeLevel) or UnitLevel("player")
@@ -3047,7 +3081,7 @@ function me:Options_DefineOptions()
 				buildNum = activeOverride
 			end
 			local buildName = ZGV.ItemScore:GetBuildName(classNum, buildNum, level, ZGV.ItemScore.activeBuildUsesFallback)
-			local source = activeOverride and "Override" or "Detected"
+			local source = activeOverride and ZGV_T("Override") or ZGV_T("Detected")
 			return className, buildName, classToken, buildNum, source
 		end
 
@@ -3055,17 +3089,17 @@ function me:Options_DefineOptions()
 			desc = {
 				order = 1,
 				type = "description",
-				name = "Adjust how strongly each stat affects item scoring for a selected class and spec. Higher values make the stat more important.",
+				name = ZGV_T("Adjust how strongly each stat affects item scoring for a selected class and spec. Higher values make the stat more important."),
 			},
 			warning = {
 				order = 2,
 				type = "description",
-				name = "|cffff6600Warning:|r Changing stat weights is for advanced users. Incorrect values may cause bad gear suggestions.\n",
+				name = ZGV_T("|cffff6600Warning:|r Changing stat weights is for advanced users. Incorrect values may cause bad gear suggestions.\n"),
 			},
 			curated = {
 				order = 2.1,
 				type = "description",
-				name = "|cff88ccffRecommended defaults:|r Wrath stat weights are source-backed curated baselines intended for 3.3.5a. Most players should start here and only customize when they have a clear reason.\n",
+				name = ZGV_T("|cff88ccffRecommended defaults:|r Wrath stat weights are source-backed curated baselines intended for 3.3.5a. Most players should start here and only customize when they have a clear reason.\n"),
 			},
 			selectedsummary = {
 				order = 2.2,
@@ -3073,27 +3107,27 @@ function me:Options_DefineOptions()
 				name = WrapStatWeightsCallback("name", "selectedsummary", "", function()
 					local className, buildName, classToken, buildNum = GetSelectedBuildInfo()
 					local activeClassName, activeBuildName, activeClassToken, activeBuildNum, activeSource = GetActiveBuildInfo()
-					local status = "Curated defaults"
-					local source = ZGV.ItemScore and ZGV.ItemScore.GetRuleSourceLabel and ZGV.ItemScore:GetRuleSourceLabel(classToken, buildNum) or "Unverified local baseline"
+					local status = ZGV_T("Curated defaults")
+					local source = ZGV.ItemScore and ZGV.ItemScore.GetRuleSourceLabel and ZGV.ItemScore:GetRuleSourceLabel(classToken, buildNum) or ZGV_T("Unverified local baseline")
 					if ZGV.ItemScore and classToken and buildNum and ZGV.ItemScore.UsesCustomWeights and ZGV.ItemScore:UsesCustomWeights(classToken, buildNum) then
-						status = "Customized weights"
+						status = ZGV_T("Customized weights")
 					end
 					local activeLine = ""
 					if activeClassToken and activeBuildNum then
-						activeLine = ("|cff00ff00Active Profile:|r %s - %s |cff88cc88(%s)|r\n"):format(activeClassName, activeBuildName, activeSource or "Active")
+						activeLine = (ZGV_T("|cff00ff00Active Profile:|r %s - %s |cff88cc88(%s)|r\n")):format(activeClassName, activeBuildName, activeSource or ZGV_T("Active"))
 					end
-					return ("%s|cffccccccSelected profile:|r %s - %s\n|cffccccccStatus:|r %s\n|cffccccccDefault source:|r %s\n"):format(activeLine, className, buildName, status, source)
+					return (ZGV_T("%s|cffccccccSelected profile:|r %s - %s\n|cffccccccStatus:|r %s\n|cffccccccDefault source:|r %s\n")):format(activeLine, className, buildName, status, source)
 				end, SafeString),
 			},
 			selectionnote = {
 				order = 2.25,
 				type = "description",
-				name = "|cff88ccffNote:|r Selecting another class or spec here changes which weights you edit. It does not change your active build for tooltips or gear recommendations unless you enable the active-build override for your own class.\n",
+				name = ZGV_T("|cff88ccffNote:|r Selecting another class or spec here changes which weights you edit. It does not change your active build for tooltips or gear recommendations unless you enable the active-build override for your own class.\n"),
 			},
 			classdesc = {
 				order = 3,
 				type = "header",
-				name = "Class & Spec Selection",
+				name = ZGV_T("Class & Spec Selection"),
 			},
 		}
 
@@ -3101,7 +3135,7 @@ function me:Options_DefineOptions()
 		IS_args.gear_selected_class = {
 			order = 4,
 			type = "select",
-			name = "Class",
+			name = ZGV_T("Class"),
 			values = WrapStatWeightsCallback("values", "gear_selected_class", {}, function()
 				local male = LOCALIZED_CLASS_NAMES_MALE or {}
 				local female = LOCALIZED_CLASS_NAMES_FEMALE or {}
@@ -3116,7 +3150,7 @@ function me:Options_DefineOptions()
 					[8] = male.MAGE or female.MAGE or "Mage",
 					[9] = male.WARLOCK or female.WARLOCK or "Warlock",
 					[10] = male.DRUID or female.DRUID or "Druid",
-					[11] = "Custom",
+					[11] = ZGV_T("Custom"),
 				}
 			end, SafeTable),
 		set = WrapStatWeightsSet("gear_selected_class", function(i,v)
@@ -3159,7 +3193,7 @@ function me:Options_DefineOptions()
 		IS_args.gear_selected_build = {
 			order = 5,
 			type = "select",
-			name = "Build / Role",
+			name = ZGV_T("Build / Role"),
 			values = WrapStatWeightsCallback("values", "gear_selected_build", {}, function()
 				if not ZGV.ItemScore or not ZGV.ItemScore.Builds then return {} end
 				local classId = ZGV.db.char.gear_selected_class or 1
@@ -3204,8 +3238,8 @@ function me:Options_DefineOptions()
 		IS_args.activebuildoverride = {
 			order = 5.5,
 			type = "toggle",
-			name = "Override Automatic Detection",
-			desc = "Use the selected build and role from this panel for tooltips and gear recommendations in the current talent group until disabled.",
+			name = ZGV_T("Override Automatic Detection"),
+			desc = ZGV_T("Use the selected build and role from this panel for tooltips and gear recommendations in the current talent group until disabled."),
 			get = WrapStatWeightsCallback("get", "activebuildoverride", false, function()
 				if not ZGV.ItemScore then return false end
 				return ZGV.ItemScore:GetActiveBuildOverrideBuild(ZGV.ItemScore.playerclass, ZGV.ItemScore:GetActiveTalentGroupKey()) and true or false
@@ -3242,8 +3276,8 @@ function me:Options_DefineOptions()
 		IS_args.activatebuild = {
 			order = 6,
 			type = "execute",
-			name = "Set as Active Spec Weight",
-			desc = "Use these stat weights for gear scoring",
+			name = ZGV_T("Set as Active Spec Weight"),
+			desc = ZGV_T("Use these stat weights for gear scoring"),
 			func = WrapStatWeightsSet("activatebuild", function()
 				local classNum = tonumber(ZGV.db.char.gear_selected_class)
 				local buildNum = tonumber(ZGV.db.char.gear_selected_build)
@@ -3256,7 +3290,7 @@ function me:Options_DefineOptions()
 						ZGV.db.char.gear_pre_talent_override_build = buildNum
 						ZGV.db.char.gear_pre_talent_override_explicit = true
 						ZGV.ItemScore:RefreshAfterWeightChange(ZGV.ItemScore.playerclass, buildNum)
-						ZGV:Print("Active stat weight set changed.")
+						ZGV:Print(ZGV_T("Active stat weight set changed."))
 						return
 					end
 					ZGV.ItemScore:ClearPreTalentOverride()
@@ -3279,7 +3313,7 @@ function me:Options_DefineOptions()
 		IS_args.activelabel = {
 			order = 6.1,
 			type = "description",
-			name = "|cff00ff00This is your active stat weight set.|r",
+			name = ZGV_T("|cff00ff00This is your active stat weight set.|r"),
 			hidden = WrapStatWeightsCallback("hidden", "activelabel", true, function()
 				if not ZGV.ItemScore then return true end
 				local isOwnClass = (tonumber(ZGV.db.char.gear_selected_class) == ZGV.ItemScore.playerclassNum)
@@ -3292,13 +3326,13 @@ function me:Options_DefineOptions()
 		IS_args.visibilityheader = {
 			order = 7,
 			type = "header",
-			name = "Visibility",
+			name = ZGV_T("Visibility"),
 		}
 
 		IS_args.showallstats = {
 			order = 8,
-			name = "Show All Stats",
-			desc = "Show all stat weight fields, even those not used by this spec",
+			name = ZGV_T("Show All Stats"),
+			desc = ZGV_T("Show all stat weight fields, even those not used by this spec"),
 			type = "toggle",
 			width = "full",
 			get = WrapStatWeightsCallback("get", "showallstats", false, function() return ZGV.db.profile.gearshowallstats end, function(value) return SafeBool(value, false) end),
@@ -3325,16 +3359,16 @@ function me:Options_DefineOptions()
 		IS_args.weightsheader = {
 			order = 9,
 			type = "header",
-			name = "Stat Weights",
+			name = ZGV_T("Stat Weights"),
 		}
-		IS_args.spacer = { order = 9.1, type = "description", name = "Edit the weight for each stat below. Higher values make the stat more valuable for scoring.\n", width = "full" }
+		IS_args.spacer = { order = 9.1, type = "description", name = ZGV_T("Edit the weight for each stat below. Higher values make the stat more valuable for scoring.\n"), width = "full" }
 		IS_args.recommendedsummary = {
 			order = 9.2,
 			type = "description",
 			name = WrapStatWeightsCallback("name", "recommendedsummary", "", function()
 				local className, buildName, classToken, buildNum = GetSelectedBuildInfo()
-				local source = ZGV.ItemScore and ZGV.ItemScore.GetRuleSourceLabel and ZGV.ItemScore:GetRuleSourceLabel(classToken, buildNum) or "Unverified local baseline"
-				return ("|cff88ccffRecommended Weights|r\nThese values are the curated WotLK baseline for %s - %s.\n|cffccccccSource basis:|r %s\nUse the reset button to return to this baseline after experimenting.\n"):format(className, buildName, source)
+				local source = ZGV.ItemScore and ZGV.ItemScore.GetRuleSourceLabel and ZGV.ItemScore:GetRuleSourceLabel(classToken, buildNum) or ZGV_T("Unverified local baseline")
+				return (ZGV_T("|cff88ccffRecommended Weights|r\nThese values are the curated WotLK baseline for %s - %s.\n|cffccccccSource basis:|r %s\nUse the reset button to return to this baseline after experimenting.\n")):format(className, buildName, source)
 			end, SafeString),
 			width = "full",
 		}
@@ -3355,9 +3389,9 @@ function me:Options_DefineOptions()
 					IS_args[headerKey] = {
 						order = order,
 						type = "header",
-						name = WrapStatWeightsCallback("name", headerKey, "Stat Weights", function()
+						name = WrapStatWeightsCallback("name", headerKey, ZGV_T("Stat Weights"), function()
 							local buildName = ZGV.ItemScore.Builds[classNum] and ZGV.ItemScore.Builds[classNum][specnum] or ("Spec "..specnum)
-							return buildName .. " Stat Weights"
+							return buildName .. ZGV_T(" Stat Weights")
 						end, SafeString),
 						hidden = WrapStatWeightsCallback("hidden", headerKey, true, function()
 							return not ((tonumber(ZGV.db.char.gear_selected_class) == classNum) and (tonumber(ZGV.db.char.gear_selected_build) == specnum))
@@ -3369,7 +3403,7 @@ function me:Options_DefineOptions()
 					IS_args[customKey] = {
 						order = order,
 						type = "description",
-						name = "|cffff8800You are using customised stat weights.|r",
+						name = ZGV_T("|cffff8800You are using customised stat weights.|r"),
 						hidden = WrapStatWeightsCallback("hidden", customKey, true, function()
 							if not ((tonumber(ZGV.db.char.gear_selected_class) == classNum) and (tonumber(ZGV.db.char.gear_selected_build) == specnum)) then return true end
 							return not (ZGV.ItemScore and ZGV.ItemScore.UsesCustomWeights and ZGV.ItemScore:UsesCustomWeights(class, specnum))
@@ -3439,7 +3473,7 @@ function me:Options_DefineOptions()
 					IS_args[resetKey] = {
 						order = order,
 						type = "execute",
-						name = "Reset to Defaults",
+						name = ZGV_T("Reset to Defaults"),
 						func = WrapStatWeightsSet(resetKey, function()
 							local prefix = "gear_"..class.."_"..specnum.."_"
 							for idx, kw in pairs(ZGV.ItemScore.Keywords) do
@@ -3460,8 +3494,8 @@ function me:Options_DefineOptions()
 		end
 
 		self.optionsitemscore = {
-			name = "Stat Weights",
-			desc = "Edit stat weights for item scoring",
+			name = ZGV_T("Stat Weights"),
+			desc = ZGV_T("Edit stat weights for item scoring"),
 			type = 'group',
 			order = 4.2,
 			handler = self,
@@ -3545,7 +3579,7 @@ function me:OpenStepDisplayOptions()
 		InterfaceOptionsFrame_OpenToCategory(panel)
 		return
 	end
-	InterfaceOptionsFrame_OpenToCategory((self.optionsstepdisplay and self.optionsstepdisplay.name) or "Step Display")
+	InterfaceOptionsFrame_OpenToCategory((self.optionsstepdisplay and self.optionsstepdisplay.name) or ZGV_T("Step Display"))
 end
 
 

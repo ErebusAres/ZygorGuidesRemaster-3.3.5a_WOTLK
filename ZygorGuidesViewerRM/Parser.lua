@@ -829,7 +829,7 @@ function me:ParseEntry(text)
 			elseif cmd=="sortindex" then
 				guide[cmd]=tonumber(params) or 0
 			elseif cmd=="description" then
-				guide[cmd]=(guide[cmd] and guide[cmd].."\n" or "") .. params
+				guide[cmd]=(guide[cmd] and guide[cmd].."\n" or "") .. ZGV_GT(params)  -- pt-BR
 			--elseif cmd=="faction" then --unused
 			--	guide[cmd]=params
 			elseif cmd=="startlevel" then
@@ -1088,7 +1088,7 @@ function me:ParseEntry(text)
 				if not itemname or itemname=="" then
 					-- Don't abort entire guide on malformed legacy "equipped" lines.
 					goal.action = nil
-					goal.text = "Equip " .. (params or "")
+					goal.text = ZGV_T("Equip ") .. (params or "")
 				else
 					goal.slot=slotid
 					goal.item=itemname
@@ -1350,6 +1350,7 @@ function me:ParseEntry(text)
 				if #guide.steps==0 then guide.daily=true end
 
 			elseif cmd=="tip" then
+				params = ZGV_GT(params)  -- pt-BR
 				if generated_goals and chunkcount>1 then
 					if routectx and #generated_goals>0 then
 						local tiptext = params or ""
@@ -1469,6 +1470,8 @@ function me:ParseEntry(text)
 					end
 				end
 			elseif #chunk>1 then -- text
+				-- pt-BR: translate the note (dictionary in Localization/GuideNotes_ptBR_*.lua) before looking for coordinates
+				if cmd=="'" then params = ZGV_GT(params) end
 				-- snag coordinates for waypointing, with distance
 				local st,en,x,y,d
 				st,en = 1,1

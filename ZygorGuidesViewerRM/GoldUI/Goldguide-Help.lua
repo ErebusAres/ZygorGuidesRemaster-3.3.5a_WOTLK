@@ -28,14 +28,14 @@ local SECTION_WIDTH = 100	-- Unless otherwise set
 
 local BUTTON_VERT_DIS = 30
 
-local HEADER = "Welcome to Zygor's Gold and Auction Guide Tutorial"
-local SUBHEADER = "Which section would you like to learn more about?"
+local HEADER = ZGV_T("Welcome to Zygor's Gold and Auction Guide Tutorial")
+local SUBHEADER = ZGV_T("Which section would you like to learn more about?")
 local HELP_SECTIONS = {	-- Text,id
-	{"Gold Basics", "basic"},
+	{ZGV_T("Gold Basics"), "basic"},
 	{"Farming", "farming"},
-	{"Gathering", "gathering"},
-	{"Crafting", "crafting"},
-	{"Auctions", "auctions"},
+	{ZGV_T("Gathering"), "gathering"},
+	{ZGV_T("Crafting"), "crafting"},
+	{ZGV_T("Auctions"), "auctions"},
 }
 
 -- Popup settings
@@ -49,9 +49,9 @@ local POPUP_BUT_HEIGHT = 15
 local POPUP_BUT_FONTSIZE = 13
 local PAGE_HEADER_HEIGHT = 20		-- TODO just copied from GoldUI
 local ROW_HEIGHT = 24.29		-- TODO copied as height of each row... Should make this dynamic
-local NEXT = "Next"
-local EXIT = "Exit"
-local BACK = "Back"
+local NEXT = ZGV_T("Next")
+local EXIT = ZGV_T("Exit")
+local BACK = ZGV_T("Back")
 
 local defaultPoint = {"TOP",UIParent,"TOP",0,-50}
 local defaultPoint2 = {"TOP",UIParent,"TOP",500,-50}
@@ -233,7 +233,7 @@ function Goldguide:CreateHelpContentPanel()
 	help.closebutton = CHAIN(ui:Create("Button",help,name.."CloseBut",2))
 		:SetPoint("BOTTOM",help,"BOTTOM",0,BUTTON_VERT_DIS)
 		:SetSize(100,30)
-		:SetText("Close")
+		:SetText(ZGV_T("Close"))
 		:SetFont(FONTBOLD,14)
 		:SetScript("OnClick",function(me)
 			Goldguide.helppanel = false

@@ -358,13 +358,13 @@ if not ZGV.PopupHandler then
 			-- Accept button
 			f.acceptbutton = CreateFrame("Button", nil, f, "UIPanelButtonTemplate")
 			f.acceptbutton:SetSize(100, 22)
-			f.acceptbutton:SetText((L and L["popup_accept"]) or "Accept")
+			f.acceptbutton:SetText((L and L["popup_accept"]) or ZGV_T("Accept"))
 			f.acceptbutton:SetScript("OnClick", function() if f.OnAccept then f:OnAccept() end f:Hide() end)
 
 			-- Decline button
 			f.declinebutton = CreateFrame("Button", nil, f, "UIPanelButtonTemplate")
 			f.declinebutton:SetSize(100, 22)
-			f.declinebutton:SetText((L and L["popup_decline"]) or "Decline")
+			f.declinebutton:SetText((L and L["popup_decline"]) or ZGV_T("Decline"))
 			f.declinebutton:SetScript("OnClick", function() if f.OnDecline then f:OnDecline() end f:Hide() end)
 
 			-- Position buttons
@@ -740,10 +740,10 @@ function ZGV:BuildSkinDropdownValues()
 			values[skinId] = skin.dropdownLabel or skin.name
 		end
 	end
-	values["legacy_blue"] = "|cff88b3ffBlue|r (legacy)"
-	values["legacy_green"] = "|cff88ff88Green|r (legacy)"
-	values["legacy_orange"] = "|cffffcc66Orange|r (legacy)"
-	values["legacy_violet"] = "|cffff99ffViolet|r (legacy)"
+	values["legacy_blue"] = ZGV_T("|cff88b3ffBlue|r (legacy)")
+	values["legacy_green"] = ZGV_T("|cff88ff88Green|r (legacy)")
+	values["legacy_orange"] = ZGV_T("|cffffcc66Orange|r (legacy)")
+	values["legacy_violet"] = ZGV_T("|cffff99ffViolet|r (legacy)")
 	return values
 end
 
@@ -838,12 +838,12 @@ do
 		},
 		variants = {
 			dark = {
-				label = "|cffcfd6e8Remaster Dark|r",
+				label = ZGV_T("|cffcfd6e8Remaster Dark|r"),
 				text = { 0.90, 0.92, 0.98 },
 				back = { 0.08, 0.09, 0.12 },
 			},
 			goldaccent = {
-				label = "|cffebd199Remaster Gold Accent|r",
+				label = ZGV_T("|cffebd199Remaster Gold Accent|r"),
 				text = { 0.92, 0.80, 0.50 },
 				back = { 0.07, 0.08, 0.10 },
 				themeOverrides = {
@@ -863,22 +863,22 @@ do
 				toolbarBgOverride = { 0, 0, 0, 0.42 },
 			},
 			blue = {
-				label = "|cff88b3ffRemaster Blue|r",
+				label = ZGV_T("|cff88b3ffRemaster Blue|r"),
 				text = { 0.70, 0.80, 1.00 },
 				back = { 0.08, 0.11, 0.24 },
 			},
 			green = {
-				label = "|cff88ff88Remaster Green|r",
+				label = ZGV_T("|cff88ff88Remaster Green|r"),
 				text = { 0.50, 1.00, 0.50 },
 				back = { 0.09, 0.20, 0.07 },
 			},
 			orange = {
-				label = "|cffffcc66Remaster Orange|r",
+				label = ZGV_T("|cffffcc66Remaster Orange|r"),
 				text = { 1.00, 0.80, 0.00 },
 				back = { 0.23, 0.11, 0.07 },
 			},
 			violet = {
-				label = "|cffff99ffRemaster Violet|r",
+				label = ZGV_T("|cffff99ffRemaster Violet|r"),
 				text = { 0.95, 0.65, 1.00 },
 				back = { 0.17, 0.07, 0.20 },
 			},
@@ -1122,13 +1122,13 @@ if not ZGV.OpenGoldGuide then
 	function ZGV:OpenGoldGuide(tabname)
 		if self.db and self.db.profile and not self.db.profile.load_gold then
 			self.db.profile.load_gold = true
-			print("|cffff8800Zygor Gold Guide|r: Enabled! Type /reload then open Gold Guide again.")
+			print(ZGV_T("|cffff8800Zygor Gold Guide|r: Enabled! Type /reload then open Gold Guide again."))
 			return
 		end
 
 		local goldguide = self.Goldguide or (self.Gold and self.Gold.Goldguide)
 		if not goldguide then
-			print("|cffff8800Zygor Gold Guide|r: Not initialized. Try /reload first.")
+			print(ZGV_T("|cffff8800Zygor Gold Guide|r: Not initialized. Try /reload first."))
 			return
 		end
 
@@ -1137,7 +1137,7 @@ if not ZGV.OpenGoldGuide then
 		elseif goldguide.ShowWindow then
 			goldguide:ShowWindow()
 		else
-			print("|cffff8800Zygor Gold Guide|r: Not initialized. Try /reload first.")
+			print(ZGV_T("|cffff8800Zygor Gold Guide|r: Not initialized. Try /reload first."))
 			return
 		end
 
@@ -1153,7 +1153,7 @@ SlashCmdList["ZYGORGOLD"] = function(msg)
 	elseif ZGV.Goldguide and ZGV.Goldguide.ShowWindow then
 		ZGV.Goldguide:ShowWindow()
 	else
-		print("|cffff8800Zygor Gold Guide|r: Not initialized. Try /reload first.")
+		print(ZGV_T("|cffff8800Zygor Gold Guide|r: Not initialized. Try /reload first."))
 	end
 end
 
@@ -1217,7 +1217,7 @@ tinsert(me.startups, {"AutoSellRepair", function(self)
 				end
 			end
 			if totalSold > 0 then
-				ZGV:Print("Sold grey items for " .. ZGV.GetMoneyString(totalSold))
+				ZGV:Print(ZGV_T("Sold grey items for ") .. ZGV.GetMoneyString(totalSold))
 			end
 		end
 
@@ -1226,7 +1226,7 @@ tinsert(me.startups, {"AutoSellRepair", function(self)
 			local cost = GetRepairAllCost()
 			if cost > 0 and cost <= GetMoney() then
 				RepairAllItems()
-				ZGV:Print("Repaired all items for " .. ZGV.GetMoneyString(cost))
+				ZGV:Print(ZGV_T("Repaired all items for ") .. ZGV.GetMoneyString(cost))
 			end
 		end
 	end)
@@ -3338,7 +3338,7 @@ function me:UpdateRemasterHeader()
 
 	local title = ""
 	if self.loading then
-		title = "Loading Guides"
+		title = ZGV_T("Loading Guides")
 	elseif self.CurrentGuide and self.CurrentGuide.title_short then
 		title = self.CurrentGuide.title_short
 	elseif self.CurrentGuide and self.CurrentGuide.title then
@@ -3354,13 +3354,13 @@ function me:UpdateRemasterHeader()
 	fitRemasterHeaderTitle(title or "")
 	local stepText = ""
 	if self.loading then
-		stepText = "  Loading  "
+		stepText = ZGV_T("  Loading  ")
 	elseif self.CurrentGuide and self.CurrentGuide.steps then
 		local total = #self.CurrentGuide.steps
 		local current = self.CurrentStepNum or 1
-		stepText = string.format("Step %d / %d", current, total)
+		stepText = string.format(ZGV_T("Step %d / %d"), current, total)
 	elseif self.CurrentGuide then
-		stepText = "Step ?"
+		stepText = ZGV_T("Step ?")
 	else
 		stepText = ""
 	end
@@ -3596,10 +3596,10 @@ function me:EnsureRemasterFrames()
 		return "|cffddff00"
 	end
 	local function tipClick(text)
-		return tipColor().."Click|r "..text
+		return tipColor()..ZGV_T("Click|r ")..text
 	end
 	local function tipRight(text)
-		return tipColor().."Right-click|r "..text
+		return tipColor()..ZGV_T("Right-click|r ")..text
 	end
 
 	local guideButton = CreateFrame("Button", "ZGVRemasterGuideButton", toolbar)
@@ -3755,7 +3755,7 @@ function me:EnsureRemasterFrames()
 		GameTooltip:SetText(L["frame_toolbar_stepview"])
 		if ZGV and ZGV.db and ZGV.db.profile then
 			GameTooltip:AddLine(tipClick(L["frame_toolbar_stepview_setcount"]))
-			GameTooltip:AddLine(tipRight((L["frame_toolbar_stepview_options"] or "to open Step Display options")))
+			GameTooltip:AddLine(tipRight((L["frame_toolbar_stepview_options"] or ZGV_T("to open Step Display options"))))
 		end
 		GameTooltip:Show()
 	end)
@@ -3874,6 +3874,54 @@ function me:OnInitialize()
 	self:Options_DefineOptions()
 
 	self.optionsprofile = LibStub("AceDBOptions-3.0"):GetOptionsTable(self.db)
+
+	-- pt-BR: the Profiles tab comes from the AceDBOptions library (English only); translate the generated table (Portuguese mode only)
+	if ZGV_LANG_PT then
+		local PT = {
+			["You can change the active database profile, so you can have different settings for every character."] = "Você pode alterar o perfil ativo do banco de dados, para ter configurações diferentes para cada personagem.",
+			["Reset the current profile back to its default values, in case your configuration is broken, or you simply want to start over."] = "Redefine o perfil atual para os valores padrão, caso sua configuração esteja quebrada ou você simplesmente queira começar do zero.",
+			["Reset Profile"] = "Redefinir Perfil",
+			["Reset the current profile to the default"] = "Redefine o perfil atual para o padrão",
+			["You can either create a new profile by entering a name in the editbox, or choose one of the already existing profiles."] = "Você pode criar um novo perfil digitando um nome na caixa de texto ou escolher um dos perfis já existentes.",
+			["New"] = "Novo",
+			["Create a new empty profile."] = "Cria um novo perfil vazio.",
+			["Existing Profiles"] = "Perfis Existentes",
+			["Select one of your currently available profiles."] = "Selecione um dos perfis atualmente disponíveis.",
+			["Copy the settings from one existing profile into the currently active profile."] = "Copia as configurações de um perfil existente para o perfil ativo.",
+			["Copy From"] = "Copiar de",
+			["Delete existing and unused profiles from the database to save space, and cleanup the SavedVariables file."] = "Exclui do banco de dados perfis existentes e não utilizados para economizar espaço e limpar o arquivo SavedVariables.",
+			["Delete a Profile"] = "Excluir um Perfil",
+			["Deletes a profile from the database."] = "Exclui um perfil do banco de dados.",
+			["Are you sure you want to delete the selected profile?"] = "Tem certeza de que deseja excluir o perfil selecionado?",
+			["Profiles"] = "Perfis",
+			["Manage Profiles"] = "Gerenciar Perfis",
+		}
+		local function tr(s)
+			local pre, core, post = s:match("^(\n*)(.-)(\n*)$")
+			return (core and PT[core]) and (pre .. PT[core] .. post) or s
+		end
+		local seen = {}
+		local function walk(t)
+			if type(t) ~= "table" or seen[t] then return end
+			seen[t] = true
+			for _, key in ipairs({"name", "desc", "confirmText"}) do
+				local v = t[key]
+				if type(v) == "string" then
+					t[key] = tr(v)
+				elseif type(v) == "function" and key == "name" then
+					t[key] = function(...)
+						local r = v(...)
+						if type(r) == "string" then r = (r:gsub("^Current Profile:", "Perfil atual:")) end
+						return r
+					end
+				end
+			end
+			if type(t.args) == "table" then
+				for _, sub in pairs(t.args) do walk(sub) end
+			end
+		end
+		walk(self.optionsprofile)
+	end
 
 	if IsShiftKeyDown() then
 		self.db.char.maint_startguides = false
@@ -4107,7 +4155,7 @@ function me:OnFirstQuestLogUpdate()
 	if self.questLogInitialized then return end
 
 	if self.db.char["starting"] then
-		self:Print("First start! Finding proper starter section.")
+		self:Print(ZGV_T("First start! Finding proper starter section."))
 		local i = self:FindDefaultGuide()
 		if i then
 			self.db.char.guidename = self.registeredguides[i].title
@@ -4285,13 +4333,13 @@ function me:SetGuide(name,step,temp)
 		if self.registeredguides[num] then
 			guide = self.registeredguides[num]
 		else
-			self:Print("Cannot find guide number: "..num)
+			self:Print(ZGV_T("Cannot find guide number: ")..num)
 			--return false
 		end
 	else
 		guide = self:GetGuideByTitle(name)
 		if not guide then
-			self:Print("Cannot find guide: "..tostring(name))
+			self:Print(ZGV_T("Cannot find guide: ")..tostring(name))
 			self:Debug("Cannot find guide: "..tostring(name))
 			return false
 		end
@@ -5587,7 +5635,7 @@ function me:UpdateFrame(full,onupdate,nonsecure_only)
 				ZygorGuidesViewerFrameScrollScrollBar:Show()
 				ZygorGuidesViewerFrameScrollScrollBar:SetMinMaxValues(1,#spots)
 				if ZygorGuidesViewerFrame_Skipper then ZygorGuidesViewerFrame_Skipper:Hide() end
-				self:UpdateLegacyHeaderTitle("Gold Spots")
+				self:UpdateLegacyHeaderTitle(ZGV_T("Gold Spots"))
 			end
 
 		else -- no gold guides or no spots in range
@@ -7873,7 +7921,7 @@ function me:SkipStep(delta,fast)
 				else
 					-- cap it
 					self.CurrentStep = { num=self.CurrentStepNum+1, parentGuide=self.CurrentStep.parentGuide, finish=true }
-					self.CurrentStep.goals={ [1]={ num=1, action="", text="This guide is now complete.", parentStep=self.CurrentStep } }
+					self.CurrentStep.goals={ [1]={ num=1, action="", text=ZGV_T("This guide is now complete."), parentStep=self.CurrentStep } }
 					setmetatable(self.CurrentStep,ZGV.StepProto_mt)
 					setmetatable(self.CurrentStep.goals[1],ZGV.GoalProto_mt)
 					tinsert(self.CurrentGuide.steps,self.CurrentStep)
@@ -8325,17 +8373,17 @@ function me:GoalOnClick(goalframe,button)
 			end
 			local max = self.maxQuestLevels[goal.questid]
 			local qname = goal.quest or (goal.questid and tostring(goal.questid)) or "?"
-			self:Print("Quest \""..qname.."\" (#"..tostring(goal.questid).."): done at level "..tostring(goal.parentStep.level)..", reaches to level "..tostring(max))
+			self:Print("Quest \""..qname.."\" (#"..tostring(goal.questid)..ZGV_T("): done at level ")..tostring(goal.parentStep.level)..ZGV_T(", reaches to level ")..tostring(max))
 			local mentioned = me:GetMentionedFollowups(goal.questid)
 			if #mentioned>1 then
 				local s=""
 				for i=2,#mentioned do
 					if #s>0 then s=s.."\n" end
-					s=s.."\""..(me:GetQuestData(mentioned[i][1]) or "?").."\" (#"..tostring(mentioned[i][1])..") at level "..mentioned[i][2]
+					s=s.."\""..(me:GetQuestData(mentioned[i][1]) or "?").."\" (#"..tostring(mentioned[i][1])..ZGV_T(") at level ")..mentioned[i][2]
 				end
-				self:Print("Follow-ups:\n"..s)
+				self:Print(ZGV_T("Follow-ups:\n")..s)
 			else
-				self:Print("No follow-ups.")
+				self:Print(ZGV_T("No follow-ups."))
 			end
 		end
 	else
@@ -8346,9 +8394,9 @@ function me:GoalOnClick(goalframe,button)
 			if goal.quest and IsShiftKeyDown() then
 				self.completedQuests[goal.quest]=nil
 				if goal.questid then self.completedQuests[goal.questid]=nil end
-				self:Print("Marking quest '"..goal.quest.."'"..(goal.questid and " (#"..goal.questid..")" or "").." as not completed.")
+				self:Print(ZGV_T("Marking quest '")..goal.quest.."'"..(goal.questid and " (#"..goal.questid..")" or "")..ZGV_T(" as not completed."))
 			else
-				self:Print("Marking step as incomplete.")
+				self:Print(ZGV_T("Marking step as incomplete."))
 			end
 		else
 			--self.recentlyCompletedGoals[goal]=true
@@ -8356,7 +8404,7 @@ function me:GoalOnClick(goalframe,button)
 			if goal.quest and IsShiftKeyDown() then
 				self.completedQuests[goal.quest]=true
 				if goal.questid then self.completedQuests[goal.questid]=true end
-				self:Print("Marking quest '"..goal.quest.."'"..(goal.questid and " (#"..goal.questid..")" or "").." as completed.")
+				self:Print(ZGV_T("Marking quest '")..goal.quest.."'"..(goal.questid and " (#"..goal.questid..")" or "")..ZGV_T(" as completed."))
 			end
 		end
 		self.pause=nil
@@ -8486,7 +8534,7 @@ local function guide_page_text(guides,first,last,groupName)
 		local firstLevel = tonumber(firstTitle:match("%((%d+)%s*%-%s*%d+%)"))
 		local lastLevel = tonumber(lastTitle:match("%(%d+%s*%-%s*(%d+)%)"))
 		if firstLevel and lastLevel then
-			return ("[ Levels %d - %d ]"):format(firstLevel,lastLevel)
+			return (ZGV_T("[ Levels %d - %d ]")):format(firstLevel,lastLevel)
 		end
 	end
 	return ("[ %d - %d ]"):format(first,last)
@@ -8737,12 +8785,12 @@ function me:OpenQuickMenu(anchor)
 	-- Gear Advisor submenu
 	table.insert(menu, { text = "", notCheckable = true, disabled = true }) -- separator
 	table.insert(menu, {
-		text = "|cffffd200Gear Advisor|r",
+		text = ZGV_T("|cffffd200Gear Advisor|r"),
 		notCheckable = true,
 		hasArrow = true,
 		menuList = {
 			{
-				text = "Enable Gear Advisor",
+				text = ZGV_T("Enable Gear Advisor"),
 				checked = function() return self.db.profile.autogear end,
 				func = function()
 					self.db.profile.autogear = not self.db.profile.autogear
@@ -8753,31 +8801,31 @@ function me:OpenQuickMenu(anchor)
 				keepShownOnClick = true,
 			},
 			{
-				text = "Show ItemScore on Tooltips",
+				text = ZGV_T("Show ItemScore on Tooltips"),
 				checked = function() return self.db.profile.itemscore_tooltips end,
 				func = function() self.db.profile.itemscore_tooltips = not self.db.profile.itemscore_tooltips end,
 				keepShownOnClick = true,
 			},
 			{
-				text = "Auto-equip Upgrades",
+				text = ZGV_T("Auto-equip Upgrades"),
 				checked = function() return self.db.profile.autogearauto end,
 				func = function() self.db.profile.autogearauto = not self.db.profile.autogearauto end,
 				keepShownOnClick = true,
 			},
 			{
-				text = "Auto-sell Grey Items",
+				text = ZGV_T("Auto-sell Grey Items"),
 				checked = function() return self.db.profile.autosellgrey end,
 				func = function() self.db.profile.autosellgrey = not self.db.profile.autosellgrey end,
 				keepShownOnClick = true,
 			},
 			{ text = "", notCheckable = true, disabled = true },
 			{
-				text = "Gear Advisor Settings...",
+				text = ZGV_T("Gear Advisor Settings..."),
 				notCheckable = true,
 				func = function() self:OpenOptions("gear") end,
 			},
 			{
-				text = "Edit Stat Weights...",
+				text = ZGV_T("Edit Stat Weights..."),
 				notCheckable = true,
 				func = function() self:OpenOptions("itemscore") end,
 			},

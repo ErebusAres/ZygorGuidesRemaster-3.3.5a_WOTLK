@@ -8,7 +8,7 @@ local FONT=ZGV.Font
 local Goldguide = ZGV.Goldguide
 
 Goldguide.GATHERING_TYPES = {
-	{"All","all",{}},
+	{ZGV_T("All"),"all",{}},
 
 	{"Herbalism","herbalism",{
 		"outland_herbalism",

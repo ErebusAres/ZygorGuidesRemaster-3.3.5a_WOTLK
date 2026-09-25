@@ -1,0 +1,26 @@
+# Item-ItemScore.lua -- debug/trace output, reject reasons, item/boss/class names, hook names left as-is; BIS labels are jargon
+1167.1 = Consultor de Equipamento: o grupo de talentos %d usa %s. Comandos: /ztank, /zdps, /zheal, /zsupport ou /zrole auto.
+1216.1 = Consultor de Equipamento: classe/spec desconhecida detectada (%s %s). A pontuação de equipamento foi definida para pesos Personalizados. Você pode ajustar os pesos Personalizados em Consultor de Equipamento > Pesos de Atributos.
+1216.2 = desconhecida
+1220.1 = Consultor de Equipamento
+2443.1 = Consultor de Equipamento
+1445.1 = Pesos personalizados
+1448.1 = Build substituída
+1450.1 = Build detectada
+1542.1 = Death Knights não têm um perfil de cura no Consultor de Equipamento.
+1569.1 = Não há perfil de %s no Consultor de Equipamento para %s.
+1569.2 = esta classe
+1581.1 = Consultor de Equipamento: o grupo de talentos %d voltou à detecção automática de build.
+1589.1 = Consultor de Equipamento: 
+1589.2 = Nenhum perfil de função correspondente está disponível para esta build.
+1601.1 = Consultor de Equipamento: o grupo de talentos %d agora usa %s.
+1631.1 =  (base de leveling)
+1754.1 = BIS Final equipado
+1775.1 = Base local não verificada
+1777.1 = %s (base normalizada de prioridade de atributos)
+1777.2 = Base curada
+1779.1 = Base curada
+3727.1 = |cffff3333x|r Inutilizável
+3774.1 = |cffff3333Inutilizável|r
+3853.1 = Importar: string do Pawn incorreta
+3875.1 = Importar: alguns nomes de atributos do Pawn não são compatíveis com o Zygor e foram ignorados.

@@ -265,7 +265,7 @@ function ZygorTalentAdvisorPopout_Update()
 	local notes = NormalizeNotesText(selectedBuild and selectedBuild.notes)
 	local hasNotes = notes and true or false
 	if self.notesLabel then
-		self.notesLabel:SetText(hasNotes and "Notes:" or "")
+		self.notesLabel:SetText(hasNotes and ZGV_T("Notes:") or "")
 		if hasNotes then self.notesLabel:Show() else self.notesLabel:Hide() end
 	end
 	if self.notes then
@@ -320,7 +320,7 @@ function ZygorTalentAdvisorPopout_Update()
 			self.build:SetText(L['window_header_buildnone'] or "none")
 		end
 		if ZTA.db and ZTA.db.char and ((pet and ZTA.db.char.currentPetBuildNone) or (not pet and ZTA.db.char.currentBuildNone)) then
-			self.suggestionLabel:SetText("Build is set to None (advisor disabled).")
+			self.suggestionLabel:SetText(ZGV_T("Build is set to None (advisor disabled)."))
 		else
 			self.suggestionLabel:SetText(L['window_suggestion_nobuild'])
 		end
@@ -338,7 +338,7 @@ function ZygorTalentAdvisorPopout_Update()
 			elseif ZTA.status[who].code=="RED" then
 				self.suggestionLabel:SetText(L['window_suggestion_none'])
 			elseif GetUnspentTalentPoints(false,pet)<=0 then
-				self.suggestionLabel:SetText("No unspent talent points.")
+				self.suggestionLabel:SetText(ZGV_T("No unspent talent points."))
 			else
 				self.suggestionLabel:SetText(L['window_suggestion_nopoints'])
 			end

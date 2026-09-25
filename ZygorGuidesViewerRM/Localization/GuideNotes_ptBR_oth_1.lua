@@ -1,0 +1,32 @@
+-- Generated file: notes and tips of the guides, group "oth" (English -> Portuguese). Do not edit by hand.
+-- Only loaded in Portuguese mode (ZGV_LANG_PT); used by ZGV_GT() in Parser.lua.
+if not ZGV_LANG_PT then return end
+ZGV_GT_Register({
+["Kill Fungal Giants and Bog Lords"]="Matar Fungal Giants and Bog Lords",
+["Kill Hulking Helboar"]="Matar Hulking Helboar",
+["Kill Marauding Crust Burster"]="Matar Marauding Crust Burster",
+["Kill Goliathon"]="Matar Goliathon",
+["Kill Ango'rosh Shaman"]="Matar Ango'rosh Shaman",
+["Kill Ango'rosh Ogre"]="Matar Ango'rosh Ogre",
+["Go east to Terokkar Forest"]="Ir para o leste até Terokkar Forest",
+["Use Naturalized Ammunition on South Warp-Gate"]="Usar Naturalized Ammunition em South Warp-Gate",
+["Use Naturalized Ammunition on North Warp-Gate"]="Usar Naturalized Ammunition em North Warp-Gate",
+["Use the Evergrove Wand on Baelmon the Hound-Master"]="Usar Evergrove Wand em Baelmon the Hound-Master",
+["Go to The Hinterlands"]="Ir para The Hinterlands",
+["Go to Tanaris"]="Ir para Tanaris",
+["Go to Borean Tundra"]="Ir para Borean Tundra",
+["Go to Zul'Drak"]="Ir para Zul'Drak",
+["Go to The Storm Peaks"]="Ir para The Storm Peaks",
+["Go to Icecrown"]="Ir para Icecrown",
+["Go to Dun Morogh"]="Ir para Dun Morogh",
+["Go to Deadwind Pass"]="Ir para Deadwind Pass",
+["Go to Winterspring"]="Ir para Winterspring",
+["Go to Terokkar Forest"]="Ir para Terokkar Forest",
+["Go to Netherstorm"]="Ir para Netherstorm",
+["Go to Isle of Quel'Danas"]="Ir para Isle of Quel'Danas",
+["Go to Howling Fjord"]="Ir para Howling Fjord",
+["Go to Dustwallow Marsh"]="Ir para Dustwallow Marsh",
+["Go to Eastern Plaguelands"]="Ir para Eastern Plaguelands",
+["Go to Sholazar Basin"]="Ir para Sholazar Basin",
+["Go to Grizzly Hills"]="Ir para Grizzly Hills",
+})

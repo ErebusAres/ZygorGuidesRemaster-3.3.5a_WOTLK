@@ -1,0 +1,14 @@
+# ZygorTalentAdvisor/ZygorTalentAdvisor.lua (debug/dump/log text stays English; ␣ = explicit space)
+51.1 = |cff88ff88ZygorTalentAdvisor carregado.|r O Talent Advisor está integrado a este addon.
+354.1 = Tudo aprendido.
+508.1 = Ativar Talent Advisor
+509.1 = Mostra as sugestões do Talent Advisor, os destaques de talentos e o botão da aba de talentos.
+777.1 = |cffaaddffO Zygor sugere este glifo|r
+780.1 = |cffaaddffO Zygor sugere este glifo|r
+1160.1 = |cffff0000Erro!|r Talento ␣
+1160.2 = ␣ sugerido, mas indisponível!
+1558.1 = Sugestão: aumente o talento ␣
+1558.2 = do pet da árvore ␣
+1558.3 = da árvore␣
+1558.4 = - '
+1593.1 = nome de build inexistente: ␣

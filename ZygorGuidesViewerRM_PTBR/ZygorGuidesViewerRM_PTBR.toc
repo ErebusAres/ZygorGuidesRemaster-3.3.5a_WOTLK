@@ -1,0 +1,7 @@
+## Interface: 30300
+## Title: Zygor Guides Viewer - Português (BR)
+## Notes: Language switch for Zygor Guides Viewer Remastered.|nENABLED = Português (Brasil)  |  DISABLED = English.|n|nChange it in /zygor > "Idioma / Language" (reloads the UI) or here, in the AddOns list. This folder has no code: it only stores your choice.
+## Author: pt-BR translation
+## Version: 1.0
+## DefaultState: enabled
+## LoadOnDemand: 0

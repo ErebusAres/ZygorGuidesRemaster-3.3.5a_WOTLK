@@ -1,0 +1,2 @@
+# ZygorTalentAdvisor/Bindings.xml
+description="Toggle Zygor Talent Advisor" ==> description="Alternar Zygor Talent Advisor"

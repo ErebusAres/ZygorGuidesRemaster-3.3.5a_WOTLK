@@ -28,7 +28,7 @@ ZGV:RegisterSkin("retail", {
 			back = { 0.04, 0.04, 0.06 },
 		},
 		blue = {
-			label = "|cff3388ffRetail Blue|r",
+			label = ZGV_T("|cff3388ffRetail Blue|r"),
 			text = { 0.80, 0.88, 1.00 },
 			back = { 0.03, 0.05, 0.10 },
 			themeOverrides = {
@@ -39,7 +39,7 @@ ZGV:RegisterSkin("retail", {
 			},
 		},
 		dark = {
-			label = "|cff888888Retail Dark|r",
+			label = ZGV_T("|cff888888Retail Dark|r"),
 			text = { 0.82, 0.82, 0.84 },
 			back = { 0.02, 0.02, 0.03 },
 			themeOverrides = {

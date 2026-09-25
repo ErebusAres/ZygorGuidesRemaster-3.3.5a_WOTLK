@@ -7,7 +7,7 @@ local function AnnounceTalentAdvisorLoaded(zgv)
 	if type(zgv.Print) ~= "function" then return end
 	zgv._taLoadedMessageShown = true
 	_G.ZygorTalentAdvisor._integratedLoadAnnounced = true
-	zgv:Print("|cff88ff88ZygorTalentAdvisor loaded.|r Talent Advisor is integrated in this addon.")
+	zgv:Print(ZGV_T("|cff88ff88ZygorTalentAdvisor loaded.|r Talent Advisor is integrated in this addon."))
 end
 
 local function EnsureDefaultTalentBuild()
@@ -97,7 +97,7 @@ table.insert(ZGV.startups, function(self)
 	if type(IsAddOnLoaded) == "function" and IsAddOnLoaded("ZygorTalentAdvisor") and not self._taDuplicateWarningShown then
 		self._taDuplicateWarningShown = true
 		if self.Print then
-			self:Print("|cffff8844Talent Advisor notice:|r standalone addon |cffffff00ZygorTalentAdvisor|r is enabled. Disable the standalone folder to avoid duplicate/overlapping behavior.")
+			self:Print(ZGV_T("|cffff8844Talent Advisor notice:|r standalone addon |cffffff00ZygorTalentAdvisor|r is enabled. Disable the standalone folder to avoid duplicate/overlapping behavior."))
 		end
 	end
 

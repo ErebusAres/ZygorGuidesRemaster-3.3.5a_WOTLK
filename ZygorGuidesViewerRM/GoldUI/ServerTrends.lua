@@ -30,7 +30,7 @@ function Trends:ImportQuick() --DEPRECATED.
 	local but=ZGV.dumpFrameBasic.OKButton
 	but.oldtext = but:GetText()
 	but.oldclick = but:GetScript("OnClick")
-	but:SetText("IMPORT")
+	but:SetText(ZGV_T("IMPORT"))
 	but:SetScript("OnClick",function(self)
 		local text = ZGV.dumpFrameBasic.editBox:GetText()
 		Trends:DoImport(text,"loud")
@@ -69,7 +69,7 @@ function Trends:DoImport(dumpdata,loud)
 	end
 
 	if not data.columns then
-		ZGV:Print("Server Trends import just failed..? No column definitions")
+		ZGV:Print(ZGV_T("Server Trends import just failed..? No column definitions"))
 	end
 
 	local columns = {}
@@ -96,12 +96,12 @@ function Trends:DoImport(dumpdata,loud)
 			ZGV.Gold.servertrends = data
 			local h_old = floor(time() - (data.date or 0))/3600
 			local h_color = h_old<TRENDS_OLD and "|cff44ff00" or "|cffff0000"
-			ZGV:Print(("Server Trends for %s imported, %s%d hours old."):format(GetRealmName(), h_color, h_old))
-			if h_old<TRENDS_OLD then ZGV:Print("- Status: up to date.") else ZGV:Print("- Status: outdated, please use the Zygor Client to update.") end
+			ZGV:Print((ZGV_T("Server Trends for %s imported, %s%d hours old.")):format(GetRealmName(), h_color, h_old))
+			if h_old<TRENDS_OLD then ZGV:Print(ZGV_T("- Status: up to date.")) else ZGV:Print(ZGV_T("- Status: outdated, please use the Zygor Client to update.")) end
 		end
 		ZGVG:Update()
 	else
-		ZGV:Print("Server Trends import just failed..? No items found...")
+		ZGV:Print(ZGV_T("Server Trends import just failed..? No items found..."))
 	end
 end
 
@@ -182,12 +182,12 @@ function Trends:DoOldImport(text,loud)
 			ZGV.Gold.servertrends = data
 			local h_old = floor(time() - (data.date or 0))/3600
 			local h_color = h_old<TRENDS_OLD and "|cff44ff00" or "|cffff0000"
-			ZGV:Print(("Server Trends for %s imported, %s%d hours old."):format(GetRealmName(), h_color, h_old))
-			if h_old<TRENDS_OLD then ZGV:Print("- Status: up to date.") else ZGV:Print("- Status: outdated, please use the Zygor Client to update.") end
+			ZGV:Print((ZGV_T("Server Trends for %s imported, %s%d hours old.")):format(GetRealmName(), h_color, h_old))
+			if h_old<TRENDS_OLD then ZGV:Print(ZGV_T("- Status: up to date.")) else ZGV:Print(ZGV_T("- Status: outdated, please use the Zygor Client to update.")) end
 		end
 		ZGV.Goldguide:Update()
 	else
-		ZGV:Print("Server Trends import just failed..? No items found...")
+		ZGV:Print(ZGV_T("Server Trends import just failed..? No items found..."))
 	end
 end
 
@@ -263,16 +263,16 @@ function Trends:GetTrendsFromScan(silent)
 	end
 
 	if not silent then
-		ZGV:Print(("Server Trends for %s created. Trend quality: %s."):format(GetRealmName(), Trends:GetHealth()))
+		ZGV:Print((ZGV_T("Server Trends for %s created. Trend quality: %s.")):format(GetRealmName(), Trends:GetHealth()))
 	end
 end
 
 function Trends:GetHealth()
 	local h = ZGV.FakeHealth or #ZGV.db.factionrealm.gold_scan_data or 0
-	if h < 1 then return "|cffff0000Missing|r" end
-	if h < 5 then return "|cffff7700Low|r" end
-	if h < 10 then return "|cffffff00Fair|r" end
-	return "|cff00ff00Good|r"
+	if h < 1 then return ZGV_T("|cffff0000Missing|r") end
+	if h < 5 then return ZGV_T("|cffff7700Low|r") end
+	if h < 10 then return ZGV_T("|cffffff00Fair|r") end
+	return ZGV_T("|cff00ff00Good|r")
 end
 
 	

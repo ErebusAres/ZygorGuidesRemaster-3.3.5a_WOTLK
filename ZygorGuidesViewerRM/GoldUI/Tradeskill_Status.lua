@@ -7,22 +7,22 @@ if not ZGV.Gold.Auctions then ZGV.Gold.Auctions = {} end
 local Auctions = ZGV.Gold.Auctions
 
 Auctions.Flags = {
-	ARMOR =		{mod=0,  type="Red",	name="Armor, may take longer to sell", description="May not sell quickly"},
-	TRADEGOODS_1 =	{mod=10, type="Green",	name="Popular trade goods", description="Popular trade good, should sell very nicely."},
-	TRADEGOODS_2 =	{mod=7,  type="Green",	name="Trade goods", description="Trade good, should sell nicely."},
-	WEAPON =	{mod=0,  type="Red",	name="Weapon", description=""},
-	CONSUMABLE =	{mod=5,  type="Green",	name="Consumable", description=""},
-	CONTAINERS =	{mod=5,  type="Green",	name="Bag", description="Bags can sell in waves, or not sell often."},
-	GEMS =		{mod=0,  type="Green",	name="Gems", description=""},
-	RECIPE =	{mod=0,  type="Green",	name="Recipe", description=""},
-	XMOG =		{mod=5,  type="Green",	name="Transmogrification", description="Is used in popular xmog looks."},
-	OLD =		{mod=-2, type="Red",	name="Older expansion", description=""}, -- don't use together with xmog, use old_eq or old_weapon instead
-	CURRENT =	{mod=2,  type="Green",	name="Current expansion", description=""},
-	OLD_EQUIP =	{mod=0,  type="Green",	name="Older expansion", description=""},
-	OLD_WEAPON =	{mod=0,	 type="Green",	name="Older expansion", description=""},
-	TWINK =		{mod=7,	 type="Green",	name="Optimized for tier PVP", description=""},
-	PVP =		{mod=0,	 type="Green",	name="Pvp", description=""},
-	QUEST =		{mod=6,	 type="Green",	name="Quest items", description=""},
+	ARMOR =		{mod=0,  type="Red",	name=ZGV_T("Armor, may take longer to sell"), description=ZGV_T("May not sell quickly")},
+	TRADEGOODS_1 =	{mod=10, type="Green",	name=ZGV_T("Popular trade goods"), description=ZGV_T("Popular trade good, should sell very nicely.")},
+	TRADEGOODS_2 =	{mod=7,  type="Green",	name=ZGV_T("Trade goods"), description=ZGV_T("Trade good, should sell nicely.")},
+	WEAPON =	{mod=0,  type="Red",	name=ZGV_T("Weapon"), description=""},
+	CONSUMABLE =	{mod=5,  type="Green",	name=ZGV_T("Consumable"), description=""},
+	CONTAINERS =	{mod=5,  type="Green",	name=ZGV_T("Bag"), description=ZGV_T("Bags can sell in waves, or not sell often.")},
+	GEMS =		{mod=0,  type="Green",	name=ZGV_T("Gems"), description=""},
+	RECIPE =	{mod=0,  type="Green",	name=ZGV_T("Recipe"), description=""},
+	XMOG =		{mod=5,  type="Green",	name=ZGV_T("Transmogrification"), description=ZGV_T("Is used in popular xmog looks.")},
+	OLD =		{mod=-2, type="Red",	name=ZGV_T("Older expansion"), description=""}, -- don't use together with xmog, use old_eq or old_weapon instead
+	CURRENT =	{mod=2,  type="Green",	name=ZGV_T("Current expansion"), description=""},
+	OLD_EQUIP =	{mod=0,  type="Green",	name=ZGV_T("Older expansion"), description=""},
+	OLD_WEAPON =	{mod=0,	 type="Green",	name=ZGV_T("Older expansion"), description=""},
+	TWINK =		{mod=7,	 type="Green",	name=ZGV_T("Optimized for tier PVP"), description=""},
+	PVP =		{mod=0,	 type="Green",	name=ZGV_T("Pvp"), description=""},
+	QUEST =		{mod=6,	 type="Green",	name=ZGV_T("Quest items"), description=""},
 	--NAME = {mod=0,  type="Green", name="", description=""},
 } 
 
