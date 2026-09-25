@@ -1404,6 +1404,15 @@ function me:GetMapZoneNumbers(zonename)
 			end
 		end
 	end
+	-- Not found: the name may be English while the client reports localized zone names (e.g. Portuguese).
+	local localized = zonename and self.BZL and self.BZL[zonename]
+	if localized and localized~=zonename then
+		local cont,zone = self:GetMapZoneNumbers(localized)
+		if cont and cont>0 then
+			MapZoneCache[zonename]={cont,zone}
+			return cont,zone
+		end
+	end
 	return 0
 end
 
@@ -1416,6 +1425,11 @@ function me:GetMapZoneFile(zonename)
 				return Astrolabe.ContinentList[cont][zone]
 			end
 		end
+	end
+	-- Not found: the name may be English while the client reports localized zone names (e.g. Portuguese).
+	local localized = zonename and self.BZL and self.BZL[zonename]
+	if localized and localized~=zonename then
+		return self:GetMapZoneFile(localized)
 	end
 	return ""
 end
