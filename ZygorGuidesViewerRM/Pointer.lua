@@ -1332,26 +1332,7 @@ function Pointer:SetFontSize(size)
 		flags = nil
 	end
 	if self:IsRetailRemasterArrowEnabled() then
-		local candidates = {
-			(ZGV and ZGV.DIR and (ZGV.DIR .. "\\Skin\\remaster_arrow\\fonts\\OpenSans.TTF")) or nil,
-			(ZGV and ZGV.DIR and (ZGV.DIR .. "\\Skin\\remaster_arrow\\fonts\\opensans.ttf")) or nil,
-			"Interface\\AddOns\\ZygorGuidesViewerRM\\Skin\\remaster_arrow\\fonts\\OpenSans.TTF",
-			"Interface\\AddOns\\ZygorGuidesViewer\\Skin\\remaster_arrow\\fonts\\OpenSans.TTF",
-		}
-		local applied = false
-		for _,cand in ipairs(candidates) do
-			if cand and pcall(self.ArrowFrame.title.SetFont, self.ArrowFrame.title, cand, size) then
-				local cur = self.ArrowFrame.title:GetFont()
-				if cur and (string.find(string.lower(cur),"opensans",1,true) or string.lower(cur)==string.lower(cand)) then
-					font = cand
-					applied = true
-					break
-				end
-			end
-		end
-		if not applied then
-			font = STANDARD_TEXT_FONT
-		end
+		font = (ZGV and ZGV.GetRemasterFont and ZGV:GetRemasterFont("arrow")) or STANDARD_TEXT_FONT
 	end
 	if self:IsRetailRemasterArrowEnabled() then
 		if not self.ArrowFrame.title:SetFont(font,size,flags) then

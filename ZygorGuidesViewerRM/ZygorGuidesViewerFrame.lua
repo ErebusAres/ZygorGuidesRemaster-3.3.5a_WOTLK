@@ -23,9 +23,9 @@ local REMASTER_LAYOUT = {
 	MIN_STEP_HEIGHT = 18,
 	LINE_HEIGHT = 14,
 	ICON_SIZE = 16,
-	SECTION_FONT = (ZGV.DIR or "Interface\\AddOns\\ZygorGuidesViewer").."\\Skins\\segoeuib.ttf",
+	SECTION_FONT = (ZGV.GetRemasterFont and ZGV:GetRemasterFont("section")) or STANDARD_TEXT_FONT,
 	SECTION_FONT_SIZE = 13,
-	LINE_FONT = (ZGV.DIR or "Interface\\AddOns\\ZygorGuidesViewer").."\\Skins\\segoeui.ttf",
+	LINE_FONT = (ZGV.GetRemasterFont and ZGV:GetRemasterFont("body")) or STANDARD_TEXT_FONT,
 	LINE_FONT_SIZE = 11,
 }
 

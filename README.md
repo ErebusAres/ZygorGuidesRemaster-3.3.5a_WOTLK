@@ -171,6 +171,11 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 253 - 3.0.253
+
+- Fixed replacement characters in the remastered waypoint arrow, guide text, and Gear Advisor controls by using the game client's locale font on CJK clients.
+- Centralized remaster font selection while preserving the bundled Cyrillic-capable fonts for Russian clients, with regression coverage for CJK, Russian, and English locale behavior.
+
 ### Revision 252 - 3.0.252
 
 - Fixed the Horde Brewfest keg-loop exit condition so it reads the live quest objective without calling unavailable guide shorthand from the condition environment.
@@ -198,11 +203,6 @@ This addon is fully open source and can be inspected before use.
 
 - Fixed plain race, class, and faction `|only if` conditions so guides no longer hide or auto-skip valid steps such as `Paladin`, `Horde`, or `Alliance`.
 - Added regression coverage for combined, negated, level-gated, and goal-level conditions. Thanks to [fernandao17](https://github.com/fernandao17) for identifying the parser boundary and contributing the original fix and test coverage.
-
-### Revision 246 - 3.0.246
-
-- Refreshes the active guide waypoint after entering a new zone, including direct fallback arrows that were not covered by the prior route-only arrival check.
-- Coalesces zone-change refreshes and preserves manual and corpse waypoints.
 
 ## Notes
 

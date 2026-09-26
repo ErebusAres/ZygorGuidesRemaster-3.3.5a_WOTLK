@@ -726,6 +726,35 @@ function ZGV:IsRemasterSkin()
 	return self.db and self.db.profile and self.db.profile.skin == "remaster"
 end
 
+-- WoW's 3.3.5 font renderer does not link missing glyphs from another font.
+-- Use the client font on CJK clients, while retaining the remaster fonts where
+-- they contain the locale's glyphs (including the bundled Cyrillic coverage).
+local REMASTER_CLIENT_FONT_LOCALES = {
+	zhCN = true,
+	zhTW = true,
+	koKR = true,
+	jaJP = true,
+}
+
+function ZGV:UseClientLocaleFont()
+	local locale = GetLocale and GetLocale() or "enUS"
+	return REMASTER_CLIENT_FONT_LOCALES[locale] == true
+end
+
+function ZGV:GetRemasterFont(fontType)
+	if self:UseClientLocaleFont() then
+		return STANDARD_TEXT_FONT
+	end
+
+	local dir = self.DIR or "Interface\\AddOns\\ZygorGuidesViewerRM"
+	if fontType == "arrow" then
+		return dir.."\\Skin\\remaster_arrow\\fonts\\OpenSans.TTF"
+	elseif fontType == "section" or fontType == "title" then
+		return dir.."\\Skins\\segoeuib.ttf"
+	end
+	return dir.."\\Skins\\segoeui.ttf"
+end
+
 function ZGV:BuildSkinDropdownValues()
 	local values = {}
 	for _, skinId in ipairs(self.SkinOrder) do
@@ -2565,8 +2594,7 @@ local function safeSetFont(fontString, fontPath, size, flags)
 end
 
 local function UseClientLocaleFont()
-	local locale = GetLocale and GetLocale()
-	return locale == "zhCN" or locale == "zhTW" or locale == "koKR"
+	return ZGV:UseClientLocaleFont()
 end
 
 local function safeSetRemasterFont(fontString, fontPath, size, flags)
