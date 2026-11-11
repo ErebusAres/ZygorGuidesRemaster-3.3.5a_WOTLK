@@ -1318,7 +1318,7 @@ do
 
 	local function AB_SafeName(name)
 		if not name then return nil end
-		name = tostring(name):gsub("\"", "")
+		name = tostring(name)
 		name = name:gsub("\r", " "):gsub("\n", " ")
 		name = name:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
 		return name

@@ -171,6 +171,11 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 256 - 3.0.256
+
+- Fixed guide action buttons for NPC names containing literal quotation marks, such as `"Little" Logok`.
+- Preserved quoted names in exact and fallback target macros while continuing to remove unsafe line breaks and color formatting.
+
 ### Revision 255 - 3.0.255
 
 - Fixed imported guide conditions that pass multiple alternative quest IDs so `completedq(...)` and `haveq(...)` evaluate every supplied ID instead of only the first.
@@ -198,12 +203,6 @@ This addon is fully open source and can be inspected before use.
 - Fixed item-name `|equipped` goals so Synthebrew Goggles and other imported equipment steps detect the item in any equipped slot.
 - Refreshes inline and standalone guide actions when bag or equipment contents change, and makes manual confirmation lines advance immediately.
 - Corrected the Horde Brewfest keg round trip, souvenir ordering, Tirisfal arrival, Dalaran portal shortcuts, and Thunder Bluff flight-master coordinates.
-
-### Revision 250 - 3.0.250
-
-- Corrected the Horde Brewfest quest giver to Glodrak Huntsniper and added explicit sampler acquisition and S.T.O.U.T. targeting guidance for both factions.
-- Restored the Horde Pink Elekks travel sequence through the Undercity/Silvermoon orbs, zeppelin, and capital-city flight paths.
-- Added a manual ram-delivery fallback for servers that do not immediately refresh the three-keg quest objective.
 
 ## Notes
 
