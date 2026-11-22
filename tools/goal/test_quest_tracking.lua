@@ -1,11 +1,11 @@
 local root = (arg and arg[1]) or "."
 local rows, now = {}, 0
-local accepted, lost = {}, {}
+local accepted, lost, completed = {}, {}, {}
 
 GetTime = function() return now end
 GetQuestLogTitle = function(index)
 	local row = rows[index]
-	if row then return row.title, 12, nil, nil, row.header, row.collapsed, nil, false, row.id end
+	if row then return row.title, 12, nil, nil, row.header, row.collapsed, nil, row.daily, row.id end
 end
 GetNumQuestLeaderBoards = function(index)
 	if rows[index].count == "unavailable" then return end
@@ -30,6 +30,9 @@ ZygorGuidesViewer = {
 	Debug = function() end,
 	NewQuestEvent = function(_, title, id) accepted[#accepted + 1] = {title, assert(id)} end,
 	LostQuestEvent = function(_, title, id) lost[#lost + 1] = {title, assert(id)} end,
+	CompletedQuestEvent = function(_, title, id, daily)
+		completed[#completed + 1] = {title = title, id = id, daily = daily}
+	end,
 }
 assert(loadfile(root.."/QuestTracking.lua"))()
 local viewer = ZygorGuidesViewer
@@ -39,7 +42,7 @@ local function poll()
 end
 
 rows = {
-	{title = "Collapsed header", header = true, collapsed = true},
+	{title = "ID not ready", header = true, collapsed = true},
 	{title = "[12D+] Hunt", id = 101, count = 3},
 	{title = "Count not ready", id = 102},
 	{title = "Count unavailable", id = 103, count = "unavailable"},
@@ -54,6 +57,9 @@ assert(#hunt.goals == 3 and not hunt.goals[2].item and not hunt.goals[2].complet
 assert(hunt.goals[3].item == "Boars slain" and hunt.goalsNamed["Boars slain"] == hunt.goals[3])
 assert(not next(viewer.questsbyid[102].goals) and not next(viewer.questsbyid[103].goals))
 assert(viewer.quests[4].title == "ID not ready", "retain an unindexed row in the visible snapshot")
+viewer:CHAT_MSG_SYSTEM_QuestTracking("CHAT_MSG_SYSTEM", "ID not ready completed.")
+assert(#completed == 1 and completed[1].title == "ID not ready" and completed[1].id == nil,
+	"send completion to the title fallback when the matching row has no ID")
 
 rows[5] = nil
 rows[2].textReady = true
@@ -71,7 +77,11 @@ assert(not viewer.recentlyAcceptedQuests[103] and not viewer.recentlyAcceptedQue
 rows[4] = {title = "ID not ready", count = 0}
 poll()
 rows[4].id = 104
+rows[4].daily = true
 poll()
 assert(viewer.questsbyid[104] and #accepted == 4 and accepted[4][2] == 104, "accept once the ID becomes available")
+viewer:CHAT_MSG_SYSTEM_QuestTracking("CHAT_MSG_SYSTEM", "ID not ready completed.")
+assert(#completed == 2 and completed[2].id == 104 and completed[2].daily,
+	"send the quest ID and daily flag when available")
 
 print("PASS: quest tracking tolerates missing objective counts and IDs")

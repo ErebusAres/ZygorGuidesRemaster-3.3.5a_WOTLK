@@ -171,6 +171,11 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 259 - 3.0.259
+
+- Fixed a quest-completion crash when the matching quest has no ID yet. The addon can fall back to tracking completion by title.
+- Quest-log headers no longer interfere with matching completion messages to actual quests.
+
 ### Revision 258 - 3.0.258
 
 - Fixed active-quest detection in imported guide conditions and travel routing for Wrath 3.3.5a.
@@ -198,11 +203,6 @@ This addon is fully open source and can be inspected before use.
 - Improved the Horde Brewfest capital-city route with explicit Dalaran and Silvermoon/Undercity choices, missing portal/elevator approach points, and direct Dungeon Finder guidance for Coren Direbrew.
 - Made Synthebrew Goggles removal advance automatically for both factions and removed a fragile souvenir turn-in condition that could hide the next step.
 - Corrected the Horde Harvest Festival approach so players entering Ashenvale from the east are no longer sent back through the western waypoints first.
-
-### Revision 253 - 3.0.253
-
-- Fixed replacement characters in the remastered waypoint arrow, guide text, and Gear Advisor controls by using the game client's locale font on CJK clients.
-- Centralized remaster font selection while preserving the bundled Cyrillic-capable fonts for Russian clients, with regression coverage for CJK, Russian, and English locale behavior.
 
 ## Notes
 

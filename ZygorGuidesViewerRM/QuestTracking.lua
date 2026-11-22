@@ -104,9 +104,9 @@ function me:GetQuest(indexortitle)
 		return id,title,daily
 	else
 		for i = 1, 50, 1 do
-			local title,_,_,_,_,_,_,daily,id = GetQuestLogTitle(i)
-			if title == indexortitle then
-				ZGV:Debug(("GetQuestId: id of quest '%s' = %d"):format(indexortitle,id))
+			local title,_,_,_,isHeader,_,_,daily,id = GetQuestLogTitle(i)
+			if not isHeader and title and title == indexortitle then
+				ZGV:Debug(("GetQuestId: id of quest '%s' = %s"):format(indexortitle,tostring(id)))
 				return id,title,daily
 			end
 		end
