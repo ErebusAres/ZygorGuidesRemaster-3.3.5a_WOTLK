@@ -45,10 +45,13 @@ if not C_QuestLog then
 		end
 		return false
 	end
+end
+if not C_QuestLog.IsOnQuest then
 	C_QuestLog.IsOnQuest = function(questID)
+		if not questID then return false end
 		local numEntries = GetNumQuestLogEntries()
 		for i = 1, numEntries do
-			local _, _, _, _, isHeader, _, _, questId = GetQuestLogTitle(i)
+			local _, _, _, _, isHeader, _, _, _, questId = GetQuestLogTitle(i)
 			if not isHeader and questId == questID then return true end
 		end
 		return false

@@ -95,10 +95,13 @@ local activeQuest=false
 local itemCounts={}
 GetNumQuestLogEntries=function() return activeQuest and 1 or 0 end
 GetQuestLogTitle=function()
-	return "Necklace Repair",77,nil,nil,false,nil,nil,13148
+	return "Necklace Repair",77,nil,nil,false,nil,nil,false,13148
 end
 GetItemCount=function(itemID) return itemCounts[itemID] or 0 end
 
+strmatch = string.match
+assert(loadfile(root.."/Libs/LibStub/LibStub.lua"))()
+assert(loadfile(root.."/Libs/LibRover-1.0/LibRover_Compat.lua"))()
 assert(loadfile(root.."/Parser.lua"))()
 local parsed,err,line,linedata=ZGV:ParseEntry(guide.rawdata)
 if not parsed then

@@ -171,6 +171,12 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 258 - 3.0.258
+
+- Fixed active-quest detection in imported guide conditions and travel routing for Wrath 3.3.5a.
+- Kept quest objective numbers stable when objective text is temporarily unavailable.
+- Removed an unused duplicate of the action-button code.
+
 ### Revision 257 - 3.0.257
 
 - Fixed quest-log cache crashes when the client temporarily omits a quest ID or objective count.
@@ -197,11 +203,6 @@ This addon is fully open source and can be inspected before use.
 
 - Fixed replacement characters in the remastered waypoint arrow, guide text, and Gear Advisor controls by using the game client's locale font on CJK clients.
 - Centralized remaster font selection while preserving the bundled Cyrillic-capable fonts for Russian clients, with regression coverage for CJK, Russian, and English locale behavior.
-
-### Revision 252 - 3.0.252
-
-- Fixed the Horde Brewfest keg-loop exit condition so it reads the live quest objective without calling unavailable guide shorthand from the condition environment.
-- Added runtime regression coverage for both the incomplete 2/3 and completed 3/3 delivery states.
 
 ## Notes
 

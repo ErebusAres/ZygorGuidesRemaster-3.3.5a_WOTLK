@@ -12,7 +12,10 @@ GetNumQuestLeaderBoards = function(index)
 	return rows[index].count
 end
 GetQuestLogLeaderBoard = function(index, questIndex)
-	assert(index == 1 and rows[questIndex].count == 1)
+	assert(rows[questIndex].count == 3)
+	if index == 2 and not rows[questIndex].textReady then return nil, "monster", false end
+	if index == 2 then return "Bears slain: 1/4", "monster", false end
+	if index == 3 then return "Boars slain: 3/3", "monster", true end
 	return "Wolves slain: 2/5", "monster", false
 end
 table.wipe = function(t)
@@ -37,7 +40,7 @@ end
 
 rows = {
 	{title = "Collapsed header", header = true, collapsed = true},
-	{title = "[12D+] Hunt", id = 101, count = 1},
+	{title = "[12D+] Hunt", id = 101, count = 3},
 	{title = "Count not ready", id = 102},
 	{title = "Count unavailable", id = 103, count = "unavailable"},
 	{title = "ID not ready", count = 0},
@@ -47,12 +50,16 @@ assert(#viewer.quests == 4 and #accepted == 3, "headers and missing IDs must not
 local hunt = assert(viewer.questsbyid[101])
 assert(hunt.title == "Hunt", "strip the level prefix without changing the quest name")
 assert(hunt.goals[1].num == 2 and hunt.goals[1].needed == 5)
+assert(#hunt.goals == 3 and not hunt.goals[2].item and not hunt.goals[2].complete)
+assert(hunt.goals[3].item == "Boars slain" and hunt.goalsNamed["Boars slain"] == hunt.goals[3])
 assert(not next(viewer.questsbyid[102].goals) and not next(viewer.questsbyid[103].goals))
 assert(viewer.quests[4].title == "ID not ready", "retain an unindexed row in the visible snapshot")
 
 rows[5] = nil
+rows[2].textReady = true
 poll()
 assert(#viewer.quests == 3 and #lost == 0, "disappearing unindexed rows must not fire loss events")
+assert(viewer.questsbyid[101].goals[2].item == "Bears slain", "restore objective text in its original slot")
 
 rows[4] = nil
 viewer.recentlyAcceptedQuests[103] = true

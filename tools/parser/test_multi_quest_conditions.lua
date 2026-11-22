@@ -38,7 +38,10 @@ function ZGV:RegisterGuide() end
 
 local questLog = {}
 GetNumQuestLogEntries = function() return #questLog end
-GetQuestLogTitle = function(index) return nil,nil,nil,nil,false,nil,nil,questLog[index] end
+GetQuestLogTitle = function(index)
+	local quest = questLog[index]
+	return "Test quest", nil, nil, nil, quest.header, nil, nil, quest.daily, quest.id
+end
 GetRealZoneText = function() return "Test Zone" end
 GetZoneText = GetRealZoneText
 GetSubZoneText = function() return "" end
@@ -49,6 +52,10 @@ UnitFactionGroup = function() return "Alliance" end
 UnitLevel = function() return 80 end
 IsQuestFlaggedCompleted = function(id) return ZGV.completedQuests[id] or false end
 
+strmatch = string.match
+assert(loadfile(root .. "/Libs/LibStub/LibStub.lua"))()
+C_QuestLog = {}
+assert(loadfile(root .. "/Libs/LibRover-1.0/LibRover_Compat.lua"))()
 assert(compile(read(root .. "/Parser.lua"), "@Parser.lua"))()
 local env = assert(ZGV.ConditionEnv)
 
@@ -59,12 +66,14 @@ assert(env.completedallq(20,30) == true, "completedallq rejected completed quest
 assert(env.completedallq(20,31) == false, "completedallq accepted an incomplete quest")
 assert(env.countcompletedq(10,20,30) == 2, "countcompletedq returned the wrong count")
 
-questLog = {101,103}
+questLog = {{id=101,daily=false}, {id=103,daily=true}, {id=999,header=true}}
 assert(env.haveq(100,101,102) == true, "haveq must match any supplied quest ID")
 assert(env.haveq(100,102) == false, "haveq matched a quest outside the log")
 assert(env.haveallq(101,103) == true, "haveallq rejected quests in the log")
 assert(env.haveallq(101,102) == false, "haveallq accepted a missing quest")
 assert(env.counthaveq(100,101,102,103) == 2, "counthaveq returned the wrong count")
+assert(not env.havequest(999) and not env.havequest(nil), "headers and absent IDs are not quests")
+assert(C_QuestLog.IsOnQuest(103), "routing shim should recognize an active daily")
 
 ZGV.questsbyid[10566] = {complete = false, goals = {{num = 1, needed = 1, complete = true}, {num = 0, needed = 1, complete = false}}}
 assert(env.completedq("10566/1") == true, "completedq did not recognize a completed objective")
@@ -75,5 +84,14 @@ assert(compile(read(root .. "/Guides/Retail/RetailCompat.lua"), "@RetailCompat.l
 assert(completedq(10,20) == true, "global completedq wrapper lost alternative-ID behavior")
 assert(countcompletedq(10,20,30) == 2, "global countcompletedq wrapper returned the wrong count")
 assert(haveq(100,103) == true, "global haveq wrapper lost alternative-ID behavior")
+assert(havequest(101) and not havequest(999), "global havequest must use the same lookup")
+
+local main = read(root .. "/ZygorGuidesViewer.lua")
+local first = assert(main:find("-- C_QuestLog shim for 3.3.5a", 1, true))
+local last = assert(main:find("-- Dungeons table", first, true))
+C_QuestLog = nil
+assert(compile(main:sub(first, last-1), "@viewer quest shim"))()
+assert(C_QuestLog.IsOnQuest(101) and C_QuestLog.IsOnQuest(103))
+assert(not C_QuestLog.IsOnQuest(999) and not C_QuestLog.IsOnQuest(nil))
 
 print("PASS: multi-quest and objective condition helpers")

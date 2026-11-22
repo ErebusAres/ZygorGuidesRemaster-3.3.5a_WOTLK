@@ -82,14 +82,16 @@ local function GetQuestLeaderBoards(questindex)
 	if numgoals>0 then
 		for g=1,numgoals,1 do
 			local leaderboard,type,complete = GetQuestLogLeaderBoard(g,questindex)
-			local item,num,needed = ParseLeaderBoard(leaderboard,type)
+			local item,num,needed
+			-- Keep the numeric slot even if its text has not arrived yet.
+			if leaderboard then item,num,needed = ParseLeaderBoard(leaderboard,type) end
 
 			-- fix bad leaderboards
 			if not needed then needed=1 end
 			if not num then num=complete and needed or 0 end
 
 			goals[g] = { item=item, num=num, needed=needed, type=type, complete=complete, leaderboard=leaderboard }
-			goalsNamed[item] = goals[g]
+			if item then goalsNamed[item] = goals[g] end
 		end
 	end
 	return goals,goalsNamed

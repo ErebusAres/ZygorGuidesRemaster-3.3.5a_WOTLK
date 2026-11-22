@@ -424,10 +424,10 @@ if not C_QuestLog.IsQuestFlaggedCompleted then
 end
 if not C_QuestLog.IsOnQuest then
 	C_QuestLog.IsOnQuest = function(questID)
-		-- Check quest log for this quest
+		if not questID then return false end
 		for i = 1, GetNumQuestLogEntries() do
-			local _, _, _, _, _, _, _, questLogQuestID = GetQuestLogTitle(i)
-			if questLogQuestID == questID then return true end
+			local _, _, _, _, isHeader, _, _, _, questLogQuestID = GetQuestLogTitle(i)
+			if not isHeader and questLogQuestID == questID then return true end
 		end
 		return false
 	end

@@ -35,12 +35,7 @@ if not level then
 end
 if not havequest then
 	function havequest(id)
-		local n = GetNumQuestLogEntries()
-		for i = 1, n do
-			local _,_,_,_,isH,_,_,qid = GetQuestLogTitle(i)
-			if not isH and qid == id then return true end
-		end
-		return false
+		return ZGV.ConditionEnv.havequest(id)
 	end
 end
 ZGV.GuideMenuTier = ZGV.GuideMenuTier or "CLA"

@@ -361,12 +361,7 @@ ZGV.ConditionEnv = {
 		return pclass == rc or prace == rc
 	end,
 	havequest = function(id)
-		local numEntries = GetNumQuestLogEntries()
-		for i = 1, numEntries do
-			local _, _, _, _, isHeader, _, _, questId = GetQuestLogTitle(i)
-			if not isHeader and questId == id then return true end
-		end
-		return false
+		return id and C_QuestLog.IsOnQuest(id) or false
 	end,
 	haveq = function(...)
 		for index = 1, select("#", ...) do
