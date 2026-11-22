@@ -9097,7 +9097,6 @@ function me:OnGuidesLoaded()
 
 	self.completiontimer = self:ScheduleRepeatingTimer("TryToCompleteStep", 0.1)
 	--self.notetimer = self:ScheduleRepeatingTimer("SetWaypoint", 1)
-	self.dailytimer = self:ScheduleRepeatingTimer("QuestTracking_ResetDailies", 5)
 
 	--self:CancelTimer(self.startuptimer,true)
 

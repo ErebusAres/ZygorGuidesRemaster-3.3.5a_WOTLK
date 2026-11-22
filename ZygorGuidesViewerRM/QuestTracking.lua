@@ -76,7 +76,7 @@ local function ParseLeaderBoard(leaderboard,type)
 end
 
 local function GetQuestLeaderBoards(questindex)
-	local numgoals = tonumber(GetNumQuestLeaderBoards(questindex))
+	local numgoals = tonumber(GetNumQuestLeaderBoards(questindex) or 0) or 0
 	local goals = {}
 	local goalsNamed = {}
 	if numgoals>0 then
@@ -160,7 +160,7 @@ function me:QuestTracking_CacheQuestLog(force)
 		local strQuestLogTitleText, strQuestLevel, strQuestTag, numPlayers, isHeader, isCollapsed, isComplete, isDaily, questID = GetQuestLogTitle(i)
 
 		if not isHeader and strQuestLogTitleText then
-			strQuestLogTitleText = strQuestLogTitleText:gsub(" ?\[[0-9D\+]+\] ?","") -- fix for [12] level display
+			strQuestLogTitleText = strQuestLogTitleText:gsub(" ?%[[0-9D+]+%] ?","") -- fix for [12] level display
 			local goals,goalsNamed = GetQuestLeaderBoards(i)
 
 			local quest = GetPooledQuest()
@@ -183,7 +183,7 @@ function me:QuestTracking_CacheQuestLog(force)
 				end
 			end
 			tinsert(self.quests,quest)
-			if not self.questsbyid[questID] and not self.recentlyAcceptedQuests[questID] then
+			if questID and not self.questsbyid[questID] and not self.recentlyAcceptedQuests[questID] then
 				tinsert(newquests,quest)
 				--self:Debug(dumpquest(quest))
 			end
@@ -198,7 +198,7 @@ function me:QuestTracking_CacheQuestLog(force)
 		if q.id then
 			self.questsbyid[q.id]=q
 		else
-			self:Print("Quest '"..q.title.."' has no ID! What the hell?")
+			self:Debug("Quest '"..q.title.."' has no ID")
 		end
 	end
 
@@ -209,7 +209,7 @@ function me:QuestTracking_CacheQuestLog(force)
 	-- any abandoned?
 	if #oldquests>0 then
 		for qi,q in pairs(oldquests) do
-			if not self.questsbyid[q.id] and not self.completedQuests[q.id] then
+			if q.id and not self.questsbyid[q.id] and not self.completedQuests[q.id] then
 				tinsert(lostquests,q)
 				self.recentlyAcceptedQuests[q.id]=nil
 				self.recentlyAcceptedQuests[q.title]=nil

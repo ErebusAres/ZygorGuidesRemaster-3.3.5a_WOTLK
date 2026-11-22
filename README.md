@@ -171,6 +171,11 @@ This addon is fully open source and can be inspected before use.
 
 ## Changelog
 
+### Revision 257 - 3.0.257
+
+- Fixed quest-log cache crashes when the client temporarily omits a quest ID or objective count.
+- Removed an inactive five-second daily-reset timer while retaining the quest-log safety scan.
+
 ### Revision 256 - 3.0.256
 
 - Fixed guide action buttons for NPC names containing literal quotation marks, such as `"Little" Logok`.
@@ -197,12 +202,6 @@ This addon is fully open source and can be inspected before use.
 
 - Fixed the Horde Brewfest keg-loop exit condition so it reads the live quest objective without calling unavailable guide shorthand from the condition environment.
 - Added runtime regression coverage for both the incomplete 2/3 and completed 3/3 delivery states.
-
-### Revision 251 - 3.0.251
-
-- Fixed item-name `|equipped` goals so Synthebrew Goggles and other imported equipment steps detect the item in any equipped slot.
-- Refreshes inline and standalone guide actions when bag or equipment contents change, and makes manual confirmation lines advance immediately.
-- Corrected the Horde Brewfest keg round trip, souvenir ordering, Tirisfal arrival, Dalaran portal shortcuts, and Thunder Bluff flight-master coordinates.
 
 ## Notes
 
